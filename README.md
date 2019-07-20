@@ -9,9 +9,10 @@ Hasznos lenne, ha sikerülne 12 kb azonos nehézségű fejezetbe tömöríteni.
 Hajlamos lennék a puszta bázistrafós tárgyalásra.
 De:
     1. Előnyök.
-            1.
+                1. Ha csak bázistrafó van, akkor azt gondolják a hallgatók, hogy a mindenütt máshol taglalt eliminációs eljáras nem tudják.
+                2. Fontos a két módszer ekvivalenciája.
     2. Hátrányok
-            1.
+                1. Fölösleges, hiszen a bázistrafóból is származtatható a lineáris egyenleterendszerekre vonatkozó összes állítás.
 3. Kicserélési tétel vagy Steinitz lemma (matroid)
 4. Rang-tétel
 5. Mátrix inverz felcserélhetősége
