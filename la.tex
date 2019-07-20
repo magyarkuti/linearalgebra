@@ -2,7 +2,7 @@
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
 
-\usepackage{polyglossia,amsmath,amsthm,fixme}\setdefaultlanguage{magyar}\frenchspacing
+\usepackage{polyglossia,amsmath,amsthm,fixme,natbib}\setdefaultlanguage{magyar}\frenchspacing
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
@@ -29,11 +29,13 @@
 \makeatother
 
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
+\citeindextrue
 \makeindex
 
 \begin{document}
 \chapter*{Előszó}
 \scwords Hogy nekem mennyi bajom van.
+A legfontosabb forrás \citep{PCSDI}.
 
 \noindent MGy
 
@@ -42,7 +44,12 @@
 \tableofcontents*
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
+
+\begin{thebibliography}{MMMMMMMM}
+    \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
+        Dancs István, Puskás Csaba: \textit{Vektorterek}, Aula kiadó 2001, Budapest, ISBN:963 9345 53 9, BCE Catalogue: bcek.379187.
+\end{thebibliography}
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 20 Jul 2019 07:23:36 AM CEST
+Last Modified : Sat 20 Jul 2019 08:12:12 AM CEST
