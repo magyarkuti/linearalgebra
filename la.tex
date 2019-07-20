@@ -1,18 +1,29 @@
-\documentclass[a4paper]{memoir}
+\documentclass[9pt,showtrims]{memoir}
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
+%%%%%%% pdflatex %%%%%%%%%%
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[hungarian]{babel}[2015/11/24]
+%%%%%%% pdflatex %%%%%%%%%%
 
-\usepackage{polyglossia,amsmath,amsthm,fixme,natbib}\setdefaultlanguage{magyar}\frenchspacing
-\fxsetup{status=draft, theme=color, layout={inline}}
-\renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
-
-\usepackage[unicode]{hyperref}\hypersetup{final}\usepackage{memhfixc}
-
+%%%%%% lualatex %%%%%%%%%%%
+%\usepackage{polyglossia}\setdefaultlanguage{magyar}
+\usepackage[hungarian]{babel}[2015/11/24]
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{TeX Gyre Pagella}
 \setsansfont{Kurier}[Scale=MatchLowercase]
 \setmonofont{inconsolata}[Scale=MatchLowercase]
+%%%%%% lualatex %%%%%%%%%%%
+
+\frenchspacing
+\usepackage{amsmath,amsthm,fixme,natbib}
+\fxsetup{status=draft, theme=color, layout={inline}}
+\renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
+
+\usepackage[unicode]{hyperref}\hypersetup{final}\usepackage{memhfixc}
+
 
 \usepackage[a4paper]{geometry}
 \usepackage[missing={(Oh my!)},dirty={Oh no!},mark,marknotags]{gitinfo2}
@@ -28,10 +39,22 @@
  {}{}
 \makeatother
 
+%\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
+\theoremstyle{plain}
+\newtheorem{proposition}{állítás}[chapter]
+\newtheorem{lemma}[proposition]{lemma}
+\newtheorem*{SL}{Steinitz-lemma}
+%
+\theoremstyle{remark}
+\newtheorem{note}[proposition]{megjegyzés}
+
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{definíció}
+
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \citeindextrue
 \makeindex
-
+\synctex=1
 \begin{document}
 \chapter*{Előszó}
 \scwords Hogy nekem mennyi bajom van.
@@ -45,6 +68,76 @@ A legfontosabb forrás \citep{PCSDI}.
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
+\chapter{Vektortér bázisa}
+\begin{lemma}[generátorrendszer csere]
+    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszere valamely vektortérnek,
+    és tegyük fel, hogy valamely $y$ vektorra
+    \[
+        y=\sum_{j=1}^m\xi_jx_j,
+    \]
+    ahol $\xi_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
+    Ekkor $y$ becserélhető a $k$-adik helyen a generátorrendszerbe, 
+    úgy hogy az generátorrendszer maradjon, azaz a
+    \[
+        \left\{ x_1,\dots,x_{k-1},y,x_{k+1},\dots,x_m \right\}
+    \]
+    vektorrendszer is generátorrendszer.
+    \label{le:gencsere}
+\end{lemma}
+\begin{proof}
+    Könnyű.
+\end{proof}
+\begin{SL}
+    Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer és az
+    $\left\{ x_1,\dots,x_m \right\}$ vektorrendszer egy generátor rendszer.
+    Ekkor
+    \begin{enumerate}
+        \item $n\leq m$;
+        \item Az $x_1,\dots,x_m$ vektorok alkalmas átindexelésével az
+            \[
+                \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
+            \]
+            vektorrendszer is generátorrendszer.
+            \footnote{Úgy kell a jelöléseket érteni, hogy az $n=0$, de $n=m$ eset is lehetséges. 
+            Az $n=0$ esetben az $y_1,\dots,y_n$ vektorok egyike sem,
+            míg az $n=m$ esetben az $x_1,\dots,x_m$ vektorok egyike sem szerepel az 
+            \(
+                \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
+            \)
+            vektorrendszer elemei közt.}
+    \end{enumerate}
+    \label{le:Stienitz}
+\end{SL}
+\begin{proof}
+    Legyen $k$ a legnagyobb egész a $\left\{ 0,\dots,n \right\}$ egészek közül, amelyre
+    \begin{enumerate}
+        \item $k\leq m$, és
+        \item az $x_1,\dots,x_m$ vektorok alkalmas átindexelésével az
+            \[
+                \left\{ y_1,\dots,y_k,x_{k+1},\dots,x_m \right\}\tag{\dag}
+            \]
+            vektorrendszer is generátorrendszer.
+    \end{enumerate}
+    Ilyen $k$ biztosan van van, hiszen $k=0$ triviálisan jó.
+
+    Összesen azt kell meggondolnunk, hogy $k=n$.
+    Ha $k<n$ lenne, 
+    \begin{itemize}
+        \item 
+        akkor létezne $y_{k+1}$ vektor.
+        No de, ez az $y_{k+1}$ nem szerepel az $\left\{ y_1,\dots,y_k \right\}$ lineáris burkában,
+        ami (\dag) generátorrendszer volta miatt csak úgy lehetséges, hogy $k<m$, 
+        ergo $k+1\leq m$.
+        \item
+        \Aref{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor 
+        avval az $x$-el
+        --- a generátorrendszer tulajdonság megtartásával is --- 
+        kicserélhető, 
+        amely $x$ szerepel az $y_{k+1}$ vektornak a (\dag)-beli
+        vektorokkal képzett lineáris kombinációjában. 
+    \end{itemize}
+    Ez ellentmondás, hiszen $k$ volt a legnagyobb ilyen szám.
+\end{proof}
 \begin{thebibliography}{MMMMMMMMM}
     \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
         Dancs István, Puskás Csaba: \textit{Vektorterek}, Aula kiadó 2001, Budapest, ISBN:963 9345 53 9, BCE Catalogue: bcek.379187.
@@ -52,4 +145,4 @@ A legfontosabb forrás \citep{PCSDI}.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 20 Jul 2019 01:38:43 PM CEST
+Last Modified : Sat 20 Jul 2019 10:00:27 PM CEST
