@@ -1,5 +1,6 @@
 \documentclass{memoir}
-\usepackage{polyglossia,amsmath}\setdefaultlanguage{magyar}\frenchspacing
+\usepackage[x11names]{xcolor}
+\usepackage{polyglossia,amsmath,fixme}\setdefaultlanguage{magyar}\frenchspacing
 
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
@@ -14,7 +15,19 @@
 \usepackage[a4paper]{geometry}
 \usepackage[mark]{gitinfo2}
 
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\patchcmd{\@makechapterhead}
+ {\printchaptername \chapternamenum \printchapternum}
+ {\printchapternum.\@\chapternamenum \printchaptername}
+ {}{}
+\makeatother
+
+\fxsetup{status=draft, theme=color, layout={inline}}
+\renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
+
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
+
 \begin{document}
 \chapter{Gauss-Jordan elimináció}
 Lineáris egyenletrendszerek megoldását automatizáljuk.
