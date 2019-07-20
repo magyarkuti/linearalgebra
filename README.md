@@ -16,3 +16,8 @@ De:
 4. Rang-tétel
 5. Mátrix inverz felcserélhetősége
 6. Kvadratikus alakok mátrix algebrai tárgyalása
+
+## Latex beállítások
+1. Gitinfo2 globálisan. Lásd: <https://mimischi.github.io/blog/latex-with-git-revisions/>.
+2. Fordítás: 
+    latexmk --lualatex la
