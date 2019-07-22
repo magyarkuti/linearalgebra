@@ -26,7 +26,7 @@
 
 
 \usepackage[a4paper]{geometry}
-\usepackage[missing={(Oh my!)},dirty={Oh no!},mark,marknotags]{gitinfo2}
+\usepackage[missing={(Oh my!)},dirty={Oh no!},mark]{gitinfo2}
 
 \setsecheadstyle{\Large\sffamily\bfseries\raggedright}
 \setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
@@ -50,6 +50,7 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}[proposition]{definíció}
+\newtheorem{corollary}[proposition]{Következmény}
 
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \citeindextrue
@@ -130,7 +131,7 @@ A legfontosabb forrás \citep{PCSDI}.
     \]
     együtthatókkal.
 \end{proof}
-\begin{SL}
+\begin{SL}\index{Steinitz}
     Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer és az
     $\left\{ x_1,\dots,x_m \right\}$ vektorrendszer egy generátor rendszer.
     Ekkor
@@ -181,6 +182,94 @@ A legfontosabb forrás \citep{PCSDI}.
     Ez ellentmondás, hiszen $k$ a legnagyobb olyan szám, 
     amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
+\begin{corollary}
+    Egy vektortérben bármely két véges egyszerre lineárisan független és egyszerre generátorrendszer elmeszáma azonos.
+    Konkrétabban, ha
+    \[
+        \left\{ x_1,\dots,x_m \right\} \text{ és } \left\{ y_1,\dots,y_n \right\}
+    \]
+    lineárisan független generátorrendszerek, akkor $n=m$.
+    \label{co:baziselemszam}
+\end{corollary}
+\begin{definition}
+    Egy vektorteret \emph{végesen generáltnak} nevezünk,
+    ha létezik véges elemszámú generátorrendszere.
+\end{definition}[végesen generált vektortér]\index{végesen generált vektortér}
+\begin{proposition}
+    Minden végesen generált vektortérnek van olyan vektorrendszere, 
+    amely egyszerre lineárisan független és generátorrendszer.
+    \label{pr:bazisletezik}
+\end{proposition}
+\begin{proof}
+    Tekintsünk egy véges generátorrendszert.
+    Ha minden elem kívül esik a többi elem lineáris burkában, akkor a rendszer linárisan független, és készen is vagyunk.
+    Ha van olyan elem, amely a többi lineáris burkában van, akkor dobjuk el ezt az elemet, és tekintsük, a most már
+    eggyel kevesebb elemből álló vektorrendszert. 
+    Világos, hogy ez is generátorrendszer marad.
+
+    Folytassuk az eljárást.
+    Mivel véges sok vektor van az eredeti generátorrendszerben az algoritmus előbb-utóbb megáll,
+    ami azt jelenti, hogy olyan generátorrendszert kapunk, 
+    ahol már minden elem a többi lineáris burkán kívül van,
+    ergo lineárisan független.
+\end{proof}
+A lineárisan független generátorrendszerek olyan sűrűn fordulnak elő a tárgyalásban,
+hogy rövidebb külön nevet adni nekik.
+\begin{definition}[bázis]\index{bázis}
+    Egy vektorrendszert \emph{bázisnak} nevezünk, ha ez egyszerre lineárisan független és generátorrendszer.
+\end{definition}
+\Aref{pr:bazisletezik}. állítást tehát úgy fogalmazhatjuk, hogy végesen generált vektortérnek van bázisa,
+és hasonlóan \aref{co:baziselemszam}. következmény pedig azt jelenti, 
+hogy egy vektortérben bármely két bázis azonos elemeszámú.
+Ezutóbbi tény ad értelmet a következő definíciónak:
+\begin{proposition}
+    Egy végesen generált vektortérről azt mondjuk, hogy $n$ dimenziós, vagy $n$ a dimenzió száma,
+    ha a vektortérben van $n$ elemű bázis.
+\end{proposition}
+Fontos látni, hogy éppen azt gondoltuk meg, hogy \emph{minden végesen generált vektortérben van bázis}, 
+\footnote{Ez nem végesen generált vektorterekre is igaz, de itt nem igazoljuk}
+és \emph{bármely két bázis pontosan annyi vektorból áll mint a tér dimenziója.}
+A végesen generált vektortereket sokszor szinonimaként \emph{véges dimenziósnak} is mondjuk.\index{véges dimenziós}
+
+A Steinitz-lemma kulcs szerepet játszott dimenzió fogalmának megértésében,
+hiszen a bázis elemszáma nem lehetne a tér dimenziója, anélkül hogy tudnánk a tényt: 
+bármely két bázis azonos elemszámú! 
+Márpedig egy vektortérben nagyon sok bázis van. 
+A Steinitz-lemma 2. pontja segít ennek megértéséhez.
+
+\begin{proposition}
+    Egy végesen generált vektortér bármely lineárisan független rendszere kiegészíthető bázissá.
+    \label{pr:lfgtenbazissa}
+\end{proposition}
+\begin{proof}
+    Tegyük fel, hogy a tér $m$ dimenziós, ami azt jelenti, hogy van 
+    \[
+        \left\{ x_1,\dots,x_m \right\}
+    \]
+    $m$ elemű lineárisan független generátorrendszere.
+    Legyen $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független.
+    A Steinitz-lemma szerint ez a rendszer kiterjesztehő egy 
+    \[
+        \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}\tag{\dag}
+    \]
+    generátorrendszerré.
+    Ha ez nem lenne lineárisan független,
+    akkor lenne olyan eleme, amelynek elhagyásával $m-1$ elemű generátorrendszert kapnánk.
+    No de ez képtelenség, hiszen a bázis $m$ elemű lineárisan független rendszer,
+    és a Steinitz-lemma éppen azt állítja, hogy ilyen helyzet nem lehetséges.
+    Tehát a fenti (\dag) rendszer egy bázis.
+    Ezt kellett belátni. 
+\end{proof}
+
+Meggondoltuk tehát, hogy bármely véges generátorrendszerből elhagyható néhány elem úgy, 
+hogy a rendszer lineárisan független generátorrendszerré váljon,
+és hasonlóan bármely lineárisan független rendszerhez, hozzátehető néhány elem úgy, hogy a
+rendszer lineárisan független generátorrendszerré váljon.
+
+
+
+
+
 \begin{thebibliography}{MMMMMMMMM}
     \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
         Dancs István, Puskás Csaba: \textit{Vektorterek}, Aula kiadó 2001, Budapest, ISBN:963 9345 53 9, BCE Catalogue: bcek.379187.
@@ -188,4 +277,4 @@ A legfontosabb forrás \citep{PCSDI}.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 22 Jul 2019 11:54:21 AM CEST
+Last Modified : Mon 22 Jul 2019 01:18:30 PM CEST
