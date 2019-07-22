@@ -52,6 +52,7 @@
 \newtheorem{definition}[proposition]{definíció}
 \newtheorem{corollary}[proposition]{Következmény}
 
+\DeclareMathOperator{\lin}{lin}
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \citeindextrue
 \makeindex
@@ -68,6 +69,119 @@ A legfontosabb forrás \citep{PCSDI}.
 \tableofcontents*
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
+
+\chapter{Algebrai struktúrák}
+\chapter{Vektortér fogalma}
+\chapter{Altér}
+\chapter{Lineárisan független rendszerek és generátorrendszerek}
+\begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
+    Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
+    mondunk, ha egyik vektora kifejezhető a többi vektor lineáris kombinációjaként.
+\end{definition}
+Úgy is fogalmazhatnánk, hogy az $\left\{ y_1,\dots,y_n \right\}$ rendszer pontosan akkor
+lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
+\[
+    y_k\in\lin\left\{ y_1,\dots,y_{k-1},y_{k+1},\dots,y_n \right\}.
+\]
+\begin{proposition}
+    Legyen $\left\{ y_1,\dots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
+    A vektorrendszerre tett alábbi feltevések egymással ekvivalensek.
+    \begin{enumerate}
+        \item Lineárisan összefüggő;
+        \item Van olyan elem a vektortérben, amely nem csak egyféleképpen áll elő mint az $y_1,\dots,y_n$
+            vektorok lineáriskombinációja,\\
+            azaz formálisabban:
+            létezik z\in V, amelyre $z=\sum_{j=1}^n\xi_jy_j$ és $z=\sum_{j=1}^n\eta_jy_j$
+            és létezik $1\leq k\leq n$, amelyre $\xi_k\neq\eta_k$.
+        \item Vannak olyan nem mind zérus $\alpha_1,\dots,\alpha_n$ skalárok, amellyekkel
+            
+            \[
+                \sum_{j=1}^n\alpha_jy_j=0.
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Körben bizonyítunk.
+    \begin{description}
+        \item[$1.\implies 2.$] 
+        Tegyük fel, hogy $y_k=\sum_{j=1}^{k-1}\eta_jy_j+\sum_{j=k+1}^n\eta_jy_j$.
+        Ekkor az alábbi együtthatórendszerek
+        \[
+            \left( \alpha_1,\dots,\alpha_{k-1},0,\alpha_{k+1},\dots,\alpha_n \right)
+            \qquad
+            \left( 0,\dots,0,1,0,\dots,0 \right)
+        \]
+        a $k$-adik helyen biztosan különböznek, 
+        hiszen $0\neq 1$, 
+        és mind a két együtthatórendszerrel képzett lineáris kombináció ugyanazt az $y_k$ vektort eredményezi.
+    \item[$2.\implies 3.$]
+        Világos, hogy 
+        \[
+            0=z-z=
+            \sum_{j=1}^n\left( \xi_j-\eta_j \right)y_j
+        \]
+        és a $k$-adik skalár nem zérus.
+    \item[$3.\implies 1.$]
+        Tegyük fel most, hogy 
+        \(
+        \sum_{j=1}^n\alpha_jy_j=0,
+        \)
+        és, hogy $\alpha_k\neq 0.$
+        Ekkor 
+        \[
+            y_k=\sum_{j=1,j\neq k}^n-\frac{1}{\alpha_k}\alpha_jy_j
+        \]
+        azaz a $k$-adik vektor tekinthető mint a többi vektor valamely lineáris kombinációja.
+    \end{description}
+    Ezt kellett belátni. 
+\end{proof}
+Fontos észrevétel a következő.
+\begin{proposition}
+    Minden, 
+    valamely lineárisan összefüggő vektorrendszert tartalmazó vektorrendszer maga is lineárisan összefüggő.
+\end{proposition}
+\begin{definition}
+    Egy nem feltétetlen végeg vektorrendszert lineárisan összefüggőnek nevezünk,
+    ha van véges részrendszere, amely lineárisan összefüggő.
+\end{definition}
+\begin{definition}[lineárisan független vektorrendszer]\index{lineárisan független rendszer}
+        Egy vektorrendszer \emph{lineárisan független}, ha nem lineárisan összefüggő.
+\end{definition}
+Így egy nem véges vektorrendszer akkor lineárisan független, ha minden véges részrendszere is az.
+Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egymással ekvivalens állítások karakterizálják.
+\begin{proposition}
+    Legyen $\left\{ y_1,\dots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
+    A vektorrendszerre tett alábbi feltevések egymással ekvivalensek.
+    \begin{enumerate}
+        \item Lineárisan független;
+        \item A vektorrendszer lineáris burkában minden elem egyetlen egy féle képpen áll elő,
+            mint az $y_1,\dots,y_n$ vektorok lineáris kombinációja.
+        \item Az $y_1,\dots,y_n$ vektoroknak csak a triviális lináris kombinációja zérus,
+            azaz
+            \[
+                \sum_{j=1}^n\alpha_jy_j=0\text{ esetén }\alpha_1=\alpha_2=\dots=\alpha_n=0.
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Nyilvánvaló a lineáris összefüggés karakterizációjából.
+\end{proof}
+\begin{definition}[maximális lineárisan független-- és minimális generátorrendszer]\index{maximális lineárisan független rendszer}\index{minimális generátorrendszer}
+    Egy lineárisan független rendszert \emph{maximális lineárisan független rendszernek} nevezünk,
+    ha nem lehet bővíteni úgy, hogy lineárisan független maradjon.
+
+    Egy generátorrendszert \emph{minimális generátorrendszernek} mondunk, ha nem lehez szűkíteni úgy,
+    hogy generátorrendszer maradjon.
+\end{definition}
+\begin{proposition}
+    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy vektorrendszere a $V$ vektortérnek.
+    Az alábbi feltevések ekvivalensek.
+    \begin{enumerate}
+        \item A vektorrendszer maximális lineárisan független rendszer.
+        \item A vektorrendszer minimális generátorrendszer.
+        \item A vektorrendszer egyszerre lineárisan független és generátorrendszer.
+    \end{enumerate}
+\end{proposition}
 
 \chapter{Vektortér bázisa}
 \begin{lemma}[generátorrendszer csere]
@@ -277,4 +391,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 22 Jul 2019 01:18:30 PM CEST
+Last Modified : Mon 22 Jul 2019 05:57:01 PM CEST
