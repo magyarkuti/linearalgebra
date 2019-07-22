@@ -73,9 +73,9 @@ A legfontosabb forrás \citep{PCSDI}.
     Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszere valamely vektortérnek,
     és tegyük fel, hogy valamely $y$ vektorra
     \[
-        y=\sum_{j=1}^m\xi_jx_j,
+        y=\sum_{j=1}^m\eta_jx_j,
     \]
-    ahol $\xi_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
+    ahol $\eta_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
     Ekkor $y$ becserélhető a $k$-adik helyen a generátorrendszerbe, 
     úgy hogy az generátorrendszer maradjon, azaz a
     \[
@@ -85,7 +85,46 @@ A legfontosabb forrás \citep{PCSDI}.
     \label{le:gencsere}
 \end{lemma}
 \begin{proof}
-    Könnyű.
+    Fejezzük ki $x_k$-t az $y$-ra feírt formulából:
+    \(
+        x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
+    \)
+    Ha $z$ eredetileg 
+    \[
+        z=\sum_{j=1}^m\zeta_jx_j
+    \]
+    alakú, akkor $x_k$ helyére betéve, a fent kifejezett formulát és bevezetve a 
+    $\delta=\frac{\zeta_k}{\eta_k}$ jelölést, azt kapjuk hogy:
+    \begin{multline*}
+        z=\zeta_kx_k+\sum_{j=1,j\neq k}^m\zeta_jx_j=
+        \\
+        =
+        \zeta_k
+            \left( 
+                \frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j
+            \right)
+            +\sum_{j=1,j\neq k}^m\zeta_jx_j
+        =
+        \frac{\zeta_k}{\eta_k}y+
+        \sum_{j=1,j\neq k}^m\left( \zeta_j-\frac{\zeta_k}{\eta_k}\eta_j \right)x_j=
+        \\
+        =\delta y+
+        \sum_{j=1,j\neq k}^m\left( \zeta_j-\delta\eta_j \right)x_j.
+    \end{multline*}
+    Azt kaptuk tehát, hogy ha egy vektor kifejezhető az eredeti vektorrendszerből az 
+    \[
+        \left( \zeta_1,\dots,\zeta_m \right) 
+    \]
+    együtthatókkal, akkor ugyanez a vektor a módosított vektorrendszerből is kifejezhető,
+    méghozzá az 
+    \[
+        \left( \zeta_1-\delta\eta_1,\zeta_2-\delta\eta_2,\dots,
+        \zeta_{k-1}-\delta\eta_{k-1},
+        \delta,
+        \zeta_{k+1}-\delta\eta_{k+1},\dots,
+        \zeta_m-\delta\eta_m\right)
+    \]
+    együtthatókkal.
 \end{proof}
 \begin{SL}
     Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer és az
@@ -145,4 +184,4 @@ A legfontosabb forrás \citep{PCSDI}.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 21 Jul 2019 09:10:10 AM CEST
+Last Modified : Mon 22 Jul 2019 11:02:04 AM CEST
