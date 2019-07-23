@@ -48,21 +48,22 @@
   {\popQED\endtrivlist\@endpefalse}
 \makeatother
 
+\newcommand{\addQEDstyle}[2]{\AtBeginEnvironment{#1}{\pushQED{\qed}\renewcommand{\qedsymbol}{#2}}\AtEndEnvironment{#1}{\popQED}}
+%% Ezt kellett belátni. trükkök:
+%% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
 \theoremstyle{plain}
-\newtheorem{propositionx}{állítás}[chapter]
-\newenvironment{proposition}
-    {\pushQED{\qed}\renewcommand{\qedsymbol}{$\Diamond$}\propositionx}
-    {\popQED\endpropositionx}
-\newtheorem{lemma}[propositionx]{lemma}
+\newtheorem{proposition}{állítás}[chapter]
+\newtheorem{lemma}[proposition]{lemma}
 \newtheorem*{SL}{Steinitz-lemma}
 %
 \theoremstyle{remark}
-\newtheorem{note}[propositionx]{megjegyzés}
+\newtheorem{note}[proposition]{megjegyzés}
 
 \theoremstyle{definition}
-\newtheorem{definition}[propositionx]{definíció}
-\newtheorem{corollary}[propositionx]{következmény}
+\newtheorem{definition}[proposition]{definíció}
+\newtheorem{corollary}[proposition]{következmény}
+\addQEDstyle{definition}{$\Diamond$}\addQEDstyle{proposition}{$\Diamond$}\addQEDstyle{lemma}{$\Diamond$}\addQEDstyle{note}{$\Diamond$}\addQEDstyle{corollary}{$\Diamond$}\addQEDstyle{SL}{$\Diamond$}
 
 \DeclareMathOperator{\lin}{lin}
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
@@ -108,14 +109,14 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
         \item Vannak olyan nem mind zérus $\alpha_1,\dots,\alpha_n$ skalárok, amellyekkel
             
             \[
-                \sum_{j=1}^n\alpha_jy_j=0.
+                \sum_{j=1}^n\alpha_jy_j=0.\qedhere
             \]
     \end{enumerate}
 \end{proposition}
 \begin{proof}
     Körben bizonyítunk.
     \begin{description}
-        \item[$1.\implies 2.$] 
+        \item[$1.\Rightarrow 2.$] 
         Tegyük fel, hogy $y_k=\sum_{j=1}^{k-1}\eta_jy_j+\sum_{j=k+1}^n\eta_jy_j$.
         Ekkor az alábbi együtthatórendszerek
         \[
@@ -126,14 +127,14 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
         a $k$-adik helyen biztosan különböznek, 
         hiszen $0\neq 1$, 
         és mind a két együtthatórendszerrel képzett lineáris kombináció ugyanazt az $y_k$ vektort eredményezi.
-    \item[$2.\implies 3.$]
+        \item[$2.\Rightarrow 3.$]
         Világos, hogy 
         \[
             0=z-z=
             \sum_{j=1}^n\left( \xi_j-\eta_j \right)y_j
         \]
         és a $k$-adik skalár nem zérus.
-    \item[$3.\implies 1.$]
+        \item[$3.\Rightarrow 1.$]
         Tegyük fel most, hogy 
         \(
         \sum_{j=1}^n\alpha_jy_j=0,
@@ -403,4 +404,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 23 Jul 2019 06:54:25 PM CEST
+Last Modified : Tue 23 Jul 2019 07:44:36 PM CEST
