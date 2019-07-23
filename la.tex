@@ -1,3 +1,4 @@
+%%la.tex
 \documentclass[9pt,showtrims]{memoir}
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
@@ -18,7 +19,7 @@
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
-\usepackage{amsmath,amsthm,fixme,natbib}
+\usepackage{amsmath,amsthm,amsfonts,fixme,natbib}
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
@@ -37,20 +38,31 @@
  {\printchaptername \chapternamenum \printchapternum}
  {\printchapternum.\@\chapternamenum \printchaptername}
  {}{}
+\renewenvironment{proof}[1][\proofname]
+  {\par\pushQED{\qed}%
+   \normalfont \topsep6\p@\@plus6\p@\relax
+   \trivlist
+   \item[\hskip\labelsep
+         \itshape
+         #1\@addpunct{:}]\ignorespaces}
+  {\popQED\endtrivlist\@endpefalse}
 \makeatother
 
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
 \theoremstyle{plain}
-\newtheorem{proposition}{állítás}[chapter]
-\newtheorem{lemma}[proposition]{lemma}
+\newtheorem{propositionx}{állítás}[chapter]
+\newenvironment{proposition}
+    {\pushQED{\qed}\renewcommand{\qedsymbol}{$\Diamond$}\propositionx}
+    {\popQED\endpropositionx}
+\newtheorem{lemma}[propositionx]{lemma}
 \newtheorem*{SL}{Steinitz-lemma}
 %
 \theoremstyle{remark}
-\newtheorem{note}[proposition]{megjegyzés}
+\newtheorem{note}[propositionx]{megjegyzés}
 
 \theoremstyle{definition}
-\newtheorem{definition}[proposition]{definíció}
-\newtheorem{corollary}[proposition]{Következmény}
+\newtheorem{definition}[propositionx]{definíció}
+\newtheorem{corollary}[propositionx]{következmény}
 
 \DeclareMathOperator{\lin}{lin}
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
@@ -141,7 +153,7 @@ Fontos észrevétel a következő.
     valamely lineárisan összefüggő vektorrendszert tartalmazó vektorrendszer maga is lineárisan összefüggő.
 \end{proposition}
 \begin{definition}
-    Egy nem feltétetlen végeg vektorrendszert lineárisan összefüggőnek nevezünk,
+    Egy nem feltétetlen véges vektorrendszert lineárisan összefüggőnek nevezünk,
     ha van véges részrendszere, amely lineárisan összefüggő.
 \end{definition}
 \begin{definition}[lineárisan független vektorrendszer]\index{lineárisan független rendszer}
@@ -159,7 +171,7 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
         \item Az $y_1,\dots,y_n$ vektoroknak csak a triviális lináris kombinációja zérus,
             azaz
             \[
-                \sum_{j=1}^n\alpha_jy_j=0\text{ esetén }\alpha_1=\alpha_2=\dots=\alpha_n=0.
+                \sum_{j=1}^n\alpha_jy_j=0\text{ esetén }\alpha_1=\alpha_2=\dots=\alpha_n=0.\qedhere
             \]
     \end{enumerate}
 \end{proposition}
@@ -179,7 +191,7 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
     \begin{enumerate}
         \item A vektorrendszer maximális lineárisan független rendszer.
         \item A vektorrendszer minimális generátorrendszer.
-        \item A vektorrendszer egyszerre lineárisan független és generátorrendszer.
+        \item A vektorrendszer egyszerre lineárisan független és generátorrendszer.\qedhere
     \end{enumerate}
 \end{proposition}
 
@@ -305,10 +317,10 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
     lineárisan független generátorrendszerek, akkor $n=m$.
     \label{co:baziselemszam}
 \end{corollary}
-\begin{definition}
+\begin{definition}[végesen generált vektortér]\index{végesen generált vektortér}
     Egy vektorteret \emph{végesen generáltnak} nevezünk,
     ha létezik véges elemszámú generátorrendszere.
-\end{definition}[végesen generált vektortér]\index{végesen generált vektortér}
+\end{definition}
 \begin{proposition}
     Minden végesen generált vektortérnek van olyan vektorrendszere, 
     amely egyszerre lineárisan független és generátorrendszer.
@@ -391,4 +403,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 22 Jul 2019 05:57:01 PM CEST
+Last Modified : Tue 23 Jul 2019 06:54:25 PM CEST
