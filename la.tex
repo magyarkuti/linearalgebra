@@ -107,7 +107,6 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
             létezik z\in V, amelyre $z=\sum_{j=1}^n\xi_jy_j$ és $z=\sum_{j=1}^n\eta_jy_j$
             és létezik $1\leq k\leq n$, amelyre $\xi_k\neq\eta_k$.
         \item Vannak olyan nem mind zérus $\alpha_1,\dots,\alpha_n$ skalárok, amellyekkel
-            
             \[
                 \sum_{j=1}^n\alpha_jy_j=0.\qedhere
             \]
@@ -191,11 +190,46 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
     Az alábbi feltevések ekvivalensek.
     \begin{enumerate}
         \item A vektorrendszer maximális lineárisan független rendszer.
-        \item A vektorrendszer minimális generátorrendszer.
-        \item A vektorrendszer egyszerre lineárisan független és generátorrendszer.\qedhere
+        \item A vektorrendszer egyszerre lineárisan független és generátorrendszer.
+        \item A vektorrendszer minimális generátorrendszer.\qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Az alábbi lépéseket követjük.
+    \begin{itemize}
+        \item[1.\Rightarrow 2.]
+            Ha a vektorrendszer nem lenne generátorrendszer is,
+            akkor a lineáris burkán kívül lenne egy vektor.
+            Ezt a vektorrendszerhez illesztve, a vektorrendszer egy valódi lineárisan független bővítését kapjuk,
+            ami ellentmond a maximalitás feltételének.
+        \item[3.\Rightarrow 2.]
+            Ha a vektorrendszer egyik eleme a többi elem lineáris kombinációja,
+            akkor azt az elemet elhagyva is generátorrendszert kapunk,
+            ami ellentmond a minimalitás feltételének.
+        \item[2.\Rightarrow 1.]
+            Ha nem lenne maximális a lineárisan független tulajdonságra nézve,
+            akkor létezne egy vektor a lineáris burkán kívül is,
+            ami ellentmond a generátorrendszer tulajdonságnak.
+        \item[2.\Rightarrow 3.]
+            Mivel a vektorrendszer egyik eleme, sincs a többi lineáris burkában,
+            ezért egyetlen elemet sem hagyhatunk el a generátorrendszer tulajdonság megtartásával,
+            ami azt jelenti, hogy ez egy minimális generátorrendszer.\qedhere
+    \end{itemize}
+\end{proof}
+Egy a zéró vektort tartalmazó vektorrendszer persze lineárisan összefüggő, 
+és egy nem zérus vektorból álló egyelemű vektorrendszer lineárisan független.
+A következő állítás sokszor teszi kényelmessé a gondolatmenetünket. 
+\begin{proposition}
+    Legyen $\left\{ y_1,\dots,y_n \right\}$ egy olyan legalább két elemű vektorrendszer,
+    amelynek első eleme nem a zérus vektor, tehát $y_1\neq 0$.
+    A vektorrendszer pontosan akkor lineárisan összefüggő,
+    ha létezik olyan eleme, 
+    amely pusztán az előző elemek lineárisan kombinációja.
 
+    Formálisabban: akkor és csak akkor, 
+    ha 
+    $\exists k\quad 2\leq k\leq n : y_k\in\lin\left\{ y_1,\dots,y_{k-1} \right\}$
+\end{proposition}
 \chapter{Vektortér bázisa}
 \begin{lemma}[generátorrendszer csere]
     Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszere valamely vektortérnek,
@@ -404,4 +438,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 23 Jul 2019 07:44:36 PM CEST
+Last Modified : Tue 23 Jul 2019 08:41:06 PM CEST
