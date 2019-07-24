@@ -38,7 +38,7 @@
 %\makeoddhead{myheadings}{\footnotesize\selectfont\sffamily\leftmark}{}{\footnotesize\selectfont\sffamily\thepage}
 %\makeevenhead{myheadings}{\footnotesize\selectfont\sffamily\thepage}{}{\footnotesize\selectfont\sffamily\rightmark}
 \makeoddhead{myheadings}{\footnotesize\leftmark}{}{\footnotesize\thepage}
-\makeevenhead{myheadings}{\footnotesize\thepage}{}{\footnotesize\rightmark}
+\makeevenhead{myheadings}{\footnotesize\thepage}{\footnotesize\myBotmark}{\footnotesize\rightmark}
 \makepsmarks{myheadings}{%
     \renewcommand\chaptermark[1]{%
     \markboth{%
@@ -71,6 +71,7 @@
 %% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
 \theoremstyle{plain}
+
 \newtheorem{proposition}{állítás}[chapter]
 \newtheorem{lemma}[proposition]{lemma}
 \newtheorem*{SL}{Steinitz-lemma}
@@ -82,6 +83,25 @@
 \newtheorem{definition}[proposition]{definíció}
 \newtheorem{corollary}[proposition]{következmény}
 \addQEDstyle{definition}{$\Diamond$}\addQEDstyle{proposition}{$\Diamond$}\addQEDstyle{lemma}{$\Diamond$}\addQEDstyle{note}{$\Diamond$}\addQEDstyle{corollary}{$\Diamond$}\addQEDstyle{SL}{$\Diamond$}
+
+
+%%% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
+% \myBotmark feltöltése a lapon lévő utolsó tétel környezettel
+\makeatletter
+\@ifdefinable\@my@claim@mark{\newmarks\@my@claim@mark}
+\newcommand*\myMark[1]{\marks\@my@claim@mark{#1}}
+\newcommand*\myBotmark{\botmarks\@my@claim@mark}
+    \patchcmd{\@begintheorem}{% search for:
+        \thm@swap\swappedhead\thmhead % more specific than before
+    }{% replace with:
+        \myMark{#2.\@ifnotempty{#1}{\ #1}\@ifnotempty{#3}{\ (#3)}}%
+        \thm@swap\swappedhead\thmhead
+    }{
+        \typeout{>>> Made patch specific for amsthm.}
+    }{
+        \typeout{>>> Patch specific for amsthm FAILED!}
+    }
+\makeatother
 
 \DeclareMathOperator{\lin}{lin}
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
@@ -526,4 +546,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 24 Jul 2019 11:03:36 AM CEST
+Last Modified : Wed 24 Jul 2019 05:52:00 PM CEST
