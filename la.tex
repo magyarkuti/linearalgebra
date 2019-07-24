@@ -80,6 +80,7 @@ A legfontosabb forrás \citep{PCSDI}.
 
 \noindent Budapest, \today
 \tableofcontents*
+\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
@@ -230,7 +231,37 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
     ha 
     $\exists k\quad 2\leq k\leq n : y_k\in\lin\left\{ y_1,\dots,y_{k-1} \right\}$
 \end{proposition}
+\begin{proof}
+    Tegyük fel, hogy a vektorrendszer lineárisan összefüggő.
+    Ekkor van olyan a zérus vektort eredményező lineáris kombinációja
+    \(
+    \alpha_1y_1+\dots+\alpha_ny_n=0,
+    \)
+    ahol nem az összes együttható nulla.
+    Legyen $k$ a lineáris kombinációban a legnagyobb nem nulla együttható indexe.
+    Világos, hogy $k\neq 1$, 
+    hiszen $y_1\neq 0$.
+    Persze a $k$ feletti együtthatók mind nullák,
+    emiatt
+    \[
+        \alpha_1y_1+\dots+\alpha_ky_k=0.
+    \]
+    Itt már $\alpha_k\neq 0$, tehát $y_k$ kifejezhető:
+    \[
+        y_k=
+        \frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k-1}}\alpha_{k-1}y_{k-1}.\qedhere
+    \]
+\end{proof}
 \chapter{Vektortér bázisa}
+\scwords A Steinitz-lemma fontosságát kell kiemelni.
+A Steinitz-lemma legegyszerűbb megfogalmazásában azt állítja, 
+hogy \emph{egy lineárisan független rendszer elemszáma, soha nem nagyobb mint egy generátorrendszer elemszáma.}
+Ez a tény vezet a bázis és a dimenzió fogalmához.
+
+A generátorrendszer cseréről szóló legelső lemmának is fontos szerepe van az itt választott felépítésben.
+Egyrészt használjuk a Steinitz-lemma igazolásában, másrészt ennek segítségével tisztázzuk majd azt a kérdést,
+hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkoztatási rendszert változtatjuk.
+
 \begin{lemma}[generátorrendszer csere]
     Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszere valamely vektortérnek,
     és tegyük fel, hogy valamely $y$ vektorra
@@ -344,7 +375,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
     amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
 \begin{corollary}
-    Egy vektortérben bármely két véges egyszerre lineárisan független és egyszerre generátorrendszer elmeszáma azonos.
+    Egy vektortérben bármely két véges egyszerre lineárisan független és egyszerre generátorrendszer elemszáma azonos.
     Konkrétabban, ha
     \[
         \left\{ x_1,\dots,x_m \right\} \text{ és } \left\{ y_1,\dots,y_n \right\}
@@ -356,6 +387,9 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
     Egy vektorteret \emph{végesen generáltnak} nevezünk,
     ha létezik véges elemszámú generátorrendszere.
 \end{definition}
+Teljesen világos, hogy ha van egy vektortérben véges generátorrendszer,
+akkor van minimális generátorrendszer is, azaz van a térben lineárisan független generátorrendszer.
+Ezt rögzítjük a következőekben.
 \begin{proposition}
     Minden végesen generált vektortérnek van olyan vektorrendszere, 
     amely egyszerre lineárisan független és generátorrendszer.
@@ -363,8 +397,8 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
 \end{proposition}
 \begin{proof}
     Tekintsünk egy véges generátorrendszert.
-    Ha minden elem kívül esik a többi elem lineáris burkában, akkor a rendszer linárisan független, és készen is vagyunk.
-    Ha van olyan elem, amely a többi lineáris burkában van, akkor dobjuk el ezt az elemet, és tekintsük, a most már
+    Ha minden elem kívül esik a többi elem lineáris burkában, akkor a rendszer lineárisan független, és készen is vagyunk.
+    Ha van olyan elem, amely a többi elem lineáris burkában van, akkor dobjuk el ezt az elemet, és tekintsük, a most már
     eggyel kevesebb elemből álló vektorrendszert. 
     Világos, hogy ez is generátorrendszer marad.
 
@@ -392,6 +426,40 @@ Fontos látni, hogy éppen azt gondoltuk meg, hogy \emph{minden végesen generá
 és \emph{bármely két bázis pontosan annyi vektorból áll mint a tér dimenziója.}
 A végesen generált vektortereket sokszor szinonimaként \emph{véges dimenziósnak} is mondjuk.\index{véges dimenziós}
 
+Az eddigiek összefoglalásaként is tekinthető a következő állítás.
+\begin{proposition}
+    Tekintsünk egy $m$-dimenziós vektorteret, és abban egy $m$-elemű
+    $\left\{ x_1,\dots,x_m \right\}$
+    vektorrendszert.
+    E vektorrendszerre tett alábbi feltevések ekvivalensek.
+    \begin{enumerate}
+        \item Lineárisan független;
+        \item Maximális lineárisan független rendszer;
+        \item Generátorrendszer;
+        \item Minimális generátorrendszer;
+        \item Bázis.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Az első négy feltétel ekvivalenciájával kezdünk.
+    \begin{itemize}
+        \item[1.\Rightarrow 2.]
+            Mivel a tér $m$-dimenziós, ezért van $m$-elemű generátorrendszere,
+            így a Steinitz-lemma szerint nincs $m$-nél több elemet tartalmazó lineárisan független
+            rendszere, ergo bármely $m$ elemet tartalmazó lineárisan független rendszer maximális is.
+        \item[2.\Rightarrow 3.]
+            Láttuk korábban.
+        \item[3.\Rightarrow 4.]
+            Mivel a tér $m$-dimenziós, ezért van $m$-elemű lineárisan független rendszere,
+            így a Steinitz-lemma szerint nincs $m$-nél kevesebb elemet tartalmazó generátorrendszere,
+            ergo bármely $m$ elemet tartalmazó generátorrendszer rendszer minimális is.
+        \item[4.\Rightarrow 1.]
+            Láttuk korábban.
+    \end{itemize}
+
+    Az első négy feltétel tehát ugyanazt jelenti. 
+    Így ha 1.-et feltesszük, akkor 3. is fennáll, ami azt jelenti, hogy 1. feltétel és 5. feltétel is ekvivalensek.
+\end{proof}
 A Steinitz-lemma kulcs szerepet játszott dimenzió fogalmának megértésében,
 hiszen a bázis elemszáma nem lehetne a tér dimenziója, anélkül hogy tudnánk a tényt: 
 bármely két bázis azonos elemszámú! 
@@ -411,14 +479,9 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
     Legyen $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független.
     A Steinitz-lemma szerint ez a rendszer kiterjesztehő egy 
     \[
-        \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}\tag{\dag}
+        \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
     \]
-    generátorrendszerré.
-    Ha ez nem lenne lineárisan független,
-    akkor lenne olyan eleme, amelynek elhagyásával $m-1$ elemű generátorrendszert kapnánk.
-    No de ez képtelenség, hiszen a bázis $m$ elemű lineárisan független rendszer,
-    és a Steinitz-lemma éppen azt állítja, hogy ilyen helyzet nem lehetséges.
-    Tehát a fenti (\dag) rendszer egy bázis.
+    generátorrendszerré, ami persze bázis is.
     Ezt kellett belátni. 
 \end{proof}
 
@@ -431,6 +494,8 @@ rendszer lineárisan független generátorrendszerré váljon.
 
 
 
+\chapter{Koordinátázás}
+\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
 \begin{thebibliography}{MMMMMMMMM}
     \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
         Dancs István, Puskás Csaba: \textit{Vektorterek}, Aula kiadó 2001, Budapest, ISBN:963 9345 53 9, BCE Catalogue: bcek.379187.
@@ -438,4 +503,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 23 Jul 2019 08:41:06 PM CEST
+Last Modified : Wed 24 Jul 2019 07:15:00 AM CEST
