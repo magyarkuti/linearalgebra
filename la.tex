@@ -32,6 +32,24 @@
 \setsecheadstyle{\Large\sffamily\bfseries\raggedright}
 \setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
 \setsubsubsecheadstyle{\sffamily\bfseries\raggedright}
+
+
+\nouppercaseheads
+%\makeoddhead{myheadings}{\footnotesize\selectfont\sffamily\leftmark}{}{\footnotesize\selectfont\sffamily\thepage}
+%\makeevenhead{myheadings}{\footnotesize\selectfont\sffamily\thepage}{}{\footnotesize\selectfont\sffamily\rightmark}
+\makeoddhead{myheadings}{\footnotesize\leftmark}{}{\footnotesize\thepage}
+\makeevenhead{myheadings}{\footnotesize\thepage}{}{\footnotesize\rightmark}
+\makepsmarks{myheadings}{%
+    \renewcommand\chaptermark[1]{%
+    \markboth{%
+%      \ifnum \value{secnumdepth} > 1
+%      \if@mainmatter %
+            \thechapter.~\chaptername:~%
+%      \fi
+%      \fi
+      ##1}{\thepart.~\partname}}%
+}
+
 \makeatletter
 \newcommand\arraybslash{\let\\\@arraycr}
 \patchcmd{\@makechapterhead}
@@ -71,6 +89,7 @@
 \makeindex
 \synctex=1
 \begin{document}
+\frontmatter*
 \chapter*{Előszó}
 \scwords Hogy nekem mennyi bajom van.
 A legfontosabb forrás \citep{PCSDI}.
@@ -80,6 +99,8 @@ A legfontosabb forrás \citep{PCSDI}.
 
 \noindent Budapest, \today
 \tableofcontents*
+\pagestyle{myheadings}
+\mainmatter*
 \part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
@@ -497,6 +518,7 @@ rendszer lineárisan független generátorrendszerré váljon.
 
 \chapter{Koordinátázás}
 \part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
+\backmatter
 \begin{thebibliography}{MMMMMMMMM}
     \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
         Dancs István, Puskás Csaba: \textit{Vektorterek}, Aula kiadó 2001, Budapest, ISBN:963 9345 53 9, BCE Catalogue: bcek.379187.
@@ -504,4 +526,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 24 Jul 2019 07:21:46 AM CEST
+Last Modified : Wed 24 Jul 2019 11:03:36 AM CEST
