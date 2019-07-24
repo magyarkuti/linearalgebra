@@ -21,4 +21,7 @@ De:
 ## LaTeX beállítások
 1. Gitinfo2 globálisan. Lásd: <https://mimischi.github.io/blog/latex-with-git-revisions/>.
 2. Fordítás: 
-    latexmk --lualatex la
+    latexmk --lualatex
+
+Fontos, hogy semmi trükk nincs a LaTeX környetben, standard texlive, vagy Windows-on MikTeX, installáció után a fenti parancs hiba nélkül fordít.
+(Nem commit-álunk szintaktikailag helytelen file-t.)
