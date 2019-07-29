@@ -104,6 +104,11 @@
 \makeatother
 
 \DeclareMathOperator{\lin}{lin}
+\DeclareMathOperator{\crank}{crank}
+\DeclareMathOperator{\rrank}{rrank}
+\DeclareMathOperator{\srank}{srank}
+\DeclareMathOperator{\rank}{rank}
+%\DeclareMathOperator{\dim}{dim}
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \citeindextrue
 \makeindex
@@ -158,34 +163,34 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
     Körben bizonyítunk.
     \begin{description}
         \item[$1.\Rightarrow 2.$] 
-        Tegyük fel, hogy $y_k=\sum_{j=1}^{k-1}\eta_jy_j+\sum_{j=k+1}^n\eta_jy_j$.
-        Ekkor az alábbi együtthatórendszerek
-        \[
-            \left( \alpha_1,\dots,\alpha_{k-1},0,\alpha_{k+1},\dots,\alpha_n \right)
-            \qquad
-            \left( 0,\dots,0,1,0,\dots,0 \right)
-        \]
-        a $k$-adik helyen biztosan különböznek, 
-        hiszen $0\neq 1$, 
-        és mind a két együtthatórendszerrel képzett lineáris kombináció ugyanazt az $y_k$ vektort eredményezi.
+            Tegyük fel, hogy $y_k=\sum_{j=1}^{k-1}\eta_jy_j+\sum_{j=k+1}^n\eta_jy_j$.
+            Ekkor az alábbi együtthatórendszerek
+            \[
+                \left( \alpha_1,\dots,\alpha_{k-1},0,\alpha_{k+1},\dots,\alpha_n \right)
+                \qquad
+                \left( 0,\dots,0,1,0,\dots,0 \right)
+            \]
+            a $k$-adik helyen biztosan különböznek, 
+            hiszen $0\neq 1$, 
+            és mind a két együtthatórendszerrel képzett lineáris kombináció ugyanazt az $y_k$ vektort eredményezi.
         \item[$2.\Rightarrow 3.$]
-        Világos, hogy 
-        \[
-            0=z-z=
-            \sum_{j=1}^n\left( \xi_j-\eta_j \right)y_j
-        \]
-        és a $k$-adik skalár nem zérus.
+            Világos, hogy 
+            \[
+                0=z-z=
+                \sum_{j=1}^n\left( \xi_j-\eta_j \right)y_j
+            \]
+            és a $k$-adik skalár nem zérus.
         \item[$3.\Rightarrow 1.$]
-        Tegyük fel most, hogy 
-        \(
-        \sum_{j=1}^n\alpha_jy_j=0,
-        \)
-        és, hogy $\alpha_k\neq 0.$
-        Ekkor 
-        \[
-            y_k=\sum_{j=1,j\neq k}^n-\frac{1}{\alpha_k}\alpha_jy_j
-        \]
-        azaz a $k$-adik vektor tekinthető mint a többi vektor valamely lineáris kombinációja.
+            Tegyük fel most, hogy 
+            \(
+            \sum_{j=1}^n\alpha_jy_j=0,
+            \)
+            és, hogy $\alpha_k\neq 0.$
+            Ekkor 
+            \[
+                y_k=\sum_{j=1,j\neq k}^n-\frac{1}{\alpha_k}\alpha_jy_j
+            \]
+            azaz a $k$-adik vektor tekinthető mint a többi vektor valamely lineáris kombinációja.
     \end{description}
     Ezt kellett belátni. 
 \end{proof}
@@ -199,7 +204,7 @@ Fontos észrevétel a következő.
     ha van véges részrendszere, amely lineárisan összefüggő.
 \end{definition}
 \begin{definition}[lineárisan független vektorrendszer]\index{lineárisan független rendszer}
-        Egy vektorrendszer \emph{lineárisan független}, ha nem lineárisan összefüggő.
+    Egy vektorrendszer \emph{lineárisan független}, ha nem lineárisan összefüggő.
 \end{definition}
 Így egy nem véges vektorrendszer akkor lineárisan független, ha minden véges részrendszere is az.
 Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egymással ekvivalens állítások karakterizálják.
@@ -321,7 +326,7 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
 \begin{proof}
     Fejezzük ki $x_k$-t az $y$-ra feírt formulából:
     \(
-        x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
+    x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
     \)
     Ha $z$ eredetileg 
     \[
@@ -334,10 +339,10 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
         \\
         =
         \zeta_k
-            \left( 
-                \frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j
-            \right)
-            +\sum_{j=1,j\neq k}^m\zeta_jx_j
+        \left( 
+        \frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j
+        \right)
+        +\sum_{j=1,j\neq k}^m\zeta_jx_j
         =
         \frac{\zeta_k}{\eta_k}y+
         \sum_{j=1,j\neq k}^m\left( \zeta_j-\frac{\zeta_k}{\eta_k}\eta_j \right)x_j=
@@ -376,11 +381,11 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
             \]
             vektorrendszer is generátorrendszer.%
             \footnote{Úgy kell a jelöléseket érteni, hogy az $n=0$, de az $n=m$ eset is lehetséges. 
-            Az $n=0$ esetben az $y$-okkal jelölt vektorok egyike sem,
-            míg az $n=m$ esetben az $x$-el jelölt vektorok egyike sem szerepel az 
-            \(
+                Az $n=0$ esetben az $y$-okkal jelölt vektorok egyike sem,
+                míg az $n=m$ esetben az $x$-el jelölt vektorok egyike sem szerepel az 
+                \(
                 \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
-            \)
+                \)
             vektorrendszer elemei közt.}%
             \qedhere
     \end{enumerate}
@@ -401,17 +406,17 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
     Ha $k<n$ lenne, 
     \begin{itemize}
         \item 
-        akkor létezne $y_{k+1}$ vektor.
-        No de, ez az $y_{k+1}$ nem szerepel az $\left\{ y_1,\dots,y_k \right\}$ lineáris burkában,
-        ami (\dag) generátorrendszer volta miatt csak úgy lehetséges, hogy $k<m$, 
-        ergo $k+1\leq m$.
+            akkor létezne $y_{k+1}$ vektor.
+            No de, ez az $y_{k+1}$ nem szerepel az $\left\{ y_1,\dots,y_k \right\}$ lineáris burkában,
+            ami (\dag) generátorrendszer volta miatt csak úgy lehetséges, hogy $k<m$, 
+            ergo $k+1\leq m$.
         \item
-        \Aref{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor 
-        avval az $x$-el
-        --- a generátorrendszer tulajdonság megtartásával is --- 
-        kicserélhető, 
-        amely $x$ szerepel az $y_{k+1}$ vektornak a (\dag)-beli
-        vektorokkal képzett lineáris kombinációjában. 
+            \Aref{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor 
+            avval az $x$-el
+            --- a generátorrendszer tulajdonság megtartásával is --- 
+            kicserélhető, 
+            amely $x$ szerepel az $y_{k+1}$ vektornak a (\dag)-beli
+            vektorokkal képzett lineáris kombinációjában. 
     \end{itemize}
     Ez ellentmondás, hiszen $k$ a legnagyobb olyan szám, 
     amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
@@ -537,6 +542,31 @@ rendszer lineárisan független generátorrendszerré váljon.
 
 
 \chapter{Koordinátázás}
+\section{Rangtétel}
+\begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
+    Egy véges vektorrendszer \emph{rangján} a vektorrendszer generálta altér dimenzióját értjük.
+    Egy mátrix \emph{oszloprangján} a mátrix oszlopai mint vektorrendszer rangját értjük.
+    Egy mátrix \emph{sorrangján} a mátrix sorai mint vektorrendszer rangját értjük.
+    Ha $A\in\mathbb{F}^{n\times m}$ nemzérus mátrix,
+    akkor legkisebb olyan $r$ számot, amelyre
+    létezik $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$ mátrix úgy, hogy 
+    $A=BC$ szorzatfelbontás teljesül,
+    az $A$ mátrix \emph{feszítőrangjának} nevezzük.
+
+    Jelölések: Ha $\left\{ x_1,\dots,x_m \right\}$ a szóbanforgó vektorrendszer, akkor
+    \[
+        \rank\left\{ x_1,\dots,x_m \right\}=\dim\lin\left\{ x_1,\dots,x_m \right\}
+    \]
+    Ha $A\in\mathbb{F}^{n\times m}$ egy mátrix,
+    akkor 
+    \[
+        \crank{A}=\rank\left\{ [A]^{j}:j=1,\dots,m \right\},
+        \quad
+        \rrank{A}=\rank\left\{ [A]_k:k=1,\dots,n\right\},
+    \]
+    továbbá $\srank{A}$ jelöli a feszítőrangját $A$-nak.
+\end{definition}
+
 \part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
 \backmatter
 \begin{thebibliography}{MMMMMMMMM}
@@ -546,4 +576,4 @@ rendszer lineárisan független generátorrendszerré váljon.
 \printindex
 \end{document}
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 25 Jul 2019 11:31:39 AM CEST
+Last Modified : Mon 29 Jul 2019 05:23:08 PM CEST
