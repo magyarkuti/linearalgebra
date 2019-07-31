@@ -19,7 +19,8 @@
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
-\usepackage{amsmath,amsthm,amsfonts,fixme,natbib}
+\usepackage{amsmath,amsthm,amsfonts,fixme}
+\usepackage[numbers]{natbib}
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
@@ -103,6 +104,7 @@
     }
 \makeatother
 
+\renewcommand{\mathbf}{\mathbb}
 \DeclareMathOperator{\lin}{lin}
 \DeclareMathOperator{\crank}{crank}
 \DeclareMathOperator{\rrank}{rrank}
@@ -117,7 +119,7 @@
 \frontmatter*
 \chapter*{Előszó}
 \scwords Hogy nekem mennyi bajom van.
-A legfontosabb forrás \citep{PCSDI}.
+A legfontosabb forrás \citep{DancsPuskas2001}.
 
 \noindent MGy
 
@@ -541,8 +543,9 @@ rendszer lineárisan független generátorrendszerré váljon.
 
 
 
-\chapter{Koordinátázás}
+Hi\chapter{Koordinátázás}
 \section{Rangtétel}
+
 \begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
     Egy véges vektorrendszer \emph{rangján} a vektorrendszer generálta altér dimenzióját értjük.
     Egy mátrix \emph{oszloprangján} a mátrix oszlopai mint vektorrendszer rangját értjük.
@@ -566,14 +569,97 @@ rendszer lineárisan független generátorrendszerré váljon.
     \]
     továbbá $\srank{A}$ jelöli a feszítőrangját $A$-nak.
 \end{definition}
+\begin{proposition}
+    Tetszőleges test feletti tetszőleges mátrix mellett, a fent bevezett három rang-koncepció azonos.
+
+    Formálisabban: Minden $A\in\mathbb{F}^{n\times m}$ mellett
+    \[
+        \crank{A}=\srank{A}=\rrank{A}\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Induljunk ki a feszítőrang fogalmából.
+    Legyen $r=\srank{A}$, és 
+    \[
+        A=BC,\tag{\dag}
+    \]
+    ahol $B\in\mathbf{F}^{n\times r},C\in\mathbf{F}^{r\times m}$.
+    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátorrendszere $A$ oszlopvektorterének
+    és $C$ sorrendszere minimális generátorrendszere $A$ sorvektorterének.
+
+    Vegyük észre, hogy $\srank{A}\leq \crank{A}$.
+    Ugyanis ha az $A$ mátrix oszlopvektorterének veszünk egy tetszőleges választott
+    $b_1,\dots,b_k$ generátorrendszerét, 
+    akkor van $B\in\mathbf{F}^{n\times k}$ és $C\in\mathbf{F}^{k\times m}$ mátrix, hogy $A=BC$.
+    Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\crank{A}$.
+    \\
+    Most tekintsük a (\dag)-ben rögzített szorzatot.
+    Jelölje $W$ a $B$ mátrix és $V$ az $A$ mátrix oszlopvektorterét.
+    Mivel $BC$ oszlopai $B$ oszlopainak lineáris kombinációja, 
+    ezért $A$ minden oszlopa beleesik $W$-be, 
+    így az $A$ oszlopainak lineáris burka is részhalmaza $W$-nek,
+    azaz 
+    \[
+        V\subseteq W.
+    \]
+    A $B$ mátrixnak $r$ darab oszlopa van, 
+    tehát $\dim W\leq r$.
+    Látjuk tehát, hogy 
+    \[\dim W\leq r\leq\crank{A}=\dim V,
+    \]
+    ami csak úgy lehetséges, 
+    hogy $V=W$.
+    A $B$ oszlopai tehát $V$-nek is generátorrendszerét alkotját,
+    és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
+    elvesztése nélkül.
+
+    A sorokra vonatkozó indoklás analóg.
+    Először is $\srank{A}\leq \rrank{A}$.
+    Ugyanis ha az $A$ mátrix sorvektorterének veszünk egy tetszőleges választott
+    $c_1,\dots,c_k$ generátorrendszerét, 
+    akkor van $B\in\mathbf{F}^{n\times k}$ és $C\in\mathbf{F}^{k\times m}$ mátrix, hogy $A=BC$.
+    Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\rrank{A}$.
+    \\
+    Most tekintsük a (\dag)-ben rögzített szorzatot.
+    Jelölje $W$ a $C$ mátrix és $V$ az $A$ mátrix sorvektorterét.
+    Mivel $BC$ sorai $C$ sorainak lineáris kombinációja, 
+    ezért $A$ minden sora $W$-be esik,
+    így az $A$ sorainak lineáris burka is részhalmaza $W$-nek,
+    azaz 
+    \[
+        V\subseteq W.
+    \]
+    A $C$ mátrixnak $r$ sora van, 
+    tehát $\dim W\leq r$.
+    Látjuk tehát, hogy 
+    \[\dim W\leq r\leq\crank{A}=\dim V,
+    \]
+    ami csak úgy lehetséges, 
+    hogy $V=W$.
+    A $C$ oszlopai tehát $V$-nek is generátorrendszerét alkotját,
+    és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
+    elvesztése nélkül.
+
+    Ezt kellett belátni. 
+\end{proof}
+\begin{definition}[mátrix rangja]\index{mátrix rangja}
+    Mivel a sorrang, az oszloprang, a feszítőrang minden mátrix mellett azonos,
+    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \citep{Wardlaw2005}}
+\end{definition}
 
 \part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
 \backmatter
+\pagestyle{empty}
+\bibliographystyle{plainurl}
+\bibliography{la.bib}
+\printindex
+
+\end{document}
+
 \begin{thebibliography}{MMMMMMMMM}
     \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
         Dancs István, Puskás Csaba: \textit{Vektorterek}, Aula kiadó 2001, Budapest, ISBN:963 9345 53 9, BCE Catalogue: bcek.379187.
 \end{thebibliography}
-\printindex
-\end{document}
+
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 29 Jul 2019 05:23:08 PM CEST
+Last Modified : Wed 31 Jul 2019 06:19:38 AM CEST
