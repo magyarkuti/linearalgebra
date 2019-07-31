@@ -666,13 +666,18 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     az előző megjegyzés szerint $A$ oszlopai $\mathbb{F}^n$ lineárisan független rendszerét alkotják.
     Vegyük észre, hogy a mátrix szorzás asszociativitását is kihasználva
     \[
-        A\left( BA-I \right)=A\left( BA \right)-A=\left( AB \right)A-A=IA-A=A-A=0.
+        A\left( BA-I \right)=A\left( BA \right)-AI=\left( AB \right)A-AI=IA-AI=A-A=0.
     \]
-    Namost, ha $BA\neq I$ lenne, akkor a $BA-I$ mátrixnak lenne egy nem zérus oszlopa, 
-    úgy, hogy ez oszlop elemeivel mint együtthatókkal képzett lineáris kombinációja az $A$ mátrix oszlopainak 
+    Namost, 
+    ha $BA\neq I$ lenne, 
+    akkor a $BA-I$ mátrixnak lenne egy olyan nem zérus oszlopa, 
+    melynek elemeivel mint együtthatókkal képzett lineáris kombinációja az $A$ oszlopainak 
     a zéro vektort eredményezi.
     Ez persze ellentmond az $A$ oszloprendszer lineáris függetlenségének,
-    tehát $BA=I$ valóban fennáll.
+    tehát $BA=I$ valóban fennáll.%
+    \footnote{%
+        A feszítőrang fogalmának ismerete nélküli -- talán még elemibb -- bizonyítás: \citep{doi:10.4169/college.math.j.48.5.366}%
+    }%
 \end{proof}
 \begin{defprop}[invertálható mátrix]
     Legyen $A\in\mathbb{F}^{n\times n}$ egy négyzetes mátrix.
@@ -722,4 +727,4 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 31 Jul 2019 04:05:54 PM CEST
+Last Modified : Wed 31 Jul 2019 08:33:13 PM CEST
