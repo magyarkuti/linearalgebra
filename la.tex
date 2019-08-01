@@ -42,7 +42,7 @@
 \makeevenhead{myheadings}{\footnotesize\thepage}{\footnotesize\myBotmark}{\footnotesize\rightmark}
 \makepsmarks{myheadings}{%
     \renewcommand\chaptermark[1]{%
-        \markboth{%
+    \markboth{%
 %      \ifnum \value{secnumdepth} > 1
 %      \if@mainmatter %
             \thechapter.~\chaptername:~%
@@ -711,6 +711,13 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     AA^{-1}=I=A^{-1}A,\quad (A^{-1})^{-1}=A.\qedhere
 \]
 \end{defprop}
+\begin{proof}
+    A 2., 4., 5., 6., 7. állítások ekvivalenciája nyilvánvaló az előzőek szerint.
+    Ha $AB=I=AC$, akkor $A\left( B-C \right)=0$ így $A$ oszloprendszere lineáris függetlensége 
+    miatt $B=C$. 
+    Ezzel $2.\Rightarrow 1.$ implikációt is beláttuk.
+    Az 1. és 3. feltevések ekvivalenciája az előző állítás miatt teljesül.
+\end{proof}
 
 \part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
 \backmatter
@@ -727,4 +734,4 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 01 Aug 2019 05:15:28 AM CEST
+Last Modified : Thu 01 Aug 2019 05:50:20 AM CEST
