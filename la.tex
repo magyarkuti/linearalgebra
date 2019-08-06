@@ -51,45 +51,45 @@
         ##1}{\thepart.~\partname}}%
     }
 
-    \makeatletter
-    \newcommand\arraybslash{\let\\\@arraycr}
-    \patchcmd{\@makechapterhead}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\patchcmd{\@makechapterhead}
     {\printchaptername \chapternamenum \printchapternum}
     {\printchapternum.\@\chapternamenum \printchaptername}
     {}{}
-    \renewenvironment{proof}[1][\proofname]
+\renewenvironment{proof}[1][\proofname]
     {\par\pushQED{\qed}%
     \normalfont \topsep6\p@\@plus6\p@\relax
     \trivlist
-\item[\hskip\labelsep
+    \item[\hskip\labelsep
         \itshape
     #1\@addpunct{:}]\ignorespaces}
     {\popQED\endtrivlist\@endpefalse}
-    \makeatother
+\makeatother
 
-    \newcommand{\addQEDstyle}[2]{\AtBeginEnvironment{#1}{\pushQED{\qed}\renewcommand{\qedsymbol}{#2}}\AtEndEnvironment{#1}{\popQED}}
+\newcommand{\addQEDstyle}[2]{\AtBeginEnvironment{#1}{\pushQED{\qed}\renewcommand{\qedsymbol}{#2}}\AtEndEnvironment{#1}{\popQED}}
 %% Ezt kellett belátni. trükkök:
 %% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
-    \theoremstyle{plain}
+\theoremstyle{plain}
 
-    \newtheorem{proposition}{állítás}[chapter]
-    \newtheorem{lemma}[proposition]{lemma}
-    \newtheorem*{SL}{Steinitz-lemma}
+\newtheorem{proposition}{állítás}[chapter]
+\newtheorem{lemma}[proposition]{lemma}
+\newtheorem*{SL}{Steinitz-lemma}
 %
-    \theoremstyle{remark}
-    \newtheorem{note}[proposition]{megjegyzés}
+\theoremstyle{remark}
+\newtheorem{note}[proposition]{megjegyzés}
 
-    \theoremstyle{definition}
-    \newtheorem{definition}[proposition]{definíció}
-    \newtheorem{corollary}[proposition]{következmény}
-    \newtheorem{defprop}[proposition]{definíció-állítás}
-    \addQEDstyle{definition}{$\Diamond$}\addQEDstyle{proposition}{$\Diamond$}\addQEDstyle{lemma}{$\Diamond$}\addQEDstyle{note}{$\Diamond$}\addQEDstyle{corollary}{$\Diamond$}\addQEDstyle{SL}{$\Diamond$}\addQEDstyle{defprop}{$\Diamond$}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{definíció}
+\newtheorem{corollary}[proposition]{következmény}
+\newtheorem{defprop}[proposition]{definíció-állítás}
+\addQEDstyle{definition}{$\Diamond$}\addQEDstyle{proposition}{$\Diamond$}\addQEDstyle{lemma}{$\Diamond$}\addQEDstyle{note}{$\Diamond$}\addQEDstyle{corollary}{$\Diamond$}\addQEDstyle{SL}{$\Diamond$}\addQEDstyle{defprop}{$\Diamond$}
 
 
 %%% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
 % \myBotmark feltöltése a lapon lévő utolsó tétel környezettel
-    \makeatletter
+\makeatletter
     \@ifdefinable\@my@claim@mark{\newmarks\@my@claim@mark}
     \newcommand*\myMark[1]{\marks\@my@claim@mark{#1}}
     \newcommand*\myBotmark{\botmarks\@my@claim@mark}
@@ -103,19 +103,48 @@
     }{
         \typeout{>>> Patch specific for amsthm FAILED!}
     }
-    \makeatother
 
-    \renewcommand{\mathbf}{\mathbb}
-    \DeclareMathOperator{\lin}{lin}
-    \DeclareMathOperator{\crank}{crank}
-    \DeclareMathOperator{\rrank}{rrank}
-    \DeclareMathOperator{\srank}{srank}
-    \DeclareMathOperator{\rank}{rank}
+    %part
+\long\def\@part[#1]#2{%
+  \M@gettitle{#1}%
+  \def\f@rtoc{#1}%
+  \@nameuse{part@f@rtoc@before@write@hook}%
+  \phantomsection
+  \mempreaddparttotochook
+  \ifnum \c@secnumdepth >-2\relax
+    \refstepcounter{part}%
+    \addcontentsline{toc}{part}%
+      {\protect\partnumberline{\thepart}\f@rtoc}%
+    \mempartinfo{\thepart}{\f@rtoc}{#2}%
+  \else
+    \addcontentsline{toc}{part}{\f@rtoc}%
+    \mempartinfo{}{\f@rtoc}{#2}%
+  \fi
+  \mempostaddparttotochook
+  \partmark{#1}%
+  {\centering
+   \interlinepenalty \@M
+   \parskip\z@
+   \normalfont
+   \ifnum \c@secnumdepth >-2\relax
+     \printpartnum.\ \printpartname \partnamenum%%MGy
+     \midpartskip
+   \fi
+   \printparttitle{#2}\par}%
+  \@endpart}
+\makeatother
+
+\renewcommand{\mathbf}{\mathbb}
+\DeclareMathOperator{\lin}{lin}
+\DeclareMathOperator{\crank}{crank}
+\DeclareMathOperator{\rrank}{rrank}
+\DeclareMathOperator{\srank}{srank}
+\DeclareMathOperator{\rank}{rank}
 %\DeclareMathOperator{\dim}{dim}
-    \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
-    \citeindextrue
-    \makeindex
-    \synctex=1
+\def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
+\citeindextrue
+\makeindex
+\synctex=1
 \begin{document}
 \frontmatter*
 \chapter*{Előszó}
@@ -887,4 +916,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 05 Aug 2019 10:59:38 AM CEST
+Last Modified : Tue 06 Aug 2019 06:08:57 PM CEST
