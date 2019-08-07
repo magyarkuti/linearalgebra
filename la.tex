@@ -20,7 +20,7 @@
 
 \frenchspacing
 \usepackage{amsmath,amsthm,amsfonts,fixme}
-\usepackage[numbers]{natbib}
+\usepackage{natbib}\bibliographystyle{natdin-es}
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
@@ -104,7 +104,7 @@
         \typeout{>>> Patch specific for amsthm FAILED!}
     }
 
-    %part
+ %part
 \long\def\@part[#1]#2{%
   \M@gettitle{#1}%
   \def\f@rtoc{#1}%
@@ -902,9 +902,9 @@ ami a lenti 3. állítás.
 \end{proof}
 
 \part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
+%% a vége következik
 \backmatter
 \pagestyle{empty}
-\bibliographystyle{plainurl}
 \bibliography{la.bib}
 \printindex
 
@@ -916,4 +916,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 06 Aug 2019 06:08:57 PM CEST
+Last Modified : Wed 07 Aug 2019 09:22:35 AM CEST
