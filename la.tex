@@ -159,10 +159,134 @@ A legfontosabb forrás \citep{DancsPuskas2001}.
 \pagestyle{myheadings}
 \mainmatter*
 \part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
+\chapter{Algebrai struktúrák}
+\begin{definition}[$n$-változós művelet]\index{művelet}\index{algebrai struktúra}
+    Legyen $H$ egy halmaz. Egy 
+    \[
+        \varphi\colon H^n\to H
+    \]
+    függvényt $n$-változós \emph{műveletnek} nevezünk.
+    Egy halmazt és rajta véges sok műveletet együtt \emph{algebrai struktúrának} mondunk.
+    Jelölés: 
+    $$\left(H,\varphi_1,\dots,\varphi_n  \right),$$ 
+    ahol $H$ a halmaz és
+    $\varphi_1,\dots,\varphi_n$ a $H$ halmazon értelmezett műveletek.
+\end{definition}
+\begin{definition}[félcsoport]\index{félcsoport}
+    Egy $\left( S,\star \right)$ algebrai struktúrát \emph{félcsoportnak} mondjuk,
+    ha $\star$ egy kétváltozós \emph{asszociatív}\index{asszociatív}
+    művelete az $S$ halmaznak,
+    azaz minden $a,b,c\in S$ mellett
+    \[
+        a\star\left( b\star c \right)=\left( a\star b\right)\star c.\qedhere
+    \]
+\end{definition}
+Lefordítva ez azt jelenti, hogy 
+\begin{enumerate}
+    \item minden $a,b\in S$ mellett $a\star b\in S$, és
+    \item minden $a,b,c\in S$ esetén $a\star\left( b\star c \right)=a\star\left( b\star c \right)$
+\end{enumerate}
+\begin{definition}[neutrális elem]\index{neutrális elem}\index{neutrális elemes félcsoport}
+    Az $\left( S,\star \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
+    ha $s\star t=t$ ($t\star s=t$) minden $t\in S$ mellett.
+    Ha $s\in S$ balról is és jobbról is neutrális, akkor $s$-et egy \emph{neutrális elemnek}
+    mondjuk.
+    A félcsoportot \emph{neutrális elemes félcsoportnak} nevezzük, ha van benne neutrális elem.
+\end{definition}
+\begin{proposition}
+    Ha egy félcsoportban, van egy balról neutrális elem és egy jobbról neutrális elem, 
+    akkor ezek megegyeznek. 
+    Emiatt egy neutrális elemes félcsoportban neutrális elem csak egy van.
+\end{proposition}
+\begin{proof}
+    Legyen $s_1$ balról-- és $s_2$ jobbról neutrális elem.
+    Ekkor
+    \(
+        s_1=s_1\star s_2=s_2.
+    \)
+\end{proof}
+A félcsoport additív írásmódja esetén természetes a neutrális elemet \emph{zérusnak},
+míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
+\begin{definition}[csoport]\index{csoport}
+    Egy $\left( G,\star \right)$ algebrai struktúrát \emph{csoportnak} nevezünk,
+    ha neutrális elemes félcsoport, amlyben minden $g\in G$-hez létezik $g'\in G$, hogy
+    \[
+        g\star g'=e=g'\star g.\tag{\dag}
+    \]
+    Itt $e\in G$ jelöli a $G$ csoport neutrális elemét.
+\end{definition}
+\begin{defprop}[inverz elem]\index{inverz}
+    Legyen $\left( G,\star \right)$ egy csoport.
+    Ekkor minden $g\in G$-hez, csak egyetlen $g'\in G$ létezik, 
+    amelyre a fenti ($\dag$) azonosság fennáll.
+    Adott $g$-hez ezt ez egyetlen $g'\in G$ elemet, 
+    amelyre ($\dag$) teljesül a $g$ elem \emph{inverzének} mondjuk.
+\end{defprop}
+\begin{proof}
+    Tegyük fel, hogy $g',g''$ inverz elemei $g$-nek.
+    Azt mutatjuk meg, hogy ha $g'$ baloldali-- és $g''$ jobboldali inverze $g$-nek,
+    akkor a két elem megegyezik:
+    \[
+        g'=g'\star e=
+        g'\star\left( g\star g'' \right)=
+        \left(g'\star g\right)\star g'' =
+        e\star g''=g''.\qedhere
+    \]
+\end{proof}
+Példaként gondoljuk meg, hogy a $H\to H$ függvény halmaza a kompozíció művelettel
+neutrális elemes félcsoport, és a $H\to H$ kölcsönösen egyértelmű függvények halmaza a kompozíció művelettel csoportot alkotnak. 
+Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}.
+\begin{proposition}[egyszerűsítési szabály]\index{egyszerűsítési szabály}
+    Csoportban igaz az egyszerűsítési szabály, azaz
+    \[
+        a\star c=b\star c\implies a=b.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    \begin{math}
+        a=a\star e
+        =
+        a\star \left( c\star c'\right)=
+        \left( a\star c \right)\star c'=
+        \left( b\star c \right)\star c'=
+        b\star\left( c\star c' \right)=
+        b\star e=
+        b.
+    \end{math}
+\end{proof}
+\begin{definition}[Abel--csoport]\index{Abel--csoport}
+    Egy $\left( G,\star \right)$ csoportot \emph{Abel--csoportnak} nevezünk,
+    ha a művelete \emph{kommutatív}\index{kommutatív} is, 
+    azaz minden $s,t\in G$ mellett $s\star t=t\star s$.
+\end{definition}
+\begin{definition}[gyűrű]\index{gyűrű}
+    A kétműveletes $\left( R,+,\cdot \right)$ algebrai struktúrát \emph{gyűrűnek} nevezzük,
+    ha
+    \begin{enumerate}
+        \item $\left( R,+ \right)$ Abel--csoport;
+        \item $\left( R,\cdot \right)$ félcsoport;
+        \item és a két műveletet összeköti a következő két disztributivitás:\index{disztributív}
+            \[
+                a\cdot\left( b+c \right)=a\cdot b + a\cdot c\qquad
+                \left( a\cdot b \right)\cdot c=a\cdot c+a\cdot b.
+            \]
+    \end{enumerate}
+    Ha $\left( R,\cdot \right)$ neutrális elemes félcsoport, akkor azt mondjuk, hogy $R$ egy
+    \emph{egységelemes gyűrű}, és ha $\left( R,\cdot \right)$ kommutatív félcsoport, akkor
+    azt mondjuk, hogy $R$ egy \emph{kommutatív gyűrű}.
+\end{definition}
+\begin{definition}[test]
+    Egy $\left( \mathbb{F},+,\cdot \right)$ kétműveletes algebrai struktúrát \emph{testnek}
+    nevezünk, 
+    ha olyan kommutatív egységelemes gyűrű, 
+    amelyben minden nemzérus\footnote{értsd: minden elemnek, amely a $+$ műveletre nézve neutrális elemtől különbözik}
+    elemnek van inverze\footnote{értsd: a $\cdot$ szorzás neutrális elemére mint egységelemre nézve}, 
+    és $0\neq 1$\footnote{érts: az összeadásra nézve és a szorzásra nézve képzett neutrális elemek nem azonosak.}.
+\end{definition}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
-\chapter{Algebrai struktúrák}
+
 \chapter{Vektortér fogalma}
 \chapter{Altér}
 \chapter{Lineárisan független rendszerek és generátorrendszerek}
@@ -901,7 +1025,7 @@ ami a lenti 3. állítás.
     Beláttuk tehát, hogy $A$ oszlopai lineárisan összefüggőek, azaz az eredeti egyenletrendszernek van nemtriviális megoldása.
 \end{proof}
 
-\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
+%%\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
 %% a vége következik
 \backmatter
 \pagestyle{empty}
@@ -916,4 +1040,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 07 Aug 2019 09:22:35 AM CEST
+Last Modified : Wed 07 Aug 2019 07:57:59 PM CEST
