@@ -283,6 +283,88 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
     elemnek van inverze\footnote{értsd: a $\cdot$ szorzás neutrális elemére mint egységelemre nézve}, 
     és $0\neq 1$\footnote{érts: az összeadásra nézve és a szorzásra nézve képzett neutrális elemek nem azonosak.}.
 \end{definition}
+A test az elgebrai struktúra, ahol a az összeadás és sorzás műveletekkel úgy számolhatunk, mint amit a valós számok során megszoktuk.
+Példaként néhány tulajdonság.
+\begin{proposition}
+    Az $\left( R,+,\cdot \right)$ gyűrűben minden $a\in R$ mellett 
+    \begin{equation*}
+        a\cdot 0=0\text{ és }
+        \left( -1 \right)a=-a.\qedhere
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    \begin{math}
+        0+a\cdot 0=
+        a\cdot 0=
+        a\left( 0+0 \right)=
+        a\cdot 0+a\cdot 0.
+    \end{math}
+    A jobboldali $a0$-val való egszerűsítés után kapjuk, 
+    hogy $a=a\cdot0$.
+    A második azonosságot az első felhasználásával kapjuk:
+    \begin{math}
+        0
+        =
+        0a
+        =
+        \left( 1+\left( -1 \right) \right)\cdot a
+        =
+        1\cdot a + \left( -1 \right)\cdot a
+        =
+        a +\left( -1 \right)a.
+    \end{math}
+    Az additív inverz definíciója szerint ez éppen azt jelenti, hogy $-a=\left( -1 \right)\cdot a$.
+\end{proof}
+Ami nagyon fontos, hogy egy gyűrűben nem feltétlen teljesül, 
+hogy elemek szorzata csak úgy lehet zérus, ha legalább az egyik elem zérus.
+Számunkra a legfontosabb példa  a mátrixok gyűrűje\footnote{lásd kicsit később},
+ahol pont ennek a hiánya jelenti nehézséget.
+
+Egy testben ilyen nem fordulhat elő.
+\begin{definition}[nullosztómentes gyűrű]
+    Egy gyűrűt \emph{nullosztómentesnek} nevezzük, 
+    ha két elem szorzata csak úgy lehet nulla, 
+    ha legalább az egyik elem nulla.
+\end{definition}
+\begin{proposition}
+    Egy test egyben nullosztómentes gyűrű, azaz
+    ha $\mathbf{F}$ egy test, és $a,b\in\mathbf{F}$.
+    Akkor 
+    \[
+        ab=0\implies a=0\text{ vagy }b=0.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Tegyük fel, hogy $ab=0$.
+    Ha $b\neq 0$, akkor létezik $b'\in\mathbf{F}$, hogy $bb'=1$.
+    Így 
+    \[
+        0= 0b'=\left( ab \right)b'=a\left( bb' \right)=a1=a.\qedhere
+    \]
+\end{proof}
+\begin{proposition}
+    Nullosztómentes gyűrűben nem zérus elemmel való szorzatot egyszerűsíteni lehet
+    azaz, ha $a,b,c\in R,b\neq 0$ esetén
+    \[
+        ab=cb\implies a=c.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    \begin{math}
+        \left( a-c \right)b=ab-cb=0\implies a-c=0.
+    \end{math}
+\end{proof}
+A legfontosabb struktúrák számunkra a következők:
+\begin{itemize}
+    \item 
+    Egységelemes gyűrű, amelyben a nullosztómentesség nem teljesül: mátrixok.
+    \item
+    Kommutatív egységelemes gyűrű, amely nullosztómentes de mégsem test: polinomok.
+    \item
+    Test:
+    a Valós vagy komplex számok.
+\end{itemize}
+
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
@@ -1040,4 +1122,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 07 Aug 2019 07:57:59 PM CEST
+Last Modified : Wed 07 Aug 2019 09:11:42 PM CEST
