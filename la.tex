@@ -28,7 +28,8 @@
 
 
 \usepackage[a4paper]{geometry}
-\usepackage[missing={(Oh my!)},dirty={Oh no!},mark]{gitinfo2}
+%\usepackage[missing={(Oh my!)},dirty={Oh no!},mark]{gitinfo2}
+\usepackage[mark,dirty={(Dirty)}]{gitinfo2}
 
 \setsecheadstyle{\Large\sffamily\bfseries\raggedright}
 \setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
@@ -155,6 +156,24 @@ A legfontosabb forrás \citep{DancsPuskas2001}.
 
 
 \noindent Budapest, \today
+
+\section*{Verzió információk}
+\begin{center}
+\begin{tabular}{l|r}
+    \hline
+Rel& \gitRel \\
+First Tag Describe & \gitFirstTagDescribe \\
+Describe & \gitDescribe \\
+Roff & \gitRoff \\
+Tags & \gitTags \\
+References & \gitReferences\\
+Branch & \gitBranch\\
+Dirty & \gitDirty\\
+Author Iso Date & \gitAuthorIsoDate\\
+\hline
+\end{tabular}
+\end{center}
+
 \tableofcontents*
 \pagestyle{myheadings}
 \mainmatter*
@@ -1122,4 +1141,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 08 Aug 2019 06:57:24 AM CEST
+Last Modified : Thu 08 Aug 2019 07:51:31 AM CEST
