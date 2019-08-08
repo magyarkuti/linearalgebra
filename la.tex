@@ -390,6 +390,62 @@ A legfontosabb struktúrák számunkra a következők:
     Test:
     a Valós vagy komplex számok.
 \end{itemize}
+\section{Polinomgyűrűk}
+\begin{definition}[polinom]\index{polinom}
+    Legyen $\mathbf{F}$ egy test.
+    E test feletti polinomokon az összes 
+    \[
+        p\left( t \right)=
+        \alpha_0+\alpha_1t+\alpha_2t^2+\dots+\alpha_nt^n
+    \]
+    alakú formális algebrai kifejezést értjük.
+
+    Itt $n$ tetszőleges nem negatív egész 
+    és $\alpha_0,\dots,\alpha_n$ tetszőleges, az $\mathbf{F}$ test beli elemek.
+
+    Az $\mathbf{F}$ test felletti összes polinomok halmazát $\mathbf{F}\left[ t \right]$ módon jelöljük.
+\end{definition}
+A fenti definícióban az \emph{algebrai kifejezés} szó arra utal,  hogy az
+\begin{math}
+        \alpha_0+\alpha_1t+\alpha_2t^2+\dots+\alpha_nt^n
+\end{math}
+műveletek minden $t\in\mathbf{F}$ mellett értelmesek, 
+és eredményük egy újabb $\mathbf{F}$ test beli elem.
+Ezt az elemet mondjuk a $p$ polinom helyettesítési értékének.
+
+A \emph{formális algebrai kifejezés}\index{formális algebrai kifejezés} arra utal, 
+hogy egy polinomot az együtthatói határozzák meg, 
+azaz két polinom akkor és csak akkor azonos,
+ha az összes együtthatói azonosak.
+Ez szemben áll avval, hogy ha a polinomokra mint függvényekre tekintenénk, 
+akkor a helyettesítési értékek egyenlősége jelentené két polinom azonos voltát.
+A formális szó tehát azt jelenti, hogy nem mint függvényre gondolunk, 
+hanem egyszerűen adott $\alpha_0,\dots,\alpha_n$ rögzített elemek -- ezeket mondjuk együtthatóknak --,
+által előírt műveletekre. 
+Az az előírás ugyanis, hogy tetszőleges $t\in\mathbf{F}$ mellett hajtsuk végre az
+\[
+        \alpha_0+\alpha_1t+\alpha_2t^2+\dots+\alpha_nt^n
+\]
+műveletsort. 
+A műveletsorrol és nem annak eredményéről van szó. 
+Két műveletsor akkor azonos, ha ugyanazok a műveletsort meghatározó 
+$\left( \alpha_0,\alpha_1,\dots,\alpha_n \right)$%
+\footnote{Az előbbi zárójellel azt hangsúlyozzuk, hogy az együtthatók sorrendje is számít.}
+együtthatók.%
+\footnote{Persze felmerül a kérdés, 
+    hogy ha két polinom minden helyettesítési értéke azonos,
+    akkor igaz-e, 
+    hogy mint formális polinomok is azonosak,
+    tehát a két polinom együtthatói is rendre azonosak-e?
+    A pozitív választ később látjuk valós vagy komplex szám test feletti polinomok esetén.%
+}
+
+\begin{definition}[polinom foka]\index{polinom foka}
+    Legyen $p\left( t \right)\in\mathbf{F}\left[ t \right]$ egy polinom.
+    Azt mondjuk, hogy a $n$ nem negatív egész szám e \emph{polinom fokszáma},
+    ha $n$ legnagyobb nemzérus együttható indexe.
+\end{definition}
+
 
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
@@ -1148,4 +1204,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 08 Aug 2019 08:34:01 AM CEST
+Last Modified : Thu 08 Aug 2019 09:50:43 AM CEST
