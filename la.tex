@@ -19,7 +19,7 @@
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
-\usepackage{amsmath,amsthm,amsfonts,fixme}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,fixme}
 \usepackage{natbib}\bibliographystyle{natdin-es}
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
@@ -36,9 +36,9 @@
 }
 
 
-\setsecheadstyle{\Large\sffamily\bfseries\raggedright}
-\setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
-\setsubsubsecheadstyle{\sffamily\bfseries\raggedright}
+%\setsecheadstyle{\Large\sffamily\bfseries\raggedright}
+%\setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
+%\setsubsubsecheadstyle{\sffamily\bfseries\raggedright}
 
 
 \nouppercaseheads
@@ -74,9 +74,12 @@
 \makeatother
 
 \newcommand{\addQEDstyle}[2]{\AtBeginEnvironment{#1}{\pushQED{\qed}\renewcommand{\qedsymbol}{#2}}\AtEndEnvironment{#1}{\popQED}}
-%% Ezt kellett belátni. trükkök:
+%% qed trükkök:
 %% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
+
+\renewcommand{\qedsymbol}{$\centerdot$}
+\newcommand{\myqedsymbol}{$\lrcorner$}
 \theoremstyle{plain}
 
 \newtheorem{proposition}{állítás}[chapter]
@@ -90,7 +93,7 @@
 \newtheorem{definition}[proposition]{definíció}
 \newtheorem{corollary}[proposition]{következmény}
 \newtheorem{defprop}[proposition]{definíció-állítás}
-\addQEDstyle{definition}{$\Diamond$}\addQEDstyle{proposition}{$\Diamond$}\addQEDstyle{lemma}{$\Diamond$}\addQEDstyle{note}{$\Diamond$}\addQEDstyle{corollary}{$\Diamond$}\addQEDstyle{SL}{$\Diamond$}\addQEDstyle{defprop}{$\Diamond$}
+\addQEDstyle{definition}{\myqedsymbol}\addQEDstyle{proposition}{\myqedsymbol}\addQEDstyle{lemma}{\myqedsymbol}\addQEDstyle{note}{\myqedsymbol}\addQEDstyle{corollary}{\myqedsymbol}\addQEDstyle{SL}{\myqedsymbol}\addQEDstyle{defprop}{\myqedsymbol}
 
 
 %%% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
@@ -172,15 +175,35 @@ Describe & \gitDescribe \\
 \end{tabular}
 \end{center}
 \chapter*{Előszó}
-\scwords Hogy nekem mennyi bajom van.
+\scwords%
 A legfontosabb forrás \citep{DancsPuskas2001}.
 
-\noindent MGy
+\dots
+
+Igyekszem struktúráltan írni.
+Ennek oka, hogy evvel hangsúlyozzam, hogy az olvasónak igyekeznie kell struktúráltan gondolkodni.
+A hátulütője, hogy hibásan azt a helytelen képzetet keltheti, 
+Nem, nem erről van szó. 
+A puzzle-ban minden elem egyenrangú, az egyik elem hiánya éppen annyira fájdalmas mint a másiké.
+Itt nem erről van szó, ez egyetlen matematikai diszciplína esetében sem igaz!
+Az olvasónak igyekeznie kell, 
+hogy meglássa mi a legfontosabb gondolat a sok-sok állításnak, 
+mint építménynek egy-egy ,,nyilvánvaló következményében''.
+Kicsi, atomszerű építőkövek egymásutáni megértése visz az anyagban előre, 
+ezek az egymástól feltűnő módon szeparált állítások és azok érvekkel való alátámasztása,
+amit bizonyításnak is szokás mondani.
+Hogy e kis lépések egymástól még határozottabban válljanak el azt az írás
+typográfiája is erősíti azzal, 
+az állítás-szerű környeteket a \,\myqedsymbol~, 
+és a bizonyítás környezetet a \,\qedsymbol~ karakterekkel zárom le.
 
 
-\noindent Budapest, \today
+\bigskip\noindent 
+Magyarkuti Gyula
+\hfill{Budapest, \ontoday}
 
 
+\clearpage
 \tableofcontents*
 \pagestyle{myheadings}
 \mainmatter*
@@ -443,10 +466,62 @@ együtthatók.%
 \begin{definition}[polinom foka]\index{polinom foka}
     Legyen $p\left( t \right)\in\mathbf{F}\left[ t \right]$ egy polinom.
     Azt mondjuk, hogy a $n$ nem negatív egész szám e \emph{polinom fokszáma},
-    ha $n$ legnagyobb nemzérus együttható indexe.
+    ha $n$ a legnagyobb nemzérus együttható indexe.
+
+    A $p\left( t \right)=0$ konstans zérus polinom esetén a fok legyen $-\infty$.
+    A $p$ polinom fokszámát $\deg p$ módon jelöljük.
 \end{definition}
+Látni fogjuk, hogy a konstans zérus polinomra $\deg p=-\infty$ csak egy kényelmes jelölés.
+Időnként a polinom fokszámával műveleteket is végzünk.
+Megegyezés szerint ilyenkor $-\infty+a=-\infty$ minden $a$ nem negatív egész számra, 
+és $\left( -\infty \right)+\left( -\infty \right)=-\infty.$
+A $-\infty$ szimbólumot minden egész számnál határozottan kisebbnek gondoljuk.
 
-
+Két polinom összegét és szorzatát a szokásos módon definiáljuk:
+\begin{definition}
+    Legyen $p,q\in\mathbf{F}[t]$, két polinom.
+    \[
+        p\left( t \right)
+        =
+        \sum_{j=0}^n\alpha_jt^j
+        \text{ és }
+        q\left( t \right)
+        =
+        \sum_{j=0}^m\beta_jt^j,
+        \qquad
+        \alpha_j,\beta_j\in\mathbf{F}, 
+        0\leq n,m\in\mathbf{Z}.
+    \]
+    Ekkor a $p$ és $q$ összegének definíciója:
+    \[
+        \left( p+q \right)\left( t \right)
+        =
+        \sum_{j=0}^{\max{\left\{ m,n \right\}}}\left( \alpha_j+\beta_j \right)t^j;
+    \]
+    míg a két polinom szorzatának definíciója:
+    \[
+        \left( pq \right)\left( t \right)
+        =
+        \sum_{j=0}^{n+m}c_jt^j
+        \text{ ahol }
+        c_j
+        =
+        \sum_{k=0}^j\alpha_k\beta_{j-k}.\qedhere
+    \]
+\end{definition}
+\begin{proposition}
+    Legyenek $p,q\in\mathbf{F}[t]$ polinomok az $\mathbf{F}$ test felett.
+    Ekkor
+    \begin{enumerate}
+        \item $\deg \left( pq \right)=\deg p+\deg q$;
+        \item $\deg \left( p+q \right)\leq\max\left\{ \deg p,\deg q \right\}$.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Figyeljünk arra, hogy a konstans zérus polinom esetében is működik a tétel,
+    és vegyük észre, hogy az szorzat polinomra vonatkozó állítás azért igaz, 
+    mert a test nullosztómentes.
+\end{proof}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
@@ -1204,4 +1279,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 08 Aug 2019 09:50:43 AM CEST
+Last Modified : Fri 09 Aug 2019 04:25:11 PM CEST
