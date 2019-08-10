@@ -1,4 +1,3 @@
-%%la.tex
 \documentclass[9pt,showtrims]{memoir}
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
@@ -1286,6 +1285,10 @@ ami a lenti 3. állítás.
 \printindex
 
 \end{document}
+% arara: latexmk: { 
+% arara: --> engine: lualatex,
+% arara: --> options: [ '--pvc' ],
+% arara: --> }
 
 \begin{thebibliography}{MMMMMMMMM}
     \bibitem[Dancs István, Puskás Csaba (2006)]{PCSDI}
@@ -1293,4 +1296,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 09 Aug 2019 11:15:00 PM CEST
+Last Modified : Sat 10 Aug 2019 07:20:19 PM CEST
