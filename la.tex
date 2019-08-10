@@ -530,8 +530,117 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
 \end{proposition}
 
 \section{Polinomok oszthatósága és a maradékos osztás}
-A következő állítás szerimt a polinomok közt is működik a maradékos osztás,
+A következő állítás szerint a polinomok közt is működik a maradékos osztás,
 ahogyan azt az egész számok közt megszoktuk.
+\begin{proposition}[maradékos osztás]
+    Legyen $p,q\in\mathbf{F}\left[ t \right]$ polinomok, $p\neq 0$.
+    Ekkor létezik egyetlen $h,r\in\mathbf{F}\left[ t \right]$ polinom, amelyre
+    \[
+        p\left( t \right)
+        =
+        h\left( t \right)q\left( t \right)+r\left( t \right)
+        \quad
+        \deg r < \deg q.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Először is azt vegyük észre, hogy $\deg p<\deg q$ esetben $r=p$, 
+    $h=0$ szereposztással készen is vagyunk.
+
+    Tegyük fel tehát, hogy $n=\deg p\geq \deg q=m$, és lássuk be az állítást $n$ szerinti indukcióval.
+    Ha $n=0$, akkor $p\left( t \right)=\alpha_0$ és $q\left( t \right)=\beta_0\neq 0$.
+    Ekkor persze
+    \[
+        \alpha_0=\frac{\alpha_0}{\beta_0}\beta_0+0,
+    \]
+    ami azt jelenti, hogy $h\left( t \right)=\frac{\alpha_0}{\beta_0}$ és $r\left( t \right)=0$ szereposztás
+    megfelelő.
+
+    Most tegyük fel, 
+    hogy igaz az állítás $n+1$-nél kisebb fokú $p$ polinomokra ($n\geq 0$),
+    és lássuk be egy pontosan $n+1$-ed fokú polinomra.
+    Legyen tehát
+    \[
+        p\left( t \right)=\alpha_{n+1}t^{n+1}+\dots+\alpha_0
+        \quad\text{ és }\quad
+        q\left( t \right)=\beta_{m}t^m+\dots+\beta_0,
+    \]
+    ahol $m\leq n+1$.
+    Tekintsük a következő polinomot:
+    \[
+        \frac{\alpha_{n+1}}{\beta_m}t^{n+1-m}q\left( t \right).
+    \]
+    Világos, hogy ennek főegyütthatója éppen $\alpha_{n+1}$ és foka éppen $n+1=\deg p$.
+    Így a 
+    \[
+        p_1\left( t \right)
+        =
+        p\left( t \right)-
+        \frac{\alpha_{n+1}}{\beta_m}t^{n+1-m}q\left( t \right).
+    \]
+    polinomra $\deg p_1<\deg p$.
+    Na most, ha $\deg p_1<\deg q$, akkor a bizonyítás első mondatában említett helyzetben vagyunk,
+    tehát nyilvánvaló szereposztással az állítás igaz $p_1$-re és $q$-ra.
+    Ha viszont $\deg p_1\geq \deg q$ még mindig igaz, akkor az indukciós feltétel szerint található
+    $h,r\in\mathbf{F}\left[ t \right]$ polinom, amelyre igaz az állítás.
+    Mindkét esetben találtunk tehát $h,r$ polinomokat, amelyre
+    \[
+        p\left( t \right)-
+        \frac{\alpha_{n+1}}{\beta_m}t^{n+1-m}q\left( t \right)
+        =
+        p_1\left( t \right)
+        =
+        h\left( t \right)q\left( t \right)+r\left( t \right);
+        \quad
+        \deg r < \deg q
+    \]
+    teljesül.
+    Ekkor persze
+    \[
+        p\left( t \right)
+        =
+        \left( h\left( t \right)
+        +
+        \frac{\alpha_{n+1}}{\beta_m}t^{n+1-m}
+        \right)
+        q\left( t \right)
+        +
+        r\left( t \right);
+        \quad
+        \deg r < \deg q
+    \]
+    is fennáll. Ezt kellett belátni az állítás egzisztencia részéhez.
+    
+    Az unicitás részhez tegyük fel, hogy valamely $h,h_1,r,r_1$ polinomokra
+    \[
+        h\left( t \right)q\left( t \right)+r\left( t \right)
+        =
+        p\left( t \right)
+        =
+        h_1\left( t \right)q\left( t \right)+r_1\left( t \right)
+    \]
+    teljesül, ahol $\deg r<\deg q$ és $\deg r_1<\deg q$.
+    Persze átrendezve ekkor
+    \[
+        \left( h\left( t \right)-h_1\left( t \right) \right)q\left( t \right)
+        =
+        r_1\left( t \right)-r\left( t \right)
+    \]
+    is fennáll.
+    Ekkor a fokszámokra figyelve
+    \[
+        \deg\left( h-h_1 \right)+\deg q 
+        = 
+        \deg\left( r_1-r \right)
+        \leq
+        \max\left\{ \deg r_1,\deg (-r) \right\}
+        <
+        \deg q.
+    \]
+    Ez csak akkor lehetséges, ha $\deg\left( h-h_1 \right)=-\infty$,
+    ami azt jelenti, hogy $h=h_1$, 
+    amiből persze $r_1=r$ már látszik is.
+\end{proof}
 
 \section{Euklideszi algoritmus}
 
@@ -1287,7 +1396,7 @@ ami a lenti 3. állítás.
 \end{document}
 % arara: latexmk: { 
 % arara: --> engine: lualatex,
-% arara: --> options: [ '--pvc' ],
+% arara: --> options: [ '-pvc' ]
 % arara: --> }
 
 \begin{thebibliography}{MMMMMMMMM}
@@ -1296,4 +1405,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 10 Aug 2019 07:20:19 PM CEST
+Last Modified : Sat 10 Aug 2019 10:35:20 PM CEST
