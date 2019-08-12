@@ -435,16 +435,17 @@ A fenti definícióban az \emph{algebrai kifejezés} szó arra utal,  hogy az
 \end{math}
 műveletek minden $t\in\mathbf{F}$ mellett értelmesek, 
 és eredményük egy újabb $\mathbf{F}$ test beli elem.
-Ezt az elemet mondjuk a $p$ polinom helyettesítési értékének.
+Ha $t\in\mathbf{F}$ konkrétan meg van adva, 
+akkor a behelyettesítés után kapott elemet mondjuk a $p$ polinom helyettesítési értékének.
 
 A \emph{formális algebrai kifejezés}\index{formális algebrai kifejezés} arra utal, 
 hogy egy polinomot az együtthatói határozzák meg, 
 azaz két polinom akkor és csak akkor azonos,
 ha az összes együtthatói azonosak.
 Ez szemben áll avval, hogy ha a polinomokra mint függvényekre tekintenénk, 
-akkor a helyettesítési értékek egyenlősége jelentené két polinom azonos voltát.
+akkor a helyettesítési értékek egyenlősége jelentené a két polinom azonos voltát.
 A formális szó tehát azt jelenti, hogy nem mint függvényre gondolunk, 
-hanem egyszerűen adott $\alpha_0,\dots,\alpha_n$ rögzített elemek -- ezeket mondjuk együtthatóknak --,
+hanem egyszerűen az adott $\alpha_0,\dots,\alpha_n$ rögzített elemek -- ezeket mondjuk együtthatóknak --,
 által előírt műveletekre. 
 Az az előírás ugyanis, hogy tetszőleges $t\in\mathbf{F}$ mellett hajtsuk végre az
 \[
@@ -463,6 +464,18 @@ együtthatók.%
     tehát a két polinom együtthatói is rendre azonosak-e?
     A pozitív választ később látjuk valós vagy komplex szám test feletti polinomok esetén.%
 }
+A jelölések megértése is fontos.
+$p\left( t \right)\in\mathbf{F}\left[ t \right]$ semmi mást nem jelent, 
+minthogy $p\left( t \right)$ egy polinom.
+Persze a polinom nem keverendő össze a helyettesítési értékével, 
+hiszen az egyik egy algebrai kifejezés-együttes, a másik egy az adott test beli elem.
+Szokásos viszont, hogy ha nincs konkrét $t$ a szövegkörnyezetben, akkor is $p\left( t \right)$ jelöli a polinomot. 
+Néha egyszerűbben csak $p$-vel jelöljük, főleg akkor ha nincs szó behelyettesítésről,
+emiatt érdektelen a változó jele.
+Ritkábban, de előfordul, hogy egy konkrét értékre, mondjuk $s\in\mathbf{F}$-re kell kiértékelnünk a polinomot ilyenkor $p\left( s \right)$ jelöli azt a test beli elemet,
+amelyet $t$ helyett $s$-et téve az előírt műveletek kiértékelése után kapunk.
+A szövegkörnyezetben mindig világosnak kell lennie, hogy $p\left( t \right)$ a polinomot jelenti,
+vagy egy konkrét $t$-re kiértékelt test beli elemt.
 
 \begin{definition}[polinom foka]\index{polinom foka}
     Legyen $p\left( t \right)\in\mathbf{F}\left[ t \right]$ egy polinom.
@@ -534,12 +547,12 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
 A következő állítás szerint a polinomok közt is működik a maradékos osztás,
 ahogyan azt az egész számok közt megszoktuk.
 \begin{proposition}[maradékos osztás]
-    Legyen $p,q\in\mathbf{F}\left[ t \right]$ polinomok, $p\neq 0$.
+    Legyenek $p,q\in\mathbf{F}\left[ t \right]$ polinomok, $p\neq 0$.
     Ekkor létezik egyetlen $h,r\in\mathbf{F}\left[ t \right]$ polinom, amelyre
     \[
-        p\left( t \right)
+        p
         =
-        h\left( t \right)q\left( t \right)+r\left( t \right)
+        hq+r;
         \quad
         \deg r < \deg q.\qedhere
     \]
@@ -1406,4 +1419,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 11 Aug 2019 09:52:18 AM CEST
+Last Modified : Mon 12 Aug 2019 10:52:29 AM CEST
