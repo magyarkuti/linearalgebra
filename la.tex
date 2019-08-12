@@ -657,6 +657,47 @@ ahogyan azt az egész számok közt megszoktuk.
 \end{proof}
 
 \section{Euklideszi algoritmus}
+\begin{proposition}[Euklidesz]\index{Euklideszi algoritmus}
+    Legyen $p,q\in\mathbb{F}\left[ t \right]$ nem zérus polinomok.
+    Definiálja $p_{-1}=p,p_{0}=q$. 
+    Folytatva, ha valamely $i\geq 0$ számra $p_{i-1}$ és $p_i$ már definiált és $p_i\neq 0$, 
+    akkor a maradékos osztás szerint létezik egyetlen $h_{i+1},p_{i+1}\in\mathbb{F}\left[ t \right]$ polinom,
+    amelyre 
+    \[
+        p_{i-1}=h_{i+1}p_i+p_{i+1};
+        \text{ ahol }
+        \deg p_{i+1}<\deg p_i.\tag{\dag}
+    \]
+    Mivel minden egyes lépésben csökken a fokszám,
+    ezért van olyan $s>0$, hogy $p_s\neq 0$, de $p_{s+1}=0$.
+    Ennek a $p_s$ polinomnak a normáltja a $p\text{ és a }q$ polinomok legnagyobb közös osztója.
+\end{proposition}
+\begin{proof}
+    A fenti algoritmussal olyan
+    $p_{-1}, p_0,p_1,\dots,p_s,p_{s+1}$ polinomokat kapunk, 
+    amelyekre minden $i=0,\dots,s$ mellett a (\dag) azonosság fennáll, 
+    és $\deg p_{s+1}=-\infty$, 
+    azaz $p_{s+1}=0$.
+
+    A (\dag) azonosság szerint, 
+    ha egy $h$ polinomra $h|p_{i+1},h|p_{i}$ akkor $h|p_{i-1}$ is fennáll.
+    Az utolsó azonosságra $p_{s+1}=0$, 
+    így $p_s|p_{s-1}$.
+    No de $p_s|p_s$, amiből már $p_s|p_{s-2}$ is fennáll.
+    Ezt a gondolatot folytatva látjuk, hogy $p_s|p_0$ és $p_s|p_{-1}$,
+    ami azt jelenti, hogy a $p_s$ polinom a $p$ és $q$ polinomok egy közös osztója.
+
+    Most a (\dag) azonosságot értelmezzük úgy, 
+    hogy ha $h|p_{i-1}$ és $h|p_i$, akkor $h|p_{i+1}$ is fennáll.
+    Legyen most $d|p$ és $d|q$, 
+    azaz $d|p_{-1}$ és $d|p_0$. 
+    Az iménti gondolatot alkalmazva $d|p_1$ is igaz.
+    De akkor $d|p_0$ és $d|p_1$ miatt $d|p_2$. 
+    Ezt folytatva azt kapjuk, hogy $d|p_s$.
+
+    Ez éppen azt jelenti, 
+    hogy a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
+\end{proof}
 
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
@@ -1419,4 +1460,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 12 Aug 2019 10:52:29 AM CEST
+Last Modified : Mon 12 Aug 2019 09:16:06 PM CEST
