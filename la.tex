@@ -404,6 +404,25 @@ Egy testben ilyen nem fordulhat elő.
         \left( a-c \right)b=ab-cb=0\implies a-c=0.
     \end{math}
 \end{proof}
+\begin{definition}[ideál]\index{ideál}\index{főideál}\index{főideál-gyűrű}
+    Egy $\left( R,+,\cdot \right)$ kommutatív gyűrű egy $J\subseteq R$ nemüres részhalmazát
+    \emph{ideálnak} nevezzük,
+    ha 
+    \begin{enumerate}
+        \item 
+        minden $a,b\in J$ mellett $a+b\in J$;
+    \item
+        minden $c\in R$ és minden $a\in J$ mellett $ca\in J$.
+    \end{enumerate}
+    Ha egy $d\in R$ adott, akkor a 
+    \[
+        \left\{ da:a\in R \right\}
+    \]
+    halmaz egy ideálja $R$-nek. 
+    Ez a $d$ elem többszöröseiből álló ideál, amelyet \emph{főideálnak} is nevezünk.
+    Ha egy gyűrűben minden ideál egy főideál, akkor a gyűrűt \emph{főideál-gyűrűnek} mondjuk.
+\end{definition}
+Világos, hogy $\left\{ 0 \right\}$ és maga az egész $R$ ideálok.
 A legfontosabb struktúrák számunkra a következők:
 \begin{itemize}
     \item 
@@ -481,8 +500,10 @@ vagy egy konkrét $t$-re kiértékelt test beli elemt.
     Legyen $p\left( t \right)\in\mathbf{F}\left[ t \right]$ egy polinom.
     Azt mondjuk, hogy a $n$ nem negatív egész szám e \emph{polinom fokszáma},
     ha $n$ a legnagyobb nemzérus együttható indexe.
+    A legnagyobb nemzérus együtthatót \emph{főegyütthatónak}\index{főegyüttható} nevezzük.
+    Azt mondjuk, hogy egy nemzérus polinom \emph{normált}\index{normált polinom}, ha $1$ a főegyütthatója.
 
-    A $p\left( t \right)=0$ konstans zérus polinom esetén a fok legyen $-\infty$.
+    A $p\left( t \right)=0$ konstans zérus polinom foka megállapodás szerint legyen $-\infty$.
     A $p$ polinom fokszámát $\deg p$ módon jelöljük.
 \end{definition}
 Látni fogjuk, hogy a konstans zérus polinomra $\deg p=-\infty$ csak egy kényelmes jelölés.
@@ -544,6 +565,30 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
 \end{proposition}
 
 \section{Polinomok oszthatósága és a maradékos osztás}
+\begin{definition}[oszthatóság]\index{polinom osztója}
+        Azt mondjuk, hogy a $p\in\mathbb{F}\left[ t \right]$ \emph{osztója} az $f\in\mathbb{F}\left[ t \right]$ polinomnak,
+        ha létezik $h\in\mathbb{F}\left[ t \right]$, hogy $f\left( t \right)=p\left( t \right)h\left( t \right)$.
+        Iyenkor $f$-et a $p$ egy \emph{többszörösének}\index{polinom többszöröse} is mondjuk.
+        Jelölés: $p|f$.
+
+        Legyenek most $p_1,\dots,p_k$ polinomok. 
+        \begin{enumerate}
+            \item A $d$ polinom a \emph{legnagyobb közös osztója}\index{legnagyobb közös osztó} az adott polinomoknak, 
+                ha
+                \begin{enumerate}
+                    \item $d|p_j$ minden $j=1,\dots,k$-ra,
+                    \item ha $d_1|p_j$ minden $j=1,\dots,k$ mellett akkor $d_1|d$ is fennáll,
+                    \item $d$ normált.
+                \end{enumerate}
+            \item A $d$ polinom a \emph{legkisebb közös többszöröse}\index{legkisebb közös többszörös} az adott polinomoknak, 
+                ha
+                \begin{enumerate}
+                    \item $p_j|d$ minden $j=1,\dots,k$-ra,
+                    \item ha $p_j|d_1$ minden $j=1,\dots,k$ mellett akkor $d|d_1$ is fennáll.
+                    \item $d$ normált.
+                \end{enumerate}
+        \end{enumerate}
+\end{definition}
 A következő állítás szerint a polinomok közt is működik a maradékos osztás,
 ahogyan azt az egész számok közt megszoktuk.
 \begin{proposition}[maradékos osztás]
@@ -655,8 +700,118 @@ ahogyan azt az egész számok közt megszoktuk.
     ami azt jelenti, hogy $h=h_1$, 
     amiből persze $r_1=r$ már látszik is.
 \end{proof}
+A szakaszt a maradékos osztás módszerének fontos következményeivel zárjuk.
+Az első, szerint a gyöktényező a polinomból mindig kiemelhető, 
+emiatt egy akármilyen test feletti $n$-edfokú polinom gyökeinek száma $n$-nél nagyobb nem lehet.
+A másik fontos következmény, 
+hogy a polinomok gyűrűje egy főideál-gyűrű,
+azaz minden ideálja egy bizonyos polinom többszöröseiből áll.
+\begin{proposition}
+    Legyen $p\in\mathbf{F}\left[ t \right]$ egy nem zérus polinom,
+    és $t_0$ egy gyöke, azaz $p\left( t_0 \right)=0$.
+    Ekkor létezik $h\in\mathbf{F}\left[ t \right]$ polinom,
+    amelyre
+    \[
+        p\left( t \right)=\left( t-t_0 \right)h\left( t \right).\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Maradékos osztással $p$-re és az elsőfokú $t-t_0$ polinomra
+    \[
+        p\left( t \right)=h\left( t \right)\left( t-t_0 \right)+r\left( t \right),
+        \text{ ahol }
+        \deg r<1.
+    \]
+    No de, $t_0$ egy gyök, tehát $0=p\left( t_0 \right)=r\left( t_0 \right)$. 
+    Ez azt jelenti, hogy $\deg r=-\infty$, ami éppen az állítás.
+\end{proof}
+\begin{definition}[gyök multiplicitása]\index{gyökök multiplicitása}
+        Legyen $t_0$ gyöke a $p\left( t \right)$ polinomnak.
+        Azt mondjuk, hogy a $k$ pozitív egész e $t_0$ gyök \emph{multiplicitása},
+        ha van olyan $h\left( t \right)$ polinom, hogy 
+        \begin{math}
+            p\left( t \right)=\left( t-t_0 \right)^kh\left( t \right),
+        \end{math}
+        de $h\left( t_0 \right)\neq 0$.
+        Néha azt is mondjuk, hogy $t_0$ egy $k$-szoros gyöke $p$-nek.
+\end{definition}
+Teljesen világos, hogy a gyöktényező kiemelhetősége miatt minden gyök legalább egyszeres multiplicitású.
+A következő állítás szerint 
+a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több mint a polinom foka.
+\begin{proposition}
+    Legyen(ek) a $p\in\mathbf{F}\left[ t \right]$ nem zérus polinom különböző gyökei $t_1,\dots,t_k$,
+    és ezen gyökök muliplicitásai rendre $m_1,\dots,m_k$.
+    Ekkor $m_1+\dots+m_k\leq\deg p$.
+\end{proposition}
+\begin{proof}
+    A test nullosztómentessége és a gyöktényező kiemelhetősége miatt 
+    \[
+    p\left( t \right)=
+    \left( t-t_1 \right)^{m_1}\cdot\left( t-t_2 \right)^{m_2}\dots\left( t-t_k \right)^{m_k}\cdot 
+    h\left( t \right),
+    \]
+    ahol $h$ olyan polinom, amelynek már nincsen gyöke.
+    A fokszámok összehasonlításából kapjuk, hogy
+    $m_1+\dots+m_k\leq m_1+\dots+m_k+\deg h=\deg p$.
+\end{proof}
+\begin{proposition}[a polinomgyűrű egy főideál-gyűrű]
+    A polinomok $\mathbf{F}\left[ t \right]$ kommutatív, egységelemes, nullosztómentes gyűrűjében
+    minden a $\left\{ 0 \right\}$-tól különböző ideált generál az ideálban lévő egyetlen normált minimális fokszámú polinom.
+    Így $\mathbf{F}\left[ t \right]$ egy főideál-gyűrű.
+\end{proposition}
+\begin{proof}
+    Legyen a $J$ egy ideálja $\mathbf{F}\left[ t \right]$-nek, 
+    amely nem csak a zérus elemből áll.
+    Vegyünk egy minimális fokszámú de nem zérus polinomot $J$-ben,
+    tehát olyat, 
+    amely maga sem zérus és nála kisebb fokszámú poliniom már nincs $J$-ben a $0$ elemen kívül.
+    Legyen ez $d$. 
+    Most megmutatjuk, hogy minden $p\in J$-re $d|p$.
+    A maradékos osztás szerint
+    valamely $h,r$ polinomkra
+    \[
+        p\left( t \right)=
+        h\left( t \right)d\left( t \right)+r\left( t \right);
+        \text{ ahol }
+        \deg r<\deg d.
+    \]
+    Mivel $p,d\in J$, és $J$ egy ideál, ezért $r\in J$.
+    No de $d$ konstrukciója szerint ilyen csak a zérus polinom van,
+    ezért valóban $d|p$.
+    Ez éppen azt jelenti, hogy
+    \[
+        J=\left\{ dh:h\in\mathbf{F}\left[ t \right] \right\}
+    \]
+    azaz $d$ generálja a $J$ ideált.
+
+    Meg kell még mutatnunk, hogy csak egyetlen normált, minimális fokszámú polinom van $J$-ben.
+    Legyen $d_1,d_2\in J$ két ilyen polinom.
+    Az előszőek szerint $d_1|d_2$ és $d_2|d_1$. Ebből persze $\deg d_1=\deg d_2$ azonnal következik,
+    és mivel normáltak,
+    így egyik sem a zérus polinom, de azonos $1$ főegyütthatókkal.
+    A $d_1-d_2\in J$ tehát olyan polinom, melyre $\deg (d_1-d_2)<\deg d_1$.
+    No de ilyen polinom csak a  zérus polinom van a $J$ ideálban,
+    emiatt $d_1=d_2$ valóban fennáll.
+
+    Megmutattuk tehát, 
+    hogy egyetlen normált, minimális fokszámú polinom van $J$-ben,
+    és minden $J$-beli polinom ennek többszöröse.
+\end{proof}
+Érdemes eltenni magunknak, hogy az ideál generáló eleme, tehát az ideálbeli elemek közös osztója
+éppen az ideál minimális fokszámú nem zérus polinomja.
+Ilyenből a normált polinomok közül csak egy van.
 
 \section{Euklideszi algoritmus}
+Az Euklideszi-algoritmus polinomok legnagyobb közös osztójának meghatározását teszi lehetővé.
+Előtte érdemes bevezetni a következő jelölést.
+Ha $p,q\in\mathbf{F}\left[ t \right]$ valamely polinomok, akkor jelölje
+    \[
+        J\left( p,q \right)=\left\{ fp+gq:f,g\in\mathbf{F}\left[ t \right] \right\}.
+    \]
+az $p$ és a $q$ polinomokat tartalmazó legszűkebb ideált.
+\footnote{Szokás azt is mondani, hogy ez a \emph{két polinom generálta ideál}.\index{generált ideál}}
+Világos, hogy ha $r_1,r_2\in J\left( p,q \right)$, akkor 
+$J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
 \begin{proposition}[Euklidesz]\index{Euklideszi algoritmus}
     Legyen $p,q\in\mathbb{F}\left[ t \right]$ nem zérus polinomok.
     Definiálja $p_{-1}=p,p_{0}=q$. 
@@ -670,7 +825,8 @@ ahogyan azt az egész számok közt megszoktuk.
     \]
     Mivel minden egyes lépésben csökken a fokszám,
     ezért van olyan $s>0$, hogy $p_s\neq 0$, de $p_{s+1}=0$.
-    Ennek a $p_s$ polinomnak a normáltja a $p\text{ és a }q$ polinomok legnagyobb közös osztója.
+    Erre a $p_s$ polinomra $p_s\in J\left( p,q \right)$ és
+    $p_s$ normáltja a $p\text{ és a }q$ polinomok legnagyobb közös osztója.
 \end{proposition}
 \begin{proof}
     A fenti algoritmussal olyan
@@ -688,15 +844,34 @@ ahogyan azt az egész számok közt megszoktuk.
     ami azt jelenti, hogy a $p_s$ polinom a $p$ és $q$ polinomok egy közös osztója.
 
     Most a (\dag) azonosságot értelmezzük úgy, 
-    hogy ha $h|p_{i-1}$ és $h|p_i$, akkor $h|p_{i+1}$ is fennáll.
-    Legyen most $d|p$ és $d|q$, 
-    azaz $d|p_{-1}$ és $d|p_0$. 
-    Az iménti gondolatot alkalmazva $d|p_1$ is igaz.
-    De akkor $d|p_0$ és $d|p_1$ miatt $d|p_2$. 
-    Ezt folytatva azt kapjuk, hogy $d|p_s$.
-
-    Ez éppen azt jelenti, 
-    hogy a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
+    \(
+    p_{i+1}\in J\left( p_{i-1},p_i \right)\text{ ahol } i=0,\dots,s.
+    \)
+    Ebből persze $p_i,p_{i+1}\in J\left( p_{i-1},p_i \right)$, 
+    ergo $J\left( p_i,p_{i+1} \right)\subseteq J\left( p_{i-1},p_i \right)$.
+    Így minden $i=0,\dots,s$-re
+    \[
+        p_i\in J\left( p_{i-2},p_{i-1} \right)
+        \subseteq
+        J\left( p_{i-3},p_{i-2} \right)
+        \subseteq
+        \dots
+        \subseteq
+        J\left( p_0,p_1 \right)
+        \subseteq
+        J\left( p_{-1},p_0 \right)
+        =
+        J\left( p,q \right).
+    \]
+    Speciálisan $i=s$-re is, tehát $p_s\in J\left( p,q \right)$,
+    ergo léteznek $f,g\in\mathbf{F}\left[ t \right]$ polinomok, 
+    amelyekre 
+    \[
+        p_s=fp+gq.
+    \]
+    Ha $d|p$ és $d|q$, akkor persze $d|p_s$ is teljesül.
+    Emiatt,
+    a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
 \end{proof}
 \begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
     Legyenek a $p,q\in\mathbf{F}\left[ t \right]$ nem zérus polinomok adottak.
@@ -708,37 +883,7 @@ ahogyan azt az egész számok közt megszoktuk.
     \]
 \end{proposition}
 \begin{proof}
-    Ha fennáll a fenti azonosság,
-    és $d|p,d|q$, akkor $d|1$, ami azt jelenti, hogy $1$ a két polinom legnagyobb közös osztója.
-
-    A Bezout--azonosság igazolásához érdemes bevezetni a lövetkező jelölést.
-    Ha $r_1,r_2$ valamely polinomok, akkor jelölje
-    \[
-        J\left( r_1,r_2 \right)=\left\{ fr_1+gr_2:f,g\in\mathbf{F}\left[ t \right] \right\}.
-    \]
-    Világos, hogy ha $r_3,r_4\in J\left( r_1,r_2 \right)$, akkor 
-    $J\left( r_3,r_4 \right)\subseteq J\left( r_1,r_2 \right)$.
-    Na most, ha a $p$ és $q$ polinomok relatív prímek,
-    akkor az Euklideszi-algoritmust e két polinomra felírva,
-    kapjuk a $p_{-1}, p_0,p_1,\dots,p_s,p_{s+1}$ polinomok véges sorozatát,
-    ahol $p_s\left( t \right)=\alpha\neq 0$ és $p_{s+1}=0$.
-    E polinokat definiáló (\dag) azonosság szerint,
-    \(
-    p_{i+1}\in J\left( p_{i-1},p_i \right)\text{ ahol } i=0,\dots,s.
-    \)
-    Ebből persze $p_i,p_{i+1}\in J\left( p_{i-1},p_i \right)$, 
-    ergo $J\left( p_i,p_{i+1} \right)\subseteq J\left( p_{i-1},p_i \right)$.
-    Így
-    \[
-        J\left( p,q \right)=
-        J\left( p_{-1},p_0 \right)\supseteq
-        J\left( p_0,p_1 \right)\supseteq
-        \dots\supseteq
-        J\left( p_{s-2},p_{s-1} \right)\ni p_s.
-    \]
-    Azt láttuk be, hogy léteznek $f,g\in\mathbf{F}\left[ t \right]$ polinomok, hogy
-    $f\left( t \right)p\left( t \right)+g\left( t \right)q\left( t \right)=\alpha.$
-    Ezt az egyenlőséget az $\alpha$ számmal osztva készen is vagyunk.
+    Nyilvánvaló.
 \end{proof}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
@@ -1501,4 +1646,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 13 Aug 2019 05:44:06 AM CEST
+Last Modified : Tue 13 Aug 2019 08:52:29 PM CEST
