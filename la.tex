@@ -698,7 +698,48 @@ ahogyan azt az egész számok közt megszoktuk.
     Ez éppen azt jelenti, 
     hogy a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
 \end{proof}
+\begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
+    Legyenek a $p,q\in\mathbf{F}\left[ t \right]$ nem zérus polinomok adottak.
+    A $p$ és a $q$ pontosan akkor relatív prímek, 
+    ha léteznek $f,g\in\mathbf{F}\left[ t \right]$ polinomok, 
+    amelyekre
+    \[
+        f\left( t \right)p\left( t \right)+g\left( t \right)q\left( t \right)=1.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Ha fennáll a fenti azonosság,
+    és $d|p,d|q$, akkor $d|1$, ami azt jelenti, hogy $1$ a két polinom legnagyobb közös osztója.
 
+    A Bezout--azonosság igazolásához érdemes bevezetni a lövetkező jelölést.
+    Ha $r_1,r_2$ valamely polinomok, akkor jelölje
+    \[
+        J\left( r_1,r_2 \right)=\left\{ fr_1+gr_2:f,g\in\mathbf{F}\left[ t \right] \right\}.
+    \]
+    Világos, hogy ha $r_3,r_4\in J\left( r_1,r_2 \right)$, akkor 
+    $J\left( r_3,r_4 \right)\subseteq J\left( r_1,r_2 \right)$.
+    Na most, ha a $p$ és $q$ polinomok relatív prímek,
+    akkor az Euklideszi-algoritmust e két polinomra felírva,
+    kapjuk a $p_{-1}, p_0,p_1,\dots,p_s,p_{s+1}$ polinomok véges sorozatát,
+    ahol $p_s\left( t \right)=\alpha\neq 0$ és $p_{s+1}=0$.
+    E polinokat definiáló (\dag) azonosság szerint,
+    \(
+    p_{i+1}\in J\left( p_{i-1},p_i \right)\text{ ahol } i=0,\dots,s.
+    \)
+    Ebből persze $p_i,p_{i+1}\in J\left( p_{i-1},p_i \right)$, 
+    ergo $J\left( p_i,p_{i+1} \right)\subseteq J\left( p_{i-1},p_i \right)$.
+    Így
+    \[
+        J\left( p,q \right)=
+        J\left( p_{-1},p_0 \right)\supseteq
+        J\left( p_0,p_1 \right)\supseteq
+        \dots\supseteq
+        J\left( p_{s-2},p_{s-1} \right)\ni p_s.
+    \]
+    Azt láttuk be, hogy léteznek $f,g\in\mathbf{F}\left[ t \right]$ polinomok, hogy
+    $f\left( t \right)p\left( t \right)+g\left( t \right)q\left( t \right)=\alpha.$
+    Ezt az egyenlőséget az $\alpha$ számmal osztva készen is vagyunk.
+\end{proof}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
@@ -1460,4 +1501,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 12 Aug 2019 09:16:06 PM CEST
+Last Modified : Tue 13 Aug 2019 05:44:06 AM CEST
