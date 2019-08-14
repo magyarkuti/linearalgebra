@@ -422,6 +422,40 @@ Egy testben ilyen nem fordulhat elő.
     Ez a $d$ elem többszöröseiből álló ideál, amelyet \emph{főideálnak} is nevezünk.
     Ha egy gyűrűben minden ideál egy főideál, akkor a gyűrűt \emph{főideál-gyűrűnek} mondjuk.
 \end{definition}
+A generált ideál fogalma nagyon fontos.
+\begin{defprop}[generált ideál]\index{generált ideál}
+    Legyen adott a  kommutatív, egységelemes $\left( R,+,\cdot \right)$ gyűrűben véges sok $a_1,\dots,a_r$ elem.
+    Az e véges sok elemet tartalmazó ideálok közös része maga is ideál, 
+    és e metszet az eredeti véges halmazt
+    tartalmazó \emph{legszűkebb ideál}. 
+    Jelöljük ezt $J\left( a_1,a_2,\dots,a_r \right)$ módon.
+
+    Tekintsük a 
+    $
+\left\{ \sum_{j=1}^ra_jb_j:b_1,\dots,b_r\in R \right\}
+    $ 
+    halmazt.
+    Világos, 
+    hogy ez egy ideál az $R$ gyűrűben. 
+    A gyűrű egységelemes, 
+    ezért ennek $J\left( a_1,\dots,a_r \right)$ egy részhalmaza.
+    Másrészt minden az $\left\{ a_1,\dots,a_r \right\}$ elemeket tartalmazó ideál, 
+    egyben tartalmazza a
+    $
+    \left\{ \sum_{j=1}^ra_jb_j:b_1,\dots,b_r\in R \right\}
+    $ 
+    halmazt is,
+    ami azt jelenti, hogy 
+    \[
+        J=\left\{ a_1,\dots,a_r \right\}=
+        \left\{ \sum_{j=1}^ra_jb_j:b_1,\dots,b_r\in R \right\}
+    \]
+    az $a_1,\dots,a_r$ elemeket tartalmazó legszűkebb ideál.
+    Nevezzük ezt az ideált az $a_1,\dots,a_r$ elemek \emph{generálta ideálnak} is.
+\end{defprop}
+
+
+
 Világos, hogy $\left\{ 0 \right\}$ és maga az egész $R$ ideálok.
 A legfontosabb struktúrák számunkra a következők:
 \begin{itemize}
@@ -1646,4 +1680,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 13 Aug 2019 08:52:29 PM CEST
+Last Modified : Wed 14 Aug 2019 05:47:04 AM CEST
