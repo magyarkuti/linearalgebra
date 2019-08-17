@@ -604,25 +604,19 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
         ha létezik $h\in\mathbb{F}\left[ t \right]$, hogy $f\left( t \right)=p\left( t \right)h\left( t \right)$.
         Iyenkor $f$-et a $p$ egy \emph{többszörösének}\index{polinom többszöröse} is mondjuk.
         Jelölés: $p|f$.
-
-        Legyenek most $p_1,\dots,p_k$ polinomok. 
-        \begin{enumerate}
-            \item A $d$ polinom a \emph{legnagyobb közös osztója}\index{legnagyobb közös osztó} az adott polinomoknak, 
-                ha
-                \begin{enumerate}
-                    \item $d|p_j$ minden $j=1,\dots,k$-ra,
-                    \item ha $d_1|p_j$ minden $j=1,\dots,k$ mellett akkor $d_1|d$ is fennáll,
-                    \item $d$ normált.
-                \end{enumerate}
-            \item A $d$ polinom a \emph{legkisebb közös többszöröse}\index{legkisebb közös többszörös} az adott polinomoknak, 
-                ha
-                \begin{enumerate}
-                    \item $p_j|d$ minden $j=1,\dots,k$-ra,
-                    \item ha $p_j|d_1$ minden $j=1,\dots,k$ mellett akkor $d|d_1$ is fennáll.
-                    \item $d$ normált.
-                \end{enumerate}
-        \end{enumerate}
 \end{definition}
+Világos, hogy egy $p$ polinom összes többszörösei -- tehát azok, amelyeknek $p$ osztója --
+ideált alkotnak. 
+Ez a $p$ generálta legszűkebb ideál, azaz  a $J(p)=\left\{ fp:f\in\mathbb{F}\left[ t \right] \right\}$ főideál.
+Ha $q\in J\left( p \right)$, akkor $J\left( q \right)\subseteq J\left( p \right)$, azaz ha $q$ egy többszöröse $p$-nek,
+akkor $q$ minden többszöröse $p$-nek is többszöröse.
+Ha $p,q$ polinomok, 
+amelyekre $p|q$ és $q|p$ akkor a két polinom csak konstans szorzóban különbözik egymástól.
+Ha például a két polinom még normált is, akkor $p|q$ és $q|p$ csak $p=q$ esetben lehetséges.
+A polinomgyűrű ideáljaira fókuszálva, azt gondoltuk éppen meg, 
+hogy $J\left( p \right)=J\left( q \right)$ normált $p,q$ polinomokra csak úgy teljesülhet, ha $p=q$,
+azaz a polinomok gyűrűjében minden főideálnak csak egy generáló eleme van a normált polinomok körében.
+
 A következő állítás szerint a polinomok közt is működik a maradékos osztás,
 ahogyan azt az egész számok közt megszoktuk.
 \begin{proposition}[maradékos osztás]
@@ -734,12 +728,105 @@ ahogyan azt az egész számok közt megszoktuk.
     ami azt jelenti, hogy $h=h_1$, 
     amiből persze $r_1=r$ már látszik is.
 \end{proof}
-A szakaszt a maradékos osztás módszerének fontos következményeivel zárjuk.
-Az első, szerint a gyöktényező a polinomból mindig kiemelhető, 
+\begin{proposition}[a polinomgyűrű egy főideál-gyűrű]
+    A polinomok $\mathbf{F}\left[ t \right]$ kommutatív, egységelemes, nullosztómentes gyűrűjében
+    minden a $\left\{ 0 \right\}$-tól különböző ideált generál az ideálban lévő egyetlen normált minimális fokszámú polinom.
+    Így $\mathbf{F}\left[ t \right]$ egy főideál-gyűrű.
+\end{proposition}
+\begin{proof}
+    Legyen a $J$ egy ideálja $\mathbf{F}\left[ t \right]$-nek, 
+    amely nem csak a zérus elemből áll.
+    Vegyünk egy minimális fokszámú de nem zérus polinomot $J$-ben,
+    tehát olyat, 
+    amely maga sem zérus és nála kisebb fokszámú polinom már nincs $J$-ben a $0$ elemen kívül.
+    Legyen ez $d$. 
+    Most megmutatjuk, hogy minden $p\in J$-re $d|p$.
+    A maradékos osztás szerint
+    valamely $h,r$ polinomkra
+    \[
+        p\left( t \right)=
+        h\left( t \right)d\left( t \right)+r\left( t \right);
+        \text{ ahol }
+        \deg r<\deg d.
+    \]
+    Mivel $p,d\in J$, és $J$ egy ideál, ezért $r\in J$.
+    No de $d$ konstrukciója szerint ilyen csak a zérus polinom van,
+    ezért valóban $d|p$.
+    Ez éppen azt jelenti, hogy
+    \(
+        J=\left\{ dh:h\in\mathbf{F}\left[ t \right] \right\}
+    \)
+    azaz $d$ generálja a $J$ ideált.
+    Azt viszont már korábban is meggondoltuk, 
+    hogy egy főideált csak egyetlen normált polinom generál.
+
+    Megmutattuk tehát, 
+    hogy egyetlen normált, minimális fokszámú polinom van $J$-ben,
+    és minden $J$-beli polinom ennek többszöröse.
+\end{proof}
+Érdemes eltenni magunknak, hogy az ideál generáló eleme, tehát az ideálbeli elemek közös osztója
+éppen az ideál minimális fokszámú nem zérus polinomja.
+Ilyenből a normált polinomok közül csak egy van.
+
+\begin{definition}
+        Legyenek most $p_1,\dots,p_k$ polinomok. 
+        \begin{enumerate}
+            \item A $d$ polinom a \emph{legnagyobb közös osztója}\index{legnagyobb közös osztó} az adott polinomoknak, 
+                ha
+                \begin{enumerate}
+                    \item $d|p_j$ minden $j=1,\dots,k$-ra,
+                    \item ha $d_1|p_j$ minden $j=1,\dots,k$ mellett akkor $d_1|d$ is fennáll,
+                    \item $d$ normált.
+                \end{enumerate}
+                A $p_1,\dots,p_k$ polinomokat \emph{relatív prímeknek}\index{relatív prím polinomok} nevezzük, 
+                ha közös osztójuk csak a konstans polinomok, 
+                azaz a $d\left( t \right)=1$ a legnagyobb közös osztó.
+            \item A $d$ polinom a \emph{legkisebb közös többszöröse}\index{legkisebb közös többszörös} az adott polinomoknak, 
+                ha
+                \begin{enumerate}
+                    \item $p_j|d$ minden $j=1,\dots,k$-ra,
+                    \item ha $p_j|d_1$ minden $j=1,\dots,k$ mellett akkor $d|d_1$ is fennáll.
+                    \item $d$ normált.\qedhere
+                \end{enumerate}
+        \end{enumerate}
+\end{definition}
+Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója, és hány ilyen van?
+\begin{proposition}
+    Bármely $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ nem zérus polinomoknak
+    létezik egyetlen legnagyobb közös osztójuk.
+    A $d$ legnagyobb közös osztó kifejezhető
+    \[
+        d\left( t \right)=f_1\left( t \right)p_1\left( t \right)+
+        \dots+
+        f_r\left( t \right)g_r\left( t \right)
+    \]
+    alakban valamely $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok segítségével.
+\end{proposition}
+\begin{proof}
+    Láttuk, hogy létezik egyetlen normált $d$ polinom, amelyre $J\left( d \right)=J\left( p_1,\dots,p_r \right)$.
+    Világos, hogy $d|p_j$ minden $j=1,\dots,r$ és $d\in J\left( p_1,\dots,p_r \right)$,
+    azaz
+    \[
+        d=f_1p_1+\dots f_rp_r
+    \]
+    valamely $f_1,\dots,f_r$ polinokra.
+    Ha valamely $d_1$ polinomra $d_1|p_j$ minden $j=1,\dots,r$ mellett,
+    akkor a fenti azonosság szerint $d_1|d$ is fennáll.
+\end{proof}
+A következő állítás azonosságát Bezout--azonosságnak mondjuk.
+\begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
+    Legyenek a $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ tetszőleges $\mathbb{F}$ test feletti polinomok.
+    Ezek ponotosan akkor relatív prímek, 
+    ha léteznek $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok, hogy
+    \[
+        f_1\left( t \right)p_1\left( t \right)+f_2\left( t \right)p_2\left( t \right)+\dots+f_r\left( t \right)p_r\left( t \right)=1\qedhere
+    \]
+\end{proposition}
+
+A szakaszt a maradékos osztás módszerének másik fontos következményeivel zárjuk.
+Azt gondoljuk meg, 
+hogy a gyöktényező a polinomból mindig kiemelhető, 
 emiatt egy akármilyen test feletti $n$-edfokú polinom gyökeinek száma $n$-nél nagyobb nem lehet.
-A másik fontos következmény, 
-hogy a polinomok gyűrűje egy főideál-gyűrű,
-azaz minden ideálja egy bizonyos polinom többszöröseiből áll.
 \begin{proposition}
     Legyen $p\in\mathbf{F}\left[ t \right]$ egy nem zérus polinom,
     és $t_0$ egy gyöke, azaz $p\left( t_0 \right)=0$.
@@ -788,62 +875,17 @@ a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több m
     A fokszámok összehasonlításából kapjuk, hogy
     $m_1+\dots+m_k\leq m_1+\dots+m_k+\deg h=\deg p$.
 \end{proof}
-\begin{proposition}[a polinomgyűrű egy főideál-gyűrű]
-    A polinomok $\mathbf{F}\left[ t \right]$ kommutatív, egységelemes, nullosztómentes gyűrűjében
-    minden a $\left\{ 0 \right\}$-tól különböző ideált generál az ideálban lévő egyetlen normált minimális fokszámú polinom.
-    Így $\mathbf{F}\left[ t \right]$ egy főideál-gyűrű.
-\end{proposition}
-\begin{proof}
-    Legyen a $J$ egy ideálja $\mathbf{F}\left[ t \right]$-nek, 
-    amely nem csak a zérus elemből áll.
-    Vegyünk egy minimális fokszámú de nem zérus polinomot $J$-ben,
-    tehát olyat, 
-    amely maga sem zérus és nála kisebb fokszámú poliniom már nincs $J$-ben a $0$ elemen kívül.
-    Legyen ez $d$. 
-    Most megmutatjuk, hogy minden $p\in J$-re $d|p$.
-    A maradékos osztás szerint
-    valamely $h,r$ polinomkra
-    \[
-        p\left( t \right)=
-        h\left( t \right)d\left( t \right)+r\left( t \right);
-        \text{ ahol }
-        \deg r<\deg d.
-    \]
-    Mivel $p,d\in J$, és $J$ egy ideál, ezért $r\in J$.
-    No de $d$ konstrukciója szerint ilyen csak a zérus polinom van,
-    ezért valóban $d|p$.
-    Ez éppen azt jelenti, hogy
-    \[
-        J=\left\{ dh:h\in\mathbf{F}\left[ t \right] \right\}
-    \]
-    azaz $d$ generálja a $J$ ideált.
-
-    Meg kell még mutatnunk, hogy csak egyetlen normált, minimális fokszámú polinom van $J$-ben.
-    Legyen $d_1,d_2\in J$ két ilyen polinom.
-    Az előszőek szerint $d_1|d_2$ és $d_2|d_1$. Ebből persze $\deg d_1=\deg d_2$ azonnal következik,
-    és mivel normáltak,
-    így egyik sem a zérus polinom, de azonos $1$ főegyütthatókkal.
-    A $d_1-d_2\in J$ tehát olyan polinom, melyre $\deg (d_1-d_2)<\deg d_1$.
-    No de ilyen polinom csak a  zérus polinom van a $J$ ideálban,
-    emiatt $d_1=d_2$ valóban fennáll.
-
-    Megmutattuk tehát, 
-    hogy egyetlen normált, minimális fokszámú polinom van $J$-ben,
-    és minden $J$-beli polinom ennek többszöröse.
-\end{proof}
-Érdemes eltenni magunknak, hogy az ideál generáló eleme, tehát az ideálbeli elemek közös osztója
-éppen az ideál minimális fokszámú nem zérus polinomja.
-Ilyenből a normált polinomok közül csak egy van.
 
 \section{Euklideszi algoritmus}
-Az Euklideszi-algoritmus polinomok legnagyobb közös osztójának meghatározását teszi lehetővé.
-Előtte érdemes bevezetni a következő jelölést.
-Ha $p,q\in\mathbf{F}\left[ t \right]$ valamely polinomok, akkor jelölje
-    \[
+Az eddigi ismereteink szerint a $p,q$ legnagyobb közös osztója a $J\left( p,q \right)$ ideál legalacsonyabb 
+fokú, normált tagja. 
+Az Euklideszi-algoritmus polinomok legnagyobb közös osztójának meghatározására szólgál.
+Véges sok lépésben végrehajtható, ezért a fentinél sokkal egyszerűbben működő algoritmust ad.
+Emlékezzünk arra, hogy ha $p,q\in\mathbf{F}\left[ t \right]$ valamely polinomok, akkor
+    \(
         J\left( p,q \right)=\left\{ fp+gq:f,g\in\mathbf{F}\left[ t \right] \right\}.
-    \]
-az $p$ és a $q$ polinomokat tartalmazó legszűkebb ideált.
-\footnote{Szokás azt is mondani, hogy ez a \emph{két polinom generálta ideál}.\index{generált ideál}}
+    \)
+jelöli a $p$ és a $q$ polinomokat tartalmazó legszűkebb ideált.
 Világos, hogy ha $r_1,r_2\in J\left( p,q \right)$, akkor 
 $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
 \begin{proposition}[Euklidesz]\index{Euklideszi algoritmus}
@@ -906,18 +948,6 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     Ha $d|p$ és $d|q$, akkor persze $d|p_s$ is teljesül.
     Emiatt,
     a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
-\end{proof}
-\begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
-    Legyenek a $p,q\in\mathbf{F}\left[ t \right]$ nem zérus polinomok adottak.
-    A $p$ és a $q$ pontosan akkor relatív prímek, 
-    ha léteznek $f,g\in\mathbf{F}\left[ t \right]$ polinomok, 
-    amelyekre
-    \[
-        f\left( t \right)p\left( t \right)+g\left( t \right)q\left( t \right)=1.\qedhere
-    \]
-\end{proposition}
-\begin{proof}
-    Nyilvánvaló.
 \end{proof}
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
@@ -1680,4 +1710,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 14 Aug 2019 05:47:04 AM CEST
+Last Modified : Sat 17 Aug 2019 02:26:25 PM CEST
