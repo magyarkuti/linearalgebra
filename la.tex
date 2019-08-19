@@ -790,7 +790,39 @@ Ilyenből a normált polinomok közül csak egy van.
                 \end{enumerate}
         \end{enumerate}
 \end{definition}
-Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója, és hány ilyen van?
+Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója vagy legkisebb közös többszöröse, és hány ilyen van?
+\begin{proposition}
+    Bármely $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ nem zérus polinomoknak
+    létezik egyetlen legkisebb közös többszörösük.
+\end{proposition}
+\begin{proof}
+    Világos, hogy ideálok metszete is ideál, emiatt 
+    \(
+        \cap_{j=1}^rJ\left( p_j \right)
+    \)
+    is ideál $\mathbf{F}\left[ t \right]$ gyűrűben.
+    De itt minden ideál főideál, létezik tehát $d\in\mathbf{F}\left[ t \right]$ normált polinom, amelyre
+    \[
+        J\left( d \right)
+        =
+        \cap_{j=1}^rJ\left( p_j \right)
+    \]
+    Világos, hogy $d\in J\left( p_j \right)$ minden $j$-re, 
+    ergo $d$ többszöröse minden $p_j$-nek.
+    Ha $p_j|d_1$ fennáll, minden $j$-re
+    az azt jelenti, hogy $d_1\in J\left( p_j \right)$, minden $j$-re, azaz 
+    \(
+        d_1
+        \in
+        \cap_{j=1}^rJ\left( p_j \right)
+        =
+        J\left( d \right),
+    \)
+    tehát $d|d_1$ valóban fennáll.
+
+    Ha $d$ mellett $g$ is legkisebb közös többszörös, akkor $d|g$ és $g|d$ szerint $g$ és $d$ foka azonos,
+    így csak egymás konstans szorosai lehetnek, de mivel mindketten normáltak, ezért e konstans csak 1 lehet.
+\end{proof}
 \begin{proposition}
     Bármely $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ nem zérus polinomoknak
     létezik egyetlen legnagyobb közös osztójuk.
@@ -812,6 +844,8 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója,
     valamely $f_1,\dots,f_r$ polinokra.
     Ha valamely $d_1$ polinomra $d_1|p_j$ minden $j=1,\dots,r$ mellett,
     akkor a fenti azonosság szerint $d_1|d$ is fennáll.
+
+    Az egyértelműség mint a legkisebb közös többszörösnél.
 \end{proof}
 A következő állítás azonosságát Bezout--azonosságnak mondjuk.
 \begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
@@ -949,6 +983,7 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     Emiatt,
     a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
 \end{proof}
+
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
@@ -1710,4 +1745,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 17 Aug 2019 02:26:25 PM CEST
+Last Modified : Mon 19 Aug 2019 08:52:43 PM CEST
