@@ -420,15 +420,15 @@ Egy testben ilyen nem fordulhat elő.
         \left\{ da:a\in R \right\}
     \]
     halmaz egy ideálja $R$-nek. 
-    Ez a $d$ elem többszöröseiből álló ideál, amelyet \emph{főideálnak} is nevezünk.
-    Ha egy gyűrűben minden ideál egy főideál, akkor a gyűrűt \emph{főideál-gyűrűnek} mondjuk.
+    Ez a $d$ elem többszöröseiből álló ideál, amelyet \emph{főideálnak}\index{főideál} is nevezünk.
+    Ha egy gyűrűben minden ideál egy főideál, akkor a gyűrűt \emph{főideál-gyűrűnek}\index{főideál-gyűrű} mondjuk.
 \end{definition}
 A generált ideál fogalma nagyon fontos.
 \begin{defprop}[generált ideál]\index{generált ideál}
     Legyen adott a  kommutatív, egységelemes $\left( R,+,\cdot \right)$ gyűrűben véges sok $a_1,\dots,a_r$ elem.
     Az e véges sok elemet tartalmazó ideálok közös része maga is ideál, 
     és e metszet az eredeti véges halmazt
-    tartalmazó \emph{legszűkebb ideál}. 
+    tartalmazó \emph{legszűkebb ideál}.
     Jelöljük ezt $J\left( a_1,a_2,\dots,a_r \right)$ módon.
 
     Tekintsük a 
@@ -479,7 +479,7 @@ A legfontosabb struktúrák számunkra a következők:
     alakú formális algebrai kifejezést értjük.
     Itt $n$ tetszőleges nem negatív egész 
     és $\alpha_0,\dots,\alpha_n$ tetszőleges, az $\mathbf{F}$ test beli elemek.
-    Az $\mathbf{F}$ test felletti összes polinomok halmazát $\mathbf{F}\left[ t \right]$ módon jelöljük.
+    Az $\mathbf{F}$ test feletti összes polinomok halmazát $\mathbf{F}\left[ t \right]$ módon jelöljük.
 \end{definition}
 A fenti definícióban az \emph{algebrai kifejezés} szó arra utal,  hogy az
 \begin{math}
@@ -514,7 +514,8 @@ együtthatók.%
     akkor igaz-e, 
     hogy mint formális polinomok is azonosak,
     tehát a két polinom együtthatói is rendre azonosak-e?
-    A pozitív választ később látjuk valós vagy komplex szám test feletti polinomok esetén.%
+    A pozitív választ később látjuk nem véges számtest, például a valós vagy a komplex test, feletti polinomok esetén.
+    Lásd \aref{pr:polinomfv}. állítás utáni megjegyzést \apageref{pr:polinomfv}. oldalon.%
 }
 A jelölések megértése is fontos.
 $p\left( t \right)\in\mathbf{F}\left[ t \right]$ semmi mást nem jelent, 
@@ -524,10 +525,10 @@ hiszen az egyik egy algebrai kifejezés-együttes, a másik egy az adott test be
 Szokásos viszont, hogy ha nincs konkrét $t$ a szövegkörnyezetben, akkor is $p\left( t \right)$ jelöli a polinomot. 
 Néha egyszerűbben csak $p$-vel jelöljük, főleg akkor ha nincs szó behelyettesítésről,
 emiatt érdektelen a változó jele.
-Ritkábban, de előfordul, hogy egy konkrét értékre, mondjuk $s\in\mathbf{F}$-re kell kiértékelnünk a polinomot ilyenkor $p\left( s \right)$ jelöli azt a test beli elemet,
+Ritkábban, de előfordul, hogy egy konkrét értékre, mondjuk $s\in\mathbf{F}$-re kell kiértékelnünk a polinomot ilyenkor $p\left( s \right)$ jelöli azt a testbeli elemet,
 amelyet $t$ helyett $s$-et téve az előírt műveletek kiértékelése után kapunk.
 A szövegkörnyezetben mindig világosnak kell lennie, hogy $p\left( t \right)$ a polinomot jelenti,
-vagy egy konkrét $t$-re kiértékelt test beli elemt.
+vagy egy konkrét $t$-re kiértékelt testbeli elemet.
 
 \begin{definition}[polinom foka]\index{polinom foka}
     Legyen $p\left( t \right)\in\mathbf{F}\left[ t \right]$ egy polinom.
@@ -601,7 +602,7 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
 \begin{definition}[oszthatóság]\index{polinom osztója}
         Azt mondjuk, hogy a $p\in\mathbb{F}\left[ t \right]$ \emph{osztója} az $f\in\mathbb{F}\left[ t \right]$ polinomnak,
         ha létezik $h\in\mathbb{F}\left[ t \right]$, hogy $f\left( t \right)=p\left( t \right)h\left( t \right)$.
-        Iyenkor $f$-et a $p$ egy \emph{többszörösének}\index{polinom többszöröse} is mondjuk.
+        Ilyenkor $f$-et a $p$ egy \emph{többszörösének}\index{polinom többszöröse} is mondjuk.
         Jelölés: $p|f$.
 \end{definition}
 Világos, hogy egy $p$ polinom összes többszörösei -- tehát azok, amelyeknek $p$ osztója --
@@ -894,7 +895,7 @@ A következő állítás szerint
 a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több mint a polinom foka.
 \begin{proposition}
     Legyen(ek) a $p\in\mathbf{F}\left[ t \right]$ nem zérus polinom különböző gyökei $t_1,\dots,t_k$,
-    és ezen gyökök muliplicitásai rendre $m_1,\dots,m_k$.
+    és ezen gyökök multiplicitásai rendre $m_1,\dots,m_k$.
     Ekkor $m_1+\dots+m_k\leq\deg p$.
 \end{proposition}
 \begin{proof}
@@ -908,6 +909,43 @@ a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több m
     A fokszámok összehasonlításából kapjuk, hogy
     $m_1+\dots+m_k\leq m_1+\dots+m_k+\deg h=\deg p$.
 \end{proof}
+A fenti gondolat szerint, ha egy legfeljebb $n$-ed fokú polinomnak $n+1$ különböző gyöke van, 
+akkor csak úgy lehetséges, ha a polinom minden együtthatója nulla.
+Ezt úgy is szoktuk fogalmazni, 
+hogy egy legfeljebb $n$-ed fokú polinomot $n+1$ helyettesítési értéke már egyértelműen meghatározza:
+\begin{proposition}\label{pr:polinomfv}
+    Tegyük fel, hogy a $p,q\in\mathbb{F}\left[ t \right]$ polinomok legfeljebb $n$-edfokúak, ahol $n$ egy nemnegatív egész,
+    és tegyük fel, 
+    hogy létezik $n+1$ különböző $t_0,t_1,\dots,t_n$ pont a testben,
+    amelyekre $p\left( t_j \right)=q\left( t_j \right)$ minden $j=0,\dots,n$.
+    Ekkor $p\left( t \right)=q\left( t \right)$, 
+    azaz $p$ és $q$ együtthatói azonosak.
+\end{proposition}
+\begin{proof}
+    Legyen $h=p-q$. 
+    Világos, hogy $\deg h\leq n$ és $h$-nak van $n+1$ különböző gyöke.
+    Az előző állítás szerint ez csak a $h=0$ polinomra igaz, ami azt jelenti, 
+    hogy $p$ és $q$ együtthatói azonosak.
+\end{proof}
+A maradékos osztás tételének szép következménye tehát,
+hogy ha $\mathbb{F}$ egy nem véges test, és a $p,q\in\mathbb{F}\left[ t \right]$ polinomok,
+akkor $p$-nek és $q$-nak pontosan akkor azonosak az együtthatói, ha 
+\(
+    p\left( t \right)=q\left( t \right)
+\)
+fennáll minden $t\in\mathbb{F}$ mellett.
+
+Itt fontos, hogy $\mathbb{F}$ nem véges test,
+hiszen például ha $\mathbb{F}=\left\{ 0,1 \right\}$ a két elemű test,
+akkor a $p\left( t \right)=t^2+t$ polinomra minden $t\in\left\{ 0,1 \right\}$ mellett $p\left( t \right)=0$,
+de a polinom együtthatói rendre a $\left\{ 0,1,1 \right\}$ számok a testből, 
+tehát ez nem a összeadásra nézve neutrális eleme az $\mathbb{F}\left[ t \right]$ polinomgyűrűnek.
+
+Konklúzióképpen: megnyugodhatunk, hogy az iménti szörnyűség nem véges testek esetén nem fordulhat elő,
+tehát mondjuk a valós vagy a komplex számtest felett mindegy, 
+hogy a polinomokat függvényeknek, vagy formális algebrai kifejezéseknek gondoljuk. 
+A lényeg hogy egy $n$-ed fokú polinomot az $n+1$ együtthatója, definíció szerint, 
+de az $n+1$ különböző helyen felvett helyettesítési értéke is egyértelműen meghatározza.
 
 \section{Az Euklideszi--algoritmus}
 Algoritmust keresünk polinomok legnagyobb közös osztójának és legkisebb közös többszörösének meghatározására.
@@ -994,7 +1032,7 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     \]
     Ha $d|p$ és $d|q$, akkor persze $d|p_s$ is teljesül.
     Emiatt,
-    a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
+    a $p_s$ polinomot a p főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
 \end{proof}
 Most a legkisebb közös többszörös algoritmikus meghatározására törekszünk.
 \begin{proposition}
@@ -1075,8 +1113,21 @@ Ugyanezt teszem az így kapott és a harmadik polinommal,
 az eredmény az első három polinom legkisebb közös többszöröse.
 Az így kapott polinommal és a negyedik polinommal egy újabb Euklideszi-algoritmus és egy újabb maradékos osztás után kapjuk az első négy polinom legkisebb közös többszörösét, 
 majd ennek eredményével és az ötödik polinommal mint két polinomnak a legkisebb közös többszörösével kapjuk az eredeti öt polinom legkisebb közös többszörösét.
+\section{Polinom faktorizáció}
+Kicsi korunk óta sulykolják belénk, hogy minden egész szám előáll, méghozzá lényegében csak egyféleképpen
+prímek szorzataként.
+Ha ismerjük két szám prímtényezős előállítását, akkor nagyon könnyű megmondani a két szám legkisebb közös többszörösét,
+vagy a legnagyobb közös osztóját.
+Evvel a probléma csak annyi, 
+hogy nagyon nehéz megmondani két, esetleg jó nagy, szám prímtényezős előállítását,
+így még az egész számok gyűrűjében is az Euklideszi-algoritmus a megfelelő, véges sok lépésben,
+végrehajtható módszer a legnagyobb közös osztó és a legkisebb közös többszörös konkrét felírására.
+
+Ebben a szakaszban azt mutatjuk meg, hogy prímtényezős előállításról szóló tétel a polinomok gyűrűjében is igaz marad.
+Természetesen konkrét algoritmust nem adunk, hiszen ilyen még számokra sem igen van.%
+\footnote{Ha ilyen lenne senki nem tudna interneten két számla közt pénzt mozgatni. Lásd például: \url{https://en.wikipedia.org/wiki/RSA_(cryptosystem)}}
 \chapter{Gauss-Jordan elimináció}
-\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
+\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrendszer}
 
 
 \chapter{Vektortér fogalma}
@@ -1836,4 +1887,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 20 Aug 2019 04:13:43 PM CEST
+Last Modified : Tue 20 Aug 2019 06:25:03 PM CEST
