@@ -209,6 +209,7 @@ Magyarkuti Gyula
 \mainmatter*
 \part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
 \chapter{Előzmények}
+\scwords A lineáris algebra tárgyalásához elengedhetetlenül szükséges általános algebrai ismereteket foglaljuk össze.
 \section{Algebrai struktúrák}
 \begin{definition}[$n$-változós művelet]\index{művelet}\index{algebrai struktúra}
     Legyen $H$ egy halmaz. Egy 
@@ -476,10 +477,8 @@ A legfontosabb struktúrák számunkra a következők:
         \alpha_0+\alpha_1t+\alpha_2t^2+\dots+\alpha_nt^n
     \]
     alakú formális algebrai kifejezést értjük.
-
     Itt $n$ tetszőleges nem negatív egész 
     és $\alpha_0,\dots,\alpha_n$ tetszőleges, az $\mathbf{F}$ test beli elemek.
-
     Az $\mathbf{F}$ test felletti összes polinomok halmazát $\mathbf{F}\left[ t \right]$ módon jelöljük.
 \end{definition}
 A fenti definícióban az \emph{algebrai kifejezés} szó arra utal,  hogy az
@@ -487,7 +486,7 @@ A fenti definícióban az \emph{algebrai kifejezés} szó arra utal,  hogy az
         \alpha_0+\alpha_1t+\alpha_2t^2+\dots+\alpha_nt^n
 \end{math}
 műveletek minden $t\in\mathbf{F}$ mellett értelmesek, 
-és eredményük egy újabb $\mathbf{F}$ test beli elem.
+és eredményük egy újabb $\mathbf{F}$ testbeli elem.
 Ha $t\in\mathbf{F}$ konkrétan meg van adva, 
 akkor a behelyettesítés után kapott elemet mondjuk a $p$ polinom helyettesítési értékének.
 
@@ -910,14 +909,28 @@ a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több m
     $m_1+\dots+m_k\leq m_1+\dots+m_k+\deg h=\deg p$.
 \end{proof}
 
-\section{Euklideszi algoritmus}
+\section{Az Euklideszi--algoritmus}
+Algoritmust keresünk polinomok legnagyobb közös osztójának és legkisebb közös többszörösének meghatározására.
+Ha egy pillanatra $\left( p_1,\dots,p_n \right)$ jelöli az adott $p_1,\dots,p_n$ polinomok legnagyobb közös osztóját,
+akkor nem nehéz meggondolni, 
+hogy 
+\[
+    \left( \left( p_1,\dots,p_{n-1} \right),p_n \right)=\left( p_1,\dots,p_{n}\right).
+\]
+Ezt $n=3,4,\dots$ számokra alkalmazva azt kapjuk, 
+hogy ha módszerünk van két polinom legnagyobb közös osztójának meghatározására, 
+akkor evvel már akárhány -- persze véges sok -- polinom legnagyobb közös osztója is meghatározható.
+Analóg módon ugyanez igaz a legkisebb közös többszörösre is.
+Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös többszörösét és legkisebb közös osztóját,
+akkor ugyan ezt mát meg tudnánk tenni véges sok polinom esetén is.
+
+Az Euklideszi-algoritmus két polinom legnagyobb közös osztójának meghatározására szolgál.
 Az eddigi ismereteink szerint a $p,q$ legnagyobb közös osztója a $J\left( p,q \right)$ ideál legalacsonyabb 
 fokú, normált tagja. 
-Az Euklideszi-algoritmus polinomok legnagyobb közös osztójának meghatározására szólgál.
 Véges sok lépésben végrehajtható, ezért a fentinél sokkal egyszerűbben működő algoritmust ad.
 Emlékezzünk arra, hogy ha $p,q\in\mathbf{F}\left[ t \right]$ valamely polinomok, akkor
     \(
-        J\left( p,q \right)=\left\{ fp+gq:f,g\in\mathbf{F}\left[ t \right] \right\}.
+        J\left( p,q \right)=\left\{ fp+gq:f,g\in\mathbf{F}\left[ t \right] \right\}
     \)
 jelöli a $p$ és a $q$ polinomokat tartalmazó legszűkebb ideált.
 Világos, hogy ha $r_1,r_2\in J\left( p,q \right)$, akkor 
@@ -983,7 +996,85 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     Emiatt,
     a $p_s$ polinomot a főegyütthatójával elosztva kapjuk a $p$ és a $q$ polinomok legnagyobb közös osztóját.
 \end{proof}
+Most a legkisebb közös többszörös algoritmikus meghatározására törekszünk.
+\begin{proposition}
+    Legyenek a $p,q\in\mathbb{F}\left[ t \right]$ polinomok relatív prímek,
+    és tegyük fel, hogy 
+    \begin{math}
+        p|qr.
+    \end{math}
+    Ekkor $p|r$.
+\end{proposition}
+\begin{proof}
+    Mivel a $p$ és a $q$ polinomok relatív prímek,
+    ezért a Bezout--azonosság szerint van $f$ és $g$ polinom, amelyekre
+    \(
+        fpr+gqr=r.
+    \)
+    A feltétel szerint $qr$ a $p$ többszöröse, 
+    így az iménti azonosság baloldala a $p$ többszöröse,
+    ami éppen azt jelenti, hogy $p|r$.
+\end{proof}
+\begin{proposition}
+    Tekintsük a $p,q\in\mathbb{F}\left[ t \right]$ polinomokat.
+    Jelölje $d$ a legnagyobb közös osztót, 
+    és
+    $m$ a legkisebb közös többszöröst.
+    Ekkor
+    \begin{displaymath}
+        d\left( t \right)m\left( t \right)=p\left( t \right)q\left( t \right).\qedhere
+    \end{displaymath}
+\end{proposition}
+\begin{proof}
+    Legyen $p=dr_1$ és $q=dr_2$.
+    Először megmutatjuk, hogy $r_1$ és $r_2$ relatív prímek.
+    Ha $s$ polinomom közös osztójuk, akkor $ds$ is közös osztója $p$-nek és $q$-nak,
+    amiből $ds|s$ következik.
+    A fokszámokat összehasonlítva ez csak akkor lehetséges, ha $s$ konstans polinomom, 
+    azaz $s|1$ valóban fennáll.
 
+    Most megmutatjuk, hogy az $m$ legkisebb közös többszörösre
+    \[
+        m=dr_1r_2.\tag{\dag}
+    \]
+    Világos, hogy $dr_1r_2$ egy közös többszöröse a $p,q$ polinomoknak.
+    Tegyük fel, hogy $s$ egy másik közös többszörös, azaz 
+    $s=ps_1$ és $s=qs_2$.
+    Ekkor 
+    \begin{math}
+        dr_1s_1=ps_1=s=qs_2=dr_2s_2,
+    \end{math}
+    amiből a nullosztómentesség szerint 
+    \[
+        r_1s_1=r_2s_2.
+    \]
+    Na most,
+    a fent kiemelt azonosság szerint szerint $r_1|r_2s_2$, ahol $r_1$ és $r_2$ relatív prímek.
+    Ebből azonnal kapjuk, hogy $r_1|s_2$.
+    No de $s=qs_2=dr_1s_2$, amiből már látszik, 
+    hogy $s$ egy többszöröse a $dr_1r_2$ polinomnak.
+    Ez éppen (\dag) azonosságot jelenti.
+    Innen
+    $d\cdot m=d(dr_1r_2)=(dr_1)(dr_2)=p\cdot q$ már nyilvánvaló.
+\end{proof}
+A fenti állítás csak két polinomra igaz, többre nem,
+de nekünk csak két polinomra kell.
+Úgy interpretáljuk, 
+hogy ha a szorzatot osztom maradékosan a legnagyobb közös osztóval, akkor a maradék mindig 
+zérus, 
+és a hányados éppen a legkisebb közös többszörös.
+Azt gondoltuk meg tehát, 
+hogy az Euklideszi-algoritmus módszert ad két polinom legkisebb közös többszörösének algoritmikus meghatározására is.
+
+Visszatérve a szakasz elején felvetett gondolatra, 
+ilyen módon véges sok lépésben végrehajtható algoritmust kapunk véges sok polinom legkisebb közös többszörösének meghatározására.
+Például öt polinom legkisebb közös többszöröséhez, 
+egy Euklideszi-algoritmussal meghatározzuk az első kettő polinom legnagyobb közös osztóját, 
+majd egy újabb maradékos osztással az első kettő legkisebb közös többszörösét.
+Ugyanezt teszem az így kapott és a harmadik polinommal, 
+az eredmény az első három polinom legkisebb közös többszöröse.
+Az így kapott polinommal és a negyedik polinommal egy újabb Euklideszi-algoritmus és egy újabb maradékos osztás után kapjuk az első négy polinom legkisebb közös többszörösét, 
+majd ennek eredményével és az ötödik polinommal mint két polinomnak a legkisebb közös többszörösével kapjuk az eredeti öt polinom legkisebb közös többszörösét.
 \chapter{Gauss-Jordan elimináció}
 \scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrenszer}
 
@@ -1745,4 +1836,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 19 Aug 2019 08:52:43 PM CEST
+Last Modified : Tue 20 Aug 2019 04:13:43 PM CEST
