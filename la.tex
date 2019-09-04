@@ -1233,6 +1233,47 @@ Az egész szakaszt összefoglalhatjuk így is:
 \end{proposition}
 
 \section{Mátrixgyűrűk}
+\begin{definition}[mátrix]
+    Egy tetszőleges test feletti mátrixnak nevezzünk,
+    a test elemeiből képzett táblázatot.
+    Ha $m,n\in\mathbf{N}$ előre rögzített pozitív egészek és 
+    az $A$ táblázatnak $m$ sora és $n$ oszlopa van, 
+    akkor azt mondjuk, hogy $A$ egy $m\times n$ méretű mátrix.
+    Az $\mathbf{F}$ test feletti $m\times n$-es mátrixok halmazát $\mathbf{F}^{m\times n}$
+    módon jelöljük.
+
+    Ha $A\in\mathbf{F}^{m\times n}$ egy mátrix, 
+    akkor $A_i$ jelöli az $i$-edik sort, ami persze egy $1\times n$-es mátrix;
+    $A^j$ jelöli a $j$-edik oszlopot, ami persze egy $m\times 1$-s mátrix;
+    $A_i^j$ jelöli az $i$-edik sor $j$-edik elemét.
+    Sokszor használjuk az $A_{i,j}=A_i^j$ jelölést is.
+
+    Időnként, azt hangsúlyozandó hogy mátrixokról van szó a mátrixot jelölő betűt kapcsos zárójelbe teszem.
+    Pl. $\left[ A \right]\in\mathbf{F}^{m\times n}$.
+\end{definition}
+Az azonos tipusú mátrixok közt műveleteket definiálunk:
+\begin{definition}[mátrixok összege]
+    Rözített $m,n\in\mathbf{N}$ mellett, ha $A,B\in\mathbf{F}^{m\times n}$,
+    akkor ezek összege az a $C\in\mathbf{F}^{m\times n}$ mátrix, amelyre
+    \[
+        C_{i,j}=A_{i,j}+B_{i,j}
+    \]
+    minden $i=1,\dots,m$ és $j=1,\dots, n$.
+\end{definition}
+\begin{proposition}
+    Az $m\times n$ méretű mátrixok az fent definiált összeadás művelettel
+    Abel-csoportot alkotnak.
+    A $[0]$-val jelölt neutrális elem az az $m\times n$-s mátrix, 
+    amelynek minden eleme a test zérus eleme:
+    \[
+        [0]_{i,j}=0;
+    \]
+    az $[A]$ mátrix additív inverze az az $[-A]$-val jelölt $m\times n$ méretű mátrix,
+    amelyre
+    \[
+        [-A]_{i,j}=-([A]_{i,j}).\qedhere
+    \]
+\end{proposition}
 \section{Komplex számok bevezetése}
 \section{Az algebra alaptétele}
 
@@ -1997,4 +2038,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 22 Aug 2019 08:24:13 PM CEST
+Last Modified : Wed 04 Sep 2019 07:54:08 PM CEST
