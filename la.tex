@@ -1232,7 +1232,7 @@ Az egész szakaszt összefoglalhatjuk így is:
     \]
 \end{proposition}
 
-\section{Mátrixgyűrűk}
+\section{Mátrixok}
 \begin{definition}[mátrix]
     Egy tetszőleges test feletti mátrixnak nevezzünk,
     a test elemeiből képzett táblázatot.
@@ -1250,17 +1250,21 @@ Az egész szakaszt összefoglalhatjuk így is:
 
     Időnként, azt hangsúlyozandó hogy mátrixokról van szó a mátrixot jelölő betűt kapcsos zárójelbe teszem.
     Pl. $\left[ A \right]\in\mathbf{F}^{m\times n}$.
+
+    A mátrixot a mérete és az elemei határozzák meg.
+    Emiat két mátrix akkor azonos, ha azonos méretűek, és a megfelelő elemeik is azonosak.
 \end{definition}
 Az azonos tipusú mátrixok közt műveleteket definiálunk:
-\begin{definition}[mátrixok összege]
+\begin{definition}[mátrixok összege]\index{mátrixok összege}
     Rözített $m,n\in\mathbf{N}$ mellett, ha $A,B\in\mathbf{F}^{m\times n}$,
     akkor ezek összege az a $C\in\mathbf{F}^{m\times n}$ mátrix, amelyre
     \[
         C_{i,j}=A_{i,j}+B_{i,j}
     \]
     minden $i=1,\dots,m$ és $j=1,\dots, n$.
+    Jelölés: $C=A+B$.
 \end{definition}
-\begin{proposition}
+\begin{proposition}\label{pr:matrixokVS1}
     Az $m\times n$ méretű mátrixok az fent definiált összeadás művelettel
     Abel-csoportot alkotnak.
     A $[0]$-val jelölt neutrális elem az az $m\times n$-s mátrix, 
@@ -1274,6 +1278,119 @@ Az azonos tipusú mátrixok közt műveleteket definiálunk:
         [-A]_{i,j}=-([A]_{i,j}).\qedhere
     \]
 \end{proposition}
+
+Most defináljuk egy számnak és egy mátrixnak a szorzatát.
+\begin{definition}[szám és mátrix szorzata]\index{szám és mátrix szorzata}
+    Ha $\alpha\in\mathbf{F}$ egy szám és $A\in\mathbf{F}^{m\times n}$ egy mátrix, akkor ezek szorzata
+    az $\alpha A\in\mathbf{F}^{m\times n}$ módon jelölt mátrix, melynek elemeire
+    \[
+        [\alpha A]_{i,j}=\alpha[A]_{i,j}.\qedhere
+    \]
+\end{definition}
+Könnyen ellenőrizhetőek a következő számolási szabályok:
+\begin{proposition}\label{pr:matrixokVS2}
+    Legyenek $A,B\in\mathbf{F}^{m\times n}$ mátrixok, és $\alpha,\beta\in\mathbf{F}$ tetszőleges számok.
+    Ekkor
+    \begin{enumerate}
+        \item $\alpha\left( A+B \right)=\alpha A+\alpha B$;
+        \item $\left( \alpha+\beta \right)A=\alpha A+\beta A$;
+        \item $\left( \alpha\beta \right)A=\alpha\left( \beta A \right)$;
+        \item $1 A=A$.
+    \end{enumerate}
+\end{proposition}
+Az utolsó két állítást, \ref{pr:matrixokVS1} és \ref{pr:matrixokVS2},
+együtt később úgy fogjuk fogalmazni, 
+hogy adott test feletti tetszőleges méretű mátrixok \emph{vektorteret}\index{vektortér} alkotnak.
+
+Most mátrixok szorzatát definiáljuk
+\begin{definition}[mátrixok szorzata]\index{mátrixok szorzata}
+    Legyen $A\in\mathbf{F}^{m\times k}$ és $B\in\mathbf{F}^{k\times n}$ mátrix.
+    Fontos, hogy $A$ oszlopainak száma azonos $B$ sorainak számával.
+    Ezek $C=AB$ szorzata egy $C\in\mathbf{F}^{m\times n}$ mátrix,
+    melynek elemeit az alábbi egyenlőség definiálja
+    \[
+        [C]_{i,j}=\sum_{s=1}^k[A]_{i,s}[B]_{s,j}.
+    \]
+    Itt persze $i=1,\dots,m$ és $j=1,\dots,n.$
+\end{definition}
+Az összeadás és szorzás műveleteket a dusztributivitás kapcsolja össze:
+\begin{proposition}
+    Legyen $A\in\mathbf{F}^{m\times k}$, valamint a $B,C\in\mathbf{F}^{k\times n}$ mátrixok.
+    Ekkor
+    \begin{displaymath}
+        A\left( B+C \right)=AB+AC.
+    \end{displaymath}
+    Hasonlóan,
+    ha $A,B\in\mathbf{F}^{m\times k}$, valamint a $C\in\mathbf{F}^{k\times n}$ mátrixok,
+    akkor
+    \begin{displaymath}
+        \left( A+B \right)C=AC+BC.
+    \end{displaymath}
+\end{proposition}
+\begin{proposition}
+    Legyen $A\in\mathbf{F}^{m\times k}$ és $B\in\mathbf{F}^{k\times n}$ mátrix.
+    Jelölje $C=AB$ ezek szorzatát ebben a sorrendben.
+    Ekkor
+    \begin{enumerate}
+        \item A szorzat mátrix $i$-edik sorának $j$-edik eleme Az $A$ mátrix $i$-edik sorának és a $B$ mátrix $j$-edik
+            oszlopának szorzata. Magyarul: minden $1\leq i\leq m$ és $1\leq j \leq n$ mellett
+            \[
+                [C]_{i,j}=[A]_i\cdot [B]^j.
+            \]
+        \item
+            A szorzat mátrix minden oszlopa az $A$ mátrix oszlopainak a $B$ mátrix megfelelő oszlopából vett elemekkel képzett
+            lineáris kombinációja.
+            Magyarul: minden $1\leq j\leq n$ mellett
+            \[
+                [C]^j=\sum_{s=1}^k[B]_s^j[A]^s.
+            \]
+        \item
+            A szorzat mátrix minden sora a $B$ mátrix sorainak az $A$ mátrix megfelelő sorából vett elemekkel képzett
+            lineáris kombinációja.
+            Magyarul: minden $1\leq i\leq n$ mellett
+            \[
+                [C]_i=\sum_{s=1}^k[A]_i^s[B]_s.
+            \]
+        \item
+            A szorzat mátrix az $A$ oszlopaiból, és $B$ soraiból alkotott diádok összege.
+            Magyarul:
+            \[
+                [C]=\sum_{s=1}^k[A]^s[B]_s.\qedhere
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}[1. bizonyítása]
+    $[A]_i\cdot [B]^j=\sum_{s=1}^k[A]_{i,s}[B]_{s,j}=[C]_{i,j}.$
+\end{proof}
+\begin{proof}[2. bizonyítása]
+    \(
+    \left[ \sum_{s=1}^k[B]_s^j[A]^s \right]_i=
+    \sum_{s=1}^k[B]_s^j[A]_i^s =
+    \sum_{s=1}^k[A]_i^s[B]_s^j =
+    [C]_{i,j}=
+    [C]_i^j
+    \)
+    minden $i$-re.
+\end{proof}
+\begin{proof}[3. bizonyítása]
+     \(
+     \left[ \sum_{s=1}^k[A]_i^s[B]_s \right]^j=
+     \sum_{s=1}^k[A]_i^s[B]_s^j=
+    [C]_{i,j}=
+    [C]_i^j
+     \)
+     minden $j$-re.
+\end{proof}
+\begin{proof}[4. bizonyítása]
+    \(
+    \left[ \sum_{s=1}^k[A]^s[B]_s \right]_{i,j}=
+    \sum_{s=1}^k\left[ [A]^s[B]_s \right]_{i,j}=
+    \sum_{s=1}^k [A]_i^s[B]_s^j=
+    C_{i,j}
+    \)
+    minden $i$-re $j$-re.
+\end{proof}
+
 \section{Komplex számok bevezetése}
 \section{Az algebra alaptétele}
 
@@ -2038,4 +2155,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 04 Sep 2019 07:54:08 PM CEST
+Last Modified : Thu 05 Sep 2019 06:12:54 PM CEST
