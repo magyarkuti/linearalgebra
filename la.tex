@@ -1253,6 +1253,9 @@ Az egész szakaszt összefoglalhatjuk így is:
 
     A mátrixot a mérete és az elemei határozzák meg.
     Emiat két mátrix akkor azonos, ha azonos méretűek, és a megfelelő elemeik is azonosak.
+
+    \emph{Diádnak}\index{diád} nevezzük egy oszlop és egy sor szorzatát.
+    Ha az oszlopnak és a sornak rendre azonosak az elemei, akkor \emph{szimmetrikus diádról} beszélünk.\index{szimmetrikus diád}.
 \end{definition}
 Az azonos tipusú mátrixok közt műveleteket definiálunk:
 \begin{definition}[mátrixok összege]\index{mátrixok összege}
@@ -1352,7 +1355,7 @@ Az összeadás és szorzás műveleteket a dusztributivitás kapcsolja össze:
                 [C]_i=\sum_{s=1}^k[A]_i^s[B]_s.
             \]
         \item
-            A szorzat mátrix az $A$ oszlopaiból, és $B$ soraiból alkotott diádok összege.
+            A szorzat mátrix az $A$ oszlopaiból, és a $B$ soraiból alkotott diádok összege.
             Magyarul:
             \[
                 [C]=\sum_{s=1}^k[A]^s[B]_s.\qedhere
@@ -1389,6 +1392,80 @@ Az összeadás és szorzás műveleteket a dusztributivitás kapcsolja össze:
     C_{i,j}
     \)
     minden $i$-re $j$-re.
+\end{proof}
+\begin{definition}[Kronecker-delta, identitás mátrix]\index{Kronceker-delta}\index{identitás mátrix}
+    \emph{Kroencker-deltának} nevezzük az alábbi egyszerű szimbólumot:
+    \[
+        \delta_{i,j}=
+        \begin{cases}
+            1,\text{ ha }i=j;\\
+            0,\text{ egyébként.}
+        \end{cases}
+    \]
+    Adott $n\geq 1$ természetes számra az $n\times n$ méretű identitás mátrix azaz $I\in\mathbf{F}^{n\times n}$ mátrix,
+    amelyre
+    \[
+        [I]_{i,j}=\delta_{i,j}.\qedhere
+    \]
+\end{definition}
+Nyilvánvaló, hogy ha $A\in\mathbf{F}^{m\times n}$ mátrix és $I\in\mathbf{F}^{n\times n}$ méretű identitás mátrix,
+akkor $A\cdot I=A$. Hasonlóan, ha most $I$ az $m\times m$ identitás mátrixot jelöli, akkor pedig $I\cdot A=A$ azonosság teljesül.
+Persze, ha $A\in\mathbf{F}^{n\times n}$ négyzetes mátrix és $I\in\mathbf{F}^{n\times n}$ az ugyanilyen méretű identitás mátrix,
+akkor
+\[
+    IA=AI=A
+\]
+is fennáll.
+
+A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativitása.
+\begin{proposition}
+    Legyen $A,B,C$ mátrixok úgy, hogy $AB$ értelmes és $BC$ is értelmes, 
+    azaz $A\in\mathbf{F}^{m\times k},B\in\mathbf{F}^{k\times l}, C\in\mathbf{F}^{l\times n}$.
+    Ekkor
+    \[
+        A\left( BC \right)=\left( AB \right)C.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Először is azt vegyük észre, hogy ha a három mátrix egyike szám, és a másik két mátrix
+    öszeszorozható, 
+    akkor a mátrix szorzás definíciója szerint az állítás nyilvánvaló.
+
+    Másodszor azt vegyük észre, hogy mindkét oldalon azonos méretű,
+    konkrétan $m\times n$ méretű mátrixok szerepelnek.
+    
+    Azt kell tehát még meggondolnunk,
+    hogy az $i$-edik sor $j$-edik eleme mindkét oldalon ugyanaz.
+    A jobboldalon ez
+    \begin{multline*}
+        [AB]_i\cdot [C]^j
+        =
+        \left( \sum_{s=1}^k[A]_i^s[B]_s \right)[C]^j
+        =
+        \sum_{s=1}^k\left([A]_i^s[B]_s\right)[C]^j
+        =
+        \sum_{s=1}^k[A]_i^s\left([B]_s[C]^j\right)
+        \\
+        =
+        \sum_{s=1}^k[A]_i^s\left(\sum_{r=1}^l[B]_s^r[C]_r^j\right)
+        =
+        \sum_{s=1}^k\sum_{r=1}^l[A]_i^s([B]_s^r[C]_r^j).
+    \end{multline*}
+    A baloldalon
+    az $i$-edik sor $j$-edik eleme hasonló számolgatással:
+    \begin{multline*}
+        [A]_i[BC]^j=
+        [A]_i\left( \sum_{r=1}^l[B]^r[C]_r^j \right)
+        =
+        \sum_{r=1}^l[A]_i\left([B]^r[C]_r^j\right)
+        =
+        \sum_{r=1}^l\left([A]_i[B]^r\right)[C]_r^j
+        \\
+        \sum_{r=1}^l\left(\sum_{s=1}^k[A]_i^s[B]_s^r\right)[C]_r^j
+        =
+        \sum_{r=1}^l\sum_{s=1}^k\left([A]_i^s[B]_s^r\right)[C]_r^j.
+    \end{multline*}
+    A testben fenálló asszociativitás és kommutativitás miatt a bal- és a jobboldali kifejezés azonos.
 \end{proof}
 
 \section{Komplex számok bevezetése}
@@ -2155,4 +2232,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 05 Sep 2019 06:12:54 PM CEST
+Last Modified : Thu 05 Sep 2019 07:53:16 PM CEST
