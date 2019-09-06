@@ -1467,6 +1467,99 @@ A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativit�
     \end{multline*}
     A testben fenálló asszociativitás és kommutativitás miatt a bal- és a jobboldali kifejezés azonos.
 \end{proof}
+\begin{proposition}
+    Legyen $n\in\mathbf{N}$ természetes szám, és tekintsük az $n\times n$ méretű mátrixok
+    halmazát, ellátva ezt a halmazt a mátrix összeadással és a mátrixszorzással.
+    Az $\left( \mathbf{F}^{n\times n},+,\cdot \right)$ algebrai struktúra egy egységelemes gyűrű.
+\end{proposition}
+Ez a gyűrű, az $n>1$ esetben biztosan nem kommutatív. 
+Például $n=2$ mellett
+\[
+    \begin{pmatrix}
+        0&1\\
+        0&0
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        0&0\\
+        1&0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1&0\\
+        0&0
+    \end{pmatrix},
+    \text{ amíg }
+    \begin{pmatrix}
+        0&0\\
+        1&0
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        0&1\\
+        0&0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0&0\\
+        0&1
+    \end{pmatrix}.
+\]
+Az sem igaz, hogy ez a gyűrű nullosztómentes lenne, hiszen például $n=2$ mellett az
+\[
+    A
+    =
+    \begin{pmatrix}
+        0&1\\
+        0&0
+    \end{pmatrix}
+\]
+mátrix nyilván nem a zérus mátrix (az összeadásra nézve neutrális elem), 
+de $A\cdot A=0$. 
+Ebből persze már az is következik, hogy a fenti $A$ mátrixnak nincs a szorzásra nézve inverze,
+de ez enélkül is nagyon egyszerűen látszik.%
+\footnote{
+    Ha 
+    \(
+        \begin{pmatrix}
+            a&b\\
+            c&d
+        \end{pmatrix}
+    \)
+    inverze lenne akkor a jobb alsó sarokra figyelve $0\cdot b +0\cdot d=1$ lenne, de egy testben $1\neq 0$.
+}
+Gyakorlatként próbáljunk magasabb $n$ számok mellett is a kommutativitás és a nullosztómentesség hiányára 
+példát találni.
+
+Nagyon fontos látni, hogy a kommutativitás hiánya, az eddigiektől eltérő számolási gyakorlatot eredményez.
+A számolás közben a mátrixok sorrendjén nem változtathatunk. 
+Persze előfordul, hogy két mátrix szorzata nem függ a sorrendtől. 
+Ilyenkor a két mátrixot egymással \emph{felcserélhetőnek}, vagy \emph{kommutálónak} mondjuk.\index{kommutáló mátrixok}
+Például, az identitás mátrixszal minden más mátrix kommutál.
+Egy mátrixot \emph{diagonális alakúnak}\index{diagonális mátrix} mondunk, 
+ha minden nem zérus eleme a fődiagonálisában van.
+Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
+
+Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
+Ilyenkor az $1\times 1$-es mátrixok tere voltaképpen azonos az $\mathbf{F}$-testtel, hiszen csak az a különbség,
+hogy egy testbeli $a$ elemet $[a]$ módon írjuk. A szorzás és az összeadás definiciója ugyanazt adja,
+ha mint a testbeli elemre, vagy az ebből képzett $1\times 1$-es mátrixra gondolunk.
+
+Az $n\times n$-es négyzetes mátrixok másik érdemleges részstruktúrája az
+\[
+    \mathcal{F}=
+    \left\{ c\cdot I:c\in\mathbf{F} \right\}.
+\]
+Itt $I$ az $n\times n$ méretű identitás mátrix, tehát $\mathcal{F}$ elemei azon diagonális alakú mátrixok, 
+ahol minden elem a diagonálisban azonos.
+Világos, hogy két ilyen mátrix összege és szorzata is ilyen marad:
+\[
+    aI+bI=\left( a+b \right)I\text{ és } aI\cdot bI=\left( ab \right)I.
+\]
+Ez azt jelenti, hogy az $\left( \mathcal{F},+,\cdot \right)$ struktúra egy egységelemes gyűrű.
+Világos, hogy itt bármely két elem kommutál, ergo egy kommutatív egységelemes gyűrűvel állunk szemben és
+az is teljesen nyilván való, hogy minden nem zérus elemnek van a szorzásra nézve inverze.
+Azt kaptuk tehát, hogy a fenti $\mathcal{F}$ minden $n$ mellett egy test.
 
 \section{Komplex számok bevezetése}
 \section{Az algebra alaptétele}
@@ -2232,4 +2325,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 05 Sep 2019 07:53:16 PM CEST
+Last Modified : Fri 06 Sep 2019 07:45:38 PM CEST
