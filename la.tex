@@ -1562,6 +1562,55 @@ az is teljesen nyilván való, hogy minden nem zérus elemnek van a szorzásra n
 Azt kaptuk tehát, hogy a fenti $\mathcal{F}$ minden $n$ mellett egy test.
 
 \section{Komplex számok bevezetése}
+\begin{definition}[Izomorf testek]\index{izomorfizmus}
+    Legyenek $\mathbf{F}$ és $\mathbf{G}$ testek.
+    Aztmondjuk, hogy a két test \emph{izomorf} egymással, 
+    ha létezik köztük \emph{művelettartó bijekció}, azaz létezik
+    \[
+        \varphi:\mathbf{F}\to\mathbf{G}
+    \]
+    bijekció, amely tartja a műveleteket is, azaz
+    \[
+        \varphi\left( a+b \right)=\varphi\left( a \right)+\varphi\left( b \right)
+        \text{ és }
+        \varphi\left( a\cdot b \right)=\varphi\left( a \right)\cdot \varphi\left( b \right).
+    \]
+    A művelettartó bijekciót \emph{izomorfizmusnak} nevezzük.
+\end{definition}
+Az izomorf testek közt nem teszünk különbséget. Úgy tekintjük őket, hogy csak jelölésükben különböznek.
+Például, ha az $\mathbf{R}$ valós számokra gondolunk, 
+akkor a $2\times 2$-es diagonális alakú valós mátrixok közül azok, ahol a diagonális mindkét eleme azonos,
+a valós testtel izomorf testet alkot.
+\[
+    \mathcal{R}=\left\{ 
+        \begin{pmatrix}
+            a&0\\
+            0&a
+        \end{pmatrix}
+        :a\in\mathbf{R}
+    \right\}
+    \text{ és }
+    \varphi:\mathbf{R}\to\mathcal{R},
+    \text{ ahol } 
+    \varphi\left( a \right)
+    =
+    \begin{pmatrix}
+         a&0\\
+         0&a
+    \end{pmatrix}.
+\]
+
+A $2\times 2$-es valós mátrixok egységelemes gyűrűjében tahát $\mathcal{R}$ egy olyan részgyűrű, ami még test is,
+és izomorf az $\mathbf{R}$ valósszámtesttel.
+Voltaképpen azt csináltuk, hogy a valós számtestet beágyaztuk a $2\times 2$-es mátrixok közé,
+azaz egy $a$ valós számot az
+\begin{math}
+    \begin{pmatrix}
+        a&0\\
+        0&a
+    \end{pmatrix}
+\end{math}
+mátrixszal reprezentálunk (írunk le).
 \section{Az algebra alaptétele}
 
 %\chapter{Gauss-Jordan elimináció}
@@ -2325,4 +2374,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 06 Sep 2019 07:45:38 PM CEST
+Last Modified : Fri 06 Sep 2019 08:25:39 PM CEST
