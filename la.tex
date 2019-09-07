@@ -1539,6 +1539,9 @@ Például, az identitás mátrixszal minden más mátrix kommutál.
 Egy mátrixot \emph{diagonális alakúnak}\index{diagonális mátrix} mondunk, 
 ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
+Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
+akkor e két mátrix egymással kommutál.
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára, amit majd később vezetünk be.
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
 Ilyenkor az $1\times 1$-es mátrixok tere voltaképpen azonos az $\mathbf{F}$-testtel, hiszen csak az a különbség,
@@ -1561,7 +1564,7 @@ Világos, hogy itt bármely két elem kommutál, ergo egy kommutatív egységele
 az is teljesen nyilván való, hogy minden nem zérus elemnek van a szorzásra nézve inverze.
 Azt kaptuk tehát, hogy a fenti $\mathcal{F}$ minden $n$ mellett egy test.
 
-\section{Komplex számok bevezetése}
+\section{A komplex számok bevezetése}
 \begin{definition}[Izomorf testek]\index{izomorfizmus}
     Legyenek $\mathbf{F}$ és $\mathbf{G}$ testek.
     Aztmondjuk, hogy a két test \emph{izomorf} egymással, 
@@ -1611,6 +1614,44 @@ azaz egy $a$ valós számot az
     \end{pmatrix}
 \end{math}
 mátrixszal reprezentálunk (írunk le).
+
+A $2\times 2$ méretű valós mátrixok, még sok-sok más testet is tartalmaznak. 
+Ezek közül számunkra a legfontosabb a következő részhalmaz
+\begin{defprop}[komplex számtest]
+    Jelölje két tetszőleges $a,b\in\mathbf{R}$ valós szám mellett $M_{a,b}$ az 
+    az $\left( a,b \right)$ valós számpárhoz tartozó 
+    \(
+        M_{a,b}
+        =
+        \begin{pmatrix}
+            a&-b\\
+            b&a
+        \end{pmatrix},
+    \)
+    mátrixot.
+    Tekintsük az ilyen tipusú mátrixok $\mathcal{C}$-vel jelölt halmazát:
+    \[
+        \mathcal{C}
+        =
+        \left\{ 
+            M_{a,b}
+            :a,b\in\mathbf{R}
+        \right\}
+    \]
+    E részhalmaz 
+    \begin{enumerate}
+        \item 
+        zárt a mátrix összeadásra és a mátrix szorzásra, 
+        így a $2\times 2$-es valós mátrixok egy speciális egységelemes részgyűrűje.
+        \item
+        E részgyűrűben a mátrix szorzás kommutatív művelet, 
+        és 
+    \item
+        és e részgyűrűben minden nem zérus mátrixnak van inverze is a mátrixszorzás műveletre nézve.
+    \end{enumerate}
+    Eszerint a $\left( \mathcal{C},+,\cdot \right)$ algebrai struktúra egy test.
+    Ezt a testet nevezzük a \emph{komplex számtestnek}\index{komplex számok}.
+\end{defprop}
 \section{Az algebra alaptétele}
 
 %\chapter{Gauss-Jordan elimináció}
@@ -2374,4 +2415,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 06 Sep 2019 08:25:39 PM CEST
+Last Modified : Sat 07 Sep 2019 01:42:38 PM CEST
