@@ -1712,6 +1712,169 @@ Ezek közül számunkra a legfontosabb a következő részhalmaz
     Ez a már igazolt kommutativitással éppen azt jelenti, hogy minden nem zérus elemnek van multiplikatív inverze,
     ergo $\mathcal{C}$ valóban test.
 \end{proof}
+Ebben a $\mathbb{C}$ testben az 
+\(
+    M_{0,-1}=
+    \begin{pmatrix}
+        0&-1\\
+        1&0
+    \end{pmatrix}
+\)
+elem olyan, hogy a négyzete a szorzásra nézve repordukáló elemnek az összeadásra nézve képzett inverze:
+\[
+    M_{0,-1}\cdot M_{0,-1}
+    =
+    \begin{pmatrix}
+        0&-1\\
+        1&0
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        0&-1\\
+        1&0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        -1&0\\
+        0 &-1
+    \end{pmatrix}
+    =
+    M_{-1,0}
+    =
+    -I.
+\]
+Ez a tulajdonság azért figyelemre méltó, 
+mert ha a szokásoknak megfelelően a test multiplikatív neutrális elemét az $1$ szimbolúmmal jelöljük, 
+akkor olyan elemet találtunk a komplex számok testjében, 
+amelynek négyzete éppen $-1$.
+Tudjuk, hogy a valós számtest esetében ez nem lenne lehetséges.
+
+Tekintsük most valamely $a,b\in\mathbb{R}$ mellett az 
+\[
+    M_{a,b}=
+    \begin{pmatrix}
+        a&-b\\
+        b&a
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        a&0\\
+        0&a
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+        0&-1\\
+        1&0
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        b&0\\
+        0&b
+    \end{pmatrix}
+\]
+felbontást.
+Ha bevezetjük az 
+\(
+    i=M_{0,1}=
+    \begin{pmatrix}
+        0&-1\\
+        1&0
+    \end{pmatrix}
+\)
+jelölést\index{$i$ komplex szám}, akkor minden komplex szám
+\[
+    M_{a,b}=
+    \begin{pmatrix}
+        a&0\\
+        0&a
+    \end{pmatrix}
+    +
+    i
+    \cdot
+    \begin{pmatrix}
+        b&0\\
+        0&b
+    \end{pmatrix}
+\]
+alakban írható.
+Emlékezzünk arra, 
+hogy a valós számtest is részhalmaza a komplex számoktestnek abban az értelemben, 
+ha minden $a$ valós számot az
+\begin{math}
+    \begin{pmatrix}
+        a&0\\
+        0&a
+    \end{pmatrix}
+\end{math}
+mátrixszal reprezentálunk. ($\mathcal{R}\subseteq\mathcal{C}$).
+Ha tehát megegyezünk abban, hogy az $a$ valós számra nézve mi az
+\(
+    \begin{pmatrix}
+        a&0\\
+        0&a
+    \end{pmatrix}
+\)
+mátrixra gondolunk,\footnote{Kicsit pontosabban: a valós számok mátrix $2\times 2$-es mátrixreprezentációját használjuk.}
+akkor azt kapjuk, hogy minden komplex szám
+\[
+    M_{a,b}=a+ib
+\]
+alakú, ahol $i$ egy olyan komplex szám, amelyre $i^2=-1$, $a,b\in\mathbb{R}$.
+Ezt nevezzük a komplex szám \emph{normálalakjának}.\index{komplex szám normálalakja}
+
+Ne felejtsük a műveleteket:
+Láttuk, hogy $M_{a,b}+M_{ c,d}=M_{a+c,b+d}$. 
+Ez a normálalak reprezentáció mellett azt jelenti, hogy az összedás definíciója csak
+\[
+    (a+ib)+(c+id)=(a+c)+i(b+d)\tag{\dag}
+\]
+lehet.
+Hasonlóan emlékszünk, hogy
+\begin{math}
+    M_{a,b}\cdot M_{c,d}=M_{ac-bd,ad+bc}
+\end{math},
+ami normálalak reprezentáció mellett az
+\[
+    (a+ib)\cdot (c+id)=(ac-bd)+i(ad+bc)\tag{\ddag}
+\]
+definíciót eredményezi.
+
+A következőket gondoltuk meg:
+\begin{defprop}[komplex számtest a normálakkal]
+    Definiálja
+    \[
+        \mathbb{C}
+        =
+        \left\{ 
+            a+ib:a,b\in\mathbb{R}
+        \right\}
+    \]
+    a \emph{komplex számok normálalakját}.
+    Az összeadás műveletet definiálja (\dag), és a szorzás műveletet definiálja (\ddag).
+    Az így kapott algebrai struktúra test, amely izomorf a komplex számtest mátrix reprezentációjával.
+    Az izomorfizmust a 
+    \[
+        \varphi:\mathcal{C}\to\mathbb{C},\quad 
+        \varphi
+        \left( 
+        \begin{matrix}
+            a&-b\\
+            b&a
+        \end{matrix}
+        \right)
+        =
+        a+ib
+    \]
+    művelettartó bijekció hozza létre.
+\end{defprop}
+
+Ha már megértettük, hogy a komplex számok normálalak reprezentációja testet alkot,
+akkor a (\dag) és (\ddag) definíciók megjegyzése nagyon könnyű.
+Más nem is lehet:
+Az összedáshoz (\dag) csak el kell végezni a műveletet majd kimelni $i$-t,
+ a szorzás definiciójához (\ddag) 
+ pedig a disztributív szabály elvégzése után figyelembe véve, hogy $i^2=-1$,
+az $i$ kiemelése után jutunk.
 
 \section{Az algebra alaptétele}
 
@@ -2476,4 +2639,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 07 Sep 2019 02:46:01 PM CEST
+Last Modified : Sat 07 Sep 2019 09:18:06 PM CEST
