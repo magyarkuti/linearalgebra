@@ -1652,6 +1652,67 @@ Ezek közül számunkra a legfontosabb a következő részhalmaz
     Eszerint a $\left( \mathcal{C},+,\cdot \right)$ algebrai struktúra egy test.
     Ezt a testet nevezzük a \emph{komplex számtestnek}\index{komplex számok}.
 \end{defprop}
+\begin{proof}
+    Az $a,b,c,d\in\mathbb{R}$ valós számok mellett
+    \[
+        M_{a,b}+M_{c,d}=
+        \begin{pmatrix}
+            a&-b\\
+            b&a
+        \end{pmatrix}
+        +
+        \begin{pmatrix}
+            c&-d\\
+            d&c
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            a+c&-b-d\\
+            b+d&a+c
+        \end{pmatrix}
+        =
+        M_{a+c,b+d}
+    \]
+    és hasonlóan a mátrix szorzás definicója szerint
+    \[
+        M_{a,b}\cdot M_{c,d}=
+        \begin{pmatrix}
+            a&-b\\
+            b&a
+        \end{pmatrix}
+        \cdot
+        \begin{pmatrix}
+            c&-d\\
+            d&c
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            ac-bd&-ad-bc\\
+            bc+ad&-bd+ac
+        \end{pmatrix}
+        =
+        M_{ac-bd,ad+bc}.
+    \]
+    Mivel $M_{1,0}$ a $2\times 2$-es identitás mátrix, ezért $\mathcal{C}$ a mátrix összeadásra és a mátrixszorzásra nézve
+    egységelemes gyűrűt alkot.
+
+    A szorzás kommutativitása is látszik a fenti számolásból, hiszen
+    \[
+        M_{c,d}\cdot M_{a,b}=M_{ca-db,cb+da}=M_{ac-bd,ad+bc}=M_{a,b}\cdot M_{c,d}
+    \]
+    a valós számok összeadásának és szorzásának 
+    kommutativitása miatt.
+
+    Legyen most $M_{a,b}$ egy nem zérus mátrix, így $a^2+b^2\neq 0$.
+    Világos, hogy 
+    \[
+    M_{a,b}\cdot M_{a,-b}=M_{a^2+b^2,0}=\left( a^2+b^2 \right)M_{1,0}=\left( a^2+b^2 \right)I.
+    \]
+    Ebből már látszik is, hogy $M_{a,b}\cdot M_{\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2}}=I$.
+    Ez a már igazolt kommutativitással éppen azt jelenti, hogy minden nem zérus elemnek van multiplikatív inverze,
+    ergo $\mathcal{C}$ valóban test.
+\end{proof}
+
 \section{Az algebra alaptétele}
 
 %\chapter{Gauss-Jordan elimináció}
@@ -2415,4 +2476,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 07 Sep 2019 01:42:38 PM CEST
+Last Modified : Sat 07 Sep 2019 02:46:01 PM CEST
