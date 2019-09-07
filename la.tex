@@ -180,7 +180,7 @@ A legfontosabb forrás \citep{DancsPuskas2001}.
 
 \dots
 
-Igyekszem struktúráltan írni.
+Igyekszem strukturáltan írni.
 Ennek oka, hogy evvel hangsúlyozzam, hogy az olvasónak igyekeznie kell struktúráltan gondolkodni.
 A hátulütője, hogy hibásan azt a helytelen képzetet keltheti, 
 Nem, nem erről van szó. 
@@ -189,12 +189,12 @@ Itt nem erről van szó, ez egyetlen matematikai diszciplína esetében sem igaz
 Az olvasónak igyekeznie kell, 
 hogy meglássa mi a legfontosabb gondolat a sok-sok állításnak, 
 mint építménynek egy-egy ,,nyilvánvaló következményében''.
-Kicsi, atomszerű építőkövek egymásutáni megértése visz az anyagban előre, 
+Kicsi, atomszerű építőkövek egymás utáni megértése visz az anyagban előre, 
 ezek az egymástól feltűnő módon szeparált állítások és azok érvekkel való alátámasztása,
 amit bizonyításnak is szokás mondani.
-Hogy e kis lépések egymástól még határozottabban válljanak el azt az írás
+Hogy e kis lépések egymástól még határozottabban váljanak el azt az írás
 typográfiája is erősíti azzal, 
-az állítás-szerű környeteket a \,\myqedsymbol~, 
+az állítás-szerű környezeteket a \,\myqedsymbol~, 
 és a bizonyítás környezetet a \,\qedsymbol~ karakterekkel zárom le.
 
 
@@ -260,7 +260,7 @@ A félcsoport additív írásmódja esetén természetes a neutrális elemet \em
 míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
 \begin{definition}[csoport]\index{csoport}
     Egy $\left( G,\star \right)$ algebrai struktúrát \emph{csoportnak} nevezünk,
-    ha neutrális elemes félcsoport, amlyben minden $g\in G$-hez létezik $g'\in G$, hogy
+    ha neutrális elemes félcsoport, amelyben minden $g\in G$-hez létezik $g'\in G$, hogy
     \[
         g\star g'=e=g'\star g.\tag{\dag}
     \]
@@ -334,7 +334,7 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
     elemnek van inverze\footnote{értsd: a $\cdot$ szorzás neutrális elemére mint egységelemre nézve}, 
     és $0\neq 1$\footnote{érts: az összeadásra nézve és a szorzásra nézve képzett neutrális elemek nem azonosak.}.
 \end{definition}
-A test az elgebrai struktúra, ahol a az összeadás és sorzás műveletekkel úgy számolhatunk, mint amit a valós számok során megszoktuk.
+A test az algebrai struktúra, ahol a az összeadás és szorzás műveletekkel úgy számolhatunk, mint amit a valós számok során megszoktuk.
 Példaként néhány tulajdonság.
 \begin{proposition}
     Az $\left( R,+,\cdot \right)$ gyűrűben minden $a\in R$ mellett 
@@ -350,7 +350,7 @@ Példaként néhány tulajdonság.
         a\left( 0+0 \right)=
         a\cdot 0+a\cdot 0.
     \end{math}
-    A jobboldali $a0$-val való egszerűsítés után kapjuk, 
+    A jobboldali $a0$-val való egyszerűsítés után kapjuk, 
     hogy $a=a\cdot0$.
     A második azonosságot az első felhasználásával kapjuk:
     \begin{math}
@@ -478,7 +478,7 @@ A legfontosabb struktúrák számunkra a következők:
     \]
     alakú formális algebrai kifejezést értjük.
     Itt $n$ tetszőleges nem negatív egész 
-    és $\alpha_0,\dots,\alpha_n$ tetszőleges, az $\mathbf{F}$ test beli elemek.
+    és $\alpha_0,\dots,\alpha_n$ tetszőleges, az $\mathbf{F}$ testbeli elemek.
     Az $\mathbf{F}$ test feletti összes polinomok halmazát $\mathbf{F}\left[ t \right]$ módon jelöljük.
 \end{definition}
 A fenti definícióban az \emph{algebrai kifejezés} szó arra utal,  hogy az
@@ -504,7 +504,9 @@ Az az előírás ugyanis, hogy tetszőleges $t\in\mathbf{F}$ mellett hajtsuk vé
         \alpha_0+\alpha_1t+\alpha_2t^2+\dots+\alpha_nt^n
 \]
 műveletsort. 
-A műveletsorrol és nem annak eredményéről van szó. 
+A műveletsorról és nem annak eredményéről van szó. 
+
+
 Két műveletsor akkor azonos, ha ugyanazok a műveletsort meghatározó 
 $\left( \alpha_0,\alpha_1,\dots,\alpha_n \right)$%
 \footnote{Az előbbi zárójellel azt hangsúlyozzuk, hogy az együtthatók sorrendje is számít.}
@@ -521,7 +523,7 @@ A jelölések megértése is fontos.
 $p\left( t \right)\in\mathbf{F}\left[ t \right]$ semmi mást nem jelent, 
 minthogy $p\left( t \right)$ egy polinom.
 Persze a polinom nem keverendő össze a helyettesítési értékével, 
-hiszen az egyik egy algebrai kifejezés-együttes, a másik egy az adott test beli elem.
+hiszen az egyik egy algebrai kifejezés-együttes, a másik egy az adott testbeli elem.
 Szokásos viszont, hogy ha nincs konkrét $t$ a szövegkörnyezetben, akkor is $p\left( t \right)$ jelöli a polinomot. 
 Néha egyszerűbben csak $p$-vel jelöljük, főleg akkor ha nincs szó behelyettesítésről,
 emiatt érdektelen a változó jele.
@@ -613,7 +615,7 @@ akkor $q$ minden többszöröse $p$-nek is többszöröse.
 Ha $p,q$ polinomok, 
 amelyekre $p|q$ és $q|p$ akkor a két polinom csak konstans szorzóban különbözik egymástól.
 Ha például a két polinom még normált is, akkor $p|q$ és $q|p$ csak $p=q$ esetben lehetséges.
-A polinomgyűrű ideáljaira fókuszálva, azt gondoltuk éppen meg, 
+A polinomgyűrű ideáljaira fokuszálva, azt gondoltuk éppen meg, 
 hogy $J\left( p \right)=J\left( q \right)$ normált $p,q$ polinomokra csak úgy teljesülhet, ha $p=q$,
 azaz a polinomok gyűrűjében minden főideálnak csak egy generáló eleme van a normált polinomok körében.
 
@@ -742,7 +744,7 @@ ahogyan azt az egész számok közt megszoktuk.
     Legyen ez $d$. 
     Most megmutatjuk, hogy minden $p\in J$-re $d|p$.
     A maradékos osztás szerint
-    valamely $h,r$ polinomkra
+    valamely $h,r$ polinomokra
     \[
         p\left( t \right)=
         h\left( t \right)d\left( t \right)+r\left( t \right);
@@ -841,7 +843,7 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
     \[
         d=f_1p_1+\dots f_rp_r
     \]
-    valamely $f_1,\dots,f_r$ polinokra.
+    valamely $f_1,\dots,f_r$ polinomokra.
     Ha valamely $d_1$ polinomra $d_1|p_j$ minden $j=1,\dots,r$ mellett,
     akkor a fenti azonosság szerint $d_1|d$ is fennáll.
 
@@ -850,7 +852,7 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
 A következő állítás azonosságát Bezout--azonosságnak mondjuk.
 \begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
     Legyenek a $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ tetszőleges $\mathbb{F}$ test feletti polinomok.
-    Ezek ponotosan akkor relatív prímek, 
+    Ezek pontosan akkor relatív prímek, 
     ha léteznek $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok, hogy
     \[
         f_1\left( t \right)p_1\left( t \right)+f_2\left( t \right)p_2\left( t \right)+\dots+f_r\left( t \right)p_r\left( t \right)=1\qedhere
@@ -860,7 +862,7 @@ A következő állítás azonosságát Bezout--azonosságnak mondjuk.
 A szakaszt a maradékos osztás módszerének másik fontos következményeivel zárjuk.
 Azt gondoljuk meg, 
 hogy a gyöktényező a polinomból mindig kiemelhető, 
-emiatt egy akármilyen test feletti $n$-edfokú polinom gyökeinek száma $n$-nél nagyobb nem lehet.
+emiatt egy akármilyen test feletti $n$-ed fokú polinom gyökeinek száma $n$-nél nagyobb nem lehet.
 \begin{proposition}
     Legyen $p\in\mathbf{F}\left[ t \right]$ egy nem zérus polinom,
     és $t_0$ egy gyöke, azaz $p\left( t_0 \right)=0$.
@@ -899,7 +901,7 @@ a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több m
     Ekkor $m_1+\dots+m_k\leq\deg p$.
 \end{proposition}
 \begin{proof}
-    A test nullosztómentessége és a gyöktényező kiemelhetősége miatt 
+    A test nullosztó mentessége és a gyöktényező kiemelhetősége miatt 
     \[
     p\left( t \right)=
     \left( t-t_1 \right)^{m_1}\cdot\left( t-t_2 \right)^{m_2}\dots\left( t-t_k \right)^{m_k}\cdot 
@@ -914,7 +916,7 @@ akkor csak úgy lehetséges, ha a polinom minden együtthatója nulla.
 Ezt úgy is szoktuk fogalmazni, 
 hogy egy legfeljebb $n$-ed fokú polinomot $n+1$ helyettesítési értéke már egyértelműen meghatározza:
 \begin{proposition}\label{pr:polinomfv}
-    Tegyük fel, hogy a $p,q\in\mathbb{F}\left[ t \right]$ polinomok legfeljebb $n$-edfokúak, ahol $n$ egy nemnegatív egész,
+    Tegyük fel, hogy a $p,q\in\mathbb{F}\left[ t \right]$ polinomok legfeljebb $n$-ed fokúak, ahol $n$ egy nemnegatív egész,
     és tegyük fel, 
     hogy létezik $n+1$ különböző $t_0,t_1,\dots,t_n$ pont a testben,
     amelyekre $p\left( t_j \right)=q\left( t_j \right)$ minden $j=0,\dots,n$.
@@ -1136,7 +1138,7 @@ A magasabb fokú polinomok esetében a probléma nagyban függ a testtől is,
 ahonnan a polinom együtthatói származnak.
 A következő állítás viszont minden test mellett igaz.
 \begin{proposition}[polinom faktorizáció]\label{pr:polfact}
-    Teszőleges test feletti polinomgyűrűben, 
+    Tetszőleges test feletti polinomgyűrűben, 
     minden (normált) polinom előáll mint (normált) irreducibilis polinomok szorzata.
 \end{proposition}
 \begin{proof}
@@ -1209,7 +1211,7 @@ minden $j=1,\dots,s$ mellett.
     Alkalmas átindexelés után feltehető, hogy $q_1|p_1$.
     No de, $p_1$ is irreducibilis, és $\deg q_1\geq 1$ miatt csak $\deg q_1=\deg p_1$ lehetséges,
     tehát a normáltság szerint $q_1=p_1$.
-    A polinomgyűrű nullosztómentessége szerint az első polinomokkal egyszerűsíthetünk, ergo
+A polinomgyűrű nullosztó mentessége szerint az első polinomokkal egyszerűsíthetünk, ergo
     \[
     p_2\cdots p_s=p=q_2\cdots q_r,
     \]
@@ -1252,14 +1254,14 @@ Az egész szakaszt összefoglalhatjuk így is:
     Pl. $\left[ A \right]\in\mathbf{F}^{m\times n}$.
 
     A mátrixot a mérete és az elemei határozzák meg.
-    Emiat két mátrix akkor azonos, ha azonos méretűek, és a megfelelő elemeik is azonosak.
+    Emiatt két mátrix akkor azonos, ha azonos méretűek, és a megfelelő elemeik is azonosak.
 
     \emph{Diádnak}\index{diád} nevezzük egy oszlop és egy sor szorzatát.
-    Ha az oszlopnak és a sornak rendre azonosak az elemei, akkor \emph{szimmetrikus diádról} beszélünk.\index{szimmetrikus diád}.
+    Ha az oszlopnak és a sornak rendre azonosak az elemei, akkor \emph{szimmetrikus diádról} beszélünk.\index{szimmetrikus diád}
 \end{definition}
-Az azonos tipusú mátrixok közt műveleteket definiálunk:
+Az azonos típusú mátrixok közt műveleteket definiálunk:
 \begin{definition}[mátrixok összege]\index{mátrixok összege}
-    Rözített $m,n\in\mathbf{N}$ mellett, ha $A,B\in\mathbf{F}^{m\times n}$,
+    Rögzített $m,n\in\mathbf{N}$ mellett, ha $A,B\in\mathbf{F}^{m\times n}$,
     akkor ezek összege az a $C\in\mathbf{F}^{m\times n}$ mátrix, amelyre
     \[
         C_{i,j}=A_{i,j}+B_{i,j}
@@ -1282,7 +1284,7 @@ Az azonos tipusú mátrixok közt műveleteket definiálunk:
     \]
 \end{proposition}
 
-Most defináljuk egy számnak és egy mátrixnak a szorzatát.
+Most definiáljuk egy számnak és egy mátrixnak a szorzatát.
 \begin{definition}[szám és mátrix szorzata]\index{szám és mátrix szorzata}
     Ha $\alpha\in\mathbf{F}$ egy szám és $A\in\mathbf{F}^{m\times n}$ egy mátrix, akkor ezek szorzata
     az $\alpha A\in\mathbf{F}^{m\times n}$ módon jelölt mátrix, melynek elemeire
@@ -1316,7 +1318,7 @@ Most mátrixok szorzatát definiáljuk
     \]
     Itt persze $i=1,\dots,m$ és $j=1,\dots,n.$
 \end{definition}
-Az összeadás és szorzás műveleteket a dusztributivitás kapcsolja össze:
+Az összeadás és szorzás műveleteket a disztributivitás kapcsolja össze:
 \begin{proposition}
     Legyen $A\in\mathbf{F}^{m\times k}$, valamint a $B,C\in\mathbf{F}^{k\times n}$ mátrixok.
     Ekkor
@@ -1428,7 +1430,7 @@ A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativit�
 \end{proposition}
 \begin{proof}
     Először is azt vegyük észre, hogy ha a három mátrix egyike szám, és a másik két mátrix
-    öszeszorozható, 
+    összeszorozható, 
     akkor a mátrix szorzás definíciója szerint az állítás nyilvánvaló.
 
     Másodszor azt vegyük észre, hogy mindkét oldalon azonos méretű,
@@ -1465,7 +1467,7 @@ A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativit�
         =
         \sum_{r=1}^l\sum_{s=1}^k\left([A]_i^s[B]_s^r\right)[C]_r^j.
     \end{multline*}
-    A testben fenálló asszociativitás és kommutativitás miatt a bal- és a jobboldali kifejezés azonos.
+    A testben fennálló asszociativitás és kommutativitás miatt a bal- és a jobboldali kifejezés azonos.
 \end{proof}
 \begin{proposition}
     Legyen $n\in\mathbf{N}$ természetes szám, és tekintsük az $n\times n$ méretű mátrixok
@@ -1517,7 +1519,7 @@ Az sem igaz, hogy ez a gyűrű nullosztómentes lenne, hiszen például $n=2$ me
 mátrix nyilván nem a zérus mátrix (az összeadásra nézve neutrális elem), 
 de $A\cdot A=0$. 
 Ebből persze már az is következik, hogy a fenti $A$ mátrixnak nincs a szorzásra nézve inverze,
-de ez enélkül is nagyon egyszerűen látszik.%
+de ez e nélkül is nagyon egyszerűen látszik.%
 \footnote{
     Ha 
     \(
@@ -1545,7 +1547,7 @@ Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, e
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
 Ilyenkor az $1\times 1$-es mátrixok tere voltaképpen azonos az $\mathbf{F}$-testtel, hiszen csak az a különbség,
-hogy egy testbeli $a$ elemet $[a]$ módon írjuk. A szorzás és az összeadás definiciója ugyanazt adja,
+hogy egy testbeli $a$ elemet $[a]$ módon írjuk. A szorzás és az összeadás definíciója ugyanazt adja,
 ha mint a testbeli elemre, vagy az ebből képzett $1\times 1$-es mátrixra gondolunk.
 
 Az $n\times n$-es négyzetes mátrixok másik érdemleges részstruktúrája az
@@ -1567,7 +1569,7 @@ Azt kaptuk tehát, hogy a fenti $\mathcal{F}$ minden $n$ mellett egy test.
 \section{A komplex számok bevezetése}
 \begin{definition}[Izomorf testek]\index{izomorfizmus}
     Legyenek $\mathbf{F}$ és $\mathbf{G}$ testek.
-    Aztmondjuk, hogy a két test \emph{izomorf} egymással, 
+    Azt mondjuk, hogy a két test \emph{izomorf} egymással, 
     ha létezik köztük \emph{művelettartó bijekció}, azaz létezik
     \[
         \varphi:\mathbf{F}\to\mathbf{G}
@@ -1603,8 +1605,8 @@ a valós testtel izomorf testet alkot.
     \end{pmatrix}.
 \]
 
-A $2\times 2$-es valós mátrixok egységelemes gyűrűjében tahát $\mathcal{R}$ egy olyan részgyűrű, ami még test is,
-és izomorf az $\mathbf{R}$ valósszámtesttel.
+A $2\times 2$-es valós mátrixok egységelemes gyűrűjében tehát $\mathcal{R}$ egy olyan részgyűrű, ami még test is,
+és izomorf az $\mathbf{R}$ valós számtesttel.
 Voltaképpen azt csináltuk, hogy a valós számtestet beágyaztuk a $2\times 2$-es mátrixok közé,
 azaz egy $a$ valós számot az
 \begin{math}
@@ -1629,7 +1631,7 @@ Ezek közül számunkra a legfontosabb a következő részhalmaz
         \end{pmatrix},
     \)
     mátrixot.
-    Tekintsük az ilyen tipusú mátrixok $\mathcal{C}$-vel jelölt halmazát:
+    Tekintsük az ilyen típusú mátrixok $\mathcal{C}$-vel jelölt halmazát:
     \[
         \mathcal{C}
         =
@@ -1673,7 +1675,7 @@ Ezek közül számunkra a legfontosabb a következő részhalmaz
         =
         M_{a+c,b+d}
     \]
-    és hasonlóan a mátrix szorzás definicója szerint
+    és hasonlóan a mátrix szorzás definíciója szerint
     \[
         M_{a,b}\cdot M_{c,d}=
         \begin{pmatrix}
@@ -1720,7 +1722,7 @@ Ebben a $\mathbb{C}$ testben az
         1&0
     \end{pmatrix}
 \)
-elem olyan, hogy a négyzete a szorzásra nézve repordukáló elemnek az összeadásra nézve képzett inverze:
+elem olyan, hogy a négyzete a szorzásra nézve reprodukáló elemnek az összeadásra nézve képzett inverze:
 \[
     M_{0,-1}\cdot M_{0,-1}
     =
@@ -1744,8 +1746,8 @@ elem olyan, hogy a négyzete a szorzásra nézve repordukáló elemnek az össze
     -I.
 \]
 Ez a tulajdonság azért figyelemre méltó, 
-mert ha a szokásoknak megfelelően a test multiplikatív neutrális elemét az $1$ szimbolúmmal jelöljük, 
-akkor olyan elemet találtunk a komplex számok testjében, 
+mert ha a szokásoknak megfelelően a test multiplikatív neutrális elemét az $1$ szimbólummal jelöljük, 
+akkor olyan elemet találtunk a komplex számtestben, 
 amelynek négyzete éppen $-1$.
 Tudjuk, hogy a valós számtest esetében ez nem lenne lehetséges.
 
@@ -1814,7 +1816,7 @@ Ha tehát megegyezünk abban, hogy az $a$ valós számra nézve mi az
         0&a
     \end{pmatrix}
 \)
-mátrixra gondolunk,\footnote{Kicsit pontosabban: a valós számok mátrix $2\times 2$-es mátrixreprezentációját használjuk.}
+mátrixra gondolunk,\footnote{Kicsit pontosabban: a valós számok mátrix $2\times 2$-es mátrix reprezentációját használjuk.}
 akkor azt kapjuk, hogy minden komplex szám
 \[
     M_{a,b}=a+ib
@@ -1824,7 +1826,7 @@ Ezt nevezzük a komplex szám \emph{normálalakjának}.\index{komplex szám norm
 
 Ne felejtsük a műveleteket:
 Láttuk, hogy $M_{a,b}+M_{ c,d}=M_{a+c,b+d}$. 
-Ez a normálalak reprezentáció mellett azt jelenti, hogy az összedás definíciója csak
+Ez a normálalak reprezentáció mellett azt jelenti, hogy az összeadás definíciója csak
 \[
     (a+ib)+(c+id)=(a+c)+i(b+d)\tag{\dag}
 \]
@@ -1871,8 +1873,8 @@ A következőket gondoltuk meg:
 Ha már megértettük, hogy a komplex számok normálalak reprezentációja testet alkot,
 akkor a (\dag) és (\ddag) definíciók megjegyzése nagyon könnyű.
 Más nem is lehet:
-Az összedáshoz (\dag) csak el kell végezni a műveletet majd kimelni $i$-t,
- a szorzás definiciójához (\ddag) 
+Az összeadáshoz (\dag) csak el kell végezni a műveletet majd kiemelni $i$-t,
+ a szorzás definíciójához (\ddag) 
  pedig a disztributív szabály elvégzése után figyelembe véve, hogy $i^2=-1$,
 az $i$ kiemelése után jutunk.
 
@@ -1884,7 +1886,7 @@ az $i$ kiemelése után jutunk.
 
 \chapter{Vektortér fogalma}
 \chapter{Altér}
-\chapter{Lineárisan független rendszerek és generátorrendszerek}
+\chapter{Lineárisan független rendszerek és generátor rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
     mondunk, ha egyik vektora kifejezhető a többi vektor lineáris kombinációjaként.
@@ -1900,11 +1902,11 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
     \begin{enumerate}
         \item Lineárisan összefüggő;
         \item Van olyan elem a vektortérben, amely nem csak egyféleképpen áll elő mint az $y_1,\dots,y_n$
-            vektorok lineáriskombinációja,\\
+            vektorok lineáris kombinációja,\\
             azaz formálisabban:
             létezik z\in V, amelyre $z=\sum_{j=1}^n\xi_jy_j$ és $z=\sum_{j=1}^n\eta_jy_j$
             és létezik $1\leq k\leq n$, amelyre $\xi_k\neq\eta_k$.
-        \item Vannak olyan nem mind zérus $\alpha_1,\dots,\alpha_n$ skalárok, amellyekkel
+        \item Vannak olyan nem mind zérus $\alpha_1,\dots,\alpha_n$ skalárok, amelyekkel
             \[
                 \sum_{j=1}^n\alpha_jy_j=0.\qedhere
             \]
@@ -1915,7 +1917,7 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
     \begin{description}
         \item[$1.\Rightarrow 2.$] 
             Tegyük fel, hogy $y_k=\sum_{j=1}^{k-1}\eta_jy_j+\sum_{j=k+1}^n\eta_jy_j$.
-            Ekkor az alábbi együtthatórendszerek
+            Ekkor az alábbi együttható rendszerek
             \[
                 \left( \alpha_1,\dots,\alpha_{k-1},0,\alpha_{k+1},\dots,\alpha_n \right)
                 \qquad
@@ -1923,7 +1925,7 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
             \]
             a $k$-adik helyen biztosan különböznek, 
             hiszen $0\neq 1$, 
-            és mind a két együtthatórendszerrel képzett lineáris kombináció ugyanazt az $y_k$ vektort eredményezi.
+            és mind a két együttható rendszerrel képzett lineáris kombináció ugyanazt az $y_k$ vektort eredményezi.
         \item[$2.\Rightarrow 3.$]
             Világos, hogy 
             \[
@@ -1951,7 +1953,7 @@ Fontos észrevétel a következő.
     valamely lineárisan összefüggő vektorrendszert tartalmazó vektorrendszer maga is lineárisan összefüggő.
 \end{proposition}
 \begin{definition}
-    Egy nem feltétetlen véges vektorrendszert lineárisan összefüggőnek nevezünk,
+    Egy nem feltétlen véges vektorrendszert lineárisan összefüggőnek nevezünk,
     ha van véges részrendszere, amely lineárisan összefüggő.
 \end{definition}
 \begin{definition}[lineárisan független vektorrendszer]\index{lineárisan független rendszer}
@@ -1964,9 +1966,9 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
     A vektorrendszerre tett alábbi feltevések egymással ekvivalensek.
     \begin{enumerate}
         \item Lineárisan független;
-        \item A vektorrendszer lineáris burkában minden elem egyetlen egy féle képpen áll elő,
+        \item A vektorrendszer lineáris burkában minden elem egyetlen egyféleképpen áll elő,
             mint az $y_1,\dots,y_n$ vektorok lineáris kombinációja.
-        \item Az $y_1,\dots,y_n$ vektoroknak csak a triviális lináris kombinációja zérus,
+        \item Az $y_1,\dots,y_n$ vektoroknak csak a triviális lineáris kombinációja zérus,
             azaz
             \[
                 \sum_{j=1}^n\alpha_jy_j=0\text{ esetén }\alpha_1=\alpha_2=\dots=\alpha_n=0.\qedhere
@@ -1980,7 +1982,7 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
     Egy lineárisan független rendszert \emph{maximális lineárisan független rendszernek} nevezünk,
     ha nem lehet bővíteni úgy, hogy lineárisan független maradjon.
 
-    Egy generátorrendszert \emph{minimális generátorrendszernek} mondunk, ha nem lehet szűkíteni úgy,
+    Egy generátorrendszert \emph{minimális generátor rendszernek} mondunk, ha nem lehet szűkíteni úgy,
     hogy generátorrendszer maradjon.
 \end{definition}
 \begin{proposition}
@@ -2060,13 +2062,13 @@ Egyrészt használjuk a Steinitz-lemma igazolásában, másrészt ennek segíts�
 hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkoztatási rendszert változtatjuk.
 
 \begin{lemma}[generátorrendszer csere]
-    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszere valamely vektortérnek,
+    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátor rendszere valamely vektortérnek,
     és tegyük fel, hogy valamely $y$ vektorra
     \[
         y=\sum_{j=1}^m\eta_jx_j,
     \]
     ahol $\eta_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
-    Ekkor $y$ becserélhető a $k$-adik helyen a generátorrendszerbe, 
+    Ekkor $y$ becserélhető a $k$-adik helyen a generátor rendszerbe, 
     úgy hogy az generátorrendszer maradjon, azaz a
     \[
         \left\{ x_1,\dots,x_{k-1},y,x_{k+1},\dots,x_m \right\}
@@ -2075,7 +2077,7 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
     \label{le:gencsere}
 \end{lemma}
 \begin{proof}
-    Fejezzük ki $x_k$-t az $y$-ra feírt formulából:
+    Fejezzük ki $x_k$-t az $y$-ra felírt formulából:
     \(
     x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
     \)
@@ -2120,7 +2122,7 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
     \]
     együtthatókkal.
 \end{proof}
-\begin{SL}\index{Steinitz}
+\begin{SL}\index{Steinitz--lemma}
     Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer és az
     $\left\{ x_1,\dots,x_m \right\}$ vektorrendszer egy generátor rendszer.
     Ekkor
@@ -2178,12 +2180,12 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
     \[
         \left\{ x_1,\dots,x_m \right\} \text{ és } \left\{ y_1,\dots,y_n \right\}
     \]
-    lineárisan független generátorrendszerek, akkor $n=m$.
+    lineárisan független generátor rendszerek, akkor $n=m$.
     \label{co:baziselemszam}
 \end{corollary}
 \begin{definition}[végesen generált vektortér]\index{végesen generált vektortér}
     Egy vektorteret \emph{végesen generáltnak} nevezünk,
-    ha létezik véges elemszámú generátorrendszere.
+    ha létezik véges elemszámú generátor rendszere.
 \end{definition}
 Teljesen világos, hogy ha van egy vektortérben véges generátorrendszer,
 akkor van minimális generátorrendszer is, azaz van a térben lineárisan független generátorrendszer.
@@ -2201,20 +2203,20 @@ Ezt rögzítjük a következőekben.
     Világos, hogy ez is generátorrendszer marad.
 
     Folytassuk az eljárást.
-    Mivel véges sok vektor van az eredeti generátorrendszerben az algoritmus előbb-utóbb megáll,
+    Mivel véges sok vektor van az eredeti generátor rendszerben az algoritmus előbb-utóbb megáll,
     ami azt jelenti, hogy olyan generátorrendszert kapunk, 
     ahol már minden elem a többi lineáris burkán kívül van,
     ergo lineárisan független.
 \end{proof}
-A lineárisan független generátorrendszerek olyan sűrűn fordulnak elő a tárgyalásban,
+A lineárisan független generátor rendszerek olyan sűrűn fordulnak elő a tárgyalásban,
 hogy rövidebb külön nevet adni nekik.
 \begin{definition}[bázis]\index{bázis}
     Egy vektorrendszert \emph{bázisnak} nevezünk, ha ez egyszerre lineárisan független és generátorrendszer.
 \end{definition}
 \Aref{pr:bazisletezik}. állítást tehát úgy fogalmazhatjuk, hogy végesen generált vektortérnek van bázisa,
 és hasonlóan \aref{co:baziselemszam}. következmény pedig azt jelenti, 
-hogy egy vektortérben bármely két bázis azonos elemeszámú.
-Ezutóbbi tény ad értelmet a következő definíciónak:
+hogy egy vektortérben bármely két bázis azonos elemszámú.
+Ez utóbbi tény ad értelmet a következő definíciónak:
 \begin{proposition}
     Egy végesen generált vektortérről azt mondjuk, hogy $n$ dimenziós, vagy $n$ a dimenzió száma,
     ha a vektortérben van $n$ elemű bázis.
@@ -2242,14 +2244,14 @@ Az eddigiek összefoglalásaként is tekinthető a következő állítás.
     Az első négy feltétel ekvivalenciájával kezdünk.
     \begin{itemize}
         \item[1.\Rightarrow 2.]
-            Mivel a tér $m$-dimenziós, ezért van $m$-elemű generátorrendszere,
+            Mivel a tér $m$-dimenziós, ezért van $m$-elemű generátor rendszere,
             így a Steinitz-lemma szerint nincs $m$-nél több elemet tartalmazó lineárisan független
             rendszere, ergo bármely $m$ elemet tartalmazó lineárisan független rendszer maximális is.
         \item[2.\Rightarrow 3.]
             Láttuk korábban.
         \item[3.\Rightarrow 4.]
             Mivel a tér $m$-dimenziós, ezért van $m$-elemű lineárisan független rendszere,
-            így a Steinitz-lemma szerint nincs $m$-nél kevesebb elemet tartalmazó generátorrendszere,
+            így a Steinitz-lemma szerint nincs $m$-nél kevesebb elemet tartalmazó generátor rendszere,
             ergo bármely $m$ elemet tartalmazó generátorrendszer rendszer minimális is.
         \item[4.\Rightarrow 1.]
             Láttuk korábban.
@@ -2273,20 +2275,20 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
     \[
         \left\{ x_1,\dots,x_m \right\}
     \]
-    $m$ elemű lineárisan független generátorrendszere.
+    $m$ elemű lineárisan független generátor rendszere.
     Legyen $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független.
-    A Steinitz-lemma szerint ez a rendszer kiterjesztehő egy 
+    A Steinitz-lemma szerint ez a rendszer kiterjeszthető egy 
     \[
         \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
     \]
-    generátorrendszerré, ami persze bázis is.
+    generátor rendszerré, ami persze bázis is.
     Ezt kellett belátni. 
 \end{proof}
 
-Meggondoltuk tehát, hogy bármely véges generátorrendszerből elhagyható néhány elem úgy, 
-hogy a rendszer lineárisan független generátorrendszerré váljon,
+Meggondoltuk tehát, hogy bármely véges generátor rendszerből elhagyható néhány elem úgy, 
+hogy a rendszer lineárisan független generátor rendszerré váljon,
 és hasonlóan bármely lineárisan független rendszerhez, hozzátehető néhány elem úgy, hogy a
-rendszer lineárisan független generátorrendszerré váljon.
+rendszer lineárisan független generátor rendszerré váljon.
 
 
 
@@ -2305,7 +2307,7 @@ rendszer lineárisan független generátorrendszerré váljon.
     $A=BC$ szorzatfelbontás teljesül,
     az $A$ mátrix \emph{feszítőrangjának} nevezzük.
 
-    Jelölések: Ha $\left\{ x_1,\dots,x_m \right\}$ a szóbanforgó vektorrendszer, akkor
+    Jelölések: Ha $\left\{ x_1,\dots,x_m \right\}$ a szóban forgó vektorrendszer, akkor
     \[
         \rank\left\{ x_1,\dots,x_m \right\}=\dim\lin\left\{ x_1,\dots,x_m \right\}
     \]
@@ -2319,7 +2321,7 @@ rendszer lineárisan független generátorrendszerré váljon.
     továbbá $\srank{A}$ jelöli a feszítőrangját $A$-nak.
 \end{definition}
 \begin{proposition}(Rang-tétel)\label{pr:rang}
-    Tetszőleges test feletti tetszőleges mátrix mellett, a fent bevezett három rang-koncepció azonos.
+    Tetszőleges test feletti tetszőleges mátrix mellett, a fent bevezetett három rang-koncepció azonos.
 
     Formálisabban: Minden $A\in\mathbb{F}^{n\times m}$ mellett
     \[
@@ -2333,12 +2335,12 @@ rendszer lineárisan független generátorrendszerré váljon.
         A=BC,\tag{\dag}
     \]
     ahol $B\in\mathbf{F}^{n\times r},C\in\mathbf{F}^{r\times m}$.
-    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátorrendszere $A$ oszlopvektorterének
-    és $C$ sorrendszere minimális generátorrendszere $A$ sorvektorterének.
+    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátor rendszere $A$ oszlop-vektorterének
+    és $C$ sorrendszere minimális generátor rendszere $A$ sor-vektorterének.
 
     Vegyük észre, hogy $\srank{A}\leq \crank{A}$.
-    Ugyanis ha az $A$ mátrix oszlopvektorterének veszünk egy tetszőleges választott
-    $b_1,\dots,b_k$ generátorrendszerét, 
+    Ugyanis ha az $A$ mátrix oszlop-vektorterének veszünk egy tetszőleges választott
+    $b_1,\dots,b_k$ generátor rendszerét, 
     akkor van $B\in\mathbf{F}^{n\times k}$ és $C\in\mathbf{F}^{k\times m}$ mátrix, hogy $A=BC$.
     Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\crank{A}$.
     \\
@@ -2358,14 +2360,14 @@ rendszer lineárisan független generátorrendszerré váljon.
     \]
     ami csak úgy lehetséges, 
     hogy $V=W$.
-    A $B$ oszlopai tehát $V$-nek is generátorrendszerét alkotját,
+    A $B$ oszlopai tehát $V$-nek is generátor rendszerét alkotják,
     és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
     elvesztése nélkül.
 
     A sorokra vonatkozó indoklás analóg.
     Először is $\srank{A}\leq \rrank{A}$.
     Ugyanis ha az $A$ mátrix sorvektorterének veszünk egy tetszőleges választott
-    $c_1,\dots,c_k$ generátorrendszerét, 
+    $c_1,\dots,c_k$ generátor rendszerét, 
     akkor van $B\in\mathbf{F}^{n\times k}$ és $C\in\mathbf{F}^{k\times m}$ mátrix, hogy $A=BC$.
     Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\rrank{A}$.
     \\
@@ -2385,7 +2387,7 @@ rendszer lineárisan független generátorrendszerré váljon.
     \]
     ami csak úgy lehetséges, 
     hogy $V=W$.
-    A $C$ oszlopai tehát $V$-nek is generátorrendszerét alkotját,
+    A $C$ oszlopai tehát $V$-nek is generátor rendszerét alkotják,
     és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
     elvesztése nélkül.
 
@@ -2399,9 +2401,9 @@ rendszer lineárisan független generátorrendszerré váljon.
     Érdemes a rang-tétel következő összegzését megjegyezni.
     Legyen $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek $r$ a rangja.
     Ekkor létezik $A=BC$ felbontása, ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
-    Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlopvektorterének nagyon sok bázisa van.
-    Viszont minden ilyen felbontásban $B$ oszloprendszere az $A$ oszlopvektorterének, 
-    míg $C$ sorrendszere az $A$ sorvektorterének minimális generátorrendszerét, ergo bázisát alkotja.
+    Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlop-vektorterének nagyon sok bázisa van.
+    Viszont minden ilyen felbontásban $B$ oszloprendszere az $A$ oszlop-vektorterének, 
+    míg $C$ sorrendszere az $A$ sorvektorterének minimális generátor rendszerét, ergo bázisát alkotja.
 \end{note}
 Következményképpen érdemes meggondolni a mátrix és inverzének felcserélhetőségére vezető állítást.
 \begin{proposition}
@@ -2416,11 +2418,11 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     \[
         A\left( BA-I \right)=A\left( BA \right)-AI=\left( AB \right)A-AI=IA-AI=A-A=0.
     \]
-    Namost, 
+    Na most, 
     ha $BA\neq I$ lenne, 
     akkor a $BA-I$ mátrixnak lenne egy olyan nem zérus oszlopa, 
     melynek elemeivel mint együtthatókkal képzett lineáris kombinációja az $A$ oszlopainak 
-    a zéro vektort eredményezi.
+    a zéró vektort eredményezi.
     Ez persze ellentmond az $A$ oszloprendszer lineáris függetlenségének,
     tehát $BA=I$ valóban fennáll.%
     \footnote{%
@@ -2445,7 +2447,7 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     \end{enumerate}
     Ha a fenti feltételek egyike (ergo mindegyike) fennáll, 
     akkor azt mondjuk, hogy $A$ mátrix \emph{invertálható}\index{invertálható mátrix}.
-    Szinonímaként használjuk még a \emph{nemszinguláris}\index{nemszinguláris mátrix}, 
+    Szinonimaként használjuk még a \emph{nemszinguláris}\index{nemszinguláris mátrix}, 
     vagy az \emph{reguláris}\index{reguláris mátrix} szavakat.
     Ha egy mátrix nem invertálható, akkor \emph{szingulárisnak}\index{szinguláris mátrix} nevezzük.
 
@@ -2453,7 +2455,7 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     \(
         AB=I
     \)
-    fennáll az $A$ inverzének mondjuk, és $A^{-1}=B$, vel jelöljük.
+    fennáll az $A$ inverzének mondjuk, és $A^{-1}=B$-vel jelöljük.
     Világos, hogy
 \[
     AA^{-1}=I=A^{-1}A,\quad (A^{-1})^{-1}=A.\qedhere
@@ -2473,8 +2475,8 @@ Tegyük fel, hogy, hogy ismerjük az alábbi fogalmakat:
     \item Altér, lineáris burok, generátorrendszer;
     \item Mátrix szorzás,
     \item Gauss-Jordan elimináció. Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
-        lineárisan függetlenek, akkor az elemi sor műveletekkel az identikus mátrixszá transformálható.
-        Mivel az elemi sorműveletek, balszorzások alkalmas mátrixszal, 
+        lineárisan függetlenek, akkor az elemi sor műveletekkel az identikus mátrixszá transzformálható.
+        Mivel az elemi sorműveletek, bal-szorzások alkalmas mátrixszal, 
         azt kapjuk, hogy létezik $P$ mátrix, amelyre $PQ=I$.
 \end{enumerate}
 Amit határozottan kerülünk, és azt tesszük fel, hogy nem ismerjük,
@@ -2484,7 +2486,8 @@ Amit határozottan kerülünk, és azt tesszük fel, hogy nem ismerjük,
     \item determináns.
 \end{enumerate}
 Külön probléma a mátrix rangjának definíciója.
-Nem definálhatom, mint az oszlop vagy sorvektortér dimenzióját, hiszen a felépítés jelen szintjén még nincs bázis.
+Nem definiálhatom, 
+mint az oszlop vagy sorvektortér dimenzióját, hiszen a felépítés jelen szintjén még nincs bázis.
 Természetesen azt sem tudjuk még, hogy a maximális lineárisan független sor- vagy oszloprendszer választástól függetlenül mindig azonos elemszámú.
 A mátrix feszítő rangja viszont definiálható.
 \begin{definition}[mátrix feszítőrangja]
@@ -2502,7 +2505,7 @@ ami a lenti 3. állítás.
 \begin{proposition}
     Az alábbi állítások egymás következményei:
     \begin{enumerate}
-        \item Homogén lineáris egyenletrendszernek, amelynek több ismeretlene van mint egyenlete,
+        \item Homogén lineáris egyenletrendszernek, amelynek több ismeretlene van, mint egyenlete
             mindig létezik nem triviális megoldása.
         \item Lineárisan független vektorrendszer elemszáma nem nagyobb mint egy generátorrendszer elemszáma.
         \item Minden nemzérus mátrixban 
@@ -2540,7 +2543,7 @@ ami a lenti 3. állítás.
     \]
     Találtunk tehát az $\left\{ x_1,\dots,x_m \right\}$ vektorrendszernek egy
     nem triviális, 
-    de a zéro vektort eredményező,
+    de a zéró vektort eredményező,
     lineáris kombinációját (\ref{eq:sys}).
 \end{proof}
 \begin{proof}[2.\Rightarrow 3.]
@@ -2639,4 +2642,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 07 Sep 2019 09:18:06 PM CEST
+Last Modified : Sat 07 Sep 2019 09:44:41 PM CEST
