@@ -319,7 +319,7 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
         \item és a két műveletet összeköti a következő két disztributivitás:\index{disztributív}
             \[
                 a\cdot\left( b+c \right)=a\cdot b + a\cdot c\qquad
-                \left( a\cdot b \right)\cdot c=a\cdot c+a\cdot b.
+                \left( a + b \right)\cdot c=a\cdot c+a\cdot b.
             \]
     \end{enumerate}
     Ha $\left( R,\cdot \right)$ neutrális elemes félcsoport, akkor azt mondjuk, hogy $R$ egy
@@ -350,8 +350,8 @@ Példaként néhány tulajdonság.
         a\left( 0+0 \right)=
         a\cdot 0+a\cdot 0.
     \end{math}
-    A jobboldali $a0$-val való egyszerűsítés után kapjuk, 
-    hogy $a=a\cdot0$.
+    A jobboldali $a\cdot 0$-val való egyszerűsítés után kapjuk, 
+    hogy $0=a\cdot 0$.
     A második azonosságot az első felhasználásával kapjuk:
     \begin{math}
         0
@@ -362,7 +362,7 @@ Példaként néhány tulajdonság.
         =
         1\cdot a + \left( -1 \right)\cdot a
         =
-        a +\left( -1 \right)a.
+        a +\left( -1 \right)\cdot a.
     \end{math}
     Az additív inverz definíciója szerint ez éppen azt jelenti, hogy $-a=\left( -1 \right)\cdot a$.
 \end{proof}
@@ -448,7 +448,7 @@ A generált ideál fogalma nagyon fontos.
     halmazt is,
     ami azt jelenti, hogy 
     \[
-        J=\left\{ a_1,\dots,a_r \right\}=
+        J\left( a_1,\dots,a_r \right)=
         \left\{ \sum_{j=1}^ra_jb_j:b_1,\dots,b_r\in R \right\}
     \]
     az $a_1,\dots,a_r$ elemeket tartalmazó legszűkebb ideál.
@@ -602,7 +602,7 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
 
 \section{Polinomok oszthatósága és a maradékos osztás}
 \begin{definition}[oszthatóság]\index{polinom osztója}
-        Azt mondjuk, hogy a $p\in\mathbb{F}\left[ t \right]$ \emph{osztója} az $f\in\mathbb{F}\left[ t \right]$ polinomnak,
+        Azt mondjuk, hogy a $p\in\mathbb{F}\left[ t \right]$ \emph{osztója} az $f\in\mathbb{F}\left[ t \right]$ nem zérus polinomnak,
         ha létezik $h\in\mathbb{F}\left[ t \right]$, hogy $f\left( t \right)=p\left( t \right)h\left( t \right)$.
         Ilyenkor $f$-et a $p$ egy \emph{többszörösének}\index{polinom többszöröse} is mondjuk.
         Jelölés: $p|f$.
@@ -616,13 +616,13 @@ Ha $p,q$ polinomok,
 amelyekre $p|q$ és $q|p$ akkor a két polinom csak konstans szorzóban különbözik egymástól.
 Ha például a két polinom még normált is, akkor $p|q$ és $q|p$ csak $p=q$ esetben lehetséges.
 A polinomgyűrű ideáljaira fokuszálva, azt gondoltuk éppen meg, 
-hogy $J\left( p \right)=J\left( q \right)$ normált $p,q$ polinomokra csak úgy teljesülhet, ha $p=q$,
+hogy \emph{$J\left( p \right)=J\left( q \right)$ normált $p,q$ polinomokra csak úgy teljesülhet, ha $p=q$},
 azaz a polinomok gyűrűjében minden főideálnak csak egy generáló eleme van a normált polinomok körében.
 
 A következő állítás szerint a polinomok közt is működik a maradékos osztás,
 ahogyan azt az egész számok közt megszoktuk.
 \begin{proposition}[maradékos osztás]
-    Legyenek $p,q\in\mathbf{F}\left[ t \right]$ polinomok, $p\neq 0$.
+    Legyenek $p,q\in\mathbf{F}\left[ t \right]$ polinomok, $q\neq 0$.
     Ekkor létezik egyetlen $h,r\in\mathbf{F}\left[ t \right]$ polinom, amelyre
     \[
         p
@@ -832,7 +832,7 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
     \[
         d\left( t \right)=f_1\left( t \right)p_1\left( t \right)+
         \dots+
-        f_r\left( t \right)g_r\left( t \right)
+        f_r\left( t \right)p_r\left( t \right)
     \]
     alakban valamely $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok segítségével.
 \end{proposition}
@@ -841,7 +841,7 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
     Világos, hogy $d|p_j$ minden $j=1,\dots,r$ és $d\in J\left( p_1,\dots,p_r \right)$,
     azaz
     \[
-        d=f_1p_1+\dots f_rp_r
+        d=f_1p_1+\dots+f_rp_r
     \]
     valamely $f_1,\dots,f_r$ polinomokra.
     Ha valamely $d_1$ polinomra $d_1|p_j$ minden $j=1,\dots,r$ mellett,
@@ -2644,4 +2644,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 07 Sep 2019 10:14:45 PM CEST
+Last Modified : Tue 10 Sep 2019 06:25:28 PM CEST
