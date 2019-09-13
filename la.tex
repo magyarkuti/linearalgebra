@@ -149,7 +149,8 @@
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
 \DeclareMathOperator{\rank}{rank}
-%\DeclareMathOperator{\dim}{dim}
+%\DeclareMathOperator{\arg}{arg}
+
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \citeindextrue
 \makeindex
@@ -1566,7 +1567,7 @@ Világos, hogy itt bármely két elem kommutál, ergo egy kommutatív egységele
 az is teljesen nyilván való, hogy minden nem zérus elemnek van a szorzásra nézve inverze.
 Azt kaptuk tehát, hogy a fenti $\mathcal{F}$ minden $n$ mellett egy test.
 
-\section{A komplex számok bevezetése}
+\section{A komplex számok mint mátrixok}
 \begin{definition}[Izomorf testek]\index{izomorfizmus}
     Legyenek $\mathbf{F}$ és $\mathbf{G}$ testek.
     Azt mondjuk, hogy a két test \emph{izomorf} egymással, 
@@ -1817,7 +1818,8 @@ Ha tehát megegyezünk abban, hogy az $a$ valós számra nézve mi az
         0&a
     \end{pmatrix}
 \)
-mátrixra gondolunk,\footnote{Kicsit pontosabban: a valós számok mátrix $2\times 2$-es mátrix reprezentációját használjuk.}
+mátrixra gondolunk,%
+\footnote{Kicsit pontosabban: a valós számok $2\times 2$-es mátrix reprezentációját használjuk.}
 akkor azt kapjuk, hogy minden komplex szám
 \[
     M_{a,b}=a+ib
@@ -1931,8 +1933,8 @@ akkor e definíció szerint
     |z|=
     \sqrt{z^2}=
     \begin{cases}
-        z,&\text{ ha }z\geq 0;\\
-        -z&\text{ ha }z<0,
+        z&\text{, ha }z\geq 0\\
+        -z&\text{, ha }z<0\text{,}
     \end{cases}
 \]
 ami egybeesik a valós számok abszolút értékének definíciójával.
@@ -1958,6 +1960,54 @@ Egy kevésbé népszerű, de ekvivalens alakja
 Vegyük észre, hogy a valós abszolút érték függvény tulajdonságait sem használtuk,
 és a fenti tulajdonságokat valós esetre is újra igazoltuk.
 \section{A komplex számok trigonometrikus alakja}
+Láttuk, hogy $z,w\in\mathbf{C}$ komplex szám mellett
+\[
+    \Re\left( z+w \right)=\Re z+\Re w
+    \qquad
+    \text{ és }
+    \qquad
+    \Im\left( z+w \right)=\Im z+\Im w.
+\]
+Ez azt jelenti, hogy ha az $a+ib$ komplex számot azonosítjuk az $\mathbf{R}^2$ sík
+$\left( a,b \right)$ pontjával, 
+akkor egyszerűen koordinátánként kell összeadni a komplex számokat, mintha a $z$ komplex szám
+az origóból az $\left( a,b \right)$ pontra mutató vektor lenne.
+
+A kérdés, hogy ha így képzeljük a komplex számokat, 
+akkor a komplex számok szorzása mit jelent a komplex számoknak megfeleltetett vektorok körében?
+
+\begin{defprop}[komplex szám trigonometrikus alakja]\index{komplex szám trigonometrikus alakja}
+    Legyen $z\in \mathbf{C}$ egy nem zérus komplex szám.
+    Ekkor létezik $\varphi\in\mathbf{R}$ valós szám, hogy
+    \[
+        z=
+        |z|\left( \cos\varphi+i\sin\varphi \right)\tag{\dag}
+    \]
+    Ezt a $\varphi$ számot nevezzük a $z$ komplex szám \emph{argumentumának}, és $\arg z$ módon jelöljük.
+    \index{komplex szám argumentuma}
+    A (\dag) alak a komplex szám \emph{trigonometrikus alakja}.
+
+    Két nem zérus komplex szám egyenlősége azt jelenti, hogy az abszolút értékük azonos,
+    és az argumentumaik különbsége $2\pi$ többszöröse.
+\end{defprop}
+\begin{proof}
+    Világos, hogy ha $z=a+ib\neq 0$, akkor $a^2+b^2>0$, így
+    \[
+        z=a+ib
+        =
+        \sqrt{a^2+b^2}\left( \frac{a}{\sqrt{a^2+b^2}}+i\frac{b}{\sqrt{a^2+b^2}} \right).
+    \]
+    Ha $x$ jelöli a fenti zárójelben a valós részt és $y$ a képzetes részt,
+    akkor $x^2+y^2=1$.
+    Így az $\left( x,y \right)$ pár a sík egységkörének egy pontja.
+    A $\cos$ és $\sin$ függvény definíciója szerint,
+    ha $\varphi$ jelöli az origót az $\left( x,y \right)$ 
+    ponttal a körcikk peremén az óramutató járásával ellentétes irányban összekötő ív hosszát,
+    akkor $x=\cos\varphi$ és $y=\sin\varphi$.
+    Az is világos, hogy két az egységkörön elhelyezkedő pont éppen akkor esik egybe,
+    ha az origótól mért körív menti távolságuk azonos, persze attól függetlenül, hogy hány kört mérünk.
+\end{proof}
+
 \section{Az algebra alaptétele}
 
 %\chapter{Gauss-Jordan elimináció}
@@ -2722,4 +2772,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 13 Sep 2019 03:17:51 PM CEST
+Last Modified : Fri 13 Sep 2019 04:35:55 PM CEST
