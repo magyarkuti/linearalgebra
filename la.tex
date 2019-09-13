@@ -1879,6 +1879,84 @@ Az összeadáshoz (\dag) csak el kell végezni a műveletet majd kiemelni $i$-t,
 az $i$ kiemelése után jutunk.
 
 \section{A komplex számok abszolút értéke}
+A valós számokra jól ismert abszolút érték függvényt terjesztjük ki komplex számtest elemeire.
+\begin{definition}[valós rész, képzetes rész]\index{komplex szám valós része}\index{komplex szám képzetes része}
+    Legyen $z\in\mathbf{C}$, $z=a+ib$.
+    Ekkor $a\in\mathbf{R}$ a $z$ komplex szám \emph{valós része}, 
+    és $b\in\mathbf{R}$ a $z$ komplex szám \emph{képzetes része}.
+    $\Re z$ jelöli a valós részt, és $\Im z$ a képzetes részt.
+\end{definition}
+\begin{definition}[konjugált]\index{komplex szám konjugáltja}
+    Legyen $z\in\mathbf{C}$, $z=a+ib$.
+    Ekkor $z$ \emph{konjugáltja} $\bar{z}=a-ib$.
+\end{definition}
+\begin{proposition}
+Minden $z\in\mathbf{C}$ komplex szám mellett
+\[
+    \bar{\bar{z}}=z,\quad
+    z+\bar{z}=2\Re z,\quad
+    z-\bar{z}=2i\Im z,\quad
+    z\in\mathbf{R}\iff z=\bar{z},\quad
+    z\bar{z}=(\Re z)^2+(\Im z)^2\geq 0,
+\]
+    és bármely két $z,w\in\mathbf{C}$ komplex szám esetén
+    \[
+        \overline{z+w}=\bar{z}+\bar{w},\quad
+        \overline{zw}=\bar{z}\overline{w},\quad
+        \overline{z-w}=\bar{z}-\bar{w},\quad
+        \overline{\left( \frac{z}{w} \right)}=\frac{\bar{z}}{\bar{w}}\quad\text{ feltéve, hogy }w\neq 0.\qedhere
+    \]
+\end{proposition}
+Most használjuk először a valós számok rendezését.
+Az $\mathbf{R}$ testen a $\geq $ relációt az algebrai műveletekkel a következő két axióma kapcsolja össze:
+Minden $a,b,c\in\mathbf{R}$ mellett
+\[
+    a\geq b\text{ esetén }a+c\geq b+c,\qquad a,b\geq 0\text{ esetén }ab\geq 0.
+\]
+Az $a^2-b^2=\left( a+b \right)\left( a-b \right)$ azonosság szerint,
+ha $a\geq b\geq 0$ akkor $a^2\geq b^2$ is fennáll.
+
+\begin{definition}[komplex szám abszolút értéke]\index{abszolút érték}
+    Legyen $z\in\mathbf{C}$ egy komplex szám.
+    Láttuk, hogy 
+    $z\bar{z}\in\mathbf{R}$ és  
+    $z\bar{z}\geq 0$.
+    E szám négyzetgyökét nevezzük a $z$ komplex szám \emph{abszolút értékének}.
+    Jelölés: $|z|=\sqrt{z\bar{z}}$.
+\end{definition}
+Fontos látni, hogy ha speciálisan $\Im z=0$, 
+tehát ha $z$ egy valós szám,
+akkor e definíció szerint
+\[
+    |z|=
+    \sqrt{z^2}=
+    \begin{cases}
+        z,&\text{ ha }z\geq 0;\\
+        -z&\text{ ha }z<0,
+    \end{cases}
+\]
+ami egybeesik a valós számok abszolút értékének definíciójával.
+Világos, hogy $|\Re z|^2\leq(\Re z)^2+(\Im z)^2=z\bar{z}$, emiatt
+\[
+    \Re z\leq |z|.
+\]
+Az abszolút érték legfontosabb tulajdonságai:
+\begin{proposition}
+    Legyen $z,w\in\mathbf{C}$ komplex szám.
+    Ekkor
+    \begin{enumerate}
+        \item $|z|=0$ akkor és csak akkor, ha $z=0$,
+        \item $|zw|=|z||w|$,
+        \item $|z+w|\leq |z|+|w|$.\qedhere
+    \end{enumerate}
+\end{proposition}
+Az utolsó egyenlőtlenséget \emph{háromszög egyenlőtlenségnek}\index{háromszög egyenlőtlenség} nevezik.
+Egy kevésbé népszerű, de ekvivalens alakja
+\[
+    \left|\left( |z|-|w| \right)\right|\leq|z-w|.
+\]
+Vegyük észre, hogy a valós abszolút érték függvény tulajdonságait sem használtuk,
+és a fenti tulajdonságokat valós esetre is újra igazoltuk.
 \section{A komplex számok trigonometrikus alakja}
 \section{Az algebra alaptétele}
 
@@ -2644,4 +2722,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 10 Sep 2019 06:25:28 PM CEST
+Last Modified : Fri 13 Sep 2019 03:17:51 PM CEST
