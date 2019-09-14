@@ -2002,11 +2002,27 @@ akkor a komplex számok szorzása mit jelent a komplex számoknak megfeleltetett
     Így az $\left( x,y \right)$ pár a sík egységkörének egy pontja.
     A $\cos$ és $\sin$ függvény definíciója szerint,
     ha $\varphi$ jelöli az origót az $\left( x,y \right)$ 
-    ponttal a körcikk peremén az óramutató járásával ellentétes irányban összekötő ív hosszát,
+    ponttal a körcikk peremén mért ív hosszát,
     akkor $x=\cos\varphi$ és $y=\sin\varphi$.
-    Az is világos, hogy két az egységkörön elhelyezkedő pont éppen akkor esik egybe,
-    ha az origótól mért körív menti távolságuk azonos, persze attól függetlenül, hogy hány kört mérünk.
 \end{proof}
+\begin{proposition}
+    Legyenek a $z,w\in \mathbf{C}$ nem nulla komplex számok a trigonometrikus alakjukban felírva, 
+    azaz
+    \[
+        z=|z|\left( \cos\varphi+i\sin\varphi \right),\qquad 
+        w=|w|\left( \cos\psi+i\sin\psi \right).
+    \]
+    Ekkor a két szám szorzatának abszolútértéke az abszolútértékek szorzata
+    és a szorzat argumentuma az argumentumok összege, azaz
+    \[
+        zw=
+        |z||w|\left( \cos\left( \varphi+\psi \right)+i\sin\left( \varphi+\psi \right) \right).
+    \]
+    Speciálisan minden $n\in\mathbf{Z}$ egész számra\index{Moivre-formula}
+    \[
+        z^n=|z|^n\left( \cos n\varphi+i\sin n\varphi \right).\qedhere
+    \]
+\end{proposition}
 
 \section{Az algebra alaptétele}
 
@@ -2772,4 +2788,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 13 Sep 2019 04:35:55 PM CEST
+Last Modified : Sat 14 Sep 2019 08:23:54 AM CEST
