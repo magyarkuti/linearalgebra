@@ -85,6 +85,7 @@
 \newtheorem{proposition}{állítás}[section]
 \newtheorem{lemma}[proposition]{lemma}
 \newtheorem*{SL}{Steinitz-lemma}
+\newtheorem*{FA}{Algebra alaptétele}
 %
 \theoremstyle{remark}
 \newtheorem{note}[proposition]{megjegyzés}
@@ -208,7 +209,8 @@ Magyarkuti Gyula
 \tableofcontents*
 \pagestyle{myheadings}
 \mainmatter*
-\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
+%\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
+\part{Ősz}
 \chapter{Előzmények}
 \scwords A lineáris algebra tárgyalásához elengedhetetlenül szükséges általános algebrai ismereteket foglaljuk össze.
 \section{Algebrai struktúrák}
@@ -2023,8 +2025,36 @@ akkor a komplex számok szorzása mit jelent a komplex számoknak megfeleltetett
         z^n=|z|^n\left( \cos n\varphi+i\sin n\varphi \right).\qedhere
     \]
 \end{proposition}
+A szakasz bevetőjében feltett kérdésre tehát a válasz,
+hogy a $z$ komplex számmal való szorzást a sík olyan geometriai transzformációjának képzelhetjük,
+amely egy $\arg z$ szöggel való forgatásból és egy $|z|$-szeres origóközéppontú nyújtásból áll.
+\begin{definition}[egységgyök]\index{komplex $n$-edik egységgyökök}
+    Legyen az $n\in\mathbb{N}$ természetes szám rögzítve.
+    Tetszűoleges $k=0,1,\dots,n-1$ mellett jelölje
+    \[
+        \epsilon_k^{(n)}=\cos k\frac{2\pi}{n}+i\sin k\frac{2\pi}{n}.
+    \]
+    az úgynevezett \emph{$n$-edik komplex egységgyököket}.
+\end{definition}
+Az $n$-edik komplex egységgyökök a komplex számsík pontosan $n$ különböző pontját alkotják,
+és az $n$-edik hatványuk $1$, azaz 
+és $(\epsilon_k^{(n)})^n=1$.
+Emiatt minden $w\neq 0$ komplex szám mellett pontosan $n$ komplex gyöke van a $t^n-w$ polinomonak.
+Ha ugyanis $w$ trigonometrikus alakja $w=|w|\left( \cos\psi+i\sin\psi \right)$,
+akkor legyen például $z_0=\sqrt[n]{|w|}\left( \cos(\psi/n)+i\sin(\psi/n) \right)$,
+és így $(z_0\epsilon_k^{(n)})^n=w$ minden $k=0,\dots,n-1$ szám mellett.
+\section{Polinom faktorizáció a komplex- és a valós számtest felett}
+A komplex számtest felett minden nem konstans polinomnak van gyöke.
+Formálisabban:
+\begin{FA}
+    Ha $p\left( t \right)\in\mathbb{C}[t]$ nem konstans polinom,
+    akkor létezik $z\in\mathbb{C}$ komplex szám, 
+    amelyre $p\left( z \right)=0$.
+\end{FA}
+Az állitást itt nem tudjuk igazolni és egyenlőre érdemes bizonyítás nélkül elfogadni.
+Illusztrációként megértettük, hogy miért igaz $p\left( t \right)=\alpha_0+t^n$ alakú polinomra.
+A felépítés jelen pontján tekintsük a komplex számtest egy még nem igazolt tulajdonságának.
 
-\section{Az algebra alaptétele}
 
 %\chapter{Gauss-Jordan elimináció}
 %\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrendszer}
@@ -2770,6 +2800,13 @@ ami a lenti 3. állítás.
 \end{proof}
 
 %%\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
+\part{Tavasz}
+\appendix
+\renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
+\appendixpage
+\chapter{A komplex számokról}
+
+
 %% a vége következik
 \backmatter
 \pagestyle{empty}
@@ -2788,4 +2825,4 @@ ami a lenti 3. állítás.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 14 Sep 2019 08:28:02 AM CEST
+Last Modified : Sun 15 Sep 2019 08:34:38 AM CEST
