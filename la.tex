@@ -2073,7 +2073,7 @@ emiatt azt kell meggondolnunk, hogy mik az irreducibilis polinomok.
     $p$ valóban előállt mint két legalább elsőfokú polinom szorzata.
 \end{proof}
 A polinomok szorzattá bontásáról szóló tételnek a komplex számtest feletti speciális esete tehát:
-\begin{proposition}
+\begin{proposition}\label{pr:PolFact}
     A $\mathbb{C}[t]$ polinomgyűrű minden legalább elsőfokú normált polinomjához léteznek
     a sorrendjüktől eltekintve egyetlen $z_1,\dots,z_s\in\mathbb{C}$ egymástól különböző komplex számok,
     és léteznek $n_1,\dots,n_s$ pozitív egészek, 
@@ -2146,7 +2146,7 @@ Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti poli
     alakú, ahol $h$-nak már sem $z$ sem $\bar{z}$ nem gyöke.
 \end{proof}
 Minden valós együthatós polinom előáll mint első vagy másodfokú polinomok szorzata:
-\begin{proposition}
+\begin{proposition}\label{pr:RealPolFact}
     Az $\mathbb{R}[t]$ polinomgyűrű minden legalább elsőfokú normált polinomjához
     léteznek $x_1,\dots,x_r\in\mathbb{R}$ valós számok,
     léteznek $\alpha_1,\beta_1,\dots,\alpha_s,\beta_s$ valós együtható párok, 
@@ -3549,7 +3549,7 @@ v^{2}\in \operatorname{lin}\left\{ 1,v\right\}
 \end{equation}
 \label{Eq:Alg}Mivel $v$ algebrai $\mathbb{R}$ felett, ezért létezik $p$
 valós együtthatós polinom melyre $p\left( v\right) =0$.
-De láttuk, hogy valós együtthatós polinom első- és másodfokú tényezők szorzatára bomlik (\ref{Th:RealPolFact}),
+De láttuk, hogy valós együtthatós polinom első- és másodfokú tényezők szorzatára bomlik (\ref{pr:RealPolFact}),
 ami azt jelenti, hogy van olyan $q$ első, vagy másodfokú valós együtthatós polinom melyekre $q\left( v\right) =0$.
 Ha $q$ első
 fokú lenne az azt jelentené, hogy található $\alpha ,\beta
@@ -3580,7 +3580,7 @@ Utoljára megmutatjuk, hogy $\mathbb{G}$ minden $w$ eleme $\mathbb{C}$ -beli
 is.
 Mivel $w$ algebrai $\mathbb{R}$ felett, ezért létezik $p$ valós együtthatós polinom, melyre $p\left( w\right) =0$.
 De tekinthetjük $p$ -t a komplex számtest feletti polinomnak is, így $p$
-felbomlik elsőfokú komplex polinomok szorzatára (\ref{Th:PolFact}).
+felbomlik elsőfokú komplex polinomok szorzatára (\ref{pr:PolFact}).
 Ez viszont azt jelenti, hogy létezik olyan $c$ komplex szám,
 melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{proof}
@@ -3603,4 +3603,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 15 Sep 2019 01:18:44 PM CEST
+Last Modified : Mon 16 Sep 2019 08:34:42 AM CEST
