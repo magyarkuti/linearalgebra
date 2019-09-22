@@ -19,8 +19,10 @@
 
 \frenchspacing
 \usepackage{amsmath,amsthm,amsfonts,amssymb,fixme}
-\usepackage{natbib}%\bibliographystyle{natdin-es}
-\bibliographystyle{unsrtnat}
+%\usepackage{natbib}%\bibliographystyle{natdin-es}
+%\bibliographystyle{unsrtnat}
+\usepackage[backend=biber,bibencoding=utf8,style=authoryear,autocite=inline]{biblatex}
+\addbibresource{\jobname.bib}
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
@@ -154,7 +156,7 @@
 %\DeclareMathOperator{\arg}{arg}
 
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
-\citeindextrue
+%\citeindextrue
 \makeindex
 \synctex=1
 \begin{document}
@@ -179,7 +181,7 @@ Describe & \gitDescribe \\
 \end{center}
 \chapter*{Előszó}
 \scwords%
-A legfontosabb forrás \citep{DancsPuskas2001}.
+A legfontosabb forrás \cite{DancsPuskas2001}.
 
 \dots
 
@@ -1622,7 +1624,7 @@ azaz egy $a$ valós számot az
 mátrixszal reprezentálunk (írunk le).
 
 A $2\times 2$ méretű valós mátrixok még sok-sok más testet is tartalmaznak.%
-\footnote{Karakterizációjukat lásd: \citep{MR1415833}-ben.}
+\footnote{Karakterizációjukat lásd: \cite{MR1415833}-ben.}
 Ezek közül számunkra a legfontosabb a következő részhalmaz.
 \begin{defprop}[komplex számtest]
     Jelölje két tetszőleges $a,b\in\mathbf{R}$ valós szám mellett $M_{a,b}$ az 
@@ -2717,7 +2719,7 @@ rendszer lineárisan független generátor rendszerré váljon.
 \end{proof}
 \begin{definition}[mátrix rangja]\index{mátrix rangja}
     Mivel a sorrang, az oszloprang, a feszítőrang minden mátrix mellett azonos,
-    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \citep{Wardlaw2005}}
+    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \cite{Wardlaw2005}}
 \end{definition}
 \begin{note}
     Érdemes a rang-tétel következő összegzését megjegyezni.
@@ -2748,7 +2750,7 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     Ez persze ellentmond az $A$ oszloprendszer lineáris függetlenségének,
     tehát $BA=I$ valóban fennáll.%
     \footnote{%
-        A feszítőrang fogalmának ismerete nélküli -- talán még elemibb -- bizonyítás: \citep{doi:10.4169/college.math.j.48.5.366}%
+        A feszítőrang fogalmának ismerete nélküli -- talán még elemibb -- bizonyítás: \cite{doi:10.4169/college.math.j.48.5.366}%
     }%
 \end{proof}
 \begin{defprop}[invertálható mátrix]
@@ -2953,7 +2955,7 @@ ami a lenti 3. állítás.
 \chapter{A komplex számokról}
 
 
-Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \citet{MR1415833} és \citet{10.2307/3647746} alapján
+Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \cite{MR1415833} és \cite{10.2307/3647746} alapján
 \section{Lineáris algebrai megközelítés}
 Ha $\left\{ e_1,\dots,e_n \right\}$ bázisa egy $\mathbb{C}$ feletti $V$ vektortérnek
 és $m\left( t \right)\in\mathbb{C}\left[ t \right]$ egy pontosan $n$-ed fokú, 
@@ -3588,7 +3590,8 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 %% a vége következik
 \backmatter
 \pagestyle{empty}
-\bibliography{\jobname}
+%\bibliography{\jobname}
+\printbibliography
 \printindex
 
 \end{document}
@@ -3603,4 +3606,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 17 Sep 2019 04:15:44 PM CEST
+Last Modified : Sun 22 Sep 2019 02:23:01 PM CEST
