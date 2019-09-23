@@ -996,7 +996,8 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     \]
     Mivel minden egyes lépésben csökken a fokszám,
     ezért van olyan $s>0$, hogy $p_s\neq 0$, de $p_{s+1}=0$.
-    Erre a $p_s$ polinomra $p_s\in J\left( p,q \right)$ és
+    \\
+    Erre a $p_s$ polinomra $J\left( p_s \right)=J\left( p,q \right)$, ezért
     $p_s$ normáltja a $p\text{ és a }q$ polinomok legnagyobb közös osztója.
 \end{proposition}
 \begin{proof}
@@ -1007,42 +1008,43 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     azaz $p_{s+1}=0$.
 
     A (\dag) azonosság szerint, 
-    ha egy $h$ polinomra $h|p_{i+1},h|p_{i}$ akkor $h|p_{i-1}$ is fennáll.
-    Az utolsó azonosságra $p_{s+1}=0$, 
-    így $p_s|p_{s-1}$.
-    No de $p_s|p_s$, amiből már $p_s|p_{s-2}$ is fennáll.
-    Ezt a gondolatot folytatva látjuk, hogy $p_s|p_0$ és $p_s|p_{-1}$,
-    ami azt jelenti, hogy a $p_s$ polinom a $p$ és $q$ polinomok egy közös osztója.
-
-    Most a (\dag) azonosságot értelmezzük úgy, 
+    minden $i=0,1,\dots,s$ mellett
+    \begin{math}
+        p_{i-1}\in J\left( p_i,p_{i+1} \right)
+    \end{math},
+    amiből a 
+    \begin{math}
+        J\left( p_{i-1},p_i \right)\subseteq J\left( p_i,p_{i+1} \right) 
+    \end{math}
+    tartalmazás adódik.
+    Másrészt a (\dag) azonosságot értelmezhetjük úgyis, hogy
     \(
-    p_{i+1}\in J\left( p_{i-1},p_i \right)\text{ ahol } i=0,\dots,s.
+    p_{i+1}\in J\left( p_{i-1},p_i \right)
+    \),
+    amiből persze 
+    \begin{math}
+        J\left( p_i,p_{i+1} \right)\subseteq J\left( p_{i-1},p_i \right)
+    \end{math}
+    következik.
+    Így minden $i=0,\dots,s$-re végül is
+    \(
+        J\left( p_{i-1},p_i \right)
+        =
+        J\left( p_i,p_{i+1} \right).
     \)
-    Ebből persze $p_i,p_{i+1}\in J\left( p_{i-1},p_i \right)$, 
-    ergo $J\left( p_i,p_{i+1} \right)\subseteq J\left( p_{i-1},p_i \right)$.
-    Így minden $i=0,\dots,s$-re
+    Alkalmazva ezt minden $i=0,\dots,s$ mellett
     \[
-        p_i\in J\left( p_{i-2},p_{i-1} \right)
-        \subseteq
-        J\left( p_{i-3},p_{i-2} \right)
-        \subseteq
-        \dots
-        \subseteq
-        J\left( p_0,p_1 \right)
-        \subseteq
+        J\left( p,q \right)
+        =
         J\left( p_{-1},p_0 \right)
         =
-        J\left( p,q \right).
+        J\left( p_0,p_1 \right)
+        =
+        J\left( p_1,p_2 \right)
+        =\dots=
+        J\left( p_s,p_{s+1} \right)
+        =J\left( p_s \right).\qedhere
     \]
-    Speciálisan $i=s$-re is, tehát $p_s\in J\left( p,q \right)$,
-    ergo léteznek $f,g\in\mathbf{F}\left[ t \right]$ polinomok, 
-    amelyekre 
-    \[
-        p_s=fp+gq.
-    \]
-    Ha $d|p$ és $d|q$, akkor persze $d|p_s$ is teljesül.
-    Így ha a $p_s$ polinomot a főegyütthatójával elosztjuk,
-    akkor a $p$ és a $q$ polinomok legnagyobb közös osztóját kapjuk.
 \end{proof}
 Most a legkisebb közös többszörös algoritmikus meghatározására törekszünk.
 \begin{proposition}\label{pr:rprim}
@@ -3608,4 +3610,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 22 Sep 2019 03:19:12 PM CEST
+Last Modified : Mon 23 Sep 2019 05:16:35 PM CEST
