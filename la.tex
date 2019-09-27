@@ -30,7 +30,7 @@
 
 \usepackage[unicode]{hyperref}\hypersetup{final}\usepackage{memhfixc}
 
-
+\usepackage[inline]{enumitem}
 \usepackage[a4paper]{geometry}
 %\usepackage[missing={(Oh my!)},dirty={Oh no!},mark]{gitinfo2}
 \usepackage[mark,dirty={(Dirty)}]{gitinfo2}
@@ -2241,11 +2241,11 @@ amelyek nélkül nem tárgyalhatók a lineáris algebra beli gondolatok.
 \end{definition}
 Nagyon hasonlóan ahhoz, ahogyan testben is meggondoltuk igazak a következő számolási szabályok.
 Minden $\alpha\in\mathbf{F}$ mellett
-\begin{enumerate}
-    \item[a)] $\alpha\cdot 0=0$,
-    \item[b)] $0\cdot v=0$,
-    \item[c)] $\left( -1 \right)\cdot v=-v$,
-    \item[d)] $\alpha\cdot v=0$ esetén $\alpha=0$ vagy $v=0$.
+\begin{enumerate}[label=\roman*.)]
+    \item $\alpha\cdot 0=0$,
+    \item $0\cdot v=0$,
+    \item $\left( -1 \right)\cdot v=-v$,
+    \item $\alpha\cdot v=0$ esetén $\alpha=0$ vagy $v=0$.
 \end{enumerate}
 A számmal való szorzás $\cdot:\mathbf{F}\times V\to V$ művelet eredményének szokásos rövidítése, 
 hogy a kissé körülményes $\alpha\cdot v$ helyett csak $\alpha v$-t írunk.
@@ -2253,6 +2253,37 @@ Az is előfordul,
 különösen amikor egy konkrét vektortér konkrét műveletéről van szó, 
 hogy az $\alpha v$ és a $v\alpha$ jelölést is
 ugyanarra az $\alpha\cdot v\in \mathbf{F}$ elemre használjuk.
+
+Alapvető példa vektortérre a mátrixok tere.
+Az $m\times n$ méretű mátrixok $\mathbb{F}^{m\times n}$ halmaza a mátrixösszeadással és a számmal való szorzással
+vektorteret alkot az $\mathbb{F}$ test felett.
+Ha $n=1$, akkor kapjuk a az oszlopvektorok $\mathbb{F}^m$ terét, ami így szintén egy $\mathbb{F}$ feletti vektortér.
+Speciális esetként $\mathbb{R}^m$ egy $\mathbb{R}$ feletti vektortér,
+$\mathbb{C}^m$ egy $\mathbb{C}$ feletti vektortér.
+
+Fontos példa még, egy adott $X$ halmazból az $\mathbb{F}$ testbe képező összes függvények halmaza 
+a függvények közt szokásos összeadás művelettel, és számmal való szorzással. 
+Ezt a teret $\mathbb{F}^X$ módon szokás jelölni, és minden nehézség nélkül ellenőrizhető, 
+hogy $\mathbb{F}^X$ egy az $\mathbb{F}$ test feletti vektortér.
+Hasonlóan látszik, hogy például az összes valós-valós folytonos függvények is egy $\mathbb{R}$
+feletti vektorteret alkotnak, vagy ha ezek közül csak a differenciálható függvényekre szorítkozunk,
+akkor ezen függvénytér is vektortér az $\mathbb{R}$ test felett.
+
+Rögzítenünk kell magunkban, hogy a vektortér definíciójában a test is fontos szerepet játszik.
+Más test felett ugyan az Ábel-csoport már egy másik vektorteret alkot.
+Világos például, hogy $\mathbb{R}$ az $\mathbb{R}$ test felett vektortér a szokásos műveletekkel,
+de látjuk majd, hogy egészen más tulajdonságai vannak annak a vektortérnek, 
+amit akkor kapunk, 
+ha az $\mathbb{R}$ valós számok Ábel-csoportját, 
+mint a $\mathbb{Q}$ racionális test feletti vektortérnek tekintjük.
+
+Játékos példaként gondoljuk meg, 
+hogy a pozitív valós számok egy az $\mathbb{R}$ feletti vektorteret alkot a következő fura műveletekkel:
+Tetszőleges $a,b$ pozitív valós szám mellett
+\(
+    a\#b=a\cdot b, \alpha\star a=a^\alpha.
+\)
+\footnote{Itt $a\star\alpha$ mit jelent?}
 \chapter{Altér}
 \chapter{Lineárisan független rendszerek és generátor rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
@@ -3650,4 +3681,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 27 Sep 2019 11:16:04 AM CEST
+Last Modified : Fri 27 Sep 2019 12:28:13 PM CEST
