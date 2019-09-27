@@ -2213,7 +2213,46 @@ hogy \emph{minden páratlan fokú valós együtthatós polinomnak van valós gy�
 %\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrendszer}
 
 
-\chapter{Vektortér fogalma}
+\chapter{A vektortér fogalma}
+\scwords A lineáris algebra kezdő fejezetéhez érkeztünk, miután áttekintettük azokat az általános algebrai ismereteket,
+amelyek nélkül nem tárgyalhatók a lineáris algebra beli gondolatok.
+\begin{definition}[Vektortér]\index{vektortér}
+    Legyen adva egy $\mathbf{F}$ test, és egy $V$ halmaz.
+    Tegyük fel, hogy adott egy $+:V\times V\to V$ két változós művelet (ezt összeadásnak nevezzük)
+    és adott egy $\cdot:\mathbf{F}\times V\to V$ szintén kétváltozós művelet (ezt skalárral való szorzásnak, vagy számmal való mondjuk).
+    A $V$-t az $\mathbf{F}$ test feletti \emph{vektortérnek} nevezzük,
+    ha $\left( V,+ \right)$ egy Ábel-csoport, 
+    és a számmal valós szorzás műveletre teljesülnek az alábbi axiómák:
+    \begin{enumerate}
+        \item Minden $\alpha\in\mathbf{F}$ és minden $u,v\in V$ mellett 
+            \begin{math}
+                \alpha\cdot\left( u+v \right)=\alpha\cdot u+\beta\cdot v,
+            \end{math}
+        \item Minden $\alpha,\beta\in\mathbf{F}$ és minden $u\in V$ mellett 
+            \begin{math}
+                \left( \alpha+\beta \right)\cdot u=\alpha\cdot u+\beta\cdot v,
+            \end{math}
+        \item Minden $\alpha,\beta\in\mathbf{F}$ és minden $u\in V$ mellett 
+            \begin{math}
+                \alpha\cdot\left( \beta\cdot u \right)=\left( \alpha\beta \right)\cdot u,
+            \end{math}
+        \item Minden $u\in V$ esetén $1\cdot u=u$.\qedhere
+    \end{enumerate}
+\end{definition}
+Nagyon hasonlóan ahhoz, ahogyan testben is meggondoltuk igazak a következő számolási szabályok.
+Minden $\alpha\in\mathbf{F}$ mellett
+\begin{enumerate}
+    \item[a)] $\alpha\cdot 0=0$,
+    \item[b)] $0\cdot v=0$,
+    \item[c)] $\left( -1 \right)\cdot v=-v$,
+    \item[d)] $\alpha\cdot v=0$ esetén $\alpha=0$ vagy $v=0$.
+\end{enumerate}
+A számmal való szorzás $\cdot:\mathbf{F}\times V\to V$ művelet eredményének szokásos rövidítése, 
+hogy a kissé körülményes $\alpha\cdot v$ helyett csak $\alpha v$-t írunk.
+Az is előfordul, 
+különösen amikor egy konkrét vektortér konkrét műveletéről van szó, 
+hogy az $\alpha v$ és a $v\alpha$ jelölést is
+ugyanarra az $\alpha\cdot v\in \mathbf{F}$ elemre használjuk.
 \chapter{Altér}
 \chapter{Lineárisan független rendszerek és generátor rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
@@ -3611,4 +3650,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 24 Sep 2019 12:50:55 PM CEST
+Last Modified : Fri 27 Sep 2019 11:16:04 AM CEST
