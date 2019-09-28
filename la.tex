@@ -151,6 +151,7 @@
 
 \renewcommand{\mathbf}{\mathbb}
 \DeclareMathOperator{\lin}{lin}
+\DeclareMathOperator{\gen}{gen}
 \DeclareMathOperator{\crank}{crank}
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
@@ -2255,7 +2256,7 @@ hogy az $\alpha v$ és a $v\alpha$ jelölést is
 ugyanarra az $\alpha\cdot v\in \mathbf{F}$ elemre használjuk.
 
 Alapvető példa vektortérre a mátrixok tere.
-Az $m\times n$ méretű mátrixok $\mathbb{F}^{m\times n}$ halmaza a mátrixösszeadással és a számmal való szorzással
+Az $m\times n$ méretű mátrixok $\mathbb{F}^{m\times n}$ halmaza a mátrix összeadással és a számmal való szorzással
 vektorteret alkot az $\mathbb{F}$ test felett.
 Ha $n=1$, akkor kapjuk a az oszlopvektorok $\mathbb{F}^m$ terét, ami így szintén egy $\mathbb{F}$ feletti vektortér.
 Speciális esetként $\mathbb{R}^m$ egy $\mathbb{R}$ feletti vektortér,
@@ -2264,8 +2265,8 @@ $\mathbb{C}^m$ egy $\mathbb{C}$ feletti vektortér.
 Fontos példa még, egy adott $X$ halmazból az $\mathbb{F}$ testbe képező összes függvények halmaza 
 a függvények közt szokásos összeadás művelettel, és számmal való szorzással. 
 Ezt a teret $\mathbb{F}^X$ módon szokás jelölni, és minden nehézség nélkül ellenőrizhető, 
-hogy $\mathbb{F}^X$ egy az $\mathbb{F}$ test feletti vektortér.
-Hasonlóan látszik, hogy például az összes valós-valós folytonos függvények is egy $\mathbb{R}$
+hogy $F^X$ egy $\mathbf{F}$ feletti vektortér.
+Hasonlóan látszik, hogy például az összes valós--valós folytonos függvények is egy $\mathbb{R}$
 feletti vektorteret alkotnak, vagy ha ezek közül csak a differenciálható függvényekre szorítkozunk,
 akkor ezen függvénytér is vektortér az $\mathbb{R}$ test felett.
 
@@ -2281,10 +2282,118 @@ Játékos példaként gondoljuk meg,
 hogy a pozitív valós számok egy az $\mathbb{R}$ feletti vektorteret alkot a következő fura műveletekkel:
 Tetszőleges $a,b$ pozitív valós szám mellett
 \(
-    a\#b=a\cdot b, \alpha\star a=a^\alpha.
+    a\#b=a\cdot b, 
+\)
+majd tetszőleges $\alpha$ valós szám és $a$ pozitív valós számra legyen
+\(
+    \alpha\star a=a^\alpha.
 \)
 \footnote{Itt $a\star\alpha$ mit jelent?}
-\chapter{Altér}
+
+A vektorteret sokszor csak az additív művelet alaphalmazával jelöljük.
+Kicsit pontosabb ha az alaphalmaz mellett a testet is konkrétan specifikáljuk, 
+de sokszor feltesszük, hogy a szövegkörnyezetből nyilvánvaló, hogy mely testre gondolunk.
+Hasonlóan pontosabb lenne a két műveletet is mindig kijelölni, mikor egy vektortérre hivatkozunk,
+de ha világos, hogy mi a vektortérbeli elemek közt az additív művelet, és hogy mit jelent egy test elemeivel szorozni,
+akkor elhagyjuk a műveletek kijelölését.
+A legpontosabb, -- de persze a legkörülményesebb -- jelölés az lenne, hogy pl.
+,,tekintsünk egy $\left( V,+,\cdot \right)$ vektorteret az $\mathbf{F}$ test fölött.''
+Ehelyett sokszor csak azt mondjuk, hogy
+,,legyen $V$ egy vektortér''. 
+Ilyenkor a szövegkörnyezetből világosnak kell lennie, hogy mi a test, mit jelent a számmal való szorzás, és mi az összeadás a $V$ halmazon.
+
+\section{Vektortér alterei}
+\begin{definition}[altér]\index{vektortér altere}\index{altér}
+    Legyen $\left( V,+,\cdot \right)$ egy vektortér az $\mathbf{F}$ test felett.
+    Egy $M\subseteq V$ részhalmaz a $V$ vektortér \emph{altere},
+    ha $M$ maga is vektorteret alkot a $V$-ben definiált additív művelettel, 
+    és a $V$-ben definiált számmal való szorzással.
+\end{definition}
+\begin{proposition}
+    Legyen $V$ egy vektortér, és $M\subseteq V$ egy részhalmaza.
+    Az $M$ pontosan akkor altér,
+    ha
+    \begin{enumerate}
+        \item $0\in M$,
+        \item $u,v\in M$ esetén $u+v\in M$,
+        \item $u\in M$ és $\alpha\in\mathbf{F}$ esetén $\alpha v\in M$.\qedhere
+    \end{enumerate}
+\end{proposition}
+Tetszőleges $V$ vektortérre a $\left\{ 0 \right\}$ és maga $V$ mindig alterek,
+ezeket \emph{triviális altereknek} is szokás mondani.\index{triviális altér}
+
+Most két fontos fogalmat vezetünk be.
+Egy halmazt tartalmazó legszűkebb altér fogalmát,
+és a halmaz lineáris burkának fogalmát. 
+Ki fog derülni, hogy a lineáris burok mindig egybeesik a legszúkebb altérrel.
+\begin{defprop}[generált altér]\index{generált altér}
+    Egy vektortérben, akárhány altér közös része altér.
+    Emiatt értelmes a következő definíció.
+    Ha $H\subseteq V$ egy részhalmaza a $V$ vektortérnek,
+    akkor jelölje 
+    $\gen H$ a $H$ halmazt tartalmazó összes alterek metszetét.
+    Ezt az alteret nevezzük a $H$ halmaz által \emph{generált altérnek.}
+\end{defprop}
+\begin{proposition}
+    Legyen $V$ egy vektortér.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $H\subseteq V$ halmazra $H\subseteq \gen H$,
+        \item Ha $H\subseteq K\subseteq V$, akkor $\gen H\subseteq \gen K$,
+        \item Minden $H\subseteq V$ mellett $\gen\left( \gen H \right)=\gen H$.
+    \end{enumerate}
+    A $\gen H$ a $H$ halmazt tartalmazó alterek közt a legszűkebb.
+    Így $H\subseteq V$ pontosan akkor altér, ha $\gen H=H$.
+\end{proposition}
+\begin{definition}[lineáris kombináció, lineáris burok]\index{lineáris kombináció}\index{lineáris burok}
+    Ha adott a $V$ vektortérben véges sok $v_1,\dots,v_r$ vektor,
+    akkor a vektortér minden
+    \[
+        \alpha_1v_1+\dots+\alpha_r v_r
+    \]
+    alakú vektorát a $v_1,\dots,v_r$ vektorok egy \emph{lineáris kombinációjának} mondjuk.
+
+    Legyen $H\subseteq V$ egy tetszőleges halmaz.
+    Ekkor $\lin H$ jelöli $H$ összes véges részhalmazának összes lineáris kombinációinak halmazát,
+    azaz
+    \[
+        \lin H=
+        \left\{ \sum_{j=1}^n\alpha_jv_j:n\in\mathbf{N},v_1,\dots,v_n\in H,\alpha_1,\dots,\alpha_n\in\mathbf{F} \right\}
+    \]
+    Definíció szerint nulla darab vektor lineáris kombinációja a vektortér zérus eleme, 
+    tehát $\lin \emptyset=\left\{ 0 \right\}.$
+    A $\lin H$ halmazt nevezzük a $H$ halmaz \emph{lineáris burkának}.
+\end{definition}
+\begin{proposition}
+    Egy $V$ vektortér minden $H\subseteq V$ részhalmazának lineáris burka, 
+    a $H$ halmazt tartalmazó legszűkebb altér, azaz
+    \[
+        \lin H=\gen H.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Világos, hogy $H\subseteq \lin H$, világos hogy $\lin H$ egy altér, 
+    és az is nyilvánvaló, hogy ha $H\subseteq M$ egy tetszőleges altér, 
+    akkor $\lin H\subseteq M$.
+    Így $\lin H=\gen H$.
+\end{proof}
+Ha $H$ egy véges halmaz, akkor $\lin H$ kicsit egyszerűbben írható.
+Mint arról már a definícióban is szó volt $\lin \emptyset=\left\{ 0 \right\}$.
+Ha $H$ egy elemű, akkor $\lin (\left\{ v_1 \right\})=\left\{ \alpha v_1:\alpha\in\mathbf{F} \right\}$.
+Ha $H=\left\{ v_1,v_2 \right\}$ két elemű, akkor
+$\lin({v_1,v_2})=\left\{ \alpha_1v_1+\alpha_2v_2:\alpha_1,\alpha_2\in\mathbf{F} \right\}$.
+Hasonlóan, ha $H=\left\{ v_1,\dots,v_r \right\}$ halmaz $r$ elemből áll akkor elegendő csak az $r$ elemből álló lineáris kombinációkat képezni, azaz
+\[
+    \lin \left( \left\{ v_1,\dots,v_r \right\} \right)
+    =
+    \left\{ \sum_{j=1}^r\alpha_jv_j:\alpha_1,\dots,v_r\in\mathbf{F} \right\}.
+\]
+\begin{definition}[generátor rendszer, végesen generált vektortér]\index{generátor rendszer}\index{végesen generált vektortér}
+    Egy vektortér $H$ részhalmazáról azt mondjuk, hogy generálja a vektorteret,
+    vagy, hogy $H$ egy generátor rendszere $V$-nek, ha $\lin H=V$.
+    A $V$ vektorteret végesen generáltnak mondunk, ha létezik véges generátor rendszere.
+\end{definition}
+
 \chapter{Lineárisan független rendszerek és generátor rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
@@ -2367,7 +2476,7 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
         \item Lineárisan független;
         \item A vektorrendszer lineáris burkában minden elem egyetlen egyféleképpen áll elő,
             mint az $y_1,\dots,y_n$ vektorok lineáris kombinációja.
-        \item Az $y_1,\dots,y_n$ vektoroknak csak a triviális lineáris kombinációja zérus,
+        \item Az $y_1,\dots,y_n$ vektoroknak csak a \emph{triviális lineáris kombinációja}\index{triviális lineáris kombináció} zérus,
             azaz
             \[
                 \sum_{j=1}^n\alpha_jy_j=0\text{ esetén }\alpha_1=\alpha_2=\dots=\alpha_n=0.\qedhere
@@ -2935,7 +3044,7 @@ ami a lenti 3. állítás.
     homogén lineáris egyenletrendszert. 
     Itt $j=1,\dots,n$ és $k=1,\dots,m$.
     Mivel $m>n$, ezért az ismeretlenek száma több mint az egyenletek száma.
-    Létezik tehát nem triviális megoldás, azaz léteznek nem mind nulla
+    Létezik tehát nem triviális megoldás\index{triviális megoldás}, azaz léteznek nem mind nulla
     $\xi_1,\dots,\xi_m$ számok, amelyekre minden $j=1,\dots,n$ esetén
     \[
         \sum_{k=1}^m\alpha_{j,k}\xi_k=0.
@@ -3681,4 +3790,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 27 Sep 2019 12:28:13 PM CEST
+Last Modified : Sat 28 Sep 2019 06:24:00 AM CEST
