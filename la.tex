@@ -2388,13 +2388,182 @@ Hasonlóan, ha $H=\left\{ v_1,\dots,v_r \right\}$ halmaz $r$ elemből áll akkor
     =
     \left\{ \sum_{j=1}^r\alpha_jv_j:\alpha_1,\dots,v_r\in\mathbf{F} \right\}.
 \]
-\begin{definition}[generátor rendszer, végesen generált vektortér]\index{generátor rendszer}\index{végesen generált vektortér}
+\begin{definition}[generátorrendszer, végesen generált vektortér]\index{generátorrendszer}\index{végesen generált vektortér}
     Egy vektortér $H$ részhalmazáról azt mondjuk, hogy generálja a vektorteret,
-    vagy, hogy $H$ egy generátor rendszere $V$-nek, ha $\lin H=V$.
-    A $V$ vektorteret végesen generáltnak mondunk, ha létezik véges generátor rendszere.
+    vagy, hogy $H$ egy generátorrendszere $V$-nek, ha $\lin H=V$.
+    A $V$ vektorteret végesen generáltnak mondunk, ha létezik véges generátorrendszere.
 \end{definition}
 
-\section{Lineárisan független rendszerek és generátor rendszerek}
+A generátorrendszer cseréről szóló \ref{le:gencsere}.~lemmának kiemelten fontos szerepe van felépítésünkben.
+Egyrészt használjuk majd a Steinitz-lemma (\ref{le:Stienitz}) igazolásában, 
+másrészt ennek segítségével tisztázzuk majd azt a kérdést,
+hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendszert változtatjuk.
+
+\begin{lemma}[generátorrendszer csere]\label{le:gencsere}
+    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszere valamely vektortérnek,
+    és tegyük fel, hogy valamely $y$ vektorra
+    \[
+        y=\sum_{j=1}^m\eta_jx_j,
+    \]
+    ahol $\eta_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
+    Ekkor $y$ becserélhető a $k$-adik helyen a generátorrendszerbe, 
+    úgy hogy az generátorrendszer maradjon, azaz a
+    \[
+        \left\{ x_1,\dots,x_{k-1},y,x_{k+1},\dots,x_m \right\}
+    \]
+    vektorrendszer is generátorrendszer.
+\end{lemma}
+\begin{proof}
+    Fejezzük ki $x_k$-t az $y$-ra felírt formulából:
+    \(
+    x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
+    \)
+    Ha $a$ eredetileg 
+    \[
+        a=\sum_{j=1}^m\alpha_jx_j
+    \]
+    alakú, akkor $x_k$ helyére betéve, a fent kifejezett formulát és bevezetve a 
+    $\delta=\frac{\alpha_k}{\eta_k}$ jelölést, azt kapjuk hogy:
+    \begin{multline*}
+        a=\alpha_kx_k+\sum_{j=1,j\neq k}^m\alpha_jx_j=
+        \\
+        =
+        \alpha_k
+        \left( 
+        \frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j
+        \right)
+        +\sum_{j=1,j\neq k}^m\alpha_jx_j
+        =
+        \frac{\alpha_k}{\eta_k}y+
+        \sum_{j=1,j\neq k}^m\left( \alpha_j-\frac{\alpha_k}{\eta_k}\eta_j \right)x_j=
+        \\
+        =\delta y+
+        \sum_{j=1,j\neq k}^m\left( \alpha_j-\delta\eta_j \right)x_j.
+    \end{multline*}
+    Azt kaptuk tehát, hogy ha egy vektor kifejezhető az eredeti vektorrendszerből az 
+    \[
+        \left( \alpha_1,\dots,\alpha_m \right) 
+    \]
+    együtthatókkal, akkor ugyanez a vektor a módosított vektorrendszerből is kifejezhető,
+    méghozzá az 
+    \[
+        \left( 
+        \underbrace{\alpha_1-\delta\eta_1}_{1.},
+        \underbrace{\alpha_2-\delta\eta_2}_{2.},
+        \dots,
+        \underbrace{\alpha_{k-1}-\delta\eta_{k-1}}_{k-1.},
+        \underbrace{\delta}_{k.},
+        \underbrace{\alpha_{k+1}-\delta\eta_{k+1}}_{k+1.},\dots,
+        \underbrace{\alpha_m-\delta\eta_m}_{m.}
+        \right)
+    \]
+    együtthatókkal.
+\end{proof}
+\section{Elimináció}
+Szokásos jelölés és a helyes szemlélet kialakítsában is fontos szerepet játszik a következő táblázat.
+Ha $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszer az azt jelenti, hogy minden $a\in V$ vektor
+előáll mint az $x_1,\dots,x_m$ vektorok valamilyen együtthatókkal vett lineáris kombinációja.
+Ha tehát $a=\alpha_1x_1+\dots+\alpha_mx_m$, akkor azt a következőképpen fejezzük ki.
+\[
+    \begin{array}{c|c}
+                    &a         \\
+        \hline
+        x_1         &\alpha_1   \\
+        \vdots      &\vdots    \\
+        x_k         &\alpha_k   \\
+        \vdots      &\vdots    \\
+        x_m         &\alpha_m   \\
+        \hline
+    \end{array}
+\]
+Tekinthető ez egy $m\times 1$ tipusú bekeretezett mátrixnak, a hol a sorok címkéi a generátorrendszer elemei,
+az egyetlen oszlop címkéje pedig az a vektor, amelynek az előállításáról van szó.
+
+A generátorrendszer csere lemma arról is szólt, hogy ha $y$-t a $k$-adik helyen cseréljük a generátorrendszerbe,
+akkor a fenti táblázat hogyan változik.
+Azt kaptuk, hogy a 
+\begin{eqnarray}\label{alg:G-J}
+    \begin{array}{c|cc}
+                    &y      &a         \\
+        \hline
+        x_1         &\eta_1  &\alpha_1   \\
+        \vdots      &\vdots &\vdots    \\
+        x_k         &\boxed{\eta_k}  &\alpha_k   \\
+        \vdots      &\vdots &\vdots    \\
+        x_m         &\eta_m  &\alpha_m   \\
+        \hline
+                    &\delta &\frac{\alpha_k}{\eta_k}
+    \end{array}
+    &\implies&
+    \begin{array}{c|cc}
+                    &y      &a         \\
+        \hline
+        x_1         &0  &\alpha_1-\eta_1\delta   \\
+        \vdots      &\vdots &\vdots    \\
+        y           &1  &\delta  \\
+        \vdots      &\vdots &\vdots    \\
+        x_m         &0  &\alpha_m-\eta_m\delta   \\
+        \hline
+       &&
+    \end{array}
+\end{eqnarray}
+transzformációt kell végrehajtani.
+Persze ugyanezt azt egyetlen $a$ vektor helyett kiszámolhatjuk például az $a,b,c$ vektorokra is.
+Továbbra is az $y$-t cseréljük a generátorrendszerbe, így a
+\begin{eqnarray*}
+    \begin{array}{c|cccc}
+                    &y      &a        &b         &c\\
+        \hline
+        x_1         &\eta_1  &\alpha_1 &\beta_1 &\gamma_1 \\
+        \vdots      &\vdots &\vdots    &\vdots  &\vdots\\
+        x_k         &\boxed{\eta_k}  &\alpha_k&\beta_k&\gamma_k   \\
+        \vdots      &\vdots &\vdots    &\vdots&\vdots\\
+        x_m         &\eta_m  &\alpha_m   &\beta_m&\gamma_m\\
+        \hline
+        &\delta &\frac{\alpha_k}{\eta_k}&\frac{\beta_k}{\eta_k}&\frac{\gamma_k}{\eta_k}\\
+    \end{array}
+    &\implies&
+    \begin{array}{c|cccc}
+                    &y      &a         &b        &c\\
+        \hline
+        x_1         &0  &\alpha_1-\eta_1\delta_a   &\beta_1-\eta_1\delta_b&\gamma_1-\eta_1\delta_c\\
+        \vdots      &\vdots &\vdots&\vdots&\vdots    \\
+        y           &1  &\delta_a&\delta_b&\delta_c  \\
+        \vdots      &\vdots &\vdots &\vdots &\vdots    \\
+        x_m         &0  &\alpha_m-\eta_m\delta_a&\beta_m-\eta_m\delta_b&\gamma_m-\eta_m\delta_m   \\
+        \hline
+       &&
+    \end{array}
+\end{eqnarray*}
+a transzformációt hajtjuk végre.
+Most arra figyeljünk, 
+hogy végül is a keretben lévő $m\times 4$-es mátrixszal sorműveleteket hajtottunk végre:
+\begin{itemize}
+    \item 
+Eldöntüttük, hogy az $y,a,b,c$ vektorok közül az $y$-t cseréljük be a generátorrendszerbe,
+mégpedig a $k$-adik helyen. 
+Ezt jeleztük az $y$ oszlopa $k$-adik helyen lévő elemének bekeretezésével. 
+A keretben csak nem zéró szám lehet.
+    \item 
+Első lépésként a keretezett számmal osztottuk a $k$-adik sort. Ez az új táblázat $k$-adik sora.
+Pusztán segítség képpen ugyanezt a sort mint egy számolási segédsort az első táblázat alá másoltuk.
+    \item 
+Az új táblázat első sora az eredeti első sornak és a segédsor $\eta_1$-szeresének különbsége.
+A második sor az eredeti második sornak és a segédsor $\eta_2$-szeresének különbsége.
+Hasonlóan, az $m$-edik sor az eredeti $m$-edik sornak és a segédsor $\eta_m$-szeresének különbsége.
+\end{itemize}
+
+Látjuk tehát, hogy összesen két fajta sorművelettel alakítottuk a kiindulási mátrixot:
+\begin{enumerate}
+    \item Egy sort szoroztunk egy nem zérus számmal,
+    \item Egy sorhoz hozzáadtuk egy másik sor számszorosát.
+\end{enumerate}
+Világos, hogy ez ugyanaz, mintha a feladat az lett volna, 
+hogy a fenti két sorművelet használva az $y$ oszlopában minden számot el kell tüntetni, 
+a $k$-adikat pedig $1$-re kell beállítani.
+Ez a \emph{Gauss-Jordan--elimináció}.\index{Gauss-Jordan--elimináció}
+
+\section{Lineárisan független rendszerek és generátorrendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
     mondunk, ha egyik vektora kifejezhető a többi vektor lineáris kombinációjaként.
@@ -2490,7 +2659,7 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
     Egy lineárisan független rendszert \emph{maximális lineárisan független rendszernek} nevezünk,
     ha nem lehet bővíteni úgy, hogy lineárisan független maradjon.
 
-    Egy generátorrendszert \emph{minimális generátor rendszernek} mondunk, ha nem lehet szűkíteni úgy,
+    Egy generátorrendszert \emph{minimális generátorrendszernek} mondunk, ha nem lehet szűkíteni úgy,
     hogy generátorrendszer maradjon.
 \end{definition}
 \begin{proposition}
@@ -2560,79 +2729,15 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
     \]
 \end{proof}
 \chapter{Vektortér bázisa}
-\scwords A Steinitz-lemma fontosságát kell kiemelni.
-A Steinitz-lemma legegyszerűbb megfogalmazásában azt állítja, 
+\scwords A Steinitz-lemma fontosságát kell kiemelni, amely 
+a legegyszerűbb megfogalmazásában azt állítja, 
 hogy \emph{egy lineárisan független rendszer elemszáma, soha nem nagyobb mint egy generátorrendszer elemszáma.}
 Ez a tény vezet a bázis és a dimenzió fogalmához.
 
-A generátorrendszer cseréről szóló legelső lemmának is fontos szerepe van az itt választott felépítésben.
-Egyrészt használjuk a Steinitz-lemma igazolásában, másrészt ennek segítségével tisztázzuk majd azt a kérdést,
-hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkoztatási rendszert változtatjuk.
-
-\begin{lemma}[generátorrendszer csere]
-    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy generátor rendszere valamely vektortérnek,
-    és tegyük fel, hogy valamely $y$ vektorra
-    \[
-        y=\sum_{j=1}^m\eta_jx_j,
-    \]
-    ahol $\eta_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
-    Ekkor $y$ becserélhető a $k$-adik helyen a generátor rendszerbe, 
-    úgy hogy az generátorrendszer maradjon, azaz a
-    \[
-        \left\{ x_1,\dots,x_{k-1},y,x_{k+1},\dots,x_m \right\}
-    \]
-    vektorrendszer is generátorrendszer.
-    \label{le:gencsere}
-\end{lemma}
-\begin{proof}
-    Fejezzük ki $x_k$-t az $y$-ra felírt formulából:
-    \(
-    x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
-    \)
-    Ha $z$ eredetileg 
-    \[
-        z=\sum_{j=1}^m\zeta_jx_j
-    \]
-    alakú, akkor $x_k$ helyére betéve, a fent kifejezett formulát és bevezetve a 
-    $\delta=\frac{\zeta_k}{\eta_k}$ jelölést, azt kapjuk hogy:
-    \begin{multline*}
-        z=\zeta_kx_k+\sum_{j=1,j\neq k}^m\zeta_jx_j=
-        \\
-        =
-        \zeta_k
-        \left( 
-        \frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j
-        \right)
-        +\sum_{j=1,j\neq k}^m\zeta_jx_j
-        =
-        \frac{\zeta_k}{\eta_k}y+
-        \sum_{j=1,j\neq k}^m\left( \zeta_j-\frac{\zeta_k}{\eta_k}\eta_j \right)x_j=
-        \\
-        =\delta y+
-        \sum_{j=1,j\neq k}^m\left( \zeta_j-\delta\eta_j \right)x_j.
-    \end{multline*}
-    Azt kaptuk tehát, hogy ha egy vektor kifejezhető az eredeti vektorrendszerből az 
-    \[
-        \left( \zeta_1,\dots,\zeta_m \right) 
-    \]
-    együtthatókkal, akkor ugyanez a vektor a módosított vektorrendszerből is kifejezhető,
-    méghozzá az 
-    \[
-        \left( 
-        \underbrace{\zeta_1-\delta\eta_1}_{1.},
-        \underbrace{\zeta_2-\delta\eta_2}_{2.},
-        \dots,
-        \underbrace{\zeta_{k-1}-\delta\eta_{k-1}}_{k-1.},
-        \underbrace{\delta}_{k.},
-        \underbrace{\zeta_{k+1}-\delta\eta_{k+1}}_{k+1.},\dots,
-        \underbrace{\zeta_m-\delta\eta_m}_{m.}
-        \right)
-    \]
-    együtthatókkal.
-\end{proof}
+A Stienitz-lemma megfogalmazása előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere} lemmára.
 \begin{SL}\index{Steinitz--lemma}
     Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer és az
-    $\left\{ x_1,\dots,x_m \right\}$ vektorrendszer egy generátor rendszer.
+    $\left\{ x_1,\dots,x_m \right\}$ vektorrendszer egy generátorrendszer.
     Ekkor
     \begin{enumerate}
         \item $n\leq m$;
@@ -2653,7 +2758,7 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
     \label{le:Stienitz}
 \end{SL}
 \begin{proof}
-    Legyen $k$ a legnagyobb egész a $\left\{ 0,\dots,n \right\}$ egészek közül, amelyre
+    Legyen $k$ a legnagyobb a $\left\{ 0,\dots,n \right\}$ egészek közül, amelyre
     \begin{enumerate}
         \item $k\leq m$, és
         \item az $x_1,\dots,x_m$ vektorok alkalmas átindexelésével az
@@ -2669,8 +2774,8 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
         \item 
             akkor létezne $y_{k+1}$ vektor.
             No de, ez az $y_{k+1}$ nem szerepel az $\left\{ y_1,\dots,y_k \right\}$ lineáris burkában,
-            ami (\dag) generátorrendszer volta miatt csak úgy lehetséges, hogy $k<m$, 
-            ergo $k+1\leq m$.
+            ami (\dag) generátorrendszer volta miatt csak úgy lehetséges, 
+            hogy $k\neq m$, azaz $k<m$, ergo $k+1\leq m$.
         \item
             \Aref{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor 
             avval az $x$-el
@@ -2688,12 +2793,12 @@ hogy hogyan alakulnak egy vektor koordinátái, ha a bázist, tehát a vonatkozt
     \[
         \left\{ x_1,\dots,x_m \right\} \text{ és } \left\{ y_1,\dots,y_n \right\}
     \]
-    lineárisan független generátor rendszerek, akkor $n=m$.
+    lineárisan független generátorrendszerek, akkor $n=m$.
     \label{co:baziselemszam}
 \end{corollary}
 \begin{definition}[végesen generált vektortér]\index{végesen generált vektortér}
     Egy vektorteret \emph{végesen generáltnak} nevezünk,
-    ha létezik véges elemszámú generátor rendszere.
+    ha létezik véges elemszámú generátorrendszere.
 \end{definition}
 Teljesen világos, hogy ha van egy vektortérben véges generátorrendszer,
 akkor van minimális generátorrendszer is, azaz van a térben lineárisan független generátorrendszer.
@@ -2711,12 +2816,12 @@ Ezt rögzítjük a következőekben.
     Világos, hogy ez is generátorrendszer marad.
 
     Folytassuk az eljárást.
-    Mivel véges sok vektor van az eredeti generátor rendszerben az algoritmus előbb-utóbb megáll,
+    Mivel véges sok vektor van az eredeti generátorrendszerben az algoritmus előbb-utóbb megáll,
     ami azt jelenti, hogy olyan generátorrendszert kapunk, 
     ahol már minden elem a többi lineáris burkán kívül van,
     ergo lineárisan független.
 \end{proof}
-A lineárisan független generátor rendszerek olyan sűrűn fordulnak elő a tárgyalásban,
+A lineárisan független generátorrendszerek olyan sűrűn fordulnak elő a tárgyalásban,
 hogy rövidebb külön nevet adni nekik.
 \begin{definition}[bázis]\index{bázis}
     Egy vektorrendszert \emph{bázisnak} nevezünk, ha ez egyszerre lineárisan független és generátorrendszer.
@@ -2752,14 +2857,14 @@ Az eddigiek összefoglalásaként is tekinthető a következő állítás.
     Az első négy feltétel ekvivalenciájával kezdünk.
     \begin{itemize}
         \item[1.\Rightarrow 2.]
-            Mivel a tér $m$-dimenziós, ezért van $m$-elemű generátor rendszere,
+            Mivel a tér $m$-dimenziós, ezért van $m$-elemű generátorrendszere,
             így a Steinitz-lemma szerint nincs $m$-nél több elemet tartalmazó lineárisan független
             rendszere, ergo bármely $m$ elemet tartalmazó lineárisan független rendszer maximális is.
         \item[2.\Rightarrow 3.]
             Láttuk korábban.
         \item[3.\Rightarrow 4.]
             Mivel a tér $m$-dimenziós, ezért van $m$-elemű lineárisan független rendszere,
-            így a Steinitz-lemma szerint nincs $m$-nél kevesebb elemet tartalmazó generátor rendszere,
+            így a Steinitz-lemma szerint nincs $m$-nél kevesebb elemet tartalmazó generátorrendszere,
             ergo bármely $m$ elemet tartalmazó generátorrendszer rendszer minimális is.
         \item[4.\Rightarrow 1.]
             Láttuk korábban.
@@ -2783,20 +2888,20 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
     \[
         \left\{ x_1,\dots,x_m \right\}
     \]
-    $m$ elemű lineárisan független generátor rendszere.
+    $m$ elemű lineárisan független generátorrendszere.
     Legyen $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független.
     A Steinitz-lemma szerint ez a rendszer kiterjeszthető egy 
     \[
         \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
     \]
-    generátor rendszerré, ami persze bázis is.
+    generátorrendszerré, ami persze bázis is.
     Ezt kellett belátni. 
 \end{proof}
 
-Meggondoltuk tehát, hogy bármely véges generátor rendszerből elhagyható néhány elem úgy, 
-hogy a rendszer lineárisan független generátor rendszerré váljon,
+Meggondoltuk tehát, hogy bármely véges generátorrendszerből elhagyható néhány elem úgy, 
+hogy a rendszer lineárisan független generátorrendszerré váljon,
 és hasonlóan bármely lineárisan független rendszerhez, hozzátehető néhány elem úgy, hogy a
-rendszer lineárisan független generátor rendszerré váljon.
+rendszer lineárisan független generátorrendszerré váljon.
 
 
 
@@ -2843,12 +2948,12 @@ rendszer lineárisan független generátor rendszerré váljon.
         A=BC,\tag{\dag}
     \]
     ahol $B\in\mathbf{F}^{n\times r},C\in\mathbf{F}^{r\times m}$.
-    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátor rendszere $A$ oszlop-vektorterének
-    és $C$ sorrendszere minimális generátor rendszere $A$ sor-vektorterének.
+    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátorrendszere $A$ oszlop-vektorterének
+    és $C$ sorrendszere minimális generátorrendszere $A$ sor-vektorterének.
 
     Vegyük észre, hogy $\srank{A}\leq \crank{A}$.
     Ugyanis ha az $A$ mátrix oszlop-vektorterének veszünk egy tetszőleges választott
-    $b_1,\dots,b_k$ generátor rendszerét, 
+    $b_1,\dots,b_k$ generátorrendszerét, 
     akkor van $B\in\mathbf{F}^{n\times k}$ és $C\in\mathbf{F}^{k\times m}$ mátrix, hogy $A=BC$.
     Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\crank{A}$.
     \\
@@ -2868,14 +2973,14 @@ rendszer lineárisan független generátor rendszerré váljon.
     \]
     ami csak úgy lehetséges, 
     hogy $V=W$.
-    A $B$ oszlopai tehát $V$-nek is generátor rendszerét alkotják,
+    A $B$ oszlopai tehát $V$-nek is generátorrendszerét alkotják,
     és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
     elvesztése nélkül.
 
     A sorokra vonatkozó indoklás analóg.
     Először is $\srank{A}\leq \rrank{A}$.
     Ugyanis ha az $A$ mátrix sorvektorterének veszünk egy tetszőleges választott
-    $c_1,\dots,c_k$ generátor rendszerét, 
+    $c_1,\dots,c_k$ generátorrendszerét, 
     akkor van $B\in\mathbf{F}^{n\times k}$ és $C\in\mathbf{F}^{k\times m}$ mátrix, hogy $A=BC$.
     Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\rrank{A}$.
     \\
@@ -2895,7 +3000,7 @@ rendszer lineárisan független generátor rendszerré váljon.
     \]
     ami csak úgy lehetséges, 
     hogy $V=W$.
-    A $C$ oszlopai tehát $V$-nek is generátor rendszerét alkotják,
+    A $C$ oszlopai tehát $V$-nek is generátorrendszerét alkotják,
     és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
     elvesztése nélkül.
 
@@ -2911,7 +3016,7 @@ rendszer lineárisan független generátor rendszerré váljon.
     Ekkor létezik $A=BC$ felbontása, ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
     Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlop-vektorterének nagyon sok bázisa van.
     Viszont minden ilyen felbontásban $B$ oszloprendszere az $A$ oszlop-vektorterének, 
-    míg $C$ sorrendszere az $A$ sorvektorterének minimális generátor rendszerét, ergo bázisát alkotja.
+    míg $C$ sorrendszere az $A$ sorvektorterének minimális generátorrendszerét, ergo bázisát alkotja.
 \end{note}
 Következményképpen érdemes meggondolni a mátrix és inverzének felcserélhetőségére vezető állítást.
 \begin{proposition}
@@ -3790,4 +3895,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 29 Sep 2019 09:05:30 AM CEST
+Last Modified : Tue 08 Oct 2019 10:51:08 AM CEST
