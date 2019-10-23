@@ -2566,13 +2566,18 @@ Ez a \emph{Gauss-Jordan--elimináció}.\index{Gauss-Jordan--elimináció}
 \section{Lineárisan független rendszerek és generátorrendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
-    mondunk, ha egyik vektora kifejezhető a többi vektor lineáris kombinációjaként.
+    mondunk, ha van olyan vektora, amely kifejezhető a többi vektor lineáris kombinációjaként.
 \end{definition}
 Úgy is fogalmazhatnánk, hogy az $\left\{ y_1,\dots,y_n \right\}$ rendszer pontosan akkor
 lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
 \[
     y_k\in\lin\left\{ y_1,\dots,y_{k-1},y_{k+1},\dots,y_n \right\}.
 \]
+Nyilvánvaló példa, hogy ha a vektorrendszer a $0$ vektort tartalmazza, 
+akkor lineárisan összefüggő. 
+Hasonlóan, ha ugyanaz a vektor többször szerepel a vektorrendszerben, a rendszer szintén összefüggő.
+Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,de az $\left\{  \right\}$ üres rendszer is.
+
 \begin{proposition}
     Legyen $\left\{ y_1,\dots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
     A vektorrendszerre tett alábbi feltevések egymással ekvivalensek.
@@ -2655,6 +2660,11 @@ Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egy
 \begin{proof}
     Nyilvánvaló a lineáris összefüggés karakterizációjából.
 \end{proof}
+A lehető legszűkebb lineárisan független rendszer az $\left\{  \right\}$ üres vektorrendszer,
+amelynek egyetlen eleme sincs.
+A lehető legbővebb generátorrendszer az egész vektortér. 
+Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek közül a lehető legbővebbet keresni,
+és generátorrendszerek közül a lehető legszűkebbet keresni.
 \begin{definition}[maximális lineárisan független-- és minimális generátorrendszer]\index{maximális lineárisan független rendszer}\index{minimális generátorrendszer}
     Egy lineárisan független rendszert \emph{maximális lineárisan független rendszernek} nevezünk,
     ha nem lehet bővíteni úgy, hogy lineárisan független maradjon.
@@ -2728,20 +2738,49 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
         \frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k-1}}\alpha_{k-1}y_{k-1}.\qedhere
     \]
 \end{proof}
-\chapter{Vektortér bázisa}
-\scwords A Steinitz-lemma fontosságát kell kiemelni, amely 
-a legegyszerűbb megfogalmazásában azt állítja, 
-hogy \emph{egy lineárisan független rendszer elemszáma, soha nem nagyobb mint egy generátorrendszer elemszáma.}
-Ez a tény vezet a bázis és a dimenzió fogalmához.
 
-A Steinitz-lemma megfogalmazása előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere} lemmára.
+\begin{lemma}[független rendszer csere]\label{le:fgtlncsere}
+    Legyen $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszere valamely vektortérnek,
+    és tegyük fel, hogy a tér valamely $x$ vektorára
+    \[
+        x=\sum_{j=1}^n\xi_jy_j,
+    \]
+    ahol $\xi_k\neq 0$ az egyik $1\leq k\leq n$ mellett. 
+    Ekkor $y$ becserélhető a $k$-adik helyen a független rendszerbe 
+    úgy, hogy az független maradjon, azaz az
+    \[
+        \left\{ y_1,\dots,y_{k-1},x,y_{k+1},\dots,y_n \right\}
+    \]
+    vektorrendszer is lineárisan független.
+\end{lemma}
+\begin{proof}
+    Megmutatjuk, hogy a cserélt rendszernek egyedül a triviális lineáris kombinációja zérus.
+    Legyen tehát
+    \[
+        0
+        =\sum_{j=1,j\neq k}^n\eta_jy_j+\eta_kx
+        =\sum_{j=1,j\neq k}^n\eta_jy_j+\sum_{j=1}^n\eta_k\xi_jy_j
+        =\sum_{j=1,j\neq k}^n\left( \eta_j+\eta_k\xi_j \right)y_j+\eta_k\xi_ky_k.
+    \]
+    Mivel az eredeti rendszer lineárisan független,
+    ezért az utóbbi lineáris kombináció minden együtthatója a test null eleme.
+    A $k$-adikkal kezdve $\eta_k\xi_k=0$, $\xi_k\neq 0$, így $\eta_k=0$.
+    Ezt a nem $k$-adik együtthatókba visszahelyettesítve
+    már azt kapjuk, hogy $\eta_j=0$ minden $j\neq k$ mellett is.
+\end{proof}
+\chapter{A Steinitz-lemma}
+\scwords Független- és generátor-rendszerek elemszáma közti kapcsolat vezet a a bázis és a dimenzió fogalmához.
+A félév legfajsúlyosabb állítása, az egyszerű bizonyítás ellenére.
+A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere} lemmára.
 \begin{SL}\index{Steinitz--lemma}
-    Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer és az
-    $\left\{ x_1,\dots,x_m \right\}$ vektorrendszer egy generátorrendszer.
+    Legyenek $n$ és $m$ nem negatív egészek.
+    Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer,
+    és az
+    $\left\{ x_1,\dots,x_m \right\}$ egy generátorrendszer.
     Ekkor
     \begin{enumerate}
-        \item $n\leq m$;
-        \item Az $x_1,\dots,x_m$ vektorok alkalmas átindexelésével az
+        \item $n\leq m$ és;
+        \item az $x_1,\dots,x_m$ vektorok alkalmas átindexelésével kapott
             \[
                 \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
             \]
@@ -2787,6 +2826,73 @@ A Steinitz-lemma megfogalmazása előtt emlékezzünk a generátorrendszer cser�
     Ez ellentmondás, hiszen $k$ a legnagyobb olyan szám, 
     amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
+\section{Rang-tétel}
+\begin{definition}[mátrix feszítőrangja]
+    Legyen $A\in\mathbf{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
+    Azt mondjuk, hogy feszítő rangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
+    \[
+        A=BC
+    \]
+    alakban, ahol $B\in\mathbf{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times n}$.
+\end{definition}
+Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
+A rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
+
+\begin{proposition}[Rang-tétel]
+        Minden nemzérus mátrixban 
+        a maximális lineárisan független oszloprendszerek 
+        és a max\-i\-má\-lis lineárisan független sorrendszerek azonos elemszámúak, 
+        és ez a szám azonos a mátrix feszítőrangjával.
+\end{proposition}
+\begin{proof}
+    Jelölje $r$ az $A\in\mathbb{F}^{n\times m}$ mátrix feszítőrangját.
+    Legyen $r_c$ a mátrix egyik rögzített maximális lineárisan független oszloprendszerének elemszáma.
+    \begin{itemize}
+        \item 
+        Ezen oszlopokat egy $B\in\mathbb{F}^{n\times r_c}$ mátrixba téve 
+        -- a maximalitás miatt -- létezik olyan $C\in\mathbb{F}^{r_c\times m}$ mátrix, 
+        amelyre $A=BC$, azaz $r\leq r_c$.
+        \item
+        Most tekintsünk egy tetszőleges olyan
+        \(
+            A=BC
+        \)
+        felbontást, 
+        ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
+        Jelölje $W$ a $B$ mátrix oszlopai lineáris burkát. 
+        Az $A$ mátrix fent rögzített maximális lineárisan független oszloprendszere egy lineárisan független rendszer a 
+        $W$ vektortérben,
+        és $B$ oszlopai pedig egy generátorrendszer ugyanebben a vektortérben,
+        így a Steinitz-lemma szerint $r_c\leq r$.
+    \end{itemize}
+    Evvel megmutattuk, hogy bármely két maximális lineárisan független oszloprendszer azonos elemszámú, és számuk megegyezik a mátrix feszítőrangjával.
+
+
+    Legyen $r_w$ az $A$ mátrix egyik rögzített maximális lineárisan független sorrendszerének elemszáma.
+    \begin{itemize}
+        \item 
+        Ezen sorokat egy $C\in\mathbb{F}^{r_w\times m}$ mátrixba téve 
+        -- a maximalitás miatt -- létezik olyan $B\in\mathbb{F}^{n\times r_w}$ mátrix, 
+        amelyre $A=BC$, azaz $r\leq r_w$.
+        \item
+        Most tekintsünk egy tetszőleges olyan
+        \(
+            A=BC
+        \)
+        felbontást, 
+        ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
+        Jelölje most $V$ a $C$ mátrix sorai lineáris burkát. 
+        Az $A$ mátrix fent rögzített maximális lineárisan független sorrendszere egy lineárisan független rendszer e
+        $V$ vektortérben,
+        és $C$ sorai pedig egy generátorrendszert alkotnak ugyanebben a $V$ vektortérben,
+        így a Steinitz-lemma szerint $r_w\leq r$.
+    \end{itemize}
+    Evvel azt is megmutattuk, 
+    hogy bármely két maximális lineárisan független sorrendszer azonos elemszámú, 
+    és számuk megegyezik a mátrix feszítőrangjával.
+\end{proof}
+\section{Bázis}
+A Steinitz-lemma következményeképpen:
 \begin{corollary}
     Egy vektortérben bármely két véges egyszerre lineárisan független és egyszerre generátorrendszer elemszáma azonos.
     Konkrétabban, ha
@@ -3895,4 +4001,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 13 Oct 2019 08:48:27 AM CEST
+Last Modified : Wed 23 Oct 2019 06:18:09 PM CEST
