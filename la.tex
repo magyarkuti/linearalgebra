@@ -2588,25 +2588,26 @@ egyébként a rendszert
 \emph{inhomogénnek}%
 \index{inhomogén lineáris egyenletrendszer}
 mondjuk.
+A fenti rendszer együtthatóiból álló
+\[
+    A=
+    \begin{pmatrix}
+        a_{1,1}&\cdots&a_{1,n}\\
+        a_{2,1}&\cdots&a_{2,n}\\
+        \vdots&\ddots&\vdots\\
+        a_{m,1}&\cdots&a_{m,n}
+    \end{pmatrix}
+\]
+mátrixot 
+\emph{együttható-mátrixnak}%
+\index{együttható-mátrix}
+mondjuk.
 
 Ha az egyenletek egyikét egy nemzérus számmal szorozzuk,
 és az egyenletek egyikéhez hozzáadjuk egy másik egyenlet számszorosát,
 akkor a megoldások nem változnak, 
 azaz ekvivalens átalakítást hajtunk végre.
 
-A fenti rendszer együtthatóiból álló
-\[
-    \begin{matrix}
-        a_{1,1}&\cdots&a_{1,n}\\
-        a_{2,1}&\cdots&a_{2,n}\\
-        \vdots&\ddots&\vdots\\
-        a_{m,1}&\cdots&a_{m,n}
-    \end{matrix}
-\]
-mátrixot 
-\emph{együttható-mátrixnak}%
-\index{együttható-mátrix}
-mondjuk.
 Egy Gauss-Jordan eliminációs lépésre tekinthetünk úgy is,
 mint rögzített $i,j$ mellett a $j$-edik változó kiküszöbölésére
 -- azaz eliminációjára -- 
@@ -2622,7 +2623,12 @@ eliminációt hajtunk végre az $a_{i,j}$ pivot elem választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
 
-Ugyan ez egy táblázatban megfogalmazva:
+Ugyan ez egy táblázatban megfogalmazva. 
+Itt a baloldali mátrix az együttható mátrix, amelynek
+a $j$-edik oszlopa van külön kiemelve.
+$L_1,\dots,L_m$ jelöli az együttható-mátrix sorait
+A jobb oldali mátrix az elimináció eredménye, a megfelelő sorműveletekkel az egyes sorok
+címkéiben:
 \[
     \begin{array}{ccc|c}
         \cdots&a_{1,j}&\cdots&L_1\\
@@ -2640,8 +2646,286 @@ Ugyan ez egy táblázatban megfogalmazva:
               \cdots&0&\cdots&L_m-a_{m,j}\frac{1}{a_{i,j}}L_i
     \end{array}
 \]
-Itt $L_1,\dots,L_m$ jelöli az együttható-mátrix sorait,
-és a jobb oldali mátrixot kapjuk egy eliminációs lépés után.
+Azt kell látnunk, hogy egy elimációs lépés az $a_{i,j}$ pivotelem választásával pontosan ugyanazt eredményezi, 
+mint az együttható-mátrix $j$-edik $\left[ A \right]^j$ oszlopának becserélése a generátorrendszer $i$-edik helyére. 
+
+Az algoritmus célja, hogy
+a generátorrendszerbe annyi oszlopot cseréljünk be amennyit csak tudunk, 
+de persze egy már korábban becserélt vektort nem cserélünk ki egy újabb oszlopra.
+Az algoritmus tehát akkor áll meg,
+ha minden oszlopot becseréltünk, 
+vagy van ugyan nem becserélt oszlop de annak minden koordinátája zérus az eredeti generátorrendszer nem cserélt helyein.
+Ezt utóbbi mondatot egyszerűbben úgy fogalmazhatjuk, 
+hogy ha a táblázat minden nem zérus sora egy becserélt vektorthoz tartozik,
+akkor véget ér az algoritmus.
+
+A lineáris egyenletrendszerek nyelvére átültetve ez azt jelenti, 
+hogy az algoritmus célja a változók eliminálása,
+de persze egy sorban csak egy eliminált változó szerepelhet.
+Az algortimus akkor áll meg, 
+ha a táblázatnak minden nem zérus sorában van eliminált változó.
+
+Az algoritmus utolsó táblájából a homogén lineáris egyenletrendszer általános megoldása könnyen leolvasható:
+Dobjuk el a zérus sorokat, és foglakozzunk a maradék táblázattal.
+Minden sor egy és csak egy eliminált változót tartalmaz.
+A többi változó, ha ilyen van egyáltalán egy nem eliminált változóhoz tartozik.
+A nem eliminált változók tetszőleges értéket felvehetnek, 
+majd minden sorban ebből már egyértelműen kifejezhető az eliminált változók értéke.
+
+Innen érthető, 
+hogy a szokásos szóhasználat szerint, az eliminált változókat sokszor
+\emph{kötött változónak}\index{kötött változó}
+nevezzük,
+és a többi változót 
+\emph{szabad változónak}\index{szabad változó}
+mondjuk.
+A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló a most tárgyalt algoritmus alapján.
+\begin{proposition}
+    Ha egy homogén lineáris egyenletrendszerben több ismeretlen van mint egyenlet,
+    akkor a rendszernek van nem zéró megoldása.
+\end{proposition}
+\begin{proof}
+    Gauss-Jordan algoritmus legutolsó táblázatában
+    a kötött változó száma legfeljebb a sorok száma az pedig szigorúan kisebb mint az összes ismeretlenek száma.
+    Van tehát szabad változó, amelynek értéke tetszőleges lehet.
+\end{proof}
+Az teljesen nyilvánvaló, hogy a kötött változók száma és a szabad változók száma azonos a változók számával.
+Ebben a pillanatban még nem látszik,
+de később ki fog derülni, 
+hogy a kötött így a szabad változók száma is független az algoritmus során válaszott pivot elemektől.
+
+Érdemes a rendszer egy megoldásra úgy gondolni, mint egy $x\in\mathbf{F}^n$ oszlopvektorra,
+amelynek $i$-edik koordinátája az $x_i$ változó aktuális értéke.
+Ilyen módon az $x_1,\dots,x_n$ pontosan akkor elégíti ki a lineáris egyenletrendszert,
+ha
+\[
+    Ax=b
+\]
+mátrixegyenlet teljesül, ahol a $b\in\mathbf{F}^n$ az a vektor melynek $i$-edik koordinátája $b_i$.
+
+Érdemes itt konkrét példákkal szemléltetni a homogén lineáris egyenletrendszer általános megoldásának felírását:
+\begin{enumerate}
+    \item 
+Oldjuk meg a 
+\[
+\systeme{ x+4y+7z=0,
+         2x+5y+8z=0,
+         3x+6y+8z=0
+     }
+\]
+homogén  lineáris egyenletrendszert.
+A Gauss-Jordan algoritmus lehet például a következő:
+\[
+    \begin{array}{|rrr}
+        a&b&c\\
+        \hline
+        \boxed{1}&4&7\\
+        2&5&8\\
+        3&6&8\\
+        \hline
+        \delta&4&7
+    \end{array}
+    \implies
+    \begin{array}{r|rrr}
+        &a&b&c\\
+        \hline
+    a &  1&4&7\\
+      &  0&\boxed{-3}&-6\\
+      &  0&-6&-13\\
+        \hline
+      &  0&\delta&2
+    \end{array}
+    \implies
+    \begin{array}{r|rrr}
+        &a&b&c\\
+        \hline
+    a &  1&0&-1\\
+    b &  0&1&2\\
+    &  0&0&\boxed{-1}\\
+        \hline
+      &  0&0&\delta
+    \end{array}
+    \implies
+    \begin{array}{r|rrr}
+        &a&b&c\\
+        \hline
+    a &  1&0&0\\
+    b &  0&1&0\\
+    c &  0&0&1
+    \end{array}
+\]
+Ez azt jelenti, hogy az eredeti feladat ekvivalens az
+\[\systeme{x=0,y=0,z=0}\]
+feladattal, amelynek nyilvánvalóan csak a zéró vektor a megoldása.
+\item
+    Tekintsük a következő feladatot:
+    \[
+        \begin{array}{rl}
+            x_1+3x_2+4x_3+5x_4-x_5=&0\\
+            -3x_1+x_2-x_3+4x_4-5x_5=&0\\
+            2x_1+x_2+3x_3+3x_5=&0\\
+            3x_1+x_2+4x_3-x_4+5x_5=&0
+        \end{array}
+    \]
+    Az elimináció lehet a következő:
+    \begin{multline*}
+        \begin{array}{r|rrrrr}
+            &a_1&a_2&a_3&a_4&a_5\\
+            \hline
+            &\boxed{1}&3&4&5&-1\\
+            &-2&1&-1&4&-5\\
+            &2&1&3&0&3\\
+            &3&1&4&-1&5\\
+            \hline
+            &\delta&3&4&5&-1
+        \end{array}
+        \implies
+        \begin{array}{r|rrrrr}
+            &a_1&a_2&a_3&a_4&a_5\\
+            \hline
+            a_1&1&3&4&5&-1\\
+            &0&\boxed{7}&7&14&-7\\
+            &0&-5&-5&-10&5\\
+            &0&-8&-8&-16&8\\
+            \hline
+            &0&\delta&1&2&-1
+        \end{array}
+        \implies
+        \\
+        \begin{array}{r|rrrrr}
+            &a_1&a_2&a_3&a_4&a_5\\
+            \hline
+            a_1&1&0&1&-1&2\\
+            a_2&0&1&1&2&-1\\
+            &0&0&0&0&0\\
+            &0&0&0&0&0
+        \end{array}
+    \end{multline*}
+Az eredeti egyenletrendszer tehát ekvivalens a következő egyenletrendszerrel:
+\[
+    \begin{array}{rl}
+        x_1+x_3-x_4+2x_5=&0\\
+        x_2+x_3+2x_4-x_5=&0
+    \end{array}
+\]
+Itt $x_1,x_2$ a kötött változók és $x_3,x_4,x_5$ a szabadváltozók.
+Ezek értéke tetszőleges lehet, mondjuk $x_3=s$, $x_4=r$, $x_5=t$ és ekkor 
+$x_1=-s+r-2t$ valamint $x_2=-s-2r+t$.
+Az általános megoldás ezért
+\[
+    \left\{ 
+        \begin{pmatrix}
+            -s+r-2t\\
+            -s-2r+t\\
+            s\\
+            r\\
+            t
+        \end{pmatrix}
+        :s,r,t\in\mathbf{R}
+    \right\}
+    =
+    \left\{ s
+        \begin{pmatrix}
+            -1\\-1\\1\\0\\0
+        \end{pmatrix}
+        +
+        r
+        \begin{pmatrix}
+            1\\-2\\0\\1\\0
+        \end{pmatrix}
+        +
+        t
+        \begin{pmatrix}
+            -2\\1\\0\\0\\1
+        \end{pmatrix}
+        :s,r,t\in\mathbf{R}
+    \right\}.
+\]
+A szabad változók száma tehát $3$, 
+és a rendszer megoldáshalmaza a 
+\[
+    \begin{pmatrix}
+        -1&1&-2\\
+        -1&-2&1\\
+        1&0&0\\
+        0&1&0\\
+        0&0&1
+    \end{pmatrix}
+\]
+mátrix oszlopai generált altér.
+\end{enumerate}
+\section{Mátrix faktorizáció}
+Érdemes a Gauss-Jordan eliminációs algoritmust az egyenletrendszerek megoldásától függetlenül is szemlélni.
+Ide másolom az előző feladat megoldásának táblázatát:
+\[
+        \begin{array}{r|rrrrr}
+            &a_1&a_2&a_3&a_4&a_5\\
+            \hline
+            a_1&1&0&1&-1&2\\
+            a_2&0&1&1&2&-1\\
+            &0&0&0&0&0\\
+            &0&0&0&0&0
+        \end{array}
+\]
+Ez utolsó táblázat felfedi az eredeti $a_1,a_2,a_3,a_4,a_5$ vektorok közti kapcsolatot.
+A táblázat értelmezése szerint
+\begin{eqnarray*}
+    a_3&=& a_1+a_2\\
+    a_4&=& -a_1+2a_2\\
+    a_5&=& 2a_1-a_2
+\end{eqnarray*}
+Ezt mátrixszorzásként interpretálva azt kapjuk, hogy
+\[
+    \begin{pmatrix}
+        1&3&4&5&-1\\
+        -2&1&-1&3&-5\\
+        2&1&3&0&3\\
+        3&1&4&-1&5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1&3\\
+        -2&1\\
+        2&1\\
+        3&1
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        1&0&1&-1&2\\
+        0&1&1&2&-1
+    \end{pmatrix}
+\]
+hiszen minden oszlop az $a_1,a_2$ oszlopok lineáris kombinációja.
+
+\begin{definition}
+    Legyen $A\in\mathbf{F}^{m\times n}$ mátrix.
+    Az $A$ mátrix oszlop- (sor-) vektorterének nevezzük az $A$ oszlopai (sorai) generálta alterét az $\mathbf{F}^m$ ($\mathbf{F}^n$)
+    vektortérnek.
+\end{definition}
+Az előző példa szerint az ottani $4\times 5$ méretű mátrix oszlopvektorterének az $\left\{ a_1,a_2 \right\}$ két elemű rendszer
+egy generátorrendszere.
+Az alábbi állítás a mátrix szorzás definíciójának következménye.
+\begin{proposition}
+    Legyen $A\in\mathbf{F}^{m\times n}$ egy nem zérus mátrix.
+    \begin{enumerate}
+    \item 
+    Tegyük fel, hogy $A$ oszlopvektorterének létezik $r$-elemű generátorrendszere.
+    Ekkor a generátorrendszer $r$ db vektorát a $B$ mátrix oszlopaiba rendezve egy $m\times r$ mátrixot kapunk.
+    Ehhez a $B$ mátrixhoz létezik $C$ mátrix, amely $r\times n$ méretű és 
+    \(
+        A=B\cdot C.
+    \)
+    \item
+    Most azt tegyük fel, hogy $A$ sorvektorterének létezik $r$-elemű generátorrendszere.
+    Ekkor a generátorrendszer $r$ db sorát a $C$ mátrix soraiba rendezve egy $r\times n$ mátrixot kapunk.
+    Ehhez a $C$ mátrixhoz létezik $B$ mátrix, amely $m\times r$ méretű és 
+    \(
+        A=B\cdot C.
+    \)\qedhere
+    \end{enumerate}
+\end{proposition}
+
+
 \section{Lineárisan független rendszerek és generátorrendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
@@ -4080,4 +4364,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 26 Oct 2019 10:00:14 PM CEST
+Last Modified : Sun 27 Oct 2019 05:44:58 PM CET
