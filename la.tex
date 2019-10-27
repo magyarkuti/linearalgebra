@@ -18,7 +18,7 @@
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
-\usepackage{csquotes,amsmath,amsthm,amsfonts,amssymb,fixme}
+\usepackage{csquotes,amsmath,amsthm,amsfonts,amssymb,systeme,fixme}
 \usepackage[backend=biber,
             bibencoding=utf8,
             style=authoryear,
@@ -2550,7 +2550,7 @@ Pusztán segítség képpen ugyanezt a sort mint egy számolási segédsort az e
     \item 
 Az új táblázat első sora az eredeti első sornak és a segédsor $\eta_1$-szeresének különbsége.
 A második sor az eredeti második sornak és a segédsor $\eta_2$-szeresének különbsége.
-Hasonlóan, az $m$-edik sor az eredeti $m$-edik sornak és a segédsor $\eta_m$-szeresének különbsége.
+Hasonlóan, $m\neq k$-ra az $m$-edik sor az eredeti $m$-edik sornak és a segédsor $\eta_m$-szeresének különbsége.
 \end{itemize}
 
 Látjuk tehát, hogy összesen két fajta sorművelettel alakítottuk a kiindulási mátrixot:
@@ -2563,6 +2563,85 @@ hogy a fenti két sorművelet használva az $y$ oszlopában minden számot el ke
 a $k$-adikat pedig $1$-re kell beállítani.
 Ez a \emph{Gauss-Jordan--elimináció}.\index{Gauss-Jordan--elimináció}
 
+\section{Homogén lineáris egyenletrendszer megoldása eliminációval}
+Az alábbi feladatot lineáris egyenletrendszernek nevezzük.
+\[
+\begin{array}{rrlcl}
+    a_{1,1}x_1+&\cdots&+a_{1,n}x_n&=& b_1\\
+    a_{2,1}x_1+&\cdots&+a_{2,n}x_n&=&b_2\\
+    &&&\vdots&\\
+    a_{m,1}x_1+&\cdots&+a_{m,n}x_n&=& b_m
+\end{array}
+\]
+Itt az $n,m\in\mathbb{N}$, az $a_{i,j}\in\mathbb{F}$ testbeli számok előre adottak
+minden $i=1,\dots,m$ és minden $j=1,\dots,n$ mellett.
+Adottak még az egyenletek jobb oldalát képező $b_i\in\mathbb{F}$ számok.
+A feladat megoldása annyit tesz, hogy keressük az $x_1,\dots,x_n$ ismeretlenek 
+összes olyan értékét az $\mathbb{F}$ testből,
+amelyre fenti egyenletek mind teljesülnek.
+Ha a jobboldali számokra $b_i=0$ minden $i=1,\dots,n$ mellett,
+akkor 
+\emph{homogén lineáris egyenletrendszerről}%
+\index{homogén lineáris egyenletrendszer} 
+beszélünk,
+egyébként a rendszert
+\emph{inhomogénnek}%
+\index{inhomogén lineáris egyenletrendszer}
+mondjuk.
+
+Ha az egyenletek egyikét egy nemzérus számmal szorozzuk,
+és az egyenletek egyikéhez hozzáadjuk egy másik egyenlet számszorosát,
+akkor a megoldások nem változnak, 
+azaz ekvivalens átalakítást hajtunk végre.
+
+A fenti rendszer együtthatóiból álló
+\[
+    \begin{matrix}
+        a_{1,1}&\cdots&a_{1,n}\\
+        a_{2,1}&\cdots&a_{2,n}\\
+        \vdots&\ddots&\vdots\\
+        a_{m,1}&\cdots&a_{m,n}
+    \end{matrix}
+\]
+mátrixot 
+\emph{együttható-mátrixnak}%
+\index{együttható-mátrix}
+mondjuk.
+Egy Gauss-Jordan eliminációs lépésre tekinthetünk úgy is,
+mint rögzített $i,j$ mellett a $j$-edik változó kiküszöbölésére
+-- azaz eliminációjára -- 
+valamennyi nem az $i$-edik sorból,
+és az $i$-edik sorban e $j$-edik változó együtthatójának $1$-re állítására.
+Valóban,
+ha az $i$-edik sort osztjuk az $a_{i,j}\neq 0$ számmal, akkor e sor $j$-edik
+eleme $1$-re változik.
+Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
+$a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
+Ha ezt minden $k=1,\dots,m$ mellet kiszámoljuk, akkor éppen egy Gauss-Jordan
+eliminációt hajtunk végre az $a_{i,j}$ pivot elem választásával.
+Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
+minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
+
+Ugyan ez egy táblázatban megfogalmazva:
+\[
+    \begin{array}{ccc|c}
+        \cdots&a_{1,j}&\cdots&L_1\\
+              &\vdots&       &\vdots\\
+              \cdots&\boxed{a_{i,j}}&\cdots&L_i\\
+              &\vdots&       &\vdots\\
+        \cdots&a_{m,j}&\cdots&L_m
+    \end{array}
+    \implies
+    \begin{array}{ccc|c}
+        \cdots&0&\cdots&L_1-a_{1,j}\frac{1}{a_{i,j}}L_i\\
+              &\vdots&       &\vdots\\
+              \cdots&1&\cdots&\frac{1}{a_{i,j}}L_i\\
+              &\vdots&       &\vdots\\
+              \cdots&0&\cdots&L_m-a_{m,j}\frac{1}{a_{i,j}}L_i
+    \end{array}
+\]
+Itt $L_1,\dots,L_m$ jelöli az együttható-mátrix sorait,
+és a jobb oldali mátrixot kapjuk egy eliminációs lépés után.
 \section{Lineárisan független rendszerek és generátorrendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
@@ -4001,4 +4080,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 23 Oct 2019 06:18:09 PM CEST
+Last Modified : Sat 26 Oct 2019 10:00:14 PM CEST
