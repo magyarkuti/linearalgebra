@@ -2958,7 +2958,7 @@ akkor már az inhomogén rendszer általános megoldása is egyszerűen felírha
     Ekkor presze $Ax=Ax_0+Az=b+0=b$.
 \end{proof}
 Egy nem nyilvánvaló következmény, 
-hogy akármelyik partikuláris megoldással toljuk el az
+hogy akármelyik partikuláris megoldással toljuk is el az
 inhomogén rendszer megoldását mindig ugyan azt a halmazt kapjuk, 
 emiatt mindegy melyik partikuáris megoldást rögzítettük.
 
@@ -2973,21 +2973,95 @@ Konkrétan adott $A$ és $b$ mellett Gauss-Jordan algoritmussal el tudjuk dönte
 $b$ vektor eleme-e az $A$ mátrix oszlop vektorterének.
 Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
 Most hajtsuk végre a Gauss-Jordan eliminációt, de úgy hogy pivot-elemet,
-csak az első n oszlopból válasszunk, ugyanúgy mintha a homgén rendszert oldanánk meg.
+csak az első n oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
 Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
 Az algoritmus úgy ér véget, 
 hogy az $A$ mátrixnak megfelelő részben minden nem zérus sor tartalmaz eliminált változót.
 
 Ha van olyan sor ahol az első $n$ elem zérus, de az utolsó elem nem zérus, 
 akkor nyilván nincs megoldás.
-Minden egyéb esetben van megoldás, hiszen minden nem zérus sorból a kötött változót
+Minden egyéb esetben van megoldás, 
+hiszen a csupa zéró sorokhoz tartozó egyenletek az ismeretlenek minden értéke mellett fennállnak,
+de maradék a nem zérus sorok esetén a kötött változót
 kifejezhetjük a szabad változók tetszőleges -- mondjuk zérus -- értéke mellett.
 
 Az inhomogén rendszernek tehát pontosan akkor van megoldása, 
 ha az utolsó oszlop minden nem zérus eleme olyan egyenlethez tartozik, 
 ahol szerepel eliminált változó.
 
+Ha a fenti eliminációra, mint a generátorrendszer csere lemma alkalmazására gondolunk,
+akkor azt kapjuk, hogy a megoldhatóság szükséges és elegendő feltétele,
+hogy a végső táblában az utolsó, a $b$-hez tartozó oszlopnak csak olyan helyeken lehetnek nem zérus tagjai,
+amely helyek korábban már a generátorrendszerbe becserélt oszlop vektorokhoz tartoznak,
+ami persze nem jelent többet, mint hogy $b$ eleme az $A$ oszlopvektorterének.
+Az algoritmus annyiban több, mint a korábban megértett feltétel, 
+hogy a megoldható esetben rögtön kapunk egy partikuláris megoldást is.
 
+Nézzünk egy példát.
+\[
+    \begin{array}{rl}
+         x_1+3x_2+4x_3+5x_4-x_5=&6  \\
+         -2x_1+x_2-x_3+4x_4-5x_5=&-5  \\
+         2x_1+x_2+3x_3+3x_5=&7  \\
+         3x_1+x_2+4x_3-x_4+5x_5=&10 
+    \end{array}
+\]
+A Gauss-Jordan algoritmus:
+\begin{multline*}
+    \begin{array}{c|rrrrr|r}
+    &a_1&a_2&a_3&a_4&a_5&b\\
+    \hline
+    &\boxed{1}&3&4&5&-1&6\\
+    &-2&1&-1&4&-5&-5\\
+    &2&1&3&0&3&7\\
+    &3&1&4&-1&5&10\\
+    \hline
+    &\delta&3&4&5&-1&6
+    \end{array}
+    \implies
+    \begin{array}{c|rrrrr|r}
+    &a_1&a_2&a_3&a_4&a_5&b\\
+    \hline
+    a_1&1&3&4&5&-1&6\\
+    &0&7&7&14&-7&7\\
+    &0&-5&-5&-10&\boxed{5}&-5\\
+    &0&-8&-8&-16&8&-8\\
+    \hline
+    &0&-1&-1&-2&\delta&-1
+    \end{array}
+    \implies
+    \\
+    \begin{array}{c|rrrrr|r}
+    &a_1&a_2&a_3&a_4&a_5&b\\
+    \hline
+    a_1&1&2&3&3&0&5\\
+    &0&0&0&0&0&0\\
+    a_5&0&-1&-1&-2&1&-1\\
+    &0&0&0&0&0&0\\
+    \end{array}
+\end{multline*}
+a rendszernek tehát van megoldása például $x_1=5$, $x_5=-1$, $x_2=0$, $x_3=0$, $x_4=0$.
+Az általános megoldás tehát
+\[
+\left\{
+\begin{pmatrix}
+5\\0\\0\\0\\-1
+\end{pmatrix}
++s
+\begin{pmatrix}
+-2\\1\\0\\0\\1
+\end{pmatrix}
++t
+\begin{pmatrix}
+-3\\0\\1\\0\\1
+\end{pmatrix}
++r
+\begin{pmatrix}
+-3\\0\\0\\1\\2
+\end{pmatrix}
+:s,t,r\in\mathbb{R}
+\right\}.
+\]
 \section{Lineárisan független rendszerek és generátorrendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
