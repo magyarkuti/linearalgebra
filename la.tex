@@ -2563,7 +2563,7 @@ hogy a fenti két sorművelet használva az $y$ oszlopában minden számot el ke
 a $k$-adikat pedig $1$-re kell beállítani.
 Ez a \emph{Gauss-Jordan--elimináció}.\index{Gauss-Jordan--elimináció}
 
-\section{Homogén lineáris egyenletrendszer megoldása eliminációval}
+\section{Homogén lineáris egyenletrendszer}
 Az alábbi feladatot lineáris egyenletrendszernek nevezzük.
 \[
 \begin{array}{rrlcl}
@@ -2924,6 +2924,68 @@ Az alábbi állítás a mátrix szorzás definíciójának következménye.
     \)\qedhere
     \end{enumerate}
 \end{proposition}
+
+
+\section{Inhomogén lineáris egyenletrendszer}
+Láttuk, hogy egy $m$ egyenletet és $n$ ismeretlent tartalmazó lineáris egyenletrendszer ekvivalens az 
+\[
+    Ax=b
+\]
+feladattal, ahol $A\in\mathbb{F}^{m\times n}$ az együttható-mátrix és $b\in\mathbb{F}^m$
+a jobboldalakból alkotott vektor.
+A következő egyszerű észrevétel szerint ha az inhomogén rendszernek találunk valahogyan egyetlen megoldását és ismerjük a homogén rendszer általános megoldását,
+akkor már az inhomogén rendszer általános megoldása is egyszerűen felírható.
+\begin{proposition}
+    A fenti jelölések megtartása mellett
+    legyen $x_0\in\mathbb{F}^m$ egy tetszőlegesen rögzített megoldása az $Ax=b$ inhomogén lineáris egyenletrendszernek.
+    Ekkor
+    \[
+        \left\{ x:Ax=b \right\}
+        =
+        \left\{ x_0+z:Az=0 \right\},
+    \]
+    azaz az inhomogén rendszer megoldáshalmaza, 
+    azonos a homogén rendszer megoldáshalmazának egy partikuláris megoldással való 
+    eltoltjával.
+\end{proposition}
+\begin{proof}
+    Legyen először $x$ egy megoldás, azaz $Ax=b$. 
+    Mivel $x_0$ is egy megoldás, ezér $Ax_{0}=b$ is teljesül.
+    Persze $x=x_0+\left( x-x_0 \right)=x_0+z$, ahol $z=x-x_0$ egy olyan vektor,
+    amelyre $Az=Ax-Ax_0=b-b=0$.
+    
+    Másodszor tekintsünk egy $x=x_0+z$ alakú vektort, ahol $Az=0$.
+    Ekkor presze $Ax=Ax_0+Az=b+0=b$.
+\end{proof}
+Egy nem nyilvánvaló következmény, 
+hogy akármelyik partikuláris megoldással toljuk el az
+inhomogén rendszer megoldását mindig ugyan azt a halmazt kapjuk, 
+emiatt mindegy melyik partikuáris megoldást rögzítettük.
+
+Persze a kérdés, hogy hogyan találunk egyáltalán partikuláris megoldást.
+Máshogyan fogalmazva: mikor van egyáltalán megoldása egy inhomogén rendszernek?
+\begin{proposition}
+    Az $Ax=b$ inhomogén lineáris egyenletrendszernek pontosan akkor van megoldása, 
+    ha $b$ előáll mint $A$ oszlopainak valamilyen lineáris kombinációja, 
+    azaz a $b$ vektor az $A$ mátrix oszlop vektoréhez tartozik.
+\end{proposition}
+Konkrétan adott $A$ és $b$ mellett Gauss-Jordan algoritmussal el tudjuk dönteni, hogy
+$b$ vektor eleme-e az $A$ mátrix oszlop vektorterének.
+Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
+Most hajtsuk végre a Gauss-Jordan eliminációt, de úgy hogy pivot-elemet,
+csak az első n oszlopból válasszunk, ugyanúgy mintha a homgén rendszert oldanánk meg.
+Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
+Az algoritmus úgy ér véget, 
+hogy az $A$ mátrixnak megfelelő részben minden nem zérus sor tartalmaz eliminált változót.
+
+Ha van olyan sor ahol az első $n$ elem zérus, de az utolsó elem nem zérus, 
+akkor nyilván nincs megoldás.
+Minden egyéb esetben van megoldás, hiszen minden nem zérus sorból a kötött változót
+kifejezhetjük a szabad változók tetszőleges -- mondjuk zérus -- értéke mellett.
+
+Az inhomogén rendszernek tehát pontosan akkor van megoldása, 
+ha az utolsó oszlop minden nem zérus eleme olyan egyenlethez tartozik, 
+ahol szerepel eliminált változó.
 
 
 \section{Lineárisan független rendszerek és generátorrendszerek}
@@ -4364,4 +4426,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 27 Oct 2019 05:44:58 PM CET
+Last Modified : Fri 01 Nov 2019 02:04:17 PM CET
