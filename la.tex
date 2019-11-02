@@ -1555,7 +1555,8 @@ ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
-Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára, amit majd később vezetünk be.
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss-Jordan eliminációs algoritmusra, 
+amiket majd később vezetünk be.
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
 Ilyenkor az $1\times 1$-es mátrixok tere voltaképpen azonos az $\mathbf{F}$-testtel, hiszen csak az a különbség,
@@ -2854,6 +2855,15 @@ A szabad változók száma tehát $3$,
 \]
 mátrix oszlopai generált altér.
 \end{enumerate}
+Egy homogén lineáris egyenletrendszernek a zérus vektor mindig megoldása,
+ezt nevezzük triviális megoldásnak.
+A Gauss-Jordan eliminációs algoritmusból világos a következő gondolat.
+A rendszernek pontosan akkor nincs nem triviális megoldása, 
+ha nincs szabad változó, azaz minden változó kötött:
+\begin{proposition}
+    Egy $Ax=0$ homogén lineáris egyenletrendszernek pontosan akkor a triviális megoldás az egyetlen megoldása, 
+    ha az eliminációs algoritmusban minden oszlop a generátorrendszerbe cserélhető.
+\end{proposition}
 \section{Mátrix faktorizáció}
 Érdemes a Gauss-Jordan eliminációs algoritmust az egyenletrendszerek megoldásától függetlenül is szemlélni.
 Ide másolom az előző feladat megoldásának táblázatát:
@@ -3062,7 +3072,181 @@ Az általános megoldás tehát
 :s,t,r\in\mathbb{R}
 \right\}.
 \]
-\section{Lineárisan független rendszerek és generátorrendszerek}
+\begin{proposition}
+    Az $Ax=b$ inhomogén lineáris egyenlterendszernek pontosan akkor van egyetlen 
+    megoldása, ha $b$ az $A$ képteréhez tartozik és $A$ minden oszlopa a Gauss-Jordan eliminációs algoritmussal a generátorrendszerbe cserélhető.
+\end{proposition}
+Ebben az esetben persze az algoritmusból adódó partikuláris megoldás az egyetlen megoldás.
+
+A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint sora van egy rendszernek, akkor megválasztható olyan jobb oldali vektor, amellyel az inhomogén lineáris egyenletrendszernek nincs megoldása.
+\begin{proposition}
+    Legyen $A\in\mathbb{F}^{m\times r}$ olyan mátrix, ahol $r<m$.
+    Ekkor létezik $b\in\mathbb{F}^m$ vektor, 
+    amellyel felírt $Ax=b$ inhomogén lineáris egyenletrendszernek már nincs megoldása.
+\end{proposition}
+\begin{proof}
+    Tegyük fel tehát, hogy kevesebb ismeretlen van mint sor.
+    Mikor az $A$ mátrixra alkalmazott Gauss-Jordan algoritmus véget ér, 
+    akkor minden nem zérus sorban pontosan egy eliminált ismeretlen van.
+    Eszerint minden egyes sor vagy zéró sor, 
+    vagy van benne eliminált ismeretlen.
+    Mivel kevesebb ismeretlen van mint sor, 
+    ezért legalább egy zéró sornak lennie kell.
+    Ha a $k$-adik sor csak nullákat tartalmaz, akkor az a $b\in\mathbb{F}^m$ vektor,
+    amelynek a $k$-adik koordinátája nem zérus, de minden más koordináta zérus meg is felel.
+\end{proof}
+\section{Inverz mátrix}
+Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss-Jordan algoritmust.
+Mivel sorműveletekről van szó, természetes gondolat, hogy az $A\in\mathbb{F}^{m\times n}$
+mátrix transzformálásához $m\times m$ méretű mátrixokat használjunk,
+amelyekkel balról szorozzuk $A$-t.
+Valóban, ha $m\times m$ méretű identitás mátrix 
+\begin{enumerate}
+    \item 
+        $i$-edik sorát szorozzuk egy $\delta$ számmal,
+        akkor egy olyan mátrixot kapunk, 
+        amellyel való balszorzása $A$-nak éppen az $A$ mátrix 
+        $i$-edik sorát szorozza $\delta$-val.
+    \item
+        $k$-adik sorából kivonjuk az $i$-edik sor $\delta$-szorosát,
+        akkor egy olyan mátrixot kapunk, 
+        amellyel való balszorzása $A$-nak éppen az $A$ mátrix 
+        $k$-adik sorából vonja ki az $i$-edik sor $\delta$-szorosát.
+    \item
+        $k$-adik és $j$-edik sorát felcseréljük,
+        akkor egy olyan mátrixot kapunk, 
+        amellyel való balszorzása $A$-nak éppen az $A$ mátrix 
+        $k$-adik és $j$-edik sorát cseréli fel.
+\end{enumerate}
+
+Tekintsünk most, egy $m\times m$ méretű négyzetes mátrixot.
+Tegyük fel, hogy a mátrix minden oszlopát a generátorrendszerbe cserélhetjük
+a szokásos Gauss-Jordan eliminációs algoritmus során.
+Láttuk korábban, hogy ez azt jelenti, hogy az $Ax=b$ inhomogén lineáris egyenletrendszer
+minden $b$ vektor mellett egyértelműen megoldható.
+
+Legyen $\left\{ e_1,\dots,e_m \right\}$ az $\mathbf{F}^m$ szokásos generátorrendszere,
+azaz $e_k$-nak éppen a $k$-adik koordinátája 1, a többi zérus.
+Ha $B\in\mathbf{F}^m$ az a mátrix, 
+amelynek $k$-edik oszlopa az $Ax=e_k$ inhomogén lineáris egyenletrendszer egyetlen $x_k\in\mathbf{F}^m$ megoldása,
+akkor a mátrix szorzás definíciója szerint 
+\[
+    AB=I
+\]
+teljesül.
+A $B$ mátrixot tehát $m$ darab $m$ lépéses Gauss-Jordan eliminációval meg tudnánk határozni.
+
+Egyszerűbb, 
+ha egyetlen eliminációs algoritmus használunk, de arra az $m\times 2m$ méretű mátrixra,
+amelyet úgy kapunk, hogy az a $A$ mátrix jobboldalához illesztjük az $I\in\mathbf{F}^{m\times m}$ identitás mátrixot.
+Az elimináció során, 
+$A$ minden sorát a generátorrendszerbe cseréljük, de persze a jobbra illesztett identitás
+mátrix sorait is transzformáljuk.
+Feltevésünk szerint $m$ lépés után áll le az algoritmus.
+Ekkor egy  olyan táblázat van előttünk, amelynek első $m$ oszlopa egy olyan négyzetes
+mátrixot alkot, amelynek minden oszlopa és minden sora egyetlen 1-est tartalmaz a többi elem zérus. 
+Vegyük észre, 
+hogy egy ilyen mátrix a sorok felcserélésével az identitás mátrixszá transzformálható.
+
+Az $Ax=e_k$ egyenlet megoldása a jobboldali $m\times m$ mátrix $k$-adik oszlopából olvasható le. 
+Ha például az első sor $j$-edik elemén van 1-es, 
+akkor az azt jelenti, hogy az első sorba eliminináltuk az $j$-edik ismeretlent, 
+tehát a megoldás $j$-edik koordinátáját tartalmazza az $m+k$-adik oszlop első eleme.
+
+Ha tehát úgy cseréljük fel a táblázat sorait, 
+hogy a bal oldali $m\times m$ méretű mátrix válljon az identitás mátrixszá, 
+akkor az $Ax=e_k$ egyenlet egyetlen partikuláris megoldása jelentkezik az egész táblázat
+$m+k$ adik oszlopában.
+Mivel a keresett $B$ mátrixnak éppen ez a $k$-adik oszlopa,
+ezért maga a $B$ mátrix áll a táblázat jobboldali $m\times m$ méretű részén.
+
+Most meggondoljuk, hogy $BA=I$ is fennáll.
+Az iménti algoritmussal az $[A|I]$ mátrixot transzformáltuk a $[I|B]$ mátrixszá.
+A transzformáció során a Gauss-Jordan eliminációt használtuk, amely a szakasz elején említett 1) és 2) tipusú mátrixokkal mint balszorzásokkal hajtható végre.
+Az algoritmus végén még sorokat is felcseréltünk, ami egy 3) tipusú balszorzást jelent.
+Ha az 1) vagy 2) vagy 3) tipusú mátrixszot \emph{elemi mátrixnak}\index{elemi mátrix}
+nevezünk, 
+akkor úgy fogalmazhatunk, 
+hogy van véges sok $P_1,\dots,P_r\in\mathbf{F}^{m\times m}$ elemi mátrix, amelyre
+\(
+    (P_r\cdots P_1)\left[ A|I \right]=\left[ I|B \right].
+\)
+Ekkor persze $(P_r\cdots P_1)A=I$ és $P_r\cdots P_1=B$,
+amiből már következik, hogy
+\[
+    BA=I.
+\]
+
+\begin{definition}[nem szinguláris mátrix]
+    Egy $A\in\mathbf{F}^{m\times m}$ négyzetes mátrixot 
+    \emph{invertálhatónak}\index{invertalható mátrix} vagy 
+    \emph{regulárisnak} vagy \emph{nem szingulárisnak} nevezünk,
+    ha létezik $B\in\mathbf{F}^{m\times m}$ négyzetes mátrix, 
+    amelyre
+    \[
+        AB=BA=I
+    \]
+Mivel egy egységelemes gyűrűben ha van inverz, akkor csak egyetlen egy van,
+ezért adott $A$ invertálható mátrixhoz csak egy $B$ mátrix van, amely kielégíti a fenti definíciót.
+Ezt a $B$ mátrixot nevezzük az $A$ inverzének és $A^{-1}=B$ módon jelöljük.
+\end{definition}
+
+\begin{proposition}
+    Legyen $A\in\mathbb{F}^{m\times m}$ mátrix. Az alábbi feltevések ekvivalensek:
+    \begin{enumerate}
+        \item
+            $A$ invertálható.
+        \item 
+            Létezik $B\in\mathbb{F}^{m\times m}$ mátrix, amelyre
+            \begin{math}
+                AB=I.
+            \end{math}
+        \item 
+            Gauss-Jordan eliminációval az $A$ minden oszlopa a generátorrendszerbe cserélhető.
+    \end{enumerate}
+    Ha a fenti feltevések egyike (ergo mindegyike) fennáll, 
+    akkor az 2)-ben szereplő $B$ mátrixból csak egy van, 
+    mégpedig az $A^{-1}$ inverz mátrix.
+\end{proposition}
+\begin{proof}
+Körben igazolunk:
+\begin{description}
+    \item[$1.\Rightarrow 2.$] Nyilvánvaló.
+    \item[$2.\Rightarrow 3.$] 
+        Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss-Jordan algoritmus megáll, ahol $r<m$.
+        Ez azt jelenti, hogy az $A$ oszlop-vektorterének van $r$ elemű generátor rendszere.
+        E generátor rendszer vektorait mint oszlopokat egy $A_1$ mátrixba téve egy $m\times r$ mátrixot kapunk.
+        Mivel az oszlopok lineáris burkában az $A$ valamennyi oszlopa szerepel,
+        van olyan $r\times m$ méretű $A_2$ mátrix, amelyre 
+        \(
+            A_1A_2=A.
+        \)
+        Azt kaptuk tehát, hogy
+        \[
+            A_1\left( A_2B \right)=\left( A_1A_2 \right)B=AB=I.
+        \]
+        Ebből az következik,
+        hogy tetszőleges $b\in\mathbb{F}^{m}$ vektor mellett az
+        \begin{math}
+            x=A_2Bb\in\mathbb{F}^{r}
+        \end{math}
+        vektor megoldása az $A_1x=b$ inhomogén lineáris egyenletrendszernek,
+        ami ellentmondás, hiszen $A_1$ mátrixnak kevesebb oszlopa van mint sora.
+    \item[$3.\Rightarrow 1.$] Éppen ezt igazoltuk a szakasz elején.
+\end{description}
+Ha a feltevések fennállnak, akkor
+\[
+    A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.\qedhere
+\]
+\end{proof}
+Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
+akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért 
+$BA=A^{-1}A=I$ is fennáll.
+Megmutattuk tehát, hogy négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
+egységeleme, akkor a mátrixok kommutálnak.\index{kommmutáló mátrixok}
+
+
+\section{Lineárisan független rendszerek és generátor rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
     mondunk, ha van olyan vektora, amely kifejezhető a többi vektor lineáris kombinációjaként.
@@ -4500,4 +4684,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 01 Nov 2019 02:04:17 PM CET
+Last Modified : Sat 02 Nov 2019 06:49:00 PM CET
