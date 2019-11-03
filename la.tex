@@ -2564,7 +2564,7 @@ hogy a fenti két sorművelet használva az $y$ oszlopában minden számot el ke
 a $k$-adikat pedig $1$-re kell beállítani.
 Ez a \emph{Gauss-Jordan--elimináció}.\index{Gauss-Jordan--elimináció}
 
-\section{Homogén lineáris egyenletrendszer}
+\subsection{Homogén lineáris egyenletrendszer}
 Az alábbi feladatot lineáris egyenletrendszernek nevezzük.
 \[
 \begin{array}{rrlcl}
@@ -2864,7 +2864,7 @@ ha nincs szabad változó, azaz minden változó kötött:
     Egy $Ax=0$ homogén lineáris egyenletrendszernek pontosan akkor a triviális megoldás az egyetlen megoldása, 
     ha az eliminációs algoritmusban minden oszlop a generátorrendszerbe cserélhető.
 \end{proposition}
-\section{Mátrix faktorizáció}
+\subsection{Mátrix faktorizáció}
 Érdemes a Gauss-Jordan eliminációs algoritmust az egyenletrendszerek megoldásától függetlenül is szemlélni.
 Ide másolom az előző feladat megoldásának táblázatát:
 \[
@@ -2936,7 +2936,7 @@ Az alábbi állítás a mátrix szorzás definíciójának következménye.
 \end{proposition}
 
 
-\section{Inhomogén lineáris egyenletrendszer}
+\subsection{Inhomogén lineáris egyenletrendszer}
 Láttuk, hogy egy $m$ egyenletet és $n$ ismeretlent tartalmazó lineáris egyenletrendszer ekvivalens az 
 \[
     Ax=b
@@ -3095,7 +3095,7 @@ A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint
     Ha a $k$-adik sor csak nullákat tartalmaz, akkor az a $b\in\mathbb{F}^m$ vektor,
     amelynek a $k$-adik koordinátája nem zérus, de minden más koordináta zérus meg is felel.
 \end{proof}
-\section{Inverz mátrix}
+\subsection{Inverz mátrix}
 Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss-Jordan algoritmust.
 Mivel sorműveletekről van szó, természetes gondolat, hogy az $A\in\mathbb{F}^{m\times n}$
 mátrix transzformálásához $m\times m$ méretű mátrixokat használjunk,
@@ -3179,7 +3179,7 @@ amiből már következik, hogy
 
 \begin{definition}[nem szinguláris mátrix]
     Egy $A\in\mathbf{F}^{m\times m}$ négyzetes mátrixot 
-    \emph{invertálhatónak}\index{invertalható mátrix} vagy 
+    \emph{invertálhatónak}\index{invertálható mátrix} vagy 
     \emph{regulárisnak} vagy \emph{nem szingulárisnak} nevezünk,
     ha létezik $B\in\mathbf{F}^{m\times m}$ négyzetes mátrix, 
     amelyre
@@ -3242,9 +3242,149 @@ Ha a feltevések fennállnak, akkor
 Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
 akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért 
 $BA=A^{-1}A=I$ is fennáll.
-Megmutattuk tehát, hogy négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
-egységeleme, akkor a mátrixok kommutálnak.\index{kommmutáló mátrixok}
+Megmutattuk, hogy négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
+egységeleme, akkor a mátrixok kommutálnak.\index{kommutáló mátrixok}
 
+Egy konkrét példa megoldásával ismételjük át a szakasz elején megértett algoritmust.
+A feladat, hogy keressük meg az 
+\(
+    A=
+    \begin{pmatrix}
+        1&1&1&0\\
+        0&3&1&2\\
+        2&3&1&0\\
+        1&0&2&1
+    \end{pmatrix}
+\)
+mátrix inverzét!
+Az inverz létezésének szükséges és elegendő feltétele, hogy 4 lépést tudjunk végrehajtani az eliminációs algoritmusban.
+Egy lehetséges megoldás a következő:
+\begin{multline*}
+    \begin{array}{cccc|cccc}
+        \boxed{1}&1&1&0 & 1&0&0&0\\
+        0&3&1&2 & 0&1&0&0\\
+        2&3&1&0 & 0&0&1&0\\
+        1&0&2&1 & 0&0&0&1\\
+        \hline
+        \delta&1&1&0&1&0&0&0
+    \end{array}\Rightarrow
+    \begin{array}{cccc|cccc}
+        1&1&1&0 & 1&0&0&0\\
+        0&3&1&2 & 0&1&0&0\\
+        0&1&-1&0 & -2&0&1&0\\
+        0&-1&1&\boxed{1} & -1&0&0&1\\
+        \hline
+        0&-1&1&\delta&-1&0&0&1
+    \end{array}\Rightarrow
+    \\
+    \begin{array}{cccc|cccc}
+        1&1&1&0 & 1&0&0&0\\
+        0&5&\boxed{-1}&0 & 2&1&0&-2\\
+        0&1&-1&0 & -2&0&1&0\\
+        0&-1&1&1 & -1&0&0&1\\
+        \hline
+        0&-5&\delta&0&-2&-1&0&2
+    \end{array}\Rightarrow
+    \begin{array}{cccc|cccc}
+        1&6&0&0 & 3&1&0&-2\\
+        0&-5&1&0 & -2&-1&0&2\\
+        0&\boxed{-4}&0&0 & -4&-1&1&2\\
+        0&4&0&1 & 1&1&0&-1\\
+        \hline
+        0&\delta&0&0&1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}
+    \end{array}\Rightarrow
+    \\
+    \begin{array}{cccc|cccc}
+        1&0&0&0 & -3&-\frac{1}{2}&\frac{3}{2}&1\\
+        0&0&1&0 & 3&\frac{1}{4}&-\frac{5}{4}&-\frac{1}{2}\\
+        0&1&0&0 & 1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}\\
+        0&0&0&1 & -3&0&1&1\\
+        \hline
+    \end{array}\Rightarrow
+    \begin{array}{cccc|cccc}
+        1&0&0&0 & -3&-\frac{1}{2}&\frac{3}{2}&1\\
+        0&1&0&0 & 1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}\\
+        0&0&1&0 & 3&\frac{1}{4}&-\frac{5}{4}&-\frac{1}{2}\\
+        0&0&0&1 & -3&0&1&1\\
+        \hline
+    \end{array}.
+\end{multline*}
+Kaptuk hát, hogy az $A$ mátrix inverze az
+\begin{math}
+    A^{-1}=\frac{1}{4}
+    \begin{pmatrix}
+        -12&-2&6&4\\
+        4&1&-1&-2\\
+        12&1&-5&-2\\
+        -12&0&4&4
+    \end{pmatrix}
+\end{math}
+mátrix.
+
+Picit kevesebb helyet foglal az algoritmus, ha lusták vagyunk a generátorrendszerbe már becserélt 
+oszlopok kiírására. 
+Ekkor érdemes kiírni a sorok és oszlopok cimkéjét, nehogy eltévedjünk-
+Az előző feladat így alakul:
+\begin{multline*}
+    \begin{array}{r|cccc|cccc}
+        &a_1&a_2&a_3&a_4&e_1&e_2&e_3&e_4\\
+        \hline
+        e_1&\boxed{1}&1&1&0 & 1&0&0&0\\
+        e_2&0&3&1&2 & 0&1&0&0\\
+        e_3&2&3&1&0 & 0&0&1&0\\
+        e_4&1&0&2&1 & 0&0&0&1\\
+        \hline
+        &\delta&1&1&0&1&0&0&0
+    \end{array}\Rightarrow
+    \begin{array}{r|ccc|cccc}
+        &a_2&a_3&a_4&e_1&e_2&e_3&e_4\\
+        \hline
+        a_1&1&1&0 & 1&0&0&0\\
+        e_2&3&1&2 & 0&1&0&0\\
+        e_3&1&-1&0 & -2&0&1&0\\
+        e_4&-1&1&\boxed{1} & -1&0&0&1\\
+        \hline
+        &-1&1&\delta&-1&0&0&1
+    \end{array}\Rightarrow
+    \\
+    \begin{array}{r|cc|cccc}
+        &a_2&a_3&e_1&e_2&e_3&e_4\\
+        \hline
+        a_1& 1& 1&  1& 0& 0& 0\\
+        e_2& 5& \boxed{-1}&  2& 1& 0& -2\\
+        e_3& 1&-1& -2& 0& 1& 0\\
+        a_4&-1& 1& -1& 0& 0& 1\\
+        \hline
+        &-5&\delta&-2&-1&0&2
+    \end{array}\Rightarrow
+    \begin{array}{r|c|cccc}
+        &a_2&e_1&e_2&e_3&e_4\\
+        \hline
+        a_1&           6&   3& 1& 0& -2\\
+        a_3&          -5&  -2&-1& 0&  2\\
+        e_3&\boxed{-4}  &  -4&-1& 1&  2\\
+        a_4&           4&   1& 1& 0& -1\\
+        \hline
+           &\delta      &   1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}
+    \end{array}\Rightarrow
+    \\
+    \begin{array}{r|cccc}
+        &e_1&e_2&e_3&e_4\\
+        \hline
+        a_1 & -3&-\frac{1}{2}&\frac{3}{2}&1\\
+        a_3 & 3&\frac{1}{4}&-\frac{5}{4}&-\frac{1}{2}\\
+        a_2 & 1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}\\
+        a_4 & -3&0&1&1
+    \end{array}\Rightarrow
+    \begin{array}{r|cccc}
+        &e_1&e_2&e_3&e_4\\
+        \hline
+        a_1 & -3&-\frac{1}{2}&\frac{3}{2}&1\\
+        a_2 & 1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}\\
+        a_3 & 3&\frac{1}{4}&-\frac{5}{4}&-\frac{1}{2}\\
+        a_4 & -3&0&1&1
+    \end{array}
+\end{multline*}
 
 \section{Lineárisan független rendszerek és generátor rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
@@ -4684,4 +4824,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 02 Nov 2019 06:49:00 PM CET
+Last Modified : Sun 03 Nov 2019 07:03:42 AM CET
