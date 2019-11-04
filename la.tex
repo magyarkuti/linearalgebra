@@ -3214,8 +3214,8 @@ Körben igazolunk:
     \item[$1.\Rightarrow 2.$] Nyilvánvaló.
     \item[$2.\Rightarrow 3.$] 
         Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss-Jordan algoritmus megáll, ahol $r<m$.
-        Ez azt jelenti, hogy az $A$ oszlop-vektorterének van $r$ elemű generátor rendszere.
-        E generátor rendszer vektorait mint oszlopokat egy $A_1$ mátrixba téve egy $m\times r$ mátrixot kapunk.
+        Ez azt jelenti, hogy az $A$ oszlop-vektorterének van $r$ elemű generátorrendszere.
+        E generátorrendszer vektorait mint oszlopokat egy $A_1$ mátrixba téve egy $m\times r$ mátrixot kapunk.
         Mivel az oszlopok lineáris burkában az $A$ valamennyi oszlopa szerepel,
         van olyan $r\times m$ méretű $A_2$ mátrix, amelyre 
         \(
@@ -3298,16 +3298,14 @@ Egy lehetséges megoldás a következő:
         1&0&0&0 & -3&-\frac{1}{2}&\frac{3}{2}&1\\
         0&0&1&0 & 3&\frac{1}{4}&-\frac{5}{4}&-\frac{1}{2}\\
         0&1&0&0 & 1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}\\
-        0&0&0&1 & -3&0&1&1\\
-        \hline
+        0&0&0&1 & -3&0&1&1
     \end{array}\Rightarrow
     \begin{array}{cccc|cccc}
         1&0&0&0 & -3&-\frac{1}{2}&\frac{3}{2}&1\\
         0&1&0&0 & 1&\frac{1}{4}&-\frac{1}{4}&-\frac{1}{2}\\
         0&0&1&0 & 3&\frac{1}{4}&-\frac{5}{4}&-\frac{1}{2}\\
-        0&0&0&1 & -3&0&1&1\\
-        \hline
-    \end{array}.
+        0&0&0&1 & -3&0&1&1
+    \end{array}
 \end{multline*}
 Kaptuk hát, hogy az $A$ mátrix inverze az
 \begin{math}
@@ -3323,7 +3321,7 @@ mátrix.
 
 Picit kevesebb helyet foglal az algoritmus, ha lusták vagyunk a generátorrendszerbe már becserélt 
 oszlopok kiírására. 
-Ekkor érdemes kiírni a sorok és oszlopok cimkéjét, nehogy eltévedjünk-
+Ekkor érdemes kiírni a sorok és oszlopok címkéjét, nehogy eltévedjünk.
 Az előző feladat így alakul:
 \begin{multline*}
     \begin{array}{r|cccc|cccc}
@@ -3386,7 +3384,7 @@ Az előző feladat így alakul:
     \end{array}
 \end{multline*}
 
-\section{Lineárisan független rendszerek és generátor rendszerek}
+\section{Lineárisan független rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
     Egy véges $\left\{ y_1,\dots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
     mondunk, ha van olyan vektora, amely kifejezhető a többi vektor lineáris kombinációjaként.
@@ -3592,7 +3590,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
     már azt kapjuk, hogy $\eta_j=0$ minden $j\neq k$ mellett is.
 \end{proof}
 \chapter{A Steinitz-lemma}
-\scwords Független- és generátor-rendszerek elemszáma közti kapcsolat vezet a a bázis és a dimenzió fogalmához.
+\scwords Független- és generátorrendszerek elemszáma közti kapcsolat vezet a a bázis és a dimenzió fogalmához.
 A félév legfajsúlyosabb állítása, az egyszerű bizonyítás ellenére.
 A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere} lemmára.
 \begin{SL}\index{Steinitz--lemma}
@@ -3604,9 +3602,9 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
     \begin{enumerate}
         \item $n\leq m$ és;
         \item az $x_1,\dots,x_m$ vektorok alkalmas átindexelésével kapott
-            \[
+            \(
                 \left\{ y_1,\dots,y_n,x_{n+1},\dots,x_m \right\}
-            \]
+            \)
             vektorrendszer is generátorrendszer.%
             \footnote{Úgy kell a jelöléseket érteni, hogy az $n=0$, de az $n=m$ eset is lehetséges. 
                 Az $n=0$ esetben az $y$-okkal jelölt vektorok egyike sem,
@@ -3764,7 +3762,8 @@ Ez utóbbi tény ad értelmet a következő definíciónak:
     ha a vektortérben van $n$ elemű bázis.
 \end{proposition}
 Fontos látni, hogy éppen azt gondoltuk meg, hogy \emph{minden végesen generált vektortérben van bázis}, 
-\footnote{Ez nem végesen generált vektorterekre is igaz, de itt nem igazoljuk}
+\footnote{Ez nem végesen generált vektorterekre is igaz, de itt nem igazoljuk, 
+viszont később sem használjuk.}
 és \emph{bármely két bázis pontosan annyi vektorból áll mint a tér dimenziója.}
 A végesen generált vektortereket sokszor szinonimaként \emph{véges dimenziósnak} is mondjuk.\index{véges dimenziós}
 
@@ -4824,4 +4823,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 03 Nov 2019 07:03:42 AM CET
+Last Modified : Sun 03 Nov 2019 08:35:04 AM CET
