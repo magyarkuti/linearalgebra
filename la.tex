@@ -156,6 +156,8 @@
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
 \DeclareMathOperator{\rank}{rank}
+%\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\im}{Im}
 %\DeclareMathOperator{\arg}{arg}
 
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
@@ -3830,12 +3832,79 @@ Meggondoltuk tehát, hogy bármely véges generátorrendszerből elhagyható né
 hogy a rendszer lineárisan független generátorrendszerré váljon,
 és hasonlóan bármely lineárisan független rendszerhez, hozzátehető néhány elem úgy, hogy a
 rendszer lineárisan független generátorrendszerré váljon.
+    
+A független rendszerek cseréjéről (\ref{le:fgtlncsere}) és a generátor rendszerek cseréjéről (\ref{le:gencsere}) szóló lemmák 
+    együttes alkalmazásaként kapjuk a következő lemmát.
 
-
-
+\begin{lemma}[bázis csere]\label{le:baziscsere}
+    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy bázisa valamely vektortérnek,
+    és tegyük fel, 
+    hogy egy $y$ vektorra
+    \[
+        y=\sum_{j=1}^m\eta_jx_j,
+    \]
+    ahol $\eta_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
+    Ekkor $y$ becserélhető a $k$-adik helyen a bázisba, 
+    úgy hogy az is bázis maradjon, azaz az
+    \[
+        \left\{ x_1,\dots,x_{k-1},y,x_{k+1},\dots,x_m \right\}
+    \]
+    vektorrendszer is egy bázis.
+\end{lemma}
 
 
 \chapter{Koordinátázás}
+A koordinátatér fogalmát vezetjük be. Látni fogjuk, hogy véges dimenziós vektortér ,,lényegében'' az egyetlen példa,
+az $\mathbb{F}^n$ tér.
+\begin{definition}
+    Legyenek $V,W$ ugyanazon $\mathbb{F}$ test feletti vektorterek.
+    Az $A:V\to W$ függvényt lineáris operációnak mondjuk,
+    \begin{displaymath}
+        A\left( \alpha x+\beta y \right)=
+        \alpha A\left( x \right)+\beta A\left( y \right)
+    \end{displaymath}
+    azonosság teljesül minden $x,y\in V$ és minden $\alpha,\beta\in\mathbf{F}$ mellett.
+
+    A $V\to W$ összes lineáris operációk halmazát $L\left( V,W \right)$ módon jelöljük.
+\end{definition}
+Láttuk korábban, hogy ha $A$ egy $m\times n$ méretű mátrix,
+akkor $x\in\mathbf{F}^n$ oszlop vektor mellett az
+\[
+    x\mapsto A\cdot x,\
+\]
+mátrix szorzás egy $\mathbf{F}^n\to\mathbf{F}^m$ lineáris operációt definiál.
+Hasonlóan ha most $x\in\mathbf{F}^m$ sorvektort jelöl akkor az
+\[
+    x\mapsto x\cdot A
+\]
+szorzás egy $\mathbf{F}^m\to\mathbf{F}^n$ lineáris operációt jelent.
+
+\begin{defprop}
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operáció.
+    Ennek értékkészlete egy altér, 
+    amelyet $\im A$ módon jelölünk.
+    Azon pontok halmaza, 
+    amelyeket $A$ operátor a $W$ tér zérus elemébe képez egy alteret alkotnak,
+    amelyet $\ker A$ módon jelölünk.
+
+    Az $L\left( V,W \right)$ lineáris operációk halmaza a szokásos függvényműveletekkel vektorteret alkot.
+\end{defprop}
+A jelölések tehát:
+\[
+    \im A=\left\{ y\in W:\text{létezik } x\in V, A(x)=y \right\},
+    \qquad
+    \ker A=
+    \left\{ x\in V:A\left( x \right)=0 \right\}
+\]
+\begin{proposition}
+    Egy lineáris leképezés pontosan akkor injrktív, ha $\ker A=\left\{ 0 \right\}$.
+    Egy injektív lineáris leképezés inverz függvénye egy $\im A\to V$ lineáris operátor.
+    Az $A\in L\left( V,W \right)$ injektív lineáris leképezés inverzét $A^{-1}$ módon jelöljük.
+\end{proposition}
+Néhetünk az $A$ mátrixra mint $x\mapsto A\cdot x$ lineáris operátorra.
+Ennek inverze
+
+
 \section{Rang-tétel}
 
 \begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
@@ -4823,4 +4892,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 03 Nov 2019 08:35:04 AM CET
+Last Modified : Mon 11 Nov 2019 12:53:48 PM CET
