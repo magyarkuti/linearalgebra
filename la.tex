@@ -2765,7 +2765,7 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbf{F}^n$ az a vektor melynek $i$-edi
         \[
             \begin{array}{rl}
                 x_1+3x_2+4x_3+5x_4-x_5=&0\\
-                -3x_1+x_2-x_3+4x_4-5x_5=&0\\
+                -2x_1+x_2-x_3+4x_4-5x_5=&0\\
                 2x_1+x_2+3x_3+3x_5=&0\\
                 3x_1+x_2+4x_3-x_4+5x_5=&0
             \end{array}
@@ -3870,16 +3870,23 @@ együttes alkalmazásaként kapjuk a következő lemmát.
 \scwords A koordinátatér fogalmát vezetjük be. 
 Látni fogjuk, hogy véges dimenziós vektortérre ,,lényegében'' az egyetlen példa,
 az $\mathbb{F}^n$ tér.
-\begin{definition}
+\section{Lineáris operátor fogalma}
+\begin{definition}[lineáris operátor]
     Legyenek $V,W$ ugyanazon $\mathbb{F}$ test feletti vektorterek.
-    Az $A:V\to W$ függvényt lineáris operációnak mondjuk,
+    Az $A:V\to W$ függvényt \emph{lineáris operációnak}\index{lineáris operáció}
+ mondjuk,    ha az
     \begin{displaymath}
         A\left( \alpha x+\beta y \right)=
         \alpha A\left( x \right)+\beta A\left( y \right)
     \end{displaymath}
     azonosság teljesül minden $x,y\in V$ és minden $\alpha,\beta\in\mathbf{F}$ mellett.
 
+    Ha $V=W$, akkor a \emph{lineáris transzformáció}\index{lineáris transzformáció} kifejezést is használjuk,
+    ha pedig $W=\mathbf{F}$, 
+    akkor szokásos még a \emph{lineáris funkcionál}\index{lineáris funkcionál} szó összetétel is.
+
     A $V\to W$ összes lineáris operációk halmazát $L\left( V,W \right)$ módon jelöljük.
+    A $V=W$ esetben a rövidség kedvért csal $L\left( V \right)$-t írunk.
 \end{definition}
 Láttuk korábban, hogy ha $A$ egy $m\times n$ méretű mátrix,
 akkor $x\in\mathbf{F}^n$ oszlop vektor mellett az
@@ -3887,7 +3894,8 @@ akkor $x\in\mathbf{F}^n$ oszlop vektor mellett az
     x\mapsto A\cdot x,\
 \]
 mátrix szorzás egy $\mathbf{F}^n\to\mathbf{F}^m$ lineáris operációt definiál.
-Hasonlóan ha most $x\in\mathbf{F}^m$ sorvektort jelöl akkor az
+Hasonlóan,
+ha most $x\in\mathbf{F}^m$ sorvektort jelöl akkor az
 \[
     x\mapsto x\cdot A
 \]
@@ -3908,7 +3916,7 @@ A jelölések tehát:
     \im A=\left\{ y\in W:\text{létezik } x\in V, A(x)=y \right\},
     \qquad
     \ker A=
-    \left\{ x\in V:A\left( x \right)=0 \right\}
+    \left\{ x\in V:A\left( x \right)=0 \right\}.
 \]
 \begin{proposition}
     Egy lineáris leképezés pontosan akkor injektív, ha $\ker A=\left\{ 0 \right\}$.
@@ -3916,13 +3924,14 @@ A jelölések tehát:
     Az $A\in L\left( V,W \right)$ injektív lineáris leképezés inverzét $A^{-1}$ módon jelöljük.
 \end{proposition}
 Tekinthetünk az $A$ mátrixra mint az $x\mapsto A\cdot x$ lineáris operátorra.
-Ennek inverze az $x\mapsto A^{-1}x$ operátor,
-ahol $A^{-1}$ az inverz métrixot jelöli.
+Ennek inverze az $x\mapsto A^{-1}\cdot x$ operátor,
+ahol $A^{-1}$ az inverz mátrixot jelöli, hiszen
+$Ax=y$ pontosan akkor teljesül, ha $x=A^{-1}y$.
 
 \begin{definition}
     Egy $A:V\to W$ függvényt \emph{izomorfizmusnak}\index{izomorfizmus} mondunk,
     ha $A$ lineáris bijekció.
-    Az ugyanazon test feletti $V,W$ vekotortereket egymással izomorf vektortérnek mondjuk,
+    Az ugyanazon test feletti $V,W$ vektortereket egymással izomorf vektortérnek mondjuk,
     ha létezik $A:V\to W$ izomorfizmus.
 \end{definition}
 \begin{proposition}
@@ -3931,7 +3940,78 @@ ahol $A^{-1}$ az inverz métrixot jelöli.
 \end{proposition}
 \begin{definition}[koordináta]\index{koordináta}
     Legyen $\left\{ e_1,\dots,e_n \right\}$ egy bázisa a $V$ vektortérnek.
+    Tudjuk, hogy minden $v\in V$ vektor egyetlen egyféleképpen, de előáll mint a bázisvektorok egy lineáris kombinációja.
+    Ha ez $v=\sum_{j=1}^n\alpha_je_j$, akkor az 
+    \begin{math}
+        \begin{pmatrix}
+            \alpha_1\\ \vdots\\ \alpha_n
+        \end{pmatrix}
+        \in
+        \mathbf{F}^n
+    \end{math}
+    vektort az $x$ vektor $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt koordináta vektorának nevezzük.
 \end{definition}
+Fontos látni, hogy a vektor koordináta vektora függ a bázis megválasztásától.
+Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
+már akkor is változik a vektort koordináta vektora.
+\Aref{le:gencsere}, \aref{le:fgtlncsere}  és \aref{le:baziscsere} lemmák összefoglalásaként kapjuk,
+hogy milyen módon változnak egy rögzített vektor koordinátái, 
+ha a bázisban egy elemet megváltoztatunk.
+\begin{lemma}[bázis transzformáció]\label{le:bazistrafo}
+    Legyen $\left\{ x_1,\dots,x_m \right\}$ egy bázisa valamely vektortérnek,
+    és tegyük fel, 
+    hogy egy $y$ olyan vektor
+    \(
+        y=\sum_{j=1}^m\eta_jx_j,
+    \)
+    ahol $\eta_k\neq 0$ valamely $1\leq k\leq m$ mellett. 
+    Láttuk $y$ becserélhető a $k$-adik helyen a bázisba, 
+    tehát az
+    \(
+        \left\{ x_1,\dots,x_{k-1},y,x_{k+1},\dots,x_m \right\}
+    \)
+    vektorrendszer is bázis marad.
+    Tegyük fel továbbá, hogy $a\in V$ vektor koordinátái ismertek az eredeti bázisban,
+    \(
+        a=
+        \sum_{j=1}^m\alpha_j x_j.
+    \)
+    Ekkor ugyanez az $a$ vektor az új bázisban kifejezve
+    \(
+        a=
+        \sum_{j=1,j\neq k}^n\left( \alpha_j-\eta_j\delta \right)x_j
+        +\delta y_k,
+    \)
+    ahol $\delta=\frac{\alpha_k}{\eta_k}$.
+
+    Egy táblázatban összefoglalva:
+\begin{eqnarray}\label{alg:bazistrafo}
+    \begin{array}{c|cc}
+        &y      &a         \\
+        \hline
+        x_1         &\eta_1  &\alpha_1   \\
+        \vdots      &\vdots &\vdots    \\
+        x_k         &\boxed{\eta_k}  &\alpha_k   \\
+        \vdots      &\vdots &\vdots    \\
+        x_m         &\eta_m  &\alpha_m   \\
+        \hline
+        &\delta &\frac{\alpha_k}{\eta_k}
+    \end{array}
+    &\implies&
+    \begin{array}{c|c}
+                    &a                       \\
+        \hline
+        x_1         &\alpha_1-\eta_1\delta   \\
+        \vdots      &\vdots                  \\
+        y           &\delta                  \\
+        \vdots      &\vdots                  \\
+        x_m         &\alpha_m-\eta_m\delta   \\
+        \hline
+        \phantom{\delta}&
+    \end{array}
+\end{eqnarray}
+\end{lemma}
+
 \section{Rang-tétel}
 
 \begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
@@ -4919,4 +4999,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 12 Nov 2019 07:12:33 PM CET
+Last Modified : Fri 15 Nov 2019 02:16:59 PM CET
