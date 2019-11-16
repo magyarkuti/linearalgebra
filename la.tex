@@ -2419,7 +2419,7 @@ hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendsze
 \begin{proof}
     Fejezzük ki $x_k$-t az $y$-ra felírt formulából:
     \(
-    x_k=\frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j.
+    x_k=\frac{1}{\eta_k}y+\sum_{\substack{j=1\\j\neq k}}^m\frac{-1}{\eta_k}\eta_jx_j.
     \)
     Ha $a$ eredetileg 
     \[
@@ -2428,20 +2428,20 @@ hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendsze
     alakú, akkor $x_k$ helyére betéve, a fent kifejezett formulát és bevezetve a 
     $\delta=\frac{\alpha_k}{\eta_k}$ jelölést, azt kapjuk hogy:
     \begin{multline*}
-        a=\alpha_kx_k+\sum_{j=1,j\neq k}^m\alpha_jx_j=
+        a=\alpha_kx_k+\sum_{\substack{j=1\\j\neq k}}^m\alpha_jx_j=
         \\
         =
         \alpha_k
         \left( 
-        \frac{1}{\eta_k}y+\sum_{j=1,j\neq k}^m\frac{-1}{\eta_k}\eta_jx_j
+        \frac{1}{\eta_k}y+\sum_{\substack{j=1\\j\neq k}}^m\frac{-1}{\eta_k}\eta_jx_j
         \right)
-        +\sum_{j=1,j\neq k}^m\alpha_jx_j
+        +\sum_{\substack{j=1\\j\neq k}}^m\alpha_jx_j
         =
         \frac{\alpha_k}{\eta_k}y+
-        \sum_{j=1,j\neq k}^m\left( \alpha_j-\frac{\alpha_k}{\eta_k}\eta_j \right)x_j=
+        \sum_{\substack{j=1\\j\neq k}}^m\left( \alpha_j-\frac{\alpha_k}{\eta_k}\eta_j \right)x_j=
         \\
         =\delta y+
-        \sum_{j=1,j\neq k}^m\left( \alpha_j-\delta\eta_j \right)x_j.
+        \sum_{\substack{j=1\\j\neq k}}^m\left( \alpha_j-\delta\eta_j \right)x_j.
     \end{multline*}
     Azt kaptuk tehát, hogy ha egy vektor kifejezhető az eredeti vektorrendszerből az 
     \[
@@ -3446,7 +3446,7 @@ Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definí
             és, hogy $\alpha_k\neq 0.$
             Ekkor 
             \[
-                y_k=\sum_{j=1,j\neq k}^n-\frac{1}{\alpha_k}\alpha_jy_j
+                y_k=\sum_{\substack{=1\\j\neq k}}^n-\frac{1}{\alpha_k}\alpha_jy_j
             \]
             azaz a $k$-adik vektor tekinthető mint a többi vektor valamely lineáris kombinációja.
     \end{description}
@@ -3581,9 +3581,9 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
     Legyen tehát
     \[
         0
-        =\sum_{j=1,j\neq k}^n\eta_jy_j+\eta_kx
-        =\sum_{j=1,j\neq k}^n\eta_jy_j+\sum_{j=1}^n\eta_k\xi_jy_j
-        =\sum_{j=1,j\neq k}^n\left( \eta_j+\eta_k\xi_j \right)y_j+\eta_k\xi_ky_k.
+        =\sum_{\substack{j=1\\j\neq k}}^n\eta_jy_j+\eta_kx
+        =\sum_{\substack{j=1\\j\neq k}}^n\eta_jy_j+\sum_{j=1}^n\eta_k\xi_jy_j
+        =\sum_{\substack{j=1\\j\neq k}}^n\left( \eta_j+\eta_k\xi_j \right)y_j+\eta_k\xi_ky_k.
     \]
     Mivel az eredeti rendszer lineárisan független,
     ezért az utóbbi lineáris kombináció minden együtthatója a test null eleme.
@@ -3873,8 +3873,8 @@ az $\mathbb{F}^n$ tér.
 \section{Lineáris operátor fogalma}
 \begin{definition}[lineáris operátor]
     Legyenek $V,W$ ugyanazon $\mathbb{F}$ test feletti vektorterek.
-    Az $A:V\to W$ függvényt \emph{lineáris operációnak}\index{lineáris operáció}
- mondjuk,    ha az
+    Az $A:V\to W$ függvényt \emph{lineáris operációnak}\index{lineáris operáció} mondjuk,
+    ha az
     \begin{displaymath}
         A\left( \alpha x+\beta y \right)=
         \alpha A\left( x \right)+\beta A\left( y \right)
@@ -3979,7 +3979,7 @@ ha a bázisban egy elemet megváltoztatunk.
     Ekkor ugyanez az $a$ vektor az új bázisban kifejezve
     \(
         a=
-        \sum_{j=1,j\neq k}^n\left( \alpha_j-\eta_j\delta \right)x_j
+        \sum_{\substack{j=1,\\j\neq k}}^n\left( \alpha_j-\eta_j\delta \right)x_j
         +\delta y_k,
     \)
     ahol $\delta=\frac{\alpha_k}{\eta_k}$.
@@ -4012,6 +4012,256 @@ ha a bázisban egy elemet megváltoztatunk.
 \end{eqnarray}
 \end{lemma}
 
+\chapter{Alterek direkt összege}
+\begin{proposition}\label{pr:drosszeg2}
+    Legyenek $M$ és $N$ a $V$ vektortér végesen generált alterei.
+    Ekkor az $M+N$ altér is végesen generált, 
+    továbbá
+    \[
+        \dim\left( M+N \right)=\dim M+\dim N-\dim \left( M\cap N \right).\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Világos, hogy $M$ egy generátorrendszerének és $N$ egy generátorrendszerének egyesítése
+    generátorrendszere az $M+N$ altérnek is.
+
+    Legyen most $\left\{ p_1,\dots,p_r \right\}$ bázis $M\cap N$-ben.
+    Mivel egy lineárisan független rendszer kiegészíthető egy bázissá,
+    ezért legyen
+    $\left\{ m_1,\dots,m_s,p_1,\dots,p_r \right\}$ bázis $M$-ben, 
+    és
+    $\left\{ p_1,\dots,p_r,n_1,\dots,n_t \right\}$ bázis $N$-ben,
+    ahol $r,s,t$ nem negatív egészek.%
+    \footnote{
+        Figyeljünk arra, hogy $r=0$ is lehet, ha $M$ és $N$ diszjunktak.
+        Ekkor $\left\{  \right\}$ a bázis a $\left\{ 0 \right\}$ altérben,
+        azaz nincs egyetlen $p$-sem. 
+        Az összes $r$ elemet tartalmazó szumma iyenkor üres, tehát értéke zérus.
+    }
+    Nyilvánvaló, hogy az
+    \[
+        \left\{ m_1,\dots,m_s,p_1,\dots,p_r,n_1,\dots,n_t \right\}\tag{\dag}
+    \]
+    rendszer egy véges generátorrendszere az $M+N$ altérnek.
+    Most megmutatjuk,
+    hogy a $(\dag)$ rendszer lineárisan független is.
+    Legyen ehhhez
+    \[
+        \sum_{j=1}^s\alpha_j m_j+\sum_{j=1}^r\gamma_j p_j+\sum_{j=1}^t\beta_jn_j=0.\tag{\ddag}
+    \]
+    Ekkor persze 
+    \(
+        \sum_{j=1}^s\alpha_j m_j =
+        -\sum_{j=1}^r\gamma_j p_j
+        -\sum_{j=1}^t\beta_jn_j
+        \in
+        M\cap N.
+    \)
+    Léteznek tehát $\delta_1,\dots,\delta_r$ számok, 
+    amelyekre
+    \(
+        \sum_{j=1}^s\alpha_j m_j=
+        \sum_{j=1}^r\delta_j p_j,
+    \)
+    emiatt a $(\ddag)$ egyenlőség a következő módon alakul:
+    \[
+        \sum_{j=1}^r\left( \delta_j+\gamma_j \right)p_j+\sum_{j=1}^t\beta_jn_j=0.
+    \]
+    No de, $\left\{ p_1,\dots,p_r,n_1,\dots,n_r \right\}$ lineárisan független,
+    ezért itt minden együttható zérus.
+    Speciálisan $\beta_j=0$ minden $j=1,\dots,t$ mellett.
+    Ezt $(\ddag)$-be visszaírva kapjuk, hogy
+    \[
+        \sum_{j=1}^s\alpha_j m_j+\sum_{j=1}^r\gamma_j p_j=0,
+    \]
+    amiből az $\left\{ m_1,\dots,m_s,p_1,\dots,p_r \right\}$ rendszer lineárisan függetlenségét használva kapjuk,
+    hogy $\alpha_1=\dots=\alpha_s=\gamma_1=\dots=\gamma_t=0$.
+
+
+    Megmutattuk tehát, hogy $(\dag)$ vektorrendszer bázisa $M+N$-nek.
+    Mivel ennek elemszáma
+    \begin{math}
+        s+r+t=\left( s+r \right)+\left( r+t \right)-r,
+    \end{math}
+    ezért készen is vagyunk.
+\end{proof}
+\begin{definition}[direktösszeg]
+    Legyenek az $M_1,\dots,M_s\subseteq V$ alterek a $V$ vektortér alterei ($s\geq 2$).
+    Azt mondjuk, hogy az $N\subseteq V$ altér az $M_1,\dots,M_s$ alterek \emph{direktösszege}\index{direktösszeg},
+    ha
+    \begin{enumerate}
+        \item $\sum_{j=1}^sM_j=N$,
+        \item $\left( \sum_{\substack{j=1\\j\neq k}}^sM_j \right)\cap M_k
+            =
+            \left\{ 0 \right\}$ 
+            minden $k=1,\dots,s$ mellett.
+    \end{enumerate}
+    Ekkor a $N$-et $N=M_1\oplus\dots\oplus M_s$ módon jelöljük.
+\end{definition}
+Külön érdemes figyelni az $s=2$, tehát csak két altér direktösszegének esetére.
+Ilyenkor a fenti definíció azt jelenti, 
+hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
+\begin{proposition}
+    Legyen az $M_1,\dots,M_s,N\subseteq V$ a $V$ vektortér altere. 
+    Az $N=M_1\oplus\dots\oplus M_s$ pontosan akkor teljesül,
+    ha 
+    \begin{enumerate}
+        \item minden $k=1,\dots,s$ mellett $M_k\subseteq N$, és
+        \item 
+            minden $v\in N$ vektorhoz létezik egyetlen $v_j\in M_j, j=1,\dots,s$ 
+            vektor, amelyre
+            \[
+                v=\sum_{j=1}^sv_j.\qedhere
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Tegyük fel, hogy $M$ direktösszege az $M_1,\dots,M_s$ altereknek.
+    Minden szóba jövő $k$-ra $M_k\subseteq\sum_{j=1}^sM_j=M.$
+    Mivel $M=M_1+\dots+M_s$, ezért minden $v\in M$-hez létezik $v_j\in M_j$, hogy 
+    $v=v_1+\dots+v_s$.
+    Most tegyük fel, hogy $v$ előáll $v=u_1+\dots+u_s$ alakban is, 
+    ahol $u_j\in V_j$ minden $j=1,\dots,s$ mellett.
+    Ekkor minden rögzített $k=1,\dots,s$ mellett
+    \[
+        u_k-v_k=\sum_{\substack{j=1\\j\neq k}}^s\left( v_j-u_j \right).
+    \]
+    No de, a baloldali vektor $M_k$-beli, 
+    míg a jobboldali vektor $\sum_{\substack{j=1\\j\neq k}}^sM_j$-beli.
+    A feltétel szerint ilyen vektor egyedül a zérus vektor, 
+    amiből $u_k=v_k$ következik. 
+    Mivel ezt minden $k=1,\dots,s$ mellett elismételhetjük,
+    ezért az előállítás egyértelműségét be is láttuk.
+
+    Megfordítva,
+    most azt tegyük fel, hogy a két feltétel fennáll.
+    Ekkor 1. szerint $M_1+\dots+M_s\subseteq N+\dots+N=N$,
+    és 2. szerint $N\subseteq M_1+\dots+M_s$,
+    amiből már
+    \begin{math}
+        \sum_{j=1}^sM_j=N
+    \end{math}
+    következik is.
+    Most képzeljük el, 
+    hogy valamely $k$ mellett $v_k\neq 0, v_k\in M_k$ 
+    és 
+    $v_k=\sum_{\substack{j=1\\j\neq k}}^sv_j$, ahol $v_j\in M_j$ minden $j=1,\dots,s$ mellett.
+    Ekkor 
+    \[
+        v_k-\sum_{\substack{j=1\\j\neq k}}^sv_j
+        =
+        0
+        =
+        \sum_{j=1}^s 0
+    \]
+    az $N$ vektortér zérus elemének két különböző előállítása,
+    hiszen a $k$-adik vektortérbeli elem a baloldalon a $v_k$ nem zérus vektora $M_k$-nak,
+    míg a jobboldalon a zérus vektor szerepel $M_k$-ból (is).
+\end{proof}
+Megint csak a a két vektortér speciális esetére figyelve 
+azt igazoltuk, hogy $N$ pontosan akkor az $M_1$ és $M_2$ direktösszege,
+ha $M_1$ és $M_2$ olyan alterei $N$-nek, hogy $N$ minden eleme előáll,
+de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
+\begin{proposition}\label{pr:drosszeg}
+    Legyenek az $M_1,\dots,M_s\subseteq V, (s\geq 2)$ alterek a $V$ vektortér olyan végesen generált alterei,
+    amelyekre 
+    \(
+        N=M_1\oplus\dots\oplus M_s.
+    \)
+    Ekkor 
+    \(
+        \dim N=
+        \dim M_1+\dots+\dim M_s.
+    \)
+\end{proposition}
+\begin{proof}
+    Az $s=2$ eset éppen \aref{pr:drosszeg2} állítás,
+    hiszen a $\left\{ 0 \right\}$ triviális altér nulla dimenziós.
+    Most tegyük fel, hogy $s$-nél kisebb számokra igaz az állítás, 
+    és lássuk be $s$-re. $s>2.$
+    Legyen $M=\sum_{j=1}^{s-1}M_j.$
+    Világos, hogy $M=M_1\oplus\dots\oplus M_{s-1}$ és $M\oplus M_s=N$.
+    A már igazolt $s=2$ eset és az indirekt feltevés szerint
+    \[
+        \dim N
+        =
+        \dim M+\dim M_s
+        =
+        \sum_{j=1}^{s-1}\dim M_j+\dim M_s
+        =
+        \sum_{j=1}^{s}\dim M_j.\qedhere
+    \]
+\end{proof}
+A fenti állítás konkrét alkalmazhatóságához nagy segítség a most következő észrevétel.
+\begin{proposition}
+    Legyenek az $M_1,\dots,M_s\subseteq V$ alterek megadva.
+    Az alábbi feltételek ekvivalensek:
+    \begin{enumerate}
+        \item Minden $k=1,\dots,s$ mellett
+            $M_k\cap\left( \sum_{\substack{j=1\\j\neq k}}^sM_j \right)=\left\{ 0 \right\}$.
+        \item Minden $k=2,\dots,s$ mellett
+            $M_k\cap\left( \sum_{\substack{j=1}}^{k-1}M_j \right)=\left\{ 0 \right\}$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Mivel $k\geq 2$ mellett
+    $
+    \sum_{\substack{j=1}}^{k-1}M_j
+    \subseteq
+    \sum_{\substack{j=1\\j\neq k}}^sM_j,
+    $
+    ezért $1.\Rightarrow 2.$ nyilvánvaló.
+
+    Most azt mutatjuk meg, hogy ha 1. feltétel nem igaz, akkor 2. feltétel sem áll.
+    Tegyük fel tehát, 
+    hogy van olyan $1\leq k\leq s$,
+    amelyre 
+    $M_k\cap\left( \sum_{\substack{j=1\\j\neq k}}^sM_j \right)\neq\left\{ 0 \right\}$.
+    Ha $k=s$, akkor készen is vagyunk.
+    Legyen emiatt a továbbiakban $k<s$.
+    Eszerint léteznek $v_j\in M_j (j=1,\dots,s)$ vektorok, amelyekre
+    \[
+        0\neq v_k=
+        \sum_{j=1}^{k-1}v_j
+        +
+        \sum_{j=k+1}^{s}v_j.
+    \]
+    Legyen $t$ a legnagyobb olyan szám, amelyre $k\leq t\leq s$ és $v_t\neq 0$.
+    Ha $k=1$, akkor a jobb oldali első szumma üres, emiatt $t>1$.
+    Ha viszont $k>1$, akkor $1<k\leq t$.
+    Mindkét esetben látjuk tehát, hogy $t>1$.
+    Ekkor az
+    \[
+        v_k=
+        \sum_{j=1}^{k-1}v_j
+        +
+        \sum_{j=k+1}^{t}v_j.
+    \]
+    azonosságot átrendezve kapjuk, hogy 
+    \[
+        -v_t
+        =
+        \sum_{j=1}^{k-1}v_j
+        -
+        v_k
+        +
+        \sum_{j=k+1}^{t-1}v_j.
+    \]
+    Itt a bal oldali nem zérus vektor $M_t$-beli, 
+    a jobb oldali vektor $\sum_{j=1}^{t-1}M_j$-beli, 
+    ergo valamely $1<t\leq s$ mellett találtunk az $M_t\cap\left( \sum_{j=1}^{t-1} \right)$
+    altérben is egy nem zérus elemet.
+\end{proof}
+Az 1. feltétel előnye, hogy ennek alapján teljesen világos, hogy az 
+$M_1\oplus\dots\oplus M_s$ direktösszeg nem függ az alterek sorrendjétől,
+2. előnye pedig,
+hogy ha képeznünk kell az $M_1,\dots,M_s$ alterek direktösszegét, 
+akkor rekurzívan járhatunk el: 
+ha a korábbi lépésben ellenőriztük, hogy az $M_1\oplus\dots\oplus M_{n-1}$ értelemes, akkor 
+a következő lépésben csak azt kell ellenőrinünk, 
+hogy $M_n$ diszjunkt az első $n-1$ altér direktösszegétől.
+
+Direkkiegészítő.
 \section{Rang-tétel}
 
 \begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
@@ -4999,4 +5249,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 15 Nov 2019 02:16:59 PM CET
+Last Modified : Sat 16 Nov 2019 11:47:08 PM CET
