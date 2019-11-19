@@ -1558,7 +1558,7 @@ Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
 Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss-Jordan eliminációs algoritmusra, 
-amiket majd később vezetünk be.
+amiket majd később vezetünk be.\label{pg:kommutal}\index{kommutáló mátrixok}
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
 Ilyenkor az $1\times 1$-es mátrixok tere voltaképpen azonos az $\mathbf{F}$-testtel, hiszen csak az a különbség,
@@ -3244,8 +3244,9 @@ amiből már következik, hogy
 Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
 akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért 
 $BA=A^{-1}A=I$ is fennáll.
-Megmutattuk, hogy négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
-egységeleme, akkor a mátrixok kommutálnak.\index{kommutáló mátrixok}
+Ahogyan azt a mátrixok bevezetésekor \apageref{pg:kommutal}. oldalon megígértük,
+most megmutattuk azt, hogy a négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
+egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}
 
 Egy konkrét példa megoldásával ismételjük át a szakasz elején megértett algoritmust.
 A feladat, hogy keressük meg az 
@@ -3909,7 +3910,7 @@ szorzás egy $\mathbf{F}^m\to\mathbf{F}^n$ lineáris operációt jelent.
     amelyeket $A$ operátor a $W$ tér zérus elemébe képez egy alteret alkotnak,
     amelyet $\ker A$ módon jelölünk.
 
-    Az $L\left( V,W \right)$ lineáris operációk halmaza a szokásos függvényműveletekkel vektorteret alkot.
+    Az $L\left( V,W \right)$ lineáris operációk halmaza a szokásos függvény műveletekkel vektorteret alkot.
 \end{defprop}
 A jelölések tehát:
 \[
@@ -3932,9 +3933,10 @@ $Ax=y$ pontosan akkor teljesül, ha $x=A^{-1}y$.
 
 Itt jegyezem meg, hogy a tradiciókat követve egy $A$ lináris operáció esetén az $x$ vektor
 $A\left( x \right)$ képét a zárójeleket elhagyva $Ax$ módon írjuk.
+Hasonlóan az $A\circ B$ kompozíciót is $AB$ módon jelöljük.
 
 \begin{proposition}
-    Legyen $A\in L\left( V,W \right)$ egy lineáris operátáció.
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operáció.
     Ekkor
     \begin{enumerate}
         \item ha $A$ injektív és $\left\{ y_1,\dots,y_m \right\}\subseteq V$
@@ -3945,19 +3947,23 @@ $A\left( x \right)$ képét a zárójeleket elhagyva $Ax$ módon írjuk.
             generátorrendszer,
             akkor 
             $\left\{ Ax_1,\dots,Ax_n \right\}$ is generátorrendszere $W$-nek.
+        \item ha $A$ bijekció és $\left\{ e_1,\dots,e_n \right\}\subseteq V$
+            bázis,
+            akkor 
+            $\left\{ Ae_1,\dots,Ae_n \right\}$ is bázis $W$-ben.
+            \qedhere
     \end{enumerate}
 \end{proposition}
-Ezek szerint egy lineáris bijekció bázist bázisra képez.
-\begin{definition}[izomorf vektorterek]
+\begin{definition}[izomorf vektorterek]\index{izomorf vektorterek}\index{izomorfizmus}
     Egy $A:V\to W$ függvényt \emph{izomorfizmusnak}\index{izomorfizmus} mondunk,
     ha $A$ lineáris bijekció.
-    Az ugyanazon test feletti $V,W$ vektortereket egymással izomorf vektortérnek mondjuk,
+    Az ugyanazon test feletti $V,W$ vektortereket egymással \emph{izomorf vektortérnek} mondjuk,
     ha létezik $A:V\to W$ izomorfizmus.
 \end{definition}
 Gondoljuk meg, hogy az azonos test feletti vektorterek izomorfizmusa egy ekvivalencia reláció,
 azaz (1) minden vektortér izomorf saját magával; (2) ha $V$ izomorf $W$-vel,
 akkor $W$ is $V$-vel; (3) ha $V_1$ és $V_2$ izomorfak, továbbá ha $V_2$ és $V_3$ izomorfak, akkor 
-$V_1$ és $V_3$is izomorfak.
+$V_1$ és $V_3$ is izomorfak.
 \begin{proposition}
     Minden az $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim V}$
     koordináta térrel.
@@ -3972,9 +3978,9 @@ $V_1$ és $V_3$is izomorfak.
         \mapsto\sum_{j=1}^n\alpha_je_j
     \]
     Könnyű számolással ellenőrizhető,
-    hogy $\Psi$ egy lineáris operátáció,
+    hogy $\Psi$ egy lineáris operáció,
     a bázis lineárisan függetlenségét használva adódik $A$ injektivitása,
-    a szürjektivitás pedig a bázis generátorrendszer tulajkdonságát használva igazolható.
+    a szürjektivitás pedig a bázis generátorrendszer tulajdonságát használva igazolható.
 \end{proof}
 \begin{definition}[koordináta]\index{koordináta}
     Legyen $\left\{ e_1,\dots,e_n \right\}$ egy bázisa a $V$ vektortérnek.
@@ -3989,8 +3995,8 @@ $V_1$ és $V_3$is izomorfak.
     \end{math}
     vektort az $x$ vektor $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt koordináta vektorának nevezzük.
 \end{definition}
-Pont azt muattuk meg, hogy egy rögzített bázis mellett az a leképezés,
-amely egy vektorhoz hozzárendeli a bázisban felírt koordinátáit, egy izomorfiz
+Pont azt mutattuk meg, hogy egy rögzített bázis mellett az a leképezés,
+amely egy vektorhoz hozzárendeli a bázisban felírt koordinátáit, egy izomorfizmus
 a vektortér és a koordinátatere közt.
 Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 \begin{proposition}
@@ -5303,4 +5309,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 19 Nov 2019 03:58:07 PM CET
+Last Modified : Tue 19 Nov 2019 08:02:02 PM CET
