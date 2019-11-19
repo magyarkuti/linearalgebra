@@ -3922,11 +3922,16 @@ A jelölések tehát:
     Egy lineáris leképezés pontosan akkor injektív, ha $\ker A=\left\{ 0 \right\}$.
     Egy injektív lineáris leképezés inverz függvénye egy $\im A\to V$ lineáris operátor.
     Az $A\in L\left( V,W \right)$ injektív lineáris leképezés inverzét $A^{-1}$ módon jelöljük.
+
+    Lineáris leképezések kompozíciója is lineáris.
 \end{proposition}
 Tekinthetünk az $A$ mátrixra mint az $x\mapsto A\cdot x$ lineáris operátorra.
 Ennek inverze az $x\mapsto A^{-1}\cdot x$ operátor,
 ahol $A^{-1}$ az inverz mátrixot jelöli, hiszen
 $Ax=y$ pontosan akkor teljesül, ha $x=A^{-1}y$.
+
+Itt jegyezem meg, hogy a tradiciókat követve egy $A$ lináris operáció esetén az $x$ vektor
+$A\left( x \right)$ képét a zárójeleket elhagyva $Ax$ módon írjuk.
 
 \begin{proposition}
     Legyen $A\in L\left( V,W \right)$ egy lineáris operátáció.
@@ -3949,8 +3954,12 @@ Ezek szerint egy lineáris bijekció bázist bázisra képez.
     Az ugyanazon test feletti $V,W$ vektortereket egymással izomorf vektortérnek mondjuk,
     ha létezik $A:V\to W$ izomorfizmus.
 \end{definition}
+Gondoljuk meg, hogy az azonos test feletti vektorterek izomorfizmusa egy ekvivalencia reláció,
+azaz (1) minden vektortér izomorf saját magával; (2) ha $V$ izomorf $W$-vel,
+akkor $W$ is $V$-vel; (3) ha $V_1$ és $V_2$ izomorfak, továbbá ha $V_2$ és $V_3$ izomorfak, akkor 
+$V_1$ és $V_3$is izomorfak.
 \begin{proposition}
-    Minden $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim V}$
+    Minden az $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim V}$
     koordináta térrel.
 \end{proposition}
 \begin{proof}
@@ -3962,6 +3971,10 @@ Ezek szerint egy lineáris bijekció bázist bázisra képez.
         \end{pmatrix}
         \mapsto\sum_{j=1}^n\alpha_je_j
     \]
+    Könnyű számolással ellenőrizhető,
+    hogy $\Psi$ egy lineáris operátáció,
+    a bázis lineárisan függetlenségét használva adódik $A$ injektivitása,
+    a szürjektivitás pedig a bázis generátorrendszer tulajkdonságát használva igazolható.
 \end{proof}
 \begin{definition}[koordináta]\index{koordináta}
     Legyen $\left\{ e_1,\dots,e_n \right\}$ egy bázisa a $V$ vektortérnek.
@@ -3976,6 +3989,22 @@ Ezek szerint egy lineáris bijekció bázist bázisra képez.
     \end{math}
     vektort az $x$ vektor $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt koordináta vektorának nevezzük.
 \end{definition}
+Pont azt muattuk meg, hogy egy rögzített bázis mellett az a leképezés,
+amely egy vektorhoz hozzárendeli a bázisban felírt koordinátáit, egy izomorfiz
+a vektortér és a koordinátatere közt.
+Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
+\begin{proposition}
+    Legyenek $V$ és $W$ ugyanazon test feletti végesen generált vektorterek.
+    E két vektortér pontosan akkor izomorf, ha azonos dimenziósak.
+\end{proposition}
+\begin{proof}
+    Ha $V$ izomorf $W$-vel, akkor létezik köztük izomorfizmus.
+    No de izomorfizmus bázist bázisra visz, ami azt jelenti, hogy azonos elemszámú
+    bázisa van mindkét térnek.
+
+    Ha $\dim V=\dim W=n$, akkor mindkét vektortér izomorf $\mathbb{F}^n$ vektortérrel,
+    ergo egymással is izomorfak.
+\end{proof}
 Fontos látni, hogy a vektor koordináta vektora függ a bázis megválasztásától.
 Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
 már akkor is változik a vektort koordináta vektora.
@@ -5274,4 +5303,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 19 Nov 2019 03:26:32 PM CET
+Last Modified : Tue 19 Nov 2019 03:58:07 PM CET
