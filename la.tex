@@ -3886,7 +3886,7 @@ az $\mathbb{F}^n$ tér.
     akkor szokásos még a \emph{lineáris funkcionál}\index{lineáris funkcionál} szó összetétel is.
 
     A $V\to W$ összes lineáris operációk halmazát $L\left( V,W \right)$ módon jelöljük.
-    A $V=W$ esetben a rövidség kedvért csal $L\left( V \right)$-t írunk.
+    A $V=W$ esetben a rövidség kedvéért csak $L\left( V \right)$-t írunk.
 \end{definition}
 Láttuk korábban, hogy ha $A$ egy $m\times n$ méretű mátrix,
 akkor $x\in\mathbf{F}^n$ oszlop vektor mellett az
@@ -3928,7 +3928,22 @@ Ennek inverze az $x\mapsto A^{-1}\cdot x$ operátor,
 ahol $A^{-1}$ az inverz mátrixot jelöli, hiszen
 $Ax=y$ pontosan akkor teljesül, ha $x=A^{-1}y$.
 
-\begin{definition}
+\begin{proposition}
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operátáció.
+    Ekkor
+    \begin{enumerate}
+        \item ha $A$ injektív és $\left\{ y_1,\dots,y_m \right\}\subseteq V$
+            lineárisan független,
+            akkor 
+            $\left\{ Ay_1,\dots,Ay_m \right\}$ is lineárisan független.
+        \item ha $A$ szürjektív és $\left\{ x_1,\dots,x_n \right\}\subseteq V$
+            generátorrendszer,
+            akkor 
+            $\left\{ Ax_1,\dots,Ax_n \right\}$ is generátorrendszere $W$-nek.
+    \end{enumerate}
+\end{proposition}
+Ezek szerint egy lineáris bijekció bázist bázisra képez.
+\begin{definition}[izomorf vektorterek]
     Egy $A:V\to W$ függvényt \emph{izomorfizmusnak}\index{izomorfizmus} mondunk,
     ha $A$ lineáris bijekció.
     Az ugyanazon test feletti $V,W$ vektortereket egymással izomorf vektortérnek mondjuk,
@@ -3938,6 +3953,16 @@ $Ax=y$ pontosan akkor teljesül, ha $x=A^{-1}y$.
     Minden $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim V}$
     koordináta térrel.
 \end{proposition}
+\begin{proof}
+    Rögzítsünk egy $\left\{ e_1,\dots,e_n \right\}$ bázist $V$-ben.
+    Definiálja $\Psi:\mathbf{F}^n\to V$ a következő függvényt:
+    \[
+        \begin{pmatrix}
+            \alpha_1\\ \vdots\\ \alpha_n
+        \end{pmatrix}
+        \mapsto\sum_{j=1}^n\alpha_je_j
+    \]
+\end{proof}
 \begin{definition}[koordináta]\index{koordináta}
     Legyen $\left\{ e_1,\dots,e_n \right\}$ egy bázisa a $V$ vektortérnek.
     Tudjuk, hogy minden $v\in V$ vektor egyetlen egyféleképpen, de előáll mint a bázisvektorok egy lineáris kombinációja.
@@ -5249,4 +5274,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 17 Nov 2019 09:12:30 AM CET
+Last Modified : Tue 19 Nov 2019 03:26:32 PM CET
