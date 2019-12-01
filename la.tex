@@ -4472,6 +4472,146 @@ az $g$ által generált egy dimenziós altér direkt kiegészítője az $N$ alt�
 \scwords A vektortér konstrukciók végéhez érkeztünk.
 Láttuk, hogy alterek közösrésze, összege is vektorteret alkot.
 A faktortér az utolsó vektortér konstrukciós eljárásunk.
+\begin{definition}
+    Legyen $V$ egy vektortér és $M\subseteq V$ egy adott altér.
+    Definiáljuk a $\sim$ relációt a vektortér elemei felett:
+    $x\sim y$ pontosan akkor, ha $x-y\in M$.
+\end{definition}
+    Látható, hogy $\sim$ ekvivalencia reláció,
+    hiszen 
+    \begin{enumerate}
+        \item reflexív,
+            ugyanis $x-x=0\in M$ minden $x\in V$-re,
+        \item szimmetrikus,
+            ugyanis $x-y\in M$ mellett $y-x=-\left( x-y \right)\in -M=M$,
+        \item tranzitív,
+            ugyanis $x-y\in M$ és $y-z\in M$ esetén $x-z=\left( x-y \right)+\left( y-z \right)\in M+M=M$
+    \end{enumerate}
+    Legyen adott $x\in V$ mellett az $x$ elemet tartalmazó ekvivalencia osztály $M_x$,
+    azaz 
+    \[
+        M_x=
+        \left\{ u\in V:u\sim x \right\}.
+    \]
+    Tudjuk, hogy az összes ekvivalencia osztályok $\left\{ M_x:x\in V \right\}$ halmazrendszere
+    a $V$ egy partícióját alkotja, 
+    ami azt jelenti, hogy $V=\cup_{x\in V}M_x$, és ha valamely $x,y\in V$ mellett $M_x\cap M_y\neq\emptyset$,
+    akkor $M_x=M_y$.
+
+    Most azt gondoljuk meg, hogy minden egyes ekvivalencia osztály tekinthető úgyis mint,
+    bármelyik elemével való eltoltja az $M$ vektortérnek.
+    Speciálisan az is adódik, 
+    hogy az ekvivalencia osztályok affin\index{affin halmaz} halmazok.
+    \begin{proposition}
+        A fenti jelölések mellett $M_x=u+M$ minden $u\in M_x$ mellett.
+        Speciálisan, minden $x\in V$ mellett $M_x=x+M$.
+    \end{proposition}
+    \begin{proof}
+        Megmutatjuk, hogy $M_x\subseteq u+M$.
+        Legyen $v\in M_x$ tetszőleges.
+        Ekkor $v\sim x$, $u\sim x$, ezért $v\sim u$.
+        Ez azt jelenti, hogy $v-u\in M$, amiből már adódik, 
+        hogy $v\in u+M$.
+
+        Megfordítva, most igazoljuk, hogy $u+M\subseteq M_x$.
+        Legyen tehát $v\in u+M$.
+        Ekkor $v-u\in M$, ergo $v\sim u$.
+        No de $u\sim x$ is fel van téve, 
+        emiatt $v\sim x$, azaz $v\in M_x$.
+    \end{proof}
+    Most definiálni szeretnénk az ekvivalencia osztályok halmazán összeadás és egy testbeli elemmel való
+    szorzás műveletet.
+    Az összeadás művelet legyen a korábban definiált Minkowski--összeg.
+    Ez valóban művelet az ekvivalencia osztályokra megszorítva, 
+    hiszen ha $M_{x_1}$ és $M_{x_2}$ két ekvivalencia osztály,
+    akkor
+    \[
+        M_{x_1}+M_{x_2}=\left( x_1+M \right)+\left( x_2+M \right)
+        =
+        x_1+x_2+M+M=
+        \left( x_1+x_2 \right)+M
+        =
+        M_{x_1+x_2},\tag{\dag}
+    \]
+    azaz két ekvivalencia osztály Minkowski--összege is egy ekvivalencia osztály.
+    Sőt, az is adódik, hogy 
+    \emph{
+        egy-egy vektorhoz tartozó ekvivalencia osztályok Minkowski--összege
+        azonos e két vektor összegéhez tartozó ekvivalencia osztállyal.}
+
+    A skalárral való szorzás már nem ilyen egyszerű,
+    hiszen $0\cdot M_x=\left\{ 0 \right\}$, de ez utóbbi halmaz általában nem egy ekvivalencia osztály,
+    ezért az ekvivalencia osztályok halmazán a skalárral való szorzás nem egy művelet.
+    \begin{definition}[ekvivalencia osztály számszorosa]
+        Legyen $\alpha\in\mathbb{F}$ egy szám és $M_{x}$ egy ekvivalencia osztály.
+        Definiálja
+        \[
+            \alpha\ast M_x=
+            \begin{cases}
+                \alpha M_x&\text{, ha }\alpha\neq 0\\
+                M&\text{, ha }\alpha=0.
+            \end{cases}\qedhere
+        \]
+    \end{definition}
+    Egyrészt vegyük észre,
+    hogy $\alpha\neq 0$ mellett
+    $\alpha M_x=\alpha\left( x+M \right)=\alpha x+\alpha M=\alpha\cdot x+M=M_{\alpha\cdot x}$,
+    másrészt azt lássuk, 
+    hogy az $\alpha=0$ esetben
+    $M=0+M=M_0=M_{0\cdot x}$, ami azt jelenti, hogy a fenti definícióra az
+    \[
+        \alpha\ast M_x=M_{\alpha\cdot x}\tag{\ddag}
+    \]
+    azonosság is teljesül minden $x\in V$ vektorra és minden $\alpha\in\mathbb{F}$ számra.
+    Kiderült tehát, hogy a most bevezetett $\ast$ skalárral való szorzást alkalmazva
+    egy ekvivalencia osztálynak egy számmal való szorzata egy ekvivalencia osztály lesz,
+    sőt
+    \emph{egy vektorhoz tartozó ekvivalencia osztály $\alpha$ szorosa azonos e vektor $\alpha$-szorosához tartozó
+    ekvivalencia osztállyal}.
+    \begin{proposition}[faktortér]
+    Legyen $V$ egy az $\mathbb{F}$ test feletti vektortér,
+    és $M\subseteq V$ egy rögzített altér.
+    Legyen $\ast$ a $V$ vektortér elemein értelmzett reláció,
+    amelyre $x\ast y$, ha $x-y\in M$ ekvivalencia reláció.
+    Láttuk, hogy ez ekvivalencia reláció.
+    Jelölje
+    \[
+        V/M=\left\{ M_x:x\in V \right\}
+    \]
+    az ekvivalencia osztályok halmazát.
+    Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt
+    a Minkowski--összeget és a skalárral való szorzást:
+    \[
+        M_{x_1}+M_{x_2}=M_{x_1+x_2},
+        \qquad
+        \text{és}
+        \qquad
+        \alpha\ast M_x=M_{\alpha\cdot x}.
+    \]
+    Ekkor az itt bevezetett $(V/M,+,\ast)$ struktúra az $\mathbb{F}$ test feletti vektorteret alkot.
+    Ezt a vektorteret nevezzük a $V$ vektortér $M$ szerinti \emph{faktorterének}\index{faktortér}.
+\end{proposition}
+\begin{proof}
+    Meggondoltuk már, hogy a Minkowski--összeg és a $\ast$ szorzás eredménye egy ekvivalencia osztály.
+    Most vegyük sorra a vektortér axiómákat.
+    \begin{enumerate}
+        \item[1.] $M_{x_1}+M_{x_{2}}=M_{x_2}+M_{x_1}$
+        \item[2.] $\left( M_{x_1}+M_{x_2} \right)+M_{x_3}=
+            M_{x_1}+\left( M_{x_2}+M_{x_3} \right)$
+    \end{enumerate}
+    axiómák tetszőleges halmazokra, nem csak ekvivalencia osztályokra is fennállnak.
+    Az ekvivalencia osztályok közt is van neutrális elem,
+    hiszen minden $x\in V$ mellett $M_x+M=\left( x+M \right)+M=x+\left( M+M \right)=x+M=M_x$.
+    \begin{enumerate}
+        \item[3.] Minden $M_x$ ekvivalencia osztályra $M_x+M=M_x$.
+        \item[4.] Minden $M_x$ ekvivalencia osztályra $M_x+M_{-x}=M$.
+    \end{enumerate}
+    Ez utóbbi az $M_x+M_{-x}=M_{x+\left( -x \right)}=M_0=M$ azonosság miatt teljesül, 
+    felhasználva a már igazolt $\dag$ azonosságot.
+
+\end{proof}
+
+
 
 \chapter{Rang-tétel}
 
@@ -5461,4 +5601,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 26 Nov 2019 03:01:29 PM CET
+Last Modified : Sun 01 Dec 2019 09:09:24 AM CET
