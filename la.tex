@@ -156,7 +156,7 @@
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
 \DeclareMathOperator{\rank}{rank}
-%\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\im}{Im}
 %\DeclareMathOperator{\arg}{arg}
 
@@ -4450,7 +4450,7 @@ a következő lépésben csak azt kell ellenőriznünk,
 hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 
 \section{Direkt kiegészítő}
-\begin{proposition}\index{altér direkt kiegészítője}
+\begin{proposition}\index{direkt kiegészítő}
     Legyen $V$ egy véges dimenziós vektortér, és $M\subseteq V$ egy altér.
     Ekkor létezik $N\subseteq V$ altér,
     amelyre $M\oplus N=V$.
@@ -4495,8 +4495,10 @@ A faktortér az utolsó vektortér konstrukciós eljárásunk.
     \]
     Tudjuk, hogy az összes ekvivalencia osztályok $\left\{ M_x:x\in V \right\}$ halmazrendszere
     a $V$ egy partícióját alkotja, 
-    ami azt jelenti, hogy $V=\cup_{x\in V}M_x$, és ha valamely $x,y\in V$ mellett $M_x\cap M_y\neq\emptyset$,
-    akkor $M_x=M_y$.
+    ami azt jelenti, hogy $V=\cup_{x\in V}M_x$; 
+    ha valamely $x,y\in V$ mellett $M_x\cap M_y\neq\emptyset$,
+    akkor $M_x=M_y$;
+    és minden $x\in V$ mellett $M_x\neq\emptyset$.
 
     Most azt gondoljuk meg, hogy minden egyes ekvivalencia osztály tekinthető úgyis mint,
     bármelyik elemével való eltoltja az $M$ vektortérnek.
@@ -4593,26 +4595,269 @@ A faktortér az utolsó vektortér konstrukciós eljárásunk.
 \end{proposition}
 \begin{proof}
     Meggondoltuk már, hogy a Minkowski--összeg és a $\ast$ szorzás eredménye egy ekvivalencia osztály.
-    Most vegyük sorra a vektortér axiómákat.
+    Most vegyük sorra a vektortér axiómákat:
+    Az
     \begin{enumerate}
-        \item[1.] $M_{x_1}+M_{x_{2}}=M_{x_2}+M_{x_1}$
+        \item[1.] $M_{x_1}+M_{x_{2}}=M_{x_2}+M_{x_1}$;
         \item[2.] $\left( M_{x_1}+M_{x_2} \right)+M_{x_3}=
-            M_{x_1}+\left( M_{x_2}+M_{x_3} \right)$
+            M_{x_1}+\left( M_{x_2}+M_{x_3} \right)$;
     \end{enumerate}
     axiómák tetszőleges halmazokra, nem csak ekvivalencia osztályokra is fennállnak.
-    Az ekvivalencia osztályok közt is van neutrális elem,
+    
+    Az ekvivalencia osztályok közt $M_0=M$ neutrális elem,
     hiszen minden $x\in V$ mellett $M_x+M=\left( x+M \right)+M=x+\left( M+M \right)=x+M=M_x$.
     \begin{enumerate}
-        \item[3.] Minden $M_x$ ekvivalencia osztályra $M_x+M=M_x$.
-        \item[4.] Minden $M_x$ ekvivalencia osztályra $M_x+M_{-x}=M$.
+        \item[3.] Minden $M_x$ ekvivalencia osztályra $M_x+M=M_x$;
+        \item[4.] Minden $M_x$ ekvivalencia osztályra $M_x+M_{-x}=M$,\\
+            hiszen 
+            $M_x+M_{-x}=M_{x+\left( -x \right)}=M_0=M$, 
+            felhasználva a már igazolt $\dag$ azonosságot.
     \end{enumerate}
-    Ez utóbbi az $M_x+M_{-x}=M_{x+\left( -x \right)}=M_0=M$ azonosság miatt teljesül, 
-    felhasználva a már igazolt $\dag$ azonosságot.
-
+    A $\ast$ szorzás és az összeadás kapcsolatát leíró aximák ellenőrzéséhez használjuk
+    $(\dag)$ és $(\ddag)$ azonosságokat:
+    \begin{enumerate}
+        \item[5.] $\left( \alpha+\beta \right)\ast M_x=\alpha\ast M_x+\beta\ast M_x$,\\
+            hiszen 
+            $\left( \alpha+\beta \right)\ast M_x
+            =
+            M_{\left( \alpha+\beta \right)x}
+            =
+            M_{\alpha x+\beta x}
+            =
+            M_{\alpha x}+M_{\beta x}
+            =
+            \alpha\ast M_x+\beta\ast M_x$;
+        \item[6.] $\alpha\ast\left( M_{x_1}+M_{x_2} \right)
+            =
+            \alpha\ast M_{x_1}+\alpha\ast M_{x_2}$,\\
+            hiszen
+            $
+            \alpha\ast\left( M_{x_1}+M_{x_2} \right)
+            =
+            \alpha\ast\left( M_{x_1+x_2} \right)
+            =
+            M_{\alpha(x_1+x_2)}
+            =
+            M_{\alpha x_1+\alpha x_2}
+            =
+            M_{\alpha x_1}+M_{\alpha x_2}
+            =
+            \alpha\ast M_{x_1}+\alpha\ast M_{x_2}$;
+        \item[7.] $
+            \left( \alpha\beta \right)\ast M_{x}=
+            \alpha\ast\left( \beta\ast M_{x} \right)$,\\
+            hiszen 
+            $
+            \left( \alpha\beta \right)\ast M_{x}
+            =
+            M_{\left( \alpha\beta \right)x}
+            =
+            M_{\alpha\left( \beta x \right)}
+            =
+            \alpha\ast M_{\beta x}
+            =
+            \alpha\ast\left( \beta\ast M_x \right)
+            $;
+        \item[8.]
+            $
+            1\ast M_{x}=M_{x},
+            $
+            \\hiszen
+            $
+            1\ast M_{x}=M_{1\cdot x}=M_x.
+            $
+    \end{enumerate}
+    Ezt kellett belátni. 
 \end{proof}
+\begin{proposition}
+    Legyen $M$ a $V$ vektortér egy altere. 
+    Definiálja $\varphi:V\to V/M$ az $x\mapsto M_x$ függvényt.
+    \begin{enumerate}
+        \item Ekkor $\varphi:V\to V/M$ egy szürjektív lineáris operáció.
+        \item Legyen most $N$ az $M$ egy direkt kiegészítője,\index{direkt kiegészítő}
+            azaz $M\oplus N=V$.
+            Definiálja $\Phi$ a $\varphi$ megszorítását az $N$ direkt kiegészítőre.
+            Ekkor $\Phi:N\to V/M$ egy izomorfizmus.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    1. A ($\dag$) és ($\ddag$) szerint
+    $ 
+    \varphi\left( \alpha x_1+\beta x_2 \right)
+    =
+    M_{\alpha x_1+\beta x_2}
+    =
+    M_{\alpha x_1}+M_{\beta x_2}
+    =
+    \alpha\ast M_{x_1}+\beta\ast M_{x_2}
+    =
+    \alpha\ast\varphi\left( x_1 \right)+\beta\ast\varphi\left( x_2 \right)
+    $,
+    ami éppen azt jelenti, hogy $\varphi$ egy lineáris operáció.
+    Ha $A\in V/M$ egy ekvivalencia osztály, és $x\in A$ tetszőleges eleme,
+    akkor $\varphi\left( x \right)=M_x=A$, ergo $\varphi$ szürjekció.
+
+    2. Világos, hogy $\Phi$ lineáris leképezés leszűkítéseként maga is lineáris.
+    
+    Most nézzük, hogy $\Phi$ is szürjekció marad.
+    Ha $A\in V/M$ egy ekvivalencia osztály,
+    akkor létezik $x\in V$, amelyre $\varphi\left( x \right)=A$.
+    No de $x=u+v$ alakú, ahol $u\in M$ és $v\in N$, és $M=M_0$ az $V/M$ vektortér neutrális eleme.
+    Így
+    $
+    A=\varphi\left( x \right)=\varphi\left( u+v \right)=\varphi\left( u \right)+\varphi\left( v \right)
+    =M+\varphi\left( v \right)=\varphi\left( v \right).
+    $
+
+    Az injektiv tulajdonsághoz legyen $v\in \ker\Phi$, 
+    azaz $v\in N$, amelyre $\varphi\left( v \right)=M$.
+    Ez a $\varphi$ definíciója miatt azt jelenti, hogy $M_v=M$, azaz $v\in M$.
+    Azt kaptuk tehát, hogy $v\in N\cap M=\left\{ 0 \right\}$, 
+    ami csak úgy lehetséges,
+    hogy $v=0$.
+    Megmutattuk tehát, hogy $\ker\Phi=\left\{ 0 \right\}$,
+    ami $\Phi$ injektivitását jelenti.
+\end{proof}
+Az állítás legelső következménye, 
+hogy az $M$ altér bármely direkt kiegészítője\index{direkt kiegészítő} izomorf a $V/M$ faktortérrel,
+emiatt bármely direkt kiegészítő izomorf bármely direkt kiegészítővel is.
+Feltéve, hogy 
+létezik direkt kiegészítő, izomorfiától eltekintve csak egyetlen egy létezik.
+De van-e, mindig direkt kiegészítő? 
+Véges dimenziós esetben már láttuk az igenlő választ.
+Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
+\begin{definition}[co-dimenzió]\index{co-dimenzió}
+    Azt mondjuk, hogy a $V$ vektortér $M$ altere \emph{$k$ co-dimenziós},
+    ha létezik $k$-dimenziós direkt kiegészítője $M$-nek,
+    azaz létezik olyan $N$ altere $V$-nek, amelyre $M\oplus N=V$
+    és $\dim N=k$.
+    A tényt,
+    hogy $M$ altérnek létezik $k$-dimenziós direkt kiegészítője
+    $\codim M=k$ módon jelöljük.
+\end{definition}
+\begin{proposition}
+    Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
+    amelynek van véges dimenziós direkt kiegészítője.
+    Ekkor
+    \[
+        \codim M=\dim(V/M).\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Válasszunk $N$ véges dimenziós alterét $V$-nek, 
+    amelyre $V=M\oplus N$.
+    Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
+    emiatt $V/M$ is végesen generált, és
+    $\dim V/M=\dim N=\codim M$.
+\end{proof}
+\begin{proposition}
+    Legyenek $V,W$ vektorterek,
+    továbbá $A\in L\left( V,W \right)$ egy olyan lineáris operáció,
+    amelyre az $\im A\subseteq W$ végesen generált.
+    Ekkor a $\ker A$ altérnek van végesen generált direkt kiegészítője, és
+    \[
+        \codim\left( \ker A \right)=\dim\left( \im A \right).\qedhere
+    \]
+\end{proposition}
+    \begin{proof}
+        Legyen $\im A$ egy bázisa $\left\{ Ax_1,\dots,Ax_r \right\}$.
+        Definiálja $N=\lin\left\{ x_1,\dots,x_r \right\}$.
+        Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
+        $x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
+        Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
+        esetben lehetséges az $\left\{ Ax_1,\dots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
+
+        Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
+        $Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
+        Világos, hogy így $x-\sum_{j=1}^r\alpha_jx_j\in\ker A$,
+        ami igazolja, hogy $V=\ker A+N$.
+
+        Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
+        Az is világos, hogy $\codim\left( \ker A \right)=\dim N=r=\dim\left( \im A \right)$.
+    \end{proof}
+Magától értetődik a következő észrevétel.
+\begin{proposition}
+Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
+akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
+\end{proposition}
+Nyilvánvaló következmény még a rang-defektus--tétel is.
+\begin{proposition}[rang-defektus--tétel]
+    Legyen $V$ egy véges dimenziós vektortér,
+    és $W$ egy tetszőleges vektortér, 
+    továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
+    Ekkor
+    $\im A$ is véges dimenziós, és
+    \[
+        \dim\left( \ker A \right)+\dim\left( \im A \right)=\dim V.\qedhere
+    \]
+\end{proposition}
+
+Ha $V$ véges dimenziós és $A\in L\left( V,W \right)$ egy lineáris operáció,
+akkor láttuk, hogy
+\[
+\dim\left( \im A \right)
+=
+\codim\left( \ker A \right)
+=
+\dim\left( V/\ker A \right).
+\]
+Tudjuk, hogy azonos dimenziójú vektorterek egy mással izomorfak,
+emiatt $\im A$ izomorf $V/\ker A$ faktortérrel.
+A következő állítás ennek a gondolatnak a nem véges dimenziós esetre vonatkozó általánosítása,
+de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
+\begin{proposition}
+    Legyenek $V,W$ ugyanazon test feletti vektorterek,
+    és $A\in L\left( V,W \right)$ egy lineáris operáció.
+    Ekkor a
+    \(
+        V/\ker A
+    \)
+    faktortér izomorf az $\im A$ vektortérrel.
+\end{proposition}
+\begin{proof}
+    Jelölje $M=\ker A$ a $V$ vektortér alterét.
+    Definiálni szeretnénk egy $\Omega:\im A\to V/M$ izomorfizmust.
+    Ha $Ax_1=y=Ax_2$, akkor $x_1-x_2\in M$, azaz $x_1\sim x_2$, ergo $M_{x_1}=M_{x_2}$.
+    Emiatt $y\in\im A$ mellett
+    \[
+        y\mapsto M_x, \text{ ahol } Ax=y
+    \]
+    jól definiálja az $\Omega:\im A\to V/M$ függvényt.
+    
+    1. $\Omega$ lineáris operáció:
+    Legyen $Ax_1=y_1$ és $Ax_2=y_2$.
+    Ekkor 
+    $A\left( \alpha x_1+\beta x_2 \right)=\alpha y_1+\beta y_2$, így
+    \[
+    \Omega\left( \alpha y_1+\beta y_2 \right)
+    =
+    M_{\alpha x_1+\beta x_2}
+    =
+    \alpha\ast M_{x_1}+\beta\ast M_{x_2}
+    =
+    \alpha\ast \Omega\left( y_1 \right)+\beta\ast\Omega\left( y_2 \right).
+    \]
+
+    2. $\Omega$ szürjekció:
+    Ha $H\in V/M$ egy ekvivalencia osztály, 
+    akkor tetszőleges $x\in H$ mellett legyen $y=Ax$.
+    Ekkor
+    \[
+        \Omega\left( y \right)=M_x=H,
+    \]
+    amivel azt igazoltuk, 
+    hogy minden ekvivalencia osztály egy $\im A$ beli vektor $\Omega$ képe.
 
 
-
+    3. $\Omega$ injekció:
+    Legyen $y\in\ker\Omega$, azaz $y\in W$, amelyre $\Omega\left( y \right)$ a $V/M$ faktortér neutrális eleme,
+    azaz 
+    $\Omega\left( y \right)=M$.
+    Ez $\Omega$ definíciója szerint csak úgy lehet, ha $M=M_x$, ahol $Ax=y$.
+    No de $M=M_0$, így $y=A0=0$.
+    Megmutattuk tehát, hogy $\ker \Omega=\left\{ 0 \right\}$,
+    ami éppen $\Omega$ injektivitása.
+\end{proof}
 \chapter{Rang-tétel}
 
 \begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
@@ -5601,4 +5846,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 01 Dec 2019 09:09:24 AM CET
+Last Modified : Mon 02 Dec 2019 09:44:13 AM CET
