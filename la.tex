@@ -3722,6 +3722,11 @@ A rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
     hogy bármely két maximális lineárisan független sorrendszer azonos elemszámú, 
     és számuk megegyezik a mátrix feszítőrangjával.
 \end{proof}
+Ha $A\in\mathbf{F}^{n\times m}$ mátrix, amelynek feszítőrangja $r$, 
+akkor $A$ bármelyik maximális lineárisan független oszloprendszerének $r$ az elemszáma.
+Ezeket az oszlopokat egy $A_1\in\mathbf{F}^{n\times r}$ mátrixba rendezve az $A$ oszlopvektortének
+egy generátorrendszerét kapjuk, 
+így létezik $A_2\in\mathbf{F}^{r\times m}$ mátrix, amelyre $A_1A_2=A$ teljesül.
 \section{Dimenzió}
 A Steinitz-lemma következményeképpen:
 \begin{corollary}
@@ -4080,7 +4085,7 @@ ha a bázisban egy elemet megváltoztatunk.
 \end{lemma}
 
 \chapter{Alterek Minkowski-összege és direkt összege}
-\scwords Az alterek struktúrát vizsgáljuk a fejezetben.
+\scwords Az alterek struktúráját vizsgáljuk a fejezetben.
 \section{Minkowski-összeg}
 \begin{definition}\index{Minowski-összeg}
     Legyen $V$ egy $\mathbf{F}$ test feletti vektortér és $H_1, H_2\subseteq V$ részhalmazok.
@@ -4573,8 +4578,8 @@ A faktortér az utolsó vektortér konstrukciós eljárásunk.
     \begin{proposition}[faktortér]
     Legyen $V$ egy az $\mathbb{F}$ test feletti vektortér,
     és $M\subseteq V$ egy rögzített altér.
-    Legyen $\ast$ a $V$ vektortér elemein értelmzett reláció,
-    amelyre $x\ast y$, ha $x-y\in M$ ekvivalencia reláció.
+    Legyen $\sim$ a $V$ vektortér elemein értelmzett reláció,
+    amelyre $x\sim y$, ha $x-y\in M$ ekvivalencia reláció.
     Láttuk, hogy ez ekvivalencia reláció.
     Jelölje
     \[
@@ -5846,4 +5851,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 02 Dec 2019 09:44:13 AM CET
+Last Modified : Sun 15 Dec 2019 09:19:24 AM CET
