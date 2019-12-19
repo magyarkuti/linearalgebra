@@ -3724,9 +3724,42 @@ A rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
 \end{proof}
 Ha $A\in\mathbf{F}^{n\times m}$ mátrix, amelynek feszítőrangja $r$, 
 akkor $A$ bármelyik maximális lineárisan független oszloprendszerének $r$ az elemszáma.
-Ezeket az oszlopokat egy $A_1\in\mathbf{F}^{n\times r}$ mátrixba rendezve az $A$ oszlopvektortének
+Ezeket az oszlopokat egy $B\in\mathbf{F}^{n\times r}$ mátrixba rendezve az $A$ oszlopvektortének
 egy generátorrendszerét kapjuk, 
-így létezik $A_2\in\mathbf{F}^{r\times m}$ mátrix, amelyre $A_1A_2=A$ teljesül.
+így létezik $B\in\mathbf{F}^{r\times m}$ mátrix, amelyre $AB=A$ teljesül.
+Mivel két mátrix szorzata diádok összegeként is felírható, 
+úgy azt kaptuk, hogy egy $r$ feszítőrangú mátrix felírható mint $r$ darab diád,
+tehát 1 rangú mátrix, összegeként. 
+Itt a diádokat alkotó oszlop rendszer és sorrendszer is lineárisan független.
+A következő gondolat szerint több is igaz.
+\begin{proposition}
+    Tegyük fel, hogy az $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek feszítőrangja $r$ előáll
+    \[
+    A=\sum_{j=1}^rb_j\cdot c_j
+    \]
+    $r$ darab diád összegének alakjában, 
+    ahol $b_j\in\mathbb{F}^n$ oszlop vektorok és $c_j\mathbb{F}^m$ sor vektorok.
+    Ekkor a $\left\{ b_j:j=1,\dots,r \right\}$ oszloprendszer is lineárisan független rendszer,
+    és a $\left\{ c_j:j=1,\dots,r \right\}$ sorrendszer is lineárisan független rendszer.
+\end{proposition}
+\begin{proof}
+    Legyen a $B$ mátrix $b_j$ és a $C$ mátrix $j$-edik sora $c_j$.
+    Világos, hogy $B\in\mathbb{F}^{n\times r}, C\in\mathbb{F}^{r\times m}$ és 
+    $A=BC$.
+    Ha $B$ oszlopai nem alkotnának lineárisan független rendszert, akkor 
+    lenne $B=B_1B_2$ előállítás, 
+    ahol $B_1\in\mathbb{F}^{n\times s}, B_2\in\mathbb{F}^{s\times r}$,
+    ahol $s<r$.
+    Ekkor persze
+    \[
+        A=BC=\left( B_1B_2 \right)C=B_1\left( B_2C \right)
+    \]
+    Itt $B_1$ mátrixnak $s$ oszlopa van, a
+    $B_2C$ mátrixnak $s$ sora van,
+    ami ellentomond annak, hogy $A$ feszítőrangja $r$.
+    A sorrendszer lineárisan függetlensége is hasonlóan adódik.
+\end{proof}
+
 \section{Dimenzió}
 A Steinitz-lemma következményeképpen:
 \begin{corollary}
@@ -5851,4 +5884,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 15 Dec 2019 09:19:24 AM CET
+Last Modified : Sun 15 Dec 2019 04:31:54 PM CET
