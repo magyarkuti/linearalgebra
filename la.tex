@@ -61,7 +61,6 @@
 %      \fi
         ##1}{\thepart.~\partname}}%
     }
-
 \makeatletter
 \newcommand\arraybslash{\let\\\@arraycr}
 \patchcmd{\@makechapterhead}
@@ -3913,7 +3912,7 @@ együttes alkalmazásaként kapjuk a következő lemmát.
     ezért a Steinitz-lemma szerint $\dim M\leq\dim V$.
 \end{proof}
 \chapter{Koordinátázás}
-\scwords A koordinátatér fogalmát vezetjük be. 
+\scwords A koordináta-tér fogalmát vezetjük be. 
 Látni fogjuk, hogy véges dimenziós vektortérre ,,lényegében'' az egyetlen példa,
 az $\mathbb{F}^n$ tér.
 \section{Lineáris operátor fogalma}
@@ -4011,7 +4010,7 @@ akkor $W$ is $V$-vel; (3) ha $V_1$ és $V_2$ izomorfak, továbbá ha $V_2$ és $
 $V_1$ és $V_3$ is izomorfak.
 \begin{proposition}
     Minden az $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim V}$
-    koordináta térrel.
+    koordináta-térrel.
 \end{proposition}
 \begin{proof}
     Rögzítsünk egy $\left\{ e_1,\dots,e_n \right\}$ bázist $V$-ben.
@@ -4038,11 +4037,11 @@ $V_1$ és $V_3$ is izomorfak.
         \in
         \mathbf{F}^n
     \end{math}
-    vektort az $x$ vektor $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt koordináta vektorának nevezzük.
+    vektort az $x$ vektor $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt koordináta-vektorának nevezzük.
 \end{definition}
 Pont azt mutattuk meg, hogy egy rögzített bázis mellett az a leképezés,
 amely egy vektorhoz hozzárendeli a bázisban felírt koordinátáit, egy izomorfizmus
-a vektortér és a koordináta tere közt.
+a vektortér és a koordináta-tere közt.
 Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 \begin{proposition}
     Legyenek $V$ és $W$ ugyanazon test feletti végesen generált vektorterek.
@@ -4056,9 +4055,9 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
     Ha $\dim V=\dim W=n$, akkor mindkét vektortér izomorf $\mathbb{F}^n$ vektortérrel,
     ergo egymással is izomorfak.
 \end{proof}
-Fontos látni, hogy a vektor koordináta vektora függ a bázis megválasztásától.
+Fontos látni, hogy a vektor koordináta-vektora függ a bázis megválasztásától.
 Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
-már akkor is változik a vektort koordináta vektora.
+már akkor is változik a vektort koordináta-vektora.
 \Aref{le:gencsere}, \aref{le:fgtlncsere}  és \aref{le:baziscsere} lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái, 
 ha a bázisban egy elemet megváltoztatunk.
@@ -4896,7 +4895,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
     Megmutattuk tehát, hogy $\ker \Omega=\left\{ 0 \right\}$,
     ami éppen $\Omega$ injektivitása.
 \end{proof}
-\chapter{Rang-tétel}
+\chapter*{Rang-tétel mégegszer}
 
 \begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
     Egy véges vektorrendszer \emph{rangján} a vektorrendszer generálta altér dimenzióját értjük.
@@ -5069,7 +5068,7 @@ Következményképpen érdemes meggondolni a mátrix és inverzének felcserélh
     Ezzel $2.\Rightarrow 1.$ implikációt is beláttuk.
     Az 1. és 3. feltevések ekvivalenciája az előző állítás miatt teljesül.
 \end{proof}
-\chapter{Elemi fogalmak}
+\chapter*{Elemi fogalmak mégegyszer}
 Tegyük fel, hogy, hogy ismerjük az alábbi fogalmakat:
 \begin{enumerate}
     \item Vektorrendszer lineáris függetlensége;
@@ -5226,12 +5225,288 @@ ami a lenti 3. állítás.
 
 %%\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
 \part{Tavasz}
+\chapter{Mátrixok és lineáris operációk}
+\scwords Mátrixok és lineáris operációk kapcsolatát vizsgáljuk.
+Azt már a mátrixok bevezetésekor is láttuk, hogy egy $n\times m$ méretű mátrix egyben tekinthető valamely
+$\mathbf{F}^m\to\mathbf{F}^n$ lineáris operációnak olyan módon,
+hogy az egy $x\in\mathbf{F}^m$ oszlopvektorhoz a mátrix szorzás definíciójának megfelelően
+az $A\cdot x\in\mathbf{F}^n$ oszlopvektort rendeli.
+Ebben a fejezetben a mátrixok ezen interpretációját erősítjük tovább.
+
+\section{Rang-defektus--tétel következménye}
+Láttuk, hogy tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
+\[
+    \nu\left( A \right)+\rho\left( A \right)=\dim V,
+\]
+ahol $\nu\left( A \right)=\dim\left( \ker A \right)$ az $A$ defektusa,
+$\rho\left( A \right)=\dim\left(\im A \right)$ az $A$ rangja.
+Ebből adódóan, ha $A\in L\left( V \right)$ egy lineáris transzformáció,
+akkor $\nu\left( A \right)=0$ és $\rho\left( A \right)=\dim V$ egymással ekvivalens feltevések.
+
+Itt az első feltétel pontosan $A$ injektivitását, 
+míg a második feltétel pontosan $A$ szürjektivitását jelenti.
+Azt látjuk tehát, 
+hogy lineáris transzformációk esetén a transzformáció injektivitása és szürjektivitása egyszerre teljesül, 
+vagy egyszerre nem teljesül:
+\begin{proposition}
+    Legyen az $V$ egy véges dimenziós vektortér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Ekkor az alábbi feltételek egymással ekvivalensek.
+    \begin{enumerate}
+        \item $A$ injektív;
+        \item $A$ szürjektív;
+        \item $A$ vektortér--izomorfizmus.\qedhere
+    \end{enumerate}
+\end{proposition}
+
+\section{Mátrixok tere mint koordináta-tér}
+Világos, hogy adott $\mathbf{F}$ test feletti $n\times m$ méretű mátrixok az $\mathbf{F}$ feletti
+vektorteret alkotnak.
+Az is világos, hogy ha $A_{i,j}$ jelöli azt az $n\times m$ méretű mátrixot,
+amelynek minden helyén $0$ van az $i$-edik sor $j$-edik helyének kivételével, ahol $1$ szerepel,
+akkor az 
+\[
+    \left\{ A_{i,j}:i=1,\dots,n;j=1,\dots,m\right\}
+\]
+mátrixok rendszere bázisa az $\mathbf{F}^{n\times m}$ térben.
+Így persze $\dim \mathbf{F}^{n\times m} = n\cdot m$.
+
+Most áttérünk az $L\left( V,W \right)$ lineáris operációk vektorterének vizsgálatára.
+Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetszőlegesen és egyértelműen előírható.
+\begin{proposition}\label{pr:bazisonegyertelmu}
+    Legyenek $V$ és $W$ ugyanazon test feletti vektorterek.
+    Legyen $V$-ben a $\left\{ v_1,\dots,v_m \right\}$ egy bázis, 
+    és rögzítsünk $W$-ben egy tetszőleges $m$ elemű $\left\{ w_1,\dots,w_m \right\}$ vektorrendszert.
+
+    Ekkor létezik egyetlen egy $A\in L\left( V,W \right)$ lineáris operáció,
+    amelyre $Av_j=w_j$ minden $j=1,\dots,m$ esetén.
+\end{proposition}
+\begin{proof}
+    Definiáljuk az $A:V\to W$ függvényt a következőképpen.
+    Minden $v\in V$ egyértelműen áll elő mint $v=\sum_{j=1}^m\alpha_jv_j$ alakban.
+    Egy ilyen $v$ mellett legyen
+    \[
+        A\left( v \right)=\sum_{j=1}^m\alpha_jw_j.
+    \]
+    Világos, hogy $A:V\to W$ függvény jól definiált, hiszen a rögzített bázisban minden elem előáll és egyetlen egyféleképpen
+    áll elő mint a bázis elemek egy lineáris kombinációja.
+    Megmutatjuk, hogy az így definiált $A$ függvény egy lineáris operáció.
+    Legyen $x_1=\sum_{j=1}\alpha_jv_j$ és
+    $x_2=\sum_{j=1}\beta_jv_j$.
+    Tetszőleges $\alpha,\beta\in\mathbf{F}$ mellett
+    \[
+        \alpha x_1+\beta x_2=
+        \sum_{j=1}^m\left( \alpha\alpha_j+\beta\beta_j \right)v_j,
+    \]
+    tehát $A$ definíciója szerint
+    \[
+        A\left( \alpha x_1+\beta x_2 \right)=
+        \sum_{j=1}^m\left( \alpha\alpha_j+\beta\beta_j \right)w_j
+        =
+        \alpha\sum_{j=1}^m\alpha_jw_j+
+        \beta\sum_{j=1}^m\beta_jw_j=
+        \alpha A\left( x_1 \right)+\beta A\left( x_2 \right).
+    \]
+    Ez éppen $A$ függvény linearitását jelenti.
+    Az is világos, hogy $v_j=0v_1+\ldots+1v_j+\ldots +0v_m$, tehát az $A$ függvény definíciója értelmében
+    \[
+        Av_j=w_j
+    \] valóban fennáll minden $j=1,\dots,m$ mellett.
+
+    Most tegyük fel, hogy $B\in L\left( V,W \right)$ szintén teljesíti a $Bv_j=w_j$ feltételeket.
+    Ekkor tetszőleges $v\in V$ mellett, ha $v=\sum_{j=1}^m\alpha_jv_j$ alakú,
+    akkor az $A$ definíciója és $B$ linearitása miatt
+    \[
+        Av=\sum_{j=1}^m\alpha_jw_j=
+        \sum_{j=1}^m\alpha_jBv_j=
+        B\left( \sum_{j=1}^m\alpha_jv_j \right)=Bv,
+    \]
+    ami éppen azt jelenti, hogy $A=B$.
+\end{proof}
+\begin{proposition}
+    Legyenek az $\left\{ e_1,\dots,e_m \right\}\subseteq V$ és az
+    $\left\{ f_1,\dots,f_n \right\}\subseteq W$ bázisok rögzítve.
+    Definiáljuk valamely rögzített $i\in\left\{ 1,\dots,n \right\}$ és valamely rögzített
+    $j\in \left\{ 1,\dots,m \right\}$ mellett az $A_{i,j}\in L\left( V,W \right)$ lineáris operációt az
+    \begin{equation}
+        A_{i,j}\left( e_k \right)=\delta_{j,k}f_i
+        \label{eq:aij}
+    \end{equation}
+    azonosságokkal, ahol $k=1,\dots,m$.
+    Ekkor az $\left\{ A_{i,j}: i=1,\dots,n;j=1,\dots,m \right\}$
+    lineáris operációk rendszere egy bázisa az $L\left( V,W \right)$ vektortérnek,
+    ezért 
+    \[
+        \dim L\left( V,W \right)=n\cdot m.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Azt kell először is látni, hogy (\ref{eq:aij}) azonosságok összesen az előző \ref{pr:bazisonegyertelmu}.~állítás
+    alkalmazását írják elő rögzített $i,j$ mellett az 
+    \begin{math}
+        \left\{ e_1,\dots,e_j,\dots,e_m \right\}
+    \end{math}
+    és az
+    \begin{math}
+        \left\{ 0,\dots,0,f_i,0,\dots,0 \right\}
+    \end{math}
+    két pontosan $m$ elemű vektorrendszerre.
+    Ezt úgy is fogalmazhatjuk, hogy az $A_{i,j}$ az a lineáris operáció,
+    amely a bázis minden nem $j$-edik elemét zérusra viszi, és a $j$-edik bázis elemet
+    pedig $f_i$-re.
+    \Aref{pr:bazisonegyertelmu} állítás szerint vannak ilyen $A_{i,j}$ lineáris transzformációk,
+    és minden $i,j$ pár mellett csak egyetlen egy van.
+
+    Most megmutatjuk, hogy az $\left\{ A_{i,j}:i=1,\dots,n;j=1,\dots m \right\}$ lineárisan független
+    rendszer.
+    Legyenek az $\alpha_{i,j}\in\mathbf{F}$ számok olyanok,
+    amelyekre 
+    \begin{math}
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}=0.
+    \end{math}
+    Ekkor tetszőleges $k\in\left\{ 1,\dots,m \right\}$ esetén
+    \[
+        0=
+        \left( \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j} \right)e_k
+        =
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}e_k 
+        =
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}\delta_{j,k}f_i
+        =
+        \sum_{i=1}^n\alpha_{i,k}f_i.
+    \]
+    No de az $\left\{f_1,\dots,f_n  \right\}$ egy lineárisan független rendszer, 
+    ergo csak a  triviális lineáris kombinációja zérus, 
+    ergo $\alpha_{i,k}=0$ minden $i=1,\dots,n$ mellett.
+    Persze ez minden $k$ mellett megismételhető, tehát azt kaptuk, hogy valamennyi $\alpha_{i,j}$ együttható
+    zérus.
+
+    Most azt mutatjuk meg, hogy az $\left\{ A_{i,j}:i=1,\dots,n;j=1,\dots m \right\}$ egy
+    generátorrendszere az $L\left( V,W \right)$ vektortérnek.
+    Legyen $A\in L\left( V,W \right)$ egy rögzített lineáris operáció.
+    Definiáljuk az $\alpha_{i,j}$ számokat, 
+    mint az $Ae_{j}\in W$ vektor $\left\{ y_1,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának 
+    $j$-edik elemét. 
+    Magyarul
+    \[
+        Ae_j=
+        \sum_{i=1}^n\alpha_{i,j}f_i.
+    \]
+    Ekkor minden $k\in\left\{ 1,\dots,m \right\}$ mellett
+    \[
+        \left( \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j} \right)e_k
+        =
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}e_k 
+        =
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}\delta_{j,k}f_i
+        =
+        \sum_{i=1}^n\alpha_{i,k}f_i
+        =Ae_k.
+    \]
+    Ez azt jelenti, hogy az $A$ és az 
+    \begin{math}
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}
+    \end{math}
+    lineáris operátorok az $\left\{ e_1,\dots,e_m \right\}$ bázis minden elemén megegyeznek.
+    Láttuk, egy bázison felvett értékek már egyértelműen meghatározzák a lineáris operációt,
+    ezért e két lineáris operáció is azonos.
+    Találtunk tehát $\alpha_{i,j}$ számokat, amelyekre
+    \begin{math}
+        A=
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j},
+    \end{math}
+    ami azt jelenti, hogy $A$ előáll mint az $A_{i,j}$ függvények valamely lineáris kombinációja.
+\end{proof}
+Érdemes későbbre is eltennünk magunkban, 
+hogy hogyan találtunk az adott $A$ operátorhoz azon $\alpha_{i,j}$ számokat, 
+amelyekre az
+\[
+        A=
+        \sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}
+        =
+        \sum_{j=1}^m\sum_{i=1}^n\alpha_{i,j}A_{i,j}
+\]
+egyenlőség teljesül: 
+$\alpha_{i,j}$ a $j$-edik bázis elem $A$ képének $i$-edik koordinátája.
+Ugyanez a mondat a koordináta-vektor fogalmával: 
+Az $Ae_j\in W$ vektornak az $\left\{ y_,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának az elemei 
+adják az $\alpha_{1,j},\alpha_{2,j},\dots,\alpha_{n,j}$ számokat, formálisabban:
+\[
+    \left[ Ae_j \right]_{\left\{ y_1,\dots,y_n \right\}}
+    =
+    \begin{pmatrix}
+        \alpha_{1,j}\\ \alpha_{2,j}\\ \vdots \\ \alpha_{n,j}
+    \end{pmatrix}.
+\]
+
+A következő gondolat előtt arra kell emlékeznünk, 
+hogy minden véges dimenziós vektortér izomorf a koordináta-terével.
+Láttuk, hogy $\dim L\left( V,W \right)=\dim V\cdot\dim W$.
+De mi lesz $L\left( V,W \right)$ koordináta-tere?
+A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
+\begin{definition}[lineáris operátor mátrixa]
+    (\Aref{eq:aij}) azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
+    \[
+    \{ 
+        \underbrace{A_{1,1},A_{2,1},\dots,A_{n,1}}_{j=1},
+        \underbrace{A_{1,2},A_{2,2},\dots,A_{n,2}}_{j=2},
+        \underbrace{A_{1,3},A_{2,3},\dots,A_{n,3}}_{j=3},
+        \underbrace{\dots,\dots,\dots,\dots,\dots}_{j=4,\dots,m-1},
+        \underbrace{A_{1,m},A_{2,3},\dots,A_{n,m}}_{j=m}
+    \}
+    \]
+    Láttuk, hogy a fent konstruált $\alpha_{i,j}$ számokkal 
+    \[
+        A=
+        \sum_{j=1}^m\sum_{i=1}^n\alpha_{i,j}A_{i,j}.
+    \]
+    Ez azt jelenti, hogy az $A\in L\left( V,W \right)$ függvénynek a fenti bázisban felírt koordináta-vektora
+    az $\alpha_{i,j}$ elemekből a fenti sorrendben képzett oszlopvektor, azaz
+    \[
+    \left[ A \right]=
+    \begin{pmatrix}
+        \alpha_{1,1}\\ \alpha_{2,1}\\ \vdots \\ \alpha_{n,1}\\
+        \alpha_{1,2}\\ \alpha_{2,2}\\ \vdots \\ \alpha_{n,2}\\
+        \alpha_{1,3}\\ \alpha_{2,3}\\ \vdots \\ \alpha_{n,3}\\
+        \vdots \\ \vdots\\
+        \alpha_{1,m}\\ \alpha_{2,m}\\ \vdots \\ \alpha_{n,m}
+    \end{pmatrix}\tag{\dag}
+    \]
+    Mint minden vektortér így az $L\left( V,W \right)$ is izomorf a koordináta-terével, ergo $L\left( V,W \right)$ izomorf 
+    az $\mathbf{F}^{n\cdot m}$ vektortérrel.
+
+    Érdemes a koordinátatér elemeit, azaz az $n\cdot m$ elemből álló oszlopvektorokat $n$ koordinátánként megtörni,
+    és evvel egy $n\times m$-es mátrixba rendezni.
+    Ezt a jelölést alkalmazva az $A$ lineáris operációnak a fenti bázisban felírt koordináta vektora az az 
+    $n\times m$-es mátrix,
+    amelyre
+    \[
+    [A]=
+    \begin{pmatrix}
+        \alpha_{1,1}&\alpha_{1,2}&\alpha_{1,3}&\dots&\alpha_{1,m}\\
+        \alpha_{2,1}&\alpha_{2,2}&\alpha_{2,3}&\dots&\alpha_{2,m}\\
+        \alpha_{3,1}&\alpha_{3,2}&\alpha_{3,3}&\dots&\alpha_{3,m}\\
+        \vdots      &\vdots      &\vdots      &\ddots&\vdots\\
+        \alpha_{n,1}&\alpha_{n,2}&\alpha_{n,3}&\dots&\alpha_{n,m}
+    \end{pmatrix}.
+    \]
+    Ezt a mátrixot nevezzük az 
+    $A\in L\left( V,W \right)$ \emph{lineáris operáció mátrixának}\index{lineáris operáció mátrixa}
+    az előre rögzített 
+    $\left\{e_1,\dots,e_m  \right\}\subseteq V$ és $\left\{ f_1,\dots,f_m \right\}$ bázisok mellett.
+\end{definition}
+Meggondoltuk tehát, hogy a kapcsolat lineáris operáció és mátrixa között azonos avval a kapcsolattal,
+ami általában egy vektor és koordinátái közt van.
+
+
+
+
+
+
+
 \appendix
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
 \chapter{A komplex számokról}
-
-
 Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján
 \section{Lineáris algebrai megközelítés}
 Ha $\left\{ e_1,\dots,e_n \right\}$ bázisa egy $\mathbb{C}$ feletti $V$ vektortérnek
@@ -5884,4 +6159,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 15 Dec 2019 04:31:54 PM CET
+Last Modified : Tue 04 Feb 2020 03:50:59 PM CET
