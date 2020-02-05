@@ -160,6 +160,8 @@
 %\DeclareMathOperator{\arg}{arg}
 
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
+\newcommand{\uj}{\text{új}}
+\newcommand{\rgi}{\text{régi}}
 %\citeindextrue
 \makeindex
 \synctex=1
@@ -5773,7 +5775,114 @@ felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
 Az $L\left( V \right)$ és a $F^{\dim V\times \dim V}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
 amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
 
+\chapter{Általános bázis-transzformáció}
+\scwords Egy vektor koordinátái függnek a bázis megválasztásától.
+Az elemi bázistranszformáció arra szolgál hogy felírjuk az új bázisban a vektor koordinátáit,
+amikor az új bázis és a régi bázis csak egyetlen vektorban különbözik.
+A fejezetben általánosabban oldjuk meg a problémát, mikor 
+az új bázis és a régi bázis elemei tetszőlegesen különbözhetnek.
 
+Vegyük fel a $V$ vektortér egy-egy bázisát.
+Nevezzük az $\left\{ e_1,\dots,e_n \right\}$ bázist régi bázisnak,
+és nevezzük az $\left\{ f_1,\dots,f_n \right\}$ bázis elemeit új bázisnak.
+A kérdések a következők:
+\begin{enumerate}
+    \item Ha ismerjük egy $x\in V$ vektor régi bázisra vonatkozó koordinátáit, 
+        akkor hogyan számítható ugyanennek a vektornak az új bázisban felírt koordináta-vektora?
+    \item Ha ismerjük egy $A\in L\left( V \right)$ lineáris transzformációnak a régi bázisban felírt mátrixát,
+        akkor hogyan számítható $A$-nak az új bázisban felírt mátrixa?
+\end{enumerate}
+\begin{definition}
+    Legyenek az 
+    $\left\{ e_1,\dots,e_n \right\}$  és
+    $\left\{ f_1,\dots,f_n \right\}$ bázisok rögzítve.
+    Tekintsük azt a $B$ lineáris transzformációt, amelyre $Be_j=f_j$ teljesül minden $j=1,\dots,n$ mellett.
+    Ezt a lineáris transzformációt nevezzük az
+    $\left\{ e_1,\dots,e_n \right\}$ bázisról az 
+    $\left\{ f_1,\dots,f_n \right\}$ bázisra való \emph{áttérés transzformációjának}\index{áttérés transzformáció}.
+\end{definition}
+Világos, hogy ha $B$ az áttérés transzformáció, akkor ennek 
+a régi bázisban felírt $[B]$ mátrixa egy olyan $n\times n$ méretű mátrix,
+amelynek $j$-edik oszlopa a $Be_j=f_j$ vektornak a régi bázisban felírt koordinátája.
+
+Az egész fejezetben nevezzük az $\left\{ e_1,\dots,e_n \right\}$ bázist régi bázisnak,
+és az $\left\{ f_1,\dots,f_n \right\}$ bázis elemeit új bázisnak.
+Legyen $B$ az áttérés lineáris transzformáció, és $[B]$ ennek a régi bázisban felírt mátrixa.
+
+
+\section{Vektor koordinátái az új bázisban}
+\begin{proposition}
+    Legyen $x\in V$ tetszőleges veketor.
+    Ekkor 
+    \[
+        \left[ x \right]_\uj
+        =
+        \left[ B \right]^{-1}
+        \left[ x \right]_\rgi.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Legyen 
+    $
+    \left[ x \right]_\uj
+    =
+    \begin{pmatrix}
+        \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n
+    \end{pmatrix}.
+    $
+    Ez azt jelenti, hogy $x=\sum_{j=1}^n\alpha_jf_j$.
+    Így felírva az $x$ vektornak a régi bázisra vonatkozó koordináta-vektorát
+    \[
+        \left[ x \right]_\rgi
+        =\left[ \sum_{j=1}^n\alpha_jf_j \right]_\rgi
+        =\sum_{j=1}^n\alpha_j\left[ f_j \right]_\rgi
+        =\sum_{j=1}^n\alpha_j\left[ B \right]_\rgi^j
+        =\left[ B \right]_\rgi\cdot \left[ x \right]_\uj.
+    \]
+    A kívánt azonosságot kapjuk, 
+    ha balról szorozzuk mindkét oldalt $\left[ B \right]^{-1}_\rgi$ inverz mátrixszal.
+\end{proof}
+
+\section{Lineáris transzformáció mátrixa az új bázisban}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Ekkor 
+    \[
+        \left[ A \right]_\uj
+        =
+        \left[ B \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Azt mutatjuk meg, hogy a bal oldali és a jobb oldali mátrix megfelelő oszlopai megegyeznek.
+    A $j$-edik oszlopra:
+    \begin{multline*}
+        \left[ A \right]_\uj^j
+        =\\
+        \left[ Af_j \right]_\uj
+        =
+        \left[ B \right]^{-1}_\rgi\cdot
+        \left[ Af_j \right]_\rgi
+        =\left[ B^{-1}(A(Be_j) \right]_\rgi
+        =\left[ \left( B^{-1}AB \right)e_j \right]_\rgi
+        =\left[ B^{-1}AB \right]_\rgi^j
+        =\\
+        \left( \left[ B \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
+        \qedhere
+    \end{multline*}
+\end{proof}
+A fenti állítás minden $A\in L\left( V \right)$ lineáris transzformáció mellett igaz.
+Speciálisan, ha alkalmazzuk az $A=B$ esetre, akkor látjuk, 
+hogy az áttérés mátrixa azonos, ha az új bázisban, vagy a régi bázisban írjuk fel.
+\begin{proposition}
+    Legyen $B$ az áttérés lineáris transzformáció.
+    Ekkor
+    \[
+        \left[ B \right]_\rgi=\left[ B \right]_\uj
+        \quad\text{és persze}\quad
+        \left[ B^{-1} \right]_\rgi=\left[ B^{-1} \right]_\uj.\qedhere
+    \]
+\end{proposition}
 
 
 \appendix
@@ -6432,4 +6541,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 05 Feb 2020 02:56:53 PM CET
+Last Modified : Wed 05 Feb 2020 05:08:06 PM CET
