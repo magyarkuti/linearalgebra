@@ -5250,13 +5250,52 @@ hogy lineáris transzformációk esetén a transzformáció injektivitása és s
 vagy egyszerre nem teljesül:
 \begin{proposition}
     Legyen az $V$ egy véges dimenziós vektortér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
-    Ekkor az alábbi feltételek egymással ekvivalensek.
     \begin{enumerate}
-        \item $A$ injektív;
-        \item $A$ szürjektív;
-        \item $A$ vektortér--izomorfizmus.\qedhere
+        \item 
+            Ekkor az alábbi feltételek egymással ekvivalensek.
+        \begin{enumerate}
+            \item $A$ injektív;
+            \item $A$ szürjektív;
+            \item $A$ vektortér--izomorfizmus.
+            \item Létezik $B\in L\left( V \right)$ lineáris transzformáció, amelyre $A\circ B=I$.
+        \end{enumerate}
+        \item
+            Ha a fenti d) fennáll, akkor $B\circ A=I$ is teljesül.\qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Az első három pont ekvivalens voltát már meggondoltuk.
+
+    Ha $A\circ B=I$, akkor $A$ szürjektív, hiszen az $y\in V$ vektor elő áll,
+    mit a $By$ vektor $A$ képe.
+    
+    Megfordítva, ha $A$ szürjektív, akkor a) szerint injektív is, van tehát $V\to V$ inverze.
+    De lineáris függvény inverze is lineáris, 
+    így a $B=A^{-1}$ jelölést bevezetve találtunk $B\in L\left( V \right)$
+    transzformációt, amelyre $B\circ A=I$.
+
+    Most tegyük fel, hogy valamely $B\in L\left( V \right)$-re $A\circ B=I$.
+    Ekkor a) szerint $A$ injektív is, ergo $\ker A=\left\{ 0 \right\}$.
+    No de minden $x\in V$ mellett
+    \[
+        A\left( (B\circ A)x-x \right)
+        =
+        A\left( B\left( Ax \right) \right)-Ax
+        =
+        \left( A\circ B \right)\left( Ax \right)-Ax
+        =
+        I\left( Ax \right)-Ax
+        =
+        Ax-Ax=0,
+    \]
+    ezért $(B\circ A)x-x\in\ker A=\left\{ 0 \right\}$. 
+    $(B\circ A)x=x$ minden $x\in V$ mellett, ami éppen azt jelenti, hogy $B\circ A=I$ is fennáll.
+\end{proof}
+Kiderült tehát, hogy ugyanúgy mint amikor mátrixok regularitásáról volt szó, 
+az $A\in L\left( V \right)$ lineáris transzformáció pontosan akkor injektív, 
+ha van olyan $B\in L\left( V \right)$ lineáris transzformáció, 
+amelyre $AB=I$ (vagy $BA=I$) teljesül.
+Ekkor $A^{-1}=B$.
 
 \section{Mátrixok tere mint koordináta-tér}
 Világos, hogy adott $\mathbf{F}$ test feletti $n\times m$ méretű mátrixok az $\mathbf{F}$ feletti
@@ -5548,9 +5587,70 @@ amely egy lineáris transzformációhoz hozzárendeli annak
 -- valamely előre megadott bázisokban felírt -- 
 mátrixát.
 Emiatt persze $A,B\in L\left( V,W \right)$ és $\alpha,\beta\in\mathbf{F}$ mellett
-\[
+\begin{equation}\label{eq:vt}
     \left[ \alpha A+\beta B \right]=\alpha\left[ A \right]+\beta\left[ B \right].
-\]
+\end{equation}
+Izomorf struktúrák közt nem érdemes különbséget tenni, viszont vigyáznunk kell arra,
+hogy olyan fogalmakat definiáljunk, amelyek invariánsak az izomorfiára.
+Például lineáris operáció rangja definíció szerint a képtere dimenziója, 
+mátrix rangja definíció szerint a feszítőrang, azaz a legkisebb 
+$r$ szám amelyre a mátrix felírható $n\times r$ és egy $r\times m$ méretű mátrix szorzataként.
+Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
+\begin{proposition}
+    Legyen $A\in L\left( V,W \right)$ lineáris operátor és $x\in V$ egy vektor.
+    Rögzítsük az $\left\{ e_1,\dots,e_m \right\}\subseteq V$ és az $\left\{ f_1,\dots,f_n \right\}\subseteq W$ bázisokat.
+    Ekkor 
+    \[
+        [Ax]_{\left\{ f_1,\dots,f_n \right\}}
+        =
+        [A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+        \cdot 
+        [x]_{\left\{ x_1,\dots,e_m \right\}}.
+    \]
+    Emiatt $\im A$ és $\im[A]$ egymással izomorf alterek, hasonlóan $\ker A$ és $\ker[A]$ egymással
+    izomorf vektorterek, így dimenziójuk is azonos.
+    Konkrétan $A$ lineáris operátornak és az $[A]$ mátrixának a rangja is defektusa is azonos.\index{rang}\index{defektus}
+\end{proposition}
+\begin{proof}
+    Legyen 
+    \begin{math}
+        [x]_{\left\{ e_1,\dots,e_m \right\}}
+        =
+        \begin{pmatrix}
+            \xi_1\\ \xi_2 \\ \vdots \\ \xi_m
+        \end{pmatrix}.
+    \end{math}
+    Ez éppen azt jelenti, 
+    hogy $x=\sum_{j=1}^m\xi_je_j$, így 
+    $Ax=\sum_{j=1}^m\xi_jAe_j$.
+    Véve ennek az $\left\{ f_1,\dots,f_n \right\}$ bázisban felírt koordináta-vektorát 
+    \begin{multline*}
+        [Ax]_{\left\{ f_1,\dots,f_n \right\}}
+        =
+        \left[ \sum_{j=1}^n\xi_jAe_j \right]_{\left\{ f_1,\dots,f_n \right\}}
+        =
+        \sum_{j=1}^n\xi_j[Ae_j]_{\left\{ f_1,\dots,f_n \right\}}
+        =
+        \sum_{j=1}^n\xi_j[A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}^j
+        =\\
+        [A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+        \cdot 
+        [x]_{\left\{ f_1,\dots,f_n \right\}}.
+    \end{multline*}
+
+    Ebből persze már könnyen adódik, ahogy $Ax=0$ ekvivalens $[A][x]=0$ feltétellel, emiatt 
+    $\ker A$ és $\ker [A]$ izomorfak, 
+    így $\nu(A)=\nu([A])$.
+
+    Hasonlóan $\im A$ és $\im [A]$ is izomorfak.
+    A rangtétel szerint $[A]$ mátrix rangja megegyezik az oszlopvektorai generálta altérben lévő maximális lineárisan
+    független rendszer elemszámával.
+    Mivel egy vektor pontosan akkor van $[A]$ képterében, ha előáll mint az oszlopai lineáris kombinációja,
+    ezért $[A]$ rangja azonos $[A]$ képterének dimenziójával, 
+    így $\rho(A)=\rho([A])$.
+\end{proof}
+
+\section{Lineáris operátorok szorzata}
 Emlékezzünk arra, hogy a lineáris operáció mátrixát úgy kaptuk, hogy a koordinátáit $n$ elemenként
 megtörve az oszlop vektort egy mátrixszá rendeztük át.
 Ennek az átrendezésnek az igazi értelme, hogy ilyen módon a mátrix szorzás művelet a lineáris operátorok kompozíciójával
@@ -5614,19 +5714,64 @@ kapcsolódik össze.
     tehát a lineáris burkában minden elem előállítása egyértelmű,
     ami éppen azt jelenti, hogy minden $i=1,\dots,n$ és minden $j=1,\dots,m$ mellett
     \[
-        \gamma_{i,j}=\sum_{k=1}^r\alpha_{i,k}\beta_{k,j}.
+        [C]_{i,j}=\gamma_{i,j}
+        =\sum_{k=1}^r\alpha_{i,k}\beta_{k,j}
+        =\left( \left[ A \right]\cdot\left[ B \right] \right)_{i,j}.\qedhere
     \]
-    Ezt kellett belátni. 
 \end{proof}
 Azért, hogy teljes legyen az analógia a lineáris operátorok kompozíciója és a mátrixok szorzása műveletek közt,
 a lineáris operátorok $A\circ B$ kompozícióját is $A\cdot B$ módon, vagy még egyszerűbben $AB$ módon jelöljük.
-A jelölést a szóhasználat is követi avval, hogy a lineáris operátorok kompozícióját időnként szorzatnak is mondjuk.
-Ilyen módon ha $A$ és $B$ két olyan lineáris operátor, amelynek kompozíciója -- azaz szorzata -- értelmes,
+A jelölést a szóhasználat is követi:
+\begin{definition}[lineáris transzformációk szorzata]
+    A lineáris operátorok kompozícióját \emph{szorzatnak}\index{lineáris transzformációk szorzata} is mondjuk.
+\end{definition}
+\noindent Ilyen módon ha $A$ és $B$ két olyan lineáris operátor, amelynek kompozíciója -- azaz szorzata -- értelmes,
 akkor a mátrixaik szorzata is értelmes, továbbá
-\[
+\begin{equation}\label{eq:gyuru}
     [AB]=[A][B].
-\]
+\end{equation}
+\begin{definition}[lineáris operátor hatványai]
+    A lineáris transzformációk a bevezetett szorzás művelettel egységelemes gyűrűt alkotnak,
+    ahol az egységelem az
+    $I:V\to V$ az identitás operáció.
 
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Ennek $0$-dik hatványát definiálja $A^0=I$,
+    Ha valamely $n$ nem negatív egész mellett $A^n$ már definiált,
+    akkor legyen $A^{n+1}=AA^n$.
+\end{definition}
+Világos, hogy ha $n,m$ nem negatív egészek, akkor $A^{n+m}=A^n\cdot A^m$.
+Az is nyilvánvaló, hogy az $I$ identitás operációnak akár melyik bázisban felírt mátrixa ugyanaz a mátrix,
+mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális elemek, amelyek értéke 1.)
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció, és legyen rögzítve a tér egy bázisa,
+    amelyben felírjuk $A$ transzformáció $[A]$ mátrixát.
+    Ekkor 
+    \(
+        \left[ A^n \right]=\left[ A \right]^n
+    \),
+    továbbá $A$ pontosan akkor izomorfizmus, ha $[A]$ reguláris\index{reguláris mátrix} és 
+    \begin{math}
+        \left[ A^{-1} \right]
+        =
+        \left[ A \right]^{-1}.
+    \end{math}
+\end{proposition}
+\begin{proof}
+    A (\ref{eq:gyuru}) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
+    $\left[ A^n \right]=\left[ A \right]^n$
+    azonosságot.
+
+    Világos, hogy $A$ pontosan akkor izomorfizmus, 
+    ha létezik $B\in L\left( V \right)$, amelyre $AB=I$.
+    No de ez ekvivalens avval, hogy $[A][B]=[I]$, ami pedig a szükséges és elegendő feltétele 
+    $[A]$ mátrix invertálhatóságának.
+    Ekkor $[A]^{-1}=[B]=\left[ A^{-1} \right]$.
+\end{proof}
+A (\ref{eq:vt}) és a (\ref{eq:gyuru}) szerint egy lineáris operátorhoz hozzárendeli valamely báziskban
+felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
+Az $L\left( V \right)$ és a $F^{\dim V\times \dim V}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
+amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
 
 
 
@@ -6287,4 +6432,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 05 Feb 2020 10:50:44 AM CET
+Last Modified : Wed 05 Feb 2020 02:56:53 PM CET
