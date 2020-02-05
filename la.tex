@@ -5497,7 +5497,135 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 Meggondoltuk tehát, hogy a kapcsolat lineáris operáció és mátrixa között azonos avval a kapcsolattal,
 ami általában egy vektor és koordinátái közt van.
 
+Nagyon fontos, hogy egy lineáris operáció mátrixát fel tudjuk írni, emiatt összefoglalom az eddigieket.
+\begin{proposition}
+    Tegyük fel, hogy $A\in L\left( V,W \right)$ egy lineáris operáció.
+    Rögzítsük a $V$ és a $W$ vektortér egy-egy bázisát.
+    Legyen tehát $\{e_1,\dots,e_m\}\subseteq V$ egy bázis és
+    $\left\{ f_1,\dots,f_n \right\}\subseteq W$ egy bázis.
+    Az $A$ operációnak a fenti rögzített bázisokban felírt mátrixa az az
+    $n\times m$ méretű 
+    $[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}$ 
+    mátrix,
+    \footnote{Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
+    $[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}$
+    jelölés helyett csak $[A]$-t írunk.
+    Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
+    }
+    amelynek $j$-edik oszlopa az $Ae_j$ vektor $\left\{ y_1,\dots,y_n \right\}$ bázisban felírt koordinátája.
+    Formálisabban:
+    \[
+        [A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}^j
+        =
+        \left[ Ae_j \right]_{\left\{ y_1,\dots,y_n \right\}}.
+        \qedhere
+    \]
+\end{proposition}
+Speciálisan, ha $V=W$, akkor $A:V\to V$ lineáris transzformációról beszélünk.
+Amikor egy lineáris transzformáció mátrixáról van szó, 
+akkor az mindig úgy értendő, hogy a $V$ vektortérnek mint az értelmezési tartománynak és a
+$V$ vektortérnek mint értékkészletnek is ugyanazt a bázisát választjuk.
+Ekkor tehát $A$ lineáris transzformáció 
+$[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ e_1,\dots,e_m \right\}}}$ 
+mátrixára:
+\footnote{
+    A nehézkes 
+    $[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ e_1,\dots,e_m \right\}}}$ 
+    helyett egyszerűbben
+    $[A]_{\left\{ e_1,\dots,e_m \right\}}$, vagy még inkább ha a szövegkörnyezetből nyilvánvaló, hogy mely bázisra gondolunk,
+    akkor csak a $[A]$ jelölést használjuk.
+}
+\[
+        [A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ e_1,\dots,e_m \right\}}}^j
+        =
+        \left[ Ae_j \right]_{\left\{ e_1,\dots,e_m \right\}}.
+\]
 
+Meggondoltuk tehát, hogy az $L\left( V,W \right)$ lineáris operátorok vektortere izomorf az
+$\mathbf{F}^{\dim W\times \dim V}$ mátrixok vektorterével. 
+Az izomorfizmus tehát az a leképezés, 
+amely egy lineáris transzformációhoz hozzárendeli annak 
+-- valamely előre megadott bázisokban felírt -- 
+mátrixát.
+Emiatt persze $A,B\in L\left( V,W \right)$ és $\alpha,\beta\in\mathbf{F}$ mellett
+\[
+    \left[ \alpha A+\beta B \right]=\alpha\left[ A \right]+\beta\left[ B \right].
+\]
+Emlékezzünk arra, hogy a lineáris operáció mátrixát úgy kaptuk, hogy a koordinátáit $n$ elemenként
+megtörve az oszlop vektort egy mátrixszá rendeztük át.
+Ennek az átrendezésnek az igazi értelme, hogy ilyen módon a mátrix szorzás művelet a lineáris operátorok kompozíciójával
+kapcsolódik össze.
+\begin{proposition}
+    Legyenek $V,Z,W$ ugyanazon test feletti véges dimenziós vektorterek,
+    $B \in L\left( V,Z \right)$ és $A \in L\left( Z,W \right)$.
+    Rögzítsük az 
+    \[
+        \left\{ e_1,\dots,e_m \right\}\subseteq V,\quad
+        \left\{ z_1,\dots,z_r \right\}\subseteq Z,\quad
+        \left\{ f_1,\dots,f_n \right\}\subseteq Z
+    \]
+    bázisokat.
+    Jelölje $C=A\circ B$ a kompozíció lineáris operátort.
+
+    Ekkor $C$ mátrixa az $A$ és $B$ mátrixának szorzata.
+    Formálisabban:
+    \[
+        \left[ C \right]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+        =
+        \left[ A \right]_{\substack{\left\{ z_1,\dots,z_r \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+        \cdot
+        \left[ B \right]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ z_1,\dots,z_r \right\}}}.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Először is ellenőrizzük, hogy értelmes-e az állításban felírt formula.
+    $\left[ A \right]$ mérete $m\times r$, $\left[ B \right]$ mérete $r\times n$.
+    Így az $[A]\cdot[B]$ szorzat értelmes és a szorzás eredménye egy $n\times m$ mátrix.
+    A $[C]$ szintén egy $n\times m$ méretű mátrix, 
+    így a bal és a jobb oldal összehasonlítása is értelmes.
+
+    Már csak azt kell meggondolni, 
+    hogy a bal oldali mátrix minden eleme azonos a jobb oldali szorzatmátrix megfelelő elemével.
+    Az $\alpha,\beta,\gamma$ szimbólumokkal jelöljük az $[A],[B], [C]$ mátrixok megfelelő elemeit.
+    Ez azt jelenti, hogy
+    \[
+        Be_j=\sum_{k=1}^r\beta_{k,j}z_k,\quad
+        Az_k=\sum_{i=1}^n\alpha_{i,k}f_i,\quad
+        Ce_j=\sum_{i=1}^n\gamma_{i,j}f_i.
+    \]
+    Így azt kapjuk, hogy minden $j=1,\dots,m$ mellett
+    \begin{multline*}
+        \sum_{i=1}^n\gamma_{i,j}f_i
+        =
+        Ce_j
+        =A\left( Bej \right)
+        =
+        \sum_{k=1}^r\beta_{k,j}Az_k
+        =
+        \sum_{k=1}^r\beta_{k,j}\left( \sum_{i=1}^n\alpha_{i,k}f_i \right)
+        =\\
+        \sum_{k=1}^r\sum_{i=1}^n\beta_{k,j}\alpha_{i,k}f_i
+        =
+        \sum_{i=1}^n\sum_{k=1}^r\alpha_{i,k}\beta_{k,j}f_i
+        =
+        \sum_{i=1}^n\left( \sum_{k=1}^r\alpha_{i,k}\beta_{k,j} \right)f_i.
+    \end{multline*}
+    No de az $\{f_1,\dots,f_n\}$ rendszer lineárisan független,
+    tehát a lineáris burkában minden elem előállítása egyértelmű,
+    ami éppen azt jelenti, hogy minden $i=1,\dots,n$ és minden $j=1,\dots,m$ mellett
+    \[
+        \gamma_{i,j}=\sum_{k=1}^r\alpha_{i,k}\beta_{k,j}.
+    \]
+    Ezt kellett belátni. 
+\end{proof}
+Azért, hogy teljes legyen az analógia a lineáris operátorok kompozíciója és a mátrixok szorzása műveletek közt,
+a lineáris operátorok $A\circ B$ kompozícióját is $A\cdot B$ módon, vagy még egyszerűbben $AB$ módon jelöljük.
+A jelölést a szóhasználat is követi avval, hogy a lineáris operátorok kompozícióját időnként szorzatnak is mondjuk.
+Ilyen módon ha $A$ és $B$ két olyan lineáris operátor, amelynek kompozíciója -- azaz szorzata -- értelmes,
+akkor a mátrixaik szorzata is értelmes, továbbá
+\[
+    [AB]=[A][B].
+\]
 
 
 
@@ -6159,4 +6287,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 04 Feb 2020 03:50:59 PM CET
+Last Modified : Wed 05 Feb 2020 10:50:44 AM CET
