@@ -5808,8 +5808,8 @@ amelynek $j$-edik oszlopa a $Be_j=f_j$ vektornak a régi bázisban felírt koord
 Az egész fejezetben nevezzük az $\left\{ e_1,\dots,e_n \right\}$ bázist régi bázisnak,
 és az $\left\{ f_1,\dots,f_n \right\}$ bázis elemeit új bázisnak.
 Legyen $B$ az áttérés lineáris transzformáció, és $[B]$ ennek a régi bázisban felírt mátrixa.
-
-
+\footnote{
+Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa azonos, de ez később egyszerű következményként is adódik.}
 \section{Vektor koordinátái az új bázisban}
 \begin{proposition}
     Legyen $x\in V$ tetszőleges veketor.
@@ -5884,7 +5884,231 @@ hogy az áttérés mátrixa azonos, ha az új bázisban, vagy a régi bázisban 
     \]
 \end{proposition}
 
+\chapter{Invariáns altér}
+\begin{definition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ vektortérnek,
+    és $M\subseteq V$ a tér egy altere.
+    Az mondjuk, hogy $M$ egy \emph{invariáns altere}\index{invariáns altér}
+    $V$-nek, ha minden $v\in M$ mellett $Av\in M$ is teljesül.
+\end{definition}
+Ha nem világos, hogy mely lineáris transzformációról van szó,
+akkor azt is mondjuk, hogy az $M$ altér $A$-invariáns, vagy azt,
+hogy az $M$ altér invariáns az $A$ transzformációra nézve.
 
+Úgy is fogalmazhatnánk, hogy az $M$ altér akkor invariáns altér,
+ha az $A$ transzformációnak az $M$-re való $A|_M$ megszorítása az $M$
+altér egy lineáris transzformációja, azaz
+\[
+    A|_M\in L\left( M \right).
+\]
+
+Nyilvánvaló példa invariáns alterekre $M$ és $\{0\}$.
+Tetszőleges $A$ lineáris transzformáció mellett $\ker A$ és $\im A$ mindig invariáns alterek.
+Ugyanis, ha $u\in\ker A$, akkor $A\left( Au \right)=A0=0$, tehát $Au\in\ker A$.
+Az $\im A$ altér esete még egyszerűbb: A tér minden elemének képe $\im A$-ban van, speciálisan persze ez $\im A$ elemeire is igaz.
+
+A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós terek direktösszegeként.
+
+\begin{definition}[legszűkebb invariáns altér]
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Világos, hogy akárhány $A$-ra nézve invariáns altér metszete is $A$-invariáns altér,
+    így egy $H\subseteq V$ halmazt tartalmazó
+    \emph{legszűkebb $A$-invariáns altér}\index{legszűkebb invariáns altér}
+    a $H$ halmazt tartalmazó $A$-invariáns alterek közös része.
+    Formálisan
+    \[
+        \lin\left( H;A \right)
+        =
+        \bigcap_{
+            \substack{
+                H\subseteq N\\ 
+                N\text{altér }\\ 
+                N\text{invariáns}}
+            }N.\qedhere
+    \]
+\end{definition}
+A legérdekesebb eset, amikor $H$ egy elemű halmaz.
+A $H=\left\{ v \right\}$ esetben a kissé nehézkes 
+$\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A \right)$-t írunk.
+
+\begin{proposition}
+    Egy $A\in L\left( V \right)$ lineáris transzformációra és egy $v\in V$ vektorra
+    \[
+        \lin\left( v;A \right)
+        =
+        \lin\left\{ v,Av,A^2v,\dots \right\}.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Mivel $\lin\left( v;A \right)$ egy $v$-t tartalmazó $A$-invariáns altér,
+    ezért $\left\{ v,Av,\dots,A^kv,\dots \right\}\subseteq \lin\left( v;A \right)$,
+    amiatt
+    \[
+        \lin\left\{ v,Av,A^2v,\dots \right\}
+        \subseteq
+        \lin\left( v;A \right).
+    \]
+    Most vegyük észre, hogy 
+    \begin{math}
+        \lin\left\{ v,Av,A^2v,\dots \right\}
+    \end{math}
+    is egy $v$-t tartalmazó $A$-invariáns altér és $\lin\left( v;A \right)$ ilyenek közt a legszűkebb, ezért
+    \[
+        \lin\left( v;A \right)
+        \subseteq
+        \lin\left\{ v,Av,A^2v,\dots \right\}.\qedhere
+    \]
+\end{proof}
+\begin{lemma}
+    Tegyük fel, hogy egy $A\in L\left( V \right)$ lineáris transzformációra és egy 
+    $v\in V$ vektorra a 
+    \[
+        \left\{ v,Av,\dots,A^kv \right\}
+    \]
+    lineárisan összefüggő ($k\geq 1$).
+    Ekkor minden $n\geq k$ mellett
+    \[
+        A^nv\in\lin\left\{ v,Av,\dots,A^{k-1}v \right\}.\qedhere
+    \]
+    \label{le:of}
+\end{lemma}
+\begin{proof}
+    Ha $v=0$ akkor az állítás nyilvánvaló.
+    Ha $v\neq 0$, akkor a $\left\{ v \right\}$ rendszer lineárisan független.
+    Legyen $t$ a legkisebb olyan szám, hogy a rendszerhez $A^tv$-t hozzávéve az lineárisan összefüggővé válik.
+    Ilyen módon tehát
+    \[
+        \left\{ v,Av,\dots,A^{t-1}v \right\} \text{ lineárisan független}\tag{\dag}
+    \]
+    de
+    \[
+        \left\{ v,Av,\dots,A^{t-1}v, A^tv \right\} \text{ lineárisan összefüggő.}\tag{\ddag}
+    \]
+    Világos, hogy $1\leq t\leq k$.
+    Jelölje $N=\lin\left\{ v, Av,\dots,A^{t-1}v \right\}$.
+
+    Most indukcióval megmutatjuk, hogy minden $m\geq 0$ számra
+    \[
+        A^{t+m}v\in N.
+    \]
+
+    Ha $m=0$, akkor $A^tv\in N$, hiszen a fenti (\ddag) lineárisan összefüggő rendszerre,
+    az egyik elem előáll mint az előző elemek lineáris kombinációja.
+    No de ez elem csak az utolsó lehet, 
+    hiszen az utolsó elem nélküli (\dag) rendszer még lineárisan független.
+
+    Most tegyük fel, hogy $A^{t+m}v\in N$ és lássuk be, hogy $A^{t+m+1}v\in N$ is teljesül.
+    Ezek szerint
+    \begin{math}
+        A^{t+m}v=\sum_{j=0}^{t-1}\alpha_jA^jv
+    \end{math}
+    alakú. Erre $A$-t alkalmazva
+    \begin{displaymath}
+        A^{t+m+1}v
+        =
+        \sum_{j=0}^{t-1}\alpha_jA^{j+1}v
+        =
+        \sum_{j=1}^{t}\alpha_{j-1}A^{j}v
+        =
+        \left( \sum_{j=1}^{t-1}\alpha_{ j-1}A^{j}v \right)+\alpha_{t-1}A^tv\in N+N=N.\qedhere
+    \end{displaymath}
+\end{proof}
+\begin{proposition}
+    Legyen $V$ egy véges dimenziós vektortér.
+    $A\in L\left( V \right)$ lineáris transzformáció,
+    és $v\in V$ egy $v\neq 0$ vektor.
+    Ekkor létezik egyetlen $1\leq k\leq \dim V$ szám,
+    amelyre 
+    \[
+        \left\{ v,Av,\dots,A^{k-1}v \right\} \text{ lineárisan független}\tag{\dag}
+    \]
+    de
+    \[
+        \left\{ v,Av,\dots,A^{k-1}v, A^kv \right\} \text{ lineárisan összefüggő.}\tag{\ddag}
+    \]
+    A fenti (\dag) rendszer bázisa $\lin\left( v;A \right)$-nak.
+\end{proposition}
+\begin{proof}
+    Mivel $v\neq 0$, ezért $\left\{ v \right\}$ lineárisan független.
+    Ha $\left\{ v,Av \right\}$ lineárisan összefüggő,
+    akkor $k=1$ és készen vagyunk.
+    Egyébként tekintsük a $\left\{ v,Av,A^2v \right\}$ rendszert. 
+    Ha ez lineárisan összefüggő, akkor $k=2$-vel készen vagyunk.
+    Ha ez lineárisan független, akkor tekintsük a 
+    $\left\{ v,Av,A^2v,A^3v \right\}$ vektorrendszert.
+    Ha lineárisan összefüggő, akkor $k=3$ és készen vagyunk,
+    ha lineárisan független, akkor folytatjuk egy újabb elem hozzá vételével.
+    Az eljárás előbb-utóbb megáll a vektorrendszer összefüggővé válásával,
+    hiszen a Steinitz-lemma szerint egy véges dimenziós vektortérben legfeljebb
+    $\dim V$ elemszámú lineárisan független vektorrendszer van.
+
+    Mivel $\lin\left( v;A \right)$ egy $v$-t tartalmazó $A$-invariáns altér,
+    ezért 
+    \[
+        \left\{ v,Av,\dots,A^{k-1}v \right\}
+        \subseteq 
+        \lin\left( v,A \right).
+    \]
+    Az előző lemma szerint
+    \[
+        \left\{ v,Av,A^2v,\dots \right\}
+        \subseteq
+        \lin\left\{ v,Av,\dots,A^{k-1}v \right\}
+    \]
+    ezért
+    \[
+        \lin\left( v;A \right)
+        =
+        \lin\left\{ v,Av,A^2v,\dots \right\}
+        \subseteq
+        \lin\left\{ v,Av,\dots,A^{k-1}v \right\}
+    \]
+    Ez azt jelenti, hogy a (\dag) vektorrendszer egy lineárisan független generátorrendszere 
+    a $\lin\left( v;A \right)$ térnek, tehát valóban bázisa is.
+\end{proof}
+A $\lin\left( v;A \right)$ tehát a fenti $k$-ra egy $k$-dimenziós altér,
+amelynek bázisa $\left\{A^{k-1}v,\dots,Av,v \right\}$.
+A játék kedvéért írjuk fel az $A|_{\lin\left( v;A \right)}$ transzformáció mátrixát 
+ebben a bázisban:
+\[
+    \begin{array}{r|ccccc}
+        &A^kv&A^{k-1}v&A^{k-2}v&\dots&Av\\
+        \hline
+        A^{k-1}v&\alpha_{k-1}&1&0&\dots\dots&0\\
+        A^{k-2}v&\alpha_{k-2}&0& 1&\dots&\vdots\\
+        \vdots  &\vdots      &\vdots&\ddots&\ddots&0\\
+        Av&\alpha_1&0&0&\dots&1\\
+        v&\alpha_0&0&0&\dots&0
+    \end{array},
+    \text{ ahol }A^kv=\sum_{j=0}^{k-1}\alpha_jA^jv.
+\]
+A dolog akkor legérdekesebb, mikor $k=1$.
+Ez vezet a sajátérték fogalmához.
+\begin{definition}[sajátérték]
+    Legyen $A\in L\left( V \right)$.
+    Azt mondjuk, hogy a $\lambda\in\mathbb{F}$ szám az $A$ lineáris transzformáció
+    \emph{sajátértéke}\index{sajátérték},
+    ha létezik $v\in V$, $v\neq 0$ vektor, amelyre
+    \[
+        Av=\lambda v
+    \]
+    teljesül.
+    
+    Ha $\lambda$ egy sajátértéke $A$-nak,
+    akkor az összes olyan $v$ vektort, 
+    amelyre $Av=\lambda v$ fennáll az $A$ transzformáció $\lambda$ sajátértékéhez tartozó
+    \emph{sajátvektorainak}\index{sajátvektor} nevezzük.
+\end{definition}
+Világos, hogy ha $\lambda$ egy sajátértéke $A$-nak, akkor a $\lambda$-hoz tartozó
+sajátvektorok halmaza éppen a 
+\[
+    \ker\left( A-\lambda I \right)
+\]
+altér.
+Emiatt a fenti alteret a $\lambda$ sajátérték \emph{sajátalterének}\index{sajátaltér}
+mondjuk.
+
+Világos, hogy $\lambda$ pontosan akkor sajátértéke $A$-nak, ha $\dim\lin\left( v;A \right)=1$.
 \appendix
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
@@ -6541,4 +6765,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 05 Feb 2020 05:08:06 PM CET
+Last Modified : Thu 06 Feb 2020 07:48:09 PM CET
