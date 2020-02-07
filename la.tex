@@ -6095,7 +6095,7 @@ Ez vezet a sajátérték fogalmához.
     teljesül.
     
     Ha $\lambda$ egy sajátértéke $A$-nak,
-    akkor az összes olyan $v$ vektort, 
+    akkor az összes olyan nem zérus $v$ vektort, 
     amelyre $Av=\lambda v$ fennáll az $A$ transzformáció $\lambda$ sajátértékéhez tartozó
     \emph{sajátvektorainak}\index{sajátvektor} nevezzük.
 \end{definition}
@@ -6104,11 +6104,14 @@ sajátvektorok halmaza éppen a
 \[
     \ker\left( A-\lambda I \right)
 \]
-altér.
-Emiatt a fenti alteret a $\lambda$ sajátérték \emph{sajátalterének}\index{sajátaltér}
+altér nem zérus elemei.
+Emiatt a fenti alteret a $\lambda$ sajátértékhez tartozó \emph{sajátaltérnek}\index{sajátaltér}
 mondjuk.
 
-Világos, hogy $\lambda$ pontosan akkor sajátértéke $A$-nak, ha $\dim\lin\left( v;A \right)=1$.
+Vegyük észre, 
+hogy $v\in V$ vektor pontosan akkor sajátvektora $A$-nak, ha $\dim\left( \lin\left( v;A \right) \right)=1$.
+Hasonlóan az is könnyű, hogy $\lambda$ pontosan akkor sajátértéke $A$-nak,
+ha az $A-\lambda I$ transzformáció szinguláris.
 \appendix
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
@@ -6765,4 +6768,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 06 Feb 2020 07:48:09 PM CET
+Last Modified : Fri 07 Feb 2020 06:11:03 AM CET
