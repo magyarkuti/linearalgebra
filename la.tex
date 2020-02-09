@@ -6180,16 +6180,317 @@ ergo
     p\left( A \right)q\left( A \right)=r\left( A \right)=q\left( A \right)p\left( A \right).
 \]
 Tehát meggondoltuk, hogy
-\begin{proposition}
+\begin{proposition}\index{kommutáló transzformációk}
     Lineáris transzformáció polinomjai egymással kommutálnak.
 \end{proposition}
+Polinomok segítségével sok-sok új invariáns alteret kapunk.
+\begin{proposition}
+    Tetszőleges $p$ polinomra és $A\in L\left( V \right)$ 
+    lineáris transzformáció mellett 
+    $\ker p\left( A \right)$ és $\im p\left( A \right)$ is invariáns alterek.
+\end{proposition}
+\begin{proof}
+    Legyen előszőr $v\in\ker p\left( A \right)$.
+    Ekkor, mivel $A$ és $p\left( A \right)$ kommutálnak
+    \[
+        p\left( A \right)Av=Ap\left( A \right)v=A0=0,
+    \]
+    ami pont azt jelenti, hogy $Av\in\ker p\left( A \right)$.
 
+    Legyen most $v\in\im p\left( A \right)$,
+    azaz
+    $v=p\left( A \right)x$ valamely $x\in V$ mellett.
+    Ekkor, mivel $A$ és $p\left( A \right)$ kommutálnak
+    \[
+        Av=Ap\left( A \right)x=p\left( A \right)\left( Ax \right),
+    \]
+    amiből már látszik, hogy $Av\in\im p\left( A \right)$.
+\end{proof}
+Speciálisan ez igaz az $t-\lambda$ polinomra is, 
+amikor $\lambda$
+egy sajátértéke $A$-nak. Tehát a $\lambda$ sajátértékhez tartozó 
+$\ker \left( A-\lambda I \right)$ sajátaltér egy 1 dimenziós invariáns altere
+$A$-nak.\index{saját altér}
+\begin{definition}
+    Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
+    ha $p\left( A \right)=0$.
+\end{definition}
 
 \section{Kis minimál polinom}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja,
+    és legyen $v\in V$ egy rögzített vektor.
+    Tekintsük az 
+    $\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát.
+    \[
+        J_{A,v}
+        =
+        \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v=0 \right\}
+    \]
+    Ez a halmaz egy ideálja $\mathbb{F}\left[ t \right]$-nek, 
+    amelynek van legfeljebb $\dim V$-ed fokú, de nem konstans zérus polinomja.
+\end{proposition}
+\begin{proof}
+    Ha $p,q\in J_{A,v}$, 
+    akkor 
+    $\left( p+q \right)(A)v=p\left( A \right)v+q\left( A \right)v=0+0=0$,
+    azaz $p+q\in J_{A,v}$. 
+    Ha most $p\in J_{A,v}$ és $h$ egy tetszőleges polinom,
+    akkor 
+    $
+    \left( hp \right)(A)v=h\left( A \right)p\left( A \right)v=h\left( A \right)0=0,
+    $
+    azaz $hp\in J_{A,v}$. 
+    Megmutattuk tehát, hogy $J_{A,v}$ egy ideálja a polinom gyűrűnek.
+
+    Jelölje $n=\dim V$ és tekintsük az $n+1$ elemű
+    $\left\{ v,Av,\dots,A^nv \right\}$ vektorrendszert.
+    Mivel a Steinitz-lemma szerint 
+    $n+1$ vektor egy $n$-dimenziós vektortérben lineárisan összefüggő,
+    ezért van
+    $\alpha_0,\dots,\alpha_n\in\mathbb{F}$ nem mind zérus szám, hogy
+    $\sum_{j=0}^n\alpha_jA^jv=0$.
+    Ha tehát $p$ jelöli a $p\left( t \right)=\sum_{j=0}^n\alpha_jt^j$ polinomot,
+    akkor
+    $p\left( A \right)v=0$, azaz $p\in J_{A,v}$ és $-\infty<\deg p\leq n$.
+\end{proof}
+Ha például $v=0$, akkor $J_{A,0}=\mathbb{F}\left[ t \right]$, azaz minden polinom
+az ideálhoz tartozik.
+Ha $v\neq 0$, 
+akkor a $J_{A,v}$ ideálnak nincs nulladfokú polinomja, 
+hiszen $p(t)=c, (c\neq 0)$ mellett
+$p\left( A \right)v=(cI)v=cv\neq 0$.
+
+\begin{definition}
+    Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja,
+    és legyen $v\in V$ egy rögzített vektor.
+    Láttuk, hogy
+    \[
+        J_{A,v}
+        =
+        \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v=0 \right\}
+    \]
+    az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
+    Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideálgyűrű,
+    van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$.
+    Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
+    Ezt a polinomot nevezzük az $A$ transzformáció, $v$ vektorhoz tartozó
+    \emph{kis minimál polinomjának}\index{kis minimál polinom}.
+\end{definition}
+
+\begin{proposition}
+Ha  $n$ az $A$ transzformáció $v$ vektorhoz tartozó kis minimál polinomja,
+akkor
+\begin{enumerate}
+    \item $n$ normált polinom,
+    \item $n\left( A \right)v=0$,
+    \item ha $p\in\mathbb{F}\left[ t \right], p\neq 0$, amelyre 
+        $p\left( A \right)v=0$, akkor $n|p$,
+    \item $\deg n\leq\dim V$.\qedhere
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+    Definíció szerint $n$ azon $p$ polinomok közül, 
+    amelyek normáltak, és $p\left( A \right)v=0$, a legalacsonyabb fokú.
+    Láttuk hogy ilyen polinom csak egy van, es erre a polinomra
+    \[
+        J_{A,v}=J\left( n \right)=\left\{ hn:h\in\mathbb{F}\left[ t \right] \right\}.
+    \]
+    Ezt kellett belátni. 
+\end{proof}
+\begin{proposition}
+    Legyen $v\neq 0$ és tegyük fel, hogy $p\left( A \right)v=0$ valamely normált,
+    irreducibilis $p$ polinomra.
+    Ekkor $p$ a $v$ vektorhoz tartozó kis minimál polinom.
+\end{proposition}
+\begin{proof}
+    Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak minimálpolinomja legalább első fokú.
+    Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimál polinommal,
+    akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
+    ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
+    Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+\end{proof}
+
+A következő állítás módszert ad a kis minimál polinom meghatározására,
+amely mindig használható.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ és $v\neq 0.$
+    Mivel $V$ egy véges dimenziós altér,
+    ezért létezik $1\leq k \leq \dim V$,
+    hogy 
+    $\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineáris független,
+    de $\left\{ v,Av,\dots,A^{k-1}v,A^{k}v \right\}$ lineárisan összefüggő.
+    Ekkor léteznek $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
+    számok, amelyekre
+    \[
+        A^{k}v=\sum_{j=0}^{k-1}\alpha_jA^{j}v
+    \]
+    Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimál polinomja
+    \[
+        n\left( t \right)=
+        t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0.\qedhere
+    \]
+\end{proposition} 
+\begin{proof}
+    Láttuk, hogy $\left\{ v,Av,\dots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
+    Világos, hogy $A^kv\in\lin\left( v;A \right)$, emiatt a kívánt előállítás valóban létezik.
+    Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
+    No de $k$-nal alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
+    hiszen $\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineárisan független.
+    Azt láttuk tehát, hogy $n$ a legalcsonyabb fokú nem zérus eleme $J_{A,v}$-nek,
+    tehát $n$ generálja a főideált.
+\end{proof}
 
 \section{Minimál polinom}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
+    Tekintsük az 
+    $\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát.
+    \[
+        J_{A}
+        =
+        \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)=0 \right\}
+    \]
+    Ez a halmaz egy ideálja $\mathbb{F}\left[ t \right]$-nek, 
+    amelynek van legfeljebb $\left( \dim V \right)^2$-ed fokú, 
+    de nem konstans zérus polinomja.
+\end{proposition}
+\begin{proof}
+    Ha $p,q\in J_{A}$, 
+    akkor 
+    $\left( p+q \right)(A)=p\left( A \right)+q\left( A \right)=0+0=0$,
+    azaz $p+q\in J_{A}$. 
+    Ha most $p\in J_{A}$ és $h$ egy tetszőleges polinom,
+    akkor 
+    $
+    \left( hp \right)(A)=h\left( A \right)p\left( A \right)=h\left( A \right)0=0,
+    $
+    azaz $hp\in J_{A}$. 
+    Megmutattuk tehát, hogy $J_{A}$ egy ideálja a polinom gyűrűnek.
+
+    Jelölje $n=\dim V$ és tekintsük az $n^2+1$ elemű
+    $\left\{ I,A,\dots,A^{n^2} \right\}$ rendszerét az $L\left( V \right)$ vektortérnek.
+    Mivel a Steinitz-lemma szerint 
+    $n^2+1$ vektor egy $n^2$-dimenziós vektortérben lineárisan összefüggő,
+    ezért van
+    $\alpha_0,\dots,\alpha_{n^2}\in\mathbb{F}$ nem mind zérus szám, hogy
+    $\sum_{j=0}^{n^2}\alpha_jA^j=0$.
+    Ha tehát $p$ jelöli a $p\left( t \right)=\sum_{j=0}^{n^2}\alpha_jt^j$ polinomot,
+    akkor
+    $p\left( A \right)=0$, azaz $p\in J_{A}$ és $-\infty<\deg p\leq n^2$.
+\end{proof}
+\begin{definition}
+    Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
+    Láttuk, hogy
+    \[
+        J_{A}
+        =
+        \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)=0 \right\}
+    \]
+    az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
+    Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideálgyűrű,
+    van tehát egyetlen normált polinomja $J_{A}$-nek, amely generálja $J_{A}$.
+    Ez a $J_{A}$ legkisebb fokú, normált polinomja.
+    Ezt a polinomot nevezzük az $A$ transzformáció
+    \emph{minimál polinomjának}\index{minimál polinom}.
+\end{definition}
+Ha $V\neq\left\{ 0 \right\}$, ergo $\dim V\geq 1$,
+akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja, 
+hiszen $p(t)=c, (c\neq 0)$ mellett
+$p\left( A \right)=cI\neq 0$, tehát a minimál polinom legalább első fokú.
 
 
+\begin{proposition}
+Ha  $m$ az $A$ transzformáció minimál polinomja,
+akkor
+\begin{enumerate}
+    \item $m$ normált polinom,
+    \item $m\left( A \right)=0$,
+    \item ha $p\in\mathbb{F}\left[ t \right], p\neq 0$, amelyre 
+        $p\left( A \right)=0$, akkor $m|p$,
+    \item $\deg m\leq(\dim V)^2$%
+        .\qedhere
+        \footnote{Kis vártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+    Definíció szerint $m$ azon $p$ polinomok közül, 
+    amelyek normáltak, és $p\left( A \right)=0$, a legalacsonyabb fokú.
+    Láttuk hogy ilyen polinom csak egy van, es erre a polinomra
+    \[
+        J_{A}=J\left( m \right)=\left\{ hm:h\in\mathbb{F}\left[ t \right] \right\}.
+    \]
+    Ezt kellett belátni. 
+\end{proof}
+\begin{proposition}
+    Legyen $V$ legalább 1 dimenziós, 
+    és tegyük fel, hogy $p\left( A \right)=0$ valamely normált,
+    irreducibilis $p$ polinomra.
+    Ekkor $p$ az $A$ minimál polinomja.
+\end{proposition}
+\begin{proof}
+    Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább első fokú.
+    Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimál polinommal,
+    akkor $\deg m<\deg p$ lenne, és mivel $m$ generálja a $J_{A}$ ideált,
+    ezért $p=mh$ alakú lenne, ahol $h$ is legalább első fokú.
+    Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+\end{proof}
+
+A következő állítás módszert ad a kis minimál polinom meghatározására,
+amely mindig használható.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$, ahol $\dim V\geq 1$.
+    Mivel $\dim L\left( V \right)=\left( \dim V \right)^2$ egy véges dimenziós vektortér,
+    ezért létezik $1\leq k \leq (\dim V)^2$,
+    hogy 
+    $\left\{ I,A,\dots,A^{k-1} \right\}$ lineáris független,
+    de $\left\{ I,A,\dots,A^{k-1},A^{k} \right\}$ lineárisan összefüggő.
+    Ekkor léteznek $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
+    számok, amelyekre
+    \[
+        A^{k}=\sum_{j=0}^{k-1}\alpha_jA^{j}.
+    \]
+    Ekkor az $A$ operátor minimál polinomja.
+    \[
+        m\left( t \right)=
+        t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0.\qedhere
+    \]
+\end{proposition} 
+\begin{proof}
+    Mivel a $k+1$ elemű rendszer lineárisan összefüggő és a $k$ elemű rendszer lineárisan független, 
+    ezért a kívánt előállítás valóban létezik.
+    Ezt átrendezve kapjuk, hogy $m$ valóban olyan normált polinom, amelyre $m\left( A \right)=0$ fennáll.
+    No de $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
+    hiszen $\left\{ I,A,\dots,A^{k-1} \right\}$ lineárisan független.
+    Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
+    tehát az $m$ polinom generálja a főideált.
+\end{proof}
+Néha kényelmesebb az kis minimál polinomokkat használni a minimál polinom meghatározására.
+\begin{proposition}
+    Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja $m$.
+    Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ bázisa $V$-nek,
+    és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimál polinomok.
+    Ekkor a $p_1,\dots,p_n$ polinom legkisebb közös többszöröse $m$.
+\end{proposition}
+\begin{proposition}
+    Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimál polinomjának.
+    Ekkor $p\left( A \right)$ szinguláris\index{szinguláris}.
+\end{proposition}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós 
+    vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
+    polinomja.
+    Az alábbi feltevések ekvivalensek:
+    \begin{enumerate}
+        \item $\lambda$ sajátértéke $A$-nak,
+        \item $\ker (A-\lambda I)\neq \left\{ 0 \right\}$,
+        \item $A-\lambda I$ szinguláris,
+        \item létezik $v\in V$, 
+            amelyre a $v$-hez tartozó kis minimálpolinomja $A$-nak $p_v(t)=t-\lambda$.
+        \item $t-\lambda|m\left( t \right)$,
+        \item $m\left( \lambda \right)=0.$\qedhere
+    \end{enumerate}
+\end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -6854,4 +7155,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 09 Feb 2020 06:19:28 PM CET
+Last Modified : Sun 09 Feb 2020 11:13:49 PM CET
