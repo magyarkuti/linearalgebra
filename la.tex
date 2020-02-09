@@ -567,7 +567,7 @@ Megegyezés szerint ilyenkor $-\infty+a=-\infty$ minden $a$ nem negatív egész 
 A $-\infty$ szimbólumot minden egész számnál határozottan kisebbnek gondoljuk.
 
 Két polinom összegét és szorzatát a szokásos módon definiáljuk:
-\begin{definition}
+\begin{definition}\label{def:polmuveletek}
     Legyen $p,q\in\mathbf{F}[t]$, két polinom.
     \[
         p\left( t \right)
@@ -6115,6 +6115,79 @@ hogy $v\in V$ vektor pontosan akkor sajátvektora $A$-nak, ha $\dim\left( \lin\l
 Hasonlóan az is könnyű, hogy $\lambda$ pontosan akkor sajátértéke $A$-nak,
 ha az $A-\lambda I$ transzformáció szinguláris.
 
+\chapter{Transzformációk polinomjai}
+
+\begin{definition}[transzformáció polinomja]
+    Legyen $V$ az $\mathbb{F}$ test feletti vektortér,
+    $A\in L\left( V \right)$ egy lineáris transzformáció, és
+    legyen $p\in\mathbb{F}\left[t \right]$ egy az $\mathbb{F}$ test feletti 
+    polinom,
+    amely $p\left( t \right)=
+    \sum_{j=0}^n\alpha_jt^j$
+    alakú.
+    Definiálja $p\left( A \right)\in L\left( V \right)$
+    az $A$ transzformáció $p$ polinomját
+\[
+    p\left( A \right)
+    =
+    \sum_{j=0}^n\alpha_jA^j.\qedhere
+\]
+\end{definition}
+\begin{proposition}[Számolási szabályok]
+    Legyen $p,q\in\mathbb{F}\left[ t \right]$ polinomok,
+    $A\in L\left( V \right)$ lineáris transzformáció.
+    \begin{enumerate}
+        \item Ha $r=p+q$, akkor $r\left( A \right)=p\left( A \right)+q\left( A \right)$.
+        \item Ha $r=pq$, akkor $r\left( A \right)=p\left( A \right)q\left( A \right)$.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Az első állítás azért teljesül, mert
+    \(
+        \left( \alpha A^k+\beta A^k \right)
+        =
+        \left( \alpha+\beta \right)A^k.
+    \)
+
+    A második állításhoz azt vegyük észre, hogy
+    \(
+        A^kA^l=A^{k+l}.
+    \)
+    Így, amikor összegyűjtjük, hogy a $q\left( A \right)p\left( A \right)$
+    kompozícióban, mi lesz $A^j$ együthatója, 
+    akkor azt kapjuk,
+    hogy 
+    \begin{displaymath}
+        \left( \sum_{\substack{k,l\\k+l=j}}\alpha_k\beta_l \right)A^j
+        =
+        \left( \sum_{k=0}^j\alpha_k\beta_{j-k} \right)A^j.
+    \end{displaymath}
+    Vegyük észre, hogy \aref{def:polmuveletek} definíció szerint az
+    $r$ szorzat polinomban is a fenti zárójelben lévő szám a 
+    $t^j$ tag együtthatója.
+\end{proof}
+Tudjuk, hogy lineáris transzformációk szorzata függ azok sorrendjétől.
+Ugyanúgy mint mátrixokra, két lineáris transzformációt \emph{kommutálónak}
+mondunk, ha szorzatuk a szorzás sorrendjétől független.
+Például az $I$ identitás minden transzformációval kommutál.
+Azt is láttuk, hogy ha $AB=I$, akkor $BA=I$ is fennáll, azaz $A$ és $B$ kommutálnak.
+Nagyon fontos, de nyilvánvaló küvetkezménye a fenti számolási szabálynak,
+hogy ha $p,q$ tetszőleges polinomok, akkor a $p\left( A \right)$ és $q\left( A \right)$ egymással kommutáló lineáris transzformációk lesznek, hiszen az 
+$\mathbb{F}\left[ t \right]$ egy kommutatív gyűrű, 
+azért ha $r=pq$, akkor $qp=r$,
+ergo 
+\[
+    p\left( A \right)q\left( A \right)=r\left( A \right)=q\left( A \right)p\left( A \right).
+\]
+Tehát meggondoltuk, hogy
+\begin{proposition}
+    Lineáris transzformáció polinomjai egymással kommutálnak.
+\end{proposition}
+
+
+\section{Kis minimál polinom}
+
+\section{Minimál polinom}
 
 
 
@@ -6781,4 +6854,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 07 Feb 2020 05:45:29 PM CET
+Last Modified : Sun 09 Feb 2020 06:19:28 PM CET
