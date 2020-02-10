@@ -88,7 +88,7 @@
 \newcommand{\myqedsymbol}{$\lrcorner$}
 \theoremstyle{plain}
 
-\newtheorem{proposition}{állítás}[section]
+\newtheorem{proposition}{állítás}[chapter]
 \newtheorem{lemma}[proposition]{lemma}
 \newtheorem*{SL}{Steinitz-lemma}
 \newtheorem*{FA}{Az algebra alaptétele}
@@ -1325,7 +1325,7 @@ Könnyen ellenőrizhetőek a következő számolási szabályok:
         \item $1 A=A$.\qedhere
     \end{enumerate}
 \end{proposition}
-Az utolsó két állítást, \ref{pr:matrixokVS1} és \ref{pr:matrixokVS2},
+Az utolsó két állítást, \ref{pr:matrixokVS1}. és \ref{pr:matrixokVS2}.,
 együtt később úgy fogjuk fogalmazni, 
 hogy adott test feletti tetszőleges méretű mátrixok \emph{vektorteret}\index{vektortér} alkotnak.
 
@@ -3608,7 +3608,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
 \chapter{A Steinitz-lemma}
 \scwords Független- és generátorrendszerek elemszáma közti kapcsolat vezet a a bázis és a dimenzió fogalmához.
 A félév legfajsúlyosabb állítása, az egyszerű bizonyítás ellenére.
-A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere} lemmára.
+A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere}. lemmára.
 \begin{SL}\index{Steinitz--lemma}
     Legyenek $n$ és $m$ nem negatív egészek.
     Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer,
@@ -3889,7 +3889,7 @@ hogy a rendszer lineárisan független generátorrendszerré váljon,
 és hasonlóan bármely lineárisan független rendszerhez, hozzátehető néhány elem úgy, hogy a
 rendszer lineárisan független generátorrendszerré váljon.
 
-A független rendszerek cseréjéről (\ref{le:fgtlncsere}) és a generátor rendszerek cseréjéről (\ref{le:gencsere}) szóló lemmák 
+A független rendszerek cseréjéről (\ref{le:fgtlncsere}.) és a generátor rendszerek cseréjéről (\ref{le:gencsere}.) szóló lemmák 
 együttes alkalmazásaként kapjuk a következő lemmát.
 
 \begin{lemma}[bázis csere]\label{le:baziscsere}
@@ -4069,7 +4069,7 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 Fontos látni, hogy a vektor koordináta-vektora függ a bázis megválasztásától.
 Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
 már akkor is változik a vektort koordináta-vektora.
-\Aref{le:gencsere}, \aref{le:fgtlncsere}  és \aref{le:baziscsere} lemmák összefoglalásaként kapjuk,
+\Aref{le:gencsere}., \aref{le:fgtlncsere}.  és \aref{le:baziscsere}. lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái, 
 ha a bázisban egy elemet megváltoztatunk.
 \begin{lemma}[bázis transzformáció]\label{le:bazistrafo}
@@ -4411,7 +4411,7 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
     \)
 \end{proposition}
 \begin{proof}
-    Az $s=2$ eset éppen \aref{pr:drosszeg2} állítás,
+    Az $s=2$ eset éppen \aref{pr:drosszeg2}. állítás,
     hiszen a $\left\{ 0 \right\}$ triviális altér nulla dimenziós.
     Most tegyük fel, hogy $s$-nél kisebb számokra igaz az állítás, 
     és lássuk be $s$-re. $s>2.$
@@ -5390,7 +5390,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
     \]
 \end{proposition}
 \begin{proof}
-    Azt kell először is látni, hogy (\ref{eq:aij}) azonosságok összesen az előző \ref{pr:bazisonegyertelmu}.~állítás
+    Azt kell először is látni, hogy (\ref{eq:aij}.) azonosságok összesen az előző \ref{pr:bazisonegyertelmu}.~állítás
     alkalmazását írják elő rögzített $i,j$ mellett az 
     \begin{math}
         \left\{ e_1,\dots,e_j,\dots,e_m \right\}
@@ -5403,7 +5403,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
     Ezt úgy is fogalmazhatjuk, hogy az $A_{i,j}$ az a lineáris operáció,
     amely a bázis minden nem $j$-edik elemét zérusra viszi, és a $j$-edik bázis elemet
     pedig $f_i$-re.
-    \Aref{pr:bazisonegyertelmu} állítás szerint vannak ilyen $A_{i,j}$ lineáris transzformációk,
+    \Aref{pr:bazisonegyertelmu}. állítás szerint vannak ilyen $A_{i,j}$ lineáris transzformációk,
     és minden $i,j$ pár mellett csak egyetlen egy van.
 
     Most megmutatjuk, hogy az $\left\{ A_{i,j}:i=1,\dots,n;j=1,\dots m \right\}$ lineárisan független
@@ -5494,7 +5494,7 @@ Láttuk, hogy $\dim L\left( V,W \right)=\dim V\cdot\dim W$.
 De mi lesz $L\left( V,W \right)$ koordináta-tere?
 A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 \begin{definition}[lineáris operátor mátrixa]
-    (\Aref{eq:aij}) azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
+    (\Aref{eq:aij}.) azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
     \[
     \{ 
         \underbrace{A_{1,1},A_{2,1},\dots,A_{n,1}}_{j=1},
@@ -5769,7 +5769,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
     \end{math}
 \end{proposition}
 \begin{proof}
-    A (\ref{eq:gyuru}) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
+    A (\ref{eq:gyuru}.) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
     $\left[ A^n \right]=\left[ A \right]^n$
     azonosságot.
 
@@ -5779,7 +5779,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
     $[A]$ mátrix invertálhatóságának.
     Ekkor $[A]^{-1}=[B]=\left[ A^{-1} \right]$.
 \end{proof}
-A (\ref{eq:vt}) és a (\ref{eq:gyuru}) szerint egy lineáris operátorhoz hozzárendeli valamely báziskban
+A (\ref{eq:vt}.) és a (\ref{eq:gyuru}.) szerint egy lineáris operátorhoz hozzárendeli valamely báziskban
 felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
 Az $L\left( V \right)$ és a $F^{\dim V\times \dim V}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
 amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
@@ -6095,7 +6095,7 @@ ebben a bázisban:
 A célunk, hogy a lehető legalacsonyabb dimenziós invariáns altereket találjunk.
 Így persze az 1 dimenziós invariáns alterek a legérdekesebbek.
 Ez vezet a sajátérték fogalmához.
-\begin{definition}[sajátérték]
+\begin{definition}[sajátérték, sajátvektor, spektrum]
     Legyen $A\in L\left( V \right)$.
     Azt mondjuk, hogy a $\lambda\in\mathbb{F}$ szám az $A$ lineáris transzformáció
     \emph{sajátértéke}\index{sajátérték},
@@ -6109,7 +6109,20 @@ Ez vezet a sajátérték fogalmához.
     akkor az összes olyan nem zérus $v$ vektort, 
     amelyre $Av=\lambda v$ fennáll az $A$ transzformáció $\lambda$ sajátértékéhez tartozó
     \emph{sajátvektorainak}\index{sajátvektor} nevezzük.
+
+    Egy $A$ lineáris transzformáció összes sajátértékeinek halmazát az
+    $A$ \emph{spektrumának}\index{spektrum} nevezzük, és
+    $\sigma\left( A \right)$-val jelöljük.
 \end{definition}
+A spektrum tehát az $\mathbb{F}$ test azon részhalmaza, amelyre
+\[
+    \sigma\left( A \right)
+    =
+    \left\{ 
+        \lambda\in\mathbb{F}:\exists v\in V, v\neq 0, Av=\lambda v
+    \right\}
+\]
+teljesül.
 Világos, hogy ha $\lambda$ egy sajátértéke $A$-nak, akkor a $\lambda$-hoz tartozó
 sajátvektorok halmaza éppen a 
 \[
@@ -6171,7 +6184,7 @@ ha az $A-\lambda I$ transzformáció szinguláris.
         =
         \left( \sum_{k=0}^j\alpha_k\beta_{j-k} \right)A^j.
     \end{displaymath}
-    Vegyük észre, hogy \aref{def:polmuveletek} definíció szerint az
+    Vegyük észre, hogy \aref{def:polmuveletek}. definíció szerint az
     $r$ szorzat polinomban is a fenti zárójelben lévő szám a 
     $t^j$ tag együtthatója.
 \end{proof}
@@ -6597,7 +6610,7 @@ ha $A_1A_2=A_2A_1.$
 Könnyen látható, hogy ha $A_1$ és $A_2$ kommutálnak, akkor tetszőleges két $p,q$
 polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.
 \begin{lemma}
-    Legyenek $A_1,A_2\in L\left( V \right)$ kommutáló lineáris trafók,
+    Legyenek az $A_1,A_2\in L\left( V \right)$ kommutáló lineáris transzformációk,
     valamint $p,q\in\mathbb{F}\left[ t \right]$ polinomok.
     Ekkor $\operatorname{ker}p\left( A_1 \right)$ és
     $\operatorname{Im}p\left( A_1 \right)$ is invariáns alterek $q\left( A_2 \right)$-re.
@@ -6821,7 +6834,7 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
 \end{proof}
 
 \section{Analízis megközelítés}
-Az algebra alaptételének (\ref{Th:FundOfAlg} tétel) bizonyításához felhasználunk néhány az elemi analízisből
+Az algebra alaptételének (\ref{Th:FundOfAlg}. tétel) bizonyításához felhasználunk néhány az elemi analízisből
 jól ismert állítást.
 Ezek közül a lényegesebbek az alábbiak:
 \begin{enumerate}
@@ -6839,9 +6852,9 @@ folytonosak is.
 A főtételt könnyen megérthetjük, ha áttekintjük
 a felé vezető utat.
 Két lényeges pontot kell látnunk.
-Az első (\ref{Th:Cauchy1} állítás) kompaktsági meggondolás, polinomok növekedési ütemére (\ref{Th:Grow} lemma) támaszkodva.
+Az első (\ref{Th:Cauchy1}. állítás) kompaktsági meggondolás, polinomok növekedési ütemére (\ref{Th:Grow}. lemma) támaszkodva.
 Ez utóbbi lemma talán önmagában is érdekes, hiszen azt állítja, hogy egy polinom legalább a fokszáma nagyságrendjében növekszik.
-A másik döntő lépés (\ref{Th:Cauchy2} állítás) az Argand-féle becslésen (\ref{Th:Argand} lemma) nyugszik.
+A másik döntő lépés (\ref{Th:Cauchy2}. állítás) az Argand-féle becslésen (\ref{Th:Argand}. lemma) nyugszik.
 Ez a holomorf függvényekre vonatkozó nyílt leképezés tételnek az itt éppen elegendő speciális esete.
 
 \begin{lemma}
@@ -7017,12 +7030,12 @@ amiből $\hat{c}:=u+c$ választással kapjuk, hogy
 \end{FA}
 
 \begin{proof}
-Láttuk (\ref{Th:Cauchy1} állítás), hogy van olyan $c\in \mathbb{C}$ melyre 
+Láttuk (\ref{Th:Cauchy1}. állítás), hogy van olyan $c\in \mathbb{C}$ melyre 
 \[
 \left| f\left( c\right) \right| =\inf \left\{ \left| f\left( z\right)
 \right| :z\in \mathbb{C}\right\} \text{.}
 \]
-Ha $f(c)\neq 0$ lenne, akkor lenne (\ref{Th:Cauchy2} állítás) $\hat{c}\in \mathbb{C}$ melyre 
+Ha $f(c)\neq 0$ lenne, akkor lenne (\ref{Th:Cauchy2}. állítás) $\hat{c}\in \mathbb{C}$ melyre 
 \[
 \left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| =\inf
 \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\} 
@@ -7145,7 +7158,7 @@ v^{2}\in \operatorname{lin}\left\{ 1,v\right\}
 \end{equation}
 \label{Eq:Alg}Mivel $v$ algebrai $\mathbb{R}$ felett, ezért létezik $p$
 valós együtthatós polinom melyre $p\left( v\right) =0$.
-De láttuk, hogy valós együtthatós polinom első- és másodfokú tényezők szorzatára bomlik (\ref{pr:RealPolFact}),
+De láttuk, hogy valós együtthatós polinom első- és másodfokú tényezők szorzatára bomlik (\ref{pr:RealPolFact}.),
 ami azt jelenti, hogy van olyan $q$ első, vagy másodfokú valós együtthatós polinom melyekre $q\left( v\right) =0$.
 Ha $q$ első
 fokú lenne az azt jelentené, hogy található $\alpha ,\beta
@@ -7171,7 +7184,7 @@ voltához elegendő megmutatni, hogy a $\mathbb{G}$-beli műveletekre zárt.
 Az összeadásra való zártság triviális a $K$
 altér mivoltából, a szorzásra való zártság pedig
 (\ref{Eq:Alg}) következménye.
-\'{I}gy tehát $K$ két dimenziós test kiterjesztése $\mathbb{R}$ -nek, ami azt jelenti (\ref{Th:CUnique1}), 
+\'{I}gy tehát $K$ két dimenziós test kiterjesztése $\mathbb{R}$ -nek, ami azt jelenti (\ref{Th:CUnique1}.), 
 hogy $K$ test izomorf $\mathbb{C}$ -vel.\newline
 Utoljára megmutatjuk, hogy $\mathbb{G}$ minden $w$ eleme $\mathbb{C}$ -beli
 is.
@@ -7202,4 +7215,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 10 Feb 2020 02:18:02 PM CET
+Last Modified : Mon 10 Feb 2020 02:42:43 PM CET
