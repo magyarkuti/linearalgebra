@@ -1,4 +1,4 @@
-\documentclass[9pt, showtrims]{memoir}
+\documentclass[9pt, a4paper, showtrims]{memoir}
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
 %%%%%%% pdflatex %%%%%%%%%%
@@ -25,6 +25,7 @@
             autocite=inline,
             backref=true]{biblatex}
 \addbibresource{\jobname.bib}
+\BiblatexHungarianWarningOff
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
@@ -62,6 +63,7 @@
         ##1}{\thepart.~\partname}}%
     }
 \makeatletter
+\let\ps@plain\ps@empty
 \newcommand\arraybslash{\let\\\@arraycr}
 \patchcmd{\@makechapterhead}
     {\printchaptername \chapternamenum \printchapternum}
@@ -1441,7 +1443,7 @@ is fennáll.
 
 A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativitása.
 \begin{proposition}
-    Legyen $A,B,C$ mátrixok úgy, hogy $AB$ értelmes és $BC$ is értelmes, 
+    Legyen az $A,B,C$ mátrixok úgy megadva, hogy $AB$ is értelmes és $BC$ is értelmes legyen, 
     azaz $A\in\mathbf{F}^{m\times k},B\in\mathbf{F}^{k\times l}, C\in\mathbf{F}^{l\times n}$.
     Ekkor
     \[
@@ -2400,8 +2402,11 @@ Hasonlóan, ha $H=\left\{ v_1,\dots,v_r \right\}$ halmaz $r$ elemből áll akkor
     \left\{ \sum_{j=1}^r\alpha_jv_j:\alpha_1,\dots,v_r\in\mathbf{F} \right\}.
 \]
 \begin{definition}[generátorrendszer, végesen generált vektortér]\index{generátorrendszer}\index{végesen generált vektortér}
-    Egy vektortér $H$ részhalmazáról azt mondjuk, hogy \emph{generálja a vektorteret},
-    vagy, hogy $H$ egy \emph{generátorrendszere} $V$-nek, ha $\lin H=V$.
+    Egy vektortér egy $H$ részhalmazáról azt mondjuk, hogy \emph{generálja a vektorteret}
+    vagy, hogy $H$ egy \emph{generátorrendszere} $V$-nek, ha 
+    \[
+        \lin H=V.
+    \]
     A $V$ vektorteret \emph{végesen generáltnak} mondunk, ha létezik véges generátorrendszere.
 \end{definition}
 
@@ -3740,8 +3745,12 @@ A következő gondolat szerint több is igaz.
     \]
     $r$ darab diád összegének alakjában, 
     ahol $b_j\in\mathbb{F}^n$ oszlop vektorok és $c_j\in\mathbb{F}^m$ sor vektorok.
-    Ekkor a diádok oszlopaiból álló $\left\{ b_j:j=1,\dots,r \right\}$ rendszer lineárisan független rendszer,
-    és hasonlóan a diádok soraiból alkotott $\left\{ c_j:j=1,\dots,r \right\}$ rendszer is lineárisan független rendszer.
+    Ekkor a diádok oszlopaiból illetve soraiból alkotott 
+    \[
+        \left\{ b_j:j=1,\dots,r \right\} \text{ és }
+        \left\{ c_j:j=1,\dots,r \right\}
+    \] 
+    rendszerek lineárisan független rendszereket alkotnak.
 \end{proposition}
 \begin{proof}
     Legyen a $B$ mátrix $j$-edik oszlopa $b_j$ és a $C$ mátrix $j$-edik sora $c_j$.
@@ -5468,7 +5477,7 @@ amelyekre az
 \]
 egyenlőség teljesül: 
 $\alpha_{i,j}$ a $j$-edik bázis elem $A$ képének $i$-edik koordinátája.
-Ugyanez a mondat a koordináta-vektor fogalmával: 
+Ugyanez a koordináta-vektor fogalmával: 
 Az $Ae_j\in W$ vektornak az $\left\{ y_,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának az elemei 
 adják az $\alpha_{1,j},\alpha_{2,j},\dots,\alpha_{n,j}$ számokat, formálisabban:
 \[
@@ -5622,10 +5631,10 @@ Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
             \xi_1\\ \xi_2 \\ \vdots \\ \xi_m
         \end{pmatrix}.
     \end{math}
-    Ez éppen azt jelenti, 
+    Ez azt jelenti, 
     hogy $x=\sum_{j=1}^m\xi_je_j$, így 
     $Ax=\sum_{j=1}^m\xi_jAe_j$.
-    Véve ennek az $\left\{ f_1,\dots,f_n \right\}$ bázisban felírt koordináta-vektorát 
+    Véve az $Ax$ vektor $\left\{ f_1,\dots,f_n \right\}$ bázisban felírt koordináta-vektorát 
     \begin{multline*}
         [Ax]_{\left\{ f_1,\dots,f_n \right\}}
         =
@@ -5725,7 +5734,7 @@ Azért, hogy teljes legyen az analógia a lineáris operátorok kompozíciója �
 a lineáris operátorok $A\circ B$ kompozícióját is $A\cdot B$ módon, vagy még egyszerűbben $AB$ módon jelöljük.
 A jelölést a szóhasználat is követi:
 \begin{definition}[lineáris transzformációk szorzata]
-    A lineáris operátorok kompozícióját \emph{szorzatnak}\index{lineáris transzformációk szorzata} is mondjuk.
+    A lineáris operátorok kompozíció műveletét \emph{szorzatnak}\index{lineáris transzformációk szorzata} is mondjuk.
 \end{definition}
 \noindent Ilyen módon ha $A$ és $B$ két olyan lineáris operátor, amelynek kompozíciója -- azaz szorzata -- értelmes,
 akkor a mátrixaik szorzata is értelmes, továbbá
@@ -5868,8 +5877,8 @@ Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa a
         =\left[ B^{-1}AB \right]_\rgi^j
         =\\
         \left( \left[ B \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
-        \qedhere
     \end{multline*}
+    Ezt kellett belátni. 
 \end{proof}
 A fenti állítás minden $A\in L\left( V \right)$ lineáris transzformáció mellett igaz.
 Speciálisan, ha alkalmazzuk az $A=B$ esetre, akkor látjuk, 
@@ -6465,18 +6474,49 @@ amely mindig használható.
     Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
     tehát az $m$ polinom generálja a főideált.
 \end{proof}
-Néha kényelmesebb az kis minimál polinomokkat használni a minimál polinom meghatározására.
+A minimál polinom algoritmikus meghatározásához a kis minimál polinom is használhatók.
 \begin{proposition}
     Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja $m$.
-    Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ bázisa $V$-nek,
+    Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ egy bázisa $V$-nek,
     és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimál polinomok.
-    Ekkor a $p_1,\dots,p_n$ polinom legkisebb közös többszöröse $m$.
+    Ekkor a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse az $m$ minimal polinom.
 \end{proposition}
+\begin{proof}
+    Tetszőleges $v\in V$ mellett, ha $p_v$ a kis minimál polinom,
+    akkor $p_v|m$, hiszen $m\left( A \right)$ a konstans zérus transzformáció.
+    Emiatt $m$ egy közös többszöröse a $p_j$ kis minimál polinomoknak.
+    Most tegyük fel, hogy egy $p$ polinom többszöröse a $p_j$ kis minimál polinomoknak.
+    Világos, hogy minden $j$ mellett
+    \[
+        p\left( A \right)e_j
+        =
+        h_j\left( A \right)\left( p_j\left( A \right)e_j \right)
+        =
+        h_j\left( A \right)0
+        =
+        0.
+    \]
+    Mivel egy lineáris transzformáció egy bázison egyértelműen meghatározott, ezért
+    $p\left( A \right)=0$.
+    Ekkor persze $m|p$, 
+    azaz $m$ valóban  a kis minimálpolinomok legkisebb közös többszöröse.
+\end{proof}
 \begin{proposition}
     Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimál polinomjának.
     Ekkor $p\left( A \right)$ szinguláris\index{szinguláris}.
 \end{proposition}
-\begin{proposition}
+\begin{proof}
+    Jelölje $m$ a minimál polinomot,
+    és $m=pq$.
+    Így $\deg q<\deg m$. Persze $m\left( A \right)=p\left( A \right)q\left( A \right)$,
+        így ha $p\left( A \right)$ reguláris lenne,
+        akkor 
+        \[
+            q\left( A \right)=p\left( A \right)^{-1}m\left( A \right)=0
+        \]
+        Ebből persze $m|q$, így $\deg m\leq \deg q$, ami ellentmondás.
+\end{proof}
+\begin{proposition}[sajátérték]\index{sajátérték}
     Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós 
     vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
     polinomja.
@@ -6491,6 +6531,11 @@ Néha kényelmesebb az kis minimál polinomokkat használni a minimál polinom m
         \item $m\left( \lambda \right)=0.$\qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Az első három pont ekvivalenciája nyilvánvaló,
+    majd a $3\implies 4\implies 5\implies 6\implies 5\implies 3$
+    utat érdemes követni.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -6730,14 +6775,15 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
         L_1\left( B \right)=AB+BA^T \text{ és }
         L_2\left( B \right)=ABA^T.
     \]
-    Könnyű számolgatás mutatja, hogy az $L_1$ és $L_2$ lineáris transzformációk kommutálnak:
-    \[
+    Könnyű számolgatás mutatja, hogy az $L_1$ és $L_2$ lineáris transzformációk kommutálnak:\index{kommutál}
+    \begin{multline*}
         \left( L_1\circ L_2\right)B=
         A\left( ABA^T \right)+\left( ABA^T \right)A^T=
-        A\left( ABA^T+BA^TA^T \right)=
+        A\left( ABA^T+BA^TA^T \right)
+        =\\
         A\left( AB+BA^T \right)A^T =
         \left( L_2\circ L_1 \right)B.
-    \]
+    \end{multline*}
     Létezik tehát közös sajátvektora az $L_1$ és $L_2$ transzformációknak, ergo
     létezik $\lambda,\mu\in\mathbb{C}$ komplex szám, 
     és létezik nem az azonosan zérus $B\in\mathcal{S}$ lineáris transzformáció,
@@ -6852,10 +6898,11 @@ Ekkor létezik $c\in \mathbb{C}$ komplex szám, melyre
 \right| :z\in \mathbb{C}\right\} .\qedhere
 \]
 \end{proposition}
-
 \begin{proof}
-Most válasszuk az $r$ pozitív valós számot úgy, hogy egyrészt az előző lemma, másrészt $\frac{1}{2}\left|
-a_{n}\right| r^{n}>\left| a_{0}\right| $ is teljesüljön.
+Most úgy válasszuk meg az $r$ pozitív valós számot, 
+hogy egyrészt az előző lemma, másrészt az
+$\frac{1}{2}\left|a_{n}\right| r^{n}>\left| a_{0}\right|$ 
+feltétel is teljesüljön.
 Ekkor
 persze minden $z\in \mathbb{C}$, $\left| z\right| >r$ esetén 
 \[
@@ -7155,4 +7202,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 09 Feb 2020 11:13:49 PM CET
+Last Modified : Mon 10 Feb 2020 02:18:02 PM CET
