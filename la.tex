@@ -5616,7 +5616,7 @@ Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
         =
         [A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
         \cdot 
-        [x]_{\left\{ x_1,\dots,e_m \right\}}.
+        [x]_{\left\{ e_1,\dots,e_m \right\}}.
     \]
     Emiatt $\im A$ és $\im[A]$ egymással izomorf alterek, hasonlóan $\ker A$ és $\ker[A]$ egymással
     izomorf vektorterek, így dimenziójuk is azonos.
@@ -5673,7 +5673,7 @@ kapcsolódik össze.
     \[
         \left\{ e_1,\dots,e_m \right\}\subseteq V,\quad
         \left\{ z_1,\dots,z_r \right\}\subseteq Z,\quad
-        \left\{ f_1,\dots,f_n \right\}\subseteq Z
+        \left\{ f_1,\dots,f_n \right\}\subseteq W
     \]
     bázisokat.
     Jelölje $C=A\circ B$ a kompozíció lineáris operátort.
@@ -5690,7 +5690,7 @@ kapcsolódik össze.
 \end{proposition}
 \begin{proof}
     Először is ellenőrizzük, hogy értelmes-e az állításban felírt formula.
-    $\left[ A \right]$ mérete $m\times r$, $\left[ B \right]$ mérete $r\times n$.
+    $\left[ A \right]$ mérete $n\times r$, $\left[ B \right]$ mérete $r\times m$.
     Így az $[A]\cdot[B]$ szorzat értelmes és a szorzás eredménye egy $n\times m$ mátrix.
     A $[C]$ szintén egy $n\times m$ méretű mátrix, 
     így a bal és a jobb oldal összehasonlítása is értelmes.
@@ -5867,18 +5867,26 @@ Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa a
     A $j$-edik oszlopra:
     \begin{multline*}
         \left[ A \right]_\uj^j
-        =\\
+        =
         \left[ Af_j \right]_\uj
         =
         \left[ B \right]^{-1}_\rgi\cdot
-        \left[ Af_j \right]_\rgi
-        =\left[ B^{-1}(A(Be_j) \right]_\rgi
-        =\left[ \left( B^{-1}AB \right)e_j \right]_\rgi
-        =\left[ B^{-1}AB \right]_\rgi^j
-        =\\
+            \left[ Af_j \right]_\rgi
+        =
+            \left[ B \right]_\rgi^{-1}
+            \left[ A \right]_\rgi
+            \left[ f_j \right]_\rgi
+        =
+            \left[ B \right]_\rgi^{-1}
+            \left[ A \right]_\rgi
+            \left[ B \right]_\rgi^j
+        =
         \left( \left[ B \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
     \end{multline*}
-    Ezt kellett belátni. 
+    Közben használtuk a mátrix szorzás művelet asszociativitását,
+    és azt a tényt, 
+    hogy tetszőleges $\left[ E \right],\left[ F \right]$ mátrixok mellett
+    $\left( \left[ E \right]\left[ F \right] \right)^j=\left[ E \right]\left( \left[F  \right]^j \right)$.
 \end{proof}
 A fenti állítás minden $A\in L\left( V \right)$ lineáris transzformáció mellett igaz.
 Speciálisan, ha alkalmazzuk az $A=B$ esetre, akkor látjuk, 
@@ -7215,4 +7223,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 10 Feb 2020 02:42:43 PM CET
+Last Modified : Tue 11 Feb 2020 11:29:12 AM CET
