@@ -4429,7 +4429,7 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
     \]
 \end{proof}
 A fenti állítás konkrét alkalmazhatóságához nagy segítség a most következő észrevétel.
-\begin{proposition}
+\begin{proposition}\label{pr:dirosszegelozo}
     Adottak az $M_1,\dots,M_s\subseteq V$ alterek, ahol $s\geq 2$.
     Az alábbi feltételek ekvivalensek:
     \begin{enumerate}
@@ -5799,13 +5799,16 @@ A kérdések a következők:
     \item Ha ismerjük egy $x\in V$ vektor régi bázisra vonatkozó koordinátáit, 
         akkor hogyan számítható ugyanennek a vektornak az új bázisban felírt koordináta-vektora?
     \item Ha ismerjük egy $A\in L\left( V \right)$ lineáris transzformációnak a régi bázisban felírt mátrixát,
-        akkor hogyan számítható $A$-nak az új bázisban felírt mátrixa?
+        akkor hogyan számolható ki az $A$-nak valamely új bázisban felírt mátrixa?
+    \item Ha ismerjük egy $A\in L\left( V, W \right)$ lineáris operációnak a régi bázis páron felírt mátrixát,
+        akkor hogyan számítható $A$-nak az valamely új bázis páron felírt mátrixa?
 \end{enumerate}
 \begin{definition}
     Legyenek az 
     $\left\{ e_1,\dots,e_n \right\}$  és
     $\left\{ f_1,\dots,f_n \right\}$ bázisok rögzítve.
-    Tekintsük azt a $B$ lineáris transzformációt, amelyre $Be_j=f_j$ teljesül minden $j=1,\dots,n$ mellett.
+    Tekintsük azt a $B$ lineáris transzformációt, 
+    amelyre $Be_j=f_j$ teljesül minden $j=1,\dots,n$ mellett.
     Ezt a lineáris transzformációt nevezzük az
     $\left\{ e_1,\dots,e_n \right\}$ bázisról az 
     $\left\{ f_1,\dots,f_n \right\}$ bázisra való \emph{áttérés transzformációjának}\index{áttérés transzformáció}.
@@ -5813,20 +5816,22 @@ A kérdések a következők:
 Világos, hogy ha $B$ az áttérés transzformáció, akkor ennek 
 a régi bázisban felírt $[B]$ mátrixa egy olyan $n\times n$ méretű mátrix,
 amelynek $j$-edik oszlopa a $Be_j=f_j$ vektornak a régi bázisban felírt koordinátája.
-
-Az egész fejezetben nevezzük az $\left\{ e_1,\dots,e_n \right\}$ bázist régi bázisnak,
-és az $\left\{ f_1,\dots,f_n \right\}$ bázis elemeit új bázisnak.
-Legyen $B$ az áttérés lineáris transzformáció, és $[B]$ ennek a régi bázisban felírt mátrixa.
+Mivel $B$ szürjektív, ergo injektiv is, tehát $B$ egy izomorfizmus,
+ennek megfelelően a $\left[ B \right]$ mátrix reguláris mátrix, azaz létezik
+$\left[ B \right]^{-1}$ inverze.
 \footnote{
 Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa azonos, de ez később egyszerű következményként is adódik.}
 \section{Vektor koordinátái az új bázisban}
 \begin{proposition}
-    Legyen $x\in V$ tetszőleges veketor.
-    Ekkor 
+    Legyen az $\left\{ e_1,\dots,e_m \right\}$ a régi bázis,
+    és $\left\{ f_1,\dots,f_n \right\}$ az új bázis.
+    Jelölje $B$ a régi bázisról az új bázisra való áttérést
+    Ekkor tetszőleges $x\in V$ vektor mellett
     \[
         \left[ x \right]_\uj
         =
-        \left[ B \right]^{-1}
+        \left[ B \right]_\rgi^{-1}
+        \cdot
         \left[ x \right]_\rgi.\qedhere
     \]
 \end{proposition}
@@ -5852,41 +5857,74 @@ Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa a
     ha balról szorozzuk mindkét oldalt $\left[ B \right]^{-1}_\rgi$ inverz mátrixszal.
 \end{proof}
 
-\section{Lineáris transzformáció mátrixa az új bázisban}
+\section{Lineáris operátorok mátrixa új bázis párban}
 \begin{proposition}
-    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Legyen $A\in L\left( V,W \right)$ lineáris operáció
+    és tegyük fel, hogy ismerjük $A$ mátrixát az 
+    $\left\{ e_1,\dots,e_m \right\}\subseteq V$ és az
+    $\left\{ f_1,\dots,f_n \right\}\subseteq W$ régi bázisokban.
+    Legyenek az $\left\{ v_1,\dots,v_m \right\}\subseteq V$
+    és a $\left\{ w_1,\dots,w_n \right\}\subseteq W$ az új bázisok.
+    Definiálja $B\in L\left( V \right)$ a $V$ tér áttérés lineáris transzformációját
+    és $D\in L\left( W \right)$ a $W$ tér áttérés transzformációját.
     Ekkor 
     \[
-        \left[ A \right]_\uj
-        =
-        \left[ B \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi.\qedhere
+        \left[ A \right]_{\uj}=
+        \left[ B \right]_{\rgi}^{-1}\left[ A \right]_{\rgi}\left[ D \right]_{\rgi}.\qedhere
     \]
 \end{proposition}
 \begin{proof}
-    Azt mutatjuk meg, hogy a bal oldali és a jobb oldali mátrix megfelelő oszlopai megegyeznek.
+    Azt mutatjuk meg, hogy a bal oldali mátrix és a jobb oldali szorzat mátrix megfelelő oszlopai megegyeznek.
     A $j$-edik oszlopra:
     \begin{multline*}
-        \left[ A \right]_\uj^j
+        \left[ A \right]_{\uj}^j
         =
-        \left[ Af_j \right]_\uj
+        \left[ A \right]_{\substack{\left\{ v_1,\dots,v_m \right\}\\ \left\{ w_1,\dots,w_n \right\}}}^j
         =
-        \left[ B \right]^{-1}_\rgi\cdot
-            \left[ Af_j \right]_\rgi
+        \left[ Av_j \right]_{\left\{ w_1,\dots,w_n \right\}}
+        \\
         =
-            \left[ B \right]_\rgi^{-1}
-            \left[ A \right]_\rgi
-            \left[ f_j \right]_\rgi
+        \left[ D \right]^{-1}_{\left\{ f_1,\dots,f_n \right\}}\cdot
+            \left[ Av_j \right]_{\left\{ f_1,\dots,f_n \right\}}
         =
-            \left[ B \right]_\rgi^{-1}
+        \left[ D \right]^{-1}_{\left\{ f_1,\dots,f_n \right\}}\cdot
+            \left[ A \right]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+            \cdot
+            \left[ v_j \right]_{\left\{ e_1,\dots,e_m \right\}}
+        \\
+        =
+        \left[ D \right]^{-1}_{\left\{ f_1,\dots,f_n \right\}}\cdot
+            \left[ A \right]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+            \cdot
+        \left[ B \right]_{\left\{ e_1,\dots,e_m \right\}}^j
+        \\
+        =
+            \left[ D \right]_\rgi^{-1}
             \left[ A \right]_\rgi
             \left[ B \right]_\rgi^j
         =
-        \left( \left[ B \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
+        \left( \left[ D \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
     \end{multline*}
     Közben használtuk a mátrix szorzás művelet asszociativitását,
     és azt a tényt, 
     hogy tetszőleges $\left[ E \right],\left[ F \right]$ mátrixok mellett
     $\left( \left[ E \right]\left[ F \right] \right)^j=\left[ E \right]\left( \left[F  \right]^j \right)$.
+\end{proof}
+\section{Lineáris transzformáció mátrixa az új bázisban}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Ekkor 
+    \[
+        \left[ A \right]_{\uj}
+        =
+        \left[ B \right]^{-1}_\rgi\
+            \left[ A \right]_\rgi
+            \left[ B \right]_\rgi.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    A lineáris operátorokra vonatkozó állítás speciális esete,
+    mikor $W=V$ és $D=B$.
 \end{proof}
 A fenti állítás minden $A\in L\left( V \right)$ lineáris transzformáció mellett igaz.
 Speciálisan, ha alkalmazzuk az $A=B$ esetre, akkor látjuk, 
@@ -6046,6 +6084,7 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
     A fenti (\dag) rendszer bázisa $\lin\left( v;A \right)$-nak.
 \end{proposition}
 \begin{proof}
+    Először a $k$ szám konstrukciója:
     Mivel $v\neq 0$, ezért $\left\{ v \right\}$ lineárisan független.
     Ha $\left\{ v,Av \right\}$ lineárisan összefüggő,
     akkor $k=1$ és készen vagyunk.
@@ -6064,7 +6103,7 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
     \[
         \left\{ v,Av,\dots,A^{k-1}v \right\}
         \subseteq 
-        \lin\left( v,A \right).
+        \lin\left( v;A \right).
     \]
     Az előző lemma szerint
     \[
@@ -6079,6 +6118,8 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
         \lin\left\{ v,Av,A^2v,\dots \right\}
         \subseteq
         \lin\left\{ v,Av,\dots,A^{k-1}v \right\}
+        \subseteq
+        \lin\left( v;A \right).
     \]
     Ez azt jelenti, hogy a (\dag) vektorrendszer egy lineárisan független generátorrendszere 
     a $\lin\left( v;A \right)$ térnek, tehát valóban bázisa is.
@@ -6466,8 +6507,7 @@ akkor
     Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
 
-A következő állítás módszert ad a kis minimál polinom meghatározására,
-amely mindig használható.
+A következő állítás módszert ad a minimál polinom meghatározására.
 \begin{proposition}
     Legyen $A\in L\left( V \right)$, ahol $\dim V\geq 1$.
     Mivel $\dim L\left( V \right)=\left( \dim V \right)^2$ egy véges dimenziós vektortér,
@@ -6558,6 +6598,165 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     utat érdemes követni.
 \end{proof}
 
+\chapter{Transzformációk redukálása}
+\begin{proposition}
+    Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
+    amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
+    Tegyük fel, hogy $m$ előáll mint a $p,q$ egymással relatív prím, normált 
+    polinomok
+   \[
+       m=pq
+   \]
+   szorzata.
+   Ekkor a tér szétesik a 
+   $\ker p\left( A \right)$ és a 
+   $\ker q\left( A \right)$ invariáns alterei direktösszegére, azaz
+   \[
+       \ker p\left( A \right)\oplus
+       \ker q\left( A \right)=
+       V.
+   \]
+   Ha $A_1=A_{|\ker p\left( A \right)}$ és
+   $A_2=A_{|\ker q\left( A \right)}$, akkor $A_1$ minimál polinomja $p$ és $A_2$ minimál polinomja $q$.
+\end{proposition}
+\begin{proof}
+    Mivel $p$ és $q$ relatív prímek, ezért a Bezout-azonosság szerint van $f,g\in\mathbb{F}\left[ t \right]$ polinom, amelyekre
+    \[
+        fp+gq=1.
+    \]
+    Emiatt persze minden $x\in V$ mellett 
+    \[
+        f\left( A \right)p\left( A \right)x
+        +
+        g\left( A \right)q\left( A \right)x=Ix=x.\tag{\dag}
+    \]
+
+    Ha $x\in\ker p\left( A \right)\cap\ker q\left( A \right)$,
+    akkor 
+    $p\left( A \right)x=0=q\left( A \right)x$, tehát $x=0$, ami azt jelenti, hogy
+    $\ker p\left( A \right)$ és 
+    $\ker q\left( A \right)$ diszjunkt alterek.
+
+    Az is könnyű, hogy 
+    $f\left( A \right)p\left( A \right)x\in\ker q\left( A \right)$
+    és teljesen hasonlóan
+    $g\left( A \right)q\left( A \right)x\in\ker p\left( A \right)$,
+    így $\ker q\left( A \right)+\ker p\left( A \right)=V$ valóban fennáll.
+
+    Megmutattuk tehát, hogy $V$ előáll min a $\ker p\left( A \right)$ és a 
+    $\ker q\left( A \right)$ alterek direktösszege.
+
+    Világos, hogy minden $u\in\ker p\left( A \right)$ mellett
+    $p\left( A_1 \right)u
+    =
+    p\left( A \right)u=0$.
+
+    Ha $h$ egy másik olyan polinom, amelyre $h\left( A_1 \right)=0\in L\left( \ker p\left( A \right) \right)$,
+    akkor mivel a direktösszegre vonatkozó állítást már igazoltuk
+    \[
+        (hq)\left( A \right)x=
+        h\left( A \right)q\left( A \right)\left( x_1+x_2 \right)
+        =
+        q\left( A \right)h\left( A \right)x_1
+        +
+        h\left( A \right)q\left( A \right)x_2
+        =0+0
+        =0,
+    \]
+    ahol $x=x_1+x_2$, $x_1\in \ker p\left( A \right)$ és 
+    $x_2\in\ker q\left( A \right)$.
+    Látjuk tehát, hogy az $A$ transzformáció a $hq$ polinomnak is gyöke,
+    emiatt $m|hq$.
+    Mivel $p|m$, ezért 
+    \[p|hq\] is fennáll.
+    Most újra használjuk, hogy a $p$ és a $q$ polinomok relatív prímek,
+    így azt kapjuk, hogy $p|h.$
+    Megmutattuk, hogy a $J_{A_1}$ ideált a $p$ normált polinom generálja,
+    ami éppen azt jelenti, hogy $p$ az $A_1$ transzformáció minimál polinomja.
+    Az $A_2$ minimál polinomja $q$ állitás igazolása a fentivel analóg.
+\end{proof}
+\begin{proposition}
+    Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
+    amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
+    Tegyük fel, hogy $m$ előáll mint a páronként relatív prím
+    normált polinomok
+    \[
+       m=p_1p_2\dots p_n
+    \]
+    szorzata.
+    Jelölje minden $i=1,\dots,n$ mellett $V_i=\ker p_i\left( A \right)$
+    invariáns alteret, és $A_i=A|V_i$ megszorítást.
+    Világos, hogy $A_i\in L\left( V_i \right)$.
+    Ekkor
+    \begin{enumerate}
+        \item $V=V_1\oplus\dots\oplus V_n$;
+        \item $p_i$ az $A_i$ transzformáció minimál polinomja minden szóba jövő
+            $i=1,\dots,n$ mellett.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    A polinomok $n$ száma szerinti teljes indukcióval igazolunk.
+    Az $n=1$ eset triviális, de $n=2$ éppen az előző állítás.
+
+    Most tegyük fel, hogy az állítás $n$-nél kevesebb polinom szorzatára igaz, 
+    és lássuk be $n$-re.
+    Legyen $p=p_1,\dots,p_{n-1}$.
+    Világos, hogy $p$ és $p_n$ relatív prímek, hiszen ha $d$ irreducibilis osztója
+    $p$-nek és $p_n$-nek, 
+    akkor $d$ prím tulajdonsága szerint $d|p_i$ valamely $i<n$-re,
+    tehát $d|p_i$ és $d|p_n$. 
+    A feltevés szerint ilyen csak a konstans polinom lehetséges, 
+    ami valóban igazolja, hogy $p$ és $p_n$ relatív prímek.
+    Persze 
+    \[
+        m=pp_n.
+    \]
+    Alkalmazhatjuk tehát az előző állítást, azaz
+    \[
+        V=\ker p\left( A \right)\oplus V_n,
+    \]
+    továbbá $p$ a minimál polinomja az $A|\ker p\left( A \right)$-nak
+    és persze $p_n$ minimál polinomja $A_n$-nek.
+
+    Alkalmazzuk most az indukciós feltevést a $\ker p\left( A \right)$ vektortérre.
+    Ott az $A_{|\ker p\left( A \right)}$ lineáris transzformáció $p$ minimál polinomja
+    előáll mint $n-1$ páronként relatív prím polinom szorzata:
+    \[
+        m=p_1,\dots,p_{n-1}.
+    \]
+    Világos tehát, hogy 
+    \begin{enumerate}
+        \item 
+            $\ker p\left( A \right)=V_1\oplus\dots\oplus V_{n-1}$ és
+        \item $p_i$ az $A_i$ minimál polinomja minden $i=1,\dots,n-1$ mellett.
+    \end{enumerate}
+    Teljesül tehát a $V_1,\dots,V_{n-1},V_n$ alterekre, 
+    hogy mind diszjunkt -- az itt adott sorrendben -- az előzőek összegétől,
+    és a Minkowski-összegük az egész $V$ vektortér.
+    \Aref{pr:dirosszegelozo}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
+\end{proof}
+
+Mivel minden polinom előáll mint néhány irreducibilis polinom szorzata,
+ezért az igazolt állítás így is fogalmazható.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja
+    $m$.
+    Tudjuk, hogy $m$ egyértelműen áll elő
+    \[
+        m
+        =
+        p_1^{m_1}p_2^{m_2}\cdots p_r^{m_r},
+    \]
+    alakban, 
+    ahol $p_1,\dots,p_r$ egymástól páronként különböző normált, irreducibilis polinomok.
+    Jelölje $V_i=\ker p^{m_i}\left( A \right)$ 
+    jelölje $A_i=A_{|V_i}$ minden $i=1,\dots,r$ mellett.
+    Ekkor
+    \begin{enumerate}
+        \item $V=V_1\oplus\dots\oplus V_r$ és,
+        \item $A_i$ minimál polinomja $p_i^{m_i}$ minden $i=1,\dots,r$ mellett.\qedhere
+    \end{enumerate}
+\end{proposition}
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -6565,6 +6764,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
 \appendix
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
+
 
 
 \chapter{A komplex számokról}
@@ -7223,4 +7423,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 11 Feb 2020 11:29:12 AM CET
+Last Modified : Mon 17 Feb 2020 07:17:53 PM CET
