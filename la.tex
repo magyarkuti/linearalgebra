@@ -750,7 +750,7 @@ ahogyan azt az egész számok közt megszoktuk.
     ami azt jelenti, hogy $h=h_1$, 
     amiből persze $r_1=r$ már látszik is.
 \end{proof}
-\begin{proposition}[a polinomgyűrű egy főideál-gyűrű]
+\begin{proposition}[a polinomgyűrű egy főideál-gyűrű]\label{pr:pgyurufoidealgyuru}
     A polinomok $\mathbf{F}\left[ t \right]$ kommutatív, egységelemes, nullosztómentes gyűrűjében
     minden a $\left\{ 0 \right\}$-tól különböző ideált generál az ideálban lévő egyetlen normált minimális fokszámú polinom.
     Így $\mathbf{F}\left[ t \right]$ egy főideál-gyűrű.
@@ -813,7 +813,7 @@ Ilyenből a normált polinomok közül csak egy van.
     \end{enumerate}
 \end{definition}
 Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója vagy legkisebb közös többszöröse, és hány ilyen van?
-\begin{proposition}
+\begin{proposition}\label{pr:lkkt}
     Bármely $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ nem zérus polinomoknak
     létezik egyetlen legkisebb közös többszörösük.
 \end{proposition}
@@ -1278,11 +1278,11 @@ Az egész szakaszt összefoglalhatjuk így is:
     A mátrixot a mérete és az elemei határozzák meg.
     Emiatt két mátrix akkor azonos, ha azonos méretűek, és a megfelelő elemeik is azonosak.
 
-    \emph{Diádnak}\index{diád} nevezzük egy oszlop és egy sor szorzatát.
+    \emph{Diádnak}\index{diad@diád} nevezzük egy oszlop és egy sor szorzatát.
     Ha az oszlopnak és a sornak rendre azonosak az elemei, akkor \emph{szimmetrikus diádról} beszélünk.\index{szimmetrikus diád}
 \end{definition}
 Az azonos típusú mátrixok közt műveleteket definiálunk:
-\begin{definition}[mátrixok összege]\index{mátrixok összege}
+\begin{definition}[mátrixok összege]\index{matrix@mátrixok összege}
     Rögzített $m,n\in\mathbf{N}$ mellett, ha $A,B\in\mathbf{F}^{m\times n}$,
     akkor ezek összege az a $C\in\mathbf{F}^{m\times n}$ mátrix, amelyre
     \[
@@ -1330,7 +1330,7 @@ együtt később úgy fogjuk fogalmazni,
 hogy adott test feletti tetszőleges méretű mátrixok \emph{vektorteret}\index{vektortér} alkotnak.
 
 Most mátrixok szorzatát definiáljuk:
-\begin{definition}[mátrixok szorzata]\index{mátrixok szorzata}
+\begin{definition}[mátrixok szorzata]\index{matrix@mátrixok szorzata}
     Legyen $A\in\mathbf{F}^{m\times k}$ és $B\in\mathbf{F}^{k\times n}$ mátrix.
     Fontos, hogy $A$ oszlopainak száma azonos $B$ sorainak számával.
     Ezek $C=AB$ szorzata egy $C\in\mathbf{F}^{m\times n}$ mátrix,
@@ -1379,7 +1379,7 @@ Az összeadás és szorzás műveleteket a disztributivitás kapcsolja össze:
                 [C]_i=\sum_{s=1}^k[A]_i^s[B]_s.
             \]
         \item
-            A szorzat mátrix az $A$ oszlopaiból, és a $B$ soraiból alkotott diádok összege.
+            A szorzat mátrix az $A$ oszlopaiból, és a $B$ soraiból alkotott diádok összege.\index{diad@diád}
             Magyarul:
             \[
                 [C]=\sum_{s=1}^k[A]^s[B]_s.\qedhere
@@ -1809,7 +1809,7 @@ i=M_{0,1}=
     1&0
 \end{pmatrix}
 \)
-jelölést\index{$i$ komplex szám}, akkor minden komplex szám
+jelölést\index{i komplex szám@$i$ komplex szám}, akkor minden komplex szám
 \[
     M_{a,b}=
     \begin{pmatrix}
@@ -2690,7 +2690,7 @@ majd minden sorban ebből már egyértelműen kifejezhető az eliminált változ
 
 Innen érthető, 
 hogy a szokásos szóhasználat szerint, az eliminált változókat sokszor
-\emph{kötött változónak}\index{kötött változó}
+\emph{kötött változónak}\index{kotott@kötött változó}
 nevezzük,
 és a többi változót 
 \emph{szabad változónak}\index{szabad változó}
@@ -3259,7 +3259,7 @@ akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért
 $BA=A^{-1}A=I$ is fennáll.
 Ahogyan azt a mátrixok bevezetésekor \apageref{pg:kommutal}. oldalon megígértük,
 most megmutattuk azt, hogy a négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
-egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}
+egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}\index{kommutál}
 
 Egy konkrét példa megoldásával ismételjük át a szakasz elején megértett algoritmust.
 A feladat, hogy keressük meg az 
@@ -3733,7 +3733,7 @@ akkor $A$ bármelyik maximális lineárisan független oszloprendszerének $r$ a
 Ezeket az oszlopokat egy $B\in\mathbf{F}^{n\times r}$ mátrixba rendezve az $A$ oszlopvektortének
 egy generátorrendszerét kapjuk, 
 így létezik $B\in\mathbf{F}^{r\times m}$ mátrix, amelyre $AB=A$ teljesül.
-Mivel két mátrix szorzata diádok összegeként is felírható, 
+Mivel két mátrix szorzata diádok összegeként is felírható, \index{diad@diád}
 úgy azt kaptuk, hogy egy $r$ feszítőrangú mátrix felírható mint $r$ darab diád,
 tehát 1 rangú mátrix, összegeként. 
 Itt a diádokat alkotó oszlop rendszer és sorrendszer is lineárisan független.
@@ -4127,10 +4127,10 @@ ha a bázisban egy elemet megváltoztatunk.
 \end{eqnarray}
 \end{lemma}
 
-\chapter{Alterek Minkowski-összege és direkt összege}
+\chapter{Alterek Minkowski-összege és direkt összege}\index{Minkowski-összeg}
 \scwords Az alterek struktúráját vizsgáljuk a fejezetben.
 \section{Minkowski-összeg}
-\begin{definition}\index{Minowski-összeg}
+\begin{definition}\index{Minkowski-összeg}
     Legyen $V$ egy $\mathbf{F}$ test feletti vektortér és $H_1, H_2\subseteq V$ részhalmazok.
     E két halmaz \emph{összegén} vagy \emph{Minkowski-összegén}
     az
@@ -4225,7 +4225,7 @@ akkor többet is állíthatunk:
     Legyenek $M,N\subseteq V$ alterek.
     Ekkor 
     $\lin(M\cup N)=M+N$,
-    tehát az alterek Minkowski-összege is altér, sőt ez az $M$ és $N$ altereket tartalmazó
+    tehát az alterek Minkowski-összege\index{Minkowski-összeg} is altér, sőt ez az $M$ és $N$ altereket tartalmazó
     legszűkebb altér.
 \end{proposition}
 \begin{proof}
@@ -4571,7 +4571,7 @@ A faktortér az utolsó vektortér konstrukciós eljárásunk.
     \end{proof}
     Most definiálni szeretnénk az ekvivalencia osztályok halmazán összeadás és egy testbeli elemmel való
     szorzás műveletet.
-    Az összeadás művelet legyen a korábban definiált Minkowski--összeg.
+    Az összeadás művelet legyen a korábban definiált Minkowski--összeg.\index{Minkowski-összeg}
     Ez valóban művelet az ekvivalencia osztályokra megszorítva, 
     hiszen ha $M_{x_1}$ és $M_{x_2}$ két ekvivalencia osztály,
     akkor
@@ -5004,7 +5004,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 
     Ezt kellett belátni. 
 \end{proof}
-\begin{definition}[mátrix rangja]\index{mátrix rangja}
+\begin{definition}[mátrix rangja]\index{matrix@mátrix rangja}
     Mivel a sorrang, az oszloprang, a feszítőrang minden mátrix mellett azonos,
     ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \parencite{Wardlaw2005}}
 \end{definition}
@@ -5811,7 +5811,7 @@ A kérdések a következők:
     amelyre $Be_j=f_j$ teljesül minden $j=1,\dots,n$ mellett.
     Ezt a lineáris transzformációt nevezzük az
     $\left\{ e_1,\dots,e_n \right\}$ bázisról az 
-    $\left\{ f_1,\dots,f_n \right\}$ bázisra való \emph{áttérés transzformációjának}\index{áttérés transzformáció}.
+    $\left\{ f_1,\dots,f_n \right\}$ bázisra való \emph{áttérés transzformációjának}\index{az@áttérés transzformáció}.
 \end{definition}
 Világos, hogy ha $B$ az áttérés transzformáció, akkor ennek 
 a régi bázisban felírt $[B]$ mátrixa egy olyan $n\times n$ méretű mátrix,
@@ -5870,7 +5870,7 @@ Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa a
     Ekkor 
     \[
         \left[ A \right]_{\uj}=
-        \left[ B \right]_{\rgi}^{-1}\left[ A \right]_{\rgi}\left[ D \right]_{\rgi}.\qedhere
+        \left[ D \right]_{\rgi}^{-1}\left[ A \right]_{\rgi}\left[ B \right]_{\rgi}.\qedhere
     \]
 \end{proposition}
 \begin{proof}
@@ -6238,7 +6238,7 @@ ha az $A-\lambda I$ transzformáció szinguláris.
     $t^j$ tag együtthatója.
 \end{proof}
 Tudjuk, hogy lineáris transzformációk szorzata függ azok sorrendjétől.
-Ugyanúgy mint mátrixokra, két lineáris transzformációt \emph{kommutálónak}
+Ugyanúgy mint mátrixokra, két lineáris transzformációt \emph{kommutálónak}\index{kommutál}
 mondunk, ha szorzatuk a szorzás sorrendjétől független.
 Például az $I$ identitás minden transzformációval kommutál.
 Azt is láttuk, hogy ha $AB=I$, akkor $BA=I$ is fennáll, azaz $A$ és $B$ kommutálnak.
@@ -6252,7 +6252,7 @@ ergo
 \]
 Tehát meggondoltuk, hogy
 \begin{proposition}\index{kommutáló transzformációk}
-    Lineáris transzformáció polinomjai egymással kommutálnak.
+    Lineáris transzformáció polinomjai egymással kommutálnak.\index{kommutál}
 \end{proposition}
 Polinomok segítségével sok-sok új invariáns alteret kapunk.
 \begin{proposition}
@@ -6286,6 +6286,13 @@ $A$-nak.\index{saját altér}
     Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
     ha $p\left( A \right)=0$.
 \end{definition}
+Mielőtt tovább lépünk érdemes visszagondolnunk arra,
+hogy egy test feletti polinomgyűrű egy főideálgyűrű.\index{főideál-gyűrű}\index{főideál}
+Láttuk ugyanis 
+-- \ref{pr:pgyurufoidealgyuru}. állítás --, 
+hogy minden nem csak a $\left\{ 0 \right\}$ elemet tartalmazó ideálnak 
+van egyetlen legkisebb fokú és normált eleme, 
+ami egyben az ideál generáló eleme is.
 
 \section{Kis minimál polinom}
 \begin{proposition}
@@ -6342,7 +6349,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
         \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v=0 \right\}
     \]
     az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
-    Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideálgyűrű,
+    Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
     van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$.
     Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
     Ezt a polinomot nevezzük az $A$ transzformáció, $v$ vektorhoz tartozó
@@ -6459,7 +6466,7 @@ amely mindig használható.
         \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)=0 \right\}
     \]
     az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
-    Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideálgyűrű,
+    Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
     van tehát egyetlen normált polinomja $J_{A}$-nek, amely generálja $J_{A}$.
     Ez a $J_{A}$ legkisebb fokú, normált polinomja.
     Ezt a polinomot nevezzük az $A$ transzformáció
@@ -6533,7 +6540,7 @@ A következő állítás módszert ad a minimál polinom meghatározására.
     No de $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
     hiszen $\left\{ I,A,\dots,A^{k-1} \right\}$ lineárisan független.
     Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
-    tehát az $m$ polinom generálja a főideált.
+    tehát az $m$ polinom generálja a főideált.\index{főideál}
 \end{proof}
 A minimál polinom algoritmikus meghatározásához a kis minimál polinom is használhatók.
 \begin{proposition}
@@ -6541,6 +6548,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ egy bázisa $V$-nek,
     és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimál polinomok.
     Ekkor a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse az $m$ minimal polinom.
+    \index{legkisebb közös többszörös}
 \end{proposition}
 \begin{proof}
     Tetszőleges $v\in V$ mellett, ha $p_v$ a kis minimál polinom,
@@ -6561,6 +6569,28 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     $p\left( A \right)=0$.
     Ekkor persze $m|p$, 
     azaz $m$ valóban  a kis minimálpolinomok legkisebb közös többszöröse.
+\end{proof}
+\begin{proof}[Egy másik bizonyítás]\index{főideál}
+    Mivel a $p\left( A \right)$ lineáris transzformáció a bázison egyértelműen meghatározott, 
+    ezért $p\in J_A$ pontosan akkor teljesül,
+    ha $p\in J_{A,e_i}$ a bázis minden $e_i$ elemére.
+    Így 
+    \[
+        J\left( d \right)
+        =
+        \cap_{i=1}^nJ(p_i)
+        =
+        \cap_{i=1}^nJ_{A,e_i}
+        =
+        J_A
+        =
+        J(m).
+    \]
+    No de, a bal oldali ideál $d$ generáló eleme 
+    -- \aref{pr:lkkt}. állítás szerint --
+    a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse.
+    Mivel egy főidálnak csak egy normált generáló eleme van, 
+    ezért a $d$ legkisebb közös többszörös azonos a jobb oldali ideált generáló $m$ minimálpolinommal.
 \end{proof}
 \begin{proposition}
     Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimál polinomjának.
@@ -6636,14 +6666,13 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     $p\left( A \right)x=0=q\left( A \right)x$, tehát $x=0$, ami azt jelenti, hogy
     $\ker p\left( A \right)$ és 
     $\ker q\left( A \right)$ diszjunkt alterek.
-
-    Az is könnyű, hogy 
-    $f\left( A \right)p\left( A \right)x\in\ker q\left( A \right)$
-    és teljesen hasonlóan
-    $g\left( A \right)q\left( A \right)x\in\ker p\left( A \right)$,
-    így $\ker q\left( A \right)+\ker p\left( A \right)=V$ valóban fennáll.
-
-    Megmutattuk tehát, hogy $V$ előáll min a $\ker p\left( A \right)$ és a 
+    \\
+    Vegyük észre, hogy a
+    $f\left( A \right)p\left( A \right)x\in\ker q\left( A \right)$,
+    és hasonlóan 
+    $g\left( A \right)q\left( A \right)x\in\ker p\left( A \right)$.
+    Ez azt jelenti, hogy $\ker q\left( A \right)+\ker p\left( A \right)=V$ azonosság is fennáll.
+    Megmutattuk tehát, hogy $V$ előáll mint a $\ker p\left( A \right)$ és a 
     $\ker q\left( A \right)$ alterek direktösszege.
 
     Világos, hogy minden $u\in\ker p\left( A \right)$ mellett
@@ -6700,6 +6729,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
 
     Most tegyük fel, hogy az állítás $n$-nél kevesebb polinom szorzatára igaz, 
     és lássuk be $n$-re.
+    Feltehető tehát, hogy $n\geq 3$.
     Legyen $p=p_1,\dots,p_{n-1}$.
     Világos, hogy $p$ és $p_n$ relatív prímek, hiszen ha $d$ irreducibilis osztója
     $p$-nek és $p_n$-nek, 
@@ -6722,7 +6752,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     Ott az $A_{|\ker p\left( A \right)}$ lineáris transzformáció $p$ minimál polinomja
     előáll mint $n-1$ páronként relatív prím polinom szorzata:
     \[
-        m=p_1,\dots,p_{n-1}.
+        p=p_1,\dots,p_{n-1}.
     \]
     Világos tehát, hogy 
     \begin{enumerate}
@@ -6732,7 +6762,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     \end{enumerate}
     Teljesül tehát a $V_1,\dots,V_{n-1},V_n$ alterekre, 
     hogy mind diszjunkt -- az itt adott sorrendben -- az előzőek összegétől,
-    és a Minkowski-összegük az egész $V$ vektortér.
+    és a Minkowski-összegük az egész $V$ vektortér.\index{Minkowski-összeg}
     \Aref{pr:dirosszegelozo}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
 \end{proof}
 
@@ -6757,6 +6787,30 @@ ezért az igazolt állítás így is fogalmazható.
         \item $A_i$ minimál polinomja $p_i^{m_i}$ minden $i=1,\dots,r$ mellett.\qedhere
     \end{enumerate}
 \end{proposition}
+A konklúzió tehát az, 
+hogy elég olyan transzformációkkal foglalkoznunk,
+amelyek minimál polinomja egy irreducibilis polinom valamely egész kitevős hatványa.
+Az algebra alaptétele szerint a komplex számtest feletti irreducibilis polinom csak elsőfokú polinom lehet.
+Abban a speciális esetben tehát,
+amikor a $\mathbf{C}$ komplex számtest feletti vektortereket\index{komplex számtest feletti vektortér} vizsgálunk,
+ez azt jelenti, 
+hogy elég ha olyan $A\in L\left( V \right)$ transzformációval foglalkozunk, 
+amelynek $m$ minimál polinomjára
+\[
+    m\left( t \right)=(t-\alpha)^n
+\]
+teljesül valamely $\alpha\in\mathbf{C}$ komplex szám és $n\in\mathbf{N}$ egész mellett.
+Ilyen $A$ transzformációra, ha $B$ jelöli a $B=A-\alpha I$ lineáris transzformációt,
+akkor a $B$ olyan, 
+hogy valamely egész kitevős hatványa a konstans zérus transzformáció.
+Ez vezet majd a \emph{nillpotens}\index{nillpotens transzformáció} fogalmához.
+Ha felírjuk valamely bázisban egy ilyen $B$ nillpotens transzformáció mátrixát,
+akkor $A$ mátrixa is könnyen adódik $B$ mátrixából.
+Ehhez csak az $\alpha [I]$ mátrixot kell $\left[ B \right]$-hez adni,
+ami praktikusan nem jelent többet, 
+mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex számmal megemelni.
+A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -6813,10 +6867,10 @@ Jól ismert, hogy ha $A\in L\left( V \right)$ egy lineáris transzformáció
 és $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy polinom, akkor 
 $\operatorname{ker}p\left( A \right)$ és
 $\operatorname{Im}p\left( A \right)$ is $A$-ra invariáns alterek.
-Két lineáris trafóról azt mondjuk, hogy \emph{kommutálnak},
+Két lineáris trafóról azt mondjuk, hogy \emph{kommutálnak},\index{kommutál}
 ha $A_1A_2=A_2A_1.$
 Könnyen látható, hogy ha $A_1$ és $A_2$ kommutálnak, akkor tetszőleges két $p,q$
-polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.
+polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.\index{kommutál}
 \begin{lemma}
     Legyenek az $A_1,A_2\in L\left( V \right)$ kommutáló lineáris transzformációk,
     valamint $p,q\in\mathbb{F}\left[ t \right]$ polinomok.
@@ -6846,7 +6900,7 @@ polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.
     lineáris trafójának van sajátvektora.
     Ekkor minden olyan $\mathbb{F}$ feletti vektortérre, 
     amelynek dimenziója $d$-vel nem osztható igaz, 
-    hogy bármely két kommutáló lineáris transzformációjának van közös sajátvektora is.
+    hogy bármely két kommutáló lineáris transzformációjának van közös sajátvektora is.\index{kommutál}
 \end{lemma}
 \begin{proof}
     A tér dimenziója szerinti indukció.
@@ -7423,4 +7477,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 17 Feb 2020 07:17:53 PM CET
+Last Modified : Tue 18 Feb 2020 06:02:40 PM CET
