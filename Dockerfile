@@ -222,7 +222,7 @@ RUN tlmgr install \
  zapfding 
 
 WORKDIR /home/appuser
-# clone the linearalgebra repo
+# clone the repo magyarkuti/linearalgebra from github
 RUN git clone https://github.com/magyarkuti/linearalgebra.git 
 
 # workdir
@@ -231,4 +231,4 @@ WORKDIR /home/appuser/linearalgebra
 RUN latexmk -lualatex la
 
 # reset workdir
-#WORKDIR /home/appuser
+WORKDIR /home/appuser
