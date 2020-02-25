@@ -6457,7 +6457,7 @@ amely mindig használható.
     akkor
     $p\left( A \right)=0$, azaz $p\in J_{A}$ és $-\infty<\deg p\leq n^2$.
 \end{proof}
-\begin{definition}
+\begin{definition}[minimál polinom]\index{minimál polinom}
     Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
     Láttuk, hogy
     \[
@@ -6468,28 +6468,28 @@ amely mindig használható.
     az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
     Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
     van tehát egyetlen normált polinomja $J_{A}$-nek, amely generálja $J_{A}$.
-    Ez a $J_{A}$ legkisebb fokú, normált polinomja.
-    Ezt a polinomot nevezzük az $A$ transzformáció
-    \emph{minimál polinomjának}\index{minimál polinom}.
+    Ez a $J_{A}$ legkisebb fokú, normált polinomja, 
+    amit $A$ transzformáció \emph{minimál polinomjának} nevezünk.
 \end{definition}
 Ha $V\neq\left\{ 0 \right\}$, ergo $\dim V\geq 1$,
 akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja, 
 hiszen $p(t)=c, (c\neq 0)$ mellett
-$p\left( A \right)=cI\neq 0$, tehát a minimál polinom legalább első fokú.
-
+$p\left( A \right)=cI\neq 0$, 
+tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimál polinom legalább első fokú.
 
 \begin{proposition}
-Ha  $m$ az $A$ transzformáció minimál polinomja,
-akkor
+    Ha  $m\in\mathbf{F}\left[ t \right]$ polinom akkor és csak akkor 
+    az $A\in L\left( V \right)$ transzformáció minimál polinomja, 
+    ha
 \begin{enumerate}
     \item $m$ normált polinom,
     \item $m\left( A \right)=0$,
     \item ha $p\in\mathbb{F}\left[ t \right], p\neq 0$, amelyre 
-        $p\left( A \right)=0$, akkor $m|p$,
-    \item $\deg m\leq(\dim V)^2$%
-        .\qedhere
-        \footnote{Kis vártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
+        $p\left( A \right)=0$, akkor $m|p$.
 \end{enumerate}
+A minimál polinom fokszámára:%
+\footnote{Kis vártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
+$\deg m\leq(\dim V)^2$.
 \end{proposition}
 \begin{proof}
     Definíció szerint $m$ azon $p$ polinomok közül, 
@@ -6779,7 +6779,7 @@ ezért az igazolt állítás így is fogalmazható.
     \]
     alakban, 
     ahol $p_1,\dots,p_r$ egymástól páronként különböző normált, irreducibilis polinomok.
-    Jelölje $V_i=\ker p^{m_i}\left( A \right)$ 
+    Jelölje $V_i=\ker p_i^{m_i}\left( A \right)$ 
     jelölje $A_i=A_{|V_i}$ minden $i=1,\dots,r$ mellett.
     Ekkor
     \begin{enumerate}
@@ -6811,6 +6811,272 @@ ami praktikusan nem jelent többet,
 mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex számmal megemelni.
 A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma. 
 
+\chapter{Redukálás irreducibilis minimál polinom esetén}
+\scwords Kitérőnek is tekinthetjük a fejezetet.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ véges dimenziós vektortérnek,
+    az $m\in\mathbf{F}\left[ t \right]$ egy $k$-adfokú, irreducibilis polinom, amelyre $m\left( A \right)=0$.
+    Ekkor
+    \begin{enumerate}
+        \item minden $v\neq 0$ mellett 
+            \begin{math}
+                \dim\lin\left( v;A \right)=k;
+            \end{math}
+        \item
+            minden $v\in V$ vektor és minden $K\subseteq V$ invariáns altér mellett
+            $\lin\left( v;A \right)\cap K=\left\{ 0 \right\}$ vagy 
+            $\lin\left( v;A \right)\subseteq K$;
+        \item
+            a $V$ altér nulla dimenziós,
+            vagy $k$ dimenziós,
+            vagy $k$ dimenziós $A$ invariáns alterek dirketösszege.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}[Bizonyítás (1.)]
+    Legyen adott $v\neq 0$ vektor mellett $p_v$ a $v$-hez tartozó kis minimál polinom.
+    Mivel $m\left( A \right)v=0$, ezért $p_v|m$.
+    No de $m$ irreducibilis, ezért $m=p_v$.
+    Ekkor viszont
+    \[
+        k=\deg m=\deg p_v
+        =
+        \dim\lin\left( v;A \right).\qedhere
+    \]
+\end{proof}
+\begin{proof}[Bizonyítás (2.)]
+    Ha $v=0$, akkor az állítás nyilvánvaló. 
+    A továbbiakban emiatt $v\neq 0$.
+    Most tegyük fel, hogy $x\in\lin\left( v;A \right)\cap K$ és $x\neq 0$.
+    Ekkor
+    \[
+        \lin\left( x;A \right)
+        \subseteq
+        \lin\left( v;A \right)\cap K
+        \subseteq
+        \lin\left( v;A \right)
+    \]
+    No de, 
+    a bal és jobb oldali altér azonos dimenziós alterek,
+    emiatt fent mindenütt egyenlőség van.
+    Speciálisan 
+    $\lin\left( v;A \right)=\lin\left( v;A \right)\cap K$,
+    ami éppen azt jelenti, 
+    hogy 
+    $\lin\left( v;A \right)\subseteq K.$
+\end{proof}
+\begin{proof}[Bizonyítás (3.)]
+    Először is gondoljuk meg, hogy invariáns alterek Minkowski--összege is invariáns altér marad.
+    Ha $V$ nem tartalmaz nem zérus vektort, akkor $\dim V=\left\{ 0 \right\}$.
+
+    Ha $v_1\in V$ egy nem zérus vektor,
+    akkor jelölje $V_1=\lin\left( v_1;A \right)$.
+    Ha $V=V_1$, 
+    akkor $V$ egy $k$-dimenziós vektortér.
+
+    Ha $V\neq V_1$, akkor van van $v_2\in V\setminus V_1$.
+    Mivel $V_1$ egy invariáns altér, 
+    ezért a már igazolt állítás szerint bevezetve a $V_2=\lin\left( v_2;A \right)$
+    jelölést $V_2\cap V_1=\left\{ 0 \right\}$.
+    Értelmes tehát venni e két invariáns altér direktösszegét.
+    Ha $V=V_1\oplus V_2$, akkor $V$ előállt két $k$ dimenziós invariáns alterének direktösszegeként.
+
+    Ha $V\neq V_1\oplus V_2$, akkor van van $v_3\in V\setminus (V_1\oplus V_2)$.
+    Mivel $V_1\oplus V_2$ egy invariáns altér, 
+    ezért a már igazolt állítás szerint bevezetve a $V_3=\lin\left( v_3;A \right)$
+    jelölést $V_3\cap (V_1\oplus V_2)=\left\{ 0 \right\}$.
+    Értelmes tehát venni e három invariáns altér direktösszegét, hiszen
+    a $V_1,V_2,V_3$ alterek ebben a sorrendben véve olyanok, 
+    hogy mind diszjunkt az előzőek összegétől.
+    Ha $V=V_1\oplus V_2\oplus V_2$, 
+    akkor $V$ előállt három $k$ dimenziós invariáns alterének direktösszegeként.
+
+    Ha $V\neq V_1\oplus\dots\oplus V_t$, valamely $t\geq 2$ mellett,
+    akkor van van $v_{t+1}\in V\setminus (V_1\oplus\dots\oplus V_t)$.
+    Mivel $V_1\oplus\dots\oplus V_t$ egy invariáns altér, 
+    ezért a már igazolt állítás szerint bevezetve a $V_{t+1}=\lin\left( v_{t+1};A \right)$
+    jelölést $V_{t+1}\cap (V_1\oplus\dots\oplus V_t)=\left\{ 0 \right\}$.
+    Értelmes tehát venni ezen $t+1$ invariáns altér direktösszegét, hiszen
+    a $V_1,V_2,V_3,\dots,V_t,V_{t+1}$ alterek ebben a sorrendben véve olyanok, 
+    hogy mind diszjunkt az előzőek összegétől.
+    Ha $V=V_1\oplus\dots\oplus V_{t+1}$, 
+    akkor $V$ előállt $t+1$ darab $k$ dimenziós invariáns alterének direktösszegeként.
+
+    Az eljárás előbb utóbb a $V$ vektortér véges dimenziós volta miatt megáll.
+\end{proof}
+Legyen most $p$ egy tetszőleges $k$-ad fokú irreducibilis polinom,
+és $A\in L(V)$ egy lineáris transzformáció.
+Tekintsük a $V_1=\ker p\left( A \right)$ invariáns alteret, amelyre szorítsuk meg az $A$
+transzformációt, azaz $A_1=A|V_1$.
+Világos, hogy $p\left( A_1 \right)=0\in L\left( V_1 \right)$, ezért alkalmazhatjuk a fent igazolt tételt
+a $V_1$ altérre és az $A_1$ transzformációra.
+\begin{proposition}
+    Legyen $V$ egy véges dimenziós vektortér, $A\in L\left( V \right)$ egy lineáris transzformáció,
+    és $p\in\mathbf{F}\left[ t \right]$ egy irreducibilis polinom.
+    Ekkor
+    \begin{enumerate}
+        \item minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
+            \(
+                \dim\lin(v;A)=\deg p 
+            \)
+            és
+        \item a $\ker p\left( A \right)$ altér nulla dimenziós,
+            vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direktösszege.\qedhere
+    \end{enumerate}
+\end{proposition}
+\chapter{A minimál polinom fokszámáról}
+\begin{proposition}
+    Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
+    Ekkor $\dim V\geq m\rho\left( B^{m-1} \right)$.
+    \label{th:nilldim}
+\end{proposition}
+\begin{proof}
+    Létezik tehát olyan $\left\{ B^{m-1}v_1,B^{m-1}v_2,\dots,B^{m-1}v_r \right\}$
+    lineárisan független vektorrendszer, ahol $r=\rho(B^{m-1})$ a transzformáció képterének dimenziója.
+    Írjuk ezeket a vektorokat, az alábbi táblázat legalsó sorába.
+    \[
+        \begin{matrix}
+            v_1 & v_2 & v_3 & \dots & v_r\\
+            Bv_1 & Bv_2 & Bv_3 & \dots & Bv_{r}\\
+           B^2v_1 & B^2v_2 & B^2v_3 & \dots & B^2v_r\\
+           \vdots & \vdots & \vdots & \ddots & \vdots \\
+           B^{t}v_1 & B^{t}v_2 & B^{t}v_3 & \dots & B^{t}v_r\\
+           \vdots & \vdots & \vdots & \ddots & \vdots\\
+           B^{m-1}v_1 & B^{m-1}v_2 & B^{m-1}v_3 & \dots & B^{m-1}v_r
+        \end{matrix}
+    \]
+    Nyilván elég megmutatni,
+    hogy a teljes $m\cdot r$ elemű vektorrendszer lineárisan független.
+    Tekintsük ezen vektorok egy
+    \[
+        \sum_{j=0}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jx_k=0
+    \]
+    lineáris kombinációját.
+    Meg kell mutatnunk, hogy az összes $\alpha_{j,k}=0$.
+    Ha $m-1\geq t\geq 0$, az első olyan index, amelyre van $\alpha_{t,k}\neq 0$
+    együttható, akkor a $t$-edik index előtt, 
+    minden együttható zérus, ergo
+    \[
+        \sum_{j=t}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jx_k=0
+    \]
+    Erre alkalmazva a $B^{m-t-1}$ transzformációt azt kapjuk, hogy
+    \[
+        0
+        =
+        B^{m-t-1}0
+        =
+        \sum_{j=t}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^{j+m-t-1}x_k
+        =
+        \sum_{k=1}^r\alpha_{t,k}B^{t+m-t-1}x_k
+        =
+        \sum_{k=1}^r\alpha_{t,k}B^{m-1}x_k.
+    \]
+    No de az $\left\{ B^{m-1}x_1,\dots,B^{m-1}x_k \right\}$ egy lineárisan független rendszer,
+    amiből már következik, 
+    hogy minden $\alpha_{t,k}=0$,
+    ami ellentmondásban van a $t$ index definíciójával.
+\end{proof}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ minimálpolinomja 
+    $
+    p^{m}\left( t \right)
+    $
+    alakú,
+    ahol $p$ egy irreducibilis polinom, melynek foka $k$.
+    Ekkor a tér legalább $m\cdot k$ dimenziós 
+    (, azaz a minimálpolinom foka legfeljebb a tér dimenziója).
+    \label{th:minpol1}
+\end{proposition}
+\begin{proof}
+    Először nézzük a trivialitásokat.
+    Ha $p$ a konstans 1 polinom, akkor a tér csak a 0 vektort tartalmazza,
+    tehát mind a minimálpolinom fokszáma, mind a tér dimenziója zérus.
+    Ha $\deg p\geq 1$, és $m=1$, akkor a minimálpolinom irreducibilis, 
+    de van $v\in V$ nem zérus vektor.
+    Láttuk, hogy ilyenkor 
+    \[
+        \dim\lin\left( v;A \right)=\deg p=k,
+    \]
+    amiből persze következik, hogy a tér legalább $k$ dimenziós.
+    \footnote{Sőt még azt is láttuk, hogy néhány -- lehet, hogy csak egy -- $k$ dimenziós invariáns altér direktösszege.}
+
+    Most nézzük az érdekes esetet, 
+    mikor $\deg p\geq 1$ és $m\geq 2$.
+    Mivel a 
+    \begin{math}
+        p^{m-1}\left( t \right)
+    \end{math}
+    a minimálpolinomnál alacsonyab fokú de nem zérus polinom,  
+    ezért létezik $v\in V$, melyre $B=p\left( A \right)$ jelöléssel
+    \(
+        B^{m-1}v\neq 0.
+    \)
+    Persze e vektor a $\ker B=\ker p\left( A \right)$ 
+    egy eleme, 
+    és $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós,
+    ezért 
+    \[
+        \operatorname{lin}\left\{ B^{m-1}v;A \right\}=
+        \operatorname{lin}\left\{ 
+            B^{m-1}v,
+            AB^{m-1}v,
+            A^2B^{m-1}v,
+            \ldots,
+            A^{k-1}B^{m-1}v
+        \right\}
+    \]
+    pontosan $k$ dimenziós.
+    Persze $\left\{ B^{m-1}v,B^{m-1}Av,B^{m-1}A^2v,\dots,B^{m-1}A^{k-1}v \right\}\subseteq \operatorname{Im}B^{m-1}$,
+    ergo 
+    \[
+        \rho\left( B^{m-1}\right)\geq k.
+    \]
+    Alkalmazva $B$-re az imént igazolt \ref{th:nilldim} tételt kapjuk a kívánt
+    \(
+        \operatorname{dim}V\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
+    \)
+    becslést.
+\end{proof}
+\begin{proposition}
+    Tetszőleges lineáris transzformáció minimálpolinomjának foka legfeljebb a tér dimenziója.
+    \label{th:minpol}
+\end{proposition}
+\begin{proof}
+    Legyen 
+    $
+    m\left( t \right)
+    =
+    p_1^{m_1}\left( t \right)\cdot
+    p_2^{m_2}\left( t \right)\cdots
+    p_r^{m_r}\left( t \right)
+    $
+    a minimálpolinom relativ prím, irreducibilis polinomok hatványaiként való faktorizációja.
+    Tudjuk, hogy ekkor 
+    \[
+        V
+        =
+        \operatorname{ker}p_1^{m_1}\left( A \right)
+        \oplus
+        \operatorname{ker}p_2^{m_2}\left( A \right)
+        \oplus\dots\oplus
+        \operatorname{ker}p_r^{m_r}\left( A \right).
+    \]
+    Az $A|_{\operatorname{ker}p_i^{m_i}\left( A \right)}$ minimálpolinomja $p_i^{m_i}\left( t \right)$, így az előző tétel szerint minden egyes $i$ index mellett
+    $
+    m_i\cdot k_i\leq \operatorname{dim}(\operatorname{ker}p_i^{m_i}\left( A \right)).
+    $
+    Világos, hogy
+%    \begin{IEEEeqnarray}{+c+c*}
+    \[
+        \deg m
+        =
+        \sum_{i=1}^rk_i\cdot m_i
+        \leq
+        \sum_{i=1}^r\dim\ker p_i^{m_i}\left( A \right))
+        =
+        \dim V.\qedhere
+    \]
+%    \end{IEEEeqnarray}
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -7477,4 +7743,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 18 Feb 2020 06:02:40 PM CET
+Last Modified : Tue 25 Feb 2020 08:04:32 PM CET
