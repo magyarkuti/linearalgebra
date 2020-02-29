@@ -215,7 +215,6 @@ RUN tlmgr install \
  xetex \
  xetex.x86_64-linuxmusl \
  xetexconfig \
- xkeyval \
  xstring \
  xunicode \
  zapfchan \
@@ -223,12 +222,12 @@ RUN tlmgr install \
 
 WORKDIR /home/appuser
 # clone the repo magyarkuti/linearalgebra from github
-RUN git clone https://github.com/magyarkuti/linearalgebra.git 
+#RUN git clone https://github.com/magyarkuti/linearalgebra.git 
 
 # workdir
-WORKDIR /home/appuser/linearalgebra
+#WORKDIR /home/appuser/linearalgebra
 
-RUN latexmk -lualatex la
+#RUN latexmk -lualatex la
 
 # reset workdir
-WORKDIR /home/appuser
+#WORKDIR /home/appuser
