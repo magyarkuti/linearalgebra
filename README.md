@@ -25,3 +25,8 @@ De:
 
 Fontos, hogy semmi trükk nincs a LaTeX környetben, standard texlive, vagy Windows-on MikTeX, installáció után a fenti parancs hiba nélkül fordít.
 (Nem commit-álunk szintaktikailag helytelen file-t.)
+
+## LaTeX installáció nélkül, de installált Docker környezet mellett
+# Docker
+docker build -t mylatex .
+./compile
