@@ -27,6 +27,7 @@ Fontos, hogy semmi trükk nincs a LaTeX környetben, standard texlive, vagy Wind
 (Nem commit-álunk szintaktikailag helytelen file-t.)
 
 ## LaTeX installáció nélkül, de installált Docker környezet mellett
-# Docker
+
 docker build -t mylatex .
+
 ./compile
