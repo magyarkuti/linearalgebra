@@ -15,5 +15,5 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
            name: la.pdf
-           path: .
+           path: la.pdf
         
