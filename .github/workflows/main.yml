@@ -10,3 +10,4 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: la.tex
+          args:  -lualatex --file-line-error --interaction=nonstopmode
