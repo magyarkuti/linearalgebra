@@ -11,3 +11,9 @@ jobs:
         with:
           root_file: la.tex
           args:  -lualatex --file-line-error --interaction=nonstopmode
+      - name: Upload
+        uses: actions/upload-artifact@v1
+        with:
+           name: la.pdf
+           path: .
+        
