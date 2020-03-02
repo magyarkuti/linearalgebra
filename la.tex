@@ -6650,7 +6650,133 @@ a sajátvektor fogalmának segítségével.
     Az $A\in L\left( V \right)$ egy lineáris transzformáció
     pontosan akkor diagonalizálható,
     ha van térnek csupa sajátvektorokból álló bázisa.
+
+    Ebben az esetben a transzformációnak a $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban felírt mátrixának
+    $j$-edik diagonális eleme, 
+    éppen az a $\lambda_j$ sajátértéke $A$-nak,
+    amelyre $Av_j=\lambda_jv_j$.
 \end{proposition}
+Mivel a 
+\begin{math}
+    \begin{pmatrix}
+        -t&1\\1&-t
+    \end{pmatrix}
+\end{math}
+valós test feletti mátrix minden valós $t$ mellett reguláris, 
+ezért a 
+\begin{math}
+    \begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}
+\end{math}
+mátrix egy nagyon egyszerű példa olyan mátrixra, amelynek spektruma üres,
+így persze nem diagonalizálható.
+
+Csak a játék kedvéért, ha az
+\begin{math}
+    \begin{pmatrix}
+        0&1\\0&0
+    \end{pmatrix}
+\end{math}
+mátrixot tekintjük $\mathbf{R}$ felett, 
+azt kapjuk, hogy ez sem diagonalizálható.
+Van ugyan egyetlen sajátértéke $\lambda=0$,
+de az ehhez a sajátértékhez tartozó $\ker A$ sajátaltér egy dimenziós,
+emiatt nincs a térben két lineárisan független sajátvektor.
+
+A pozitív példa kedvéért nézzük az 
+\begin{math}
+    A
+    =
+    \begin{pmatrix}
+        1&1\\1&1
+    \end{pmatrix}
+\end{math}
+mátrixot. 
+Mind az $\mathbf{R}$,
+mind a $\mathbf{C}$ test felett diagonalizálható,
+hiszen $\sigma\left( A \right)=\left\{ 0,2 \right\}$, továbbá
+a $\lambda=0$-hoz tartozó sajáteltérre 
+$\ker A=\lin\left\{ 
+    \begin{pmatrix}
+        1\\-1
+    \end{pmatrix}
+\right\},$
+míg a $\lambda=2$ sajátértékhez tartozó sajátaltérre
+\begin{math}
+    \ker\left( A-2I \right)
+    =
+    \lin\left\{ 
+        \begin{pmatrix}
+            1\\1
+        \end{pmatrix}
+    \right\}.
+\end{math}
+Világos, hogy a
+\begin{math}
+    B
+    =
+    \left\{ 
+        \begin{pmatrix}
+            1\\-1
+        \end{pmatrix},
+        \begin{pmatrix}
+            1\\1
+        \end{pmatrix},
+    \right\}
+\end{math}
+vektorrendszer egy sajátvektorokból álló bázisa a két dimenziós vektortérnek.
+A fenti bázisban a transzformáció mátrixa
+\begin{math}
+    \begin{pmatrix}
+        0&0\\
+        0&2
+    \end{pmatrix}.
+\end{math}
+Mivel az erre a bázisra való áttérés mátrixa
+\begin{math}
+    B=
+    \begin{pmatrix}
+        1&1\\
+        -1&1
+    \end{pmatrix},
+\end{math}
+ezért az új bázisra való áttérést formuláját használva
+\[
+    [B]^{-1}[A]_{\rgi}[B]=
+    \frac{1}{2}
+    \begin{pmatrix}
+        1&-1\\
+        1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&1\\1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&1\\
+        -1&1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0&0\\
+        0&2
+    \end{pmatrix}
+    =[A]_{\uj}.
+\]
+Ezt úgy fejezzük ki, hogy az
+\begin{math}
+    \begin{pmatrix}
+        1&1\\
+        -1&1
+    \end{pmatrix}
+\end{math}
+izomorfizmus diagonalizálja az 
+\begin{math}
+    \begin{pmatrix}
+        1&1\\1&1
+    \end{pmatrix}
+\end{math}
+mátrixot.
 
 \chapter{Transzformációk redukálása}
 \begin{proposition}
@@ -8046,4 +8172,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 02 Mar 2020 03:56:52 PM CET
+Last Modified : Mon 02 Mar 2020 05:37:07 PM CET
