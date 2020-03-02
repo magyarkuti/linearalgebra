@@ -6592,6 +6592,8 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     Mivel egy főidálnak csak egy normált generáló eleme van, 
     ezért a $d$ legkisebb közös többszörös azonos a jobb oldali ideált generáló $m$ minimálpolinommal.
 \end{proof}
+\section{Sajátvektorok és diagonalizálhatóság}\index{sajátvektor}\index{diagonalizálhatóság}
+
 \begin{proposition}
     Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimál polinomjának.
     Ekkor $p\left( A \right)$ szinguláris\index{szinguláris}.
@@ -6607,7 +6609,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
         \]
         Ebből persze $m|q$, így $\deg m\leq \deg q$, ami ellentmondás.
 \end{proof}
-\begin{proposition}[sajátérték]\index{sajátérték}
+\begin{proposition}[sajátérték és minimál polinom]\index{sajátérték}
     Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós 
     vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
     polinomja.
@@ -6626,7 +6628,29 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     Az első három pont ekvivalenciája nyilvánvaló,
     majd a $3\implies 4\implies 5\implies 6\implies 5\implies 3$
     utat érdemes követni.
+    Az utolsó lépéshez mutattuk meg az előző állítást.
 \end{proof}
+Az egyik legfontosabb definícióhoz érkeztünk.
+\begin{definition}[diagonalizálható transzformáció]
+    Az $A\in L\left( V \right)$ lineáris transzformációt \emph{diagonalizálhatónak}\index{diagonalizálhatóság}
+    mondjuk, 
+    ha van a térnek olyan bázisa,
+    amelyben a transzformáció mátrixa diagonális alakú,\index{diagonális alakú mátrix}
+    azaz a fődiagonálisán kívül minden elem zérus.
+\end{definition}
+Az $\left[ A \right]$ négyzetes mátrix tehát pontosan akkor diagonális alakú, 
+ha minden $i\neq j$ mellett $\left[ A \right]_{i,j}=0.$
+Ez azt jelenti hogy a $j$-edik bázis elem képének a nem $j$-edik koordinátája zérus,
+azaz az $e_j$ bázis vektor $Ae_j=\lambda e_j$ valamely $\lambda\in\mathbf{F}$ számmal,
+ami éppen azt jelenti, hogy $e_j$ egy sajátvektor.
+Nyilvánvaló tehát, 
+hogy diagonalizálhatóság szükséges és elegendő módon megragadható
+a sajátvektor fogalmának segítségével.
+\begin{proposition}[diagonalizálhatóság]
+    Az $A\in L\left( V \right)$ egy lineáris transzformáció
+    pontosan akkor diagonalizálható,
+    ha van térnek csupa sajátvektorokból álló bázisa.
+\end{proposition}
 
 \chapter{Transzformációk redukálása}
 \begin{proposition}
@@ -6812,7 +6836,7 @@ mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex sz�
 A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma. 
 
 \chapter{Redukálás irreducibilis minimál polinom esetén}
-\scwords A legegszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
+\scwords A legegyszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
 
 \begin{proposition}\label{pr:irred_redukcio}
     Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ véges dimenziós vektortérnek,
@@ -8022,4 +8046,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 02 Mar 2020 01:04:41 PM CET
+Last Modified : Mon 02 Mar 2020 03:56:52 PM CET
