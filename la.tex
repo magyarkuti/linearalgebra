@@ -6777,6 +6777,60 @@ izomorfizmus diagonalizálja az
     \end{pmatrix}
 \end{math}
 mátrixot.
+\begin{proposition}
+    Különböző sajátértékekhez tartozó sajátvektorok rendszere lineárisan független.
+
+    Formálisabban:
+    Legyen $\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq \sigma\left( A \right)$
+    a sajátérékek páronként különböző elemekből álló rendszere,
+    és legyen $\left\{ v_1,\dots,v_s \right\}\subseteq V$ sajátvektorok olyan rendszere,
+    amelyre $v_j\in\ker\left( A-\lambda_jI \right)$ minden $j=1,\dots,s$ mellett.
+    Ekkor a sajátvektorok rendszere lineárisan független.
+\end{proposition}
+\begin{proof}
+    A sajátvektorok száma, azaz $s$ szerinti indukció.
+    Ha $s=1$, akkor készen is vagyunk,
+    hiszen egy sajátvektor egy nem zérus vektor.
+
+    Most tegyük fel, hogy igaz az állítás sajátvektorok $s$-nél kevesebb elemből álló rendszerére, 
+    és lássuk be sajátvektorok olyan $s$ elemű rendszerére, amelyek különböző sajátértékhez tartoznak.
+    Az indukciós feltevés szerint tehát $\left\{ v_1,\dots,v_{s-1} \right\}$ lineárisan független.
+    Ha $\left\{ v_1,\dots,v_{s-1},v_s \right\}$ lineárisan összefüggő lenne,
+    akkor valamely $\alpha_1,\dots,\alpha_{s-1}$ számokkal
+    \[
+        v_s=\sum_{j=1}^{s-1}\alpha_jv_j
+    \]
+    lenne. 
+    No de
+    \begin{equation*}
+        \sum_{j=1}^{s-1}\lambda_s\alpha_jv_j
+        =
+        \lambda_sv_s
+        =
+        Av_s
+        =
+        \sum_{j=1}^{s-1}\alpha_jAv_j
+        =
+        \sum_{j=1}^{s-1}\alpha_j\lambda_jv_j,
+    \end{equation*}
+    ami a az első $s-1$ elem lineárisan függetlensége szerint csak úgy lehetséges,
+    ha minden $j=1,\dots s-1$ mellett 
+    \begin{math}
+        \lambda_s\alpha_j
+        =
+        \alpha_j\lambda_j
+    \end{math},
+    ergo
+    \begin{math}
+        \alpha_j\left( \lambda_s-\lambda_j \right)
+        =
+        0.
+    \end{math}
+    Mivel itt különböző sajátértékekről van szó,
+    ezért minden szóba jövő $j$ mellett $\alpha_j=0$.
+    Ebből $v_s=0$ következik, 
+    ami ellentmond annak, hogy $v_s$ egy sajátvektor.
+\end{proof}
 
 \chapter{Transzformációk redukálása}
 \begin{proposition}
@@ -8172,4 +8226,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 02 Mar 2020 05:37:07 PM CET
+Last Modified : Mon 02 Mar 2020 06:17:32 PM CET
