@@ -33,8 +33,8 @@
 
 \usepackage[inline]{enumitem}
 \usepackage[a4paper]{geometry}
-%\usepackage[missing={(Oh my!)},dirty={Oh no!},mark]{gitinfo2}
-\usepackage[mark,dirty={(Dirty)}]{gitinfo2}
+\usepackage[missing={GitHub},dirty={Continuous integration},mark]{gitinfo2}
+%\usepackage[mark,dirty={(Dirty)}]{gitinfo2}
 %\edef\gitBranch{\gitBranch}
 \renewcommand{\gitMark}{References: \gitReferences\,@\,\gitFirstTagDescribe{}
     \textbullet{}
@@ -6813,7 +6813,7 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 
 \chapter{Redukálás irreducibilis minimál polinom esetén}
 \scwords Kitérőnek is tekinthetjük a fejezetet.
-\begin{proposition}
+\begin{proposition}\label{pr:irred_redukcio}
     Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ véges dimenziós vektortérnek,
     az $m\in\mathbf{F}\left[ t \right]$ egy $k$-adfokú, irreducibilis polinom, amelyre $m\left( A \right)=0$.
     Ekkor
@@ -6829,7 +6829,14 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
         \item
             a $V$ altér nulla dimenziós,
             vagy $k$ dimenziós,
-            vagy $k$ dimenziós $A$ invariáns alterek dirketösszege.\qedhere
+            vagy $k$ dimenziós $A$ invariáns alterek direktösszege.
+            Pontosabban,
+            ha $\dim V>0$, akkor létezik $r\geq 1$ szám, 
+            és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
+            \[
+                \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)=V.
+                \qedhere
+            \]
     \end{enumerate}
 \end{proposition}
 \begin{proof}[Bizonyítás (1.)]
@@ -6903,26 +6910,297 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 
     Az eljárás előbb utóbb a $V$ vektortér véges dimenziós volta miatt megáll.
 \end{proof}
+\subsection{Következmény}
+Világos, hogy 
+\(
+\left\{ 
+A^{k-1}v_1, A^{k-2}v_1,v_1,\dots,Av_1,v_1 
+\right\}
+\)
+bázisa a $\operatorname{lin}\left\{ v_1;A \right\}$
+invariáns altérnek.
+Ha ebben a bázisban felírjuk a transzformáció mátrixát, 
+akkor az első oszlopban vannak a minimálpolinom együtthatóinak ellentettjei,
+a diagonális feletti $1$-ek, vannak és minden más elem zérus:
+\[
+    \begin{pmatrix}
+        -\alpha_{k-1}&1&0&\dots&0\\
+        -\alpha_{k-2}&0&1&\dots&0\\
+        \vdots&\vdots&\ddots&\ddots&\vdots\\
+        -\alpha_{1}&0&0&\dots&1\\
+        -\alpha_{0}&0&0&\dots&0
+    \end{pmatrix}
+\]
+Meggondoltuk tehát, hogy ha a transzformáció $m$ minimálpolinomja irreducibilis és
+\[m\left( t \right)
+=\alpha_0+\alpha_1t+\dots+\alpha_{k-1}t^{k-1}+t^k
+\]
+alakú, akkor a térnek van olyan bázisa, amelyben a transzformáció mátrixa a fenti mátrix
+diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\operatorname{dim}V$.
+
+Házi feladatként gondoljuk meg, hogy minden nem konstans $m\left( t \right)\in\mathbb{F}\left[ t \right]$ 
+polinomhoz létezik egy $\mathbb{F}$ feletti vektortér, és azon egy lineáris transzformáció, 
+amelynek minimálpolinomja éppen $m$.
+({\footnotesize Segítség: Nézzük és csodáljuk a fenti mátrixot.})
+\subsubsection{Illusztráció}
+\textit{%
+Bontsuk lehető legalacsonyabb invariáns alterek direktösszegére az alábbi $\mathbb{R}$
+feletti vektortéren értelmezett lineáris transzformáció értelmezési tartományát,
+és írjuk fel $A$ mátrixát a lehető legegyszerűbb módon.
+A transzformáció definíciója egy 
+$\left\{
+u_1,u_2,u_3,u_4
+\right\}
+$
+bázis felett a következő:
+\[
+    A
+    \left( 
+    \alpha u_1
+    +
+    \beta u_2
+    +
+    \gamma u_3
+    +
+    \delta u_4
+    \right)
+    =
+    \left( -2\alpha + 3\gamma \right)u_1
+    +
+    \left( -2\alpha-\beta+3\gamma+\delta \right)u_2
+    +
+    \left( -\alpha+\gamma \right)u_3
+    +
+    \left( -\alpha-\beta+3\gamma \right)u_4.
+\]
+}
+\begin{proof}[Megoldás]
+Írjuk fel az operátor mátrixát:
+\(
+    A=
+    \begin{pmatrix}
+        -2&0&3&0\\
+        -2&-1&3&1\\
+        -1&0&1&0\\
+        -1&-1&3&0
+    \end{pmatrix}.
+\)
+Ha a sajátvektorokat keressük látjuk, hogy nincs valós sajátérték.
+Keressük tehát a minimálpolinomot a bázis egyes elemeihez tartozó kis minimálpolinomok 
+meghatározásával.
+\[
+    \begin{array}{r|cc}
+        &Au_1&A^2u_1\\
+        \hline
+        u_1&-2&1\\
+           &\framebox{-2}&2\\
+           &-1&1\\
+           &-1&1\\
+        \hline
+        &\delta&-1
+    \end{array}
+    \qquad
+    \begin{array}{r|c}
+           &A^2u_1\\
+        \hline
+        u_1&-1\\
+       Au_1&-1\\
+           & 0\\
+           & 0\\
+           \hline
+           & 
+    \end{array}
+    \qquad\qquad
+    \begin{array}{r}
+        \left\{ u_1,Au_1 \right\}\mbox{ lineárisan független, de}\\
+        A^2u_1+Au_1+u_1=0,\\
+        \mbox{ezért } p_1\left( t \right)=t^2+t+1.
+    \end{array}
+\]
+\[
+    \begin{array}{r|cc}
+        &Au_2&A^2u_2\\
+        \hline
+           &0 &0\\
+        u_2&-1&0\\
+           & 0&0\\
+           &\framebox{-1}&1\\
+        \hline
+        &\delta&-1
+    \end{array}
+    \qquad
+    \begin{array}{r|c}
+           &A^2u_2\\
+        \hline
+           & 0\\
+        u_2&-1\\
+           & 0\\
+       Au_2&-1\\
+           \hline
+           & 
+    \end{array}
+    \qquad\qquad
+    \begin{array}{r}
+        \left\{ u_2,Au_2 \right\}\mbox{ lineárisan független, de}\\
+        A^2u_2+Au_2+u_2=0,\\
+        \mbox{ezért } p_2\left( t \right)=t^2+t+1.
+    \end{array}
+\]
+\[
+    \begin{array}{r|cc}
+        &Au_3&A^2u_3\\
+        \hline
+           &\framebox{3}&-3\\
+           &3&-3\\
+        u_3&1&-2\\
+           &3&-3\\
+        \hline
+        &\delta&-1
+    \end{array}
+    \qquad
+    \begin{array}{r|c}
+           &A^2u_3\\
+        \hline
+       Au_3&-1\\
+           & 0\\
+        u_3&-1\\
+           &0\\
+           \hline
+           & 
+    \end{array}
+    \qquad\qquad
+    \begin{array}{r}
+        \left\{ u_3,Au_3 \right\}\mbox{ lineárisan független, de}\\
+        A^2u_3+Au_2+u_3=0,\\
+        \mbox{ezért } p_3\left( t \right)=t^2+t+1.
+    \end{array}
+\]
+\[
+    \begin{array}{r|cc}
+        &Au_4&A^2u_4\\
+        \hline
+           &0&0\\
+           &\framebox{1}&-1\\
+           &0&0\\
+        u_4&0&-1\\
+        \hline
+        &\delta&-1
+    \end{array}
+    \qquad
+    \begin{array}{r|c}
+           &A^2u_4\\
+        \hline
+           &0\\
+       Au_4&-1\\
+           & 0\\
+        u_4&-1\\
+           \hline
+           & 
+    \end{array}
+    \qquad\qquad
+    \begin{array}{r}
+        \left\{ u_4,Au_4 \right\}\mbox{ lineárisan független, de}\\
+        A^2u_4+Au_4+u_4=0,\\
+        \mbox{ezért } p_4\left( t \right)=t^2+t+1.
+    \end{array}
+\]
+Ez azt jelenti, hogy a minimálpolinom az 
+$m\left( t \right)=t^2+t+1$ másodfokú, az $\mathbb{R}$ test felett irreducibilis polinom.
+A mátrix, tehát két darab
+\(
+\begin{pmatrix}
+    -1,1\\
+    -1,0
+\end{pmatrix}
+\)
+mátrix diagonális elrendezésű partíciója.
+Mivel $Au_4=u_2$ az első invariáns altér bázisa lehet például
+$
+\left\{ 
+u_2,u_4
+\right\}
+$. Minden olyan nem zérus vektorra, amely nincs e két vektor lineáris burkában,
+az
+$
+\left\{ Av,v \right\}$
+rendszer egy invariáns direktkiegészítőt definiál.
+Pont erről szól \aref{pr:irred_redukcio}.~állítás.
+Ilyen módon például az
+\(
+\left\{ 
+    u_2,u_4,Au_1,u_1
+\right\}
+\)
+bázisban a transzformáció mátrixa
+\(
+\begin{pmatrix}
+    -1&1&0&0\\
+    -1&0&0&0\\
+    0&0&-1&1\\
+    0&0&-1&0
+\end{pmatrix}
+\)
+alakú.
+Emlékezve az általános bázis transzformációra azt kaptuk, hogy
+\[
+\begin{pmatrix}
+    -1&1&0&0\\
+    -1&0&0&0\\
+    0&0&-1&1\\
+    0&0&-1&0
+\end{pmatrix}
+=
+    \begin{pmatrix}
+        0&0&-2&1\\
+        1&0&-2&0\\
+        0&0&-1&0\\
+        0&1&-1&0
+    \end{pmatrix}^{-1}\cdot
+    \begin{pmatrix}
+        -2&0&3&0\\
+        -2&-1&3&1\\
+        -1&0&1&0\\
+        -1&-1&3&0
+    \end{pmatrix}\cdot
+    \begin{pmatrix}
+        0&0&-2&1\\
+        1&0&-2&0\\
+        0&0&-1&0\\
+        0&1&-1&0
+    \end{pmatrix}.\qedhere
+\]
+\end{proof}
+\section{Irreducibilis polinommal képzett magtér redukálása}
 Legyen most $p$ egy tetszőleges $k$-ad fokú irreducibilis polinom,
 és $A\in L(V)$ egy lineáris transzformáció.
 Tekintsük a $V_1=\ker p\left( A \right)$ invariáns alteret, amelyre szorítsuk meg az $A$
 transzformációt, azaz $A_1=A|V_1$.
-Világos, hogy $p\left( A_1 \right)=0\in L\left( V_1 \right)$, ezért alkalmazhatjuk a fent igazolt tételt
+Világos, hogy $p\left( A_1 \right)=0\in L\left( V_1 \right)$, 
+ezért alkalmazhatjuk a fent igazolt \ref{pr:irred_redukcio}.~állítást
 a $V_1$ altérre és az $A_1$ transzformációra.
 \begin{proposition}
     Legyen $V$ egy véges dimenziós vektortér, $A\in L\left( V \right)$ egy lineáris transzformáció,
     és $p\in\mathbf{F}\left[ t \right]$ egy irreducibilis polinom.
-    Ekkor
+    Ekkor:
     \begin{enumerate}
-        \item minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
+        \item Minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
             \(
-                \dim\lin(v;A)=\deg p 
+                \dim\lin(v;A)=\deg p;
             \)
-            és
-        \item a $\ker p\left( A \right)$ altér nulla dimenziós,
-            vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direktösszege.\qedhere
+        \item A $\ker p\left( A \right)$ altér nulla dimenziós,
+            vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direktösszege.
+            Pontosabban fogalmazva
+            ha $\nu\left( A \right)>0$, akkor létezik $r\geq 1$ szám,
+            és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
+            \[
+                \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)
+                =
+                \ker\left( p\left( A \right) \right).
+                \qedhere
+            \]
     \end{enumerate}
 \end{proposition}
+
 \chapter{A minimál polinom fokszámáról}
 \begin{proposition}
     Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
@@ -7743,4 +8021,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 25 Feb 2020 08:04:32 PM CET
+Last Modified : Mon 02 Mar 2020 09:46:27 AM CET
