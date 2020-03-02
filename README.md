@@ -33,3 +33,6 @@ Fontos, hogy semmi trükk nincs a LaTeX környetben, standard texlive, vagy Wind
 ## LaTeX és Docker nélkül ![Build LaTeX document](https://github.com/magyarkuti/linearalgebra/workflows/Build%20LaTeX%20document/badge.svg)
 Az utolsó commit:
 <https://github.com/magyarkuti/linearalgebra/blob/gh-pages/la.pdf>
+
+## Az aktuális pdf file:
+<https://github.com/magyarkuti/linearalgebra/raw/gh-pages/la.pdf>
