@@ -27,8 +27,8 @@ Fontos, hogy semmi trükk nincs a LaTeX környetben, standard texlive, vagy Wind
 (Nem commit-álunk szintaktikailag helytelen file-t.)
 
 ## LaTeX installáció nélkül, de installált Docker környezet mellett
-docker build -t mylatex .
-./compile
+ 1. docker build -t mylatex .
+ 2. ./compile
 
 ## LaTeX és Docker nélkül ![Build LaTeX document](https://github.com/magyarkuti/linearalgebra/workflows/Build%20LaTeX%20document/badge.svg)
 Az utolsó commit:
