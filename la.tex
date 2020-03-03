@@ -3413,7 +3413,8 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
 Nyilvánvaló példa, hogy ha a vektorrendszer a $0$ vektort tartalmazza, 
 akkor lineárisan összefüggő. 
 Hasonlóan, ha ugyanaz a vektor többször szerepel a vektorrendszerben, a rendszer szintén összefüggő.
-Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,de az $\left\{  \right\}$ üres rendszer is.
+Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,
+de az $\left\{  \right\}$ üres rendszer is.
 
 \begin{proposition}
     Legyen $\left\{ y_1,\dots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
@@ -4394,7 +4395,36 @@ hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
     hiszen a $k$-adik vektortérbeli elem a baloldalon a $v_k$ nem zérus vektora $M_k$-nak,
     míg a jobboldalon a zérus vektor szerepel $M_k$-ból (is).
 \end{proof}
-Megint csak a a két vektortér speciális esetére figyelve 
+Érdemes észrevenni, 
+hogy a fenti állítás 2. feltétele nem más mint az alábbi két feltétel együttesének tömör megfogalmazása:
+\emph{
+\begin{itemize}
+    \item[2a.] $N=M_1+\dots+M_s$,
+    \item[2b.] $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $v_j=0$.
+\end{itemize}
+}
+Így a következő állítást is meggondoltuk:
+\begin{proposition}
+    Legyen az $M_1,\dots,M_s,N\subseteq V$ a $V$ vektortér altere. 
+    Az $N=M_1\oplus\dots\oplus M_s$ pontosan akkor teljesül,
+    ha 
+    \begin{enumerate}
+        \item $M_k\subseteq N$ minden $k=1,\dots,s$ mellett;
+        \item[2a.] $N=M_1+\dots+M_s$;
+        \item[2b.] $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $v_j=0$.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+Ha tehát csak az $M_1,\dots,M_s$ alterek adottak,
+akkor annak szükséges és elegendő feltétele, 
+hogy ezeknek a direktösszege értelmezhető legyen éppen a fenti 2b feltétel.
+Ebben az esetben az $N=\sum_{j=1}^sM_j$ altér lesz az $M_1,\dots,M_s$ alterek
+\[
+    N=M_1\oplus\dots\oplus M_s
+\]
+direktösszege.
+
+Megint csak a két vektortér speciális esetére figyelve 
 azt igazoltuk, hogy $N$ pontosan akkor az $M_1$ és $M_2$ direkt összege,
 ha $M_1$ és $M_2$ olyan alterei $N$-nek, hogy $N$ minden eleme előáll,
 de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
@@ -4428,6 +4458,14 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
         \sum_{j=1}^{s}\dim M_j.\qedhere
     \]
 \end{proof}
+Az állításból azonnal adódik,
+hogy ha az $M_1, M_2, \dots,M_s$ alterek bázisait, egy közös vektorrendszerbe tesszük,
+akkor az így kapott vektorrendszer az $N$ tér egy bázisává válik.
+Világos ugyanis, hogy az egyesített rendszer $N$-nek generátorrendszere,
+és az elemeinek száma \aref{pr:drosszeg}.~állítás szerint éppen $\dim N$.
+Azt kaptuk tehát, hogy ez egy minimális generátorrendszere $N$-nek,
+ergo egy bázis.
+
 A fenti állítás konkrét alkalmazhatóságához nagy segítség a most következő észrevétel.
 \begin{proposition}\label{pr:dirosszegelozo}
     Adottak az $M_1,\dots,M_s\subseteq V$ alterek, ahol $s\geq 2$.
@@ -5939,7 +5977,7 @@ hogy az áttérés mátrixa azonos, ha az új bázisban, vagy a régi bázisban 
     \]
 \end{proposition}
 
-\chapter{Invariáns altér}
+\chapter{Invariáns alterek}
 \begin{definition}
     Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ vektortérnek,
     és $M\subseteq V$ a tér egy altere.
@@ -6659,14 +6697,14 @@ a sajátvektor fogalmának segítségével.
 Mivel a 
 \begin{math}
     \begin{pmatrix}
-        -t&1\\1&-t
+        -t&1\\-1&-t
     \end{pmatrix}
 \end{math}
 valós test feletti mátrix minden valós $t$ mellett reguláris, 
 ezért a 
 \begin{math}
     \begin{pmatrix}
-        0&1\\1&0
+        0&1\\-1&0
     \end{pmatrix}
 \end{math}
 mátrix egy nagyon egyszerű példa olyan mátrixra, amelynek spektruma üres,
@@ -6722,7 +6760,7 @@ Világos, hogy a
         \end{pmatrix},
         \begin{pmatrix}
             1\\1
-        \end{pmatrix},
+        \end{pmatrix}
     \right\}
 \end{math}
 vektorrendszer egy sajátvektorokból álló bázisa a két dimenziós vektortérnek.
@@ -6777,7 +6815,7 @@ izomorfizmus diagonalizálja az
     \end{pmatrix}
 \end{math}
 mátrixot.
-\begin{proposition}
+\begin{proposition}\label{pr:svlinfgtlen}
     Különböző sajátértékekhez tartozó sajátvektorok rendszere lineárisan független.
 
     Formálisabban:
@@ -6833,7 +6871,7 @@ mátrixot.
 \end{proof}
 Egy $n$-dimenziós térben $n$-elemű lineárisan független rendszer generátorrendszer is, így
 azonnali következmény a diagonalizálhatóság egy elegendő feltétele:
-\begin{proposition}
+\begin{proposition}[diagonalizálhatóság elegendő feltétele]
     Tegyük fel, hogy az $A\in L\left( V \right)$ lineáris transzformációnak annyi különböző sajátértéke van, 
     mint a $V$ vektortér dimenziója.
     Ekkor $A$ diagonalizálható.
@@ -6846,6 +6884,100 @@ ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója
     Ekkor $A$-nak legfeljebb $\dim V$ darab különböző sajátértéke lehet.
 \end{proposition}
 
+\begin{definition}[geometriai multiplicitás]
+    Ha $A\in L\left( V \right)$ egy lineáris transzformáció, 
+    és $\lambda\in\sigma\left( A \right)$ annak egy sajátérétke,
+    akkor az $A-\lambda I$ sajátaltér defektusát, 
+    tehát az $\ker\left( A-\lambda I \right)$ altér dimenzióját,
+    a $\lambda$ sajátérték \emph{geometriai multiplicitásának}\index{geometriai multiplicitás}
+    mondjuk.
+\end{definition}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ transzformáció, és
+    $\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq\sigma\left( A \right)$,
+    a spektrum különböző elemei.
+    Jelölje $M_j=\ker\left( A-\lambda_j I \right)$.
+    Ekkor értelmes az $M_1\oplus\dots\oplus M_s$ direktösszeg.
+\end{proposition}
+\begin{proof}
+    Megmutatjuk, hogy a $\sum_{j=1}^sM_j$ összegben minden elem előállítása egyértelmű.
+    Ehhez elég azt belátni, hogy $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ csak úgy lehetséges, ha
+    minden $j=1,\dots,s$ mellett $v_j=0$.
+    Tegyük fel tehát, hogy valamely $v_j\in M_j$ vektorokra 
+    \[
+        \sum_{j=1}^sv_j=0.
+    \]
+    Ez egy olyan lineáris kombináció, amelyben minden vektor együtthatója 1.
+    Emiatt a $\left\{ v_1,\dots,v_s \right\}$ vektorrendszer nem zérus vektorai is összefüggő rendszert alkotnak, 
+    feltéve hogy vannak ilyenek.
+    No de egy $v_j\in M_j$ vektor ha nem zérus, akkor egy sajátvektor.
+    Tehát ha a vektorrendszerben lenne nem zérus elem, 
+    akkor találnánk különböző sajátértékekhez tartozó sajátvektorok egy lineárisan összefüggő rendszerét, 
+    ami \aref{pr:svlinfgtlen}.~állítás szerint nem lehetséges.
+\end{proof}
+Meggondoltuk tehát,
+hogy ha páronként különböző $\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq\sigma\left( A \right)$ sajátértékekből indulunk ki,
+és egyesítjük a $\ker\left( A-\lambda_j I \right)$ sajátalterek egy-egy bázisait,
+akkor az így összetett vektorrendszer az
+\[
+    \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
+\]
+altér egy -- sajátvektorokból álló -- bázisa.
+Rögzítsük is ezt a fontos gondolatot, 
+amelyet a feladatok megoldása során sokszor használjuk majd.
+\begin{proposition}
+    A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direktösszegének egy bázisa.
+\end{proposition}
+\begin{proposition}[diagonalizálhatóság]
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció.
+    Jelölje $\left\{ \lambda_1,\dots,\lambda_s \right\}=\sigma\left( A \right)$
+    az $A$ spektrumát, 
+    azaz valamennyi különböző sajátértékét.
+    Az alábbi feltevések ekvivalensek.
+    \begin{enumerate}
+        \item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim V$,
+        \item 
+            \begin{math}
+                \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)=V,
+            \end{math}
+        \item Minden vektor előáll mint sajátvektorok összege,
+        \item Az $A$ diagonalizálható lineáris transzformáció.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Mivel a $\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)\subseteq V$ 
+    tartalmazás mindig fennáll,
+    ezért a 2. feltétel ekvivalens avval, hogy
+    \[
+        \sum_{j=1}^s\dim\left( \ker\left( A-\lambda_j I \right) \right)
+        =
+        \dim\left( 
+        \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
+        \right)
+        =\dim V,
+    \]
+    ami éppen a geometriai multiplicitásra vonatkozó feltétel.
+    Így az első két feltevés ekvivalenciáját megértettük.
+
+
+    Mivel a $\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)\subseteq V$ 
+    tartalmazás mindig fennáll,
+    ezért a 2. feltétel ekvivalens avval, hogy
+    \[
+        \sum_{j=1}^s\ker\left( A-\lambda_j I \right)=V,
+    \]
+    ami éppen a 3. feltétel.
+    Így a 2. és a 3. feltételek ekvivalenciáját is megértettük.
+
+    Ha 3., ezért 2. fennáll, akkor az egyes $\ker\left( A-\lambda_j I \right)$ sajátelterek bázisait egyesítve a 
+    $V$ tér egy sajátvektorokból álló bázisát kapjuk, 
+    ergo az $A$ diagonalizálható transzformáció.
+    Megfordítva, 
+    ha $A$ diagonalizálható, 
+    akkor van sajátvektorokból álló bázisa, 
+    így minden vektor előáll mint sajátvektorok összege.
+    Evvel a 3. és a 4. feltételek ekvivalenciáját is igazoltuk.
+\end{proof}
 \chapter{Transzformációk redukálása}
 \begin{proposition}
     Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
@@ -8240,4 +8372,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 02 Mar 2020 06:58:50 PM CET
+Last Modified : Tue 03 Mar 2020 12:54:44 PM CET
