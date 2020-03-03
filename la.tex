@@ -3413,7 +3413,8 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
 Nyilvánvaló példa, hogy ha a vektorrendszer a $0$ vektort tartalmazza, 
 akkor lineárisan összefüggő. 
 Hasonlóan, ha ugyanaz a vektor többször szerepel a vektorrendszerben, a rendszer szintén összefüggő.
-Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,de az $\left\{  \right\}$ üres rendszer is.
+Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,
+de az $\left\{  \right\}$ üres rendszer is.
 
 \begin{proposition}
     Legyen $\left\{ y_1,\dots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
@@ -4394,7 +4395,36 @@ hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
     hiszen a $k$-adik vektortérbeli elem a baloldalon a $v_k$ nem zérus vektora $M_k$-nak,
     míg a jobboldalon a zérus vektor szerepel $M_k$-ból (is).
 \end{proof}
-Megint csak a a két vektortér speciális esetére figyelve 
+Érdemes észrevenni, 
+hogy a fenti állítás 2. feltétele nem más mint az alábbi két feltétel együttesének tömör megfogalmazása:
+\emph{
+\begin{itemize}
+    \item[2a.] $N=M_1+\dots+M_s$,
+    \item[2b.] $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $v_j=0$.
+\end{itemize}
+}
+Így a következő állítást is meggondoltuk:
+\begin{proposition}
+    Legyen az $M_1,\dots,M_s,N\subseteq V$ a $V$ vektortér altere. 
+    Az $N=M_1\oplus\dots\oplus M_s$ pontosan akkor teljesül,
+    ha 
+    \begin{enumerate}
+        \item $M_k\subseteq N$ minden $k=1,\dots,s$ mellett;
+        \item[2a.] $N=M_1+\dots+M_s$;
+        \item[2b.] $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $v_j=0$.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+Ha tehát csak az $M_1,\dots,M_s$ alterek adottak,
+akkor annak szükséges és elegendő feltétele, 
+hogy ezeknek a direktösszege értelmezhető legyen éppen a fenti 2b feltétel.
+Ebben az esetben az $N=\sum_{j=1}^sM_j$ altér lesz az $M_1,\dots,M_s$ alterek
+\[
+    N=M_1\oplus\dots\oplus M_s
+\]
+direktösszege.
+
+Megint csak a két vektortér speciális esetére figyelve 
 azt igazoltuk, hogy $N$ pontosan akkor az $M_1$ és $M_2$ direkt összege,
 ha $M_1$ és $M_2$ olyan alterei $N$-nek, hogy $N$ minden eleme előáll,
 de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
@@ -4428,6 +4458,14 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
         \sum_{j=1}^{s}\dim M_j.\qedhere
     \]
 \end{proof}
+Az állításból azonnal adódik,
+hogy ha az $M_1, M_2, \dots,M_s$ alterek bázisait, egy közös vektorrendszerbe tesszük,
+akkor az így kapott vektorrendszer az $N$ tér egy bázisává válik.
+Világos ugyanis, hogy az egyesített rendszer $N$-nek generátorrendszere,
+és az elemeinek száma \aref{pr:drosszeg}.~állítás szerint éppen $\dim N$.
+Azt kaptuk tehát, hogy ez egy minimális generátorrendszere $N$-nek,
+ergo egy bázis.
+
 A fenti állítás konkrét alkalmazhatóságához nagy segítség a most következő észrevétel.
 \begin{proposition}\label{pr:dirosszegelozo}
     Adottak az $M_1,\dots,M_s\subseteq V$ alterek, ahol $s\geq 2$.
@@ -5939,7 +5977,7 @@ hogy az áttérés mátrixa azonos, ha az új bázisban, vagy a régi bázisban 
     \]
 \end{proposition}
 
-\chapter{Invariáns altér}
+\chapter{Invariáns alterek}
 \begin{definition}
     Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ vektortérnek,
     és $M\subseteq V$ a tér egy altere.
@@ -6592,6 +6630,8 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     Mivel egy főidálnak csak egy normált generáló eleme van, 
     ezért a $d$ legkisebb közös többszörös azonos a jobb oldali ideált generáló $m$ minimálpolinommal.
 \end{proof}
+\section{Sajátvektorok és diagonalizálhatóság}\index{sajátvektor}\index{diagonalizálhatóság}
+
 \begin{proposition}
     Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimál polinomjának.
     Ekkor $p\left( A \right)$ szinguláris\index{szinguláris}.
@@ -6607,7 +6647,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
         \]
         Ebből persze $m|q$, így $\deg m\leq \deg q$, ami ellentmondás.
 \end{proof}
-\begin{proposition}[sajátérték]\index{sajátérték}
+\begin{proposition}[sajátérték és minimál polinom]\index{sajátérték}
     Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós 
     vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
     polinomja.
@@ -6626,8 +6666,318 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     Az első három pont ekvivalenciája nyilvánvaló,
     majd a $3\implies 4\implies 5\implies 6\implies 5\implies 3$
     utat érdemes követni.
+    Az utolsó lépéshez mutattuk meg az előző állítást.
 \end{proof}
+Az egyik legfontosabb definícióhoz érkeztünk.
+\begin{definition}[diagonalizálható transzformáció]
+    Az $A\in L\left( V \right)$ lineáris transzformációt \emph{diagonalizálhatónak}\index{diagonalizálhatóság}
+    mondjuk, 
+    ha van a térnek olyan bázisa,
+    amelyben a transzformáció mátrixa diagonális alakú,\index{diagonális alakú mátrix}
+    azaz a fődiagonálisán kívül minden elem zérus.
+\end{definition}
+Az $\left[ A \right]$ négyzetes mátrix tehát pontosan akkor diagonális alakú, 
+ha minden $i\neq j$ mellett $\left[ A \right]_{i,j}=0.$
+Ez azt jelenti hogy a $j$-edik bázis elem képének a nem $j$-edik koordinátája zérus,
+azaz az $e_j$ bázis vektor $Ae_j=\lambda e_j$ valamely $\lambda\in\mathbf{F}$ számmal,
+ami éppen azt jelenti, hogy $e_j$ egy sajátvektor.
+Nyilvánvaló tehát, 
+hogy diagonalizálhatóság szükséges és elegendő módon megragadható
+a sajátvektor fogalmának segítségével.
+\begin{proposition}[diagonalizálhatóság]
+    Az $A\in L\left( V \right)$ egy lineáris transzformáció
+    pontosan akkor diagonalizálható,
+    ha van térnek csupa sajátvektorokból álló bázisa.
 
+    Ebben az esetben a transzformációnak a $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban felírt mátrixának
+    $j$-edik diagonális eleme, 
+    éppen az a $\lambda_j$ sajátértéke $A$-nak,
+    amelyre $Av_j=\lambda_jv_j$.
+\end{proposition}
+Mivel a 
+\begin{math}
+    \begin{pmatrix}
+        -t&1\\-1&-t
+    \end{pmatrix}
+\end{math}
+valós test feletti mátrix minden valós $t$ mellett reguláris, 
+ezért a 
+\begin{math}
+    \begin{pmatrix}
+        0&1\\-1&0
+    \end{pmatrix}
+\end{math}
+mátrix egy nagyon egyszerű példa olyan mátrixra, amelynek spektruma üres,
+így persze nem diagonalizálható.
+
+Csak a játék kedvéért, ha az
+\begin{math}
+    \begin{pmatrix}
+        0&1\\0&0
+    \end{pmatrix}
+\end{math}
+mátrixot tekintjük $\mathbf{R}$ felett, 
+azt kapjuk, hogy ez sem diagonalizálható.
+Van ugyan egyetlen sajátértéke $\lambda=0$,
+de az ehhez a sajátértékhez tartozó $\ker A$ sajátaltér egy dimenziós,
+emiatt nincs a térben két lineárisan független sajátvektor.
+
+A pozitív példa kedvéért nézzük az 
+\begin{math}
+    A
+    =
+    \begin{pmatrix}
+        1&1\\1&1
+    \end{pmatrix}
+\end{math}
+mátrixot. 
+Mind az $\mathbf{R}$,
+mind a $\mathbf{C}$ test felett diagonalizálható,
+hiszen $\sigma\left( A \right)=\left\{ 0,2 \right\}$, továbbá
+a $\lambda=0$-hoz tartozó sajáteltérre 
+$\ker A=\lin\left\{ 
+    \begin{pmatrix}
+        1\\-1
+    \end{pmatrix}
+\right\},$
+míg a $\lambda=2$ sajátértékhez tartozó sajátaltérre
+\begin{math}
+    \ker\left( A-2I \right)
+    =
+    \lin\left\{ 
+        \begin{pmatrix}
+            1\\1
+        \end{pmatrix}
+    \right\}.
+\end{math}
+Világos, hogy a
+\begin{math}
+    B
+    =
+    \left\{ 
+        \begin{pmatrix}
+            1\\-1
+        \end{pmatrix},
+        \begin{pmatrix}
+            1\\1
+        \end{pmatrix}
+    \right\}
+\end{math}
+vektorrendszer egy sajátvektorokból álló bázisa a két dimenziós vektortérnek.
+A fenti bázisban a transzformáció mátrixa
+\begin{math}
+    \begin{pmatrix}
+        0&0\\
+        0&2
+    \end{pmatrix}.
+\end{math}
+Mivel az erre a bázisra való áttérés mátrixa
+\begin{math}
+    B=
+    \begin{pmatrix}
+        1&1\\
+        -1&1
+    \end{pmatrix},
+\end{math}
+ezért az új bázisra való áttérést formuláját használva
+\[
+    [B]^{-1}[A]_{\rgi}[B]=
+    \frac{1}{2}
+    \begin{pmatrix}
+        1&-1\\
+        1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&1\\1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&1\\
+        -1&1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0&0\\
+        0&2
+    \end{pmatrix}
+    =[A]_{\uj}.
+\]
+Ezt úgy fejezzük ki, hogy az
+\begin{math}
+    \begin{pmatrix}
+        1&1\\
+        -1&1
+    \end{pmatrix}
+\end{math}
+izomorfizmus diagonalizálja az 
+\begin{math}
+    \begin{pmatrix}
+        1&1\\1&1
+    \end{pmatrix}
+\end{math}
+mátrixot.
+\begin{proposition}\label{pr:svlinfgtlen}
+    Különböző sajátértékekhez tartozó sajátvektorok rendszere lineárisan független.
+
+    Formálisabban:
+    Legyen $\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq \sigma\left( A \right)$
+    a sajátérékek páronként különböző elemekből álló rendszere,
+    és legyen $\left\{ v_1,\dots,v_s \right\}\subseteq V$ sajátvektorok olyan rendszere,
+    amelyre $v_j\in\ker\left( A-\lambda_jI \right)$ minden $j=1,\dots,s$ mellett.
+    Ekkor a sajátvektorok rendszere lineárisan független.
+\end{proposition}
+\begin{proof}
+    A sajátvektorok száma, azaz $s$ szerinti indukció.
+    Ha $s=1$, akkor készen is vagyunk,
+    hiszen egy sajátvektor egy nem zérus vektor.
+
+    Most tegyük fel, hogy igaz az állítás sajátvektorok $s$-nél kevesebb elemből álló rendszerére, 
+    és lássuk be sajátvektorok olyan $s$ elemű rendszerére, amelyek különböző sajátértékhez tartoznak.
+    Az indukciós feltevés szerint tehát $\left\{ v_1,\dots,v_{s-1} \right\}$ lineárisan független.
+    Ha $\left\{ v_1,\dots,v_{s-1},v_s \right\}$ lineárisan összefüggő lenne,
+    akkor valamely $\alpha_1,\dots,\alpha_{s-1}$ számokkal
+    \[
+        v_s=\sum_{j=1}^{s-1}\alpha_jv_j
+    \]
+    lenne. 
+    No de
+    \begin{equation*}
+        \sum_{j=1}^{s-1}\lambda_s\alpha_jv_j
+        =
+        \lambda_sv_s
+        =
+        Av_s
+        =
+        \sum_{j=1}^{s-1}\alpha_jAv_j
+        =
+        \sum_{j=1}^{s-1}\alpha_j\lambda_jv_j,
+    \end{equation*}
+    ami a az első $s-1$ elem lineárisan függetlensége szerint csak úgy lehetséges,
+    ha minden $j=1,\dots s-1$ mellett 
+    \begin{math}
+        \lambda_s\alpha_j
+        =
+        \alpha_j\lambda_j
+    \end{math},
+    ergo
+    \begin{math}
+        \alpha_j\left( \lambda_s-\lambda_j \right)
+        =
+        0.
+    \end{math}
+    Mivel itt különböző sajátértékekről van szó,
+    ezért minden szóba jövő $j$ mellett $\alpha_j=0$.
+    Ebből $v_s=0$ következik, 
+    ami ellentmond annak, hogy $v_s$ egy sajátvektor.
+\end{proof}
+Egy $n$-dimenziós térben $n$-elemű lineárisan független rendszer generátorrendszer is, így
+azonnali következmény a diagonalizálhatóság egy elegendő feltétele:
+\begin{proposition}[diagonalizálhatóság elegendő feltétele]
+    Tegyük fel, hogy az $A\in L\left( V \right)$ lineáris transzformációnak annyi különböző sajátértéke van, 
+    mint a $V$ vektortér dimenziója.
+    Ekkor $A$ diagonalizálható.
+\end{proposition}
+Az identitás mátrix példája mutatja, hogy a feltétel elegendő, de nem szükséges.
+Mivel $n$-dimenziós térben legfeljebb $n$ elemű linárisan független rendszer van,
+ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója:
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció.
+    Ekkor $A$-nak legfeljebb $\dim V$ darab különböző sajátértéke lehet.
+\end{proposition}
+
+\begin{definition}[geometriai multiplicitás]
+    Ha $A\in L\left( V \right)$ egy lineáris transzformáció, 
+    és $\lambda\in\sigma\left( A \right)$ annak egy sajátérétke,
+    akkor az $A-\lambda I$ sajátaltér defektusát, 
+    tehát az $\ker\left( A-\lambda I \right)$ altér dimenzióját,
+    a $\lambda$ sajátérték \emph{geometriai multiplicitásának}\index{geometriai multiplicitás}
+    mondjuk.
+\end{definition}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ transzformáció, és
+    $\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq\sigma\left( A \right)$,
+    a spektrum különböző elemei.
+    Jelölje $M_j=\ker\left( A-\lambda_j I \right)$.
+    Ekkor értelmes az $M_1\oplus\dots\oplus M_s$ direktösszeg.
+\end{proposition}
+\begin{proof}
+    Megmutatjuk, hogy a $\sum_{j=1}^sM_j$ összegben minden elem előállítása egyértelmű.
+    Ehhez elég azt belátni, hogy $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ csak úgy lehetséges, ha
+    minden $j=1,\dots,s$ mellett $v_j=0$.
+    Tegyük fel tehát, hogy valamely $v_j\in M_j$ vektorokra 
+    \[
+        \sum_{j=1}^sv_j=0.
+    \]
+    Ez egy olyan lineáris kombináció, amelyben minden vektor együtthatója 1.
+    Emiatt a $\left\{ v_1,\dots,v_s \right\}$ vektorrendszer nem zérus vektorai is összefüggő rendszert alkotnak, 
+    feltéve hogy vannak ilyenek.
+    No de egy $v_j\in M_j$ vektor ha nem zérus, akkor egy sajátvektor.
+    Tehát ha a vektorrendszerben lenne nem zérus elem, 
+    akkor találnánk különböző sajátértékekhez tartozó sajátvektorok egy lineárisan összefüggő rendszerét, 
+    ami \aref{pr:svlinfgtlen}.~állítás szerint nem lehetséges.
+\end{proof}
+Meggondoltuk tehát,
+hogy ha páronként különböző $\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq\sigma\left( A \right)$ sajátértékekből indulunk ki,
+és egyesítjük a $\ker\left( A-\lambda_j I \right)$ sajátalterek egy-egy bázisait,
+akkor az így összetett vektorrendszer az
+\[
+    \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
+\]
+altér egy -- sajátvektorokból álló -- bázisa.
+Rögzítsük is ezt a fontos gondolatot, 
+amelyet a feladatok megoldása során sokszor használjuk majd.
+\begin{proposition}
+    A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direktösszegének egy bázisa.
+\end{proposition}
+\begin{proposition}[diagonalizálhatóság]
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció.
+    Jelölje $\left\{ \lambda_1,\dots,\lambda_s \right\}=\sigma\left( A \right)$
+    az $A$ spektrumát, 
+    azaz valamennyi különböző sajátértékét.
+    Az alábbi feltevések ekvivalensek.
+    \begin{enumerate}
+        \item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim V$,
+        \item 
+            \begin{math}
+                \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)=V,
+            \end{math}
+        \item Minden vektor előáll mint sajátvektorok összege,
+        \item Az $A$ diagonalizálható lineáris transzformáció.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Mivel a $\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)\subseteq V$ 
+    tartalmazás mindig fennáll,
+    ezért a 2. feltétel ekvivalens avval, hogy
+    \[
+        \sum_{j=1}^s\dim\left( \ker\left( A-\lambda_j I \right) \right)
+        =
+        \dim\left( 
+        \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
+        \right)
+        =\dim V,
+    \]
+    ami éppen a geometriai multiplicitásra vonatkozó feltétel.
+    Így az első két feltevés ekvivalenciáját megértettük.
+
+
+    Mivel a $\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)\subseteq V$ 
+    tartalmazás mindig fennáll,
+    ezért a 2. feltétel ekvivalens avval, hogy
+    \[
+        \sum_{j=1}^s\ker\left( A-\lambda_j I \right)=V,
+    \]
+    ami éppen a 3. feltétel.
+    Így a 2. és a 3. feltételek ekvivalenciáját is megértettük.
+
+    Ha 3., ezért 2. fennáll, akkor az egyes $\ker\left( A-\lambda_j I \right)$ sajátelterek bázisait egyesítve a 
+    $V$ tér egy sajátvektorokból álló bázisát kapjuk, 
+    ergo az $A$ diagonalizálható transzformáció.
+    Megfordítva, 
+    ha $A$ diagonalizálható, 
+    akkor van sajátvektorokból álló bázisa, 
+    így minden vektor előáll mint sajátvektorok összege.
+    Evvel a 3. és a 4. feltételek ekvivalenciáját is igazoltuk.
+\end{proof}
 \chapter{Transzformációk redukálása}
 \begin{proposition}
     Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
@@ -6704,7 +7054,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
     ami éppen azt jelenti, hogy $p$ az $A_1$ transzformáció minimál polinomja.
     Az $A_2$ minimál polinomja $q$ állitás igazolása a fentivel analóg.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{pr:redukcio-primszorzat}
     Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
     amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
     Tegyük fel, hogy $m$ előáll mint a páronként relatív prím
@@ -6768,7 +7118,7 @@ A minimál polinom algoritmikus meghatározásához a kis minimál polinom is ha
 
 Mivel minden polinom előáll mint néhány irreducibilis polinom szorzata,
 ezért az igazolt állítás így is fogalmazható.
-\begin{proposition}
+\begin{proposition}\label{pr:redukcio-primfelbontas}
     Legyen $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja
     $m$.
     Tudjuk, hogy $m$ egyértelműen áll elő
@@ -6812,7 +7162,7 @@ mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex sz�
 A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma. 
 
 \chapter{Redukálás irreducibilis minimál polinom esetén}
-\scwords A legegszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
+\scwords A legegyszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
 
 \begin{proposition}\label{pr:irred_redukcio}
     Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ véges dimenziós vektortérnek,
@@ -7196,12 +7546,82 @@ a $V_1$ altérre és az $A_1$ transzformációra.
             \[
                 \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)
                 =
-                \ker\left( p\left( A \right) \right).
+                \ker p\left( A \right).
                 \qedhere
             \]
     \end{enumerate}
 \end{proposition}
+Összefoglalhatjuk azt az esetet, 
+mikor a minimálpolinom különböző irreducibilis polinomok szorzata.
+Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
+\begin{proposition}
+    Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
+    amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
+    Tegyük fel, 
+    hogy $m$ előáll mint a különböző normált, irreduciblis polinomok elsőfokú hatványainak
+    \[
+       m=p_1p_2\dots p_s
+    \]
+    szorzata.
+    Ekkor $V$ előáll mint néhány -- de legalább egy-egy darab --
+    $\deg p_1,\deg p_2,\dots,\deg p_s$ dimenziós minimális invariáns alterének direktösszege.
+\end{proposition}
+\begin{proof}
+    \Aref{pr:redukcio-primfelbontas}.~állításban láttuk, 
+    hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
+    Minden egyes $p_j$ a minimál polinom legalább lesőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
+    Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j\left( A \right)$
+    dimenziós invariáns altér, vagy néhány ilyen direktösszege.
+    Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
+\end{proof}
+\subsection{A komplex és a valós eset}
+Most az tegyük fel, hogy a $V$ vektortér a $\mathbf{C}$ komplex számtest feletti vektortér.
+Ekkor az $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja egy komplex együtthatós polinom.
+Az algebra alaptétele szerint irreducibilis normált polinom csak elsőfokú, azaz $t-\lambda$ alakú lehet,
+tehát az előző állítás feltétele most abba megy át, hogy $A$ minimál polinomja
+\[
+    m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
+\]
+alakú, ahol $\lambda_1,\dots,\lambda_s$ az $m$ különböző gyökei.
+Tudjuk viszont, hogy a minimál polinom gyökei a sajátértékek,
+ezért a feltételt egyszerűbben úgy is fogalmazhatjuk,
+a minimál polinom gyökei egyszeresek, vagy ami ugyanaz: 
+a sajátértékek a minimál polinom egyszeres gyökei.
+\begin{proposition}
+    Tegyük fel, hogy $V$ egy $\mathbf{C}$ feletti vektortér és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    $A$ pontosan akkor diagonalizálható,
+    ha minimál polinomja gyökei egyszeres multiplicitásúak.
+\end{proposition}
+\begin{proof}
+    Ha a sajátértékek a minimál polinomnak egyszeres multiplicitású gyökei,
+    akkor fennállnak az előző tétel feltételei.
+    Így $V$ előáll mint néhány egy dimenziós invariáns alterének direktösszege,
+    ami azt jelenti, hogy van sajátvektorokból álló bázisa, ergo diagonalizálható.
 
+    Megfordítva, ha $A$ diagonalizálható, akkor a diagonálisban a sajátértékei vannak.
+    Ha $\left\{ \lambda_1,\dots,\lambda_s \right\}$ a diagonális különböző elemei,
+    akkor az $A$ minimál polinomja nyilvánvalóan
+    \[
+        m\left( t \right)
+        =
+        \prod_{j=1}^s\left( t-\lambda_j \right)
+    \]
+    alakú.
+    Ez persze olyan polinom, 
+    amelyben minden gyöktényező csak egyszer szerepel.
+\end{proof}
+Mivel a valós test feletti irreducibilis polinomok első-- vagy másodfokúak, 
+ezért a valós esetben is szép állítást kapunk.
+\footnote{Ha nem is annyira szépet mint a komplex esetben.}
+\begin{proposition}
+    Tegyük fel, hogy $V$ egy $\mathbf{R}$ feletti vektortér és $A\in L\left( V \right)$.
+    A $V$ pontosan akkor bontható fel egy vagy két dimenziós minimális $A$-invariáns alterek direktösszegére,
+    ha az $A$ transzformáció $m$ 
+    minimál polinomjának felbontásában minden irreducibilis polinom az első hatványon szerepel.
+\end{proposition}
+\begin{proof}
+    A komplex esettel analóg.
+\end{proof}
 \chapter{A minimál polinom fokszámáról}
 \begin{proposition}
     Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
@@ -8022,4 +8442,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 02 Mar 2020 01:04:41 PM CET
+Last Modified : Tue 03 Mar 2020 02:44:56 PM CET
