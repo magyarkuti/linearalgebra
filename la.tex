@@ -6929,7 +6929,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 \begin{proposition}
     A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direktösszegének egy bázisa.
 \end{proposition}
-\begin{proposition}[diagonalizálhatóság]
+\begin{proposition}[diagonalizálhatóság]\label{pr:diagkar}
     Legyen $A\in L\left( V \right)$ lineáris transzformáció.
     Jelölje $\left\{ \lambda_1,\dots,\lambda_s \right\}=\sigma\left( A \right)$
     az $A$ spektrumát, 
@@ -7116,7 +7116,63 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
     és a Minkowski-összegük az egész $V$ vektortér.\index{Minkowski-összeg}
     \Aref{pr:dirosszegelozo}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
 \end{proof}
+\section{Sajátvektorok, minimálpolinom és diagonalizálhatóság}
+Alkalom nyílik, 
+hogy a lineáris transzformáció diagonalizálhatóságát karakterizáló \aref{pr:diagkar}.~állítást
+tovább bővítsük, a minimál polinom szerepének hangsúlyozásával.
+\begin{proposition}[diagonalizálhatóság]
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció.
+    Jelölje $\left\{ \lambda_1,\dots,\lambda_s \right\}=\sigma\left( A \right)$
+    az $A$ spektrumát, 
+    azaz valamennyi különböző sajátértékét.
+    Az alábbi feltevések ekvivalensek.
+    \begin{enumerate}
+        \item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim V$;
+        \item 
+            \begin{math}
+                \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)=V
+            \end{math};
+        \item Minden vektor előáll mint sajátvektorok összege;
+        \item Az $A$ diagonalizálható lineáris transzformáció;
+        \item Az $A$ transzformáció minimál polinomja
+            \[
+                m\left( t \right)=
+                \prod_{j=1}^s\left( t-\lambda_j \right).
+            \qedhere
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Ha az $A$ transzformáció diagonalizálható,
+    akkor a diagonálisában a sajátértékei vannak.
+    Írjuk fel tehát a 
+    \begin{math}
+                \prod_{j=1}^s\left( A-\lambda_j I \right)
+    \end{math}
+    transzformáció mátrixát abban a bázisban, 
+    amelyben $A$ mátrixa is diagonális.
+    Az eredmény egy diagonális mátrix,
+    és ha felírjuk ezt mint az $[A-\lambda_j I]$ mátrixok szorzatát,
+    akkor minden diagonális pozició az egyik szorzó mátrixban zérus,
+    ergo a szorzat mátrix is a zéró mátrix.
+    A fenti polinomnak tehát az $A$ transzformáció gyöke.
+    Mivel minden sajátérték a minimál polinom gyöke, 
+    ezért a fenti polinom a legalacsonyabb fokú normált polinom, 
+    amelynek gyöke $A$.
 
+    Megfordítva,
+    legyen $p_j\left( t \right)=t-\lambda_j$ minden $j=1,\dots,s.$
+    Ekkor $m=p_1\cdots p_s$ páronként relatív prím, normált polinomok szorzata,
+    ezért az éppen igazolt \ref{pr:redukcio-primszorzat}.~állítás szerint 
+    \begin{equation*}
+        V=
+        \ker p_1\left( A \right)\oplus\dots\oplus\ker p_j\left( A \right)
+        =
+        \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
+    \end{equation*}
+    Ezt kellett belátni. 
+\end{proof}
+\section{Redukálás: az általános eset}
 Mivel minden polinom előáll mint néhány irreducibilis polinom szorzata,
 ezért az igazolt állítás így is fogalmazható.
 \begin{proposition}\label{pr:redukcio-primfelbontas}
@@ -9122,4 +9178,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 03 Mar 2020 07:43:57 PM CET
+Last Modified : Thu 05 Mar 2020 05:28:42 AM CET
