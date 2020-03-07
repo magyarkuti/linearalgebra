@@ -8162,7 +8162,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
         és
         \begin{math}
             \rho\left( A^l|\lin\left\{ v;A \right\} \right)=m-l.
-        \end{math}
+        \end{math}\qedhere
     \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -8177,9 +8177,8 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
     $m-l\leq \rho\left( A^l |\lin\left\{ v;A \right\}\right)$,
     amiből
     \[
-        l\leq\nu\left( A^l|\lin\left\{ v;A \right\} \right)=m-\rho\left( A^l|\lin\left\{ v;A \right\} \right)\leq l.
+        l\leq\nu\left( A^l|\lin\left\{ v;A \right\} \right)=m-\rho\left( A^l|\lin\left\{ v;A \right\} \right)\leq l.\qedhere
     \]
-    Ezt kellett belátni. 
 \end{proof}
 \begin{lemma}
     Legyen $A\in L\left( V \right)$ és tegyük fel, hogy a $V$ vektortér előáll a $K_1,K_2$ invariáns alterei
@@ -8195,6 +8194,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
     \begin{math}
         \nu\left( A \right)=\nu\left( A|K_1 \right)+\nu\left( A|K_2 \right).
     \end{math}
+    \qedhere
 \end{lemma}
 \begin{proof}
     Világos, hogy $A\left( V \right)=A\left( K_1 \right)+A\left( K_2 \right)$, és az
@@ -8245,21 +8245,22 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
         \item $A$ nillpotens lineáris transzformációja $V$-nek;
         \item Ha $m$ jelöli a nillpotencia rendjét, akkor
             \(
-                m_1=m=n_1;
-            \)
+                m_1=m=n_1
+            \);
         \item A transzformáció $\nu\left( A \right)$ defektusára
             \(
-                r=\nu\left( A \right)=s;
-            \)
+                r=\nu\left( A \right)=s
+            \);
         \item Valamennyi $k=1,\dots,r$ esetén
             \(
-                m_k=n_k.
-            \)
+                m_k=n_k
+            \).\qedhere
     \end{enumerate}
 \end{proposition}
 \begin{proof}
-    Az első két állítás nyilvánvaló, ha észre vesszük, hogy a rendezettség szerint minden $k=1,\dots,r$ mellett
-    $A^{m_1}|\lin\left\{ v_k;A \right\}=0$.
+    Az első két állítás nyilvánvaló, mivel a rendezettség szerint 
+    $A^{m_1}|_{\lin\left\{ v_k;A \right\}}=0$,
+    minden $k=1,\dots,r$ mellett
 
     A harmadik állításhoz:
     \[
@@ -9192,4 +9193,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 07 Mar 2020 03:13:15 PM CET
+Last Modified : Sat 07 Mar 2020 06:07:55 PM CET
