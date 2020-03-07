@@ -7325,7 +7325,7 @@ Világos, hogy
 A^{k-1}v_1, A^{k-2}v_1,v_1,\dots,Av_1,v_1 
 \right\}
 \)
-bázisa a $\operatorname{lin}\left\{ v_1;A \right\}$
+bázisa a $\lin\left\{ v_1;A \right\}$
 invariáns altérnek.
 Ha ebben a bázisban felírjuk a transzformáció mátrixát, 
 akkor az első oszlopban vannak a minimálpolinom együtthatóinak ellentettjei,
@@ -7344,7 +7344,7 @@ Meggondoltuk tehát, hogy ha a transzformáció $m$ minimálpolinomja irreducibi
 =\alpha_0+\alpha_1t+\dots+\alpha_{k-1}t^{k-1}+t^k
 \]
 alakú, akkor a térnek van olyan bázisa, amelyben a transzformáció mátrixa a fenti mátrix
-diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\operatorname{dim}V$.
+diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\dim V$.
 
 Házi feladatként gondoljuk meg, hogy minden nem konstans $m\left( t \right)\in\mathbb{F}\left[ t \right]$ 
 polinomhoz létezik egy $\mathbb{F}$ feletti vektortér, és azon egy lineáris transzformáció, 
@@ -7680,16 +7680,18 @@ ezért a valós esetben is szép állítást kapunk.
     A komplex esettel analóg.
 \end{proof}
 \chapter{A minimál polinom fokszámáról}
-\begin{proposition}
-    Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
-    Ekkor $\dim V\geq m\rho\left( B^{m-1} \right)$.
-    \label{th:nilldim}
-\end{proposition}
-\begin{proof}
-    Létezik tehát olyan $\left\{ B^{m-1}v_1,B^{m-1}v_2,\dots,B^{m-1}v_r \right\}$
-    lineárisan független vektorrendszer, ahol $r=\rho(B^{m-1})$ a transzformáció képterének dimenziója.
-    Írjuk ezeket a vektorokat, az alábbi táblázat legalsó sorába.
+Az első lemmának kulcs szerepe van.
+\begin{lemma}
+    Legyen $B\in L\left( V \right)$ lineáris transzformáció,
+    tegyük fel, hogy a $v_1,\dots,v_r$ vektorok mindegyikére $B^mv_j=0$, 
+    de a 
     \[
+        \left\{ B^{m-1}v_1,B^{m-1}v_2,B^{m-1}v_3,\dots,B^{m-1}v_r \right\}
+    \]
+    vektorrendszer lineárisan független. 
+    Ekkor a 
+    \[
+        \left\{ 
         \begin{matrix}
             v_1 & v_2 & v_3 & \dots & v_r\\
             Bv_1 & Bv_2 & Bv_3 & \dots & Bv_{r}\\
@@ -7699,9 +7701,12 @@ ezért a valós esetben is szép állítást kapunk.
            \vdots & \vdots & \vdots & \ddots & \vdots\\
            B^{m-1}v_1 & B^{m-1}v_2 & B^{m-1}v_3 & \dots & B^{m-1}v_r
         \end{matrix}
+        \right\}
     \]
-    Nyilván elég megmutatni,
-    hogy a teljes $m\cdot r$ elemű vektorrendszer lineárisan független.
+    vektorrendszer is lineárisan független.
+    \label{le:nillp-fgtlen}
+\end{lemma}
+\begin{proof}
     Tekintsük ezen vektorok egy
     \[
         \sum_{j=0}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jx_k=0
@@ -7730,6 +7735,17 @@ ezért a valós esetben is szép állítást kapunk.
     amiből már következik, 
     hogy minden $\alpha_{t,k}=0$,
     ami ellentmondásban van a $t$ index definíciójával.
+\end{proof}
+\begin{proposition}
+    Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
+    Ekkor $\dim V\geq m\rho\left( B^{m-1} \right)$.
+    \label{th:nilldim}
+\end{proposition}
+\begin{proof}
+    Létezik tehát olyan $\left\{ B^{m-1}v_1,B^{m-1}v_2,\dots,B^{m-1}v_r \right\}$
+    lineárisan független vektorrendszer, ahol $r=\rho(B^{m-1})$ a $B^{m-1}$ transzformáció képterének dimenziója.
+    \Aref{le:nillp-fgtlen}.~lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
+    ergo a tér legalább $mr=m\rho\left( B^{m-1} \right)$ dimenziós.
 \end{proof}
 \begin{proposition}
     Legyen $A\in L\left( V \right)$ minimálpolinomja 
@@ -7771,8 +7787,8 @@ ezért a valós esetben is szép állítást kapunk.
     és $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós,
     ezért 
     \[
-        \operatorname{lin}\left\{ B^{m-1}v;A \right\}=
-        \operatorname{lin}\left\{ 
+        \lin\left\{ B^{m-1}v;A \right\}=
+        \lin\left\{ 
             B^{m-1}v,
             AB^{m-1}v,
             A^2B^{m-1}v,
@@ -7781,14 +7797,14 @@ ezért a valós esetben is szép állítást kapunk.
         \right\}
     \]
     pontosan $k$ dimenziós.
-    Persze $\left\{ B^{m-1}v,B^{m-1}Av,B^{m-1}A^2v,\dots,B^{m-1}A^{k-1}v \right\}\subseteq \operatorname{Im}B^{m-1}$,
+    Persze $\left\{ B^{m-1}v,B^{m-1}Av,B^{m-1}A^2v,\dots,B^{m-1}A^{k-1}v \right\}\subseteq \im B^{m-1}$,
     ergo 
     \[
         \rho\left( B^{m-1}\right)\geq k.
     \]
     Alkalmazva $B$-re az imént igazolt \ref{th:nilldim} tételt kapjuk a kívánt
     \(
-        \operatorname{dim}V\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
+        \dim V\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
     \)
     becslést.
 \end{proof}
@@ -7810,15 +7826,15 @@ ezért a valós esetben is szép állítást kapunk.
     \[
         V
         =
-        \operatorname{ker}p_1^{m_1}\left( A \right)
+        \ker p_1^{m_1}\left( A \right)
         \oplus
-        \operatorname{ker}p_2^{m_2}\left( A \right)
+        \ker p_2^{m_2}\left( A \right)
         \oplus\dots\oplus
-        \operatorname{ker}p_r^{m_r}\left( A \right).
+        \ker p_r^{m_r}\left( A \right).
     \]
-    Az $A|_{\operatorname{ker}p_i^{m_i}\left( A \right)}$ minimálpolinomja $p_i^{m_i}\left( t \right)$, így az előző tétel szerint minden egyes $i$ index mellett
+    Az $A|_{\ker p_i^{m_i}\left( A \right)}$ minimálpolinomja $p_i^{m_i}\left( t \right)$, így az előző tétel szerint minden egyes $i$ index mellett
     $
-    m_i\cdot k_i\leq \operatorname{dim}(\operatorname{ker}p_i^{m_i}\left( A \right)).
+    m_i\cdot k_i\leq \dim(\ker p_i^{m_i}\left( A \right)).
     $
     Világos, hogy
 %    \begin{IEEEeqnarray}{+c+c*}
@@ -7854,32 +7870,20 @@ Az első észrevétel adja a negatív választ.
         \left\{ v,B,B^2v,\cdots,B^{m-1}v \right\}
     \]
     $m$ elemű vektorrendszer lineárisan független.
-    Emiatt ha a $V$ vektortérnek van $m$-edrendben nillpotens lineáris transzformációja, akkor $\operatorname{dim}V\geq m$.
+    
+    Emiatt ha a $V$ vektortérnek van $m$-edrendben nillpotens lineáris transzformációja, akkor $\dim V\geq m$,
+    azaz a nillpotencia rendje legfeljebb a tér dimenziója.
     \label{th:fgtlen}
 \end{proposition}
 \begin{proof}
     Mivel $B^{m-1}\neq 0$, ezért valóban létezik $v\in V$ vektor,
     melyre $B^{m-1}v\neq 0$.
-
-    Legyen 
-    \[
-        u=\sum_{k=0}^{m-1}\alpha_kB^kv=0
-    \]
-    Ekkor persze $0=B^{m-1}u=\alpha_0B^{m-1}v$.
-    Így $B^{m-1}v\neq 0$ szerint 
-    $\alpha_0=0$.
-    Az eljárást ismételve 
-    $0=B^{m-2}u=\alpha_1B^{m-1}v$, amiből $\alpha_1=0$ is látszik.
-    Folytatva, ha látjuk, hogy $\alpha_0=\alpha_1=\cdots=\alpha_{m-2}=0$,
-    akkor $0=u=\alpha_{m-1}B^{m-1}v$, amiből látszik, hogy $u$ fenti előállításában az összes együttható zérus, ami a rendszer lineáris függetlenségét jelenti.
+    Persze ekkor a $\left\{ B^{m-1}v \right\}$ egy elemet tartalmazó rendszer lineárisan független,
+    ezért \aref{le:nillp-fgtlen}.~lemma szerint a tételbeli rendszer is lineárisan független.
 \end{proof}
-
-\begin{corollary}
-    A nillpotencia rendje legfeljebb a tér dimenziója.
-\end{corollary}
 \begin{corollary}
     Egy lineáris transzformáció pontosan akkor nillpotens, 
-    ha valamely $m\leq\operatorname{dim}V$ mellett a minimálpolinomja
+    ha valamely $m\leq\dim V$ mellett a minimálpolinomja
     $m\left( t \right)=t^m$ alakú.
 \end{corollary}
 \begin{proof}
@@ -7972,12 +7976,12 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
 \begin{proposition}[nillpotens operátorok felbontása]
     Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nillpotens lineáris transzformáció.
     Ekkor minden olyan $v\in V$ vektorhoz, 
-    amelyre $B^{m-1}v\neq 0$, a $\operatorname{lin}\left\{ v;B \right\}$ invariáns altérnek van invariáns altér 
+    amelyre $B^{m-1}v\neq 0$, a $\lin\left\{ v;B \right\}$ invariáns altérnek van invariáns altér 
     direkt kiegészítője.
 
     Formálisabban: létezik $K\subseteq W$ invariáns altér, amelyre
     \(
-        \operatorname{lin}\left\{ v,Bv,\dots,B^{m-1}v \right\}\oplus K = W.
+        \lin\left\{ v,Bv,\dots,B^{m-1}v \right\}\oplus K = W.
     \)
     \label{th:nilpfelb}
 \end{proposition}
@@ -7989,27 +7993,27 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
     Tegyük fel, hogy igaz az állítás minden vektortér legfeljebb $m-1$-ed rendben nillpotens transzformációjára.
     Legyen tehát $m>1$ és $B$ egy a $W$ vektortéren értelmezett $m$-ed rendben nillpotens lineáris transzformáció.
     Rögzítsünk egy $v\in W$ elemet, amelyre $B^{m-1}v\neq 0$.
-    Tekintsük az $\operatorname{Im}B$ invariáns alteret.
-    Világos, hogy $B|_{\operatorname{Im}B}$ egy lineáris transzformáció az $\operatorname{Im}B$ vektortéren.
-    Az is világos, hogy $B|_{\operatorname{Im}B}$ egy $m-1$-rendben nillpotens lineáris transzformáció, hiszen 
-    minden $u\in\operatorname{Im}B$ mellett $B^{m-1}u=0$.
-    Azt is vegyük észre, hogy ezek szerint $v\notin\operatorname{Im}B$.
+    Tekintsük az $\im B$ invariáns alteret.
+    Világos, hogy $B|_{\im B}$ egy lineáris transzformáció az $\im B$ vektortéren.
+    Az is világos, hogy $B|_{\im B}$ egy $m-1$-rendben nillpotens lineáris transzformáció, hiszen 
+    minden $u\in\im B$ mellett $B^{m-1}u=0$.
+    Azt is vegyük észre, hogy ezek szerint $v\notin\im B$.
 
-    Alkalmazhatjuk tehát az indukciós feltevést $B|_{\operatorname{Im}B}\in L\left( \operatorname{Im}B \right)$ mellett a
+    Alkalmazhatjuk tehát az indukciós feltevést $B|_{\im B}\in L\left( \im B \right)$ mellett a
     $Bv$ vektorra.
     Persze $B^{m-2}Bv=B^{m-1}v\neq 0$.
-    Létezik tehát $K_0\subseteq\operatorname{Im}B$ a $B$-re is invariáns altér, amelyre
+    Létezik tehát $K_0\subseteq\im B$ a $B$-re is invariáns altér, amelyre
     \[
-        \operatorname{lin}\left\{ Bv,B^2v,\dots,B^{m-1}v \right\}\oplus K_0 = \operatorname{Im}B.
+        \lin\left\{ Bv,B^2v,\dots,B^{m-1}v \right\}\oplus K_0 = \im B.
     \]
 
-    Most megmutatjuk, hogy $\operatorname{lin}\left\{ v;B \right\}\cap K_0=\left\{ 0 \right\}.$
+    Most megmutatjuk, hogy $\lin\left\{ v;B \right\}\cap K_0=\left\{ 0 \right\}.$
     Ugyanis, ha 
     $
-    x=\sum_{k=0}^{m-1}\alpha_kB^kv\in K_0\subseteq\operatorname{Im}B
-    $, akkor $\alpha_0v\in\operatorname{Im}B$,
+    x=\sum_{k=0}^{m-1}\alpha_kB^kv\in K_0\subseteq\im B
+    $, akkor $\alpha_0v\in\im B$,
     ami csak úgy lehetséges, hogy $\alpha_0=0$.
-    Ezek szerint $x\in\operatorname{lin}\left\{ Bv;B \right\}$ altérnek melynek direkt kiegészítője $K_0$.
+    Ezek szerint $x\in\lin\left\{ Bv;B \right\}$ altérnek melynek direkt kiegészítője $K_0$.
     Ez persze csak úgy lehetséges, hogy $x=0$.
 
     Definiálja 
@@ -8019,9 +8023,9 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
     Mivel $K_0$ egy altér, ezért $\overline{K}$ is az.
     Mivel a $K_0$ altér $B$-invariáns, azért teljesül a $K_0\subseteq \overline{K}$ tartalmazás.
 
-    Most megmutatjuk, hogy $\operatorname{lin}\left\{ v;B \right\}+\overline{K}=W$.
+    Most megmutatjuk, hogy $\lin\left\{ v;B \right\}+\overline{K}=W$.
     Válasszunk egy $u\in W$ vektort.
-    Persze $Bu\in\operatorname{Im}B$, ezért előáll
+    Persze $Bu\in\im B$, ezért előáll
     \[
         Bu
         =
@@ -8050,11 +8054,11 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
     \in
     \overline{K}.
     \)
-    Előállítottuk tehát az $u$ vektort egy $\operatorname{lin}\left\{ v;B \right\}$-beli és egy 
+    Előállítottuk tehát az $u$ vektort egy $\lin\left\{ v;B \right\}$-beli és egy 
     $\overline{K}$ beli összegeként.
 
     Alkalmazhatjuk tehát \ref{lem:felb} Lemmát.
-    Így létezik $K_0\subseteq K\subseteq\overline{K}$ altér, melyre $\operatorname{lin}\left\{ v;B \right\}\oplus K=W.$
+    Így létezik $K_0\subseteq K\subseteq\overline{K}$ altér, melyre $\lin\left\{ v;B \right\}\oplus K=W.$
     Persze ha $u\in K\subseteq\overline{K}$, akkor $Bu\in K_0\subseteq K$, ergo $K$ egy $B$-invariáns direkt kiegészítője a
     $v$-t tartalmazó legszűkebb $B$ invariáns altérnek.
     Ezt kellett belátni. 
@@ -8062,38 +8066,38 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
 Ahhoz, hogy megkapjuk az egész vektorteret $v$-invariáns altérként vagy ilyenek direktösszegeként, az előző tételt
 kell rekurzívan alkalmaznunk.
 A $W$ vektortér véges dimenziós volta garantálja, hogy a rekurzió véget ér.
-Először is vegyük észre, hogy a fenti felbontásban a $\operatorname{lin}\left\{ v;B \right\}=\operatorname{lin}\left\{ v,Bv,B^2,v,\dots,B^{m-1}v \right\}$ független rendszerben pontosan az utolsó elem, a $B^{m-1}v$ vektor, 
-eleme $\operatorname{ker}B$-nek.
+Először is vegyük észre, hogy a fenti felbontásban a $\lin\left\{ v;B \right\}=\lin\left\{ v,Bv,B^2,v,\dots,B^{m-1}v \right\}$ független rendszerben pontosan az utolsó elem, a $B^{m-1}v$ vektor, 
+eleme $\ker B$-nek.
 
 Persze $B|_K$ a $K$ altér lineáris transzformációja, ami $m\geq n_2$ rendben nillpotens.
 Ha alkalmazzuk a fenti tételt, akkor kapjuk, 
 hogy létezik $v_2\in K$ elem és létezik $K_2\subseteq K$ a $B$-re nézve invariáns altér,
 amelyre
 \[
-    \operatorname{lin}\left\{ v_2,Bv_2,\dots,B^{n_2-1}v_2 \right\}
+    \lin\left\{ v_2,Bv_2,\dots,B^{n_2-1}v_2 \right\}
     \oplus
     K_2=K.
 \]
-Itt persze $\operatorname{dim}K_2<\operatorname{dim}K$, hiszen a baloldali első invariáns altér legalább egydimenziós.
+Itt persze $\dim K_2<\dim K$, hiszen a baloldali első invariáns altér legalább egydimenziós.
 Vegyük újra észre, hogy a baloldali első altér fent megadott bázisában pontosan az utolsó elem tartozik 
 $B$ magjába. 
 Az első két lépést összefoglalva:
 \[
-    \operatorname{lin}\left\{ v_1;B \right\}
+    \lin\left\{ v_1;B \right\}
     \oplus
-    \operatorname{lin}\left\{ v_2;B \right\}
+    \lin\left\{ v_2;B \right\}
     \oplus
     K_2=W,
 \]
 Az eljárást folytatva minden lépésben legalább eggyel csökken a kiegészítő invariáns altér dimenziója,
 és minden lépésben pontosan eggyel nő a független rendszerben a magtérbeli elemek száma.
 Végül ha $r=\nu\left( B \right)$ jelöli a $B$ defektusát, akkor a vektortér előáll $r$- darab invariáns altér direktösszegeként:\[
-    \operatorname{lin}\left\{ v_1;B \right\}
+    \lin\left\{ v_1;B \right\}
     \oplus
-    \operatorname{lin}\left\{ v_2;B \right\}
+    \lin\left\{ v_2;B \right\}
     \oplus
     \ldots
-    \operatorname{lin}\left\{ v_r;B \right\}
+    \lin\left\{ v_r;B \right\}
     =W.
 \]
 \begin{corollary}
@@ -8103,13 +8107,13 @@ Végül ha $r=\nu\left( B \right)$ jelöli a $B$ defektusát, akkor a vektortér
     léteznek olyan $m=n_1\geq n_2\geq \dots\geq n_r\geq 1$ pozitív egészek,
     amelyekre
     \[
-        \operatorname{lin}\left\{ v_1,Bv_1,\dots,B^{n_1-1}v_1 \right\}
+        \lin\left\{ v_1,Bv_1,\dots,B^{n_1-1}v_1 \right\}
         \oplus
-        \operatorname{lin}\left\{ v_2,Bv_2,\dots,B^{n_2-1}v_2 \right\}
+        \lin\left\{ v_2,Bv_2,\dots,B^{n_2-1}v_2 \right\}
         \oplus
         \ldots
         \oplus
-        \operatorname{lin}\left\{ v_r,Bv_r,\dots,B^{n_r-1}v_r \right\}
+        \lin\left\{ v_r,Bv_r,\dots,B^{n_r-1}v_r \right\}
         =
         W.
     \]
@@ -8173,7 +8177,7 @@ ezért $B$ transzformáció 4-ed rendben nillpotens.
 az $u_1$-et tartalmazó legszűkebb $B$ invariáns altér az egész $W$,
 tehát
 \[
-    \operatorname{lin}\left\{ u_1,Bu_1,B^2u_1,B^3u_1 \right\}=W
+    \lin\left\{ u_1,Bu_1,B^2u_1,B^3u_1 \right\}=W
 \]
 és a $\left\{ B^3u_1,Bu_1,Bu_1,u_1 \right\}$ bázisban $B$ mátrixa
 \[
@@ -8263,18 +8267,18 @@ ergo $m\left( t \right)=t^3$, és $B$ egy harmadrendben nilpotens transzformáci
 Írjuk fel a fenti tételben szereplő invariáns direktfelbontást.
 Mivel a $B$ rangja ránézésre 2, így a magtere 2 dimenziós, ergo két invariáns altér direktösszege $W$, amiből
 az egyik 3 dimenziós, így a másik csak egy dimenziós lehet, ezért azt csak a magtér egyik eleme generálhatja!
-A három dimenziós altér lehet például a $\operatorname{lin}\left\{ u_4;B \right\}$, 
+A három dimenziós altér lehet például a $\lin\left\{ u_4;B \right\}$, 
 hiszen éppen az imént láttuk, hogy $B^2u_4\neq 0$.
 A fenti \ref{th:nilpfelb} Tétel éppen azt állítja, hogy ennek az altérnek van olyan $K$ invariáns altér direkt kiegészítője, 
 aminek van olyan bázisa, amely annyi magtérbeli elemet tartalmaz, ami a $B|_K$ nilpotens operátor rendje, tehát legalább 1.
 Így most nyilvánvaló, hogy az
-egydimenziós invariáns alteret generálhatja bármely olyan eleme a $\operatorname{ker}A$ magtérnek,
+egydimenziós invariáns alteret generálhatja bármely olyan eleme a $\ker A$ magtérnek,
 amely lineárisan független $B^2u_4$-től.
 Például $u_1$.\footnote{Vagy bármi, ami $\alpha u_1+\beta u_2$ alakú, ahol $\alpha\neq\beta$.}
 Ilyen módon
 \[
-    \operatorname{lin}\left\{ u_4,Bu_4,B^2u_4 \right\}\oplus
-    \operatorname{lin}\left\{ u_1 \right\}
+    \lin\left\{ u_4,Bu_4,B^2u_4 \right\}\oplus
+    \lin\left\{ u_1 \right\}
     =
     W,
 \]
@@ -8302,34 +8306,34 @@ alakú.
     \begin{enumerate}
         \item 
         $\left\{ v,Av,\dots,A^{m-1}v \right\}$ lineárisan független,
-        így $\operatorname{lin}\left\{ v;A \right\}=\operatorname{lin}\left\{ v,Av,\dots,A^{m-1}v \right\}$;
+        így $\lin\left\{ v;A \right\}=\lin\left\{ v,Av,\dots,A^{m-1}v \right\}$;
         \item
         Minden $0\leq l\leq m$ mellett
         \begin{math}
-            \nu\left( A^l|\operatorname{lin}\left\{ v;A \right\} \right)=l
+            \nu\left( A^l|\lin\left\{ v;A \right\} \right)=l
         \end{math} 
         és
         \begin{math}
-            \rho\left( A^l|\operatorname{lin}\left\{ v;A \right\} \right)=m-l.
+            \rho\left( A^l|\lin\left\{ v;A \right\} \right)=m-l.
         \end{math}
     \end{enumerate}
-    \begin{proof}
-        Ha $l=m$, akkor mindkét állítás triviálisan teljesül. Legyen tehát $0\leq l<m$.
-        Az $A^l$ transzformáció az $\left\{ A^{m-l}v,\dots,A^{m-1}v \right\}$ 
-        lineárisan független vektorrendszert nullára viszi,
-        így $l\leq\nu\left( A^l|\operatorname{lin}\left\{ v;A \right\} \right)$.
-        A maradékot, a 
-        $\left\{ v,\dots,A^{m-l-1}v \right\}$ vektorrendszert pedig az 
-        $\left\{ A^lv,\dots,A^{m-1}v \right\}$ lineárisan független rendszerre képezi.
-        Így
-        $m-l\leq \rho\left( A^l |\operatorname{lin}\left\{ v;A \right\}\right)$,
-        amiből
-        \[
-            l\leq\nu\left( A^l|\operatorname{lin}\left\{ v;A \right\} \right)=m-\rho\left( A^l|\operatorname{lin}\left\{ v;A \right\} \right)\leq l.
-        \]
-        Ezt kellett belátni. 
-    \end{proof}
 \end{lemma}
+\begin{proof}
+    Ha $l=m$, akkor mindkét állítás triviálisan teljesül. Legyen tehát $0\leq l<m$.
+    Az $A^l$ transzformáció az $\left\{ A^{m-l}v,\dots,A^{m-1}v \right\}$ 
+    lineárisan független vektorrendszert nullára viszi,
+    így $l\leq\nu\left( A^l|\lin\left\{ v;A \right\} \right)$.
+    A maradékot, a 
+    $\left\{ v,\dots,A^{m-l-1}v \right\}$ vektorrendszert pedig az 
+    $\left\{ A^lv,\dots,A^{m-1}v \right\}$ lineárisan független rendszerre képezi.
+    Így
+    $m-l\leq \rho\left( A^l |\lin\left\{ v;A \right\}\right)$,
+    amiből
+    \[
+        l\leq\nu\left( A^l|\lin\left\{ v;A \right\} \right)=m-\rho\left( A^l|\lin\left\{ v;A \right\} \right)\leq l.
+    \]
+    Ezt kellett belátni. 
+\end{proof}
 \begin{lemma}
     Legyen $A\in L\left( V \right)$ és tegyük fel, hogy a $V$ vektortér előáll a $K_1,K_2$ invariáns alterei
     direktösszegeként, azaz 
@@ -8355,10 +8359,10 @@ alakú.
     és
     \[
        \rho\left( A \right)=
-       \operatorname{dim}\left( A\left( V \right) \right)
+       \dim\left( A\left( V \right) \right)
        =
-       \operatorname{dim}A\left( K_1 \right)+
-       \operatorname{dim}A\left( K_2 \right)
+       \dim A\left( K_1 \right)+
+       \dim A\left( K_2 \right)
        =
        \rho\left( A|K_1 \right)+\rho\left( A|K_2 \right).
     \]
@@ -8366,8 +8370,8 @@ alakú.
     \[
         \nu\left( A \right)
         =
-        \operatorname{dim}\left( V \right)-\rho\left( A \right)
-        =\operatorname{dim}\left( K_1 \right)+\operatorname{dim}\left( K_2 \right)-\rho\left( A|K_1 \right)-\rho\left( A|K_2 \right)
+        \dim\left( V \right)-\rho\left( A \right)
+        =\dim\left( K_1 \right)+\dim\left( K_2 \right)-\rho\left( A|K_1 \right)-\rho\left( A|K_2 \right)
         =
         \nu\left( A|K_1 \right)+\nu\left( A|K_2 \right)
     \]
@@ -8380,14 +8384,14 @@ alakú.
     $m_1\geq m_2\geq \dots\geq m_r$ pozitív számokra
     $A^{m_k-1}v_k\neq 0$, de $A^{m_k}v_k=0$ fennáll minden $k=1,\dots,r$, továbbá
     \[
-        V=\operatorname{lin}\left\{ v_1;A \right\}\oplus \dots \oplus\operatorname{lin}\left\{ v_r;A \right\}.
+        V=\lin\left\{ v_1;A \right\}\oplus \dots \oplus\lin\left\{ v_r;A \right\}.
     \]
     Tegyük fel még azt is, 
     hogy valamely másik $\left\{ w_1,\dots,w_s \right\}$ vektorrendszerre és valamely más
     $n_1\geq n_2\geq \dots\geq n_s$ pozitív számokra
     $A^{n_k-1}v_k\neq 0$, de $A^{n_k}v_k=0$ fennáll minden $k=1,\dots,s$ mellett, és
     \[
-        V=\operatorname{lin}\left\{ w_1;A \right\}\oplus \dots \oplus\operatorname{lin}\left\{ w_s;A \right\}.
+        V=\lin\left\{ w_1;A \right\}\oplus \dots \oplus\lin\left\{ w_s;A \right\}.
     \]
     Ekkor
     \begin{enumerate}
@@ -8408,11 +8412,11 @@ alakú.
 \end{proposition}
 \begin{proof}
     Az első két állítás nyilvánvaló, ha észre vesszük, hogy a rendezettség szerint minden $k=1,\dots,r$ mellett
-    $A^{m_1}|\operatorname{lin}\left\{ v_k;A \right\}=0$.
+    $A^{m_1}|\lin\left\{ v_k;A \right\}=0$.
 
     A harmadik állításhoz:
     \[
-        \nu\left( A \right)=\sum_{k=1}^r\nu\left( A|\operatorname{lin}\left\{ v_k;A \right\} \right)=
+        \nu\left( A \right)=\sum_{k=1}^r\nu\left( A|\lin\left\{ v_k;A \right\} \right)=
         \sum_{k=1}^r1=r.
     \]
 Ugyanígy a másik direktösszeg felbontásból kapjuk, hogy $\nu\left( A \right)=s$.
@@ -8430,8 +8434,8 @@ Ekkor az első direktösszeg felbontásban a $t$-nél magasabb indexű tagokat e
 \[
     \rho\left( A^{n_t} \right)
     \geq
-    \left( \sum_{k=1}^{t-1}\rho\left( A^{n_t}|\operatorname{lin}\left\{ v_k;A \right\} \right) \right)
-    +\rho\left( A^{n_t}|\operatorname{lin}\left\{ v_t;A \right\} \right)
+    \left( \sum_{k=1}^{t-1}\rho\left( A^{n_t}|\lin\left\{ v_k;A \right\} \right) \right)
+    +\rho\left( A^{n_t}|\lin\left\{ v_t;A \right\} \right)
     =
     \left( \sum_{k=1}^{t-1}(m_k-n_t) \right)+m_t-n_t.
 \]
@@ -8439,7 +8443,7 @@ Hasonlóan, a második direktösszeg felbontásban a $t$-edik, és a $t$-nél ma
 \[
     \rho\left( A^{n_t} \right)
     =
-    \sum_{k=1}^{t-1}\rho\left( A^{n_t}|\operatorname{lin}\left\{ w_k;A \right\} \right)
+    \sum_{k=1}^{t-1}\rho\left( A^{n_t}|\lin\left\{ w_k;A \right\} \right)
     =
     \sum_{k=1}^{t-1}(n_k-n_t)
     =
@@ -8566,8 +8570,8 @@ azaz a képtér dimenzióját,
 és $\nu\left( A \right)$ a defektust, azaz a magtér dimenzióját.
 Jól ismert, hogy ha $A\in L\left( V \right)$ egy lineáris transzformáció
 és $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy polinom, akkor 
-$\operatorname{ker}p\left( A \right)$ és
-$\operatorname{Im}p\left( A \right)$ is $A$-ra invariáns alterek.
+$\ker p\left( A \right)$ és
+$\im p\left( A \right)$ is $A$-ra invariáns alterek.
 Két lineáris trafóról azt mondjuk, hogy \emph{kommutálnak},\index{kommutál}
 ha $A_1A_2=A_2A_1.$
 Könnyen látható, hogy ha $A_1$ és $A_2$ kommutálnak, akkor tetszőleges két $p,q$
@@ -8575,12 +8579,12 @@ polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.
 \begin{lemma}
     Legyenek az $A_1,A_2\in L\left( V \right)$ kommutáló lineáris transzformációk,
     valamint $p,q\in\mathbb{F}\left[ t \right]$ polinomok.
-    Ekkor $\operatorname{ker}p\left( A_1 \right)$ és
-    $\operatorname{Im}p\left( A_1 \right)$ is invariáns alterek $q\left( A_2 \right)$-re.
+    Ekkor $\ker p\left( A_1 \right)$ és
+    $\im p\left( A_1 \right)$ is invariáns alterek $q\left( A_2 \right)$-re.
 \end{lemma}
 \begin{proof}
-    Elég megmutatni, hogy $\operatorname{ker}\left( A_1 \right)$-re és
-    $\operatorname{Im}\left( A_1 \right)$-re invariáns $A_2$, hiszen $p\left( A_1 \right)$ 
+    Elég megmutatni, hogy $\ker\left( A_1 \right)$-re és
+    $\im\left( A_1 \right)$-re invariáns $A_2$, hiszen $p\left( A_1 \right)$ 
     és $q\left( A_2 \right)$ is kommutálnak.
     No de, az
     \(
@@ -8622,8 +8626,8 @@ polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.
     Ha 
     $\nu\left( A_1-\mu I \right)<n$, akkor 
     $\nu\left( A_1-\mu I \right)+\rho\left( A_1-\mu I \right)=n$ miatt az
-    $K=\operatorname{ker}\left( A_1-\mu I \right)$ és a 
-    $L=\operatorname{Im}\left( A_1-\mu I \right)$ 
+    $K=\ker\left( A_1-\mu I \right)$ és a 
+    $L=\im\left( A_1-\mu I \right)$ 
     valódi alterek dimenziójának egyike nem osztható $d$-vel.
     No de $A_2$ és $A_1$ invariáns $K$-ra is és $L$-re is
     az előző lemma miatt, 
@@ -8738,7 +8742,7 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
     Ez egy komplex vektortér,
     amelyre
     \[
-        \operatorname{dim}\mathcal{S}=
+        \dim\mathcal{S}=
         \frac{2^kn\left( 2^kn+1 \right)}{2}=
         2^{k-1}n\left(2^kn+1  \right)=
         2^{k-1}n',
@@ -9029,7 +9033,7 @@ Ekkor $\mathbb{G}$ test izomorf $\mathbb{C}$-vel.
 \begin{proof}
 Meg fogjuk mutatni, hogy létezik $w\in \mathbb{G}$ melyre $w^{2}=-1$.
 Ekkor
-készen is leszünk, mert nyilván $w\notin \mathbb{R}$ így $\operatorname{lin}\{1,w\}=\mathbb{G}$ amiből könnyen látható, hogy
+készen is leszünk, mert nyilván $w\notin \mathbb{R}$ így $\lin\{1,w\}=\mathbb{G}$ amiből könnyen látható, hogy
 az $\alpha +w\beta \longmapsto \alpha +i\beta $ megfeleltetés
 izomorfizmus $\mathbb{G}$ és $\mathbb{C}$ között.
 \newline
@@ -9117,7 +9121,7 @@ Tegyük fel, hogy $\mathbb{G}$ tartalmaz $\mathbb{R}$ -től különböző $v$ ve
 Ekkor azt kell megmutatni, hogy $\mathbb{G}$ izomorf $\mathbb{C}$ -vel.\newline
 Először azt mutatjuk meg, hogy 
 \begin{equation}
-v^{2}\in \operatorname{lin}\left\{ 1,v\right\} 
+v^{2}\in \lin\left\{ 1,v\right\} 
 \end{equation}
 \label{Eq:Alg}Mivel $v$ algebrai $\mathbb{R}$ felett, ezért létezik $p$
 valós együtthatós polinom melyre $p\left( v\right) =0$.
@@ -9139,7 +9143,7 @@ már könnyen következik, bizonyítva (\ref{Eq:Alg})-et.\newline
 Most megmutatjuk, hogy $\mathbb{G}$ tartalmaz $\mathbb{C}$ -vel izomorf testet.
 Tekintsük a 
 \[
-K:=\operatorname{lin}\left\{ 1,v\right\} 
+K:=\lin\left\{ 1,v\right\} 
 \]
 kétdimenziós alterét $\mathbb{G}$-nek.
 Világos, hogy ennek test
@@ -9178,4 +9182,4 @@ melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 05 Mar 2020 05:35:43 AM CET
+Last Modified : Fri 06 Mar 2020 09:13:09 PM CET
