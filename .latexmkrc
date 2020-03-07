@@ -9,6 +9,3 @@
 #$postscript_mode = $dvi_mode = 0;
 @default_files=('la.tex');
 $clean_ext = "bbl";
-
-%GI2TM_OPTIONS=(RELEASE_MATCHER=>"v[0-9]*.*");
-do './gitinfo2.pm';
