@@ -4932,7 +4932,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
         \Omega\left( y \right)=M_x=H,
     \]
     amivel azt igazoltuk, 
-    hogy minden ekvivalencia osztály egy $\im A$ beli vektor $\Omega$ képe.
+    hogy minden ekvivalencia osztály egy $\im A$-beli vektor $\Omega$ képe.
 
 
     3. $\Omega$ injekció:
@@ -7895,7 +7895,7 @@ Az első észrevétel adja a negatív választ.
     Mivel $B^{m-1}\neq 0$, ezért valóban létezik $v\in V$ vektor,
     melyre $B^{m-1}v\neq 0$.
     Persze ekkor a $\left\{ B^{m-1}v \right\}$ egy elemet tartalmazó rendszer lineárisan független,
-    ezért \aref{le:nillp-fgtlen}.~lemma szerint a tételbeli rendszer is lineárisan független.
+    ezért \aref{le:nillp-fgtlen}.~lemma szerint a tételbéli rendszer is lineárisan független.
 \end{proof}
 \begin{proposition}
     Egy lineáris transzformáció pontosan akkor nillpotens, 
@@ -7934,50 +7934,53 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
     amelyre $V_2\subseteq K$, $K\cap V_1=\left\{ 0 \right\}$, valamint 
     $V_1+K=W$.
 \end{proof}
-\begin{lemma}
-    Legyen a $W$ véges dimenziós vektortérnek $H,K_0,\overline{K}$ altere.
+A következő lemmának nagyon fontos szerepe lesz a fejezet leglényegesebb állításában
+a nillpotens operátorok redukcióját biztosító állításban.
+\begin{lemma}\label{lem:felb}
+    Legyen a $W$ véges dimenziós vektortérnek $H,K_0,\bar{K}$ altere.
     Tegyük fel, hogy 
-    \begin{enumerate}
+    \begin{enumerate}\firmlist
         \item $H\cap K_0=\left\{ 0 \right\}$;
-        \item $H+\overline{K}=W$;
-        \item $K_0\subseteq\overline{K}$.
+        \item $H+\bar{K}=W$;
+        \item $K_0\subseteq\bar{K}$.
     \end{enumerate}
     Ekkor létezik $K$ altere $W$-nek, melyre
-    \begin{enumerate}
-        \item $K_0\subseteq K\subseteq\overline{K}$ és
+    \begin{enumerate}\firmlist
+        \item $K_0\subseteq K\subseteq\bar{K}$ és
         \item $K$ direkt kiegészítője $H$-nak, azaz 
             $H\oplus K=W$.\qedhere
     \end{enumerate}
-    \label{lem:felb}
 \end{lemma}
 \begin{proof}
-    Világos, hogy $H\cap\overline{K}\subseteq\overline{K}$ és $K_0\subseteq\overline{K}$ diszjunkt alterek
-    $\overline{K}$-ban, hiszen
-    \[
-        \left( H\cap\overline{K} \right)\cap K_0\subseteq
+    Először is a $K$ altér konstrukciója következik.
+    Világos, hogy $H\cap\bar{K}\subseteq\bar{K}$ és $K_0\subseteq\bar{K}$ diszjunkt alterek
+    $\bar{K}$-ban, hiszen
+    \(
+        \left( H\cap\bar{K} \right)\cap K_0\subseteq
         H\cap K_0=\left\{ 0 \right\}.
-    \]
-    Alkalmazzuk az előző (\ref{felb0}) lemmát a $\overline{K}$ altérben.
-    Létezik tehát $K_0\subseteq K\subseteq \overline{K}$ altér $\overline{K}$-ban, 
+    \)
+    Alkalmazzuk az előző \ref{felb0}.~lemmát a $\bar{K}$ altérben.
+    Létezik tehát $K_0\subseteq K\subseteq \bar{K}$ altér $\bar{K}$-ban, 
     amelyre 
-    \[
-        \left( H\cap\overline{K} \right)\oplus K=\overline{K}.
-    \]
-    Most megmutatjuk, hogy $H$ és $K$ diszjunkt alterek:
-    \[
-        H\cap K=H\cap\left( K\cap \overline{K} \right)=\left( H\cap\overline{K} \right)\cap K=\left\{ 0 \right\}.
-    \]
-    Most azt mutatjuk meg, hogy $H+K=W$.
-    Ugyanis
-    \[
-        W=H+\overline{K}
+    \(
+        \left( H\cap\bar{K} \right)\oplus K=\bar{K}.
+    \)
+    \\
+    A $H$ és a $K$ diszjunkt alterek:
+    \(
+        H\cap K=H\cap\left( K\cap \bar{K} \right)=\left( H\cap\bar{K} \right)\cap K=\left\{ 0 \right\}.
+    \)
+    \\
+    A $H$ és a $K$ Minkowski-összege az egész tér:
+    \(
+        W=H+\bar{K}
         =
-        H+\left( H\cap\overline{K}+K \right)
-        =
-        \left( H+H\cap\overline{K}\right)+K 
+        H+\left( (H\cap\bar{K})+K \right)
+        \subseteq
+        H+(H+K) 
         =
         H+K.
-    \]
+    \)
     Ez éppen azt jelenti, hogy $K$ direkt kiegészítője $H$-nak.
 \end{proof}
 \begin{proposition}[nillpotens operátorok felbontása]
@@ -8025,12 +8028,12 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
 
     Definiálja 
     \[
-        \overline{K}=\left\{ x\in W:Bx\in K_0 \right\}.
+        \bar{K}=\left\{ x\in W:Bx\in K_0 \right\}.
     \]
-    Mivel $K_0$ egy altér, ezért $\overline{K}$ is az.
-    Mivel a $K_0$ altér $B$-invariáns, azért teljesül a $K_0\subseteq \overline{K}$ tartalmazás.
+    Mivel $K_0$ egy altér, ezért $\bar{K}$ is az.
+    Mivel a $K_0$ altér $B$-invariáns, azért teljesül a $K_0\subseteq \bar{K}$ tartalmazás.
 
-    Most megmutatjuk, hogy $\lin\left\{ v;B \right\}+\overline{K}=W$.
+    Most megmutatjuk, hogy $\lin\left\{ v;B \right\}+\bar{K}=W$.
     Válasszunk egy $u\in W$ vektort.
     Persze $Bu\in\im B$, ezért előáll
     \[
@@ -8054,19 +8057,19 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
     \in
     K_0,
     $
-    ami persze $\overline{K}$ definícióját figyelembe véve azt jelenti, hogy
+    ami persze $\bar{K}$ definícióját figyelembe véve azt jelenti, hogy
     \(
     u-
     \sum_{k=0}^{m-2}\alpha_{k+1}B^kv
     \in
-    \overline{K}.
+    \bar{K}.
     \)
     Előállítottuk tehát az $u$ vektort egy $\lin\left\{ v;B \right\}$-beli és egy 
-    $\overline{K}$ beli összegeként.
+    $\bar{K}$-beli vektor összegeként.
 
     Alkalmazhatjuk tehát \aref{lem:felb}.~lemmát.
-    Így létezik $K_0\subseteq K\subseteq\overline{K}$ altér, melyre $\lin\left\{ v;B \right\}\oplus K=W.$
-    Persze ha $u\in K\subseteq\overline{K}$, akkor $Bu\in K_0\subseteq K$, ergo $K$ egy $B$-invariáns direkt kiegészítője a
+    Így létezik $K_0\subseteq K\subseteq\bar{K}$ altér, melyre $\lin\left\{ v;B \right\}\oplus K=W.$
+    Persze ha $u\in K\subseteq\bar{K}$, akkor $Bu\in K_0\subseteq K$, ergo $K$ egy $B$-invariáns direkt kiegészítője a
     $v$-t tartalmazó legszűkebb $B$ invariáns altérnek.
     Ezt kellett belátni. 
 \end{proof}
@@ -9529,7 +9532,7 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
                         (\ref{Eq:Alg}) következménye.
                         \'{I}gy tehát $K$ két dimenziós test kiterjesztése $\mathbb{R}$ -nek, ami azt jelenti (\ref{Th:CUnique1}.), 
                         hogy $K$ test izomorf $\mathbb{C}$ -vel.\newline
-                        Utoljára megmutatjuk, hogy $\mathbb{G}$ minden $w$ eleme $\mathbb{C}$ -beli
+                        Utoljára megmutatjuk, hogy $\mathbb{G}$ minden $w$ eleme $\mathbb{C}$-beli
                         is.
                         Mivel $w$ algebrai $\mathbb{R}$ felett, ezért létezik $p$ valós együtthatós polinom, melyre $p\left( w\right) =0$.
                         De tekinthetjük $p$ -t a komplex számtest feletti polinomnak is, így $p$
@@ -9558,5 +9561,5 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 10 Mar 2020 12:03:51 PM CET
+Last Modified : Tue 10 Mar 2020 01:21:24 PM CET
 
