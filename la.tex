@@ -8894,6 +8894,505 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
     \item[\textendash] $A$ minimál polinomjának gyökei egyszeresek;
     \item[\textendash] $A$ minden sajátértékének a geometriai és algebrai multiplicitása azonos.
 \end{itemize}
+\chapter{Determináns}
+
+\section{Permutációk paritása}
+
+Emlékezzünk arra, hogy egy $n$ elemű halmaz permutációi $n!$ elemszámú
+csoportot alkotnak a kompozició műveletével. Ezt a csoportot a továbbiakban $%
+S_{n}$-el jelöljük.
+
+\begin{definition}[Inverzió]\index{inverzió}
+Legyen $\pi \in S_{n}$ egy permutáció, $i$ és $j$ különböző $n$ -nél nem nagyobb számok. Azt mondjuk, hogy $\pi \left( i\right) $ és $\pi \left( j\right) $ inverzióban vannak, ha \[\left( \pi \left( j\right) -\pi \left( i\right) \right) \left( j-i\right) <0.\]
+\end{definition}
+
+A fenti jelölések mellett $\pi \left( i\right) $ és $\pi \left( j\right) $
+inverzióban vannak, pontosan akkor, ha $j>i$ esetén $\pi \left( j\right)
+<\pi \left( i\right) .$
+
+\begin{definition}[Páros és páratlan permutáció]
+\index{páros permutáció}%
+\index{páratlan permutáció}
+Egy $\pi \in S_{n}$ permutációt \emph{párosnak (páratlannak)} nevezünk, ha $\pi $-nél inverzióban lévő párok száma páros (páratlan). \[\operatorname{sgn}\pi \doteq \left\{ \begin{tabular}{ll}$+1$ & , ha $\pi $ páros. \\ $-1$ & , ha $\pi $ páratlan.\end{tabular}\right. \]
+\end{definition}
+
+\begin{definition}
+Legyenek $i$ és $j$ különböző $n$ -nél nem nagyobb számok, $\pi \in S_{n}$
+pedig egy permutáció. Definiáljuk $\pi ^{\ast }\in S_{n}$ a következő képpen 
+\[
+\pi ^{\ast }\left( k\right) \doteq \left\{ 
+\begin{array}{ll}
+\pi \left( k\right)  & 
+\text{, ha }k\neq i\text{ és }k\neq j. \\ 
+\pi \left( j\right)  & \text{, ha }k=i. \\ 
+\pi \left( i\right)  & \text{, ha }k=j.
+\end{array}
+\right. 
+\]
+világos, hogy $\pi ^{\ast }$ is permutáció.
+\end{definition}
+
+\begin{proposition}
+Legyenek $i$ és $j$ különböző $n$-nél nem nagyobb a továbbiakban rögzített sz%
+ámok, $\pi \in S_{n}$ pedig egy permutáció. Ekkor $\operatorname{sgn}\pi =-%
+\operatorname{sgn}\pi ^{\ast }.$
+\end{proposition}
+\begin{proof}
+Legyen $i<j.$ Leszámoljuk, hogy hány $\pi ^{\ast }\left( u\right) ,$ $\pi
+^{\ast }\left( v\right) $ elem lehet inverzióban. Az esetek szétválasztása
+folyamán végig páros számban tér el $\pi ^{\ast }$ és $\pi $ -melletti
+inverziók száma, míg az utolsó esetben pontosan egy a különbség. Ily módon a 
+$\pi ^{\ast }$ és $\pi $ -melletti inverziók páratlan számban különböznek,
+ami igazolja az állítást. Lássuk tehát a különböző eseteket:
+
+\begin{description}
+\item[1.]  Az $u$ és $v$ egyike sem egyezik $i$ és $j$ egyikével sem.
+
+Trivi, hogy ebben az esetben a $\pi $ melletti és a $\pi ^{\ast }$ melletti
+inverziók száma azonos.
+
+\item[2.]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v>j.$
+
+Ebben az esetben is azonos $\pi $ melletti és a $\pi ^{\ast }$ melletti
+inverziók száma, hiszen $\pi \left( i\right) $ inverzióban van $\pi \left(
+v\right) $ -vel pontosan akkor, ha $\pi ^{\ast }\left( j\right) $ inverzió%
+ban van $\pi \left( v\right) $ -vel.
+
+\item[3.]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $i<v<j.$
+
+Különböztessünk meg ezen belül is három esetet.
+
+\begin{description}
+\item[i.]  Ha $\pi \left( v\right) >\max \left( \pi \left( j\right) ,\pi
+\left( i\right) \right) .$
+
+Ekkor $\pi \left( v\right) $ nincs inverzióban $\pi \left( i\right) $ -vel,
+de $\pi \left( v\right) $ inverzióban van $\pi \left( j\right) $ -vel.
+Viszont $\pi ^{\ast }$ mellett $\pi ^{\ast }\left( v\right) =\pi \left(
+v\right) $ nincs inverzióban $\pi ^{\ast }\left( i\right) =\pi \left(
+j\right) $ -vel, de $\pi ^{\ast }\left( v\right) $ inverzióban van $\pi
+^{\ast }\left( j\right) $ -vel.
+
+Tehát a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma azonos.
+
+\item[ii.]  Ha $\pi \left( v\right) <\min \left( \pi \left( j\right) ,\pi
+\left( i\right) \right) .$
+
+A fenti esethez hasonlóan a $\pi \left( i\right) $ inverzióban van $\pi
+\left( v\right) $ -vel, de $\pi \left( v\right) $ nincs inverzióban van $\pi
+\left( j\right) $ -vel. Így $\pi ^{\ast }\left( i\right) =\pi \left(
+j\right) $ is inverzióban van $\pi ^{\ast }\left( v\right) =\pi \left(
+v\right) $ -vel, de $\pi ^{\ast }\left( v\right) $ -nincs inverzióban $\pi
+^{\ast }\left( j\right) =\pi \left( i\right) $ -vel.
+
+Tehát a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma azonos.
+
+\item[iii.]  Ha $\min \left( \pi \left( j\right) ,\pi \left( i\right)
+\right) <\pi \left( v\right) <\max \left( \pi \left( j\right) ,\pi \left(
+i\right) \right) .$
+
+Ebben az esetben, ha:
+
+\begin{description}
+\item[a.]  $\pi \left( i\right) <\pi \left( j\right) $, akkor attól független%
+ül, hogy $u$ az $i$ és $j$ közül melyik $\pi \left( u\right) $ nincs inverzió%
+ban $\pi \left( v\right) $ -vel, viszont nyilván $\pi ^{\ast }\left(
+i\right) =\pi \left( j\right) >\pi \left( i\right) =\pi ^{\ast }\left(
+j\right) $, amiből az következik, hogy $\pi ^{\ast }\left( i\right) $ is és $%
+\pi ^{\ast }\left( j\right) $ is inverzióban $\pi \left( v\right) $ -vel.
+
+Tehát a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma páros sz%
+ámban különbözik.:
+
+\item[b.]  $\pi \left( i\right) >\pi \left( j\right) $, akkor attól független%
+ül, hogy $u$ az $i$ és $j$ közül melyik $\pi \left( u\right) $ inverzióban
+van $\pi \left( v\right) $ -vel, viszont nyilván $\pi ^{\ast }\left(
+i\right) =\pi \left( j\right) <\pi \left( i\right) =\pi ^{\ast }\left(
+j\right) $, amiből az következik, hogy $\pi ^{\ast }\left( i\right) $ és $%
+\pi ^{\ast }\left( j\right) $ sincs inverzióban $\pi \left( v\right) $ -vel.
+
+Tehát a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma páros sz%
+ámban különbözik.
+\end{description}
+\end{description}
+
+\item[4.]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v<i.$
+
+Analóg a második esettel.
+
+\item[5.]  Az $u$ is és a $v$ is megegyezik az $i$ és $j$ egyikével.
+
+Ebben az esetben viszont $\pi \left( u\right) $ inverzióban van $\pi \left(
+v\right) $ -vel pontosan akkor, ha $\pi ^{\ast }\left( u\right) $ nincs
+inverzióban $\pi ^{\ast }\left( v\right) $ -vel, azaz az inverziók száma pá%
+ratlan számmal változik.\qedhere
+\end{description}
+\end{proof}
+
+\begin{proposition}
+A páros és páratlan permutációk közt rögzített $i$ és $j$ különböző számok
+mellett a $\pi \mapsto \pi ^{\ast }$ leképezés bijekció. Az is teljesen vilá%
+gos, hogy a $\pi \mapsto \pi ^{-1}$ leképezés is bijekció.
+\end{proposition}
+
+\begin{proposition}
+Legyen $\pi \in S_{n}$ pedig egy permutáció. Ekkor $\operatorname{sgn}\pi =%
+\operatorname{sgn}\pi ^{-1}.$
+\end{proposition}
+
+\begin{proof}
+Viágos, hogy $\left( i-j\right) \left( \pi \left( i\right) -\pi \left(
+j\right) \right) <0\Leftrightarrow \left( \pi \left( i\right) -\pi \left(
+j\right) \right) \left( \pi ^{-1}\left( \pi \left( i\right) \right) -\pi
+^{-1}\left( \pi \left( j\right) \right) \right) <0.$ Ez azt jelenti, hogy a $%
+\pi \left( i\right) $ és $\pi \left( j\right) $ számok pontosan akkor állnak
+inverzióban $\pi $-mellett, ha az $i$ és $j$ inverzióban állnak $\pi ^{-1}$
+szerint. De $\pi $ egy bijekció ezért a $\pi $ szerinti és a $\pi ^{-1}$
+szerinti inverziók száma azonos.
+\end{proof}
+
+\section{Példa $n$-lineáris antisszimmetrikus operátorra}
+\index{n-lineáris operátor}%
+\index{antiszimmetrikus operátor}
+
+\begin{definition}[$n$-lineáris operátor, antiszimmetrikus operátor]
+Legyenek $X_{1}$, $X_{2}$ és $V$ ugyanazon test feletti vektorterek. Az $%
+A:X_{1}\times X_{2}\rightarrow V$ leképezést \emph{bilineáris operátornak}
+nevezzük, ha:\newline
+1. Minden rögzített $x\in X_{1}$ esetén az $A\left( x,\cdot \right)
+:X_{2}\rightarrow V$ lineáris operátor.\newline
+2. Minden rögzített $x\in X_{2}$ esetén az $A\left( \cdot ,x\right)
+:X_{1}\rightarrow V$ lineáris operátor.\newline
+Ha valamely $A:X\times X\rightarrow V$ bilineáris operátorra minden $u\in
+X_{1}$ és $v\in X_{2}$ esetén 
+\[
+A\left( u,v\right) =A\left( v,u\right) 
+\]
+akkor $A$ -t \emph{szimmetrikus} bilineáris operátornak nevezzük.\newline
+Ha valamely $A:X\times X\rightarrow V$ bilineáris operátorra minden $u\in
+X_{1}$ és $v\in X_{2}$ esetén 
+\[
+A\left( u,v\right) =-A\left( v,u\right) 
+\]
+akkor $A$ -t \emph{antiszimmetrikus} bilineáris operátornak nevezzük.
+
+Legyenek most $X_{1},X_{2},\ldots ,X_{n}$ és $V$ ugyanazon test feletti
+vektorterek. Az $A:X_{1}\times \ldots \times X_{n}\rightarrow V$ leképezést 
+\emph{multilineáris operátornak} vagy $n$\emph{-lineáris operátornak }nevezzü%
+k, ha bármely rögzített 
+\[
+x_{1},\ldots x_{i-1},x_{i+1},\ldots ,x_{j-1},x_{j+1},\ldots ,x_{n}
+\]
+mellett az 
+\[
+A\left( x_{1},\ldots x_{i-1},\cdot ,x_{i+1},\ldots ,x_{j-1},\cdot
+,x_{j+1},\ldots ,x_{n}\right) :X_{i}\times X_{j}\rightarrow V
+\]
+függvény bilineáris operátor. Ha a fenti függvény szimmetrikus
+(antiszimmetrikus) operátor minden $i$-re $j$-re és tetszőlegesen rögzített
+vektorok esetén, akkor az $A:X_{1}\times \ldots \times X_{n}\rightarrow V$
+leképezést \emph{szimmetrikus (antiszimmetrikus) multilineáris operátornak}
+nevezzük.
+\end{definition}
+
+Világos, hogy a bilineáris, $k$-lineáris, a $k$-lineáris szimmetrikus és a $k
+$-lineáris antiszimmetrikus operátorok külön-külön vektorteret alkotnak.
+
+\begin{proposition}[,,Példa'' $n$-lineáris antiszimmetrikus operátorra]
+Rögzítsünk az $n$-dimenziós $X$ vektortérben egy $\left\{ e_{1},\ldots
+e_{n}\right\} $ bázist. Ekkor 
+\[
+\sum_{\pi \in S_{n}}%
+\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right)
+}=\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \prod_{i=1}^{n}e_{\pi \left( i\right)
+}^{\ast }v_{i}
+\]
+Definiálja $d\left( v_{1},\ldots v_{n}\right) \doteq \sum_{\pi \in S_{n}}%
+\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right) }$.
+Ekkor a $d:X\times \ldots \times X\rightarrow \mathbb{F}$ egy $n$-lineáris
+antiszimmetrikus operátor, amelyre $d\left( e_{1},\ldots ,e_{n}\right) =1.$
+\end{proposition}
+
+\begin{proof}
+Világos, hogy $d\left( e_{1},\ldots ,e_{n}\right) =1,$ hiszen ha $\pi $ nem
+az identikus permutáció, akkor van olyan $i$ melyre $\pi \left( i\right) =i,$
+azaz $e_{i}^{\ast }\left( e_{\pi \left( i\right) }\right) =0$. A következő sz%
+ámolás utolsó egyenlőségében kihasználjuk, hogy a $\pi \mapsto \pi ^{-1}$
+hozzárendelés bijekció az $S_{n}$ halmaz felett. 
+\[
+\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi
+\left( i\right) }=\sum_{\pi \in S_{n}}\operatorname{sgn}\pi
+^{-1}\prod_{k=1}^{n}e_{\pi ^{-1}\left( k\right) }^{\ast }v_{k}=\sum_{\pi \in
+S_{n}}\operatorname{sgn}\pi \prod_{k=1}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}.
+\]
+
+A linearitás könnyen következik az $e_{i}^{\ast }$ duális bázis elemek
+linearitásából: 
+\begin{eqnarray*}
+d\left( \alpha x+\beta y,v_{2},\ldots ,v_{n}\right)  &\doteq &\sum_{\pi \in
+S_{n}}\operatorname{sgn}\pi \left( \prod_{k=2}^{n}e_{\pi \left( k\right) }^{\ast
+}v_{k}\right) e_{\pi \left( 1\right) }^{\ast }\left( \alpha x+\beta y\right) 
+\\
+&=&\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=2}^{n}e_{\pi \left(
+k\right) }^{\ast }v_{k}\right) \alpha e_{\pi \left( 1\right) }^{\ast }\left(
+x\right)  \\
+&&+\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=2}^{n}e_{\pi \left(
+k\right) }^{\ast }v_{k}\right) \beta e_{\pi \left( 1\right) }^{\ast }\left(
+y\right)  \\
+&=&\alpha d\left( x,v_{2},\ldots ,v_{n}\right) +\beta d\left( y,v_{2},\ldots
+,v_{n}\right) .
+\end{eqnarray*}
+Az antiszimmetria igazolásához szükséges, a $\operatorname{sgn}\pi =-\operatorname{sgn}\pi
+^{\ast }$ összefüggés. Például az első két változóra: 
+\begin{eqnarray*}
+d\left( x,y,v_{3},\ldots ,v_{n}\right)  &=&\sum_{\pi \in S_{n}}\operatorname{sgn}%
+\pi \left( \prod_{k=3}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}\right)
+e_{\pi \left( 1\right) }^{\ast }\left( x\right) e_{\pi \left( 2\right)
+}^{\ast }\left( y\right)  \\
+&=&\sum_{\pi \in S_{n}}-\operatorname{sgn}\pi ^{\ast }\left(
+\prod_{k=3}^{n}e_{\pi ^{\ast }\left( k\right) }^{\ast }v_{k}\right) e_{\pi
+^{\ast }\left( 1\right) }^{\ast }\left( y\right) e_{\pi ^{\ast }\left(
+2\right) }^{\ast }\left( x\right)  \\
+&=&-\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=3}^{n}e_{\pi \left(
+k\right) }^{\ast }v_{k}\right) e_{\pi \left( 1\right) }^{\ast }\left(
+y\right) e_{\pi \left( 2\right) }^{\ast }\left( x\right) =-d\left(
+y,x,v_{3},\ldots ,v_{n}\right) .\qedhere
+\end{eqnarray*}
+\end{proof}
+
+\index{mátrix determinánsa}%
+\index{determináns}
+
+\begin{definition}[Mátrix determinánsa]
+Legyen $\left[ A\right] $ az $A:X\rightarrow X$ operátornak valamely rögzí%
+tett bázisban felírt mátrixa. Ekkor e mátrix $\left| \left[ A\right] \right| 
+$ $\emph{determinánsa}$ legyen: 
+\[
+\left| \left[ A\right] \right| \doteq \sum_{\pi \in S_{n}}%
+\operatorname{sgn}\pi \prod_{i=1}^{n}\left[ A\right] _{i,\pi \left( i\right) }
+\]
+formulával definiálva.
+\end{definition}
+Az előző tétel szerint egy mátrixnak és a transzponáltjának a determinánsa azonos.
+
+Adjunk képletet $2\times 2$-es és $3\times 3$-as mátrixok determinánsának
+kiszámolására!
+
+A fent definiált függvénynek a determinánssal való összefüggése 
+\index{determináns} 
+\[
+d\left( Ae_{1},\ldots ,Ae_{n}\right) =\left| _{\left\{ e_{1},\ldots
+e_{n}\right\} }\left[ A\right] \right| 
+\]
+minden $A$ lineáris transzformátor esetén.
+
+\section{A mértékek jellemzése}
+
+\index{mérték}
+
+\begin{proposition}
+    Legyenek $X$ és $V$ ugyanazon $\mathbb{F}$ test feletti vektorterek. 
+Tegyük fel, hogy
+a $\mathbb{F}$ test olyan, hogy $1+1\neq 0.$ (Nem $2$ karakterisztikájú.) Legyen tová%
+bbá $A:X\times X\rightarrow V$ bilineáris függvény. Ekkor az alábbi három áll%
+ítás ekvivalens:\newline
+1. Az $A$ antiszimmetrikus.\newline
+2. Minden $u\in X$ -re $A\left( u,u\right) =0.$ ($A$ \emph{alternáló})%
+\newline
+3. Minden $u,v\in X$ -re valamint $\lambda $ és $\mu $ skalárokra 
+\[
+A\left( u,v+\lambda u\right) =A\left( u,v\right) =A\left( u+\mu v,v\right) \qedhere
+\]
+\end{proposition}
+
+\begin{proof}
+$1.\Rightarrow 2.$ és $2.\Rightarrow 3.$ nyilvánvaló.\newline
+$3.\Rightarrow 1.$ is könnyű: $A\left( u,v\right) =A\left( u,v-u\right)
+=A\left( u+v-u,v-u\right) =A\left( v,v-u\right) =A\left( v,-u\right)
+=-A\left( v,u\right) .$
+\end{proof}
+
+\begin{definition}[mérték]
+Legyen $X$ egy $n$-dimenziós vektortér valamely $\mathbb{F}$ test felett. Ekkor egy 
+\[
+f:X\times \ldots \times X\rightarrow \mathbb{F} 
+\]
+$n$-lineáris antiszimmetrikus függvényt $\emph{mértéknek}$ nevezzük. Vilá%
+gos, hogy a mértékek alteret alkotnak.
+\end{definition}
+
+\begin{proposition}
+Legyen $X$ egy $n$-dimenziós vektortér, $f:X\times \ldots \times
+X\rightarrow \mathbb{F}$ mérték. Ekkor ha a $\left\{ v_{1},\ldots ,v_{n}\right\}
+\subseteq X$ vektorrendszer lineárisan összefüggő, akkor 
+\[
+f\left( v_{1},\ldots ,v_{n}\right) =0. 
+\]
+\end{proposition}
+
+\begin{proof}
+Mivel $f$ értéke nem változik ha egy változójához a másik skalárszorosát hozz%
+á adjuk, ezért ha $v_{k}=\sum_{i\neq k}\alpha _{i}v_{i},$ akkor $f\left(
+v_{1},\ldots ,v_{n}\right) =f\left( v_{1},\ldots ,0,\ldots ,v_{n}\right) =0.$
+\end{proof}
+
+\begin{proposition}
+Legyen $X$ egy $n$-dimenziós vektortér, $f:X\times \ldots \times
+X\rightarrow \mathbb{F}$ mérték. Ekkor ha van olyan $e_{1},\ldots ,e_{n}$ bázisa a té%
+rnek melyekre 
+\[
+f\left( e_{1},\ldots ,e_{n}\right) =0 
+\]
+akkor az $f$ mérték a konstans zéró triviális mérték.
+\end{proposition}
+
+\begin{proof}
+Mivel $f$ antiszimmetrikus és minden permutáció előáll transzpozíciók
+szorzataként, ezért tetszőleges $\pi \in S_{n}$ mellett $\left| f\left(
+e_{\pi \left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left(
+n\right) }\right) \right| =\left| f\left( e_{1},\ldots ,e_{n}\right) \right|
+=0.$ De az egyes rögzített változókban való linearitás és az alternáló
+tulajdonság miatt minden $v_{1},\ldots ,v_{n}$ vektorrendszerhez léteznek $%
+\beta _{\pi }$ $\left( \pi \in S_{n}\right) $ együtthatók, melyekre $f\left(
+v_{1},\ldots ,v_{n}\right) =\sum_{\pi \in S_{n}}\beta _{\pi }f\left( e_{\pi
+\left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left( n\right)
+}\right) =0.$
+\end{proof}
+
+\begin{corollary}
+$f:X\times \ldots \times X\rightarrow \mathbb{F}$ nem triviális mérték. Az 
+\[
+\left\{ v_{1},\ldots ,v_{n}\right\} \subseteq X%
+\text{ lineárisan összefüggő pontosan akkor, ha }f\left( v_{1},\ldots
+,v_{n}\right) =0. 
+\]
+\end{corollary}
+
+\begin{proposition}
+Legyen $X$ egy $n$-dimenziós vektortér. Ekkor az $X$ tér $n$-szeres
+Descartes szorzatán értelmezett mértékek vektortere $1$ dimenziós.
+\end{proposition}
+
+\begin{proof}
+Rögzítsük a tér egy $e_{1},\ldots ,e_{n}$ bázisát. Láttuk, hogy a $d\left(
+v_{1},\ldots ,v_{n}\right) \doteq \sum_{\pi \in S_{n}}\operatorname{sgn}\pi
+\prod_{i=1}^{n}e_{i}^{\ast }\left( v_{\pi \left( i\right) }\right) $ függvé%
+ny nem triviális mértéket definiál. Elegendő tehát megmutatnunk, hogy
+amennyiben $D\neq 0$ egy másik mérték a szorzattéren úgy található $\delta
+\in \mathbb{F}$ melyre $D=\delta d.$ Legyen $\delta \doteq D\left( e_{1},\ldots
+,e_{n}\right) ,$ így $D\left( e_{1},\ldots ,e_{n}\right) -\delta d\left(
+e_{1},\ldots ,e_{n}\right) =0.$ Ez azt jelenti, hogy a $D-\delta d$ mérték
+az $e_{1},\ldots ,e_{n}$ bázison eltűnik ami csak úgy lehetséges, ha $%
+D-\delta d=0.$
+\end{proof}
+
+\begin{proposition}
+Legyen $X$ egy $n$-dimenziós vektortér, $f$ egy nem triviális mérték, $A\in
+L\left( X\right) $ lineáris operátor. Ekkor egyértelműen létezik $\delta
+_{f}\left( A\right) \in \mathbb{F}$ szám melyre minden $\left\{ v_{1},\ldots
+,v_{n}\right\} \subseteq X$ esetén 
+\[
+f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{f}\left( A\right) f\left(
+v_{1},\ldots ,v_{n}\right) 
+\]
+Sőt az így kapott $\delta _{f}\left( A\right) $ nem függ a kiindulásul vett $%
+f$ mértéktől, azaz ha $g$ másik nem triviális mérték akkor $\delta
+_{f}\left( A\right) =\delta _{g}\left( A\right) .$
+\end{proposition}
+
+\begin{proof}
+Ha $A$ egy lineáris operátor, akkor az $\left( v,\ldots v_{n}\right) \mapsto
+f\left( Av_{1},\ldots ,Av_{n}\right) $ fügvény is mérték. Láttuk, hogy a mért%
+ékek tere $1$ dimenziós, így van egyetlen olyan $\delta _{f}\left( A\right) $
+melyre minden $v_{1},\ldots ,v_{n}$ mellett $f\left( Av_{1},\ldots
+,Av_{n}\right) =\delta _{f}\left( A\right) f\left( v_{1},\ldots
+,v_{n}\right) .$ Legyen $g$ egy másik nem zérus mérték. Ekkor $g=\gamma f$
+persze $\gamma \neq 0.$ Így a $g\left( Av_{1},\ldots ,Av_{n}\right) =\delta
+_{g}\left( A\right) g\left( v_{1},\ldots ,v_{n}\right) $ összefüggésből $%
+\gamma f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{g}\left( A\right)
+\gamma f\left( v_{1},\ldots ,v_{n}\right) $ következik, amiből $f\left(
+Av_{1},\ldots ,Av_{n}\right) =\delta _{g}\left( A\right) f\left(
+v_{1},\ldots ,v_{n}\right) $ következik. Így $\delta _{f}\left( A\right) $
+egyértelműsége miatt $\delta _{f}\left( A\right) =\delta _{g}\left( A\right) 
+$ is fennáll.
+\end{proof}
+
+\index{lineáris transzformáció determinánsa}%
+\index{determináns}
+
+\begin{definition}[Lineáris transzformáció determinánsa]
+Azt kaptuk, hogy $\delta _{f}\left( A\right) $ értéke nem függ a nem zérus mé%
+rték megválasztásától, ezért ez egyedül az $A$ lineáris operátorra jellemző
+szám. A továbbiakban a $\delta _{f}\left( A\right) $ helyett csak $\delta
+\left( A\right) $-t írunk, és ezt a számot nevezzük az $A$ lineáris operátor 
+\emph{determinánsának.}
+\end{definition}
+
+\index{determinánsok szorzattétele}
+
+\begin{proposition}[Szorzattétel]
+Legyen $X$ egy $n$-dimenziós vektortér, $A$ és $B\in L\left( X\right) $ lineá%
+ris operátorok. Ekkor 
+\[
+\delta \left( A\circ B\right) =\delta \left( A\right) \delta \left( B\right)
+. 
+\]
+\end{proposition}
+
+\begin{proof}
+A $\delta \left( A\circ B\right) $ definíciója szerint ez az egyetlen olyan
+szám, amelyikre minden $v_{1},\ldots ,v_{n}$ mellett 
+\[
+f\left( ABv_{1},\ldots ,ABv_{n}\right) =\delta \left( A\circ B\right)
+f\left( v_{1},\ldots ,v_{n}\right) . 
+\]
+Másrészt a $\delta \left( A\right) $ és $\delta \left( B\right) $ értelmezé%
+se szerint 
+\[
+f\left( ABv_{1},\ldots ,ABv_{n}\right) =\delta \left( A\right) f\left(
+Bv_{1},\ldots ,Bv_{n}\right) =\delta \left( A\right) \delta \left( B\right)
+f\left( v_{1},\ldots ,v_{n}\right) 
+\]
+E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
+=\delta \left( A\right) \delta \left( B\right) .$
+\end{proof}
+
+\begin{proposition}
+Legyen $X$ vektortér, $A\in L\left( X\right) $. Ekkor $A$ lineáris operá%
+tornak a tér tetszőleges bázisában felírt determinánsának mátrixa azonos a $%
+A $-nak mint lineáris operátornak a mátrixával, azaz 
+\[
+\delta \left( A\right) =\left| _{\left\{ e_{1},\ldots ,e_{n}\right\} }\left[
+A\right] \right| 
+\]
+teljesül.
+\end{proposition}
+
+\begin{proof}
+Láttuk, hogy az $A$ lineáris operátor $e_{1},\ldots ,e_{n}$ bázisában felírt
+mátrixának determinánsára $\left| \left[ A\right] \right| =d\left(
+Ae_{1},\ldots ,Ae_{n}\right) ,$ ahol $d\left( v_{1},\ldots v_{n}\right)
+\doteq \sum_{\pi \in S_{n}}%
+\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right) }.$ Így 
+\[
+\left| \left[ A\right] \right| =d\left( Ae_{1},\ldots ,Ae_{n}\right) =\delta
+\left( A\right) d\left( e_{1},\ldots ,e_{n}\right) =\delta \left( A\right) . \qedhere
+\]
+\end{proof}
+
+\begin{corollary}
+A lineáris operátor mátrixának determinánsa független az adott koordinátázást%
+ól, így beszélhetünk a lineáris operátor determinánsáról. A továbbiakban $%
+\left| A\right| $ -val jelüljük egy $A\in L\left( X\right) $ determinánsát.
+\end{corollary}
+
+\begin{corollary}
+Ha $A$ és $B$ lineáris transzformációk, akkor $\left| A\circ B\right|
+=\left| A\right| \left| B\right| .$ Továbbá, ha $A$ invertálható, akkor $%
+\left| A^{-1}\right| =1/\left| A\right| .$
+\end{corollary}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -8901,6 +9400,7 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
     \appendix
     \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
     \appendixpage
+
 
 
 
@@ -9561,5 +10061,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 23 Mar 2020 12:58:33 PM CET
+Last Modified : Mon 23 Mar 2020 01:24:12 PM CET
 
