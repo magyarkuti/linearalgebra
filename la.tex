@@ -8905,641 +8905,641 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
 
 
 
-    \chapter{A komplex számokról}
-    Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján
-    \section{Lineáris algebrai megközelítés}
-    Ha $\left\{ e_1,\dots,e_n \right\}$ bázisa egy $\mathbb{C}$ feletti $V$ vektortérnek
-    és $m\left( t \right)\in\mathbb{C}\left[ t \right]$ egy pontosan $n$-ed fokú, 
-    normált polinom,
-    például
-    $m\left( t \right)=\alpha_0+\alpha_1 t+\dots+\alpha_{n-1}t^{n-1}+t^{n}$,
-    akkor definiálja az $A\in L\left( V \right)$ lineáris transzformációt
+\chapter{A komplex számokról}
+Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján
+\section{Lineáris algebrai megközelítés}
+Ha $\left\{ e_1,\dots,e_n \right\}$ bázisa egy $\mathbb{C}$ feletti $V$ vektortérnek
+és $m\left( t \right)\in\mathbb{C}\left[ t \right]$ egy pontosan $n$-ed fokú, 
+normált polinom,
+például
+$m\left( t \right)=\alpha_0+\alpha_1 t+\dots+\alpha_{n-1}t^{n-1}+t^{n}$,
+akkor definiálja az $A\in L\left( V \right)$ lineáris transzformációt
+\[
+    A\left( e_k \right)=
+    \begin{cases}
+        e_{k+1}&, \text{ ha } 1\leq k \leq n-1\\
+        -\sum_{j=0}^{n-1}\alpha_j e_{j+1}&, \text{ ha } k=n.
+    \end{cases}
+\]
+Világos, hogy $A^je_1=e_{j+1}$ tetszőleges $0\leq j\leq n-1$ mellett.
+Ebből azonnal következik, hogy 
+\begin{enumerate}
+    \item 
+        $\left\{ e_1, Ae_1,A^2e_1,\dots,A^{n-1}e_1\right\}$ rendszer lineárisan független,
+    \item
+        $\left\{ e_1, Ae_1,A^2e_1,\dots,A^{n-1}e_1,A^ne_1\right\}$ rendszer már lineárisan összefüggő,
+        hiszen
+        $A^ne_1=AA^{n-1}e_1=Ae_n=-\sum_{j=0}^{n-1}\alpha_j A^je_1$.
+\end{enumerate}
+Látjuk tehát, hogy $m$ a legalacsonyabb fokú normált polinom, melyre
+$m\left( A \right)e_1=0$,
+így az $e_1$ vektorhoz tartozó kis minimálpolinom éppen $m$.
+Mivel a tér $n$-dimenziós, ezért $m$ egyben minimálpolinomja is $A$-nak.
+
+Persze egy lineáris transzformációnak egy szám pontosan akkor sajátértéke,
+ha az a minimálpolinomjának gyöke,
+emiatt 
+az algebra alaptétele a következőképpen is fogalmazható:
+\begin{center}
+    \emph{Minden komplex vektortér feletti lineáris transzformációnak van sajátvektora.}
+\end{center}
+
+Jelölje $\rho\left( A \right)$ az $A$ transzformáció rangját, 
+azaz a képtér dimenzióját,
+és $\nu\left( A \right)$ a defektust, azaz a magtér dimenzióját.
+Jól ismert, hogy ha $A\in L\left( V \right)$ egy lineáris transzformáció
+és $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy polinom, akkor 
+$\ker p\left( A \right)$ és
+$\im p\left( A \right)$ is $A$-ra invariáns alterek.
+Két lineáris trafóról azt mondjuk, hogy \emph{kommutálnak},\index{kommutál}
+ha $A_1A_2=A_2A_1.$
+Könnyen látható, hogy ha $A_1$ és $A_2$ kommutálnak, akkor tetszőleges két $p,q$
+polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.\index{kommutál}
+\begin{lemma}
+    Legyenek az $A_1,A_2\in L\left( V \right)$ kommutáló lineáris transzformációk,
+    valamint $p,q\in\mathbb{F}\left[ t \right]$ polinomok.
+    Ekkor $\ker p\left( A_1 \right)$ és
+    $\im p\left( A_1 \right)$ is invariáns alterek $q\left( A_2 \right)$-re.
+\end{lemma}
+\begin{proof}
+    Elég megmutatni, hogy $\ker\left( A_1 \right)$-re és
+    $\im\left( A_1 \right)$-re invariáns $A_2$, hiszen $p\left( A_1 \right)$ 
+    és $q\left( A_2 \right)$ is kommutálnak.
+    No de, az
+    \(
+    A_1 A_2 x=A_2A_1x=A_20=0
+    \)
+    szerint a magra,
+    és $u=A_1v$ jelöléssel az
+    \(
+    A_2u=A_2 A_1v =A_1A_2v 
+    \)
+    azonosságból a képre vonatkozó állítás következik.
+\end{proof}
+\begin{lemma}
+    \label{le:indukcio}
+    Legyen a $d>1$ pozitív egész rögzítve. 
+    Tegyük fel, hogy az $\mathbb{F}$ test rendelkezik avval a tulajdonsággal,
+    hogy minden az $\mathbb{F}$ feletti $d$-vel nem osztható dimenziós vektortér tetszőleges
+    lineáris trafójának van sajátvektora.
+    Ekkor minden olyan $\mathbb{F}$ feletti vektortérre, 
+    amelynek dimenziója $d$-vel nem osztható igaz, 
+    hogy bármely két kommutáló lineáris transzformációjának van közös sajátvektora is.\index{kommutál}
+\end{lemma}
+\begin{proof}
+    A tér dimenziója szerinti indukció.
+    Egy egy dimenziós tér minden nem nulla vektora sajátvektora tetszőleges lineáris transzformációjának,
+    így persze bármely két egy dimenziós téren értelmezett lineáris transzformációnak is van közös
+    sajátvektora.
+    Tegyük fel, 
+    hogy az állítás igaz minden legfeljebb $n$-dimenziós vektortérre
+    és tekintsünk egy olyan $\mathbb{F}$ feletti vektorteret, 
+    amely éppen $n$-dimenziós és $d$ nem osztója $n$-nek.
+    Jelölje $A_1$ és $A_2$ a szóban forgó két lineáris transzformációt.
+    A feltétel szerint mondjuk $A_1$-nek van sajátvektora, 
+    így valamely $\mu\in\mathbb{F}$ mellett 
+    $\nu\left( A_1-\mu I \right)>0.$
+    Ha az 
+    $\nu\left( A_1-\mu I \right)=n$, akkor a tér minden vektora sajátvektora $A_1$-nek,
+    így mivel $A_2$-nek is van sajátvektora, ezért ez közös sajátvektoruk is.
+    Ha 
+    $\nu\left( A_1-\mu I \right)<n$, akkor 
+    $\nu\left( A_1-\mu I \right)+\rho\left( A_1-\mu I \right)=n$ miatt az
+    $K=\ker\left( A_1-\mu I \right)$ és a 
+    $L=\im\left( A_1-\mu I \right)$ 
+    valódi alterek dimenziójának egyike nem osztható $d$-vel.
+    No de $A_2$ és $A_1$ invariáns $K$-ra is és $L$-re is
+    az előző lemma miatt, 
+    így alkalmazhatjuk az indukciós feltevést $K$ és $L$ közül 
+    a $d$-vel nem osztható dimenziós altérre,
+    amely garantálja az $A_1$ és $A_2$ közös sajátvektorát.
+\end{proof}
+
+Mivel a karakterisztikus polinom gyökei a sajátértékek, és mivel egy $n$-dimenziós
+téren értelmezett lineáris transzformációnak pontosan $n$-edfokú a karakterisztikus polinomja,
+ezért a Bolzano-tétel szerint egy $\mathbb{R}$ feletti páratlan dimenziós vektortér lineáris transzformációjának van sajátvektora. 
+A fenti lemma tehát kommutáló transzformációk esetében közös sajátvektort garantál 
+páratlan dimenziójú valós vektortér felett.
+
+\begin{proposition}
+    Egy páratlan dimenziós komplex vektortér 
+    minden lineáris transzformációjának van sajátvektora.
+\end{proposition}
+
+\begin{proof}
+    Legyen $V$ a $\mathbb{C}$ feletti vektortér, $n$ páratlan szám a dimenziója,
+    $A\in L\left( V \right)$ a transzformáció.
+    Jelölje $\mathcal{H}=\left\{ A\in L\left( V \right):A=A^* \right\}$ 
+    az önadjungált transzformációkat.
+    Világos, hogy $\mathcal{H}$ egy valós, $n^2$ dimenziós vektortér. 
+    Minden $C\in L\left( V \right)$ lineáris transzformáció előáll
     \[
-        A\left( e_k \right)=
-        \begin{cases}
-            e_{k+1}&, \text{ ha } 1\leq k \leq n-1\\
-            -\sum_{j=0}^{n-1}\alpha_j e_{j+1}&, \text{ ha } k=n.
-        \end{cases}
+        C=
+        \frac{C+C^*}{2}+
+        i\frac{C-C^*}{2i}
     \]
-    Világos, hogy $A^je_1=e_{j+1}$ tetszőleges $0\leq j\leq n-1$ mellett.
-    Ebből azonnal következik, hogy 
-    \begin{enumerate}
-        \item 
-            $\left\{ e_1, Ae_1,A^2e_1,\dots,A^{n-1}e_1\right\}$ rendszer lineárisan független,
-        \item
-            $\left\{ e_1, Ae_1,A^2e_1,\dots,A^{n-1}e_1,A^ne_1\right\}$ rendszer már lineárisan összefüggő,
-            hiszen
-            $A^ne_1=AA^{n-1}e_1=Ae_n=-\sum_{j=0}^{n-1}\alpha_j A^je_1$.
-    \end{enumerate}
-    Látjuk tehát, hogy $m$ a legalacsonyabb fokú normált polinom, melyre
-    $m\left( A \right)e_1=0$,
-    így az $e_1$ vektorhoz tartozó kis minimálpolinom éppen $m$.
-    Mivel a tér $n$-dimenziós, ezért $m$ egyben minimálpolinomja is $A$-nak.
-
-    Persze egy lineáris transzformációnak egy szám pontosan akkor sajátértéke,
-    ha az a minimálpolinomjának gyöke,
-    emiatt 
-    az algebra alaptétele a következőképpen is fogalmazható:
-    \begin{center}
-        \emph{Minden komplex vektortér feletti lineáris transzformációnak van sajátvektora.}
-    \end{center}
-
-    Jelölje $\rho\left( A \right)$ az $A$ transzformáció rangját, 
-    azaz a képtér dimenzióját,
-    és $\nu\left( A \right)$ a defektust, azaz a magtér dimenzióját.
-    Jól ismert, hogy ha $A\in L\left( V \right)$ egy lineáris transzformáció
-    és $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy polinom, akkor 
-    $\ker p\left( A \right)$ és
-    $\im p\left( A \right)$ is $A$-ra invariáns alterek.
-    Két lineáris trafóról azt mondjuk, hogy \emph{kommutálnak},\index{kommutál}
-    ha $A_1A_2=A_2A_1.$
-    Könnyen látható, hogy ha $A_1$ és $A_2$ kommutálnak, akkor tetszőleges két $p,q$
-    polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.\index{kommutál}
-    \begin{lemma}
-        Legyenek az $A_1,A_2\in L\left( V \right)$ kommutáló lineáris transzformációk,
-        valamint $p,q\in\mathbb{F}\left[ t \right]$ polinomok.
-        Ekkor $\ker p\left( A_1 \right)$ és
-        $\im p\left( A_1 \right)$ is invariáns alterek $q\left( A_2 \right)$-re.
-    \end{lemma}
-    \begin{proof}
-        Elég megmutatni, hogy $\ker\left( A_1 \right)$-re és
-        $\im\left( A_1 \right)$-re invariáns $A_2$, hiszen $p\left( A_1 \right)$ 
-        és $q\left( A_2 \right)$ is kommutálnak.
-        No de, az
-        \(
-        A_1 A_2 x=A_2A_1x=A_20=0
-        \)
-        szerint a magra,
-        és $u=A_1v$ jelöléssel az
-        \(
-        A_2u=A_2 A_1v =A_1A_2v 
-        \)
-        azonosságból a képre vonatkozó állítás következik.
-    \end{proof}
-    \begin{lemma}
-        \label{le:indukcio}
-        Legyen a $d>1$ pozitív egész rögzítve. 
-        Tegyük fel, hogy az $\mathbb{F}$ test rendelkezik avval a tulajdonsággal,
-        hogy minden az $\mathbb{F}$ feletti $d$-vel nem osztható dimenziós vektortér tetszőleges
-        lineáris trafójának van sajátvektora.
-        Ekkor minden olyan $\mathbb{F}$ feletti vektortérre, 
-        amelynek dimenziója $d$-vel nem osztható igaz, 
-        hogy bármely két kommutáló lineáris transzformációjának van közös sajátvektora is.\index{kommutál}
-    \end{lemma}
-    \begin{proof}
-        A tér dimenziója szerinti indukció.
-        Egy egy dimenziós tér minden nem nulla vektora sajátvektora tetszőleges lineáris transzformációjának,
-        így persze bármely két egy dimenziós téren értelmezett lineáris transzformációnak is van közös
-        sajátvektora.
-        Tegyük fel, 
-        hogy az állítás igaz minden legfeljebb $n$-dimenziós vektortérre
-        és tekintsünk egy olyan $\mathbb{F}$ feletti vektorteret, 
-        amely éppen $n$-dimenziós és $d$ nem osztója $n$-nek.
-        Jelölje $A_1$ és $A_2$ a szóban forgó két lineáris transzformációt.
-        A feltétel szerint mondjuk $A_1$-nek van sajátvektora, 
-        így valamely $\mu\in\mathbb{F}$ mellett 
-        $\nu\left( A_1-\mu I \right)>0.$
-        Ha az 
-        $\nu\left( A_1-\mu I \right)=n$, akkor a tér minden vektora sajátvektora $A_1$-nek,
-        így mivel $A_2$-nek is van sajátvektora, ezért ez közös sajátvektoruk is.
-        Ha 
-        $\nu\left( A_1-\mu I \right)<n$, akkor 
-        $\nu\left( A_1-\mu I \right)+\rho\left( A_1-\mu I \right)=n$ miatt az
-        $K=\ker\left( A_1-\mu I \right)$ és a 
-        $L=\im\left( A_1-\mu I \right)$ 
-        valódi alterek dimenziójának egyike nem osztható $d$-vel.
-        No de $A_2$ és $A_1$ invariáns $K$-ra is és $L$-re is
-        az előző lemma miatt, 
-        így alkalmazhatjuk az indukciós feltevést $K$ és $L$ közül 
-        a $d$-vel nem osztható dimenziós altérre,
-        amely garantálja az $A_1$ és $A_2$ közös sajátvektorát.
-    \end{proof}
-
-    Mivel a karakterisztikus polinom gyökei a sajátértékek, és mivel egy $n$-dimenziós
-    téren értelmezett lineáris transzformációnak pontosan $n$-edfokú a karakterisztikus polinomja,
-    ezért a Bolzano-tétel szerint egy $\mathbb{R}$ feletti páratlan dimenziós vektortér lineáris transzformációjának van sajátvektora. 
-    A fenti lemma tehát kommutáló transzformációk esetében közös sajátvektort garantál 
-    páratlan dimenziójú valós vektortér felett.
-
-    \begin{proposition}
-        Egy páratlan dimenziós komplex vektortér 
-        minden lineáris transzformációjának van sajátvektora.
-    \end{proposition}
-
-    \begin{proof}
-        Legyen $V$ a $\mathbb{C}$ feletti vektortér, $n$ páratlan szám a dimenziója,
-        $A\in L\left( V \right)$ a transzformáció.
-        Jelölje $\mathcal{H}=\left\{ A\in L\left( V \right):A=A^* \right\}$ 
-        az önadjungált transzformációkat.
-        Világos, hogy $\mathcal{H}$ egy valós, $n^2$ dimenziós vektortér. 
-        Minden $C\in L\left( V \right)$ lineáris transzformáció előáll
-        \[
-            C=
-            \frac{C+C^*}{2}+
-            i\frac{C-C^*}{2i}
-        \]
-        alakban, ahol persze 
-        $\frac{1}{2}\left( C+C^* \right)$ és
-        $\frac{1}{2i}\left( C-C^* \right)$ is önadjungált transzformációk.
-        A továbbiakban rögzített $A\in L\left( V \right)$ mellett jelölje
-        $L_1,L_2:\mathcal{H}\to\mathcal{H}$ függvényeket.
-        \[
-            L_1\left( B \right)=
-            \frac{AB+BA^*}{2}
-            \text{ és }
-            L_2\left( B \right)=
-            \frac{AB-BA^*}{2i}
-        \]
-        Világos, hogy $L_1$ és $L_2$ lineáris transzformációk a $\mathcal{H}$ valós
-        vektortéren, 
-        amelyekre minden $B\in \mathcal{H}$ mellett
-        \[
-            AB=L_1\left( B \right)+iL_2\left( B \right).
-        \]
-        E két operátor felcserélhető, hiszen tetszőleges $B\in\mathcal{H}$ mellett, ugyanis
-        \begin{eqnarray*}
-            L_1\circ L_2\left( B \right)=
-            \frac{1}{4i}\left( A\left( AB-BA^* \right)+\left( AB-BA^* \right)A^* \right)=
-            \frac{1}{4i}\left( A^2B+BA^{*2} \right)&&\\
-            L_2\circ L_1\left( B \right)=
-            \frac{1}{4i}\left( A\left( AB+BA^* \right)-\left( AB+BA^* \right)A^* \right)=
-            \frac{1}{4i}\left( A^2B+BA^{*2} \right)&.&
-        \end{eqnarray*}
-        Alkalmazhatjuk az $n^2$ páratlan dimenziós valós vektortérre az előző lemmát.
-        Létezik $B\in\mathcal{H}$ nem a konstans zéró transzformáció és
-        létezik $\alpha_1,\alpha_2$ valós szám,
-        melyekre 
-        \(
-        L_1\left( B \right)=\alpha_1B 
+    alakban, ahol persze 
+    $\frac{1}{2}\left( C+C^* \right)$ és
+    $\frac{1}{2i}\left( C-C^* \right)$ is önadjungált transzformációk.
+    A továbbiakban rögzített $A\in L\left( V \right)$ mellett jelölje
+    $L_1,L_2:\mathcal{H}\to\mathcal{H}$ függvényeket.
+    \[
+        L_1\left( B \right)=
+        \frac{AB+BA^*}{2}
         \text{ és }
-        L_2\left( B \right)=\alpha_2B.
-        \)
-        Tehát ha valamely $v\in V$ vektorra $Bv\neq 0$,
-        akkor 
-        \[
-            A\left( Bv \right)=
-            \alpha_1Bv+
-            i\alpha_2Bv=
-            \left(\alpha_1+i\alpha_2\right)Bv,
-        \]
-        ergo $\alpha_1+i\alpha_2$ sajátértéke, és $Bv$ sajátvektora $A$-nak.
-    \end{proof}
+        L_2\left( B \right)=
+        \frac{AB-BA^*}{2i}
+    \]
+    Világos, hogy $L_1$ és $L_2$ lineáris transzformációk a $\mathcal{H}$ valós
+    vektortéren, 
+    amelyekre minden $B\in \mathcal{H}$ mellett
+    \[
+        AB=L_1\left( B \right)+iL_2\left( B \right).
+    \]
+    E két operátor felcserélhető, hiszen tetszőleges $B\in\mathcal{H}$ mellett, ugyanis
+    \begin{eqnarray*}
+        L_1\circ L_2\left( B \right)=
+        \frac{1}{4i}\left( A\left( AB-BA^* \right)+\left( AB-BA^* \right)A^* \right)=
+        \frac{1}{4i}\left( A^2B+BA^{*2} \right)&&\\
+        L_2\circ L_1\left( B \right)=
+        \frac{1}{4i}\left( A\left( AB+BA^* \right)-\left( AB+BA^* \right)A^* \right)=
+        \frac{1}{4i}\left( A^2B+BA^{*2} \right)&.&
+    \end{eqnarray*}
+    Alkalmazhatjuk az $n^2$ páratlan dimenziós valós vektortérre az előző lemmát.
+    Létezik $B\in\mathcal{H}$ nem a konstans zéró transzformáció és
+    létezik $\alpha_1,\alpha_2$ valós szám,
+    melyekre 
+    \(
+    L_1\left( B \right)=\alpha_1B 
+    \text{ és }
+    L_2\left( B \right)=\alpha_2B.
+    \)
+    Tehát ha valamely $v\in V$ vektorra $Bv\neq 0$,
+    akkor 
+    \[
+        A\left( Bv \right)=
+        \alpha_1Bv+
+        i\alpha_2Bv=
+        \left(\alpha_1+i\alpha_2\right)Bv,
+    \]
+    ergo $\alpha_1+i\alpha_2$ sajátértéke, és $Bv$ sajátvektora $A$-nak.
+\end{proof}
 
-    Minden komplex számnak van gyöke, ezért minden legfeljebb másodfokú komplex együtthatós
-    polinomnak van zérushelye.
-    Az algebra alaptételével ekvivalens állítás tehát, hogy egy komplex vektortér felett
-    minden lineáris transzformáció minimálpolinomjának van legfeljebb másodfokú faktora.%
-    \footnote{Azaz, van legfeljebb két dimenziós nem triviális invariáns altere.}
-    Az is nyilvánvaló, hogy minden egész szám egyértelműen áll $2^kn$ alakban, ahol $n$ páratlan.
+Minden komplex számnak van gyöke, ezért minden legfeljebb másodfokú komplex együtthatós
+polinomnak van zérushelye.
+Az algebra alaptételével ekvivalens állítás tehát, hogy egy komplex vektortér felett
+minden lineáris transzformáció minimálpolinomjának van legfeljebb másodfokú faktora.%
+\footnote{Azaz, van legfeljebb két dimenziós nem triviális invariáns altere.}
+Az is nyilvánvaló, hogy minden egész szám egyértelműen áll $2^kn$ alakban, ahol $n$ páratlan.
 
-    A következő állítás tehát az algebra alaptételének egy ekvivalens megfogalmazása.
-    \begin{proposition}
-        Tekintsünk egy $V$ komplex vektorteret, amelynek dimenziója $2^kn$ alakú,
-        ahol n páratlan egész.
-        Ekkor $V$ minden lineáris transzformációja minimálpolinomjának 
-        van legfeljebb másodfokú faktora.
-    \end{proposition}
-    \begin{proof}
-        A $k$ szerinti indukció.
-        A $k=0$ esetben az előző állítás szerint van sajátvektor is, 
-        tehát első fokú faktora is van a minimálpolinomnak.
-        Tegyük fel, hogy igaz az állítás minden $k$-nál kisebb szám mellett.
-        E feltétel azt jelenti, hogy minden olyan vektortérre igaz az állítás,
-        -- így az algebra alaptétele --
-        melynek dimenziója $2^l$ páratlan szorosa $l<k$ mellett, 
-        azaz amelynek dimenzióját a $d=2^k$ szám nem osztja.
-        Alkalmazva a lemmát azt kapjuk, hogy ilyen dimenziójú vektortér kommutáló
-        lineáris transzformációinak van közös sajátvektora is.
-        Legyen tehát $V$ dimenziója $2^kn$ alakban felírva, ahol $n$ páratlan.
+A következő állítás tehát az algebra alaptételének egy ekvivalens megfogalmazása.
+\begin{proposition}
+    Tekintsünk egy $V$ komplex vektorteret, amelynek dimenziója $2^kn$ alakú,
+    ahol n páratlan egész.
+    Ekkor $V$ minden lineáris transzformációja minimálpolinomjának 
+    van legfeljebb másodfokú faktora.
+\end{proposition}
+\begin{proof}
+    A $k$ szerinti indukció.
+    A $k=0$ esetben az előző állítás szerint van sajátvektor is, 
+    tehát első fokú faktora is van a minimálpolinomnak.
+    Tegyük fel, hogy igaz az állítás minden $k$-nál kisebb szám mellett.
+    E feltétel azt jelenti, hogy minden olyan vektortérre igaz az állítás,
+    -- így az algebra alaptétele --
+    melynek dimenziója $2^l$ páratlan szorosa $l<k$ mellett, 
+    azaz amelynek dimenzióját a $d=2^k$ szám nem osztja.
+    Alkalmazva a lemmát azt kapjuk, hogy ilyen dimenziójú vektortér kommutáló
+    lineáris transzformációinak van közös sajátvektora is.
+    Legyen tehát $V$ dimenziója $2^kn$ alakban felírva, ahol $n$ páratlan.
 
-        Rögzítsünk a térnek egy bázisát, és jelölje
-        \(
-        \mathcal{S}\subseteq L(V)
-        \)
-        azon lineáris transzformációk összességét, 
-        amelyeknek mátrixa az itt rögzített bázisban szimmetrikus.
-        Ez egy komplex vektortér,
-        amelyre
-        \[
-            \dim\mathcal{S}=
-            \frac{2^kn\left( 2^kn+1 \right)}{2}=
-            2^{k-1}n\left(2^kn+1  \right)=
-            2^{k-1}n',
-        \]
-        ahol $n'$ páratlan.
-        Alkalmazhatjuk tehát a komplex $\mathcal{S}$ vektortérre az indukciós feltevést.
-        Ehhez, rögzített $A\in L\left( V \right)$ lineáris transzformáció mellett, 
-        vezessük be az $L_1,L_2:\mathcal{S}\to\mathcal{S}$ függvényeket.
-        \[
-            L_1\left( B \right)=AB+BA^T \text{ és }
-            L_2\left( B \right)=ABA^T.
-        \]
-        Könnyű számolgatás mutatja, hogy az $L_1$ és $L_2$ lineáris transzformációk kommutálnak:\index{kommutál}
-        \begin{multline*}
-            \left( L_1\circ L_2\right)B=
-            A\left( ABA^T \right)+\left( ABA^T \right)A^T=
-            A\left( ABA^T+BA^TA^T \right)
-            =\\
-            A\left( AB+BA^T \right)A^T =
-            \left( L_2\circ L_1 \right)B.
-        \end{multline*}
-        Létezik tehát közös sajátvektora az $L_1$ és $L_2$ transzformációknak, ergo
-        létezik $\lambda,\mu\in\mathbb{C}$ komplex szám, 
-        és létezik nem az azonosan zérus $B\in\mathcal{S}$ lineáris transzformáció,
-        amelyekre 
-        $
-        L_1\left( B \right)=\lambda B
-        $
-        és
-        $
-        L_2\left( B \right)=\mu B,
-        $
-        azaz
-        $
-        AB+BA^T=\lambda B
-        $
-        és
-        $
-        ABA^T=\mu B.
-        $
-        Ebből
-        \[
-            A\lambda B=
-            A\left( AB+BA^T \right)=
-            A^2B + ABA^T=
-            A^2B + \mu B.
-        \]
-        Ha tehát $u=Bv\neq 0$, akkor
-        \[
-            A^2u-\lambda Au+\mu u=0.
-        \]
-        Ha $u$ nem sajátvektora $A$-nak, akkor a 
-        $p\left( t \right)=t^2-\lambda t+\mu$
-        egy nem zérus vektor kis minimálpolinomja, 
-        ezért a $p$ polinom osztója a minimálpolinomnak.
-    \end{proof}
+    Rögzítsünk a térnek egy bázisát, és jelölje
+    \(
+    \mathcal{S}\subseteq L(V)
+    \)
+    azon lineáris transzformációk összességét, 
+    amelyeknek mátrixa az itt rögzített bázisban szimmetrikus.
+    Ez egy komplex vektortér,
+    amelyre
+    \[
+        \dim\mathcal{S}=
+        \frac{2^kn\left( 2^kn+1 \right)}{2}=
+        2^{k-1}n\left(2^kn+1  \right)=
+        2^{k-1}n',
+    \]
+    ahol $n'$ páratlan.
+    Alkalmazhatjuk tehát a komplex $\mathcal{S}$ vektortérre az indukciós feltevést.
+    Ehhez, rögzített $A\in L\left( V \right)$ lineáris transzformáció mellett, 
+    vezessük be az $L_1,L_2:\mathcal{S}\to\mathcal{S}$ függvényeket.
+    \[
+        L_1\left( B \right)=AB+BA^T \text{ és }
+        L_2\left( B \right)=ABA^T.
+    \]
+    Könnyű számolgatás mutatja, hogy az $L_1$ és $L_2$ lineáris transzformációk kommutálnak:\index{kommutál}
+    \begin{multline*}
+        \left( L_1\circ L_2\right)B=
+        A\left( ABA^T \right)+\left( ABA^T \right)A^T=
+        A\left( ABA^T+BA^TA^T \right)
+        =\\
+        A\left( AB+BA^T \right)A^T =
+        \left( L_2\circ L_1 \right)B.
+    \end{multline*}
+    Létezik tehát közös sajátvektora az $L_1$ és $L_2$ transzformációknak, ergo
+    létezik $\lambda,\mu\in\mathbb{C}$ komplex szám, 
+    és létezik nem az azonosan zérus $B\in\mathcal{S}$ lineáris transzformáció,
+    amelyekre 
+    $
+    L_1\left( B \right)=\lambda B
+    $
+    és
+    $
+    L_2\left( B \right)=\mu B,
+    $
+    azaz
+    $
+    AB+BA^T=\lambda B
+    $
+    és
+    $
+    ABA^T=\mu B.
+    $
+    Ebből
+    \[
+        A\lambda B=
+        A\left( AB+BA^T \right)=
+        A^2B + ABA^T=
+        A^2B + \mu B.
+    \]
+    Ha tehát $u=Bv\neq 0$, akkor
+    \[
+        A^2u-\lambda Au+\mu u=0.
+    \]
+    Ha $u$ nem sajátvektora $A$-nak, akkor a 
+    $p\left( t \right)=t^2-\lambda t+\mu$
+    egy nem zérus vektor kis minimálpolinomja, 
+    ezért a $p$ polinom osztója a minimálpolinomnak.
+\end{proof}
 
-    \section{Analízis megközelítés}
-    Az algebra alaptételének (\ref{Th:FundOfAlg}. tétel) bizonyításához felhasználunk néhány az elemi analízisből
-    jól ismert állítást.
-    Ezek közül a lényegesebbek az alábbiak:
-    \begin{enumerate}
-        \item  Az origó középpontú zárt kör a sík
-            kompakt részhalmaza.
+\section{Analízis megközelítés}
+Az algebra alaptételének (\ref{Th:FundOfAlg}. tétel) bizonyításához felhasználunk néhány az elemi analízisből
+jól ismert állítást.
+Ezek közül a lényegesebbek az alábbiak:
+\begin{enumerate}
+    \item  Az origó középpontú zárt kör a sík
+        kompakt részhalmaza.
 
-        \item  Kompakt halmazon folytonos függvény felveszi minimumát.
+    \item  Kompakt halmazon folytonos függvény felveszi minimumát.
 
-        \item  Minden komplex számnak van legalább egy $k$-adik gyöke ($k>0$).
+    \item  Minden komplex számnak van legalább egy $k$-adik gyöke ($k>0$).
 
-        \item  Komplex síkon differenciálható függvények
-            folytonosak is.
-    \end{enumerate}
+    \item  Komplex síkon differenciálható függvények
+        folytonosak is.
+\end{enumerate}
 
-    A főtételt könnyen megérthetjük, ha áttekintjük
-    a felé vezető utat.
-    Két lényeges pontot kell látnunk.
-    Az első (\ref{Th:Cauchy1}. állítás) kompaktsági meggondolás, polinomok növekedési ütemére (\ref{Th:Grow}. lemma) támaszkodva.
-    Ez utóbbi lemma talán önmagában is érdekes, hiszen azt állítja, hogy egy polinom legalább a fokszáma nagyságrendjében növekszik.
-    A másik döntő lépés (\ref{Th:Cauchy2}. állítás) az Argand-féle becslésen (\ref{Th:Argand}. lemma) nyugszik.
-    Ez a holomorf függvényekre vonatkozó nyílt leképezés tételnek az itt éppen elegendő speciális esete.
+A főtételt könnyen megérthetjük, ha áttekintjük
+a felé vezető utat.
+Két lényeges pontot kell látnunk.
+Az első (\ref{Th:Cauchy1}. állítás) kompaktsági meggondolás, polinomok növekedési ütemére (\ref{Th:Grow}. lemma) támaszkodva.
+Ez utóbbi lemma talán önmagában is érdekes, hiszen azt állítja, hogy egy polinom legalább a fokszáma nagyságrendjében növekszik.
+A másik döntő lépés (\ref{Th:Cauchy2}. állítás) az Argand-féle becslésen (\ref{Th:Argand}. lemma) nyugszik.
+Ez a holomorf függvényekre vonatkozó nyílt leképezés tételnek az itt éppen elegendő speciális esete.
 
-    \begin{lemma}
-        \label{Th:Grow}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ nem a konstans nulla,
-        komplex $n$-edfokú polinom.
-        Ekkor létezik olyan $r>0$ valós szám, hogy minden $z\in \mathbb{C}$ $,\left| z\right| >r$ esetén $\left| f\left( z\right) \right| >\frac{1}{2}\left| a_{n}\right| \left|
-        z^{n}\right| $.
-    \end{lemma}
+\begin{lemma}
+    \label{Th:Grow}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ nem a konstans nulla,
+    komplex $n$-edfokú polinom.
+    Ekkor létezik olyan $r>0$ valós szám, hogy minden $z\in \mathbb{C}$ $,\left| z\right| >r$ esetén $\left| f\left( z\right) \right| >\frac{1}{2}\left| a_{n}\right| \left|
+    z^{n}\right| $.
+\end{lemma}
 
-    \begin{proof}
-        Nyilván $f\left( z\right) =a_{n}z^{n}+a_{n-1}z^{n-1}+\ldots +a_{1}z+a_{0}
-        $ alakú, ahol $a_{n}\neq 0$.
-        Világos, hogy $z\neq 0$ esetén 
-        \[
-            f\left( z\right) =z^{n}\left( a_{n}+a_{n-1}\frac{1}{z}+\ldots +a_{1}\frac{1}{z^{n-1}}+a_{0}\frac{1}{z^{n}}\right) \text{.}
-        \]
-        Legyen $h:\mathbb{C}\rightarrow \mathbb{C}$ komplex polinom a következőképpen definiálva: 
-        \[
-            h\left( w\right) :=a_{n-1}w+a_{n-2}w^{2}+\ldots +a_{1}w^{n-1}+a_{0}w^{n}.
-        \]
-        Ekkor minden $z\in \mathbb{C}$, $z\neq 0$ mellett 
-        \begin{equation}
-            f\left( z\right) =z^{n}\left( a_{n}+h\left( 1/z\right) \right) .
-            \label{Eq:C}
-        \end{equation}
-        A $h$ folytonos $0$-ban, és $h\left( 0\right) =0$, így létezik
-        olyan $\delta >0$ valós szám, melyre $w\in \mathbb{C}$, $\left|
-        w\right| <\delta $ esetén $\left| h\left( w\right) \right| <\frac{1}{2}\left| a_{n}\right| $.
-        \'{I}gy ha $\left| z\right| >1/\delta $, akkor $\left| 1/z\right| <\delta $, amiből következik, hogy 
-        \[
-            \left| h\left( 1/z\right) \right| <\frac{1}{2}\left| a_{n}\right| .
-        \]
-        A háromszög-egyenlőtlenség és (\ref{Eq:C}) miatt 
-        az $r:=1/\delta $ választással minden 
-        $z\in \mathbb{C},\left| z\right| >r$ mellett 
+\begin{proof}
+    Nyilván $f\left( z\right) =a_{n}z^{n}+a_{n-1}z^{n-1}+\ldots +a_{1}z+a_{0}
+    $ alakú, ahol $a_{n}\neq 0$.
+    Világos, hogy $z\neq 0$ esetén 
+    \[
+        f\left( z\right) =z^{n}\left( a_{n}+a_{n-1}\frac{1}{z}+\ldots +a_{1}\frac{1}{z^{n-1}}+a_{0}\frac{1}{z^{n}}\right) \text{.}
+    \]
+    Legyen $h:\mathbb{C}\rightarrow \mathbb{C}$ komplex polinom a következőképpen definiálva: 
+    \[
+        h\left( w\right) :=a_{n-1}w+a_{n-2}w^{2}+\ldots +a_{1}w^{n-1}+a_{0}w^{n}.
+    \]
+    Ekkor minden $z\in \mathbb{C}$, $z\neq 0$ mellett 
+    \begin{equation}
+        f\left( z\right) =z^{n}\left( a_{n}+h\left( 1/z\right) \right) .
+        \label{Eq:C}
+    \end{equation}
+    A $h$ folytonos $0$-ban, és $h\left( 0\right) =0$, így létezik
+    olyan $\delta >0$ valós szám, melyre $w\in \mathbb{C}$, $\left|
+    w\right| <\delta $ esetén $\left| h\left( w\right) \right| <\frac{1}{2}\left| a_{n}\right| $.
+    \'{I}gy ha $\left| z\right| >1/\delta $, akkor $\left| 1/z\right| <\delta $, amiből következik, hogy 
+    \[
+        \left| h\left( 1/z\right) \right| <\frac{1}{2}\left| a_{n}\right| .
+    \]
+    A háromszög-egyenlőtlenség és (\ref{Eq:C}) miatt 
+    az $r:=1/\delta $ választással minden 
+    $z\in \mathbb{C},\left| z\right| >r$ mellett 
 %\begin{multline*}
-        \[
-            \left| f\left( z\right) \right|  
-            =
-            \left| z^{n}\right| \left| a_{n}+h\left(1/z\right) \right| \geq \left| z^{n}\right| \left( \left| a_{n}\right|
-            -\left| h\left( 1/z\right) \right| \right) 
-            > 
-            \left| z^{n}\right| \left( \left| a_{n}\right| -\frac{1}{2}\left|
-            a_{n}\right| \right) =\frac{1}{2}\left| a_{n}\right| \left| z^{n}\right| .\qedhere
+    \[
+        \left| f\left( z\right) \right|  
+        =
+        \left| z^{n}\right| \left| a_{n}+h\left(1/z\right) \right| \geq \left| z^{n}\right| \left( \left| a_{n}\right|
+        -\left| h\left( 1/z\right) \right| \right) 
+        > 
+        \left| z^{n}\right| \left( \left| a_{n}\right| -\frac{1}{2}\left|
+        a_{n}\right| \right) =\frac{1}{2}\left| a_{n}\right| \left| z^{n}\right| .\qedhere
 %\end{multline*}
-        \]
-    \end{proof}
+    \]
+\end{proof}
 
-    \begin{proposition}
-        \label{Th:Cauchy1}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ komplex polinom.
-        Ekkor létezik $c\in \mathbb{C}$ komplex szám, melyre 
+\begin{proposition}
+    \label{Th:Cauchy1}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ komplex polinom.
+    Ekkor létezik $c\in \mathbb{C}$ komplex szám, melyre 
+    \[
+    \left| f\left( c\right) \right| =\inf \left\{ \left| f\left( z\right)
+        \right| :z\in \mathbb{C}\right\} .\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Most úgy válasszuk meg az $r$ pozitív valós számot, 
+    hogy egyrészt az előző lemma, másrészt az
+    $\frac{1}{2}\left|a_{n}\right| r^{n}>\left| a_{0}\right|$ 
+    feltétel is teljesüljön.
+    Ekkor
+    persze minden $z\in \mathbb{C}$, $\left| z\right| >r$ esetén 
+    \[
+        \left| f\left( z\right) \right| >\frac{1}{2}\left| a_{n}\right| \left|
+        z^{n}\right| >\left| a_{0}\right| =\left| f\left( 0\right) \right| 
+    \]
+    is teljesül.
+    Ez azt jelenti, hogy ha bevezetjük az $\alpha :=\inf \left\{ \left|
+        f\left( z\right) \right| :z\in \mathbb{C}\text{, }\left| z\right| \leq
+    r\right\} $ jelölést, akkor minden $z\in \mathbb{C},\left| z\right| >r$
+    esetén $\left| f\left( z\right) \right| \geq \left| f\left( 0\right)
+    \right| \geq \alpha .$ Persze ha $\left| z\right| \leq r$ ez utóbbi
+    akkor is teljesül, ezért 
+    \[
+        \alpha \leq \inf \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\} .
+    \]
+    Mivel a fordított irányú egyenlőtlenség triviális,
+    azt kapjuk, hogy 
+    \[
+        \inf \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\text{, }\left|
+    z\right| \leq r\right\} =\inf \left\{ \left| f\left( z\right) \right| :z\in 
+        \mathbb{C}\right\} .
+    \]
+    De láttuk, hogy $\left\{ z\in \mathbb{C}:\left| z\right| \leq r\right\}
+    \subseteq \mathbb{C}$ a komplex számsík kompakt halmaza, így az $f$
+    polinom és az abszolútérték-függvény folytonossága miatt létezik $c\in \mathbb{C}$, $\left| c\right| \leq r$, amelyre 
+    \[
+        \left| f\left( c\right) \right| =\alpha =\inf \left\{ \left| f\left(
+            z\right) \right| :z\in \mathbb{C}\text{, }\left| z\right| \leq r\right\} =\inf
+            \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\}. \qedhere
+    \]
+\end{proof}
+
+\begin{lemma}[Argand]
+    \label{Th:Argand}Legyen $k\in \mathbb{N}$, $k>0$ egész és $b\in \mathbb{C}$, $b\neq 0$ komplex szám, valamint $g:\mathbb{C}\rightarrow \mathbb{C}$, $g\left( 0\right) =0$ olyan függvény, amely a $0\in \mathbb{C}$ pontban
+    folytonos.
+    Tekintsük a következőképpen definiált $h:\mathbb{C}\rightarrow \mathbb{C}$ leképezést: 
+    \[
+        h\left( z\right) :=1+bz^{k}+z^{k}g\left( z\right) .
+    \]
+    Ekkor létezik $z\in \mathbb{C}$ komplex szám, melyre $\left| h\left(
+    z\right) \right| <1.$
+\end{lemma}
+
+\begin{proof}
+    Azt fogjuk megmutatni, hogy található $d\in \mathbb{C}$ és $t\in 
+    \mathbb{R}$, $t\in \left( 0,1\right) $ melyekre $\left| h\left( dt\right)
+    \right| <1.$\[
+        h\left( dt\right) =1+bd^{k}t^{k}+d^{k}t^{k}g\left( dt\right) .
+    \]
+    Válasszuk $d$ komplex számot úgy, hogy $bd^{k}=-1$ teljesüljön, azaz $d$ legyen a $-1/b$ komplex szám egyik $k$ -adik gyöke.
+    Ekkor 
+    \[
+        h\left( dt\right) =1-t^{k}+d^{k}t^{k}g\left( dt\right) .
+    \]
+    Amiből 
+    \[
+        \left| h\left( dt\right) \right| \leq 1-t^{k}+t^{k}\left| d^{k}g\left(
+        dt\right) \right| =1-t^{k}\left( 1-\left| d^{k}g\left( dt\right) \right|
+        \right) .
+    \]
+    Ebből látszik, hogy elegendő megválasztani $t\in \left(
+    0,1\right) $ -et olyan módon, hogy $\left| d^{k}g\left( dt\right)
+    \right| <1.$ Ez pedig nyilván megtehető $g\left( 0\right) =0$ és 
+    $g$ -nek a $0$ pontban feltett folytonossága miatt.
+\end{proof}
+
+\begin{proposition}
+    \label{Th:Cauchy2}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ legalább elsőfokú polinom.
+    Ekkor minden $c\in \mathbb{C}$, $f\left( c\right) \neq 0$
+    komplex számhoz létezik olyan $\hat{c}\in \mathbb{C}$ komplex szám,
+    melyre 
+    \[
+        \left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| .
+    \]
+\end{proposition}
+
+\begin{proof}
+    Tekintsük a 
+    \[
+        h\left( z\right) :=\frac{f\left( z+c\right) }{f\left( c\right) }
+    \]
+    legalább elsőfokú polinomot.
+    Vegyük észre, hogy $h\left(
+    0\right) =1$, így e polinom 
+    \[
+        h\left( z\right) =1+a_{k}z^{k}+\ldots +a_{n}z^{n}
+    \]
+    alakú, ahol $a_{k}\neq 0$ valamely $k\geq 1$ -re, hiszen az $f$ és
+    ebből következően a $h$ polinom nem konstans.
+    Tovább alakítva: 
+    \[
+        h\left( z\right) =1+a_{k}z^{k}+z^{k}\left( a_{k+1}z+\ldots
+        +a_{n}z^{n-k}\right) .
+    \]
+    Világos, hogy a fenti $h$ polinomra alkalmazható az előző
+    lemma, így létezik $u\in \mathbb{C}$, melyre $\left| h\left( u\right)
+    \right| <1.$ Ez viszont azt jelenti, hogy 
+    \[
+        \left| \frac{f\left( u+c\right) }{f\left( c\right) }\right| <1
+    \]
+    amiből $\hat{c}:=u+c$ választással kapjuk, hogy 
+    \[
+        \left| f\left( \hat{c}\right) \right| =\left| f\left( u+c\right) \right|
+        <\left| f\left( c\right) \right| .\qedhere
+    \]
+\end{proof}
+
+\begin{FA}\label{Th:FundOfAlg}
+    Legyen $f\left( t \right)\in\mathbb{C}[t]$ nem konstans polinom.
+    Ekkor $f$-nek van gyöke a komplex számok körében.
+\end{FA}
+
+\begin{proof}
+    Láttuk (\ref{Th:Cauchy1}. állítás), hogy van olyan $c\in \mathbb{C}$ melyre 
+    \[
+        \left| f\left( c\right) \right| =\inf \left\{ \left| f\left( z\right)
+            \right| :z\in \mathbb{C}\right\} \text{.}
+    \]
+    Ha $f(c)\neq 0$ lenne, akkor lenne (\ref{Th:Cauchy2}. állítás) $\hat{c}\in \mathbb{C}$ melyre 
+    \[
+        \left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| =\inf
+        \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\} 
+    \]
+    is teljesülne, ami nem lehetséges.
+\end{proof}
+
+\section{A komplex számok egyértelműsége}
+
+Az alábbiakban azt fogjuk megvizsgálni, hogy lehet-e a sík pontjain
+a komplex számok bevezetésénél megadott szorzástól eltérő
+módon bevezetni szorzás műveletet úgy, hogy ez a valós számokon
+már megszokott szorzás kiterjesztése legyen, és a sík ellátva
+a szokásos összeadással valamint evvel a szorzásnak nevezett művelettel test legyen.
+Meg fogjuk mutatni, hogy ez nem lehetséges.
+Sőt
+azt is látni fogjuk, hogy az $\mathbb{R}$ -től illetve a $\mathbb{C}$ -től
+eltekintve nincs véges dimenziós $\mathbb{R}$ feletti vektortér, amely
+test lesz olyan összeadásnak illetve szorzásnak nevezett művelettel, 
+amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
+
+\begin{proposition}
+    \label{Th:CUnique1}Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet
+    tartalmazó olyan test, amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$ -ben szokásos $\left( +,\cdot \right) $ műveletek kiterjesztései, valamint amely kétdimenziós vektortér $\mathbb{R}$ felett.
+    Ekkor $\mathbb{G}$ test izomorf $\mathbb{C}$-vel.
+\end{proposition}
+
+\begin{proof}
+    Meg fogjuk mutatni, hogy létezik $w\in \mathbb{G}$ melyre $w^{2}=-1$.
+    Ekkor
+    készen is leszünk, mert nyilván $w\notin \mathbb{R}$ így $\lin\{1,w\}=\mathbb{G}$ amiből könnyen látható, hogy
+    az $\alpha +w\beta \longmapsto \alpha +i\beta $ megfeleltetés
+    izomorfizmus $\mathbb{G}$ és $\mathbb{C}$ között.
+    \newline
+    Legyen $v\in \mathbb{G}\setminus \mathbb{R}$.
+    Ilyen $v$ létezik, mivel $\mathbb{G}
+    $ kétdimenziós.
+    Világos, hogy az $\left\{
+        1,v,v^{2}\right\} $ vektorrendszer lineárisan összefüggő,
+        hiszen három vektor egy kétdimenziós vektortérben.
+        \'{I}gy léteznek $\alpha ,\beta \in \mathbb{R}$ valós számok melyekre $v^{2}=\alpha +\beta v$.
+        Most legyen $\gamma :=\frac{-\beta }{2}
+        $.
+        Ekkor nyilván $v^{2}=\alpha -2\gamma v$.
+        Most tekintsük a $\left(
+        v+\gamma \right) ^{2}$ kifejezést.
+
         \[
-            \left| f\left( c\right) \right| =\inf \left\{ \left| f\left( z\right)
-                \right| :z\in \mathbb{C}\right\} .\qedhere
-            \]
-        \end{proposition}
-        \begin{proof}
-            Most úgy válasszuk meg az $r$ pozitív valós számot, 
-            hogy egyrészt az előző lemma, másrészt az
-            $\frac{1}{2}\left|a_{n}\right| r^{n}>\left| a_{0}\right|$ 
-            feltétel is teljesüljön.
-            Ekkor
-            persze minden $z\in \mathbb{C}$, $\left| z\right| >r$ esetén 
-            \[
-                \left| f\left( z\right) \right| >\frac{1}{2}\left| a_{n}\right| \left|
-                z^{n}\right| >\left| a_{0}\right| =\left| f\left( 0\right) \right| 
-            \]
-            is teljesül.
-            Ez azt jelenti, hogy ha bevezetjük az $\alpha :=\inf \left\{ \left|
-                f\left( z\right) \right| :z\in \mathbb{C}\text{, }\left| z\right| \leq
-            r\right\} $ jelölést, akkor minden $z\in \mathbb{C},\left| z\right| >r$
-            esetén $\left| f\left( z\right) \right| \geq \left| f\left( 0\right)
-            \right| \geq \alpha .$ Persze ha $\left| z\right| \leq r$ ez utóbbi
-            akkor is teljesül, ezért 
-            \[
-                \alpha \leq \inf \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\} .
-            \]
-            Mivel a fordított irányú egyenlőtlenség triviális,
-            azt kapjuk, hogy 
-            \[
-                \inf \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\text{, }\left|
-            z\right| \leq r\right\} =\inf \left\{ \left| f\left( z\right) \right| :z\in 
-                \mathbb{C}\right\} .
-            \]
-            De láttuk, hogy $\left\{ z\in \mathbb{C}:\left| z\right| \leq r\right\}
-            \subseteq \mathbb{C}$ a komplex számsík kompakt halmaza, így az $f$
-            polinom és az abszolútérték-függvény folytonossága miatt létezik $c\in \mathbb{C}$, $\left| c\right| \leq r$, amelyre 
-            \[
-                \left| f\left( c\right) \right| =\alpha =\inf \left\{ \left| f\left(
-                    z\right) \right| :z\in \mathbb{C}\text{, }\left| z\right| \leq r\right\} =\inf
-                    \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\}. \qedhere
-                \]
-            \end{proof}
+            \left( v+\gamma \right) ^{2}=v^{2}+2\gamma v+\gamma ^{2}=\alpha +\gamma ^{2}
+        \]
+        Azt kaptuk tehát, hogy létezik $r\in \mathbb{R}$ valós szám
+        melyre $\left( v+\gamma \right) ^{2}=r$.
+        De vegyük észre, hogy ha $r\geq 0$ lenne, 
+        akkor $t=\sqrt{r}\in\mathbb{R}$
+        jelöléssel $\left( v+\gamma \right)^2=t^2$ következne, amiből pedig $v\in \mathbb{R}$ következtetésre juthatnánk ellentétben a $v$ -re kiindulásul tett feltétellel.
+        Ebből már
+        világos, hogy ha $w$ -t 
+        \[
+            w:=\frac{v+\gamma }{\sqrt{\left| r\right| }}\in \mathbb{G}
+        \]
+        módon definiáljuk akkor $w^{2}=\frac{r}{\left| r\right| }=-1$,
+        hiszen $r<0$.
+\end{proof}
 
-            \begin{lemma}[Argand]
-                \label{Th:Argand}Legyen $k\in \mathbb{N}$, $k>0$ egész és $b\in \mathbb{C}$, $b\neq 0$ komplex szám, valamint $g:\mathbb{C}\rightarrow \mathbb{C}$, $g\left( 0\right) =0$ olyan függvény, amely a $0\in \mathbb{C}$ pontban
-                folytonos.
-                Tekintsük a következőképpen definiált $h:\mathbb{C}\rightarrow \mathbb{C}$ leképezést: 
-                \[
-                    h\left( z\right) :=1+bz^{k}+z^{k}g\left( z\right) .
-                \]
-                Ekkor létezik $z\in \mathbb{C}$ komplex szám, melyre $\left| h\left(
-                z\right) \right| <1.$
-            \end{lemma}
+\begin{definition}
+    Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet tartalmazó olyan
+    test amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$ -ben
+    szokásos $\left( +,\cdot \right) $ műveletek kiterjesztései.
+    Az $x\in \mathbb{G}$ elemet $\mathbb{R}$ felett algebrainak nevezzük, ha létezik nem konstans zéró valós együtthatós polinom,
+    melynek $x$ gyöke.
+\end{definition}
 
-            \begin{proof}
-                Azt fogjuk megmutatni, hogy található $d\in \mathbb{C}$ és $t\in 
-                \mathbb{R}$, $t\in \left( 0,1\right) $ melyekre $\left| h\left( dt\right)
-                \right| <1.$\[
-                    h\left( dt\right) =1+bd^{k}t^{k}+d^{k}t^{k}g\left( dt\right) .
-                \]
-                Válasszuk $d$ komplex számot úgy, hogy $bd^{k}=-1$ teljesüljön, azaz $d$ legyen a $-1/b$ komplex szám egyik $k$ -adik gyöke.
-                Ekkor 
-                \[
-                    h\left( dt\right) =1-t^{k}+d^{k}t^{k}g\left( dt\right) .
-                \]
-                Amiből 
-                \[
-                    \left| h\left( dt\right) \right| \leq 1-t^{k}+t^{k}\left| d^{k}g\left(
-                    dt\right) \right| =1-t^{k}\left( 1-\left| d^{k}g\left( dt\right) \right|
-                    \right) .
-                \]
-                Ebből látszik, hogy elegendő megválasztani $t\in \left(
-                0,1\right) $ -et olyan módon, hogy $\left| d^{k}g\left( dt\right)
-                \right| <1.$ Ez pedig nyilván megtehető $g\left( 0\right) =0$ és 
-                $g$ -nek a $0$ pontban feltett folytonossága miatt.
-            \end{proof}
+\begin{proposition}
+    Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet tartalmazó olyan
+    test amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$ -ben
+    szokásos $\left( +,\cdot \right) $ műveletek kiterjesztései,
+    valamint amely véges dimenziós vektortér $\mathbb{R}$ felett.
+    Ekkor $\mathbb{G}$ minden eleme algebrai $\mathbb{R}$ felett.
+\end{proposition}
 
-            \begin{proposition}
-                \label{Th:Cauchy2}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ legalább elsőfokú polinom.
-                Ekkor minden $c\in \mathbb{C}$, $f\left( c\right) \neq 0$
-                komplex számhoz létezik olyan $\hat{c}\in \mathbb{C}$ komplex szám,
-                melyre 
-                \[
-                    \left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| .
-                \]
-            \end{proposition}
+\begin{proof}
+    Legyen $\mathbb{G}$ dimenziója $n$ és $v\in \mathbb{G}$ tetszőleges
+    vektor.
+    Tekintsük az 
+    \[
+        \left\{ 1,v,v^{2},\ldots ,v^{n}\right\} 
+    \]
+    vektorrendszert.
+    Ez nyilván lineárisan összefüggő,
+    hiszen $n+1$ vektor egy $n$ dimenziós vektortérben.
+    \'{I}gy van nem
+    triviális $0$ -t adó lineáris kombinációja.
+    Azaz léteznek $\alpha _{0},\alpha _{1},\ldots \alpha _{n}$ nem csupa nulla valós számok melyekre 
+    \[
+        \sum_{i=0}^{n}\alpha _{i}v^{i}=0
+    \]
+    De ez pont azt jelenti, hogy ha a $p$ polinomot 
+    \[
+        p\left( x\right) :=\sum_{i=0}^{n}\alpha _{i}x^{i}
+    \]
+    módon definiáljuk, akkor $p\left( v\right) =0$.
+\end{proof}
 
-            \begin{proof}
-                Tekintsük a 
-                \[
-                    h\left( z\right) :=\frac{f\left( z+c\right) }{f\left( c\right) }
-                \]
-                legalább elsőfokú polinomot.
-                Vegyük észre, hogy $h\left(
-                0\right) =1$, így e polinom 
-                \[
-                    h\left( z\right) =1+a_{k}z^{k}+\ldots +a_{n}z^{n}
-                \]
-                alakú, ahol $a_{k}\neq 0$ valamely $k\geq 1$ -re, hiszen az $f$ és
-                ebből következően a $h$ polinom nem konstans.
-                Tovább alakítva: 
-                \[
-                    h\left( z\right) =1+a_{k}z^{k}+z^{k}\left( a_{k+1}z+\ldots
-                    +a_{n}z^{n-k}\right) .
-                \]
-                Világos, hogy a fenti $h$ polinomra alkalmazható az előző
-                lemma, így létezik $u\in \mathbb{C}$, melyre $\left| h\left( u\right)
-                \right| <1.$ Ez viszont azt jelenti, hogy 
-                \[
-                    \left| \frac{f\left( u+c\right) }{f\left( c\right) }\right| <1
-                \]
-                amiből $\hat{c}:=u+c$ választással kapjuk, hogy 
-                \[
-                    \left| f\left( \hat{c}\right) \right| =\left| f\left( u+c\right) \right|
-                    <\left| f\left( c\right) \right| .\qedhere
-                \]
-            \end{proof}
+\begin{proposition}[Weierstrass]
+    Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet tartalmazó olyan
+    test, amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$-ben
+    szokásos $\left( +,\cdot \right) $ művelet kiterjesztései,
+    valamint amelynek minden eleme algebrai $\mathbb{R}$ felett.
+    Ekkor két eset
+    lehetséges: Vagy $\mathbb{G}$ test-izomorf $\mathbb{R}$-rel, vagy $\mathbb{G}$
+    test-izomorf $\mathbb{C}$-vel.
+\end{proposition}
 
-            \begin{FA}\label{Th:FundOfAlg}
-                Legyen $f\left( t \right)\in\mathbb{C}[t]$ nem konstans polinom.
-                Ekkor $f$-nek van gyöke a komplex számok körében.
-            \end{FA}
-
-            \begin{proof}
-                Láttuk (\ref{Th:Cauchy1}. állítás), hogy van olyan $c\in \mathbb{C}$ melyre 
-                \[
-                    \left| f\left( c\right) \right| =\inf \left\{ \left| f\left( z\right)
-                        \right| :z\in \mathbb{C}\right\} \text{.}
-                    \]
-                    Ha $f(c)\neq 0$ lenne, akkor lenne (\ref{Th:Cauchy2}. állítás) $\hat{c}\in \mathbb{C}$ melyre 
-                    \[
-                        \left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| =\inf
-                        \left\{ \left| f\left( z\right) \right| :z\in \mathbb{C}\right\} 
-                    \]
-                    is teljesülne, ami nem lehetséges.
-                \end{proof}
-
-                \section{A komplex számok egyértelműsége}
-
-                Az alábbiakban azt fogjuk megvizsgálni, hogy lehet-e a sík pontjain
-                a komplex számok bevezetésénél megadott szorzástól eltérő
-                módon bevezetni szorzás műveletet úgy, hogy ez a valós számokon
-                már megszokott szorzás kiterjesztése legyen, és a sík ellátva
-                a szokásos összeadással valamint evvel a szorzásnak nevezett művelettel test legyen.
-                Meg fogjuk mutatni, hogy ez nem lehetséges.
-                Sőt
-                azt is látni fogjuk, hogy az $\mathbb{R}$ -től illetve a $\mathbb{C}$ -től
-                eltekintve nincs véges dimenziós $\mathbb{R}$ feletti vektortér, amely
-                test lesz olyan összeadásnak illetve szorzásnak nevezett művelettel, 
-                amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
-
-                \begin{proposition}
-                    \label{Th:CUnique1}Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet
-                    tartalmazó olyan test, amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$ -ben szokásos $\left( +,\cdot \right) $ műveletek kiterjesztései, valamint amely kétdimenziós vektortér $\mathbb{R}$ felett.
-                    Ekkor $\mathbb{G}$ test izomorf $\mathbb{C}$-vel.
-                \end{proposition}
-
-                \begin{proof}
-                    Meg fogjuk mutatni, hogy létezik $w\in \mathbb{G}$ melyre $w^{2}=-1$.
-                    Ekkor
-                    készen is leszünk, mert nyilván $w\notin \mathbb{R}$ így $\lin\{1,w\}=\mathbb{G}$ amiből könnyen látható, hogy
-                    az $\alpha +w\beta \longmapsto \alpha +i\beta $ megfeleltetés
-                    izomorfizmus $\mathbb{G}$ és $\mathbb{C}$ között.
-                    \newline
-                    Legyen $v\in \mathbb{G}\setminus \mathbb{R}$.
-                    Ilyen $v$ létezik, mivel $\mathbb{G}
-                    $ kétdimenziós.
-                    Világos, hogy az $\left\{
-                        1,v,v^{2}\right\} $ vektorrendszer lineárisan összefüggő,
-                        hiszen három vektor egy kétdimenziós vektortérben.
-                        \'{I}gy léteznek $\alpha ,\beta \in \mathbb{R}$ valós számok melyekre $v^{2}=\alpha +\beta v$.
-                        Most legyen $\gamma :=\frac{-\beta }{2}
-                        $.
-                        Ekkor nyilván $v^{2}=\alpha -2\gamma v$.
-                        Most tekintsük a $\left(
-                        v+\gamma \right) ^{2}$ kifejezést.
-
-                        \[
-                            \left( v+\gamma \right) ^{2}=v^{2}+2\gamma v+\gamma ^{2}=\alpha +\gamma ^{2}
-                        \]
-                        Azt kaptuk tehát, hogy létezik $r\in \mathbb{R}$ valós szám
-                        melyre $\left( v+\gamma \right) ^{2}=r$.
-                        De vegyük észre, hogy ha $r\geq 0$ lenne, 
-                        akkor $t=\sqrt{r}\in\mathbb{R}$
-                        jelöléssel $\left( v+\gamma \right)^2=t^2$ következne, amiből pedig $v\in \mathbb{R}$ következtetésre juthatnánk ellentétben a $v$ -re kiindulásul tett feltétellel.
-                        Ebből már
-                        világos, hogy ha $w$ -t 
-                        \[
-                            w:=\frac{v+\gamma }{\sqrt{\left| r\right| }}\in \mathbb{G}
-                        \]
-                        módon definiáljuk akkor $w^{2}=\frac{r}{\left| r\right| }=-1$,
-                        hiszen $r<0$.
-                    \end{proof}
-
-                    \begin{definition}
-                        Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet tartalmazó olyan
-                        test amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$ -ben
-                        szokásos $\left( +,\cdot \right) $ műveletek kiterjesztései.
-                        Az $x\in \mathbb{G}$ elemet $\mathbb{R}$ felett algebrainak nevezzük, ha létezik nem konstans zéró valós együtthatós polinom,
-                        melynek $x$ gyöke.
-                    \end{definition}
-
-                    \begin{proposition}
-                        Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet tartalmazó olyan
-                        test amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$ -ben
-                        szokásos $\left( +,\cdot \right) $ műveletek kiterjesztései,
-                        valamint amely véges dimenziós vektortér $\mathbb{R}$ felett.
-                        Ekkor $\mathbb{G}$ minden eleme algebrai $\mathbb{R}$ felett.
-                    \end{proposition}
-
-                    \begin{proof}
-                        Legyen $\mathbb{G}$ dimenziója $n$ és $v\in \mathbb{G}$ tetszőleges
-                        vektor.
-                        Tekintsük az 
-                        \[
-                            \left\{ 1,v,v^{2},\ldots ,v^{n}\right\} 
-                        \]
-                        vektorrendszert.
-                        Ez nyilván lineárisan összefüggő,
-                        hiszen $n+1$ vektor egy $n$ dimenziós vektortérben.
-                        \'{I}gy van nem
-                        triviális $0$ -t adó lineáris kombinációja.
-                        Azaz léteznek $\alpha _{0},\alpha _{1},\ldots \alpha _{n}$ nem csupa nulla valós számok melyekre 
-                        \[
-                            \sum_{i=0}^{n}\alpha _{i}v^{i}=0
-                        \]
-                        De ez pont azt jelenti, hogy ha a $p$ polinomot 
-                        \[
-                            p\left( x\right) :=\sum_{i=0}^{n}\alpha _{i}x^{i}
-                        \]
-                        módon definiáljuk, akkor $p\left( v\right) =0$.
-                    \end{proof}
-
-                    \begin{proposition}[Weierstrass]
-                        Legyen $\mathbb{G}$ az $\mathbb{R}$ valós számtestet tartalmazó olyan
-                        test, amelyben az $\left( +,\cdot \right) $ műveletek az $\mathbb{R}$-ben
-                        szokásos $\left( +,\cdot \right) $ művelet kiterjesztései,
-                        valamint amelynek minden eleme algebrai $\mathbb{R}$ felett.
-                        Ekkor két eset
-                        lehetséges: Vagy $\mathbb{G}$ test-izomorf $\mathbb{R}$-rel, vagy $\mathbb{G}$
-                        test-izomorf $\mathbb{C}$-vel.
-                    \end{proposition}
-
-                    \begin{proof}
-                        Tegyük fel, hogy $\mathbb{G}$ tartalmaz $\mathbb{R}$ -től különböző $v$ vektort.
-                        Ekkor azt kell megmutatni, hogy $\mathbb{G}$ izomorf $\mathbb{C}$ -vel.\newline
-                        Először azt mutatjuk meg, hogy 
-                        \begin{equation}
-                            v^{2}\in \lin\left\{ 1,v\right\} 
-                        \end{equation}
-                        \label{Eq:Alg}Mivel $v$ algebrai $\mathbb{R}$ felett, ezért létezik $p$
-                        valós együtthatós polinom melyre $p\left( v\right) =0$.
-                        De láttuk, hogy valós együtthatós polinom első- és másodfokú tényezők szorzatára bomlik (\ref{pr:RealPolFact}.),
-                        ami azt jelenti, hogy van olyan $q$ első, vagy másodfokú valós együtthatós polinom melyekre $q\left( v\right) =0$.
-                        Ha $q$ első
-                        fokú lenne az azt jelentené, hogy található $\alpha ,\beta
-                        \in \mathbb{R}$ valós számok melyekre $\alpha +\beta v=0$, azaz $v\in \mathbb{R}$ lenne.
-                        Tehát $q$ pontosan másodfokú.
-                        Ez viszont azt
-                        jelenti, hogy léteznek $\left\{ \alpha ,\beta ,\gamma \right\} \subset 
-                        \mathbb{R}$ valós számok $\gamma \neq 0$, melyekre $\alpha +\beta
-                        v+\gamma v^{2}=0$.
-                        Ebből persze 
-                        \[
-                            v^{2}=\frac{-\alpha }{\gamma }+\frac{-\beta }{\gamma }v
-                        \]
-                        már könnyen következik, bizonyítva (\ref{Eq:Alg})-et.\newline
-                        Most megmutatjuk, hogy $\mathbb{G}$ tartalmaz $\mathbb{C}$ -vel izomorf testet.
-                        Tekintsük a 
-                        \[
-                            K:=\lin\left\{ 1,v\right\} 
-                        \]
-                        kétdimenziós alterét $\mathbb{G}$-nek.
-                        Világos, hogy ennek test
-                        voltához elegendő megmutatni, hogy a $\mathbb{G}$-beli műveletekre zárt.
-                        Az összeadásra való zártság triviális a $K$
-                        altér mivoltából, a szorzásra való zártság pedig
-                        (\ref{Eq:Alg}) következménye.
-                        \'{I}gy tehát $K$ két dimenziós test kiterjesztése $\mathbb{R}$ -nek, ami azt jelenti (\ref{Th:CUnique1}.), 
-                        hogy $K$ test izomorf $\mathbb{C}$ -vel.\newline
-                        Utoljára megmutatjuk, hogy $\mathbb{G}$ minden $w$ eleme $\mathbb{C}$-beli
-                        is.
-                        Mivel $w$ algebrai $\mathbb{R}$ felett, ezért létezik $p$ valós együtthatós polinom, melyre $p\left( w\right) =0$.
-                        De tekinthetjük $p$ -t a komplex számtest feletti polinomnak is, így $p$
-                        felbomlik elsőfokú komplex polinomok szorzatára (\ref{pr:PolFact}).
-                        Ez viszont azt jelenti, hogy létezik olyan $c$ komplex szám,
-                        melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
-                    \end{proof}
+\begin{proof}
+    Tegyük fel, hogy $\mathbb{G}$ tartalmaz $\mathbb{R}$ -től különböző $v$ vektort.
+    Ekkor azt kell megmutatni, hogy $\mathbb{G}$ izomorf $\mathbb{C}$ -vel.\newline
+    Először azt mutatjuk meg, hogy 
+    \begin{equation}
+        v^{2}\in \lin\left\{ 1,v\right\} 
+    \end{equation}
+    \label{Eq:Alg}Mivel $v$ algebrai $\mathbb{R}$ felett, ezért létezik $p$
+    valós együtthatós polinom melyre $p\left( v\right) =0$.
+    De láttuk, hogy valós együtthatós polinom első- és másodfokú tényezők szorzatára bomlik (\ref{pr:RealPolFact}.),
+    ami azt jelenti, hogy van olyan $q$ első, vagy másodfokú valós együtthatós polinom melyekre $q\left( v\right) =0$.
+    Ha $q$ első
+    fokú lenne az azt jelentené, hogy található $\alpha ,\beta
+    \in \mathbb{R}$ valós számok melyekre $\alpha +\beta v=0$, azaz $v\in \mathbb{R}$ lenne.
+    Tehát $q$ pontosan másodfokú.
+    Ez viszont azt
+    jelenti, hogy léteznek $\left\{ \alpha ,\beta ,\gamma \right\} \subset 
+    \mathbb{R}$ valós számok $\gamma \neq 0$, melyekre $\alpha +\beta
+    v+\gamma v^{2}=0$.
+    Ebből persze 
+    \[
+        v^{2}=\frac{-\alpha }{\gamma }+\frac{-\beta }{\gamma }v
+    \]
+    már könnyen következik, bizonyítva (\ref{Eq:Alg})-et.\newline
+    Most megmutatjuk, hogy $\mathbb{G}$ tartalmaz $\mathbb{C}$ -vel izomorf testet.
+    Tekintsük a 
+    \[
+        K:=\lin\left\{ 1,v\right\} 
+    \]
+    kétdimenziós alterét $\mathbb{G}$-nek.
+    Világos, hogy ennek test
+    voltához elegendő megmutatni, hogy a $\mathbb{G}$-beli műveletekre zárt.
+    Az összeadásra való zártság triviális a $K$
+    altér mivoltából, a szorzásra való zártság pedig
+    (\ref{Eq:Alg}) következménye.
+    \'{I}gy tehát $K$ két dimenziós test kiterjesztése $\mathbb{R}$ -nek, ami azt jelenti (\ref{Th:CUnique1}.), 
+    hogy $K$ test izomorf $\mathbb{C}$ -vel.\newline
+    Utoljára megmutatjuk, hogy $\mathbb{G}$ minden $w$ eleme $\mathbb{C}$-beli
+    is.
+    Mivel $w$ algebrai $\mathbb{R}$ felett, ezért létezik $p$ valós együtthatós polinom, melyre $p\left( w\right) =0$.
+    De tekinthetjük $p$ -t a komplex számtest feletti polinomnak is, így $p$
+    felbomlik elsőfokú komplex polinomok szorzatára (\ref{pr:PolFact}).
+    Ez viszont azt jelenti, hogy létezik olyan $c$ komplex szám,
+    melyre $w-c=0$, tehát $w\in \mathbb{C}$ valóban teljesül.
+\end{proof}
 
 %% a vége következik
 
@@ -9561,5 +9561,5 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 10 Mar 2020 01:21:24 PM CET
+Last Modified : Mon 23 Mar 2020 12:58:33 PM CET
 
