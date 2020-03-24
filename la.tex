@@ -8903,17 +8903,28 @@ csoportot alkotnak a kompozició műveletével. Ezt a csoportot a továbbiakban 
 S_{n}$-el jelöljük.
 
 \begin{definition}[Inverzió]\index{inverzió}
-Legyen $\pi \in S_{n}$ egy permutáció, $i$ és $j$ különböző $n$ -nél nem nagyobb számok. Azt mondjuk, hogy $\pi \left( i\right) $ és $\pi \left( j\right) $ inverzióban vannak, ha \[\left( \pi \left( j\right) -\pi \left( i\right) \right) \left( j-i\right) <0.\]
+    Legyen $\pi \in S_{n}$ egy permutáció, $i$ és $j$ különböző $n$ -nél nem nagyobb számok. 
+    Azt mondjuk, hogy $\pi \left( i\right) $ és $\pi \left( j\right) $ inverzióban vannak, ha
+    \[
+        \left( \pi \left( j\right) -\pi \left( i\right) \right) \left( j-i\right) <0.\qedhere
+    \]
 \end{definition}
-
-A fenti jelölések mellett $\pi \left( i\right) $ és $\pi \left( j\right) $
-inverzióban vannak, pontosan akkor, ha $j>i$ esetén $\pi \left( j\right)
-<\pi \left( i\right) .$
+\begin{note}
+    A fenti jelölések mellett $\pi \left( i\right) $ és $\pi \left( j\right) $
+    inverzióban vannak, pontosan akkor, ha $j>i$ esetén 
+    $\pi \left( j\right)<\pi \left( i\right) .$
+\end{note}
 
 \begin{definition}[Páros és páratlan permutáció]
 \index{páros permutáció}%
 \index{páratlan permutáció}
-Egy $\pi \in S_{n}$ permutációt \emph{párosnak (páratlannak)} nevezünk, ha $\pi $-nél inverzióban lévő párok száma páros (páratlan). \[\operatorname{sgn}\pi \doteq \left\{ \begin{tabular}{ll}$+1$ & , ha $\pi $ páros. \\ $-1$ & , ha $\pi $ páratlan.\end{tabular}\right. \]
+Egy $\pi \in S_{n}$ permutációt \emph{párosnak (páratlannak)} nevezünk, ha $\pi $-nél inverzióban lévő párok száma páros (páratlan). 
+\[\operatorname{sgn}\pi \doteq 
+    \left\{
+    \begin{tabular}{ll}$+1$ & , ha $\pi $ páros. \\ $-1$ & , ha $\pi $ páratlan.
+    \end{tabular}
+    \right. \qedhere
+\]
 \end{definition}
 
 \begin{definition}
@@ -9144,20 +9155,27 @@ y\right)  \\
 \end{eqnarray*}
 Az antiszimmetria igazolásához szükséges, a $\operatorname{sgn}\pi =-\operatorname{sgn}\pi
 ^{\ast }$ összefüggés. Például az első két változóra: 
-\begin{eqnarray*}
-d\left( x,y,v_{3},\ldots ,v_{n}\right)  &=&\sum_{\pi \in S_{n}}\operatorname{sgn}%
+\begin{multline*}
+d\left( x,y,v_{3},\ldots ,v_{n}\right)  
+=
+\\
+\sum_{\pi \in S_{n}}\operatorname{sgn}%
 \pi \left( \prod_{k=3}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}\right)
 e_{\pi \left( 1\right) }^{\ast }\left( x\right) e_{\pi \left( 2\right)
-}^{\ast }\left( y\right)  \\
-&=&\sum_{\pi \in S_{n}}-\operatorname{sgn}\pi ^{\ast }\left(
+}^{\ast }\left( y\right)
+=
+\sum_{\pi \in S_{n}}-\operatorname{sgn}\pi ^{\ast }\left(
 \prod_{k=3}^{n}e_{\pi ^{\ast }\left( k\right) }^{\ast }v_{k}\right) e_{\pi
 ^{\ast }\left( 1\right) }^{\ast }\left( y\right) e_{\pi ^{\ast }\left(
-2\right) }^{\ast }\left( x\right)  \\
-&=&-\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=3}^{n}e_{\pi \left(
+2\right) }^{\ast }\left( x\right)
+=
+\\
+-\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=3}^{n}e_{\pi \left(
 k\right) }^{\ast }v_{k}\right) e_{\pi \left( 1\right) }^{\ast }\left(
-y\right) e_{\pi \left( 2\right) }^{\ast }\left( x\right) =-d\left(
-y,x,v_{3},\ldots ,v_{n}\right) .\qedhere
-\end{eqnarray*}
+y\right) e_{\pi \left( 2\right) }^{\ast }\left( x\right) 
+=
+-d\left(y,x,v_{3},\ldots ,v_{n}\right) .\qedhere
+\end{multline*}
 \end{proof}
 
 \index{mátrix determinánsa}%
@@ -10061,5 +10079,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 23 Mar 2020 01:24:12 PM CET
+Last Modified : Mon 23 Mar 2020 02:13:50 PM CET
 
