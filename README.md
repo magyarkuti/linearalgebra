@@ -1,3 +1,6 @@
+# Ha azért tévedt ide, hogy letöltse az aktuális állapotot:
+<https://github.com/magyarkuti/linearalgebra/raw/gh-pages/la.pdf>
+
 # Lineáris Algebra
 A cél, hogy olyan lineáris algebra jegyzet szülessen, ami azt és csak azt tartalmazza, amit a Budapesti Corvinus Egyetemen tartott két szemeszteres lineáris algebra kurzusomat lefedi.
 Lásd <http://146.110.110.35/mediawiki/index.php/Algebra-I> és <http://146.110.110.35/mediawiki/index.php/Algebra-II>.
@@ -15,6 +18,3 @@ Lásd <http://146.110.110.35/mediawiki/index.php/Algebra-I> és <http://146.110.
 ## LaTeX és Docker nélkül ![Build LaTeX document](https://github.com/magyarkuti/linearalgebra/workflows/Build%20LaTeX%20document/badge.svg)
 Az utolsó commit:
 <https://github.com/magyarkuti/linearalgebra/blob/gh-pages/la.pdf>
-
-## Az aktuális pdf file:
-<https://github.com/magyarkuti/linearalgebra/raw/gh-pages/la.pdf>
