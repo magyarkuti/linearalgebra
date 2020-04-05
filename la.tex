@@ -9529,6 +9529,47 @@ Legyen tehát $[A]$ egy mátrix. Ekkor
     \item $|[A]|$ értéke nem változik, ha egyik oszlopához (sorához) egy másik oszlop (sor) skalárszorosát adjuk.
 \end{enumerate}
 
+\emph{Egy permutáció mátrix determinánsa, a permutáció előjele.}
+Ugyanis, ha $\pi$ permutációhoz tartozik a permutáció mátrix, akkor minden $\sigma\neq\pi$ permutáció mellett
+a $\sigma$ permutáció egyik bástyája (sőt legalább két bástyája) zérus elemen áll. 
+Így a determináns definíciója szerint az $n!$ elemszámú összegben a $\pi$ kivételével minden összeadandó zérus.
+Speciálisan, az identitás mátrix determinánsa 1.
+
+\emph{Egy felső (alsó) háromszög alakú mátrix determinánsa a diagonális elemek szorzata.}
+Ugyanis minden $\pi\neq\id$ permutáció esetén van egy bástya a diagonális alatt (és egy a diagonális felett).
+Ez azt jelenti, hogy a definícióban csak az identitás permutációhoz tartozó tag nem feltétlen zérus.
+Az identitáshoz tartozó tag pedig a diagonális elemek szorzata.
+Speciálisan, az identitás mátrix determinánsa 1.
+
+\emph{Egy mátrix determinánsa Gauss-Jordan-eliminációval.}
+Képzeljük el, hogy adott egy olyan mátrix, amelynek oszlopai lineárisan függetlenek.
+Az eliminációs algoritmusnak arra az alakjára gondoljunk először, amikor a bázisba bevont oszlop vektornak
+is kiírjuk az új bázisban a koordinátáit. 
+Ilyen módon végig $n\times n$ méretű táblázatokkal dolgozunk.
+Tegyük fel, hogy egy táblázat $A_1$ az ebből következő táblázat $A_2$.
+$A_2$-t úgy kaptuk $A_1$-ből, hogy a pivot elemmel osztottuk a pivot elem sorát,
+majd minden más sorhoz hozzáadtuk a pivot elem sorának skalárszorosát.
+Ha $r_1$ jelöli az $A_1$-ben választott pivot-elemet, akkor
+\[
+    |A_2|=\frac{1}{r_1}|A_1|.
+\]
+Mivel $A_1$ oszlopai lineárisan függetlenek, ezért minden oszlop a bázisba bevonható,
+ami azt jelenti, hogy az utolsó táblázat -- az $A_{n+1}$ -- egy permutáció mátrix.
+Tehát az előbbi összefüggést lépésenként alkalmazva
+\[
+    |A_1|=r_1\cdot |A_2|=r_1\cdot r_2\cdot |A_3|=\dots=r_1\cdot r_2\dots r_{n}\cdot|A_{n+1}|=\left(\prod_{j=1}^nr_j  \right)\cdot\sgn(A_{n+1}).
+\]
+Ezek szerint az algoritmus a következő.
+$A$ determinánsának kiszámításához az összes oszlopot Gauss-Jordan-eliminációval bevisszük a bázisba.
+A determináns a pivot elemek szorzata szorozva +1, vagy -1-el.
+Az utolsó táblázatban, az új bázis elemeit az eredeti oszlopvektorok alkotják.
+Számoljuk meg, hogy hány sorcserét kell kapnunk ahhoz, hogy az eredeti oszlopvektorok természetes sorrendjébe cseréljük az elimináció
+végén kapott új bázis elemeket. 
+Ha ehhez páratlan sok csere kellett, akkor $-1$-el kell még szoroznunk a pivot elemek szorzatát.
+Egyébként a determináns a pivot elemek szorzata.
+\footnote{A determináns kiszámolásának ez a preferált és professzionális módszere. Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
+
+
 
 \section{A mértékek jellemzése}
 \index{mérték}
@@ -10373,5 +10414,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 05 Apr 2020 03:45:34 PM CEST
+Last Modified : Sun 05 Apr 2020 04:39:54 PM CEST
 
