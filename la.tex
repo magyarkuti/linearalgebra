@@ -1,4 +1,4 @@
-\documentclass[9pt, a4paper, showtrims]{memoir}
+\documentclass[9pt, a4paper, showtrims{memoir}
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
 %%%%%%% pdflatex %%%%%%%%%%
@@ -6333,7 +6333,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     van egyetlen legkisebb fokú és normált eleme, 
     ami egyben az ideál generáló eleme is.
 
-    \section{Kis minimál polinom}
+    \section{Kis minimálpolinom}
     \begin{proposition}
         Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja,
         és legyen $v\in V$ egy rögzített vektor.
@@ -6392,11 +6392,11 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$.
         Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
         Ezt a polinomot nevezzük az $A$ transzformáció, $v$ vektorhoz tartozó
-        \emph{kis minimál polinomjának}\index{kis minimál polinom}.
+        \emph{kis minimálpolinomjának}\index{kis minimálpolinom}.
     \end{definition}
 
     \begin{proposition}
-        Ha  $n$ az $A$ transzformáció $v$ vektorhoz tartozó kis minimál polinomja,
+        Ha  $n$ az $A$ transzformáció $v$ vektorhoz tartozó kis minimálpolinomja,
         akkor
         \begin{enumerate}
             \item $n$ normált polinom,
@@ -6418,17 +6418,17 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \begin{proposition}
         Legyen $v\neq 0$ és tegyük fel, hogy $p\left( A \right)v=0$ valamely normált,
         irreducibilis $p$ polinomra.
-        Ekkor $p$ a $v$ vektorhoz tartozó kis minimál polinom.
+        Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
     \end{proposition}
     \begin{proof}
         Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak minimálpolinomja legalább első fokú.
-        Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimál polinommal,
+        Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
         akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
         ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
         Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
     \end{proof}
 
-    A következő állítás módszert ad a kis minimál polinom meghatározására,
+    A következő állítás módszert ad a kis minimálpolinom meghatározására,
     amely mindig használható.
     \begin{proposition}
         Legyen $A\in L\left( V \right)$ és $v\neq 0.$
@@ -6442,7 +6442,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \[
             A^{k}v=\sum_{j=0}^{k-1}\alpha_jA^{j}v
         \]
-        Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimál polinomja
+        Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimálpolinomja
         \[
             n\left( t \right)=
             t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0.\qedhere
@@ -6496,7 +6496,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         akkor
         $p\left( A \right)=0$, azaz $p\in J_{A}$ és $-\infty<\deg p\leq n^2$.
     \end{proof}
-    \begin{definition}[minimál polinom]\index{minimál polinom}
+    \begin{definition}[minimálpolinom]\index{minimálpolinom}
         Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
         Láttuk, hogy
         \[
@@ -6508,17 +6508,17 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
         van tehát egyetlen normált polinomja $J_{A}$-nek, amely generálja $J_{A}$.
         Ez a $J_{A}$ legkisebb fokú, normált polinomja, 
-        amit $A$ transzformáció \emph{minimál polinomjának} nevezünk.
+        amit $A$ transzformáció \emph{minimálpolinomjának} nevezünk.
     \end{definition}
     Ha $V\neq\left\{ 0 \right\}$, ergo $\dim V\geq 1$,
     akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja, 
     hiszen $p(t)=c, (c\neq 0)$ mellett
     $p\left( A \right)=cI\neq 0$, 
-    tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimál polinom legalább első fokú.
+    tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinom legalább első fokú.
 
     \begin{proposition}
         Ha  $m\in\mathbb{F}\left[ t \right]$ polinom akkor és csak akkor 
-        az $A\in L\left( V \right)$ transzformáció minimál polinomja, 
+        az $A\in L\left( V \right)$ transzformáció minimálpolinomja, 
         ha
         \begin{enumerate}
             \item $m$ normált polinom,
@@ -6526,7 +6526,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
             \item ha $p\in\mathbb{F}\left[ t \right], p\neq 0$, amelyre 
                 $p\left( A \right)=0$, akkor $m|p$.
         \end{enumerate}
-        A minimál polinom fokszámára:%
+        A minimálpolinom fokszámára:%
         \footnote{Kis vártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
         $\deg m\leq(\dim V)^2$.
     \end{proposition}
@@ -6543,17 +6543,17 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Legyen $V$ legalább 1 dimenziós, 
         és tegyük fel, hogy $p\left( A \right)=0$ valamely normált,
         irreducibilis $p$ polinomra.
-        Ekkor $p$ az $A$ minimál polinomja.
+        Ekkor $p$ az $A$ minimálpolinomja.
     \end{proposition}
     \begin{proof}
         Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább első fokú.
-        Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimál polinommal,
+        Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimálpolinommal,
         akkor $\deg m<\deg p$ lenne, és mivel $m$ generálja a $J_{A}$ ideált,
         ezért $p=mh$ alakú lenne, ahol $h$ is legalább első fokú.
         Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
     \end{proof}
 
-    A következő állítás módszert ad a minimál polinom meghatározására.
+    A következő állítás módszert ad a minimálpolinom meghatározására.
     \begin{proposition}
         Legyen $A\in L\left( V \right)$, ahol $\dim V\geq 1$.
         Mivel $\dim L\left( V \right)=\left( \dim V \right)^2$ egy véges dimenziós vektortér,
@@ -6566,7 +6566,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \[
             A^{k}=\sum_{j=0}^{k-1}\alpha_jA^{j}.
         \]
-        Ekkor az $A$ operátor minimál polinomja.
+        Ekkor az $A$ operátor minimálpolinomja.
         \[
             m\left( t \right)=
             t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0.\qedhere
@@ -6581,19 +6581,19 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
         tehát az $m$ polinom generálja a főideált.\index{főideál}
     \end{proof}
-    A minimál polinom algoritmikus meghatározásához a kis minimál polinom is használhatók.
+    A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is használhatók.
     \begin{proposition}
-        Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja $m$.
+        Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja $m$.
         Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ egy bázisa $V$-nek,
-        és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimál polinomok.
+        és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimálpolinomok.
         Ekkor a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse az $m$ minimal polinom.
         \index{legkisebb közös többszörös}
     \end{proposition}
     \begin{proof}
-        Tetszőleges $v\in V$ mellett, ha $p_v$ a kis minimál polinom,
+        Tetszőleges $v\in V$ mellett, ha $p_v$ a kis minimálpolinom,
         akkor $p_v|m$, hiszen $m\left( A \right)$ a konstans zérus transzformáció.
-        Emiatt $m$ egy közös többszöröse a $p_j$ kis minimál polinomoknak.
-        Most tegyük fel, hogy egy $p$ polinom többszöröse a $p_j$ kis minimál polinomoknak.
+        Emiatt $m$ egy közös többszöröse a $p_j$ kis minimálpolinomoknak.
+        Most tegyük fel, hogy egy $p$ polinom többszöröse a $p_j$ kis minimálpolinomoknak.
         Világos, hogy minden $j$ mellett
         \[
             p\left( A \right)e_j
@@ -6634,11 +6634,11 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \section{Sajátvektorok és diagonalizálhatóság}\index{sajátvektor}\index{diagonalizálhatóság}
 
     \begin{proposition}
-        Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimál polinomjának.
+        Tegyük fel, hogy $p$ legalább elsőfokú osztója az $A$ transzformáció minimálpolinomjának.
         Ekkor $p\left( A \right)$ szinguláris\index{szinguláris}.
     \end{proposition}
     \begin{proof}
-        Jelölje $m$ a minimál polinomot,
+        Jelölje $m$ a minimálpolinomot,
         és $m=pq$.
         Így $\deg q<\deg m$. Persze $m\left( A \right)=p\left( A \right)q\left( A \right)$,
         így ha $p\left( A \right)$ reguláris lenne,
@@ -6648,7 +6648,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \]
         Ebből persze $m|q$, így $\deg m\leq \deg q$, ami ellentmondás.
     \end{proof}
-    \begin{proposition}[sajátérték és minimál polinom]\index{sajátérték}
+    \begin{proposition}[sajátérték és minimálpolinom]\index{sajátérték}
         Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós 
         vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
         polinomja.
@@ -6983,7 +6983,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
 \chapter{Transzformációk redukálása}
     \begin{proposition}
         Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
-        amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
+        amelynek minimálpolinomja $m\in\mathbb{F}\left[ t \right]$.
         Tegyük fel, hogy $m$ előáll mint a $p,q$ egymással relatív prím, normált 
         polinomok
         \[
@@ -6999,7 +6999,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
             V.
         \]
         Ha $A_1=A_{|\ker p\left( A \right)}$ és
-        $A_2=A_{|\ker q\left( A \right)}$, akkor $A_1$ minimál polinomja $p$ és $A_2$ minimál polinomja $q$.
+        $A_2=A_{|\ker q\left( A \right)}$, akkor $A_1$ minimálpolinomja $p$ és $A_2$ minimálpolinomja $q$.
     \end{proposition}
     \begin{proof}
         Mivel $p$ és $q$ relatív prímek, ezért a Bezout-azonosság szerint van $f,g\in\mathbb{F}\left[ t \right]$ polinom, amelyekre
@@ -7053,12 +7053,12 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Most újra használjuk, hogy a $p$ és a $q$ polinomok relatív prímek,
         így azt kapjuk, hogy $p|h.$
         Megmutattuk, hogy a $J_{A_1}$ ideált a $p$ normált polinom generálja,
-        ami éppen azt jelenti, hogy $p$ az $A_1$ transzformáció minimál polinomja.
-        Az $A_2$ minimál polinomja $q$ állitás igazolása a fentivel analóg.
+        ami éppen azt jelenti, hogy $p$ az $A_1$ transzformáció minimálpolinomja.
+        Az $A_2$ minimálpolinomja $q$ állitás igazolása a fentivel analóg.
     \end{proof}
     \begin{proposition}\label{pr:redukcio-primszorzat}
         Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
-        amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
+        amelynek minimálpolinomja $m\in\mathbb{F}\left[ t \right]$.
         Tegyük fel, hogy $m$ előáll mint a páronként relatív prím
         normált polinomok
         \[
@@ -7071,7 +7071,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Ekkor
         \begin{enumerate}
             \item $V=V_1\oplus\dots\oplus V_n$;
-            \item $p_i$ az $A_i$ transzformáció minimál polinomja minden szóba jövő
+            \item $p_i$ az $A_i$ transzformáció minimálpolinomja minden szóba jövő
                 $i=1,\dots,n$ mellett.\qedhere
         \end{enumerate}
     \end{proposition}
@@ -7097,11 +7097,11 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \[
             V=\ker p\left( A \right)\oplus V_n,
         \]
-        továbbá $p$ a minimál polinomja az $A|\ker p\left( A \right)$-nak
-        és persze $p_n$ minimál polinomja $A_n$-nek.
+        továbbá $p$ a minimálpolinomja az $A|\ker p\left( A \right)$-nak
+        és persze $p_n$ minimálpolinomja $A_n$-nek.
 
         Alkalmazzuk most az indukciós feltevést a $\ker p\left( A \right)$ vektortérre.
-        Ott az $A_{|\ker p\left( A \right)}$ lineáris transzformáció $p$ minimál polinomja
+        Ott az $A_{|\ker p\left( A \right)}$ lineáris transzformáció $p$ minimálpolinomja
         előáll mint $n-1$ páronként relatív prím polinom szorzata:
         \[
             p=p_1,\dots,p_{n-1}.
@@ -7110,7 +7110,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \begin{enumerate}
             \item 
                 $\ker p\left( A \right)=V_1\oplus\dots\oplus V_{n-1}$ és
-            \item $p_i$ az $A_i$ minimál polinomja minden $i=1,\dots,n-1$ mellett.
+            \item $p_i$ az $A_i$ minimálpolinomja minden $i=1,\dots,n-1$ mellett.
         \end{enumerate}
         Teljesül tehát a $V_1,\dots,V_{n-1},V_n$ alterekre, 
         hogy mind diszjunkt -- az itt adott sorrendben -- az előzőek összegétől,
@@ -7120,7 +7120,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \section{Sajátvektorok, minimálpolinom és diagonalizálhatóság}
     Alkalom nyílik, 
     hogy a lineáris transzformáció diagonalizálhatóságát karakterizáló \aref{pr:diagkar}.~állítást
-    tovább bővítsük, a minimál polinom szerepének hangsúlyozásával.
+    tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
     \begin{proposition}[diagonalizálhatóság]
         Legyen $A\in L\left( V \right)$ lineáris transzformáció.
         Jelölje $\left\{ \lambda_1,\dots,\lambda_s \right\}=\sigma\left( A \right)$
@@ -7135,7 +7135,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
                 \end{math};
             \item Minden vektor előáll mint sajátvektorok összege;
             \item Az $A$ diagonalizálható lineáris transzformáció;
-            \item Az $A$ transzformáció minimál polinomja
+            \item Az $A$ transzformáció minimálpolinomja
                 \[
                     m\left( t \right)=
                     \prod_{j=1}^s\left( t-\lambda_j \right).
@@ -7157,13 +7157,13 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         akkor minden diagonális pozició az egyik szorzó mátrixban zérus,
         ergo a szorzat mátrix is a zéró mátrix.
         A fenti polinomnak tehát az $A$ transzformáció gyöke.
-        Mivel minden sajátérték a minimál polinom gyöke, 
+        Mivel minden sajátérték a minimálpolinom gyöke, 
         ezért a fenti polinom a legalacsonyabb fokú normált polinom, 
         amelynek gyöke $A$.
         \footnote{
-            Egy másik érv: $t-\lambda_j$ a $\lambda_j$ sajátértékhez tartozó sajátvektor kis minimál polinomja. 
+            Egy másik érv: $t-\lambda_j$ a $\lambda_j$ sajátértékhez tartozó sajátvektor kis minimálpolinomja. 
             Mivel a sajátvektorok egy bazist alkotnak,
-            ezért ezen polinomok legkisebb közös többszöröse a minimál polinom.
+            ezért ezen polinomok legkisebb közös többszöröse a minimálpolinom.
             Persze $\dim V$ darab elsőfokú polinom normált polinom legkisebb közös többszöröse,
             ezek közül a különbözők szorzata.
         }
@@ -7184,7 +7184,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     Mivel minden polinom előáll mint néhány irreducibilis polinom szorzata,
     ezért \ref{pr:redukcio-primszorzat}.~állítás így is fogalmazható.
     \begin{proposition}\label{pr:redukcio-primfelbontas}
-        Legyen $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja
+        Legyen $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja
         $m$.
         Tudjuk, hogy $m$ egyértelműen áll elő
         \[
@@ -7199,18 +7199,18 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Ekkor
         \begin{enumerate}
             \item $V=V_1\oplus\dots\oplus V_r$ és,
-            \item $A_i$ minimál polinomja $p_i^{m_i}$ minden $i=1,\dots,r$ mellett.\qedhere
+            \item $A_i$ minimálpolinomja $p_i^{m_i}$ minden $i=1,\dots,r$ mellett.\qedhere
         \end{enumerate}
     \end{proposition}
     A konklúzió tehát az, 
     hogy elég olyan transzformációkkal foglalkoznunk,
-    amelyek minimál polinomja egy irreducibilis polinom valamely egész kitevős hatványa.
+    amelyek minimálpolinomja egy irreducibilis polinom valamely egész kitevős hatványa.
     Az algebra alaptétele szerint a komplex számtest feletti irreducibilis polinom csak elsőfokú polinom lehet.
     Abban a speciális esetben tehát,
     amikor a $\mathbb{C}$ komplex számtest feletti vektortereket\index{komplex számtest feletti vektortér} vizsgálunk,
     ez azt jelenti, 
     hogy elég ha olyan $A\in L\left( V \right)$ transzformációval foglalkozunk, 
-    amelynek $m$ minimál polinomjára
+    amelynek $m$ minimálpolinomjára
     \[
         m\left( t \right)=(t-\alpha)^n
     \]
@@ -7226,7 +7226,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex számmal megemelni.
     A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma. 
 
-\chapter{Redukálás irreducibilis minimál polinom esetén}
+\chapter{Redukálás irreducibilis minimálpolinom esetén}
     \scwords A legegyszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
 
     \begin{proposition}\label{pr:irred_redukcio}
@@ -7256,7 +7256,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \end{enumerate}
     \end{proposition}
     \begin{proof}[Bizonyítás (1.)]
-        Legyen adott $v\neq 0$ vektor mellett $p_v$ a $v$-hez tartozó kis minimál polinom.
+        Legyen adott $v\neq 0$ vektor mellett $p_v$ a $v$-hez tartozó kis minimálpolinom.
         Mivel $m\left( A \right)v=0$, ezért $p_v|m$.
         No de $m$ irreducibilis, ezért $m=p_v$.
         Ekkor viszont
@@ -7621,7 +7621,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
     \begin{proposition}
         Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
-        amelynek minimál polinomja $m\in\mathbb{F}\left[ t \right]$.
+        amelynek minimálpolinomja $m\in\mathbb{F}\left[ t \right]$.
         Tegyük fel, 
         hogy $m$ előáll mint a különböző normált, irreduciblis polinomok elsőfokú hatványainak
         \[
@@ -7634,38 +7634,38 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \begin{proof}
         \Aref{pr:redukcio-primfelbontas}.~állításban láttuk, 
         hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
-        Minden egyes $p_j$ a minimál polinom legalább lesőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
+        Minden egyes $p_j$ a minimálpolinom legalább lesőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
         Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
         dimenziós invariáns altér, vagy néhány ilyen direktösszege.
         Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
     \end{proof}
     \subsection{A komplex és a valós eset}
     Most az tegyük fel, hogy a $V$ vektortér a $\mathbb{C}$ komplex számtest feletti vektortér.
-    Ekkor az $A\in L\left( V \right)$ lineáris transzformáció minimál polinomja egy komplex együtthatós polinom.
+    Ekkor az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja egy komplex együtthatós polinom.
     Az algebra alaptétele szerint irreducibilis normált polinom csak elsőfokú, azaz $t-\lambda$ alakú lehet,
-    tehát az előző állítás feltétele most abba megy át, hogy $A$ minimál polinomja
+    tehát az előző állítás feltétele most abba megy át, hogy $A$ minimálpolinomja
     \[
         m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
     \]
     alakú, ahol $\lambda_1,\dots,\lambda_s$ az $m$ különböző gyökei.
-    Tudjuk viszont, hogy a minimál polinom gyökei a sajátértékek,
+    Tudjuk viszont, hogy a minimálpolinom gyökei a sajátértékek,
     ezért a feltételt egyszerűbben úgy is fogalmazhatjuk,
-    a minimál polinom gyökei egyszeresek, vagy ami ugyanaz: 
-    a sajátértékek a minimál polinom egyszeres gyökei.
+    a minimálpolinom gyökei egyszeresek, vagy ami ugyanaz: 
+    a sajátértékek a minimálpolinom egyszeres gyökei.
     \begin{proposition}
         Tegyük fel, hogy $V$ egy $\mathbb{C}$ feletti vektortér és $A\in L\left( V \right)$ egy lineáris transzformáció.
         $A$ pontosan akkor diagonalizálható,
-        ha minimál polinomja gyökei egyszeres multiplicitásúak.
+        ha minimálpolinomja gyökei egyszeres multiplicitásúak.
     \end{proposition}
     \begin{proof}
-        Ha a sajátértékek a minimál polinomnak egyszeres multiplicitású gyökei,
+        Ha a sajátértékek a minimálpolinomnak egyszeres multiplicitású gyökei,
         akkor fennállnak az előző tétel feltételei.
         Így $V$ előáll mint néhány egy dimenziós invariáns alterének direktösszege,
         ami azt jelenti, hogy van sajátvektorokból álló bázisa, ergo diagonalizálható.
 
         Megfordítva, ha $A$ diagonalizálható, akkor a diagonálisban a sajátértékei vannak.
         Ha $\left\{ \lambda_1,\dots,\lambda_s \right\}$ a diagonális különböző elemei,
-        akkor az $A$ minimál polinomja nyilvánvalóan
+        akkor az $A$ minimálpolinomja nyilvánvalóan
         \[
             m\left( t \right)
             =
@@ -7682,18 +7682,18 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$.
         A $V$ pontosan akkor bontható fel egy vagy két dimenziós minimális $A$-invariáns alterek direktösszegére,
         ha az $A$ transzformáció $m$ 
-        minimál polinomjának felbontásában minden irreducibilis polinom az első hatványon szerepel.
+        minimálpolinomjának felbontásában minden irreducibilis polinom az első hatványon szerepel.
     \end{proposition}
     \begin{proof}
         A komplex esettel analóg.
     \end{proof}
-\chapter{A minimál polinom fokszámáról}
-    \scwords A minimál polinom definiálásakor csak annyit láttunk,
+\chapter{A minimálpolinom fokszámáról}
+    \scwords A minimálpolinom definiálásakor csak annyit láttunk,
     hogy legfeljebb $n^2$ fokú polionom mindig konstruálható,
     amelynek a transzformáció gyöke, ahol $n$ a tér dimenziója.
     Ebben a fejezetben látni fogjuk, hogy a fenti gondolat nagyon lényegesen erősíthető.
     Azt mutatjuk meg, 
-    hogy a minimál polinom fokszáma nem lehet a tér dimenziójánál magasabb.
+    hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
     \begin{lemma}
         Legyen $B\in L\left( V \right)$ lineáris transzformáció,
         tegyük fel, hogy a $v_1,\dots,v_r$ vektorok mindegyikére $B^mv_j=0$, 
@@ -7907,10 +7907,10 @@ Az első észrevétel adja a negatív választ.
     Tegyük fel először, hogy $B$ lineáris transzformáció $m$-ed rendben 
     nillpotens.
     Legyen $p\left( t \right)=t^m$.
-    Ekkor $p\in J_A$, így a minimál polinom $p$ osztója.
+    Ekkor $p\in J_A$, így a minimálpolinom $p$ osztója.
     Másrészt \aref{th:fgtlen}.~állítás szerint van a térnek olyan vektora,
-    amelyhez tartalmazó kis minimál polinom is $p$.
-    Így $p$ osztója a minimál polinomnak, ergo azonos vele.
+    amelyhez tartalmazó kis minimálpolinom is $p$.
+    Így $p$ osztója a minimálpolinomnak, ergo azonos vele.
 
     Megfordítva, ha $m\left( t \right)=t^m$ a minimálpolinomja $B$-nek,
     akkor $B^m=0$ és ez $m$-nél kisebb kitevőre nem teljesülhet.
@@ -8636,17 +8636,17 @@ Az így kapott rendszer persze bázis lesz.
 \chapter{A Jordan--normálalak}
 \scwords A legfontosabb gondolathoz érkeztünk, 
 de igazán nincs új a fejezetben. Az előző fejezeteket foglaljuk össze.
-Először azt az esetet vizsgáljuk, mikor egy transzformáció minimál polinomja
+Először azt az esetet vizsgáljuk, mikor egy transzformáció minimálpolinomja
 egyetlen elsőfokú polinom valamilyen hatványa,
 majd ezt felhasználva kapjuk az úgynevezett kanonikus alakot abban az esetben is,
-mikor a minimál polinom különböző elsőfokú polinomok hatványainak szorzataiként áll elő.
+mikor a minimálpolinom különböző elsőfokú polinomok hatványainak szorzataiként áll elő.
 Mivel egy komplex együtthatós polinom mindig ilyen alakú,
 ezért az eredményeinket komplex test feletti vektorterek lineáris transzformációira alkalmazhatjuk.
 
-\section{Egy gyöktényezős minimál polinom}
+\section{Egy gyöktényezős minimálpolinom}
 \begin{definition}[Jordan-normálalak]
         Tegyük fel, hogy az $A\in L\left( V \right)$ lineáris transzformáció
-        minimál polinomja 
+        minimálpolinomja 
         \[
             \left( t-\lambda \right)^m
         \]
@@ -8746,7 +8746,7 @@ A felbontásban szereplő direktösszeadandó alterek páronként izomorfak egym
 \begin{definition}
     Legyen $A\in L\left( V \right)$ lineáris transzformáció valamely $\mathbb{F}$ test
     feletti vektortéren.
-    Tegyük fel, hogy $A$ minimál polinomja
+    Tegyük fel, hogy $A$ minimálpolinomja
     \[
         \left( t-\lambda_1 \right)^{m_1}\left( t-\lambda_2 \right)^{m_2}\dots\left( t-\lambda_s \right)^{m_s}
     \]
@@ -8758,7 +8758,7 @@ A felbontásban szereplő direktösszeadandó alterek páronként izomorfak egym
     \[
         V=V_1\oplus\dots\oplus V_s
     \]
-    továbbá a $V_j$ vektortér $A_j$ lineáris transzformációjának minimál polinomja
+    továbbá a $V_j$ vektortér $A_j$ lineáris transzformációjának minimálpolinomja
     \[
         \left( t-\lambda_j \right)^{m_j}.
     \]
@@ -8835,7 +8835,7 @@ majd rendre kisebb vagy egyenlő méretű blokkok következnek.
 \end{proposition}
 \begin{proof}
     Mivel a komplex számtest felett igaz az algebra alaptétele,
-    ezért minden polinom, így $A$ minimál polinomja is előáll
+    ezért minden polinom, így $A$ minimálpolinomja is előáll
     $\left( t-\lambda_1 \right)^m_1\left( t-\lambda_2 \right)^{m_2}\dots\left( t-\lambda_s \right)^{m_s}$
     alakban.
     Alkalmazhatjuk tehát a fent leírt eljárast $A$ Jordan-bázisának konstrukciójához.
@@ -8847,12 +8847,12 @@ hogy a fenti Jordan normálakról szóló tétel speciális esetként tartalmaz 
 de későbbi fontos eredményünket feltéve, hogy az alaptest a komplex számtest.
 
 Az egyes sajátértékekhez tartozó első Jordan blokk mérete $m_j$.
-Ezért a minimál polinom fokszámánál, a $\sum_{j=1}^sm_j$ számnál a tér dimenziója nem lehet kisseb.
-Meggondoltuk tehát, hogy \emph{a minimál polinom foka legfeljebb  a tér dimenziója.}
+Ezért a minimálpolinom fokszámánál, a $\sum_{j=1}^sm_j$ számnál a tér dimenziója nem lehet kisseb.
+Meggondoltuk tehát, hogy \emph{a minimálpolinom foka legfeljebb  a tér dimenziója.}
 
 Az is nyilvánvaló, hogy a Jordan-normálalak pontosan akkor diagonális, ha minden Jordan-blokk diagonális.
 Mivel a legnagyobb méretű Jordan-blokkok az $A_j$ transzformációk első blokkja, aminek mérete $m_j$, ezért a \emph{Jordan-normálak pontosan akkor diagonális mátrix, ha} minden $j$ mellett $m_j=1$,
-ami éppen azt jelenti, hogy \emph{a minimál polinom gyökei egyszeresek.}
+ami éppen azt jelenti, hogy \emph{a minimálpolinom gyökei egyszeresek.}
 Persze ebben az esetben a Jordan-bázis minden eleme az $A$ egy sajátvektora.
 
 Később teljesen nyilvánvaló lesz, hogy egy Jordan-normálalakú mátrix
@@ -8892,7 +8892,7 @@ Arra jutottunk tehát,
 hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekvivalensek.
 \begin{itemize}\tightlist
     \item[\textendash] $A$ diagonalizálható;
-    \item[\textendash] $A$ minimál polinomjának gyökei egyszeresek;
+    \item[\textendash] $A$ minimálpolinomjának gyökei egyszeresek;
     \item[\textendash] $A$ minden sajátértékének a geometriai és algebrai multiplicitása azonos.
 \end{itemize}
 \chapter{Determináns}
@@ -8910,12 +8910,13 @@ ezért tetszőleges ilyen függvény mellett
     \sum_{\pi\in S_n}\varphi\left( \pi \right)=
     \sum_{\pi\in S_n}\varphi\left( \pi^{-1} \right),
 \]
-hiszen a két $n!$ összeadandóból álló összeg csak az elemek sorrendjében különbözik.
+hiszen a két $n!$ összeadandóból álló összeg csak az elemek sorrendjében különbözik. 
+Így mindkét oldal a $\varphi$ értékkészlete eleminek összegét jelöli.
 
 A permutáció csoport elemeit, 
 tehát az egyes permutációkat,
 érdemes a sakktábla bástyafelrakásaival azonosítani.
-Képzeljünk el egy $n\times n$ méretű sakk táblát. 
+Képzeljünk el egy $n\times n$ méretű sakktáblát. 
 A feladat, hogy helyezzünk el a táblára $n$ db bástyát olyan módon, 
 hogy egy bástya se legyen ütésben.
 Nyilván ez úgy és csak úgy lehetséges, 
@@ -10174,5 +10175,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 01 Apr 2020 06:47:15 PM CEST
+Last Modified : Sun 05 Apr 2020 05:24:31 AM CEST
 
