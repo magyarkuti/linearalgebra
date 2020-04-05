@@ -151,6 +151,7 @@
 \makeatother
 
 %\renewcommand{\mathbf}{\mathbb}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\lin}{lin}
 \DeclareMathOperator{\gen}{gen}
 \DeclareMathOperator{\crank}{crank}
@@ -8896,24 +8897,117 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
 \end{itemize}
 \chapter{Determináns}
 
-\section{Permutációk paritása}
+\section{Permutációk}
 
-Emlékezzünk arra, hogy egy $n$ elemű halmaz permutációi $n!$ elemszámú
-csoportot alkotnak a kompozició műveletével. Ezt a csoportot a továbbiakban $%
-S_{n}$-el jelöljük.
+Emlékezzünk arra,
+hogy egy $n$ elemű halmaz permutációi $n!$ elemszámú csoportot alkotnak a kompozíció műveletével. 
+Szokásos elnevezés, hogy ezt a kompozíció műveletet szorzásnak nevezzük.
+Ezt a csoportot a továbbiakban $S_{n}$-el jelöljük.\index{permutáció csoport}
+A determináns definíciójában majd olyan függvény szerepel, amely egy permutációhoz egy számot rendel, tehát egy $\varphi:S_n\to\mathbb{F}$ függvényről van szó.
+Mivel a $\pi\mapsto \pi^{-1}$ hozzárendelés egy $S_n\to S_n$ bijekció,
+ezért tetszőleges ilyen függvény mellett
+\[
+    \sum_{\pi\in S_n}\varphi\left( \pi \right)=
+    \sum_{\pi\in S_n}\varphi\left( \pi^{-1} \right),
+\]
+hiszen a két $n!$ összeadandóból álló összeg csak az elemek sorrendjében különbözik.
+
+A permutáció csoport elemeit, 
+tehát az egyes permutációkat,
+érdemes a sakktábla bástyafelrakásaival azonosítani.
+Képzeljünk el egy $n\times n$ méretű sakk táblát. 
+A feladat, hogy helyezzünk el a táblára $n$ db bástyát olyan módon, 
+hogy egy bástya se legyen ütésben.
+Nyilván ez úgy és csak úgy lehetséges, 
+ha minden sorba és minden oszlopba egy bábút raktunk le. 
+A bástyák egy ilyen elhelyezését nevezzük \emph{bástyafelrakásnak.}\index{bástyafelrakás}
+
+Vegyük észre, hogy $n$ darab bábú minden olyan elrendezése, 
+amelynél egy sorban egy bábú van, egy 
+\begin{math}
+    \pi:\left\{ 1,\dots,n \right\} \to \left\{ 1,\dots,n \right\}
+\end{math}
+függvénnyel azonosítható. 
+Gondoljunk a sorok számozására mint az értelmezési tartomány elemeire.
+Mivel így minden sorban van bábú, 
+és minden sorban csak egy bábú van,
+ezért értelmes az a definíció,
+amely szerint  $\pi\left( j \right)$ értéke legyen a $j$-edik sorban lévő bábú oszlopszáma.
+
+Ha a bástyafelrakásra gondolunk,
+akkor további feltétel, 
+hogy egyetlen oszlopban se legyen két bástya, 
+ami a $\pi$ függvény injektivitását jelenti. 
+No de egy véges halmazon értelmezett injekció az szürjekció is, 
+emiatt a bástyafelrakások és a bijekciók egymással azonosíthatók.
+
+A determináns fogalmának megértését nagyban segíti, 
+ha $n$ elem permutációjára mint a $n$ darab bástyafelrakására gondolunk.
+\footnote{Persze ez ugyanaz mintha olyan $n\times n$ mátrixokról beszélnénk,
+    ahol csak 0 és 1-es szerepel, mégpedig úgy, hogy minden sorban és minden oszlopban pontosan egy db 1-es van. Az 1-esek játsszák a bástyák szerepét. Az ilyen mátrixokat szoktuk permutáció mátrixnak mondani.\index{permutáció mátrix}}
+Az $\id$ identikus permutációt például a diagonális bástyafelrakás jelképezi.
+Ha adott egy $\pi$ permutációhoz tartozó bástyafelrakás, 
+akkor a $\pi^{-1}$ inverzhez tartozó bástyafelrakást a diagonálisra való tükrözéssel kapjuk.
+\begin{definition}[transzpozíció]
+    Egy permutációt \emph{transzpozíciónak} nevezünk,
+    ha az csak két elemet cserél fel.
+\end{definition}
+Egy bástyafelrakásra gondolva,
+az akkor transzpozíció, 
+ha az identitásnak megfelelő diagonális felrakás két sorának felcserélésével keletkezik. 
+Emiatt transzpozíciók szorzata egy olyan permutáció,
+amely a diagonális felrakásból néhány sor felcserélésével keletkezik.
+
+Na most, 
+gondoljunk bele, 
+hogy minden bástyafelrakás véges sok sor felcserélésével az identitás permutációt reprezentáló diagonális felrakásba vihető át.
+Az algoritmus a következő.
+Keressük meg azt a sort, 
+ahol a bástya az első oszlopban áll. 
+Cseréljük fel ezt a sort az első sorral.
+Most keressük meg azt a sort, 
+ahol a bástya a második oszlopot foglalja.
+Cseréljük fel ezt a sort a második sorral.
+Stb.
+Az $n-1$ -edik diagonális elem helyre kerülése után, az utolsó sorban,
+a bástya az utolsó pozíciót foglalja el,
+hiszen a sorok cserélgetésével megmarad a táblázatnak az a tulajdonsága, 
+hogy minden sorban és minden oszlopban pontosan egy bástya van.
+
+Adott $\pi$ permutációhoz találtunk tehát $\sigma_1,\dots,\sigma_{n-1}$ transzpozíciókat,
+amelyekre $\pi\cdot\sigma_1\cdots\sigma_{n-1}=\id$, amiből persze
+$\pi=\sigma_{n-1}^{-1}\cdots\sigma_1^{-1}$ következik.
+Egy transzpozíció inverze is transzpozíció, tehát igazoltuk a könyvtárak klasszikus felíratáról
+szóló állítást.
+\begin{proposition}
+    Minden permutáció transzpozíciók szorzata.
+\end{proposition}
+Persze szó nincs arról, hogy a fenti előállítás egyértelmű lenne.
+Még nagyon sok más algoritmust is kitalálhatunk a sorba rendezésre,
+olyanokat is, 
+amelyek minden lépésükben csak két elemet cserélnek fel.%
+\footnote{Keressünk például a 'bubble sort' kifejezésre.}
+Annyi viszont igaz, 
+hogy amennyiben egy permutáció páros (páratlan) sok transzpozíció szorzata, 
+akkor minden más előállításában is páros (páratlan) sok transzpozíció szerepel.
+Kisvártatva látjuk majd, hogy ez miért van így.
+
+\subsection{Egy permutáció inverziói}
 
 \begin{definition}[Inverzió]\index{inverzió}
-    Legyen $\pi \in S_{n}$ egy permutáció, $i$ és $j$ különböző $n$ -nél nem nagyobb számok. 
-    Azt mondjuk, hogy $\pi \left( i\right) $ és $\pi \left( j\right) $ inverzióban vannak, ha
+    Legyen $\pi \in S_{n}$ egy permutáció,
+    $i$ és $j$ különböző $n$ -nél nem nagyobb számok. 
+    Azt mondjuk, hogy az $i$-edik és a $j$-edik sorban álló \emph{bástyák inverzióban vannak},
+    ha
     \[
         \left( \pi \left( j\right) -\pi \left( i\right) \right) \left( j-i\right) <0.\qedhere
     \]
 \end{definition}
-\begin{note}
-    A fenti jelölések mellett $\pi \left( i\right) $ és $\pi \left( j\right) $
-    inverzióban vannak, pontosan akkor, ha $j>i$ esetén 
-    $\pi \left( j\right)<\pi \left( i\right) .$
-\end{note}
+A fenti jelölések mellett az 
+$i$ és $j$-edik 
+sor bástyái pontosan akkor vannak inverzióban, 
+ha $j>i$ esetén 
+$\pi \left( j\right)<\pi \left( i\right) .$
 
 \begin{definition}[Páros és páratlan permutáció]
 \index{páros permutáció}%
@@ -8940,7 +9034,8 @@ pedig egy permutáció. Definiáljuk $\pi ^{\ast }\in S_{n}$ a következő képp
 \end{array}
 \right. 
 \]
-világos, hogy $\pi ^{\ast }$ is permutáció.
+Világos, hogy $\pi ^{\ast }$ is permutáció.
+Az is látható, hogy a $\pi$-t reprezentáló bástyafelrakásból az $i$ és $j$ sorok felcserélésével kapjuk a $\pi^{\ast}$ bástyafelrakását.
 \end{definition}
 
 \begin{proposition}
@@ -10079,5 +10174,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 23 Mar 2020 02:13:50 PM CET
+Last Modified : Wed 01 Apr 2020 06:47:15 PM CEST
 
