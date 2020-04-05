@@ -9191,189 +9191,355 @@ akkor $\sgn \pi=\left( -1 \right)^k$.
 }
 
 \section{Mértékek}
-\index{n-lineáris operátor}%
-\index{antiszimmetrikus operátor}
+A determinánsról szóló minden további gondolatban feltesszük, 
+hogy az $\mathbb{F}$ testben $1+1=0$ nem teljesül.
+Ezt úgy fejezzük ki, hogy az $\mathbb{F}$ test nem \emph{2 karakaterisztikájú}.\index{2 karakterisztikájú test}
+\begin{definition}[mérték]
+    \index{n-lineáris operátor}\index{anti-szimmetrikus operátor}\index{alternáló operátor}
+    Legyenek $V_{1}$, $V_{2}$ és $V$ ugyanazon test feletti vektorterek. 
+    Az $A:V_{1}\times V_{2}\rightarrow V$ leképezést \emph{bilineáris operátornak}
+    nevezzük, ha:
+    \begin{enumerate}
+        \item 
+            Minden rögzített $x\in V_{1}$ esetén az $A\left( x,\cdot \right):V_{2}\rightarrow V$ lineáris operátor.
+        \item 
+            Minden rögzített $x\in V_{2}$ esetén az $A\left( \cdot ,x\right):V_{1}\rightarrow V$ lineáris operátor.
+    \end{enumerate}
 
-\begin{definition}[$n$-lineáris operátor, antiszimmetrikus operátor]
-Legyenek $X_{1}$, $X_{2}$ és $V$ ugyanazon test feletti vektorterek. Az $%
-A:X_{1}\times X_{2}\rightarrow V$ leképezést \emph{bilineáris operátornak}
-nevezzük, ha:\newline
-1. Minden rögzített $x\in X_{1}$ esetén az $A\left( x,\cdot \right)
-:X_{2}\rightarrow V$ lineáris operátor.\newline
-2. Minden rögzített $x\in X_{2}$ esetén az $A\left( \cdot ,x\right)
-:X_{1}\rightarrow V$ lineáris operátor.\newline
-Ha valamely $A:X\times X\rightarrow V$ bilineáris operátorra minden $u\in
-X_{1}$ és $v\in X_{2}$ esetén 
-\[
-A\left( u,v\right) =A\left( v,u\right) 
-\]
-akkor $A$ -t \emph{szimmetrikus} bilineáris operátornak nevezzük.\newline
-Ha valamely $A:X\times X\rightarrow V$ bilineáris operátorra minden $u\in
-X_{1}$ és $v\in X_{2}$ esetén 
-\[
-A\left( u,v\right) =-A\left( v,u\right) 
-\]
-akkor $A$ -t \emph{antiszimmetrikus} bilineáris operátornak nevezzük.
+    Ha valamely $A:V\times V\rightarrow V$ bilineáris operátorra minden $u,v\in V$ esetén 
+    \(
+        A\left( u,v\right) =-A\left( v,u\right), 
+    \)
+    akkor $A$-t \emph{anti-szimmetrikus} bilineáris operátornak nevezzük.
 
-Legyenek most $X_{1},X_{2},\ldots ,X_{n}$ és $V$ ugyanazon test feletti
-vektorterek. Az $A:X_{1}\times \ldots \times X_{n}\rightarrow V$ leképezést 
-\emph{multilineáris operátornak} vagy $n$\emph{-lineáris operátornak }nevezzü%
-k, ha bármely rögzített 
-\[
-x_{1},\ldots x_{i-1},x_{i+1},\ldots ,x_{j-1},x_{j+1},\ldots ,x_{n}
-\]
-mellett az 
-\[
-A\left( x_{1},\ldots x_{i-1},\cdot ,x_{i+1},\ldots ,x_{j-1},\cdot
-,x_{j+1},\ldots ,x_{n}\right) :X_{i}\times X_{j}\rightarrow V
-\]
-függvény bilineáris operátor. Ha a fenti függvény szimmetrikus
-(antiszimmetrikus) operátor minden $i$-re $j$-re és tetszőlegesen rögzített
-vektorok esetén, akkor az $A:X_{1}\times \ldots \times X_{n}\rightarrow V$
-leképezést \emph{szimmetrikus (antiszimmetrikus) multilineáris operátornak}
-nevezzük.
+    Ha valamely $A:V\times V\rightarrow V$ bilineáris operátorra minden $u\in V$ esetén 
+    \(
+        A\left( u,u\right) = 0,
+    \)
+    akkor $A$-t \emph{alternáló} bilineáris operátornak nevezzük.
+
+    Legyenek most $V_{1},V_{2},\ldots ,V_{k}$ és $V$ ugyanazon test feletti vektorterek. 
+    Az $A:V_{1}\times \ldots \times V_{k}\rightarrow V$ leképezést \emph{multi-lineáris operátornak} 
+    vagy $n$\emph{-lineáris operátornak }nevezzük, 
+    ha bármely rögzített 
+    \[
+        x_{1},\ldots x_{i-1},x_{i+1},\ldots ,x_{j-1},x_{j+1},\ldots ,x_{k}
+    \]
+    vektor mellett az 
+    \[
+        A\left( x_{1},\ldots x_{i-1},\,\cdot\, ,x_{i+1},\ldots ,x_{j-1},\,\cdot\, ,x_{j+1},\ldots ,x_{k}\right)
+        :
+        V_{i}\times V_{j}\rightarrow V
+    \]
+    függvény bilineáris operátor. 
+    Ha a fenti függvény anti-szimmetrikus (alternáló) operátor minden $i$-re $j$-re és tetszőlegesen rögzített vektorokra, 
+    akkor az 
+    $A:V_{1}\times \ldots \times V_{k}\rightarrow V$ 
+    leképezést \emph{anti-szimmetrikus (alternáló) multi-lineáris operátornak} nevezzük.
+
+    Ha $V$ egy nem 2 karakterisztikájú test feletti $n$-dimenziós vektortér, akkor egy 
+    $V\times \dots \times V\to V$ $n$-lineáris anti-szimmetrikus függvényt \emph{mértéknek}\index{mérték} nevezzük.
 \end{definition}
-
-Világos, hogy a bilineáris, $k$-lineáris, a $k$-lineáris szimmetrikus és a $k
-$-lineáris antiszimmetrikus operátorok külön-külön vektorteret alkotnak.
-
-\begin{proposition}[,,Példa'' $n$-lineáris antiszimmetrikus operátorra]
-Rögzítsünk az $n$-dimenziós $X$ vektortérben egy $\left\{ e_{1},\ldots
-e_{n}\right\} $ bázist. Ekkor 
-\[
-\sum_{\pi \in S_{n}}%
-\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right)
-}=\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \prod_{i=1}^{n}e_{\pi \left( i\right)
-}^{\ast }v_{i}
-\]
-Definiálja $d\left( v_{1},\ldots v_{n}\right) \doteq \sum_{\pi \in S_{n}}%
-\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right) }$.
-Ekkor a $d:X\times \ldots \times X\rightarrow \mathbb{F}$ egy $n$-lineáris
-antiszimmetrikus operátor, amelyre $d\left( e_{1},\ldots ,e_{n}\right) =1.$
-\end{proposition}
-
-\begin{proof}
-Világos, hogy $d\left( e_{1},\ldots ,e_{n}\right) =1,$ hiszen ha $\pi $ nem
-az identikus permutáció, akkor van olyan $i$ melyre $\pi \left( i\right) =i,$
-azaz $e_{i}^{\ast }\left( e_{\pi \left( i\right) }\right) =0$. A következő sz%
-ámolás utolsó egyenlőségében kihasználjuk, hogy a $\pi \mapsto \pi ^{-1}$
-hozzárendelés bijekció az $S_{n}$ halmaz felett. 
-\[
-\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi
-\left( i\right) }=\sum_{\pi \in S_{n}}\operatorname{sgn}\pi
-^{-1}\prod_{k=1}^{n}e_{\pi ^{-1}\left( k\right) }^{\ast }v_{k}=\sum_{\pi \in
-S_{n}}\operatorname{sgn}\pi \prod_{k=1}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}.
-\]
-
-A linearitás könnyen következik az $e_{i}^{\ast }$ duális bázis elemek
-linearitásából: 
-\begin{eqnarray*}
-d\left( \alpha x+\beta y,v_{2},\ldots ,v_{n}\right)  &\doteq &\sum_{\pi \in
-S_{n}}\operatorname{sgn}\pi \left( \prod_{k=2}^{n}e_{\pi \left( k\right) }^{\ast
-}v_{k}\right) e_{\pi \left( 1\right) }^{\ast }\left( \alpha x+\beta y\right) 
-\\
-&=&\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=2}^{n}e_{\pi \left(
-k\right) }^{\ast }v_{k}\right) \alpha e_{\pi \left( 1\right) }^{\ast }\left(
-x\right)  \\
-&&+\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=2}^{n}e_{\pi \left(
-k\right) }^{\ast }v_{k}\right) \beta e_{\pi \left( 1\right) }^{\ast }\left(
-y\right)  \\
-&=&\alpha d\left( x,v_{2},\ldots ,v_{n}\right) +\beta d\left( y,v_{2},\ldots
-,v_{n}\right) .
-\end{eqnarray*}
-Az antiszimmetria igazolásához szükséges, a $\operatorname{sgn}\pi =-\operatorname{sgn}\pi
-^{\ast }$ összefüggés. Például az első két változóra: 
-\begin{multline*}
-d\left( x,y,v_{3},\ldots ,v_{n}\right)  
-=
-\\
-\sum_{\pi \in S_{n}}\operatorname{sgn}%
-\pi \left( \prod_{k=3}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}\right)
-e_{\pi \left( 1\right) }^{\ast }\left( x\right) e_{\pi \left( 2\right)
-}^{\ast }\left( y\right)
-=
-\sum_{\pi \in S_{n}}-\operatorname{sgn}\pi ^{\ast }\left(
-\prod_{k=3}^{n}e_{\pi ^{\ast }\left( k\right) }^{\ast }v_{k}\right) e_{\pi
-^{\ast }\left( 1\right) }^{\ast }\left( y\right) e_{\pi ^{\ast }\left(
-2\right) }^{\ast }\left( x\right)
-=
-\\
--\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=3}^{n}e_{\pi \left(
-k\right) }^{\ast }v_{k}\right) e_{\pi \left( 1\right) }^{\ast }\left(
-y\right) e_{\pi \left( 2\right) }^{\ast }\left( x\right) 
-=
--d\left(y,x,v_{3},\ldots ,v_{n}\right) .\qedhere
-\end{multline*}
-\end{proof}
-
-\index{mátrix determinánsa}%
-\index{determináns}
-
-\begin{definition}[Mátrix determinánsa]
-Legyen $\left[ A\right] $ az $A:X\rightarrow X$ operátornak valamely rögzí%
-tett bázisban felírt mátrixa. Ekkor e mátrix $\left| \left[ A\right] \right| 
-$ $\emph{determinánsa}$ legyen: 
-\[
-\left| \left[ A\right] \right| \doteq \sum_{\pi \in S_{n}}%
-\operatorname{sgn}\pi \prod_{i=1}^{n}\left[ A\right] _{i,\pi \left( i\right) }
-\]
-formulával definiálva.
-\end{definition}
-Az előző tétel szerint egy mátrixnak és a transzponáltjának a determinánsa azonos.
-
-Adjunk képletet $2\times 2$-es és $3\times 3$-as mátrixok determinánsának
-kiszámolására!
-
-A fent definiált függvénynek a determinánssal való összefüggése 
-\index{determináns} 
-\[
-d\left( Ae_{1},\ldots ,Ae_{n}\right) =\left| _{\left\{ e_{1},\ldots
-e_{n}\right\} }\left[ A\right] \right| 
-\]
-minden $A$ lineáris transzformátor esetén.
-
-\section{A mértékek jellemzése}
-
-\index{mérték}
-
 \begin{proposition}
-    Legyenek $X$ és $V$ ugyanazon $\mathbb{F}$ test feletti vektorterek. 
-Tegyük fel, hogy
-a $\mathbb{F}$ test olyan, hogy $1+1\neq 0.$ (Nem $2$ karakterisztikájú.) Legyen tová%
-bbá $A:X\times X\rightarrow V$ bilineáris függvény. Ekkor az alábbi három áll%
-ítás ekvivalens:\newline
-1. Az $A$ antiszimmetrikus.\newline
-2. Minden $u\in X$ -re $A\left( u,u\right) =0.$ ($A$ \emph{alternáló})%
-\newline
-3. Minden $u,v\in X$ -re valamint $\lambda $ és $\mu $ skalárokra 
-\[
-A\left( u,v+\lambda u\right) =A\left( u,v\right) =A\left( u+\mu v,v\right) \qedhere
-\]
+    Legyen $V$ olyan $\mathbb{F}$ test feletti vektortér, ahol a $1+1\neq 0$.
+    Tegyük fel, hogy 
+    $A:V\times V\rightarrow V$ bilineáris függvény. 
+    Ekkor az alábbi három feltevés egymással ekvivalens.
+    \begin{enumerate}
+        \item 
+        Az $A$ anti-szimmetrikus;
+        \item
+        Az $A$ alternáló;
+        \item
+            Minden $u,v\in V$-re valamint tetszőleges $\lambda,\mu\in\mathbb{F}$ skalárokra 
+            \[
+                A\left( u,v+\lambda u\right) 
+                =
+                A\left( u,v\right) 
+                =
+                A\left( u+\mu v,v\right).\qedhere
+            \]
+    \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-$1.\Rightarrow 2.$ és $2.\Rightarrow 3.$ nyilvánvaló.\newline
-$3.\Rightarrow 1.$ is könnyű: $A\left( u,v\right) =A\left( u,v-u\right)
+$1.\Rightarrow 2.$ és $2.\Rightarrow 3.$ nyilvánvaló.
+$3.\Rightarrow 1.$: $A\left( u,v\right) =A\left( u,v-u\right)
 =A\left( u+v-u,v-u\right) =A\left( v,v-u\right) =A\left( v,-u\right)
 =-A\left( v,u\right) .$
 \end{proof}
 
-\begin{definition}[mérték]
-Legyen $X$ egy $n$-dimenziós vektortér valamely $\mathbb{F}$ test felett. Ekkor egy 
-\[
-f:X\times \ldots \times X\rightarrow \mathbb{F} 
-\]
-$n$-lineáris antiszimmetrikus függvényt $\emph{mértéknek}$ nevezzük. Vilá%
-gos, hogy a mértékek alteret alkotnak.
+Világos, hogy tetszőleges $k$ pozitív egész mellett, $k$-lineáris függvények vektorteret alkotnak.
+E vektor tér egy altere a $k$-lineáris anti-szimmetrikus függvények vektortere. 
+Ez persze fennáll akkor is, mikor $n$-dimenziós vektortérnek $n$-szeres szorzatán értelmezett $n$-lineáris függvényekről van szó,
+ergo a mértékek egy vektorteret alkotnak.
+A konstans zérus mérték így nyilvánvaló példa mértékre.
+A kérdés, hogy van-e más mérték?
+
+\subsection{Példa mértékre}
+\begin{definition}
+    Legyen $V$ egy vektortér, amelyben rögzített az $\left\{ e_1,\dots,e_n \right\}$
+    bázis.
+    Mivel lineáris funkcionál egy bázison tetszőlegesen és egyértelműen előírható,
+    ezért tetszőleges $1\leq i\leq n$-hez létezik egyetlen $e_i^\ast:V\to\mathbb{F}$
+    lineáris funkcionál, amelyre
+    \[
+        e_i^\ast(e_j)=\delta_{i,j}
+    \]
+    fennáll.
+    Ezt az $e_i^\ast$ lineáris funkcionált nevezzük az \emph{$i$-edik duális báziselemnek.}\index{duális bázis}%
+    \footnote
+    {
+        Az elnevezés oka, 
+        hogy $\left\{ e_1^\ast,\dots,e_n^\ast \right\}$ bázisa az összes $V\to\mathbb{F}$ lineáris funkcionálok vektorterének.
+    }
 \end{definition}
+\begin{proposition}
+    Rögzítsük az $\left\{ e_1,\dots,e_n \right\}\subseteq V$ bázist.
+    Ekkor minden $v\in V$ mellett
+    \(
+        v=\sum_{j=1}^ne_j^\ast(v)e_j,
+    \)
+    azaz $v$-nek az $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt $j$-edik koordinátája $e_j^\ast v.$
+\end{proposition}
+\begin{proof}
+    Legyen $v=\sum_{j=1}^n\alpha_je_j$.
+    Ekkor tetszőlegesen rögzített $i$ mellett
+    \(
+        e_i^\ast(v)
+        =
+        e_i^\ast\left( \sum_{j=1}^n\alpha_je_j \right)
+        =
+        \sum_{j=1}^n\alpha_je_i^\ast\left( e_j \right)
+        =
+        \sum_{j=1}^n\alpha_j\delta_{i,j}
+        =
+        \alpha_i,
+    \)
+\end{proof}
+Úgy interpretálhatjuk tehát az $e_i^\ast$ lineáris funkcionált,
+hogy az minden $v$ vektorhoz hozzárendeli a vektor $i$-edik koordinátáját.
+\begin{proposition}
+    Rögzítsünk az $n$-dimenziós $V$ vektortérben egy $\left\{ e_{1},\ldots e_{n}\right\} $ bázist. 
+    Ekkor minden $v_1,\dots,v_n\in V$ vektor esetén
+    \[
+    \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right)}
+    =
+    \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{\pi \left( i\right)}^{\ast }v_{i}.
+    \]
+\end{proposition}
+Képzeljük el, hogy egy $n\times n$ méretű sakktábla $j$-edik oszlopába írjuk a $v_j$ vektor koordinátáit,
+minden $j=1,\dots,n$ mellett.
+Tegyünk fel erre a sakktáblára egy $\pi$ permutációt, azaz a $\pi$ bástyafelrakását.
+Minden $i$-re az $i$-edik sor $\pi\left( i \right)$-edik elemén áll tehát egy bástya.
+No de a $\pi\left( i \right)$ edik oszlop $i$-edik helyére $v_{\pi\left( i \right)}$ vektor $i$-edik koordinátája,
+azaz $e_i^\ast v_{\pi(i)}$ van írva.
+Így az $\prod_{i=1}^n e_i^\ast v_{\pi\left( i \right)}$ szám egyszerűen a bástyafelrakásban a bástyák taposta számok szorzata.
+A baloldali számhoz ezt kell megszorozni még a szóban forgó permutáció előjelével, 
+majd ugyanezt az összes permutációra megismételni és a kapott számok összegét képezni.
+
+A jobboldali szám interpretációját kapjuk, ha most a $v_1,\dots,v_n$ vektorok koordinátáit rendre a sorokba írjuk.
+Újra gondoljunk egy $\pi$ permutáció bástyafelrakására.
+Minden $i$-re az $i$-edik sor $\pi\left( i \right)$-edik elemén áll tehát egy bástya,
+ami most az $i$-edik vektornak tehát $v_i$-nek, a $\pi\left( i \right)$-edik koordinátáját azaz $e_{\pi(i)}^\ast v_i$-t tapossa.
+Így az $\prod_{i=1}^n e_{\pi(i)}^\ast v_i$ szám egyszerűen a bástyafelrakásban a bástyák taposta számok szorzata.
+A jobboldali számhoz ezt kell megszorozni még a szóban forgó permutáció előjelével, 
+majd ugyanezt az összes permutációra megismételni és a kapott számok összegét képezni.
+
+Az állítás szerint tehát, mindegy hogy a sorokra vagy az oszlopokra másoljuk a $v_1,\dots,v_n$ vektorok koordinátáit,
+a fenti eljárás mindkét esetben ugyanazt a számot eredményezi.
+\footnote{
+E hosszú, de ultra fontos interpretáció után nézzük az egysoros bizonyítást.
+}
+\begin{proof}
+    A számolásban kihasználjuk, hogy minden $\pi\in S_n$ mellett $\sgn\pi=\sgn\pi^{-1}$,
+    és azt, hogy a $\pi \mapsto \pi ^{-1}$ hozzárendelés egy bijekció az $S_{n}$ halmazon. 
+    \[
+        \sum_{\pi \in S_{n}}\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi
+        \left( i\right) }=\sum_{\pi \in S_{n}}\operatorname{sgn}\pi
+        ^{-1}\prod_{k=1}^{n}e_{\pi ^{-1}\left( k\right) }^{\ast }v_{k}=\sum_{\pi \in
+        S_{n}}\operatorname{sgn}\pi \prod_{k=1}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}.\qedhere
+    \]
+\end{proof}
+
+\begin{proposition}[,,Példa'' mértékre]
+    Rögzítsünk az $n$-dimenziós $V$ vektortérben egy $\left\{ e_{1},\ldots e_{n}\right\} $ bázist. 
+    Ekkor 
+    \[
+        d_{\left\{ e_1,\dots,e_n \right\}}\left( v_1,\dots,v_n \right)=
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right)}
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{\pi \left( i\right)}^{\ast }v_{i}
+    \]
+    Ekkor $d_{\left\{ e_1,..,e_n \right\}}:V\times \ldots \times V\rightarrow \mathbb{F}$ egy olyan mérték, 
+    amelyre $d_{\left\{ e_1,\dots,e_n \right\}}\left( e_{1},\ldots ,e_{n}\right) =1.$
+    \footnote{
+    Ha a szövegkörnyezetből világos, 
+    hogy melyik a rögzített bázis, 
+    akkor a kicsit nehézkes $d_{\left\{ e_1,\dots,e_n \right\}}$ jelölés helyett csak $d$-t használunk.
+    }
+\end{proposition}
+
+\begin{proof}
+    Világos, 
+    hogy $d\left( e_{1},\ldots ,e_{n}\right) =1,$ 
+    hiszen ha $\pi $ nem az identikus permutáció, 
+    akkor van olyan $i$ melyre $\pi \left( i\right) \neq i,$
+    az $e_{i}^{\ast }\left( e_{\pi \left( i\right) }\right) =0$.
+    Így a $d\left( e_1,\dots,e_n \right)$ definíciójában az $n!$ darab permutáció minden elemére $0$-t
+    kapunk, kivétel az identikus permutáció,
+    amelynek előjele $+1$ és 
+    $
+    \prod_{i=1}^ne_i^\star e_{\id(i)}
+    =
+    \prod_{i=1}^n\delta_{i,i}=1.
+    $
+
+    A linearitás könnyen következik az $e_{i}^\ast$ duális bázis elemek linearitásából. 
+    Mondjuk ha a hátsó $n-1$ változót rögzítjük, 
+    akkor az első változót szabadon hagyva
+    \[
+    d\left(\,\cdot\,,v_{2},\ldots ,v_{n}\right)  
+    =
+    \sum_{\pi\in S_{n}}\sgn\pi
+        \cdot
+        \left(\prod_{k=2}^ne_{\pi\left( k\right) }^\ast v_k\right)
+            \cdot
+            e_{\pi\left( 1\right)}^\ast.
+    \]
+    Mivel a lineáris funkcionálok vektorteret alkotnak, 
+    ezért a $d\left( \,\cdot\,,v_2,\dots,v_n \right)$ függvény is egy lineáris funkcionál.
+    Analóg módon a többi változót szabadon hagyva kapjuk, hogy $d$ egy $n$-lineáris függvény.
+
+    Az anti-szimmetria igazolásához szükséges, a $\sgn\pi =-\sgn\pi^\ast$ összefüggés. 
+    Például az első két változóra:
+    \begin{multline*}
+    d\left( x,y,v_{3},\ldots ,v_{n}\right)  
+    =
+    \\
+    \sum_{\pi \in S_{n}}\sgn\pi \left( \prod_{k=3}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}\right)
+        e_{\pi \left( 1\right) }^\ast x 
+        \cdot 
+        e_{\pi \left( 2\right)}^\ast y
+    =
+    \sum_{\pi \in S_{n}}(-\sgn\pi^\ast)
+        \left(\prod_{k=3}^{n}e_{\pi ^{\ast }\left( k\right) }^{\ast }v_{k}\right) 
+            e_{\pi^\ast\left( 1\right) }^{\ast } y 
+            \cdot
+            e_{\pi^\ast\left(2\right) }^\ast x
+    =
+    \\
+    -\sum_{\pi \in S_{n}}\operatorname{sgn}\pi \left( \prod_{k=3}^{n}e_{\pi \left( k\right) }^{\ast }v_{k}\right) 
+        e_{\pi \left( 1\right) }^{\ast }y 
+        \cdot
+        e_{\pi \left( 2\right) }^{\ast } x
+    =
+    -d\left(y,x,v_{3},\ldots ,v_{n}\right) .
+    \end{multline*}
+    Itt $\pi^\ast$ a $\pi$ permutációnak és az $(1,2)$ elemeket felcserélő transzpozíciónak a szorzata.
+    Az utolsó egyenlőségben azt használtuk ki, 
+    hogy ha $\pi$ befutja az $S_n$ csoport összes elemét, 
+    akkor az evvel párhuzamosan számolt $\pi^\ast$ permutációk is végig mennek a permutáció csoport minden elemén.
+
+    Analóg módon kapjuk, hogy bármely két változót felcserélve $d$ értéke az ellentettjére változik.
+\end{proof}
+
+Meggondoltuk tehát, hogy egy $n$ dimenziós vektortéren értelmezett mértékek vektortere legalább egy dimenziós,
+hiszen van a vektortérnek a zérustól különböző eleme.
+Megmutattuk ugyanis, hogy adott $\left\{ e_1,\dots,e_n \right\}$ bázis rögzítése mellett, 
+az ehhez a bázishoz tartozó $d_{\left\{ e_1,\dots,e_n \right\}}$ függvény egy nem triviális mérték.
+Persze sok-sok bázist tudunk rögzíteni, így sok-sok mértéket is tudunk konstruálni.
+Leginkább pedig az általunk konstruált mértékeken felül is lehet még mérték.
+Ehhez képest nem sokára látni fogjuk, 
+hogy a mértékek vektortere pontosan egy-dimenziós vektortér.
+
+Kis kitérőként, azonban ezek előtt érdemes bevezetni a mátrix determinánsának fogalmát.
+
+\subsection{Mátrix determinánsa}
+\begin{definition}[Mátrix determinánsa]
+    \index{mátrix determinánsa}\index{determináns}
+    Legyen 
+    $\left[ A\right]$ az $A:V\rightarrow V$ 
+    lineáris transzformációnak valamely rögzített bázisban felírt mátrixa. 
+    Ekkor e mátrix $\left| \left[ A\right] \right|$ \emph{determinánsa} a következő szám:
+    \[
+    \left| \left[ A\right] \right| 
+    =
+    \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]_{i,\pi \left( i\right) }.\qedhere
+    \]
+\end{definition}
+Az előbb bevezetett $d$ függvény és a mátrix determinánsának kapcsolata.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció, és $\left\{ e_1,\dots,e_n \right\}$
+    egy rögzített bázis $V$-ben.
+    Ekkor
+    \[
+        |[A]_{\left\{e_1,\dots,e_n \right\}}|
+        =
+        d_{\left\{e_1,\dots,e_n \right\}}\left( Ae_1,\dots,Ae_n \right)
+        =
+        |[A]^T_{\left\{e_1,\dots,e_n \right\}}|.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Elég azt látni, hogy 
+    \begin{math}
+        [A]_{i,\pi(i)}
+    \end{math}
+    a mátrix $\pi(i)$-edik oszlopának, tehát $Ae_{\pi(i)}$-nek $i$-edik koordinátája, azaz 
+    \begin{math}
+        e_i^\ast\left( Ae_{\pi(i)} \right).
+    \end{math}
+    Így 
+    \begin{multline*}
+        |[A]_{\left\{e_1,\dots,e_n \right\}}|
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]_{i,\pi \left( i\right) }
+        \\
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_i^\ast\left( Ae_{\pi(i)} \right)
+        =
+        d\left( Ae_1,\dots,Ae_n \right)
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_{\pi(i)}^\ast\left( Ae_i \right)
+        \\
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]_{\pi \left( i\right),i }
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]^T_{i,\pi \left( i\right)}
+        =
+        |[A]^T_{\left\{e_1,\dots,e_n \right\}}|.\qedhere
+    \end{multline*}
+\end{proof}
+
+\subsubsection{Mátrix determinánsának legfontosabb tulajdonságai}
+
+Összefoglaljuk, amit eddig a pontig megértettünk a mátrix determinánsának fogalmáról.
+\footnote{
+Mielőtt tovább megyünk adjunk képletet $1\times 1$-es, 
+$2\times 2$-es és $3\times 3$-as mátrixok determinánsának kiszámolására, a definíció alapján.
+Érdemes figyelni arra, mennyire nő a definíció komplexitása a méret emelésével.
+}
+Legyen tehát $[A]$ egy mátrix. Ekkor
+\begin{enumerate}
+    \item $|[A]|=|[A]^T|$;
+    \item $|[A]|$ az oszlopok (sorok) lineáris függvénye;
+    \item $|[A]|$ értéke ellentetjére változik két oszlopának (sorának) felcserélése után;
+    \item $|[A]|$ értéke zérus, ha két azonos oszlopa (sora) van;
+    \item $|[A]|$ értéke nem változik, ha egyik oszlopához (sorához) egy másik oszlop (sor) skalárszorosát adjuk.
+\end{enumerate}
+
+
+\section{A mértékek jellemzése}
+\index{mérték}
 
 \begin{proposition}
-Legyen $X$ egy $n$-dimenziós vektortér, $f:X\times \ldots \times
-X\rightarrow \mathbb{F}$ mérték. Ekkor ha a $\left\{ v_{1},\ldots ,v_{n}\right\}
-\subseteq X$ vektorrendszer lineárisan összefüggő, akkor 
-\[
-f\left( v_{1},\ldots ,v_{n}\right) =0. 
-\]
+Legyen $V$ egy $n$-dimenziós vektortér, $f:V\times \ldots \times
+V\rightarrow \mathbb{F}$ mérték. Ekkor ha a $\left\{ v_{1},\ldots ,v_{n}\right\}
+\subseteq V$ vektorrendszer lineárisan összefüggő, akkor 
+\(
+f\left( v_{1},\ldots ,v_{n}\right) =0.
+\)
 \end{proposition}
 
 \begin{proof}
@@ -9383,17 +9549,17 @@ v_{1},\ldots ,v_{n}\right) =f\left( v_{1},\ldots ,0,\ldots ,v_{n}\right) =0.$
 \end{proof}
 
 \begin{proposition}
-Legyen $X$ egy $n$-dimenziós vektortér, $f:X\times \ldots \times
-X\rightarrow \mathbb{F}$ mérték. Ekkor ha van olyan $e_{1},\ldots ,e_{n}$ bázisa a té%
+Legyen $V$ egy $n$-dimenziós vektortér, $f:V\times \ldots \times
+V\rightarrow \mathbb{F}$ mérték. Ekkor ha van olyan $e_{1},\ldots ,e_{n}$ bázisa a té%
 rnek melyekre 
-\[
-f\left( e_{1},\ldots ,e_{n}\right) =0 
-\]
+\(
+f\left( e_{1},\ldots ,e_{n}\right) =0,
+\)
 akkor az $f$ mérték a konstans zéró triviális mérték.
 \end{proposition}
 
 \begin{proof}
-Mivel $f$ antiszimmetrikus és minden permutáció előáll transzpozíciók
+Mivel $f$ anti-szimmetrikus és minden permutáció előáll transzpozíciók
 szorzataként, ezért tetszőleges $\pi \in S_{n}$ mellett $\left| f\left(
 e_{\pi \left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left(
 n\right) }\right) \right| =\left| f\left( e_{1},\ldots ,e_{n}\right) \right|
@@ -9406,16 +9572,16 @@ v_{1},\ldots ,v_{n}\right) =\sum_{\pi \in S_{n}}\beta _{\pi }f\left( e_{\pi
 \end{proof}
 
 \begin{corollary}
-$f:X\times \ldots \times X\rightarrow \mathbb{F}$ nem triviális mérték. Az 
+$f:V\times \ldots \times V\rightarrow \mathbb{F}$ nem triviális mérték. Az 
 \[
-\left\{ v_{1},\ldots ,v_{n}\right\} \subseteq X%
+\left\{ v_{1},\ldots ,v_{n}\right\} \subseteq V%
 \text{ lineárisan összefüggő pontosan akkor, ha }f\left( v_{1},\ldots
-,v_{n}\right) =0. 
+,v_{n}\right) =0.\qedhere
 \]
 \end{corollary}
 
 \begin{proposition}
-Legyen $X$ egy $n$-dimenziós vektortér. Ekkor az $X$ tér $n$-szeres
+Legyen $V$ egy $n$-dimenziós vektortér. Ekkor az $V$ tér $n$-szeres
 Descartes szorzatán értelmezett mértékek vektortere $1$ dimenziós.
 \end{proposition}
 
@@ -9433,10 +9599,10 @@ D-\delta d=0.$
 \end{proof}
 
 \begin{proposition}
-Legyen $X$ egy $n$-dimenziós vektortér, $f$ egy nem triviális mérték, $A\in
-L\left( X\right) $ lineáris operátor. Ekkor egyértelműen létezik $\delta
+Legyen $V$ egy $n$-dimenziós vektortér, $f$ egy nem triviális mérték, $A\in
+L\left( V\right) $ lineáris operátor. Ekkor egyértelműen létezik $\delta
 _{f}\left( A\right) \in \mathbb{F}$ szám melyre minden $\left\{ v_{1},\ldots
-,v_{n}\right\} \subseteq X$ esetén 
+,v_{n}\right\} \subseteq V$ esetén 
 \[
 f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{f}\left( A\right) f\left(
 v_{1},\ldots ,v_{n}\right) 
@@ -9477,11 +9643,11 @@ szám. A továbbiakban a $\delta _{f}\left( A\right) $ helyett csak $\delta
 \index{determinánsok szorzattétele}
 
 \begin{proposition}[Szorzattétel]
-Legyen $X$ egy $n$-dimenziós vektortér, $A$ és $B\in L\left( X\right) $ lineá%
+Legyen $V$ egy $n$-dimenziós vektortér, $A$ és $B\in L\left( V\right) $ lineá%
 ris operátorok. Ekkor 
 \[
 \delta \left( A\circ B\right) =\delta \left( A\right) \delta \left( B\right)
-. 
+. \qedhere
 \]
 \end{proposition}
 
@@ -9504,7 +9670,7 @@ E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
 \end{proof}
 
 \begin{proposition}
-Legyen $X$ vektortér, $A\in L\left( X\right) $. Ekkor $A$ lineáris operá%
+Legyen $V$ vektortér, $A\in L\left( V\right) $. Ekkor $A$ lineáris operá%
 tornak a tér tetszőleges bázisában felírt determinánsának mátrixa azonos a $%
 A $-nak mint lineáris operátornak a mátrixával, azaz 
 \[
@@ -9529,7 +9695,7 @@ Ae_{1},\ldots ,Ae_{n}\right) ,$ ahol $d\left( v_{1},\ldots v_{n}\right)
 \begin{corollary}
 A lineáris operátor mátrixának determinánsa független az adott koordinátázást%
 ól, így beszélhetünk a lineáris operátor determinánsáról. A továbbiakban $%
-\left| A\right| $ -val jelüljük egy $A\in L\left( X\right) $ determinánsát.
+\left| A\right| $ -val jelüljük egy $A\in L\left( V\right) $ determinánsát.
 \end{corollary}
 
 \begin{corollary}
@@ -10207,5 +10373,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 05 Apr 2020 10:39:27 AM CEST
+Last Modified : Sun 05 Apr 2020 03:45:34 PM CEST
 
