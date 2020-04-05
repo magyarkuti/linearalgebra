@@ -9514,7 +9514,7 @@ Az előbb bevezetett $d$ függvény és a mátrix determinánsának kapcsolata.
 
 \subsubsection{Mátrix determinánsának legfontosabb tulajdonságai}
 
-Összefoglaljuk, amit eddig a pontig megértettünk a mátrix determinánsának fogalmáról.
+\paragraph{Összefoglaljuk}, amit eddig a pontig megértettünk a mátrix determinánsának fogalmáról.
 \footnote{
 Mielőtt tovább megyünk adjunk képletet $1\times 1$-es, 
 $2\times 2$-es és $3\times 3$-as mátrixok determinánsának kiszámolására, a definíció alapján.
@@ -9529,19 +9529,19 @@ Legyen tehát $[A]$ egy mátrix. Ekkor
     \item $|[A]|$ értéke nem változik, ha egyik oszlopához (sorához) egy másik oszlop (sor) skalárszorosát adjuk.
 \end{enumerate}
 
-\emph{Egy permutáció mátrix determinánsa, a permutáció előjele.}
+\paragraph{Egy permutáció mátrix determinánsa, a permutáció előjele.}
 Ugyanis, ha $\pi$ permutációhoz tartozik a permutáció mátrix, akkor minden $\sigma\neq\pi$ permutáció mellett
 a $\sigma$ permutáció egyik bástyája (sőt legalább két bástyája) zérus elemen áll. 
 Így a determináns definíciója szerint az $n!$ elemszámú összegben a $\pi$ kivételével minden összeadandó zérus.
 Speciálisan, az identitás mátrix determinánsa 1.
 
-\emph{Egy felső (alsó) háromszög alakú mátrix determinánsa a diagonális elemek szorzata.}
+\paragraph{Egy felső (alsó) háromszög alakú mátrix determinánsa a diagonális elemek szorzata.}
 Ugyanis minden $\pi\neq\id$ permutáció esetén van egy bástya a diagonális alatt (és egy a diagonális felett).
 Ez azt jelenti, hogy a definícióban csak az identitás permutációhoz tartozó tag nem feltétlen zérus.
 Az identitáshoz tartozó tag pedig a diagonális elemek szorzata.
 Speciálisan, az identitás mátrix determinánsa 1.
 
-\emph{Egy mátrix determinánsa Gauss-Jordan-eliminációval.}
+\paragraph{Egy mátrix determinánsa Gauss-Jordan-eliminációval.}
 Képzeljük el, hogy adott egy olyan mátrix, amelynek oszlopai lineárisan függetlenek.
 Az eliminációs algoritmusnak arra az alakjára gondoljunk először, amikor a bázisba bevont oszlop vektornak
 is kiírjuk az új bázisban a koordinátáit. 
@@ -9567,10 +9567,70 @@ Számoljuk meg, hogy hány sorcserét kell kapnunk ahhoz, hogy az eredeti oszlop
 végén kapott új bázis elemeket. 
 Ha ehhez páratlan sok csere kellett, akkor $-1$-el kell még szoroznunk a pivot elemek szorzatát.
 Egyébként a determináns a pivot elemek szorzata.
-\footnote{A determináns kiszámolásának ez a preferált és professzionális módszere. Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
+\footnote{
+A determináns kiszámolásának ez a preferált és professzionális módja. 
+Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
 
-
-
+\paragraph{Particionált mátrix determinánsa.}
+Tegyük fel, hogy $A$ egy $(n+m)\times(n+m)$ méretű mátrix,
+amely
+\[
+    A
+    =
+    \begin{pmatrix}
+        A_{1,1}&A_{1,2}\\
+        A_{2,1}&A_{2,2}
+    \end{pmatrix}
+\]
+módon van particionálva, ahol $A_{1,1}$ egy $n\times n$, $A_{2,2}$ egy $m\times m$ méretű négyzetes mátrix,
+továbbá $A_{2,1}$ egy $m\times n$ méretű és $A_{1,2}$ egy $n\times m$ méretű részmátrix.
+Tegyük fel, hogy $A_{2,1}$ minden eleme zérus.
+Ekkor
+\[
+    |A|
+    =
+    |A_{1,1}|\cdot |A_{2,2}|.
+\]
+Látható ugyanis, hogy ha vesszük az $A$ egy bástyafelrakását, akkor ha kerül bástya az $A_{1,2}$ részmátrixra,
+akkor kerül bástya az $A_{2,1}$ részmátrixra is.
+Így a determináns definíciójához elég csak olyan $\pi\in S_{n+m}$ permutációkat venni,
+amelyre $\pi(i)\leq n$, ha $i\leq n$ és $\pi(i)>n$, ha $i>n$.
+Egy ilyen $\pi$ permutációt összelehet rakni $\pi=\left( \sigma,\tau \right)$ alakban,
+ahol $\sigma$ az $\left\{ 1,\dots,n \right\}$ halmaz permutációja és $\tau$ az $\left\{ n+1,\dots,n+m \right\}$ halmaz permutációja.
+Ha $\pi$ egy ilyen permutáció, 
+akkor olyan inverziója nincs, 
+aminek egyik bástyája $A_{1,1}$-ben van és másik bástyája $A_{2,2}$-ben van.
+Ez azt jelenti, 
+hogy ha $k$ a $\sigma$ inverzióinak száma és $l$ a $\tau$ inverzióinak száma, akkor
+a $\pi$ inverzióinak száma éppen $k+l$.
+Tehát
+\[
+    \sgn\pi=\left( -1^{k+l} \right)=\left( -1 \right)^k\left( -1 \right)^l=\sgn\sigma\cdot\sgn\tau.
+\]
+Jelölje a bizonyítás végéig, 
+$S_n$ az $\left\{ 1,\dots,n \right\}$ halmaz, $S_m$ az $\left\{ n+1,\dots,n+m \right\}$ halmaz partíció csoportjait, továbbá
+$S_{n+m}'$ az $\left\{ 1,\dots,n+m \right\}$ halmaz bijekciói közül azon $\pi$ partíciókat, 
+amelyek előállnak $\pi=\left( \sigma,\tau \right)\in S_n\times S_m$ alakban.
+Ekkor
+\begin{multline*}
+    |A_{1,1}|\cdot |A_{2,2}|=
+    \left( 
+        \sum_{\sigma\in S_n}\sgn\sigma\prod_{i=1}^na_{i,\sigma(i)}
+    \right)
+    \left( 
+        \sum_{\tau\in S_m}\sgn\sigma\prod_{i=1}^ma_{n+i,\tau(n+i)}
+    \right)
+    \\
+    =
+    \sum_{(\sigma,\tau)\in S_n\times S_m}\sgn\sigma\sgn\tau\prod_{i=1}^na_{i,\sigma(i)}\prod_{i=n+1}^{n+m}a_{i,\tau(i)}
+    =
+    \sum_{\pi\in S_{n+m}'}\sgn\pi\prod_{i=1}^{n+m}a_{i,\pi(i)}
+    \\
+    =
+    \sum_{\pi\in S_{n+m}}\sgn\pi\prod_{i=1}^{n+m}a_{i,\pi(i)}
+    =
+    |A|.
+\end{multline*}
 \section{A mértékek jellemzése}
 \index{mérték}
 
@@ -10414,5 +10474,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 05 Apr 2020 04:39:54 PM CEST
+Last Modified : Sun 05 Apr 2020 06:54:05 PM CEST
 
