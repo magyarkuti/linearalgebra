@@ -4550,7 +4550,7 @@ Például tekintsük a folytonos függvények $C\left[ 0,1 \right]$ vektorterét
 és legyen $N$ az az altér, amely azon $f\in C\left[ 0,1 \right]$ függvényeket tartalmazza, 
 amelyekre $f\left( 0 \right)=0$.
 Látható, hogy tetszőleges $g\in C\left[ 0,1 \right]$, függvényre, amelyre $g\left( 0 \right)\neq 0$,
-az $g$ által generált egy dimenziós altér direkt kiegészítője az $N$ altérnek.%
+az $g$ által generált egydimenziós altér direkt kiegészítője az $N$ altérnek.%
 \footnote{
     Ha véges dimenziós példára vágyunk, 
     helyettesítsük $C\left[ 0,1 \right]$-et a legfeljebb $n$-ed fokú 
@@ -6722,7 +6722,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     mátrixot tekintjük $\mathbb{R}$ felett, 
     azt kapjuk, hogy ez sem diagonalizálható.
     Van ugyan egyetlen sajátértéke $\lambda=0$,
-    de az ehhez a sajátértékhez tartozó $\ker A$ sajátaltér egy dimenziós,
+    de az ehhez a sajátértékhez tartozó $\ker A$ sajátaltér egydimenziós,
     emiatt nincs a térben két lineárisan független sajátvektor.
 
     A pozitív példa kedvéért nézzük az 
@@ -7661,7 +7661,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \begin{proof}
         Ha a sajátértékek a minimálpolinomnak egyszeres multiplicitású gyökei,
         akkor fennállnak az előző tétel feltételei.
-        Így $V$ előáll mint néhány egy dimenziós invariáns alterének direktösszege,
+        Így $V$ előáll mint néhány egydimenziós invariáns alterének direktösszege,
         ami azt jelenti, hogy van sajátvektorokból álló bázisa, ergo diagonalizálható.
 
         Megfordítva, ha $A$ diagonalizálható, akkor a diagonálisban a sajátértékei vannak.
@@ -8000,7 +8000,7 @@ a nillpotens operátorok redukcióját biztosító állításban.
 \begin{proof}
     A nillpotens transzformáció rendje szerinti teljes indukció.
     Ha $m=1$, akkor $B=0$, de a konstans zérus operátorra nézve minden altér invariáns,
-    így a tétel összesen annyit állít, hogy egy nem zérus $v$ vektor generálta egy dimenziós altérnek van direkt kiegészítője.
+    így a tétel összesen annyit állít, hogy egy nem zérus $v$ vektor generálta egydimenziós altérnek van direkt kiegészítője.
 
     Tegyük fel, hogy igaz az állítás minden vektortér legfeljebb $m-1$-ed rendben nillpotens transzformációjára.
     Legyen tehát $m>1$ és $B$ egy a $W$ vektortéren értelmezett $m$-ed rendben nillpotens lineáris transzformáció.
@@ -8484,7 +8484,7 @@ elemeiből mint oszlopokból alkotott mátrix, ami azt jelenti, hogy
         0&0&0&0
     \end{pmatrix}.
 \]
-\subsection{Két invariáns altér (3- és 1-dimenziós)}
+\subsection{Két invariáns altér (3- és 1 dimenziós)}
 Most a játék kedvéért, keressük meg a fenti  felbontást és bázist, egy konkrét esetben.
 Legyen $W$ egy négy dimenziós vektortér az $\left\{ u_1,u_2,u_3,u_4 \right\}$ rögzült bázissal.
 A $B\in L\left( W \right)$ lineáris transzformáció definíciója a báziselemek segítségével:
@@ -8539,7 +8539,7 @@ ergo $m\left( t \right)=t^3$, és $B$ egy harmadrendben nilpotens transzformáci
 
 Írjuk fel a fenti tételben szereplő invariáns direktfelbontást.
 Mivel a $B$ rangja ránézésre 2, így a magtere 2 dimenziós, ergo két invariáns altér direktösszege $W$, amiből
-az egyik 3 dimenziós, így a másik csak egy dimenziós lehet, ezért azt csak a magtér egyik eleme generálhatja!
+az egyik 3 dimenziós, így a másik csak egydimenziós lehet, ezért azt csak a magtér egyik eleme generálhatja!
 A három dimenziós altér lehet például a $\lin\left\{ u_4;B \right\}$, 
 hiszen éppen az imént láttuk, hogy $B^2u_4\neq 0$.
 A fenti \ref{pr:nilpfelb}.~állítás éppen azt mondja, hogy ennek az altérnek van olyan $K$ invariáns altér direkt kiegészítője, 
@@ -9454,7 +9454,7 @@ az ehhez a bázishoz tartozó $d_{\left\{ e_1,\dots,e_n \right\}}$ függvény eg
 Persze sok-sok bázist tudunk rögzíteni, így sok-sok mértéket is tudunk konstruálni.
 Leginkább pedig az általunk konstruált mértékeken felül is lehet még mérték a $V$ felett.
 Ehhez képest nem sokára látni fogjuk, 
-hogy a $V$ feletti mértékek vektortere pontosan egy-dimenziós vektortér.
+hogy a $V$ feletti mértékek vektortere pontosan egydimenziós vektortér.
 A legfontosabb gondolat, hogy a fenti $d$-nek csak konstans szorosai lehetnek a $V$ feletti mértékek,
 de megszakítjuk itt a tárgyalást, azért hogy a fent definiált mérték fontosságát hangsúlyozzuk.
 
@@ -9723,7 +9723,7 @@ Foglaljuk össze az előző két állítást:
 \end{proposition}
 
 \begin{proposition}
-    Tetszőleges (legalább egy dimenziós) vektortér feletti mértékek vektortere egy-dimenziós vektortér.
+    Tetszőleges (legalább egy dimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
 \end{proposition}
 \begin{proof}
     Rögzítsük a tér egy $\{e_{1},\ldots ,e_{n}\}$ bázisát. 
@@ -9740,49 +9740,56 @@ Foglaljuk össze az előző két állítást:
     $\delta\in \mathbb{F}$,
     amelyre 
     $D=\delta d.$ 
-    Legyen ezért $\delta \doteq D\left( e_{1},\ldots,e_{n}\right) ,$ 
+    Legyen ezért 
+    $\delta
+    =
+    D\left( e_{1},\ldots,e_{n}\right)
+    $, 
     így 
     \[
+        \left( D-\delta d \right)\left( e_1,\dots,e_n \right)
+        =
         D\left( e_{1},\ldots ,e_{n}\right) -\delta d\left(e_{1},\ldots ,e_{n}\right) 
+        =
+        \delta-\delta\cdot 1
         =
         0.
     \] 
     Ez viszont azt jelenti, 
     hogy a $D-\delta d$ mérték az  $\left\{e_{1},\ldots ,e_{n}  \right\}$ 
-    bázison eltűnik ami csak úgy lehetséges, ha 
+    bázison eltűnik,
+    ami csak úgy lehetséges ha 
     $D-\delta d=0$,
     ergo
     \begin{math}
         D=\delta d.
     \end{math}
-    Ezt kellett belátni. 
 \end{proof}
 
-\begin{proposition}
-    Legyen $f$ egy nem triviális mérték a $V$ vektortér felett, 
-    és $A\in L\left( V \right)$ egy lineáris transzformáció.
-    Ekkor létezik egyetlen olyan 
-    $\delta_{f}\left( A\right) \in \mathbb{F}$ szám,
-    amelyre minden
-    $v_1,\dots,v_n\in V$ vektor mellett
+A fejezet legfontosabb gondolatához érkeztünk.
+\begin{defprop}[Lineáris transzformáció determinánsa]
+    \index{lineáris transzformáció determinánsa}%
+    \index{determináns}
+    Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
+    Ehhez létezik egyetlen olyan $\delta\left( A \right)\in\mathbb{F}$ szám,
+    amelyre minden $f$ nem triviális $V$ feletti mérték esetén az 
     \[
-        f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{f}\left( A\right) f\left(
-        v_{1},\ldots ,v_{n}\right).
+        f\left( Av_1,\dots,Av_n \right)
+        =
+        \delta\left( A \right)
+        f\left( v_1,\dots,v_n \right)
     \]
-    Sőt! 
-    Az így kapott $\delta _{f}\left( A\right) $ szám nem függ az $f$ mértéktől azaz,
-    ha $g$ egy másik nem triviális mérték akkor 
-    \[
-        \delta_{f}\left( A\right) =\delta _{g}\left( A\right) .\qedhere
-    \]
-\end{proposition}
+    azonosság minden $v_1,\dots,v_n\in V$ vektor mellett fenáll.
 
+    Ezt a $\delta\left( A \right)$ számot nevezzük az $A$ lineáris transzformáció \emph{determinánsának.}
+\end{defprop}
 \begin{proof}
-    Ha $A$ egy lineáris operátor, 
-    akkor az $\left( v,\ldots v_{n}\right) \mapsto f\left( Av_{1},\ldots ,Av_{n}\right) $ 
-    függvény is mérték. 
-    Láttuk, hogy a mértékek tere $1$ dimenziós, 
-    így van egyetlen olyan $\delta _{f}\left( A\right)\in\mathbb{F} $ szám,
+    Vegyünk egy $f$ nem triviális mértéket $V$ felett. 
+    Láttuk, hogy ilyen valóban létezik, hiszen a mértékek egydimenziós teret alkotnak.
+    Világos, hogy a $\left( v,\ldots v_{n}\right) \mapsto f\left( Av_{1},\ldots ,Av_{n}\right) $ 
+    függvény is egy mérték. 
+    No de, a mértékek egy egydimenziós térnek az elemei, 
+    ezért van egyetlen olyan $\delta _{f}\left( A\right)\in\mathbb{F} $ szám,
     amelyre minden 
     $
     v_{1},\ldots ,v_{n}
@@ -9793,20 +9800,21 @@ Foglaljuk össze az előző két állítást:
     =
     \delta _{f}\left( A\right) f\left( v_{1},\ldots,v_{n}\right)
     $.
-    \\
-    Legyen $g$ egy másik nem zérus mérték. 
+    Legyen most $g$ egy másik nem zérus mérték. 
     Ekkor 
-    $g=\gamma f$ valamely $\gamma\neq 0$ számmal, és
+    $g=\gamma f$ valamely $\gamma\neq 0$ számmal. 
+    Persze $g$-re is igaz, amit eddig igazoltunk,
+    így
     \begin{displaymath}
         g\left( Av_{1},\ldots ,Av_{n}\right) 
         =
-        \delta_{g}\left( A\right) g\left( v_{1},\ldots ,v_{n}\right)
+        \delta_{g}\left( A\right) g\left( v_{1},\ldots ,v_{n}\right),
         \text{ valamint }
         f\left( Av_{1},\ldots,Av_{n}\right) 
         =
         \delta _{f}\left( A\right) f\left( v_{1},\ldots,v_{n}\right).
     \end{displaymath}
-    No de, ha baloldali kifejezésben a $g$ mértéket a $\gamma f$ mértékre cseréljük, 
+    Ha a baloldali kifejezésben a $g$ mértéket a $\gamma f$ mértékre cseréljük, 
     majd osztunk a $\gamma$ számmal, 
     akkor
     \[
@@ -9815,41 +9823,26 @@ Foglaljuk össze az előző két állítást:
     \delta _{g}\left( A\right) f\left(v_{1},\ldots ,v_{n}\right)
     \]
     következik. 
-    Így $\delta _{f}\left( A\right) $ egyértelműsége miatt már
+    Így $\delta _{f}\left( A\right) $ egyértelműsége miatt
     $
-    \delta _{f}\left( A\right) =\delta _{g}\left( A\right) 
+    \delta _{f}\left( A\right) =\delta _{g}\left( A\right). 
     $ 
-    is fennáll.
+    A $\delta_f\left( A \right)$ értéke tehát minden $f$ nem triviális mérték mellett azonos,
+    tehát azt $\delta(A)$-val jelölve, kapjuk az egyetlen olyan számot, 
+    amelyre a kívánt azonosság fennáll.
 \end{proof}
-
-A fejezet legfontosabb gondolatához érkeztünk.
-\begin{definition}[Lineáris transzformáció determinánsa]
-    \index{lineáris transzformáció determinánsa}%
-    \index{determináns}
-    Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ véges dimenziós vektortérnek.
-    Tudjuk, hogy akármilyen $f$ nem triviális mértékből indulunk is ki,
-    létezik egyetlen olyan, $\delta\left( A \right)\in\mathbb{F}$ szám,
-    amelyre
-    \[
-        f\left( Av_1,\dots,Av_n \right)
-        =
-        \delta\left( A \right)
-        f\left( v_1,\dots,v_n \right)
-    \]
-    minden $v_1,\dots,v_n\in V$ mellett fennáll.
-    Ezt a $\delta\left( A \right)$ számot nevezzük az $A$ lineáris transzformáció \emph{determinánsának.}
-\end{definition}
 
 \begin{proposition}[Szorzattétel]
 \index{determinánsok szorzattétele}
-Legyen $V$ egy $n$-dimenziós vektortér, $A$ és $B\in L\left( V\right) $ lineá%
-ris operátorok. Ekkor 
-\[
-\delta \left( A\circ B\right) =\delta \left( A\right) \delta \left( B\right)
-. \qedhere
-\]
+    Legyenek az $A,B\in L\left( V \right)$ lineáris transzformációk a $V$ véges dimenziós vektortéren.
+    Ekkor 
+    \[
+        \delta\left( A\circ B\right) 
+        =
+        \delta\left( A\right) \delta\left( B\right).
+        \qedhere
+    \]
 \end{proposition}
-
 \begin{proof}
 A $\delta \left( A\circ B\right) $ definíciója szerint ez az egyetlen olyan
 szám, amelyikre minden $v_{1},\ldots ,v_{n}$ mellett 
@@ -9869,26 +9862,27 @@ E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
 \end{proof}
 
 \begin{proposition}
-Legyen $V$ vektortér, $A\in L\left( V\right) $. Ekkor $A$ lineáris operá%
-tornak a tér tetszőleges bázisában felírt determinánsának mátrixa azonos a $%
-A $-nak mint lineáris operátornak a mátrixával, azaz 
-\[
-\delta \left( A\right) =\left| _{\left\{ e_{1},\ldots ,e_{n}\right\} }\left[
-A\right] \right| 
-\]
-teljesül.
+    Legyen $A\in L\left( V\right)$ egy lineáris transzformáció.
+    Ekkor az $A$-nak a tér bármely bázisában felírt mátrixának a determinánsa azonos $A$-nak mint
+    lineáris transzformációnak a determinánsával.
+    Formálisan tetszőleges $\left\{ e_1,\dots,e_n \right\}$ bázis mellett:
+    \[
+        \delta \left( A\right) 
+        =
+        \left| 
+            \left[
+                A
+            \right]_{\left\{ e_{1},\ldots ,e_{n}\right\} } 
+        \right|.\qedhere
+    \]
 \end{proposition}
-
 \begin{proof}
-Láttuk, hogy az $A$ lineáris operátor $e_{1},\ldots ,e_{n}$ bázisában felírt
-mátrixának determinánsára $\left| \left[ A\right] \right| =d\left(
-Ae_{1},\ldots ,Ae_{n}\right) ,$ ahol $d\left( v_{1},\ldots v_{n}\right)
-\doteq \sum_{\pi \in S_{n}}%
-\operatorname{sgn}\pi \prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right) }.$ Így 
-\[
-\left| \left[ A\right] \right| =d\left( Ae_{1},\ldots ,Ae_{n}\right) =\delta
-\left( A\right) d\left( e_{1},\ldots ,e_{n}\right) =\delta \left( A\right) . \qedhere
-\]
+    Jelölje $d=d_{\left\{e_1,\dots,e_n\right\}}$ a bázishoz tartozó nem triviális mértéket.
+    Ekkor
+    \[
+        \left| \left[ A\right] \right| =d\left( Ae_{1},\ldots ,Ae_{n}\right) =\delta
+        \left( A\right) d\left( e_{1},\ldots ,e_{n}\right) =\delta \left( A\right) . \qedhere
+    \]
 \end{proof}
 
 \begin{corollary}
@@ -9999,8 +9993,8 @@ polinom mellett $p\left( A_1 \right)$ és $q\left( A_2 \right)$ is kommutálnak.
 \end{lemma}
 \begin{proof}
     A tér dimenziója szerinti indukció.
-    Egy egy dimenziós tér minden nem nulla vektora sajátvektora tetszőleges lineáris transzformációjának,
-    így persze bármely két egy dimenziós téren értelmezett lineáris transzformációnak is van közös
+    Egy egydimenziós tér minden nem nulla vektora sajátvektora tetszőleges lineáris transzformációjának,
+    így persze bármely két egydimenziós téren értelmezett lineáris transzformációnak is van közös
     sajátvektora.
     Tegyük fel, 
     hogy az állítás igaz minden legfeljebb $n$-dimenziós vektortérre
@@ -10572,5 +10566,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 06 Apr 2020 10:22:23 AM CEST
+Last Modified : Mon 06 Apr 2020 11:58:53 AM CEST
 
