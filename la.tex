@@ -9237,8 +9237,9 @@ Ezt úgy fejezzük ki, hogy az $\mathbb{F}$ test nem \emph{2 karakaterisztikáj�
     $A:V_{1}\times \ldots \times V_{k}\rightarrow V$ 
     leképezést \emph{anti-szimmetrikus (alternáló) multi-lineáris operátornak} nevezzük.
 
-    Ha $V$ egy nem 2 karakterisztikájú test feletti $n$-dimenziós vektortér, akkor egy 
-    $V\times \dots \times V\to V$ $n$-lineáris anti-szimmetrikus függvényt \emph{mértéknek}\index{mérték} nevezzük.
+    Ha $V$ egy nem 2 karakterisztikájú test feletti $n$-dimenziós vektortér, 
+    akkor egy $V\times \dots \times V\to V$ $n$-lineáris anti-szimmetrikus függvényt 
+    a $V$ vektortér feletti \emph{mértéknek}\index{mérték} nevezzünk.
 \end{definition}
 \begin{proposition}
     Legyen $V$ olyan $\mathbb{F}$ test feletti vektortér, ahol a $1+1\neq 0$.
@@ -9444,24 +9445,27 @@ E hosszú, de ultra fontos interpretáció után nézzük az egysoros bizonyít�
     Analóg módon kapjuk, hogy bármely két változót felcserélve $d$ értéke az ellentettjére változik.
 \end{proof}
 
-Meggondoltuk tehát, hogy egy $n$ dimenziós vektortéren értelmezett mértékek vektortere legalább egy dimenziós,
-hiszen van a vektortérnek a zérustól különböző eleme.
-Megmutattuk ugyanis, hogy adott $\left\{ e_1,\dots,e_n \right\}$ bázis rögzítése mellett, 
-az ehhez a bázishoz tartozó $d_{\left\{ e_1,\dots,e_n \right\}}$ függvény egy nem triviális mérték.
+Meggondoltuk tehát, 
+hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egy dimenziós,
+hiszen van e vektortérnek a zérustól különböző eleme.
+Azt mutattuk meg, hogy
+adott $\left\{ e_1,\dots,e_n \right\}$ bázis rögzítése mellett, 
+az ehhez a bázishoz tartozó $d_{\left\{ e_1,\dots,e_n \right\}}$ függvény egy nem triviális mérték $V$ felett.
 Persze sok-sok bázist tudunk rögzíteni, így sok-sok mértéket is tudunk konstruálni.
-Leginkább pedig az általunk konstruált mértékeken felül is lehet még mérték.
+Leginkább pedig az általunk konstruált mértékeken felül is lehet még mérték a $V$ felett.
 Ehhez képest nem sokára látni fogjuk, 
-hogy a mértékek vektortere pontosan egy-dimenziós vektortér.
-
-Kis kitérőként, azonban ezek előtt érdemes bevezetni a mátrix determinánsának fogalmát.
+hogy a $V$ feletti mértékek vektortere pontosan egy-dimenziós vektortér.
+A legfontosabb gondolat, hogy a fenti $d$-nek csak konstans szorosai lehetnek a $V$ feletti mértékek,
+de megszakítjuk itt a tárgyalást, azért hogy a fent definiált mérték fontosságát hangsúlyozzuk.
 
 \subsection{Mátrix determinánsa}
+Gondoljunk erre a szakaszra mint egy érdekes kitérőre, 
+ha már van a kezünkben egy igazi -- értsd nem triviális -- mérték.
 \begin{definition}[Mátrix determinánsa]
     \index{mátrix determinánsa}\index{determináns}
     Legyen 
-    $\left[ A\right]$ az $A:V\rightarrow V$ 
-    lineáris transzformációnak valamely rögzített bázisban felírt mátrixa. 
-    Ekkor e mátrix $\left| \left[ A\right] \right|$ \emph{determinánsa} a következő szám:
+    $\left[ A\right]$ egy mátrix.
+    E mátrix $\left| \left[ A\right] \right|$ \emph{determinánsa} a következő szám:
     \[
     \left| \left[ A\right] \right| 
     =
@@ -9470,15 +9474,17 @@ Kis kitérőként, azonban ezek előtt érdemes bevezetni a mátrix determináns
 \end{definition}
 Az előbb bevezetett $d$ függvény és a mátrix determinánsának kapcsolata.
 \begin{proposition}
-    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció, és $\left\{ e_1,\dots,e_n \right\}$
-    egy rögzített bázis $V$-ben.
+    Legyen $V$ egy vektortér,  $\left\{ e_1,\dots,e_n \right\}$ egy bázis,
+    és $a_1,\dots,a_n\in V$ vektorok.
+    Az $A$ mátrix oszlopai legyenek rendre az 
+    $a_1,\dots,a_n$ vektorok fenti bázisban felírt koordinátavektorai.
     Ekkor
     \[
-        |[A]_{\left\{e_1,\dots,e_n \right\}}|
+        |[A]|
         =
-        d_{\left\{e_1,\dots,e_n \right\}}\left( Ae_1,\dots,Ae_n \right)
+        d_{\left\{e_1,\dots,e_n \right\}}\left( a_1,\dots,a_n \right)
         =
-        |[A]^T_{\left\{e_1,\dots,e_n \right\}}|.\qedhere
+        |[A]|^T.\qedhere
     \]
 \end{proposition}
 \begin{proof}
@@ -9486,35 +9492,37 @@ Az előbb bevezetett $d$ függvény és a mátrix determinánsának kapcsolata.
     \begin{math}
         [A]_{i,\pi(i)}
     \end{math}
-    a mátrix $\pi(i)$-edik oszlopának, tehát $Ae_{\pi(i)}$-nek $i$-edik koordinátája, azaz 
+    a mátrix $\pi(i)$-edik oszlopának, tehát $a_{\pi(i)}$-nek $i$-edik koordinátája, azaz 
+    a
     \begin{math}
-        e_i^\ast\left( Ae_{\pi(i)} \right).
+        e_i^\ast\left( a_{\pi(i)} \right).
     \end{math}
     Így 
     \begin{multline*}
-        |[A]_{\left\{e_1,\dots,e_n \right\}}|
+        |[A]|
         =
         \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]_{i,\pi \left( i\right) }
         \\
         =
-        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_i^\ast\left( Ae_{\pi(i)} \right)
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_i^\ast\left( a_{\pi(i)} \right)
         =
-        d\left( Ae_1,\dots,Ae_n \right)
+        d\left( a_1,\dots,a_n \right)
         =
-        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_{\pi(i)}^\ast\left( Ae_i \right)
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_{\pi(i)}^\ast\left( a_i \right)
         \\
         =
         \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]_{\pi \left( i\right),i }
         =
         \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^n\left[ A\right]^T_{i,\pi \left( i\right)}
         =
-        |[A]^T_{\left\{e_1,\dots,e_n \right\}}|.\qedhere
+        |[A]^T_{\left\{e_1,\dots,e_n \right\}}|.
     \end{multline*}
+    Ezt kellett belátni. 
 \end{proof}
 
 \subsubsection{Mátrix determinánsának legfontosabb tulajdonságai}
 
-\paragraph{Összefoglaljuk}, amit eddig a pontig megértettünk a mátrix determinánsának fogalmáról.
+\paragraph{Összefoglaljuk,} amit eddig a pontig megértettünk a mátrix determinánsának fogalmáról.
 \footnote{
 Mielőtt tovább megyünk adjunk képletet $1\times 1$-es, 
 $2\times 2$-es és $3\times 3$-as mátrixok determinánsának kiszámolására, a definíció alapján.
@@ -9559,7 +9567,8 @@ Tehát az előbbi összefüggést lépésenként alkalmazva
 \[
     |A_1|=r_1\cdot |A_2|=r_1\cdot r_2\cdot |A_3|=\dots=r_1\cdot r_2\dots r_{n}\cdot|A_{n+1}|=\left(\prod_{j=1}^nr_j  \right)\cdot\sgn(A_{n+1}).
 \]
-Ezek szerint az algoritmus a következő.
+Ezek szerint az algoritmus a következő:
+\emph{
 $A$ determinánsának kiszámításához az összes oszlopot Gauss-Jordan-eliminációval bevisszük a bázisba.
 A determináns a pivot elemek szorzata szorozva +1, vagy -1-el.
 Az utolsó táblázatban, az új bázis elemeit az eredeti oszlopvektorok alkotják.
@@ -9570,6 +9579,21 @@ Egyébként a determináns a pivot elemek szorzata.
 \footnote{
 A determináns kiszámolásának ez a preferált és professzionális módja. 
 Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
+}
+
+\paragraph{Az oszlopok (sorok) lineáris függetlensége} eldönthető a determináns segítségével.
+Láttuk ugyanis, hogy a mátrix determinánsa nem változik, ha egyik oszlopához a másik skalárszorosát adjuk.
+Ha tehát az egyik oszlop felírható a többi lineáris kombinációjaként, 
+akkor ehhez az oszlophoz véges sokszor egy másik oszlop skalárszorosát adva olyan mátrixot kapunk, 
+amelyben ez az oszlop csupa zérus, és a determinánsa azonos a kiinduló mátrix determinánsával. 
+Látjuk tehát, hogy ha az oszlopok lineárisan összefüggők, akkor a mátrix determinánsa zérus.
+Viszont ha az oszlopok lineárisan függetlenek, 
+akkor Gauss-Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
+E szorzat nem lehet zérus, hiszen egyik pivot elem sem lehet zérus.
+Meggondoltuk tehát: 
+\emph{
+Egy mátrix determinánsa pontosan akkor zérus ha az oszlopok (sorok) lineárisan összefüggők.
+}
 
 \paragraph{Particionált mátrix determinánsa.}
 Tegyük fel, hogy $A$ egy $(n+m)\times(n+m)$ méretű mátrix,
@@ -9595,7 +9619,7 @@ Látható ugyanis, hogy ha vesszük az $A$ egy bástyafelrakását, akkor ha ker
 akkor kerül bástya az $A_{2,1}$ részmátrixra is.
 Így a determináns definíciójához elég csak olyan $\pi\in S_{n+m}$ permutációkat venni,
 amelyre $\pi(i)\leq n$, ha $i\leq n$ és $\pi(i)>n$, ha $i>n$.
-Egy ilyen $\pi$ permutációt összelehet rakni $\pi=\left( \sigma,\tau \right)$ alakban,
+Egy ilyen $\pi$ permutációt össze lehet állítani $\pi=\left( \sigma,\tau \right)$ alakban,
 ahol $\sigma$ az $\left\{ 1,\dots,n \right\}$ halmaz permutációja és $\tau$ az $\left\{ n+1,\dots,n+m \right\}$ halmaz permutációja.
 Ha $\pi$ egy ilyen permutáció, 
 akkor olyan inverziója nincs, 
@@ -9631,119 +9655,193 @@ Ekkor
     =
     |A|.
 \end{multline*}
+
 \section{A mértékek jellemzése}
 \index{mérték}
 
 \begin{proposition}
-Legyen $V$ egy $n$-dimenziós vektortér, $f:V\times \ldots \times
-V\rightarrow \mathbb{F}$ mérték. Ekkor ha a $\left\{ v_{1},\ldots ,v_{n}\right\}
-\subseteq V$ vektorrendszer lineárisan összefüggő, akkor 
-\(
-f\left( v_{1},\ldots ,v_{n}\right) =0.
-\)
+    Legyen $V$ egy $n$-dimenziós vektortér, $f$ egy $V$ feletti mérték.
+    Ha a $\left\{ v_{1},\ldots ,v_{n}\right\} \subseteq V$ vektorrendszer lineárisan összefüggő, 
+    akkor 
+    \(
+        f\left( v_{1},\ldots ,v_{n}\right) =0.
+    \)
 \end{proposition}
-
 \begin{proof}
-Mivel $f$ értéke nem változik ha egy változójához a másik skalárszorosát hozz%
-á adjuk, ezért ha $v_{k}=\sum_{i\neq k}\alpha _{i}v_{i},$ akkor $f\left(
-v_{1},\ldots ,v_{n}\right) =f\left( v_{1},\ldots ,0,\ldots ,v_{n}\right) =0.$
+    Mivel $f$ értéke nem változik ha egy változójához a másik skalárszorosát hozzá adjuk, 
+    ezért ha $v_{k}=\sum_{i\neq k}\alpha _{i}v_{i}$,
+    akkor 
+    $f\left(v_{1},\ldots ,v_{n}\right) 
+    =
+    f\left( v_{1},\ldots ,0,\ldots ,v_{n}\right) 
+    =
+    0$.
 \end{proof}
 
 \begin{proposition}
-Legyen $V$ egy $n$-dimenziós vektortér, $f:V\times \ldots \times
-V\rightarrow \mathbb{F}$ mérték. Ekkor ha van olyan $e_{1},\ldots ,e_{n}$ bázisa a té%
-rnek melyekre 
-\(
-f\left( e_{1},\ldots ,e_{n}\right) =0,
-\)
-akkor az $f$ mérték a konstans zéró triviális mérték.
+    Legyen $V$ egy $n$-dimenziós vektortér, és $f$ egy $V$ feletti mérték. 
+    Ekkor ha van olyan $e_{1},\ldots ,e_{n}$ bázisa a térnek melyekre 
+    \(
+    f\left( e_{1},\ldots ,e_{n}\right) 
+    =
+    0,
+    \)
+    akkor $f$ a konstans zéró, azaz a triviális mérték.
 \end{proposition}
-
 \begin{proof}
-Mivel $f$ anti-szimmetrikus és minden permutáció előáll transzpozíciók
-szorzataként, ezért tetszőleges $\pi \in S_{n}$ mellett $\left| f\left(
-e_{\pi \left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left(
-n\right) }\right) \right| =\left| f\left( e_{1},\ldots ,e_{n}\right) \right|
-=0.$ De az egyes rögzített változókban való linearitás és az alternáló
-tulajdonság miatt minden $v_{1},\ldots ,v_{n}$ vektorrendszerhez léteznek $%
-\beta _{\pi }$ $\left( \pi \in S_{n}\right) $ együtthatók, melyekre $f\left(
-v_{1},\ldots ,v_{n}\right) =\sum_{\pi \in S_{n}}\beta _{\pi }f\left( e_{\pi
-\left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left( n\right)
-}\right) =0.$
+    Mivel $f$ anti-szimmetrikus és minden permutáció előáll transzpozíciók szorzataként, 
+    ezért tetszőleges $\pi \in S_{n}$ mellett 
+    $\left| f\left(e_{\pi \left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left(n\right) }\right) \right| 
+    =
+    \left| f\left( e_{1},\ldots ,e_{n}\right) \right|
+    =
+    0.
+    $ 
+    De az egyes rögzített változókban való linearitás és az alternáló tulajdonság miatt minden 
+    $v_{1},\ldots ,v_{n}$ vektorrendszerhez léteznek 
+    $\beta _{\pi }$ $\left( \pi \in S_{n}\right) $ együtthatók, 
+    melyekre 
+    $f\left(v_{1},\ldots ,v_{n}\right) 
+    =
+    \sum_{\pi \in S_{n}}\beta _{\pi }f\left( e_{\pi\left( 1\right) },e_{\pi \left( 2\right) },\ldots ,e_{\pi \left( n\right)}\right) 
+    =
+    0.$
 \end{proof}
-
-\begin{corollary}
-$f:V\times \ldots \times V\rightarrow \mathbb{F}$ nem triviális mérték. Az 
-\[
-\left\{ v_{1},\ldots ,v_{n}\right\} \subseteq V%
-\text{ lineárisan összefüggő pontosan akkor, ha }f\left( v_{1},\ldots
-,v_{n}\right) =0.\qedhere
-\]
-\end{corollary}
+Foglaljuk össze az előző két állítást:
+\begin{proposition}
+    Legyen $f$ egy nem triviális mérték a $V$ vektortér felett. A
+    \begin{math}
+        \left\{ v_1,\dots,v_n \right\}
+    \end{math}
+    vektorrendszer lineárisan összefüggőségének szükséges és elegendő feltétele, 
+    hogy 
+    \begin{math}
+        f\left( v_1,\dots,v_n \right)
+        =
+        0.
+    \end{math}
+\end{proposition}
 
 \begin{proposition}
-Legyen $V$ egy $n$-dimenziós vektortér. Ekkor az $V$ tér $n$-szeres
-Descartes szorzatán értelmezett mértékek vektortere $1$ dimenziós.
+    Tetszőleges (legalább egy dimenziós) vektortér feletti mértékek vektortere egy-dimenziós vektortér.
 \end{proposition}
-
 \begin{proof}
-Rögzítsük a tér egy $e_{1},\ldots ,e_{n}$ bázisát. Láttuk, hogy a $d\left(
-v_{1},\ldots ,v_{n}\right) \doteq \sum_{\pi \in S_{n}}\operatorname{sgn}\pi
-\prod_{i=1}^{n}e_{i}^{\ast }\left( v_{\pi \left( i\right) }\right) $ függvé%
-ny nem triviális mértéket definiál. Elegendő tehát megmutatnunk, hogy
-amennyiben $D\neq 0$ egy másik mérték a szorzattéren úgy található $\delta
-\in \mathbb{F}$ melyre $D=\delta d.$ Legyen $\delta \doteq D\left( e_{1},\ldots
-,e_{n}\right) ,$ így $D\left( e_{1},\ldots ,e_{n}\right) -\delta d\left(
-e_{1},\ldots ,e_{n}\right) =0.$ Ez azt jelenti, hogy a $D-\delta d$ mérték
-az $e_{1},\ldots ,e_{n}$ bázison eltűnik ami csak úgy lehetséges, ha $%
-D-\delta d=0.$
+    Rögzítsük a tér egy $\{e_{1},\ldots ,e_{n}\}$ bázisát. 
+    Láttuk, hogy a 
+    \[
+        d\left(v_{1},\ldots ,v_{n}\right)
+        =
+        \sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^ne_i^\ast v_{\pi\left( i\right)}
+    \]
+    függvény nem triviális mértéket definiál. 
+    Elegendő tehát megmutatnunk, 
+    hogy amennyiben $D\neq 0$ egy másik mérték $V$ felett,
+    úgy található 
+    $\delta\in \mathbb{F}$,
+    amelyre 
+    $D=\delta d.$ 
+    Legyen ezért $\delta \doteq D\left( e_{1},\ldots,e_{n}\right) ,$ 
+    így 
+    \[
+        D\left( e_{1},\ldots ,e_{n}\right) -\delta d\left(e_{1},\ldots ,e_{n}\right) 
+        =
+        0.
+    \] 
+    Ez viszont azt jelenti, 
+    hogy a $D-\delta d$ mérték az  $\left\{e_{1},\ldots ,e_{n}  \right\}$ 
+    bázison eltűnik ami csak úgy lehetséges, ha 
+    $D-\delta d=0$,
+    ergo
+    \begin{math}
+        D=\delta d.
+    \end{math}
+    Ezt kellett belátni. 
 \end{proof}
 
 \begin{proposition}
-Legyen $V$ egy $n$-dimenziós vektortér, $f$ egy nem triviális mérték, $A\in
-L\left( V\right) $ lineáris operátor. Ekkor egyértelműen létezik $\delta
-_{f}\left( A\right) \in \mathbb{F}$ szám melyre minden $\left\{ v_{1},\ldots
-,v_{n}\right\} \subseteq V$ esetén 
-\[
-f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{f}\left( A\right) f\left(
-v_{1},\ldots ,v_{n}\right) 
-\]
-Sőt az így kapott $\delta _{f}\left( A\right) $ nem függ a kiindulásul vett $%
-f$ mértéktől, azaz ha $g$ másik nem triviális mérték akkor $\delta
-_{f}\left( A\right) =\delta _{g}\left( A\right) .$
+    Legyen $f$ egy nem triviális mérték a $V$ vektortér felett, 
+    és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Ekkor létezik egyetlen olyan 
+    $\delta_{f}\left( A\right) \in \mathbb{F}$ szám,
+    amelyre minden
+    $v_1,\dots,v_n\in V$ vektor mellett
+    \[
+        f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{f}\left( A\right) f\left(
+        v_{1},\ldots ,v_{n}\right).
+    \]
+    Sőt! 
+    Az így kapott $\delta _{f}\left( A\right) $ szám nem függ az $f$ mértéktől azaz,
+    ha $g$ egy másik nem triviális mérték akkor 
+    \[
+        \delta_{f}\left( A\right) =\delta _{g}\left( A\right) .\qedhere
+    \]
 \end{proposition}
 
 \begin{proof}
-Ha $A$ egy lineáris operátor, akkor az $\left( v,\ldots v_{n}\right) \mapsto
-f\left( Av_{1},\ldots ,Av_{n}\right) $ fügvény is mérték. Láttuk, hogy a mért%
-ékek tere $1$ dimenziós, így van egyetlen olyan $\delta _{f}\left( A\right) $
-melyre minden $v_{1},\ldots ,v_{n}$ mellett $f\left( Av_{1},\ldots
-,Av_{n}\right) =\delta _{f}\left( A\right) f\left( v_{1},\ldots
-,v_{n}\right) .$ Legyen $g$ egy másik nem zérus mérték. Ekkor $g=\gamma f$
-persze $\gamma \neq 0.$ Így a $g\left( Av_{1},\ldots ,Av_{n}\right) =\delta
-_{g}\left( A\right) g\left( v_{1},\ldots ,v_{n}\right) $ összefüggésből $%
-\gamma f\left( Av_{1},\ldots ,Av_{n}\right) =\delta _{g}\left( A\right)
-\gamma f\left( v_{1},\ldots ,v_{n}\right) $ következik, amiből $f\left(
-Av_{1},\ldots ,Av_{n}\right) =\delta _{g}\left( A\right) f\left(
-v_{1},\ldots ,v_{n}\right) $ következik. Így $\delta _{f}\left( A\right) $
-egyértelműsége miatt $\delta _{f}\left( A\right) =\delta _{g}\left( A\right) 
-$ is fennáll.
+    Ha $A$ egy lineáris operátor, 
+    akkor az $\left( v,\ldots v_{n}\right) \mapsto f\left( Av_{1},\ldots ,Av_{n}\right) $ 
+    függvény is mérték. 
+    Láttuk, hogy a mértékek tere $1$ dimenziós, 
+    így van egyetlen olyan $\delta _{f}\left( A\right)\in\mathbb{F} $ szám,
+    amelyre minden 
+    $
+    v_{1},\ldots ,v_{n}
+    $ 
+    mellett 
+    $
+    f\left( Av_{1},\ldots,Av_{n}\right) 
+    =
+    \delta _{f}\left( A\right) f\left( v_{1},\ldots,v_{n}\right)
+    $.
+    \\
+    Legyen $g$ egy másik nem zérus mérték. 
+    Ekkor 
+    $g=\gamma f$ valamely $\gamma\neq 0$ számmal, és
+    \begin{displaymath}
+        g\left( Av_{1},\ldots ,Av_{n}\right) 
+        =
+        \delta_{g}\left( A\right) g\left( v_{1},\ldots ,v_{n}\right)
+        \text{ valamint }
+        f\left( Av_{1},\ldots,Av_{n}\right) 
+        =
+        \delta _{f}\left( A\right) f\left( v_{1},\ldots,v_{n}\right).
+    \end{displaymath}
+    No de, ha baloldali kifejezésben a $g$ mértéket a $\gamma f$ mértékre cseréljük, 
+    majd osztunk a $\gamma$ számmal, 
+    akkor
+    \[
+    f\left(Av_{1},\ldots ,Av_{n}\right) 
+    =
+    \delta _{g}\left( A\right) f\left(v_{1},\ldots ,v_{n}\right)
+    \]
+    következik. 
+    Így $\delta _{f}\left( A\right) $ egyértelműsége miatt már
+    $
+    \delta _{f}\left( A\right) =\delta _{g}\left( A\right) 
+    $ 
+    is fennáll.
 \end{proof}
 
-\index{lineáris transzformáció determinánsa}%
-\index{determináns}
-
+A fejezet legfontosabb gondolatához érkeztünk.
 \begin{definition}[Lineáris transzformáció determinánsa]
-Azt kaptuk, hogy $\delta _{f}\left( A\right) $ értéke nem függ a nem zérus mé%
-rték megválasztásától, ezért ez egyedül az $A$ lineáris operátorra jellemző
-szám. A továbbiakban a $\delta _{f}\left( A\right) $ helyett csak $\delta
-\left( A\right) $-t írunk, és ezt a számot nevezzük az $A$ lineáris operátor 
-\emph{determinánsának.}
+    \index{lineáris transzformáció determinánsa}%
+    \index{determináns}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformációja a $V$ véges dimenziós vektortérnek.
+    Tudjuk, hogy akármilyen $f$ nem triviális mértékből indulunk is ki,
+    létezik egyetlen olyan, $\delta\left( A \right)\in\mathbb{F}$ szám,
+    amelyre
+    \[
+        f\left( Av_1,\dots,Av_n \right)
+        =
+        \delta\left( A \right)
+        f\left( v_1,\dots,v_n \right)
+    \]
+    minden $v_1,\dots,v_n\in V$ mellett fennáll.
+    Ezt a $\delta\left( A \right)$ számot nevezzük az $A$ lineáris transzformáció \emph{determinánsának.}
 \end{definition}
 
-\index{determinánsok szorzattétele}
-
 \begin{proposition}[Szorzattétel]
+\index{determinánsok szorzattétele}
 Legyen $V$ egy $n$-dimenziós vektortér, $A$ és $B\in L\left( V\right) $ lineá%
 ris operátorok. Ekkor 
 \[
@@ -10474,5 +10572,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 05 Apr 2020 06:54:05 PM CEST
+Last Modified : Mon 06 Apr 2020 10:22:23 AM CEST
 
