@@ -9615,6 +9615,7 @@ Ekkor
     =
     |A_{1,1}|\cdot |A_{2,2}|.
 \]
+\begin{proof}[Definíció alapján]
 Látható ugyanis, hogy ha vesszük az $A$ egy bástyafelrakását, akkor ha kerül bástya az $A_{1,2}$ részmátrixra,
 akkor kerül bástya az $A_{2,1}$ részmátrixra is.
 Így a determináns definíciójához elég csak olyan $\pi\in S_{n+m}$ permutációkat venni,
@@ -9653,8 +9654,49 @@ Ekkor
     =
     \sum_{\pi\in S_{n+m}}\sgn\pi\prod_{i=1}^{n+m}a_{i,\pi(i)}
     =
-    |A|.
+    |A|.\qedhere
 \end{multline*}
+\end{proof}
+\begin{proof}[Gauss-Jordan-elimináció alapján]
+    Először is azt vegyük észre, hogy az $A_{2,1}$ nullmátrix léte miatt,
+    ha $A$ oszlopai lineárisan összefüggők, 
+    akkor az $A_{1,1}$ és $A_{2,2}$ mátrixok egyikének oszlopai is lineárisan összefüggők.
+    Az állítás tehát teljesül, ha $|A|=0$.
+    Feltesszük, hogy $A$ oszlopai lineárisan függetlenek.
+    Végezzünk Gauss-Jordan-eliminációt az $A$ mátrixon de úgy,
+    hogy az első $n$ lépésben $A_{1,1}$ részéből, utána $A_{2,2}$ részéből választjuk a pivot elemeket.
+    Ez megtehető, hiszen $A_{1,1}$ oszlopai is lineárisan függetlenek.
+    Legyenek a pivot elemek $r_1,\dots,r_n,r_{n+1},\dots,r_m$, 
+    és az utolsó oszlop bevonása után maradt $n+m\times n+m$ méretű permutáció mátrix $P$.
+    Mivel csak a balfelső $n\times n$-es és a jobbalsó $m\times m$ részből választottunk pivot elemeket,
+    ezért a $P$ mátrix
+    \begin{math}
+        P=
+        \begin{pmatrix}
+            P_{1,1}& 0\\
+            0& P_{2,2}
+        \end{pmatrix}
+    \end{math}
+    alakú, ahol $P_{1,1}$ egy $n\times n$ méretű,
+    és $P_{2,2}$ egy $m\times m$ méretű permutáció mátrix.
+    Ha $k$ -- illetve $l$ -- sorcsere kell ahhoz, 
+    hogy $P_{1,1}$-et -- illetve $P_{2,2}$-t -- a diagonálisba transzformáljuk,
+    akkor $k+l$ sorcserével $P$ is a diagonális permutációba megy át.
+    Mivel egy permutáció mátrix determinánsa a permutáció előjele, ezért
+    \(
+        |P|=(-1)^{k+l}=\left( -1 \right)^k\left( -1 \right)^l=|P_{1,1}||P_{2,2}|.
+    \)
+    Világos, hogy $|A_1|=r_1\cdots r_n|P_{1,1}|$. 
+    No de $A_{2,1}$ a nullmátrix, ezért az elimináció első $n$ lépésében $A_{2,2}$ változatlan marad,
+    így $|A_{2,2}|=r_{n+1}\cdots r_{n+m}|P_{2,2}|$.
+    Összefoglalva:
+    \[
+        |A|
+        =r_1\cdots r_n\cdot r_{n+1}\cdots r_{n+m}|P|
+        =(r_1\cdots r_n|P_{1,1}|)(r_{n+1}\cdots r_{n+m}|P_{2,2}|)
+        =|A_{1,1}|\cdot|A_{2,2}|.\qedhere
+    \]
+\end{proof}
 
 \section{A mértékek jellemzése}
 \index{mérték}
@@ -9863,8 +9905,8 @@ E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
 
 \begin{proposition}
     Legyen $A\in L\left( V\right)$ egy lineáris transzformáció.
-    Ekkor az $A$-nak a tér bármely bázisában felírt mátrixának a determinánsa azonos $A$-nak mint
-    lineáris transzformációnak a determinánsával.
+    Ekkor az $A$ bármely bázisban felírt mátrixának a determinánsa azonos 
+    $A$-nak mint lineáris transzformációnak a determinánsával.
     Formálisan tetszőleges $\left\{ e_1,\dots,e_n \right\}$ bázis mellett:
     \[
         \delta \left( A\right) 
@@ -9885,18 +9927,23 @@ E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
     \]
 \end{proof}
 
-\begin{corollary}
-A lineáris operátor mátrixának determinánsa független az adott koordinátázást%
-ól, így beszélhetünk a lineáris operátor determinánsáról. A továbbiakban $%
-\left| A\right| $ -val jelüljük egy $A\in L\left( V\right) $ determinánsát.
-\end{corollary}
+Meggondoltuk tehát, hogy egy transzformáció mátrixának determinánsa nem függ a koordinátázástól,
+tehát más-más bázisokban felírt mátrix determinánsa azonos.
 
-\begin{corollary}
-Ha $A$ és $B$ lineáris transzformációk, akkor $\left| A\circ B\right|
-=\left| A\right| \left| B\right| .$ Továbbá, ha $A$ invertálható, akkor $%
-\left| A^{-1}\right| =1/\left| A\right| .$
-\end{corollary}
+Az is nyilvánvaló, hogy ha $[A],[B]$ két négyzetes mátrix, akkor $A$-val és $B$-vel jelölve a 
+mátrixok generálta $\mathbb{F}^n\to\mathbb{F}^n$ lineáris transzformációkat
+\[
+    |[A][B]|=|[A\circ B]|=\delta\left( A\circ B \right)=\delta\left( A \right)\delta\left( B \right)=
+    |[A]|\cdot|[B]|.
+\]
 
+Az egyszerűség kedvéért a továbbiakban nem teszünk különbséget egy lineáris transzformáció determinánsa
+és egy mátrix determinánsa közt. 
+Mindkettőt $|A|$ módon jelöljük.
+
+Legyen most $A\in L\left( V \right)$ egy reguláris transzformáció.
+Ekkor $AA^{-1}=I$, igy véve a determinánsokat, $|A|\cdot|A^{-1}|=1$, azaz 
+$|A^{-1}|=\frac{1}{|A|}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -10566,5 +10613,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 06 Apr 2020 11:58:53 AM CEST
+Last Modified : Tue 07 Apr 2020 12:07:58 PM CEST
 
