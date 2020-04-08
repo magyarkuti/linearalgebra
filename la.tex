@@ -2710,7 +2710,7 @@ A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló
 Az teljesen nyilvánvaló, hogy a kötött változók száma és a szabad változók száma azonos a változók számával.
 Ebben a pillanatban még nem látszik,
 de később ki fog derülni, 
-hogy a kötött így a szabad változók száma is független az algoritmus során választott pivot elemektől.
+hogy a kötött így a szabad változók száma is független az algoritmus során választott pivot elemektől.\index{pivot elem}
 
 Érdemes a rendszer egy megoldásra úgy gondolni, mint egy $x\in\mathbb{F}^n$ oszlopvektorra,
 amelynek $i$-edik koordinátája az $x_i$ változó aktuális értéke.
@@ -2999,7 +2999,7 @@ Máshogyan fogalmazva: mikor van egyáltalán megoldása egy inhomogén rendszer
 Konkrétan adott $A$ és $b$ mellett Gauss-Jordan algoritmussal\index{Gauss--Jordan-eliminácio}  el tudjuk dönteni, hogy
 $b$ vektor eleme-e az $A$ mátrix oszlop vektorterének.
 Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
-Most hajtsuk végre a Gauss-Jordan eliminációt, de úgy hogy pivot-elemet,
+Most hajtsuk végre a Gauss-Jordan eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
 csak az első n oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
 Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
 Az algoritmus úgy ér véget, 
@@ -9575,7 +9575,7 @@ Az utolsó táblázatban, az új bázis elemeit az eredeti oszlopvektorok alkotj
 Számoljuk meg, hogy hány sorcserét kell kapnunk ahhoz, hogy az eredeti oszlopvektorok természetes sorrendjébe cseréljük az elimináció
 végén kapott új bázis elemeket. 
 Ha ehhez páratlan sok csere kellett, akkor $-1$-el kell még szoroznunk a pivot elemek szorzatát.
-Egyébként a determináns a pivot elemek szorzata.
+Egyébként a determináns a pivot elemek szorzata.\index{pivot elem}
 \footnote{
 A determináns kiszámolásának ez a preferált és professzionális módja. 
 Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
@@ -9944,6 +9944,82 @@ Mindkettőt $|A|$ módon jelöljük.
 Legyen most $A\in L\left( V \right)$ egy reguláris transzformáció.
 Ekkor $AA^{-1}=I$, igy véve a determinánsokat, $|A|\cdot|A^{-1}|=1$, azaz 
 $|A^{-1}|=\frac{1}{|A|}$.
+
+\section{A determináns kiszámolása}
+    \begin{proposition}
+        Tegyük fel, hogy $[A]$ egy reguláris mátrix.
+        Ez azt jelenti, hogy $[A]$ oszlopai bázis-transzformációk sorozatával bevihetők a bázisba.
+        Legyen $k$ szám azon cserék száma, amelyekkel a végső bázis $\left\{Ae_1,\cdots,Ae_n  \right\}$ sorrendbe hozható.
+
+        Ekkor
+        \[
+            |[A]|=\left( -1 \right)^k\prod_{i=1}^n\delta_i
+        \]
+        ahol $\delta_1,\cdots,\delta_n$ a transzformáció során választott pivot elemek.
+    \end{proposition}
+
+    \begin{definition}[minor]
+        Legyen $[A]\in\mathbb{F}^{n\times n}$ mátrix.
+        E mátrix \emph{$\left( i,j \right)$-minorja} az $[A]$ mátrix $i$-edik sora és $j$-edik oszlopa törlése után maradt mátrix determinánsa.
+        Jelölés: $|A_{i,k}|$.
+    \end{definition}
+    \begin{proposition}
+        Legyen $A\in L\left( V \right)$, egy rögzített bázis $\left\{ e_1,\cdots,e_n \right\}$ és $d$ az a mérték,
+        amelyre $d\left( e_1,\cdots,e_n \right)=1$.
+        Jelölje $|A_{i,k}|$ az $A$ a fenti bázisban felírt mátrixa $\left( i,k \right)$-minorát.
+        
+        Ha $e_i$ a $d$ függvény $k$-adik változójában van, akkor
+        \[
+            d\left( Ae_1,\cdots,e_i,\cdots,Ae_n \right)=\left( -1 \right)^{i+k}|A_{i,k}|.\qedhere
+        \]
+    \end{proposition}
+    \begin{definition}[kofaktor]
+        A fent kiemelt sor jobboldalán álló számot a mátrix \emph{$\left( i,k \right)$-kofaktorának} nevezzük.
+    \end{definition}
+    \begin{proposition}
+        Legyen $[A]\in\mathbb{F}^{n\times n}$ mátrix.
+        Ekkor
+        \begin{enumerate}
+            \item minden $1\leq k\leq n$ oszlopra
+                \[
+                    |[A]|=
+                    \sum_{i=1}^na_{i,k}\left( -1 \right)^{i+k}|A_{i,k}|,
+                \]
+            \item minden $1\leq k,j\leq n$ oszlopra $j\neq k$ mellett
+                \[
+                    0=
+                    \sum_{i=1}^na_{i,j}\left( -1 \right)^{i+k}|A_{i,k}|.\qedhere
+                \]
+        \end{enumerate}
+    \end{proposition}
+A fenti két formula együtt kicsit tömörebben: minden $1\leq k,j\leq n$ mellett
+                \[
+                    \sum_{i=1}^na_{i,j}\left( -1 \right)^{i+k}|A_{i,k}|
+                    =
+                    \delta_{j,k}|[A]|.
+                \]
+\begin{proposition}
+Legyen $[A]$ egy reguláris mátrix.
+Ekkor az inverz mátrix a kofaktor-mátrix transzponáltjának a determináns reciprokával vett szorzata.
+
+Magyarra áttérve:
+\[
+    [A^{-1}]_{k,i}=\frac{1}{|A|}\left( -1 \right)^{i+k}|A_{i,k}|.\qedhere
+\]
+\end{proposition}
+    \begin{proposition}[Cramer]
+        Tekintsünk egy $n\times n$ inhomogén lineáris egyenletrendszert.
+        Tudjuk, hogy pontosan akkor van egyetlen megoldása, ha az együtthatómátrix
+        reguláris.
+        Jelölje $[A]$ az együttható-mátrixot, és $[B]_k$ azt a mátrixot, amelyet úgy kapunk, 
+        hogy az egyenlet jobb oldalát reprezentáló oszlop vektort az együttható mátrix $k$-adik 
+        oszlopára másoljuk.
+        Ekkor a megoldás $k$-adik koordinátájára
+        \[
+            x_k=\frac{|B|_k}{|A|}
+        \]
+        formula adódik.
+    \end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -10613,5 +10689,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 07 Apr 2020 12:07:58 PM CEST
+Last Modified : Wed 08 Apr 2020 06:15:51 AM CEST
 
