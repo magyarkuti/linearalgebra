@@ -11,14 +11,18 @@
 %\usepackage{polyglossia}\setdefaultlanguage{magyar}
 \usepackage[hungarian]{babel}[2015/11/24]
 \usepackage{fontspec}
+%\usepackage{unicode-math} %ooszeakad az amssymb csomaggal. Most nincs idom ra.
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{TeX Gyre Pagella}
+%\setmathfont{TeX Gyre Pagella Math}
+\newfontfamily\DejaSans{Dejavu Sans}
 \setsansfont{Kurier}[Scale=MatchLowercase]
+%\setsansfont{Dejavu Sans}[Scale=MatchLowercase]
 \setmonofont{inconsolata}[Scale=MatchLowercase]
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
-\usepackage{csquotes,amsmath,amsthm,amsfonts,amssymb,systeme,fixme}
+\usepackage{csquotes,amsmath,amsthm,amssymb,systeme,fixme}
 \usepackage[backend=biber,
             bibencoding=utf8,
             style=authoryear,
@@ -41,11 +45,16 @@
     Date: \gitAuthorIsoDate
 }
 
-
+% Ez akkor kell, ha San seriff fontok a part, chapter, section stb heklyeken. 
+% Part és book hiányzik. 
+%\renewcommand{\chapnamefont}{\huge\sffamily\bfseries}
+%\renewcommand{\chapnumfont}{\huge\sffamily\bfseries}
+%\renewcommand{\chaptitlefont}{\Huge\sffamily\bfseries}
 %\setsecheadstyle{\Large\sffamily\bfseries\raggedright}
 %\setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
-%\setsubsubsecheadstyle{\sffamily\bfseries\raggedright}
-
+%\setsubsubsecheadstyle{\normalsize\sffamily\bfseries\raggedright}
+%\setparaheadstyle{\normalsize\sffamily\bfseries\raggedright}
+%\setsubparaheadstyle{\normalsize\sffamily\raggedright}
 
 \nouppercaseheads
 %\makeoddhead{myheadings}{\footnotesize\selectfont\sffamily\leftmark}{}{\footnotesize\selectfont\sffamily\thepage}
@@ -8890,11 +8899,11 @@ ha a Jordan-normálalakban $\lambda_j$ éppen $k$-szor szerepel.
 Világos, hogy ez azonos avval, hogy az transzformáció karakterisztikus polinomjának
 $\lambda$ egy $k$-szoros multiplicitású gyöke.
 Mivel minden egyes Jordan-blokk legalább $1\times 1$ méretű, 
-ezért a $\lambda_j$ geometriai miltiplicitása, 
+ezért a $\lambda_j$ geometriai multiplicitása, 
 azaz a $\lambda_j$-hez tartozó Jordan-blokkok száma legfeljebb legfeljebb ezen blokkokban lévő diagonális elemek száma, 
 ergo a $\lambda_j$ algebrai multiplicitása.
 Az is világos, hogy e két multiplicitás pontosan akkor egyezik meg, 
-ha minden Jordan-blokk $1\times 1$ méretű, tahát ha diagonalizálható.
+ha minden Jordan-blokk $1\times 1$ méretű, tehát ha diagonalizálható.
 Arra jutottunk tehát,
 hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekvivalensek.
 \begin{itemize}\tightlist
@@ -8903,6 +8912,44 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
     \item[\textendash] $A$ minden sajátértékének a geometriai és algebrai multiplicitása azonos.
 \end{itemize}
 \chapter{Determináns}
+\scwords Súlyos önbizalom hiányhoz vezet tapasztalataim szerint a determináns fogalmának mellőzése
+a lineáris algebra körében.
+E jelenség okait inkább a megszokások, a régi beidegződések közt kell keresnünk,
+mintsem a logikai szükségszerűségek közt.
+Tény ugyanakkor, 
+hogy egyszerű egy mátrix szingularitására következtetni, 
+ha egy konkrét függvény argumentumába helyettesítve a mátrixunkat zérust kapunk. 
+Hasonlóan egyszerű,
+ha egy explicit formulánk van, egy képlet amibe csak be kell helyettesíteni, 
+egy reguláris mátrix-szú inhomogén lineáris egyenletrendszer megoldására, 
+vagy egy mátrix inverzének felírására.
+A determináns fogalmát valóban nagyon sokszor csak arra használják, 
+hogy a lineáris algebra alap algoritmusát, a Gauss--Jordan-eliminációt, egy explicit formulára cseréljék.
+Azt szeretném itt hangsúlyozni, 
+hogy pusztán emiatt nem érdemes előnyben részesíteni a determináns használatát.
+Az algoritmus éppen olyan jól, 
+sőt látni fogjuk: sokkal de sokkal hatékonyabban működik,
+a mint a képlet.
+
+Amiért mégis fontos ez a fejezet az kisebb részt az, 
+hogy a lineáris algebra tanulásának az is a célja,
+hogy a későbbi standard felhasználásokat megértsük. 
+Sok-sok közgazdasági és műszaki szakkönyv előszeretettel sűríti a mátrixokkal kapcsolatos tudnivalókat a determináns fogalmának segítségével.
+Az igazi ok viszont nem ez. 
+Egyetlen helyen van megkerülhetetlen szerepe a transzformáció determinánsának. 
+Ez az, amikor az válik valamiért fontossá, 
+hogy egy lineáris transzformáció, a tér egység kockáját, 
+amelynek a ,,térfogata'' nyilván 1, mekkora térfogatú paralelepipedonba transzformálja?
+\footnote{A válasz érzelmi része az lesz, hogy a transzformáció determinánsa ennek a ,,mértéke''.}
+Ez a kérdés a valós analízis fontos és érdemi pontjain merül fel.
+Például, amikor egy többváltozós függvény integrálját számoljuk valamilyen helyettesítéssel. Ezen 
+a ponton válik majd a determináns fogalma igazából élővé.
+A fejezet tehát az első lépés ebben az irányban.
+\footnote{Persze fontos az olvasó szociális érzelmi állapota, 
+    ami pozitív mellékterméke e fejezet pontos megértésének. 
+    {\DejaSans😍😱 }
+}
+
 
 \section{Permutációk}
 
@@ -9284,6 +9331,9 @@ A konstans zérus mérték így nyilvánvaló példa mértékre.
 A kérdés, hogy van-e más mérték?
 
 \subsection{Példa mértékre}
+Egy $n$ dimenziós tér $n$-szeres Descartes-szorzatán értelmezett konstans zérus leképezés egy
+triviális példa mértékre.
+Az alábbiakban egy olyan mértéket készítünk, ami egészen biztosan nem a konstans zérus függvény.
 \begin{definition}
     Legyen $V$ egy vektortér, amelyben rögzített az $\left\{ e_1,\dots,e_n \right\}$
     bázis.
@@ -9601,7 +9651,7 @@ Meggondoltuk tehát:
 Egy mátrix determinánsa pontosan akkor zérus ha az oszlopok (sorok) lineárisan összefüggők.
 }
 
-\paragraph{Particionált mátrix determinánsa.}
+\paragraph{Particionált mátrix determinánsa.}\label{par:particionalt}
 Tegyük fel, hogy $A$ egy $(n+m)\times(n+m)$ méretű mátrix,
 amely
 \[
@@ -9881,7 +9931,7 @@ A fejezet legfontosabb gondolatához érkeztünk.
     amelyre a kívánt azonosság fennáll.
 \end{proof}
 
-\begin{proposition}[Szorzattétel]
+\begin{proposition}[Szorzattétel]\index{szorzattétel}
 \index{determinánsok szorzattétele}
     Legyenek az $A,B\in L\left( V \right)$ lineáris transzformációk a $V$ véges dimenziós vektortéren.
     Ekkor 
@@ -9935,98 +9985,205 @@ E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
 \end{proof}
 
 Meggondoltuk tehát, hogy egy transzformáció mátrixának determinánsa nem függ a koordinátázástól,
-tehát más-más bázisokban felírt mátrix determinánsa azonos.
+tehát más-más bázisokban felírt mátrixának determinánsa azonos.
+A továbbiakban az $A$ lineáris transzformáció determinánsára az egyszerűség kedvéért az $|A|$ jelölést (is) használjuk.
+Ezek szerint $A$-nak $|A|$ determinánsa, 
+és $A$-nak valamely bázisban felírt mátrixának $|[A]|$ determinánsa közt nincs különbség.
 
-Az is nyilvánvaló, hogy ha $[A],[B]$ két négyzetes mátrix, akkor $A$-val és $B$-vel jelölve a 
+\paragraph{Mátrixok szorzattétele} 
+Ha $[A],[B]$ két négyzetes mátrix, 
+akkor $A$-val és $B$-vel jelölve a 
 mátrixok generálta $\mathbb{F}^n\to\mathbb{F}^n$ lineáris transzformációkat
 \[
     |[A][B]|=|[A\circ B]|=\delta\left( A\circ B \right)=\delta\left( A \right)\delta\left( B \right)=
     |[A]|\cdot|[B]|.
 \]
+Meggondoltuk tehát, hogy mátrixok szorzatának determinánsa a mátrixok determinánsának szorzata.
 
-Az egyszerűség kedvéért a továbbiakban nem teszünk különbséget egy lineáris transzformáció determinánsa
-és egy mátrix determinánsa közt. 
-Mindkettőt $|A|$ módon jelöljük.
-
+\paragraph{Az inverz determinánsa}
 Legyen most $A\in L\left( V \right)$ egy reguláris transzformáció.
 Ekkor $AA^{-1}=I$, igy véve a determinánsokat, $|A|\cdot|A^{-1}|=1$, azaz 
 $|A^{-1}|=\frac{1}{|A|}$.
+Összefoglalva, az inverz determinánsa a determináns reciproka.
 
-\section{A determináns kiszámolása}
-    \begin{proposition}
-        Tegyük fel, hogy $[A]$ egy reguláris mátrix.
-        Ez azt jelenti, hogy $[A]$ oszlopai bázis-transzformációk sorozatával bevihetők a bázisba.
-        Legyen $k$ szám azon cserék száma, amelyekkel a végső bázis $\left\{Ae_1,\cdots,Ae_n  \right\}$ sorrendbe hozható.
+\section{A determináns kifejtése}
+A kifejtési tétel arra való, 
+hogy a determináns kiszámítását visszavezessük 1-el kisebb méretű mátrixok determinánsának kiszámolására.
+Ezt a gondolatot egymásután alkalmazva tetszőleges mátrix determinánsa kiszámítható.
 
-        Ekkor
-        \[
-            |[A]|=\left( -1 \right)^k\prod_{i=1}^n\delta_i
-        \]
-        ahol $\delta_1,\cdots,\delta_n$ a transzformáció során választott pivot elemek.
-    \end{proposition}
-
-    \begin{definition}[minor]
-        Legyen $[A]\in\mathbb{F}^{n\times n}$ mátrix.
-        E mátrix \emph{$\left( i,j \right)$-minorja} az $[A]$ mátrix $i$-edik sora és $j$-edik oszlopa törlése után maradt mátrix determinánsa.
-        Jelölés: $|A_{i,k}|$.
-    \end{definition}
-    \begin{proposition}
-        Legyen $A\in L\left( V \right)$, egy rögzített bázis $\left\{ e_1,\cdots,e_n \right\}$ és $d$ az a mérték,
-        amelyre $d\left( e_1,\cdots,e_n \right)=1$.
-        Jelölje $|A_{i,k}|$ az $A$ a fenti bázisban felírt mátrixa $\left( i,k \right)$-minorát.
-        
-        Ha $e_i$ a $d$ függvény $k$-adik változójában van, akkor
-        \[
-            d\left( Ae_1,\cdots,e_i,\cdots,Ae_n \right)=\left( -1 \right)^{i+k}|A_{i,k}|.\qedhere
-        \]
-    \end{proposition}
-    \begin{definition}[kofaktor]
-        A fent kiemelt sor jobboldalán álló számot a mátrix \emph{$\left( i,k \right)$-kofaktorának} nevezzük.
-    \end{definition}
-    \begin{proposition}
-        Legyen $[A]\in\mathbb{F}^{n\times n}$ mátrix.
+Ebben a fejezetben vannak azok az explicit formulák,
+amelyeket a fejezet bevezetőjében említettem.
+\begin{definition}[minor, kofaktor, kofaktormátrix]
+    \index{minor}\index{kofaktor}\index{kofaktormátrix}
+    Legyen $A\in\mathbb{F}^{n\times n}$ egy mátrix.
+    E mátrix
+    \begin{itemize}
+        \item\emph{$\left( i,k \right)$-csonkoltja}
+    a mátrix $i$-edik sorának és $k$-adik oszlopának törlése után megmaradt 
+    $n-1\times n-1$ méretű mátrix. Jelölése: $A_{i,k}$.
+        \item\emph{$\left( i,k \right)$-minorja}
+            az $(i,k)$-csonkolt $A_{i,k}$ mátrix determinánsa.
+        \item\emph{$\left( i,k \right)$-kofaktora}
+            a $\left( -1 \right)^{i+k}|A_{i,k}|$ szám.
+        \item\emph{kofaktormátrixa}
+            az az $n\times n$ méretű mátrix, 
+            amelynél az $i$-edik sor $k$-adik eleme az $\left( i,k \right)$-kofaktor.\qedhere
+    \end{itemize}
+\end{definition}
+\begin{proposition}
+    Legyen $A\in\mathbb{F}^{n\times n}$ egy mátrix.
+    Írjuk felül az $A$ mátrix $k$-adik oszlopának elemeit $0$-val,
+    majd a $k$-adik oszlop $i$-edik helyére írjunk $1$-et.
+    E felülírt mátrix determinánsa az eredeti mátrix $\left( i,k \right)$-kofaktora.
+\end{proposition}
+\begin{proof}
+    Világos, hogy a szóban forgó mátrix $k-1$ sorcsere, majd
+    és $i-1$ oszlopcsere után olyan alakra hozható,
+    ahol a bal felső elem $1$, alatta az első oszlop minden eleme zérus,
+    és a jobb alsó $n-1\times n-1$ méretű részmátrix az eredeti mátrix $\left( i,k \right)$-csonkoltja:
+    \[
+        \begin{pmatrix}
+            1&  \begin{bmatrix}
+                a_{i,1}\,&\phantom{A_{i,k}}&\,a_{i,n}
+                \end{bmatrix}\\
+            \begin{bmatrix}
+                    0\\
+                    \vdots\\
+                    0
+            \end{bmatrix}
+                &
+                \begin{bmatrix}
+                    a_{1,1}&\dots&a_{1,n}\\
+                    \vdots&A_{i,k}&\vdots\\
+                    a_{n,1}&\dots&a_{n,n}
+                \end{bmatrix}
+        \end{pmatrix}
+    \]
+    A fenti mátrix determinánsa a particionált mátrix determinánsára kapott formula, 
+    \apageref{par:particionalt}. oldal,
+    szerint $1\cdot|A_{i,k}|$.
+    Meggondoltuk tehát, hogy ha az állításban felülírt mátrix determinánsát $\delta$-val jelöljük,
+    akkor  $\delta\left( -1 \right)^{k-1+i-1}=1\cdot|A_{i,k}|$-t kapjuk.
+    Ebből persze
+    \begin{math}
+       \delta
+       =\left( -1 \right)^{i+k}|A_{i,k}|.
+    \end{math}
+\end{proof}
+\begin{proposition}[oszlopok szerinti kifejtés]
+        Legyen $A\in\mathbb{F}^{n\times n}$ mátrix.
         Ekkor
         \begin{enumerate}
             \item minden $1\leq k\leq n$ oszlopra
-                \[
-                    |[A]|=
+                \(
+                    |A|=
                     \sum_{i=1}^na_{i,k}\left( -1 \right)^{i+k}|A_{i,k}|,
-                \]
+                \)
             \item minden $1\leq k,j\leq n$ oszlopra $j\neq k$ mellett
-                \[
+                \(
                     0=
-                    \sum_{i=1}^na_{i,j}\left( -1 \right)^{i+k}|A_{i,k}|.\qedhere
-                \]
+                    \sum_{i=1}^na_{i,j}\left( -1 \right)^{i+k}|A_{i,k}|.
+                \)
         \end{enumerate}
-    \end{proposition}
-A fenti két formula együtt kicsit tömörebben: minden $1\leq k,j\leq n$ mellett
+A fenti két formula tömörebben: minden $1\leq k,j\leq n$ mellett
                 \[
                     \sum_{i=1}^na_{i,j}\left( -1 \right)^{i+k}|A_{i,k}|
                     =
-                    \delta_{j,k}|[A]|.
+                    \delta_{j,k}|A|.\qedhere
                 \]
+\end{proposition}
+\begin{proof}
+    Tekintsük az $\mathbb{F}^n$ vektortér természetes bázisát: 
+    $\left\{e_1,\dots,e_n\right\}$. Láttuk, hogy a $d=d_{\left\{ e_1,\dots,e_n\right\}}$
+    mérték mellett 
+    \[
+        |A|=d\left( a_1,\dots,a_n \right),
+    \]
+    ahol $a_1,\dots,a_n$ jelöli rendre az $A$ mátrix oszlopait.
+    A $k$-adik oszlopvektorra $a_k=\sum_{i=1}^na_{i,k}e_i$. 
+    Mivel $d$ az összes nem $k$-adik változója rögzítése mellett a $k$-adik változójában lineáris,
+    ezért
+    \[
+        |A|=d\left( a_1,\dots,a_k,\dots,a_n \right)
+        =
+        d\left( a_1,\dots,\sum_{i=1}^na_{i,k}e_i,\dots,a_n \right)
+        =
+        \sum_{i=1}^na_{i,k}d(a_1,\dots,e_i,\dots,a_n).
+    \]
+    No de itt $d(a_1,\dots,e_i,\dots,a_n)$ az előző állításban felülírt mátrix determinánsa,
+    azaz $\left( -1 \right)^{i+k}|A_{i,k}|$.
+    Éppen ezt kellett belátni az 1. pont indoklásához.
+
+    Másoljuk a mátrix $j$-edik oszlopát a $k$-adik oszlopra.
+    Ennek a mátrixnak két oszlopa azonossá vált,
+    ezért determinánsa zérus.
+    Felírva erre a mátrixra a $k$-adik oszlop szerinti kifejtést,
+    éppen a 2. pont azonosságát kapjuk.
+\end{proof}
+A mátrix transzponáltjának determinánsa azonos a mátrix determinánsával.
+Így ha a transzponált mátrixra alkalmazzuk az oszlopok szerinti kifejtést,
+akkor a sorok szerinti kifejtést kapjuk.
+
+A determináns kifejtésével az mátrix inverzére kapunk explicit formulát:
 \begin{proposition}
 Legyen $[A]$ egy reguláris mátrix.
-Ekkor az inverz mátrix a kofaktor-mátrix transzponáltjának a determináns reciprokával vett szorzata.
+Ekkor az inverz mátrix a kofaktormátrix transzponáltjának a determináns reciprokával vett szorzata.
 
 Magyarra áttérve:
 \[
     [A^{-1}]_{k,i}=\frac{1}{|A|}\left( -1 \right)^{i+k}|A_{i,k}|.\qedhere
 \]
 \end{proposition}
-    \begin{proposition}[Cramer]
-        Tekintsünk egy $n\times n$ inhomogén lineáris egyenletrendszert.
-        Tudjuk, hogy pontosan akkor van egyetlen megoldása, ha az együtthatómátrix
-        reguláris.
-        Jelölje $[A]$ az együttható-mátrixot, és $[B]_k$ azt a mátrixot, amelyet úgy kapunk, 
-        hogy az egyenlet jobb oldalát reprezentáló oszlopvektort az együttható mátrix $k$-adik 
-        oszlopára másoljuk.
-        Ekkor a megoldás $k$-adik koordinátájára
+\begin{proof}
+    Jelölje a $M$ a kofaktormátrix transzponáltját,
+    azaz $m_{k,i}=\left( -1 \right)^{i+k}|A_{i,k}|$.
+    Így az $M\cdot A$ szorzat mátrix $k,j$ pozíciója
+    \[
+        \sum_{i=1}^nm_{k,i}a_{i,j}
+        =
+        \sum_{i=1}^n
+            \left( -1 \right)^{i+k}|A_{i,k}|
+            a_{i,j}
+        =\delta_{j,k}|A|
+    \]
+    a kifejtési tétel szerint.
+    Ez azt jelenti, hogy $M\cdot A=|A|I$.
+    Mivel $A$ reguláris ezért a nem zérus determinánsával osztva kapjuk, hogy 
+    $\left(\frac{1}{|A|}M\right)A=I$,
+    ami azt jelenti, hogy $A^{-1}=\frac{1}{|A|}M$.
+\end{proof}
+\begin{proposition}[Cramer-szabály]\index{Cramer-szabály}
+        Tekintsünk egy $n\times n$ méretű inhomogén lineáris egyenletrendszert.
+        Tudjuk, hogy pontosan akkor van egyetlen megoldása minden jobboldal mellett, 
+        ha az együttható mátrix reguláris.
+        Jelölje  ezért $A$ a reguláris együttható mátrixot, 
+        és $B_k$ azt a mátrixot, amelyet úgy kapunk, 
+        hogy az egyenlet jobb oldalát reprezentáló oszlopvektort az $A$ együttható mátrix $k$-adik 
+        oszlopára írjuk.
+        Ekkor az $x$ megoldásvektor $k$-adik koordinátájára
         \[
-            x_k=\frac{|B|_k}{|A|}
+            x_k=\frac{|B_k|}{|A|}.\qedhere
         \]
-        formula adódik.
-    \end{proposition}
+\end{proposition}
+\begin{proof}
+    Kezdjük a $B_k$ mátrixnak a $k$-adik oszlopa szerinti kifejtésével.
+    \(
+        |B_k|
+        =
+        \sum_{i=1}^nb_i\left( -1 \right)^{i+k}A_{i,k}.
+    \)
+    Na most az $Ax=b$ ekvivalens az $x=A^{-1}b$-vel,
+    így a Cramer-szabály szerint
+    \[
+        x_k=[A^{-1}]_k\cdot b
+        =
+        \sum_{i=1}^n[A^{-1}]_{k,i}\cdot b_i
+        =
+        \sum_{i=1}^n\left( \frac{1}{|A|}\left( -1 \right)^{i+k}A_{i,k} \right)b_i
+        =
+        \frac{1}{|A|}\cdot |B_k|.\qedhere
+    \]
+\end{proof}
 
 \section{A karakterisztikus polinom}
 \begin{definition}
@@ -10943,5 +11100,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 11 Apr 2020 08:51:52 AM CEST
+Last Modified : Sat 11 Apr 2020 05:12:36 PM CEST
 
