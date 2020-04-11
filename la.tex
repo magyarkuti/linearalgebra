@@ -151,6 +151,7 @@
 \makeatother
 
 %\renewcommand{\mathbf}{\mathbb}
+\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\lin}{lin}
@@ -327,8 +328,8 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
         b.
     \end{math}
 \end{proof}
-\begin{definition}[Abel--csoport]\index{Abel--csoport}
-    Egy $\left( G,\star \right)$ csoportot \emph{Abel--csoportnak} nevezünk,
+\begin{definition}[Abel-csoport]\index{Abel-csoport}
+    Egy $\left( G,\star \right)$ csoportot \emph{Abel-csoportnak} nevezünk,
     ha a művelete \emph{kommutatív}\index{kommutatív} is, 
     azaz minden $s,t\in G$ mellett $s\star t=t\star s$.
 \end{definition}
@@ -336,7 +337,7 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
     A kétműveletes $\left( R,+,\cdot \right)$ algebrai struktúrát \emph{gyűrűnek} nevezzük,
     ha
     \begin{enumerate}
-        \item $\left( R,+ \right)$ Abel--csoport;
+        \item $\left( R,+ \right)$ Abel-csoport;
         \item $\left( R,\cdot \right)$ félcsoport;
         \item és a két műveletet összeköti a következő két disztributivitás:\index{disztributív}
             \[
@@ -871,8 +872,8 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
 
     Az egyértelműség mint a legkisebb közös többszörösnél.
 \end{proof}
-A következő állítás azonosságát Bezout--azonosságnak mondjuk.
-\begin{proposition}[Bezout--azonosság]\index{Bezout--azonosság}
+A következő állítás azonosságát Bezout-azonosságnak mondjuk.
+\begin{proposition}[Bezout-azonosság]\index{Bezout-azonosság}
     Legyenek a $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ tetszőleges $\mathbb{F}$ test feletti polinomok.
     Ezek pontosan akkor relatív prímek, 
     ha léteznek $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok, hogy
@@ -1071,7 +1072,7 @@ Most a legkisebb közös többszörös algoritmikus meghatározására töreksz�
 \end{proposition}
 \begin{proof}
     Mivel a $p$ és a $q$ polinomok relatív prímek,
-    ezért a Bezout--azonosság szerint van $f$ és $g$ polinom, amelyekre
+    ezért a Bezout-azonosság\index{Bezout-azonosság} szerint van $f$ és $g$ polinom, amelyekre
     \(
     fpr+gqr=r.
     \)
@@ -1568,7 +1569,7 @@ ha minden nem zérus eleme a fő diagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
-Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss-Jordan\index{Gauss--Jordan-eliminácio} eliminációs algoritmusra, 
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss--Jordan\index{Gauss--Jordan-elimináció} eliminációs algoritmusra, 
 amiket majd később vezetünk be.\label{pg:kommutal}\index{kommutáló mátrixok}
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
@@ -2224,7 +2225,7 @@ hogy \emph{valós számtest felett minden legalább harmadfokú polinom reducibi
 a második pedig, 
 hogy \emph{minden páratlan fokú valós együtthatós polinomnak van valós gyöke.}
 
-%\chapter{Gauss-Jordan elimináció}
+%\chapter{Gauss--Jordan elimináció}
 %\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrendszer}
 
 
@@ -2579,7 +2580,7 @@ Látjuk tehát, hogy összesen két fajta sorművelettel alakítottuk a kiindul�
 Világos, hogy ez ugyanaz, mintha a feladat az lett volna, 
 hogy a fenti két sorművelet használva az $y$ oszlopában minden számot el kell tüntetni, 
 a $k$-adikat pedig $1$-re kell beállítani.
-Ez a \emph{Gauss-Jordan--elimináció}.\index{Gauss-Jordan--elimináció}
+Ez a \emph{Gauss--Jordan-elimináció}.\index{Gauss--Jordan-elimináció}
 
 \subsection{Homogén lineáris egyenletrendszer}
 Az alábbi feladatot lineáris egyenletrendszernek nevezzük.
@@ -2626,7 +2627,7 @@ Ha az egyenletek egyikét egy nemzérus számmal szorozzuk,
 akkor a megoldások nem változnak, 
 azaz ekvivalens átalakítást hajtunk végre.
 
-Egy Gauss-Jordan eliminációs\index{Gauss--Jordan-eliminácio}  lépésre tekinthetünk úgy is,
+Egy Gauss--Jordan-eliminációs\index{Gauss--Jordan-elimináció}  lépésre tekinthetünk úgy is,
 mint rögzített $i,j$ mellett a $j$-edik változó kiküszöbölésére
 -- azaz eliminációjára -- 
 valamennyi nem az $i$-edik sorból,
@@ -2636,7 +2637,7 @@ ha az $i$-edik sort osztjuk az $a_{i,j}\neq 0$ számmal, akkor e sor $j$-edik
 eleme $1$-re változik.
 Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
-Ha ezt minden $k=1,\dots,m$ mellet kiszámoljuk, akkor éppen egy Gauss-Jordan
+Ha ezt minden $k=1,\dots,m$ mellet kiszámoljuk, akkor éppen egy Gauss--Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot\footnote{sarok elem}\index{pivot elem} elem választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
@@ -2703,7 +2704,7 @@ A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló
     akkor a rendszernek van nem zéró megoldása.
 \end{proposition}
 \begin{proof}
-    Gauss-Jordan algoritmus\index{Gauss--Jordan-eliminácio}  legutolsó táblázatában
+    Gauss--Jordan-algoritmus\index{Gauss--Jordan-elimináció}  legutolsó táblázatában
     a kötött változó száma legfeljebb a sorok száma az pedig szigorúan kisebb mint az összes ismeretlenek száma.
     Van tehát szabad változó, amelynek értéke tetszőleges lehet.
 \end{proof}
@@ -2732,7 +2733,7 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
             }
         \]
         homogén  lineáris egyenletrendszert.
-        A Gauss-Jordan algoritmus\index{Gauss--Jordan-eliminácio}  lehet például a következő:
+        A Gauss--Jordan-algoritmus\index{Gauss--Jordan-elimináció}  lehet például a következő:
         \[
             \begin{array}{|rrr}
                 a&b&c\\
@@ -2874,7 +2875,7 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 \end{enumerate}
 Egy homogén lineáris egyenletrendszernek a zérus vektor mindig megoldása,
 ezt nevezzük triviális megoldásnak.
-A Gauss-Jordan eliminációs\index{Gauss--Jordan-eliminácio}  algoritmusból világos a következő gondolat.
+A Gauss--Jordan-eliminációs\index{Gauss--Jordan-elimináció}  algoritmusból világos a következő gondolat.
 A rendszernek pontosan akkor nincs nem triviális megoldása, 
 ha nincs szabad változó, azaz minden változó kötött:
 \begin{proposition}
@@ -2882,7 +2883,7 @@ ha nincs szabad változó, azaz minden változó kötött:
     ha az eliminációs algoritmusban minden oszlop a generátorrendszerbe cserélhető.
 \end{proposition}
 \subsection{Mátrix faktorizáció}
-Érdemes a Gauss-Jordan eliminációs\index{Gauss--Jordan-eliminácio}  algoritmust az egyenletrendszerek megoldásától függetlenül is szemlélni.
+Érdemes a Gauss--Jordan-eliminációs\index{Gauss--Jordan-elimináció}  algoritmust az egyenletrendszerek megoldásától függetlenül is szemlélni.
 Ide másolom az előző feladat megoldásának táblázatát:
 \[
     \begin{array}{r|rrrrr}
@@ -2996,10 +2997,10 @@ Máshogyan fogalmazva: mikor van egyáltalán megoldása egy inhomogén rendszer
     ha $b$ előáll mint $A$ oszlopainak valamilyen lineáris kombinációja, 
     azaz a $b$ vektor az $A$ mátrix oszlopvektorteréhez tartozik.
 \end{proposition}
-Konkrétan adott $A$ és $b$ mellett Gauss-Jordan algoritmussal\index{Gauss--Jordan-eliminácio}  el tudjuk dönteni, hogy
-$b$ vektor eleme-e az $A$ mátrix oszlop vektorterének.
+Konkrétan adott $A$ és $b$ mellett Gauss--Jordan-algoritmussal\index{Gauss--Jordan-elimináció}  el tudjuk dönteni, hogy
+$b$ vektor eleme-e az $A$ mátrix oszlopvektorterének.
 Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
-Most hajtsuk végre a Gauss-Jordan eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
+Most hajtsuk végre a Gauss--Jordan-eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
 csak az első n oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
 Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
 Az algoritmus úgy ér véget, 
@@ -3019,7 +3020,7 @@ ahol szerepel eliminált változó.
 Ha a fenti eliminációra, mint a generátorrendszer csere lemma alkalmazására gondolunk,
 akkor azt kapjuk, hogy a megoldhatóság szükséges és elegendő feltétele,
 hogy a végső táblában az utolsó, a $b$-hez tartozó oszlopnak csak olyan helyeken lehetnek nem zérus tagjai,
-amely helyek korábban már a generátorrendszerbe becserélt oszlop vektorokhoz tartoznak,
+amely helyek korábban már a generátorrendszerbe becserélt oszlopvektorokhoz tartoznak,
 ami persze nem jelent többet, mint hogy $b$ eleme az $A$ oszlopvektorterének.
 Az algoritmus annyiban több, mint a korábban megértett feltétel, 
 hogy a megoldható esetben rögtön kapunk egy partikuláris megoldást is.
@@ -3033,7 +3034,7 @@ Nézzünk egy példát.
         3x_1+x_2+4x_3-x_4+5x_5=&10 
     \end{array}
 \]
-A Gauss-Jordan algoritmus:\index{Gauss--Jordan-eliminácio} 
+A Gauss--Jordan-algoritmus:\index{Gauss--Jordan-elimináció} 
 \begin{multline*}
     \begin{array}{c|rrrrr|r}
         &a_1&a_2&a_3&a_4&a_5&b\\
@@ -3091,7 +3092,7 @@ Az általános megoldás tehát
 \]
 \begin{proposition}
     Az $Ax=b$ inhomogén lineáris egyenletrendszernek pontosan akkor van egyetlen 
-    megoldása, ha $b$ az $A$ képteréhez tartozik és $A$ minden oszlopa a Gauss-Jordan eliminációs algoritmussal\index{Gauss--Jordan-eliminácio}  a generátorrendszerbe cserélhető.
+    megoldása, ha $b$ az $A$ képteréhez tartozik és $A$ minden oszlopa a Gauss--Jordan-eliminációs algoritmussal\index{Gauss--Jordan-elimináció}  a generátorrendszerbe cserélhető.
 \end{proposition}
 Ebben az esetben persze az algoritmusból adódó partikuláris megoldás az egyetlen megoldás.
 
@@ -3103,7 +3104,7 @@ A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint
 \end{proposition}
 \begin{proof}
     Tegyük fel tehát, hogy kevesebb ismeretlen van mint sor.
-    Mikor az $A$ mátrixra alkalmazott Gauss-Jordan algoritmus\index{Gauss--Jordan-eliminácio}  véget ér, 
+    Mikor az $A$ mátrixra alkalmazott Gauss--Jordan-algoritmus\index{Gauss--Jordan-elimináció}  véget ér, 
     akkor minden nem zérus sorban pontosan egy eliminált ismeretlen van.
     Eszerint minden egyes sor vagy zéró sor, 
     vagy van benne eliminált ismeretlen.
@@ -3113,7 +3114,7 @@ A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint
     amelynek a $k$-adik koordinátája nem zérus, de minden más koordináta zérus meg is felel.
 \end{proof}
 \subsection{Inverz mátrix}
-Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss-Jordan algoritmust.\index{Gauss--Jordan-eliminácio} 
+Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss--Jordan-algoritmust.\index{Gauss--Jordan-elimináció} 
 Mivel sorműveletekről van szó, természetes gondolat, hogy az $A\in\mathbb{F}^{m\times n}$
 mátrix transzformálásához $m\times m$ méretű mátrixokat használjunk,
 amelyekkel balról szorozzuk $A$-t.
@@ -3138,7 +3139,7 @@ Valóban, ha $m\times m$ méretű identitás mátrix
 
 Tekintsünk most, egy $m\times m$ méretű négyzetes mátrixot.
 Tegyük fel, hogy a mátrix minden oszlopát a generátorrendszerbe cserélhetjük
-a szokásos Gauss-Jordan eliminációs algoritmus\index{Gauss--Jordan-eliminácio}  során.
+a szokásos Gauss--Jordan-eliminációs algoritmus\index{Gauss--Jordan-elimináció}  során.
 Láttuk korábban, hogy ez azt jelenti, hogy az $Ax=b$ inhomogén lineáris egyenletrendszer
 minden $b$ vektor mellett egyértelműen megoldható.
 
@@ -3151,7 +3152,7 @@ akkor a mátrix szorzás definíciója szerint
     AB=I
 \]
 teljesül.
-A $B$ mátrixot tehát $m$ darab $m$ lépéses Gauss-Jordan eliminációval\index{Gauss--Jordan-eliminácio}  meg tudnánk határozni.
+A $B$ mátrixot tehát $m$ darab $m$ lépéses Gauss--Jordan-eliminációval\index{Gauss--Jordan-elimináció}  meg tudnánk határozni.
 
 Egyszerűbb, 
 ha egyetlen eliminációs algoritmus használunk, de arra az $m\times 2m$ méretű mátrixra,
@@ -3179,7 +3180,7 @@ ezért maga a $B$ mátrix áll a táblázat jobboldali $m\times m$ méretű rés
 
 Most meggondoljuk, hogy $BA=I$ is fennáll.
 Az iménti algoritmussal az $[A|I]$ mátrixot transzformáltuk a $[I|B]$ mátrixszá.
-A transzformáció során a Gauss-Jordan eliminációt használtuk,\index{Gauss--Jordan-eliminácio}  amely a szakasz elején említett 1) és 2) típusú mátrixokkal mint balszorzásokkal hajtható végre.
+A transzformáció során a Gauss--Jordan-eliminációt használtuk,\index{Gauss--Jordan-elimináció}  amely a szakasz elején említett 1) és 2) típusú mátrixokkal mint balszorzásokkal hajtható végre.
 Az algoritmus végén még sorokat is felcseréltünk, ami egy 3) típusú balszorzást jelent.
 Ha az 1) vagy 2) vagy 3) típusú mátrixot \emph{elemi mátrixnak}\index{elemi mátrix}
 nevezünk, 
@@ -3219,7 +3220,7 @@ amiből már következik, hogy
                 AB=I.
             \end{math}
         \item 
-            Gauss-Jordan eliminációval\index{Gauss--Jordan-eliminácio}  az $A$ minden oszlopa a generátorrendszerbe cserélhető.
+            Gauss--Jordan-eliminációval\index{Gauss--Jordan-elimináció}  az $A$ minden oszlopa a generátorrendszerbe cserélhető.
     \end{enumerate}
     Ha a fenti feltevések egyike (ergo mindegyike) fennáll, 
     akkor az 2)-ben szereplő $B$ mátrixból csak egy van, 
@@ -3230,7 +3231,7 @@ amiből már következik, hogy
     \begin{description}
         \item[$1.\Rightarrow 2.$] Nyilvánvaló.
         \item[$2.\Rightarrow 3.$] 
-            Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss-Jordan algoritmus megáll, ahol $r<m$.
+            Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss--Jordan-algoritmus megáll, ahol $r<m$.
             Ez azt jelenti, hogy az $A$ oszlop-vektorterének van $r$ elemű generátorrendszere.
             E generátorrendszer vektorait mint oszlopokat egy $A_1$ mátrixba téve egy $m\times r$ mátrixot kapunk.
             Mivel az oszlopok lineáris burkában az $A$ valamennyi oszlopa szerepel,
@@ -3612,7 +3613,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
 \scwords Független- és generátorrendszerek elemszáma közti kapcsolat vezet a a bázis és a dimenzió fogalmához.
 A félév legfajsúlyosabb állítása, az egyszerű bizonyítás ellenére.
 A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere}. lemmára.
-\begin{SL}\index{Steinitz--lemma}
+\begin{SL}\index{Steinitz-lemma}
     Legyenek $n$ és $m$ nem negatív egészek.
     Tegyük fel, hogy az $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer,
     és az
@@ -3747,7 +3748,7 @@ A következő gondolat szerint több is igaz.
     A=\sum_{j=1}^rb_j\cdot c_j
     \]
     $r$ darab diád összegének alakjában, 
-    ahol $b_j\in\mathbb{F}^n$ oszlop vektorok és $c_j\in\mathbb{F}^m$ sor vektorok.
+    ahol $b_j\in\mathbb{F}^n$ oszlopvektorok és $c_j\in\mathbb{F}^m$ sorvektorok.
     Ekkor a diádok oszlopaiból illetve soraiból alkotott 
     \[
         \left\{ b_j:j=1,\dots,r \right\} \text{ és }
@@ -3948,7 +3949,7 @@ az $\mathbb{F}^n$ tér.
     A $V=W$ esetben a rövidség kedvéért csak $L\left( V \right)$-t írunk.
 \end{definition}
 Láttuk korábban, hogy ha $A$ egy $m\times n$ méretű mátrix,
-akkor $x\in\mathbb{F}^n$ oszlop vektor mellett az
+akkor $x\in\mathbb{F}^n$ oszlopvektor mellett az
 \[
     x\mapsto A\cdot x,\
 \]
@@ -5125,7 +5126,7 @@ Tegyük fel, hogy, hogy ismerjük az alábbi fogalmakat:
     \item Vektorrendszer lineáris függetlensége;
     \item Altér, lineáris burok, generátorrendszer;
     \item Mátrix szorzás,
-    \item Gauss-Jordan elimináció.\index{Gauss--Jordan-eliminácio}  Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
+    \item Gauss--Jordan-elimináció.\index{Gauss--Jordan-elimináció}  Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
         lineárisan függetlenek, akkor az elemi sor műveletekkel az identikus mátrixszá transzformálható.
         Mivel az elemi sorműveletek, bal-szorzások alkalmas mátrixszal, 
         azt kapjuk, hogy létezik $P$ mátrix, amelyre $PQ=I$.
@@ -5703,7 +5704,7 @@ Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
 
 \section{Lineáris operátorok szorzata}
 Emlékezzünk arra, hogy a lineáris operáció mátrixát úgy kaptuk, hogy a koordinátáit $n$ elemenként
-megtörve az oszlop vektort egy mátrixszá rendeztük át.
+megtörve az oszlopvektort egy mátrixszá rendeztük át.
 Ennek az átrendezésnek az igazi értelme, hogy ilyen módon a mátrix szorzás művelet a lineáris operátorok kompozíciójával
 kapcsolódik össze.
 \begin{proposition}
@@ -6584,6 +6585,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \end{proof}
     A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is használhatók.
     \begin{proposition}
+        \index{kis minimálpolinom}
         Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja $m$.
         Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ egy bázisa $V$-nek,
         és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimálpolinomok.
@@ -6654,6 +6656,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
         polinomja.
         Az alábbi feltevések ekvivalensek:
+            \index{kis minimálpolinom}
         \begin{enumerate}
             \item $\lambda$ sajátértéke $A$-nak,
             \item $\ker (A-\lambda I)\neq \left\{ 0 \right\}$,
@@ -7167,6 +7170,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
             ezért ezen polinomok legkisebb közös többszöröse a minimálpolinom.
             Persze $\dim V$ darab elsőfokú polinom normált polinom legkisebb közös többszöröse,
             ezek közül a különbözők szorzata.
+            \index{kis minimálpolinom}
         }
 
         Megfordítva,
@@ -7257,6 +7261,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
         \end{enumerate}
     \end{proposition}
     \begin{proof}[Bizonyítás (1.)]
+            \index{kis minimálpolinom}
         Legyen adott $v\neq 0$ vektor mellett $p_v$ a $v$-hez tartozó kis minimálpolinom.
         Mivel $m\left( A \right)v=0$, ezért $p_v|m$.
         No de $m$ irreducibilis, ezért $m=p_v$.
@@ -7866,7 +7871,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     Később ki fog derülni,
     hogy a transzformáció karakterisztikus polinomjának, amely pontosan $\dim V$-ed fokú,
     is mindig gyöke a transzformáció.
-    Ez az úgynevezett Cayley-Hamilton--tétel.\index{Cayley--Hamilton}
+    Ez az úgynevezett Cayley--Hamilton-tétel.\index{Cayley--Hamilton}
 \chapter{Nilpotens transzformációk}
 \section{Hatvány függvény alakú minimálpolinom}
 \begin{definition}[nillpotens transzformáció]
@@ -7916,6 +7921,7 @@ Az első észrevétel adja a negatív választ.
     Megfordítva, ha $m\left( t \right)=t^m$ a minimálpolinomja $B$-nek,
     akkor $B^m=0$ és ez $m$-nél kisebb kitevőre nem teljesülhet.
     Ez éppen azt jelenti, hogy $B$ transzformáció $m$-ed rendben nillpotens.
+            \index{kis minimálpolinom}
 \end{proof}
 
 \section{Nilpotens operátorok redukálása}
@@ -8634,7 +8640,7 @@ A nillpontens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olya
 Persze amikor konkrétan a normálalakot konstruáljuk, akkor elegendő olyan bázisát keresni $\ker B$-nek, 
 amelyből kiindulva a fenti vektorrendszer elemeinek száma a tér dimneziójával egyezik meg.
 Az így kapott rendszer persze bázis lesz.
-\chapter{A Jordan--normálalak}
+\chapter{A Jordan-normálalak}
 \scwords A legfontosabb gondolathoz érkeztünk, 
 de igazán nincs új a fejezetben. Az előző fejezeteket foglaljuk össze.
 Először azt az esetet vizsgáljuk, mikor egy transzformáció minimálpolinomja
@@ -8675,14 +8681,14 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
         a szuper diagonálisban $n_1-1$ db $1$-es, aztán egy zérus, majd $n_2-1$ db $1$-es aztán egy zérus, stb.
         Adjuk a $B=A-\lambda I$ mátrixához a $\lambda I$ diagonális mátrixot!
         Ekkor kapjuk az $A$-nak a $(\dag)$ bázisban felírt mátrixát.
-        Ezt a mátrixot nevezzük az $A$ transzformáció \emph{Jordan--normálalakjának}\index{Jordan--normálalak}.
+        Ezt a mátrixot nevezzük az $A$ transzformáció \emph{Jordan-normálalakjának}\index{Jordan-normálalak}.
 \end{definition}
 Adott $1\leq j\leq r$ mellett, 
 a $j$-edik invariáns altérre leszorított $A$ leképezésnek a 
 \begin{math}
     \left\{ B^{n_j-1}v_j,\dots,Bv_j,v_j \right\}
 \end{math}
-bázison felírt mátrixát \emph{Jordan--blokknak}\index{Jordan--blokk} mondjuk.
+bázison felírt mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
 \[
     \begin{pmatrix}
         \lambda&1&0&\dots& 0 &0&0\\
@@ -8737,13 +8743,13 @@ a fenti tipusú Jordan-blokkok, diagonális alakú elrendezésével adódik:
 \end{displaymath}
 Hangsúlyozni szeretném, hogy az egyértelműség szerint a Jordan blokkok száma, és azok mérete is csak
 az $A$ transzformációtól függ.
-Több bázis is lehetséges, amelyben a transzformáció Jordan--normálalakú, 
-de nem csak hogy minden normálalakban azonos számú Jordan--blokk van,
+Több bázis is lehetséges, amelyben a transzformáció Jordan-normálalakú, 
+de nem csak hogy minden normálalakban azonos számú Jordan-blokk van,
 \footnote{A Jordan-blokkok száma az $B=A-\lambda I$ defektusa, azaz a $\lambda$ sajátérték
     geometriai dimenziója.\index{sajátérték geometriai dimenziója}}
 de a blokkok mérete is azonos.
 A felbontásban szereplő direktösszeadandó alterek páronként izomorfak egymással.
-\section{Jordan--normálalak: az általános eset}
+\section{Jordan-normálalak: az általános eset}
 \begin{definition}
     Legyen $A\in L\left( V \right)$ lineáris transzformáció valamely $\mathbb{F}$ test
     feletti vektortéren.
@@ -8764,7 +8770,7 @@ A felbontásban szereplő direktösszeadandó alterek páronként izomorfak egym
         \left( t-\lambda_j \right)^{m_j}.
     \]
     Minden egyes $j$ mellett írjuk fel az $A_j\in L\left( V_j \right)$ transzformáció
-    Jordan--normálakját,
+    Jordan-normálakját,
     majd egyesítsük a $V_j$ alterek Jordan-bázisait a $V$ tér bázisává. 
     Jelölje $B_j=A-\lambda_j I$,
     így kapjuk minden $j=1,\dots,s$ mellett
@@ -8805,10 +8811,10 @@ A felbontásban szereplő direktösszeadandó alterek páronként izomorfak egym
     \end{Bmatrix}
     \]
     vektorrendszer bázisa $V$-nek, amely bázist az $A$ transzformáció \emph{Jordan-bázisának}\index{Jordan-bázis} nevezünk.
-    Az $A$ transzformációnak ebben a bázisban felírt mátrixát nevezzük az $A$ \emph{Jordan--normálalakjának.}
+    Az $A$ transzformációnak ebben a bázisban felírt mátrixát nevezzük az $A$ \emph{Jordan-normálalakjának.}
 \end{definition}
-Az $A$ lineáris transzformáció Jordan--normálalakját tehát az egyes $\lambda_j$ sajátértékekhez tartozó $A_j\in L\left( V_j \right)$
-transzformációk Jordan--normálalakú mátrixainak diagonális alakú elrendezésével kapjuk.
+Az $A$ lineáris transzformáció Jordan-normálalakját tehát az egyes $\lambda_j$ sajátértékekhez tartozó $A_j\in L\left( V_j \right)$
+transzformációk Jordan-normálalakú mátrixainak diagonális alakú elrendezésével kapjuk.
 Tehát
 \[
     [A]
@@ -8831,7 +8837,7 @@ majd rendre kisebb vagy egyenlő méretű blokkok következnek.
     és $A\in L\left( V \right)$ egy lineáris transzformáció.
     Ekkor $A$-hoz létezik Jordan-bázis, azaz $A$ felírható Jordan-normálalakban.
     A Jordan-normálalak egyértelmű abban az értelemben,
-    hogy minden $\lambda_j$ sajátértékhez annyi Jordan--blokk tartozik, mint
+    hogy minden $\lambda_j$ sajátértékhez annyi Jordan-blokk tartozik, mint
     a sajátérték geometriai multiplicitása, és a Jordan-blokkok mérete csak az $A$ transzformációtól függ.
 \end{proposition}
 \begin{proof}
@@ -8862,7 +8868,7 @@ Később teljesen nyilvánvaló lesz, hogy egy Jordan-normálalakú mátrix
     \left( t-\lambda_1 \right)^{k_1}\left( t-\lambda_2 \right)^{k_2}\dots\left( t-\lambda_s \right)^{k_s}
 \]
 alakú,
-ahol a $\lambda_j$ sajátérték pontosan $k_j$-szer szerepel a Jordan--normálalak diagonálisában.
+ahol a $\lambda_j$ sajátérték pontosan $k_j$-szer szerepel a Jordan-normálalak diagonálisában.
 Mivel minden $\lambda_j$-re a legnagyobb Jordan-blokk éppen $m_j\times m_j$ méretű,
 ezért $m_j\leq k_j$ minden $j$-mellett.
 Ebből persze következik, 
@@ -8872,10 +8878,10 @@ hogy \emph{az $A$ transzformáció karakterisztikus polinomjának is gyöke maga
 Ezt az eredményt gondoltuk meg, mikor a vektortér olyan test felett van értelmezve,
 ahol minden polinomnak van gyöke.
 A gondolat általánosabban is igaz, tetszőleges test feletti vektorterek esetére.
-Ez a \emph{Cayley-Hamilton--tétel}\index{Cayley--Hamilton}.
+Ez a \emph{Cayley--Hamilton-tétel}\index{Cayley--Hamilton}.
 
 Mivel a karakterisztikus polinom mindig pontosan egy $\dim V$-ed fokú normált polinom,
-ezért a Cayley-Hamilton--tételből is nevetve következik, 
+ezért a Cayley--Hamilton-tételből is nevetve következik, 
 hogy a minimálpolinom mindig legfeljebb $\dim V$-ed fokú.
 
 Szokás azt mondani, hogy a $\lambda\in\sigma\left( A \right)$ sajátérték
@@ -9076,7 +9082,7 @@ melynél nincs inverzióban álló bástyapár.
 Egy permutáció előjelét meghatározó algoritmus a definíció szerint a következő:
 \emph{
 Tekintsük a $\pi$ permutáció bástyafelrakását. 
-Hasonlítsuk össze az összes különböző -- tehát $n\choose 2$ darab --
+Hasonlítsuk össze az összes különböző -- tehát $\binom{n}{2}$ darab --
 bástyapárnak az oszlopszámait a sorszámaival.
 Ha a nagyobb sorindexű bástya oszlopszáma a kisebb, akkor ők inverzióban vannak.
 Ha $k$ jelöli az inverzióban álló bástyapárok számát, 
@@ -9549,9 +9555,9 @@ Ez azt jelenti, hogy a definícióban csak az identitás permutációhoz tartoz�
 Az identitáshoz tartozó tag pedig a diagonális elemek szorzata.
 Speciálisan, az identitás mátrix determinánsa 1.
 
-\paragraph{Egy mátrix determinánsa Gauss-Jordan-eliminációval.}
-Képzeljük el, hogy adott egy olyan mátrix, amelynek oszlopai lineárisan függetlenek.
-Az eliminációs algoritmusnak arra az alakjára gondoljunk először, amikor a bázisba bevont oszlop vektornak
+\paragraph{Egy mátrix determinánsa Gauss--Jordan-eliminációval.}
+Képzeljük el, hogy adott egy reguláris mátrix, tehát olyan, amelynek oszlopai lineárisan függetlenek.
+Az eliminációs algoritmusnak arra az alakjára gondoljunk először, amikor a bázisba bevont oszlopvektornak
 is kiírjuk az új bázisban a koordinátáit. 
 Ilyen módon végig $n\times n$ méretű táblázatokkal dolgozunk.
 Tegyük fel, hogy egy táblázat $A_1$ az ebből következő táblázat $A_2$.
@@ -9569,7 +9575,7 @@ Tehát az előbbi összefüggést lépésenként alkalmazva
 \]
 Ezek szerint az algoritmus a következő:
 \emph{
-$A$ determinánsának kiszámításához az összes oszlopot Gauss-Jordan-eliminációval bevisszük a bázisba.
+$A$ determinánsának kiszámításához az összes oszlopot Gauss--Jordan-eliminációval bevisszük a bázisba.
 A determináns a pivot elemek szorzata szorozva +1, vagy -1-el.
 Az utolsó táblázatban, az új bázis elemeit az eredeti oszlopvektorok alkotják.
 Számoljuk meg, hogy hány sorcserét kell kapnunk ahhoz, hogy az eredeti oszlopvektorok természetes sorrendjébe cseréljük az elimináció
@@ -9588,7 +9594,7 @@ akkor ehhez az oszlophoz véges sokszor egy másik oszlop skalárszorosát adva 
 amelyben ez az oszlop csupa zérus, és a determinánsa azonos a kiinduló mátrix determinánsával. 
 Látjuk tehát, hogy ha az oszlopok lineárisan összefüggők, akkor a mátrix determinánsa zérus.
 Viszont ha az oszlopok lineárisan függetlenek, 
-akkor Gauss-Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
+akkor Gauss--Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
 E szorzat nem lehet zérus, hiszen egyik pivot elem sem lehet zérus.
 Meggondoltuk tehát: 
 \emph{
@@ -9654,16 +9660,17 @@ Ekkor
     =
     \sum_{\pi\in S_{n+m}}\sgn\pi\prod_{i=1}^{n+m}a_{i,\pi(i)}
     =
-    |A|.\qedhere
+    |A|.
 \end{multline*}
+Ezt kellett indokolni.
 \end{proof}
-\begin{proof}[Gauss-Jordan-elimináció alapján]
+\begin{proof}[Gauss--Jordan-elimináció alapján]
     Először is azt vegyük észre, hogy az $A_{2,1}$ nullmátrix léte miatt,
     ha $A$ oszlopai lineárisan összefüggők, 
     akkor az $A_{1,1}$ és $A_{2,2}$ mátrixok egyikének oszlopai is lineárisan összefüggők.
     Az állítás tehát teljesül, ha $|A|=0$.
     Feltesszük, hogy $A$ oszlopai lineárisan függetlenek.
-    Végezzünk Gauss-Jordan-eliminációt az $A$ mátrixon de úgy,
+    Végezzünk Gauss--Jordan-eliminációt az $A$ mátrixon de úgy,
     hogy az első $n$ lépésben $A_{1,1}$ részéből, utána $A_{2,2}$ részéből választjuk a pivot elemeket.
     Ez megtehető, hiszen $A_{1,1}$ oszlopai is lineárisan függetlenek.
     Legyenek a pivot elemek $r_1,\dots,r_n,r_{n+1},\dots,r_m$, 
@@ -10012,7 +10019,7 @@ Magyarra áttérve:
         Tudjuk, hogy pontosan akkor van egyetlen megoldása, ha az együtthatómátrix
         reguláris.
         Jelölje $[A]$ az együttható-mátrixot, és $[B]_k$ azt a mátrixot, amelyet úgy kapunk, 
-        hogy az egyenlet jobb oldalát reprezentáló oszlop vektort az együttható mátrix $k$-adik 
+        hogy az egyenlet jobb oldalát reprezentáló oszlopvektort az együttható mátrix $k$-adik 
         oszlopára másoljuk.
         Ekkor a megoldás $k$-adik koordinátájára
         \[
@@ -10021,18 +10028,264 @@ Magyarra áttérve:
         formula adódik.
     \end{proposition}
 
+\section{A karakterisztikus polinom}
+\begin{definition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformációja az $\mathbb{F}$ test feletti $V$,
+    $n$-dimenziós vektortérnek.
+    Definiáljuk a $k:\mathbb{F}\to\mathbb{F}$ függvényt, mint
+    $k\left( t \right)=|tI-A|$ minden $t\in\mathbb{F}$ mellett.
+    Ekkor $k$ egy pontosan $n$-ed fokú, normált polinom,
+    amelyre
+    \[
+        k\left( t \right)
+        =
+        t^n-\tr(A)t^{n-1}+\dots+\left( -1 \right)^n|A|.
+    \]
+    Ezt a $k$ függvényt nevezzük az 
+    $A$ transzformáció \emph{karakterisztikus}\index{karakterisztikus polinom}
+    polinomjának.
+\end{definition}
+\begin{proof}
+    Rögzítsük a tér egy $\left\{ e_1,\dots,e_n \right\}$ bázisát,
+    majd írjuk fel az $tI-A$ transzformáció mátrixát ebben a bázisban.
+    E mátrix determinánsa $k\left( t \right)$, 
+    ami minden konkrét $t\in\mathbb{F}$ mellett az $\mathbb{F}$ testbeli szám.
+    Mivel a transzformáció mátrixának determinánsa minden bázis mellett ugyanaz a szám,
+    ezért $k\left( t \right)$ konkrét értéke a választott bázistól független.
+
+    A diagonálisban szereplő elemek $\left( t-a_{i,i} \right)$ alakúak, 
+    és a $t$ változó máshol nem szerepel a mátrixban.
+    Ha a determnináns definíciójára gondolunk, akkor nyilvánvaló, hogy $k\left( t \right)$ a $t$
+    változó legfeljebb $n$-ed fokú polinomja.
+
+    E polinom konstans tagja $k\left( 0 \right)=|-A|=\left( -1 \right)^n|A|.$
+
+    Ha $\pi\neq\id$ egy permutáció, 
+    akkor $\pi$ legalább két helyen különbözik az identikus permutációtól,
+    ergo a $\pi$-hez tartozó bástyafelrakás legfeljebb $n-2$ diagonális elemet taposhat.
+    Látjuk tehát, 
+    hogy identitástól különböző permutáció mellett nincs $t$-nek $n-2$-nél magasabb fokú hatványa.
+
+    A diagonális bástyafelrakáshoz a 
+    \[
+        \left( t-a_{1,1} \right)\left( t-a_{2,2} \right)\cdots\left( t-a_{n,n} \right)
+    \]
+    szorzat tartozik, amelynek első két legmagasabb hatványú tagja
+    \[
+        t^n+t^{n-1}\left( -a_{1,1}\dots-a_{n,n} \right)=t^n-\tr\left( A \right)t^{n-1}.\qedhere
+    \]
+\end{proof}
+A spektrum pontjai nem csak a minimálpolinom zérus helyei, 
+hanem a karakterisztikus polinom zérushelyei is.
+\begin{proposition}[karakterisztikus polinom gyökei]
+    Legyen $k\left( t \right)$ az $A\in L\left( V \right)$ lineáris transzformáció karakterisztikus polinomja.
+    A $\lambda\in\mathbb{F}$ szám pontosan akkor sajátértéke $A$-nak, 
+    ha $k\left( \lambda \right)=0$.
+\end{proposition}
+\begin{proof}
+    A $\lambda$ pontosan akkor sajátértéke $A$-nak, 
+    ha $\lambda I-A$ szinguláris, 
+    ami avval ekvivalens, hogy $0=|\lambda I-A|=k\left( \lambda \right)$.
+\end{proof}
+Most tegyük fel egy pillanatra, hogy $\mathbb{C}$ feletti vektortér $A\in L(V)$ lineáris transzformációját
+vizsgáljuk. Minimálpolinomja az algebra alaptétele szerint felbomlik
+\[
+    m\left( t \right)
+    =\left( t-\lambda_1 \right)^{m_1}\dots\left( t-\lambda_s \right)^{m_s}
+\]
+gyöktényezői szorzatára, ahol $\sigma\left( A \right)=\left\{ \lambda_1,\dots,\lambda_s\right\}$.
+Jelölje $k_i$ a $\lambda_i$ sajátérték algebrai multiplicitását,\index{sajátérték algebrai multiplicitása}
+azaz $k_i=\nu\left( \left( A-\lambda_i I \right)^{m_i} \right)$.
+Tudjuk, hogy $tI-A$ Jordan-normálalakú\index{Jordan-normálalak}
+mátrixa egy olyan felsőháromszög alakú mátrix,
+amelynek diagonálisában $t-\lambda_i$ kifejezés éppen $k_i$-szer szerepel.
+Mivel egy felsőháromszög alakú mátrix determinánsa a diagonális elemek szorzata,
+ezért a következő tételt gondoltuk meg.
+\begin{proposition}
+    Tegyük fel, hogy $V$ egy a $\mathbb{C}$ test feletti vektortér és $A\in L\left( V \right)$ 
+    egy lineáris transzformáció.
+    Jelölje $\sigma\left( A \right)=\left\{\lambda_1,\dots\lambda_s  \right\}$ a különböző sajátértékeket,
+    és jelölje $k_1,\dots,k_s$ rendre sajátértékek algebrai multiplicitásait.
+    Ekkor az $A$ transzformáció karakterisztikus polinomja
+    \[
+        k\left( t \right)
+        =
+        \left( t-\lambda_1 \right)^{k_1}\dots\left( t-\lambda_s \right)^{k_s}.\qedhere
+    \]
+\end{proposition}
+No persze az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nillpotens transzformáció,
+de tudjuk hogy a nillpotencia rendje legfeljebb a tér dimenziója,
+ergo 
+$m_i\leq\dim\left( \ker\left( A-\lambda_iI \right)^{m_i} \right)
+=
+\nu\left( \left( A-\lambda_iI \right)^{m_i} \right)=k_i$.
+Ebből azonnal látjuk, hogy a minimálpolinom osztója a karakterisztikus polinomnak.
+Meggondoltuk tehát a Cayley--Hamilton-tételt abban a speciális esetben,
+mikor a test a kompex számtest.
+
+A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rögtön megmutatjuk.
+\begin{lemma}
+    Legyen $\mathbb{F}$ egy test, amelyben $1+1\neq 0$.
+    Tetszőlegesen választott $\alpha_0,\dots,\alpha_{n-1}\in\mathbb{F}$ számok mellett
+    jelölje
+    \(
+        A=
+        \begin{pmatrix}
+            -\alpha_{n-1}&1&0&\dots&0\\
+            -\alpha_{n-1}&0&1&\dots&0\\
+            \vdots&\cdots&\cdots&\ddots&0\\
+            -\alpha_1&0&0&\dots&1\\
+            -\alpha_0&0&0&\dots&0
+        \end{pmatrix}
+    \)
+    az $n\times n$ méretű mátrixot.
+    Ekkor ennek karakterisztikus polinomja
+    \begin{math}
+        k\left( t \right)
+        =
+        t^n+\alpha_{n-1}t^{n-1}+\dots+\alpha_1t+\alpha_0.
+    \end{math}
+\end{lemma}
+\begin{proof}
+    Először is tekintsük a 
+    \(
+        tI-A=
+        \begin{pmatrix}
+            t+\alpha_{n-1}&-1&0&\dots&0\\
+            \alpha_{n-1}&t&-1&\dots&0\\
+            \vdots&\cdots&\cdots&\ddots&0\\
+            \alpha_1&0&0&\dots&-1\\
+            \alpha_0&0&0&\dots&t
+        \end{pmatrix}
+    \) mátrixot.
+    E mátrix mérete szerinti indukcióval bizonyítunk.
+
+    Ha $n=1$, akkor a polinom $t+\alpha_0$, és a mátrixnak is csak egyetlen $t+\alpha_0$ eleme van.
+
+    Most tegyük fel, hogy igaz az állítás tetszőlegesen választott $n-1$ szám mellett, és lássuk be $n$-re.
+    A $tI-A$ mátrix determinánsát megkapjuk az utolsó sor szerint kifejtéssel.
+    Tehát
+    \[
+        k\left( t \right)=
+        |tI-A|=
+        \alpha_0
+        \left( -1 \right)^{1+n}
+        \left|
+        \begin{pmatrix}
+            -1&0&\dots&0\\
+            t&-1&\dots&0\\
+            \vdots&\cdots&\ddots&\vdots\\
+            0&0&\dots&-1\\
+        \end{pmatrix}
+        \right|
+        +t\left( -1 \right)^{n+n}
+        \left|
+        \begin{pmatrix}
+            t+\alpha_{n-1}&-1&0&\dots&0\\
+            \alpha_{n-1}&t&-1&\dots&\\
+            \vdots&\cdots&\cdots&\ddots&-1\\
+            \alpha_1&0&0&\dots&t
+        \end{pmatrix}
+        \right|.
+    \]
+    Itt az első $\left( n-1 \right)\times \left( n-1 \right)$ méretű determináns $\left( -1 \right)^{n-1}$, 
+    mert ez egy alsóháromszög alakú mátrix a diagonálisában csupa $-1$ számmal.
+    A második determináns értéke az indukciós feltevés az $n-1$ darab
+    $ \alpha_1,\dots, \alpha_{n-1}$ számra.
+    A fent kezdett kiemelést folytatva tehát,
+    \[
+        k\left( t \right)
+        =
+        \alpha_0
+        \left( -1 \right)^{1+n}\left( -1 \right)^{n-1}
+        +t\left( 
+        t^{n-1}+\alpha_{n-1}t^{n-2}+\dots\alpha_2t+\alpha_1
+        \right)
+        =
+        t^n+\alpha_{n-1}t^{n-1}+\dots+\alpha_1t+\alpha_0.\qedhere
+    \]
+\end{proof}
+\begin{proposition}[Cayley--Hamilton]
+    Legyen $V$ egy tetszőleges test feletti vektortér, 
+    és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Ekkor $A$ gyöke a karakterisztikus polinomjának, 
+    azaz $k\left( A \right)=0
+    (\in L\left( V \right))$.
+\end{proposition}
+\begin{proof}
+    Legyen $m=\dim V$, és $v\in V$ egy nem zérus elem.
+    Tekintsük a $v$ által generált legszűkebb $A$-invariáns alteret, azaz 
+    $\lin\left( v;A \right)$-t.
+    Ha ez $n$ dimenziós ($1\leq n\leq m$), 
+    és a $v$-hez tartozó kis minimálpolinom\index{kis minimálpolinom}
+    \[
+        p_v\left( t \right)
+        =
+        t^{n}+\alpha_{n-1}t^{n-1}+\dots+\alpha_1t+\alpha_0,
+    \]
+    akkor a
+    $\lin\left( v;A \right)$ invariáns altérben
+    $\left\{ A^{n-1}v,\dots,Av,v \right\}$ egy bázis.
+    Ebben a bázisban $A|_{\lin\left( v;A \right)}$ transzformáció mátrixa
+    \[
+        A_{1,1}=
+        \begin{pmatrix}
+            -\alpha_{n-1}&1&0&\dots&0\\
+            -\alpha_{n-1}&0&1&\dots&0\\
+            \vdots&\cdots&\cdots&\ddots&0\\
+            -\alpha_1&0&0&\dots&1\\
+            -\alpha_0&0&0&\dots&0
+        \end{pmatrix}
+    \]
+    alakú.
+    Az előző gondolat szerint $A_{1,1}$ karakterisztikus polinomja éppen $p_v\left( t \right)$.
+
+    Egészítsük ki $\lin\left( v;A \right)$ fenti bázisát az egész $V$ vektortér bázisává.
+    Ebben a bázisban felírva $A$ mátrix-sza
+    \begin{math}
+        [A]=
+        \begin{pmatrix}
+            A_{1,1}&A_{1,2}\\
+            A_{2,1}&A_{2,2}
+        \end{pmatrix}
+    \end{math}
+    alakú, ahol $A_{1,1}$ azonos $A|_{\lin\left( v;A \right)}$ fenti mátrix-szával, és mivel a
+    $\lin\left( v;A \right)$ egy invariáns altér,
+    ezért az $A_{1,1}$ alatt elhelyezkedő $\left( m-n \right)\times n$ méretű $A_{2,1}$ mátrix minden eleme zérus.
+    Egy ilyen módon partícionált mátrix determinánsa már könnyen számolható:
+    \[
+        k\left( t \right)=
+        |[tI-A]|
+        =
+        \left|
+        \begin{pmatrix}
+            tI_{1,1}-A_{1,1}&A_{1,2}\\
+            A_{2,1}&tI_{2,2}-A_{2,2}
+        \end{pmatrix}
+        \right|
+        =
+        |tI_{1,1}-A_{1,1}|\cdot|tI_{2,2}-A_{2,2}|
+        =
+        p_v\left( t \right)k_2\left( t \right),
+    \]
+    ahol $k_2$ az $A_{2,2}$ karakterisztikus polinomja.
+    Azt kaptuk, hogy $p_v$-nek többszöröse $k$, 
+    ezért $k\left( A \right)v=0$.
+\end{proof}
+Mivel egy lineáris transzformáció gyöke a saját karakterisztikus polinomjának,
+ezért a karakterisztikus polinom egy pontosan $n$-ed fokú polinom, 
+amely a minimál polinom többszöröse,
+azaz a minimápolinom osztója a karakterisztikus polinomnak.
+Persze ebből is következik, hogy a minimálpolinom egy legfeljebb $n$-ed fokú polinom.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-    \appendix
-    \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
-    \appendixpage
-
-
-
-
-
+\appendix
+\renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
+\appendixpage
 \chapter{A komplex számokról}
 Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján
 \section{Lineáris algebrai megközelítés}
@@ -10062,6 +10315,7 @@ Ebből azonnal következik, hogy
 Látjuk tehát, hogy $m$ a legalacsonyabb fokú normált polinom, melyre
 $m\left( A \right)e_1=0$,
 így az $e_1$ vektorhoz tartozó kis minimálpolinom éppen $m$.
+            \index{kis minimálpolinom}
 Mivel a tér $n$-dimenziós, ezért $m$ egyben minimálpolinomja is $A$-nak.
 
 Persze egy lineáris transzformációnak egy szám pontosan akkor sajátértéke,
@@ -10689,5 +10943,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 08 Apr 2020 06:15:51 AM CEST
+Last Modified : Sat 11 Apr 2020 08:51:52 AM CEST
 
