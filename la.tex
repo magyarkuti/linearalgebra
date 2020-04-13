@@ -176,6 +176,7 @@
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \newcommand{\uj}{\text{új}}
 \newcommand{\rgi}{\text{régi}}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
 %\citeindextrue
 \makeindex
 \synctex=1
@@ -10416,8 +10417,8 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
         =
         \left|
         \begin{pmatrix}
-            tI_{1,1}-A_{1,1}&A_{1,2}\\
-            A_{2,1}&tI_{2,2}-A_{2,2}
+            tI_{1,1}-A_{1,1}&-A_{1,2}\\
+            -A_{2,1}&tI_{2,2}-A_{2,2}
         \end{pmatrix}
         \right|
         =
@@ -10435,6 +10436,398 @@ amely a minimál polinom többszöröse,
 azaz a minimápolinom osztója a karakterisztikus polinomnak.
 Persze ebből is következik, hogy a minimálpolinom egy legfeljebb $n$-ed fokú polinom.
 
+\chapter{Skalárisszorzatos terek geometriája}
+\section{Definíciók}
+A továbbiakban $\mathbb{K}$ feletti vektorterekről van szó.
+$\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
+
+\begin{definition}\index{sakláris szorzat}[skalárisszorzatos-tér]
+    Egy $\ip{\cdot}{\cdot}:V\times V\to \mathbb{K}$ függvényt \emph{skaláris szorzatnak} mondunk, ha
+    teljesülnek az alábbi axiómák:
+    \begin{enumerate}
+        \item $\ip{x}{y}=\overline{\ip{y}{x}}$ minden $x,y\in V$ mellett.
+        \item 
+            $\ip{\alpha x}{y}=
+            \alpha\ip{x}{y}$ minden $x,y\in V$ és minden $\alpha\in V$ mellett.
+        \item
+            $\ip{x_1+x_2}{y}=
+            \ip{x_1}{y}+\ip{x_2}{y}$ minden $x_1,x_2,y\in V$ mellett.
+        \item 
+            $\ip{x}{x}\geq 0$ és $\ip{x}{x}=0$ akkor és csak akkor, ha $x=0$.
+    \end{enumerate}
+    Ha a $V$ vektortéren adott a fenti skaláris szorzat, 
+    akkor a $\left( V,\ip{\cdot}{\cdot} \right)$ párt \emph{skalárisszorzatos-térnek} mondjuk.\index{skalárisszorzatos-tér}
+\end{definition}
+
+
+
+\begin{definition}
+    Ha a $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-térnek az $x,y\in V$ két pontjára $\ip{x}{y}=0$, akkor azt mondjuk hogy a két vektor \emph{merőleges} egymásra. Jelölés: $x\perp y$.
+\end{definition}
+
+\begin{definition}
+    Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
+    Definiálja
+    \(
+        H^{\perp}=\left\{ x\in V:x\perp a:\forall a\in H \right\}
+    \)
+    a $H$ \emph{halmaz merőlegesét}.
+\end{definition}
+
+\begin{definition}
+    Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
+    Az $\left\{ x_1,\cdots,x_k \right\}$ vektorrendszert 
+    \begin{enumerate}
+        \item \emph{ortogonálisnak} nevezünk, ha minden $i\neq j$ esetén 
+            $x_i\perp x_j$.
+        \item \emph{ortonormáltnak} nevezünk, ha minden $i,j$ mellett $\ip{x_i}{x_j}=\delta_{i,j}$.\qedhere
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}[Merőlegesség tulajdonságai]
+    Legyen most is $V$ egy skalárisszorzatos-tér, $H,H_1\subseteq V$.
+    Ekkor
+    \begin{enumerate}
+        \item $H\cap H^{\perp}=\left\{ 0 \right\},$
+        \item $H\subseteq H_1\implies H_1^\perp\subseteq H^\perp,$
+        \item $H\subseteq \left( H^\perp \right)^\perp,$
+        \item $H^{\perp}=\left( \lin H \right)^\perp,$
+        \item $H^\perp$ altér.
+    \end{enumerate}
+    Persze $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
+\end{proposition}
+
+\section{Bessel-egyenlőtlenség és a Schwartz-egyenlőtlenség}
+
+\begin{proposition}
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
+    Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer.
+    Ekkor minden $u\in V$ vektorra:
+    \begin{enumerate}
+        \item
+            fennáll a  \emph{Bessel-egyenlőtlenség:}
+            $\sum_{i=1}^k|\ip{u}{x_i}|^2\leq\ip{u}{u}$; 
+        \item
+            Az 
+            \(
+            \hat{u}=u-\sum_{i=1}^k\ip{u}{x_i}x_i
+            \) 
+            vektorra $\hat{u}\perp x_j$
+            minden $j=1,\cdots,k$ mellett, azaz
+            \(
+            \hat{u}\in\left(\lin\left\{ x_1,\cdots,x_k \right\} \right)^\perp.
+            \)
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Schwartz-egyenlőtlenség]
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
+    $u,v\in V$.
+    Ekkor 
+    \[
+        |\ip{u}{v}|^2\leq \ip{u}{u}\ip{v}{v}.\qedhere
+    \]
+\end{proposition}
+\begin{definition}[skalárisszorzat indukálta norma]
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
+    jelölje minden $x\in V$ mellett $\|x\|=\sqrt{\ip{x}{x}}$.
+\end{definition}
+\begin{definition}[norma indukálta metrika]
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
+    tetszőleges $x,y\in V$ mellett jelölje $d\left( x,y \right)=\|x-y\|$.
+\end{definition}
+
+\section{Távolság, és hossz fogalma skalárisszorzatos-térben}
+
+\begin{proposition}
+    Egy $V$ skalárisszorzatos-térben teljesül a \emph{Schwartz-egyenlőtlenség}, azaz 
+    \(|\ip{x}{y}|\leq\|x\|\cdot\|y\|,\) 
+    valamint a skalárisszorzatos-tér kielégíti a \emph{normált tér} axiómákat, azaz
+    \begin{enumerate}
+        \item $\|x\|=0$ akkor és csak akkor, ha $x=0$,
+        \item $\|\alpha x\|=|\alpha|\|x\|$,
+        \item $\|x+y\|\leq\|x\|+\|y\|$,
+    \end{enumerate}
+    továbbá egy normált tér kielégíti a \emph{metrikus tér} axiómákat, azaz
+    \begin{enumerate}
+        \item $d\left( x,y \right)=0\iff x=y$,
+        \item $d\left( x,y \right)=d\left( y,x \right)$,
+        \item $d\left( x,z \right)\leq d\left( x,y \right)+d\left( y,z \right)$.
+    \end{enumerate}
+\end{proposition}
+
+
+\begin{proposition}
+    Ha $u\perp v$, akkor $\|u+v\|^2=\|u\|^2+\|v\|^2$.
+    Hasonlóan, ha $\left\{ u_1,\cdots,u_k \right\}$ ortogonális rendszer, akkor
+    $\|\sum_{i=1}^ku_i\|^2=\sum_{i=1}^k\|u_i\|^2$.
+\end{proposition}
+
+
+\begin{proposition}
+    Legyen $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer és 
+    jelölje $M=\lin\left\{ x_1,\cdots,x_k \right\}$.
+    Minden $u\in V$-hez létezik egyetlen $u^\star\in M$
+    vektor, amelyre
+    \[
+        d\left( u,u^\star\right)
+        =
+        \inf\left\{ d\left( u,w \right):w\in M \right\}.
+    \]
+    Erre a vektorra $u^\star=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség teljesül.
+\end{proposition}
+Ez azt jelenti, 
+hogy minden $u\in V$ mellett a 
+    $\sum_{i=1}^k\ip{u}{x_i}x_i$
+    vektor ez egyetlen olyan $M$-beli vektor, amelyre
+    \[
+        d\left( u,\sum_{i=1}^k\ip{u}{x_i}x_i \right)
+        =
+        \min\left\{ d\left( u,w \right):w\in M \right\}
+    \]
+    Ezt a számot nevezzük, az $u$ vektor és az $M$ altér távolságának.
+
+
+\begin{definition}[merőleges vetület, merőleges vetítés]
+    Legyen $M=\lin\left\{ x_1,\cdots,x_k \right\}$, 
+    ahol $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer.
+
+    Láttuk, hogy a $\sum_{i=1}^k\ip{u}{x_i}\in M$ vektor független
+    az $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer megválasztásától, hiszen
+    ez az $u$-hoz az egyetlen legközelebbi $M$-beli vektor.
+    Definiálja $p_M:V\to V$ az alábbi lineáris transzformációt:
+    \[
+        p_M\left( u \right)=
+        \sum_{i=1}^k\ip{u}{x_i}x_i.
+    \]
+    A $p_M\left( u \right)\in M$ vektor $u$-nak $M$ altérre vonatkozó \emph{merőleges vetülete}.
+    A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}
+\end{definition}
+
+
+\section{Gram--Schmidt-ortogonalizáció}
+
+\begin{proposition}
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
+    Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer,
+    $M=\lin\left\{ x_1,\cdots,x_k \right\}$
+    és $p_M\in L\left( V \right)$ a merőleges vetítés az $M$ altérre.
+    Ekkor minden $u\in V$ mellett
+    \begin{enumerate}
+        \item
+            $\|p_M\left( u \right)\|\leq\|u\|$,
+        \item
+            \(
+            u-p_M(u)\in M^\perp.\qedhere
+            \) 
+    \end{enumerate}
+\end{proposition}
+
+
+\begin{proposition}
+    Skalárisszorzatos-tér minden zérust nem tartalmazó ortogonális vektorrendszere lineárisan független.
+\end{proposition}
+\begin{proposition}[Gram--Schmidt]
+    Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\cdots,y_k \right\}$ egy lineárisan független
+    vektorrendszer. 
+    Ehhez létezik olyan $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer, 
+    amelyre minden $i=1,\cdots,k$ mellett $x_i\in\lin\left\{ y_1,\cdots,y_i \right\}$.
+\end{proposition}
+
+
+
+
+\begin{corollary}
+    Véges dimenziós skalárisszorzatos-térnek van ortonormált bázisa.
+    Ha $\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis, akkor minden $u\in V$ mellett
+    \(
+        u=
+        \sum_{i=1}^n\ip{u}{x_i}x_i.
+    \)
+\end{corollary}
+\begin{corollary}
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér, és $M$ egy 
+    véges dimenziós altere.
+    Ekkor minden $u\in V$ -hez
+    \begin{enumerate}
+        \item létezik egyetlen $u^\star\in M$ vektor, amelyre
+        \(
+        d\left( u,u^\star\right)
+        =
+        \min\left\{ d\left( u,w \right):w\in M \right\}.
+        \)
+        Erre a vektorra $u^\star=p_M\left( u \right)=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség teljesül, az $M$ altér minden $\left\{ x_1,\cdots,x_k \right\}$ ortonormált bázisára.
+        \item
+            $\|p_M\left( u \right)\|\leq\|u\|$,
+        \item
+            \(
+            u-p_M(u)\in M^\perp.
+            \) 
+    \end{enumerate}
+\end{corollary}
+
+
+\section{Projekciós tétel}
+
+\begin{proposition}
+    Legyen $V$ egy skalárisszorzatos-tér, és $M$ egy véges dimenziós altere.
+    Ekkor 
+    \[
+        M\oplus M^\perp=V.
+    \]
+\end{proposition}
+\begin{proposition}
+    Legyen $V$ egy véges dimenziós skalárisszorzatos-tér.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $M\subseteq V$ altér mellett $M=M^{\perp\perp}$,
+        \item Minden $H\subseteq V$ részhalmaz mellett $\lin H=H^{\perp\perp}$.
+    \end{enumerate}
+\end{proposition}
+
+
+\section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}
+
+\begin{proposition}
+    Legy $V$ egy véges dimenziós skalárisszorzatos-tér.
+    Ekkor minden $\varphi:V\to\mathbb{K}$ lineáris
+    funkcionálhoz létezik egyetlen $z_\varphi\in V$ vektor,
+    melyre minden $x\in V$ mellett
+    \[
+        \varphi\left( x \right)=\ip{x}{z_\varphi}
+    \]
+\end{proposition}
+A bizonyításból az is látszik, hogy amennyiben 
+$\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis a térben, akkor
+\[
+    z_\varphi=
+    \sum_{i=1}^n\overline{\varphi\left( x_i \right)}x_i.
+\]
+
+
+\section{Ortonormált rendszer teljessége}
+\begin{definition}[T.O.N.R.]
+    Legyen $\left\{ e_1,\cdots,e_k \right\}$ egy ortonormált rendszer a $V$ skalárisszorzatos-térben.
+    Azt mondjuk, hogy ez egy \emph{teljes ortonormált rendszer}, ha
+    \[
+        \ip{u}{e_j}=0\quad\forall j=1,\cdots,k \implies u=0
+    \]
+    implikáció teljesül.
+\end{definition}
+
+Persze ez ugyanaz mint az
+$$\left\{ e_1,\cdots,e_k \right\}^\perp =\left\{ 0 \right\}$$
+feltétel.
+
+\begin{proposition}
+    Legyen $V$ egy skalárisszorzatos-tér, 
+    és tekintsünk egy a továbbiakban rögzített 
+    $\left\{ e_1,\cdots,e_k \right\}$ egy ortonormált rendszert.
+    Az alábbi feltevések ekvivalensek
+    \begin{enumerate}
+        \item 
+            Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer ortonormált bázis;
+        \item
+            Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer teljes ortonormált rendszer;
+        \item
+            Minden $x\in V$ mellett 
+            \(
+                x=
+                \sum_{i=1}^k\ip{x}{e_i}e_i;
+            \)
+        \item
+            Minden $x,y\in V$ mellett
+            \(
+                \ip{x}{y}=
+                \sum_{i=1}^k\ip{x}{e_i}\overline{\ip{y}{e_i}};
+            \)
+        \item
+            Minden $x\in V$ mellett
+            \(
+                \|x\|^2=
+                \sum_{i=1}^k|\ip{x}{e_i}|^2.
+            \)
+    \end{enumerate}
+\end{proposition}
+
+
+
+\begin{corollary}
+    \begin{enumerate}
+        \item Legyen a $V$ skalárisszorzatos-térben egy 
+            $\left\{ e_1,\cdots,e_n \right\}$ ortonormált bázis rögzítve.
+            Ekkor minden $x\in V$ vektorra a rögzített bázisban felírt $i$-edik koordináta $\ip{x}{e_i}$.
+        \item
+            Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más, 
+            mint valamely ortonormált bázisban felírt belső szorzat.
+            Erre a célra tetszőleges ortonormált bázis megfelelő.
+    \end{enumerate}
+\end{corollary}
+
+\section{Az adjungált operátor bevezetése}
+Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
+$\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós skalárisszorzatos-tér.
+Rögzített $A\in L\left( V,W \right)$ lineáris operátor és rögzített $w\in W$ vektor mellett tekintsük a 
+\[
+    \varphi_w=
+    \ip{\cdot}{w}_W\circ A
+\]
+függvényt. 
+Világos, hogy $\varphi_w:V\to\mathbb{K}$ lineáris funkcionál $V$-n, 
+így a Riesz-reprezentációs tétel szerint létezik egyetlen $v^\star\in V$, 
+amelyre
+$\varphi_w\left( v \right)=\ip{v}{v^\star}_V$ minden $v\in V$ mellett teljesül.
+
+Jelölje most $A^\star$ a $w\mapsto v^\star$ függvényt. 
+Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
+\[
+    \ip{Av}{w}_W=\ip{v}{A^\star w}_V.
+\]
+Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
+
+
+\begin{note}
+    Láttuk a Riesz-reprezentációs tétel igazolásában, hogy ha $\left\{ v_1,\cdots,v_n \right\}\subset V$
+    tetszőleges ortonormált bázis, akkor 
+    \[
+        A^\star w=
+        \sum_{i=1}^n\overline{\varphi_w\left( v_i \right)}v_i=
+        \sum_{i=1}^n\ip{w}{Av_i}_Wv_i.
+    \]
+    Ebből azonnal adódik, hogy $A^\star:W\to V$ lineáris operátor.
+\end{note}
+
+
+\begin{proposition}
+    Legyen $V$ és $W$ véges dimenziós skalárisszorzatos-tér.
+    Rögzítsünk egy $\left\{ v_1,\cdots,v_m \right\}$ ortonormált bázist $V$-ben,
+    és rögzítsünk egy $\left\{w_1,\cdots,w_n\right\}$ ortonormált bázist $W$-ben.
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operátor és $A^\star\in L\left( W,V \right)$ az adjungáltja.
+    Ekkor $A$-nak a fenti bázisokban rögzített mátrixa azonos 
+    $A^\star$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrix-szal.
+
+    Formálisan:
+    \[
+        \left[ A \right]_{i,j}=\overline{\left[ A^\star \right]}_{j,i}
+    \]
+    minden $j=1,\cdots,m$ és minden $i=1,\cdots,n$ esetén.
+\end{proposition}
+
+\begin{proposition}
+    Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
+    Ekkor
+    \begin{enumerate}
+        \item $\left( A+B \right)^\star=A^\star+B^\star,$
+        \item $\left( \alpha A \right)^\star=\overline\alpha A^\star,$
+        \item $(A^\star)^\star=A$
+    \end{enumerate}
+    Ha $I\in L\left( V \right)$ jelöli az identitás transzformációt, továbbá $A,B\in L\left( V \right)$, akkor
+    \begin{enumerate}
+        \item $I^\star=I$,
+        \item $\left( AB \right)^\star=B^\star A^\star$.
+    \end{enumerate}
+\end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -11100,5 +11493,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 11 Apr 2020 05:12:36 PM CEST
+Last Modified : Mon 13 Apr 2020 11:16:16 PM CEST
 
