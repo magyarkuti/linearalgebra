@@ -10437,11 +10437,11 @@ azaz a minimápolinom osztója a karakterisztikus polinomnak.
 Persze ebből is következik, hogy a minimálpolinom egy legfeljebb $n$-ed fokú polinom.
 
 \chapter{Skalárisszorzatos terek geometriája}
-\section{Definíciók}
 A továbbiakban $\mathbb{K}$ feletti vektorterekről van szó.
 $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
+\section{Definíciók}
 
-\begin{definition}\index{sakláris szorzat}[skalárisszorzatos-tér]
+\begin{definition}[skalárisszorzatos-tér]\index{sakláris szorzat}
     Egy $\ip{\cdot}{\cdot}:V\times V\to \mathbb{K}$ függvényt \emph{skaláris szorzatnak} mondunk, ha
     teljesülnek az alábbi axiómák:
     \begin{enumerate}
@@ -10458,21 +10458,86 @@ $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
     Ha a $V$ vektortéren adott a fenti skaláris szorzat, 
     akkor a $\left( V,\ip{\cdot}{\cdot} \right)$ párt \emph{skalárisszorzatos-térnek} mondjuk.\index{skalárisszorzatos-tér}
 \end{definition}
+Az első három pont szerint a skaláris szorzat rögzített második változóban lineáris, azaz 
+$
+    \ip{\sum_{j=1}^s\alpha_jx_j}{y}
+    =
+    \sum_{j=1}^s\alpha_j\ip{x_j}{y}$.
+Hasonlóan a skaláris szorzat rögzített első változóban \emph{konjugáltan lineáris}\index{konjugáltan lineáris}, 
+azaz
+\begin{math}
+    \ip{x}{\sum_{k=1}^r\beta_jy_j}
+    =
+    \sum_{k=1}^r\overline{\beta_k}\ip{x}{y_k}.
+\end{math}
+Persze ezeket nagyon sokszor vegyítjük is, 
+így a
+\[
+    \ip{\sum_{j=1}^s\alpha_jx_j}{\sum_{k=1}^r\beta_ky_k}
+    =
+    \sum_{j=1}^s\alpha_j\ip{x_j}{\sum_{k=1}^r\beta_ky_k}
+    =
+    \sum_{j=1}^s\alpha_j\ip{x_j}{\sum_{k=1}^r\beta_ky_k}
+    =
+    \sum_{j=1}^s\sum_{k=1}^r\alpha_j\overline{\beta_k}\ip{x_j}{y_k}
+\]
+formula adódik, amit úgy jegyezhetünk meg, hogy minden tagot minden taggal kell szorozni,
+de a másik változóból konjugáltan emeljük ki a test elemeit.
 
+\paragraph{Belső szorzat.} A legfontosabb példa skaláris szorzatra a \emph{belső szorzat}\index{belső szorzat}.
+Ha adott a vektortér egy $\left\{ v_1,\dots,v_n \right\}$ bázisa,
+akkor minden vektort egyértelműen meghatároznak a koordinátái,
+azaz 
+\begin{math}
+    x=\sum_{j=1}^n\xi_jv_j
+\end{math}
+és
+\begin{math}
+    y=\sum_{j=1}^n\eta_jv_j
+\end{math}
+Ezek belső szorzatát 
+\begin{math}
+    \left[ x,y \right]=\sum_{j=1}^n\xi_j\bar{\eta_j}
+\end{math}
+definiálja.
+Nagyon fontos észrevenni, 
+hogy a belső szorzat a definíciója szerint függ a vektorok koordinátáitól, 
+tehát függ a bázis megválasztásától.% 
+\footnote{
+    Helyesebb lenne a szörnyen nehézkes 
+    $\left[ \cdot,\cdot \right]_{\left\{ v_1,\dots,v_n \right\}}$ jelölés.
+}
 
+A másik fontos példa $\mathbb{R}$ feletti vektortén értelmezett.
+Jelölje $C\left[ a,b \right]$ valamely $\left[ a,b \right]$ korlátos és zárt intervallum feletti összes folytonos függvények vektorterét.
+Definiálja $f,g\in C\left[ a,b \right]$ két folytonos függvény skaláris szorzatát
+\begin{math}
+    \int_{a}^{b}f\left( x \right)g\left( x \right)\,dx.
+\end{math}
+Könnyen látható, hogy a fenti függvény kielégíti a skaláris szorzat definíciójában követelteket.
+Figyeljünk a folytonosság szerepére!
 
-\begin{definition}
-    Ha a $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-térnek az $x,y\in V$ két pontjára $\ip{x}{y}=0$, akkor azt mondjuk hogy a két vektor \emph{merőleges} egymásra. Jelölés: $x\perp y$.
+\begin{definition}[merőlegesség]
+    Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszorzatos-tér.
+    \begin{enumerate}
+        \item 
+            Ha azz $x,y\in V$ két pontjára $\ip{x}{y}=0$, 
+            akkor azt mondjuk hogy a két vektor \emph{merőleges}\index{merőleges} egymásra. 
+            Jelölés: $x\perp y$.
+        \item
+            Legyen most, $H\subseteq V$ egy részhalmaz.
+            Definiálja
+            \(
+                H^{\perp}=\left\{ x\in V:x\perp \forall a\in H \right\}
+            \)
+            a \emph{$H$ halmaz merőlegesét}.\qedhere
+    \end{enumerate}
 \end{definition}
-
-\begin{definition}
-    Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
-    Definiálja
-    \(
-        H^{\perp}=\left\{ x\in V:x\perp a:\forall a\in H \right\}
-    \)
-    a $H$ \emph{halmaz merőlegesét}.
-\end{definition}
+A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, hiszen ekkor sajátmagára is merőleges,
+de saját magára merőleges vektor csak a zérus vektor van. 
+Pont ezt jelenti az axiómák közt az utolsó.
+A $H^\perp$ az a részhalmaza $V$-nek, amely az összes $H$-ra merőleges vektorokból áll.
+Tehát $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
 
 \begin{definition}
     Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
@@ -10483,7 +10548,36 @@ $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
         \item \emph{ortonormáltnak} nevezünk, ha minden $i,j$ mellett $\ip{x_i}{x_j}=\delta_{i,j}$.\qedhere
     \end{enumerate}
 \end{definition}
-
+A felépítés jelen szintjén nem olyan egyszerű egy tetszőleges skaláris szorzatos térben ortonormált rendszert
+adni. Persze az ${}$ üres vektorrendszer ortogonális, de ortonormált is.
+Az látható, hogy egy ortogonális rendszert tetszőlegesen sok zérus vektorral kiegészítve ortogonális rendszert kapunk.
+Persze a zérus vektor egy ortonormált rendszerhez nem tartozhat elemként,
+de ha van a vektortérben egy $v\neq 0$ elem,
+akkor az egyelemű $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ vektorrendszert egy ortonormált rendszert alkot.
+Ennél több elemű rendszert most nem tudunk mondani, de később ennek oka rögtön világos lesz.
+Látjuk majd, hogy egy $n$-dimenziós térben van $n$ elemű ortonormált rendszert, de annál több elemű nincsen.
+\begin{proposition}
+    Egy zérus elemeket nem tartalmazó ortogonális rendszer lineárisan független rendszer is.
+\end{proposition}
+\begin{proof}
+    Ha a $\left\{ v_1,\dots,v_n \right\}$ rendszer lineárisan összefüggő, 
+    és $v_k=\sum_{j=1}^{k-1}\alpha_jv_j$,
+    akkor 
+    \[
+        \ip{v_k}{v_k}
+        =
+        \ip{\sum_{j=1}^{k-1}\alpha_jv_j}{v_k}
+        =
+        \sum_{j=1}^{k-1}\alpha_j\ip{v_j}{v_k}
+        =0.
+    \]
+    Ez a skaláris szorzás definíciója szerint csak abban az esetben lehetséges, 
+    ha $v_k=0$, ami ellentmond annak a feltételnek, hogy a rendszer a null vektort nem tartalmazza.
+\end{proof}
+Speciálisan, egy ortonormált rendszer is lineárisan független rendszer, így a Steinitz-lemma szerint,
+egy $n$-dimenziós vektortérben nem lehet több mint $n$ elemű ortonormált rendszert mutatni.
+Később látni fogjuk, hogy $n$ elemű ortonormált rendszer viszont mindig van egy $n$-dimenziós vektortérben,
+de erre még várnunk kell.
 \begin{proposition}[Merőlegesség tulajdonságai]
     Legyen most is $V$ egy skalárisszorzatos-tér, $H,H_1\subseteq V$.
     Ekkor
@@ -10494,12 +10588,10 @@ $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
         \item $H^{\perp}=\left( \lin H \right)^\perp,$
         \item $H^\perp$ altér.
     \end{enumerate}
-    Persze $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
 \end{proposition}
 
-\section{Bessel-egyenlőtlenség és a Schwartz-egyenlőtlenség}
-
-\begin{proposition}
+\section{Egyenlőtlenségek}
+\begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel}
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
     Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer.
     Ekkor minden $u\in V$ vektorra:
@@ -10513,9 +10605,12 @@ $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
             \hat{u}=u-\sum_{i=1}^k\ip{u}{x_i}x_i
             \) 
             vektorra $\hat{u}\perp x_j$
-            minden $j=1,\cdots,k$ mellett, azaz
+            ($j=1,\cdots,k$), azaz
             \(
-            \hat{u}\in\left(\lin\left\{ x_1,\cdots,x_k \right\} \right)^\perp.
+            \hat{u}\in
+            \left\{ x_1,\dots,x_k \right\}^\perp
+            =
+            \left(\lin\left\{ x_1,\cdots,x_k \right\} \right)^\perp.
             \)
             \qedhere
     \end{enumerate}
@@ -10554,6 +10649,7 @@ $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
         \item $d\left( x,y \right)=0\iff x=y$,
         \item $d\left( x,y \right)=d\left( y,x \right)$,
         \item $d\left( x,z \right)\leq d\left( x,y \right)+d\left( y,z \right)$.
+            \qedhere
     \end{enumerate}
 \end{proposition}
 
@@ -10619,15 +10715,12 @@ hogy minden $u\in V$ mellett a
             $\|p_M\left( u \right)\|\leq\|u\|$,
         \item
             \(
-            u-p_M(u)\in M^\perp.\qedhere
+            u-p_M(u)\in M^\perp.
             \) 
+            \qedhere
     \end{enumerate}
 \end{proposition}
 
-
-\begin{proposition}
-    Skalárisszorzatos-tér minden zérust nem tartalmazó ortogonális vektorrendszere lineárisan független.
-\end{proposition}
 \begin{proposition}[Gram--Schmidt]
     Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\cdots,y_k \right\}$ egy lineárisan független
     vektorrendszer. 
@@ -10657,13 +10750,15 @@ hogy minden $u\in V$ mellett a
         =
         \min\left\{ d\left( u,w \right):w\in M \right\}.
         \)
-        Erre a vektorra $u^\star=p_M\left( u \right)=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség teljesül, az $M$ altér minden $\left\{ x_1,\cdots,x_k \right\}$ ortonormált bázisára.
+        Erre a vektorra teljesül az $u^\star=p_M\left( u \right)=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség, 
+        az $M$ altér tetszőlegesen választott  $\left\{ x_1,\cdots,x_k \right\}$ ortonormált bázisa mellett;
         \item
-            $\|p_M\left( u \right)\|\leq\|u\|$,
+            $\|p_M\left( u \right)\|\leq\|u\|$;
         \item
             \(
             u-p_M(u)\in M^\perp.
             \) 
+            \qedhere
     \end{enumerate}
 \end{corollary}
 
@@ -10675,6 +10770,7 @@ hogy minden $u\in V$ mellett a
     Ekkor 
     \[
         M\oplus M^\perp=V.
+        \qedhere
     \]
 \end{proposition}
 \begin{proposition}
@@ -10683,6 +10779,7 @@ hogy minden $u\in V$ mellett a
     \begin{enumerate}
         \item Minden $M\subseteq V$ altér mellett $M=M^{\perp\perp}$,
         \item Minden $H\subseteq V$ részhalmaz mellett $\lin H=H^{\perp\perp}$.
+            \qedhere
     \end{enumerate}
 \end{proposition}
 
@@ -10696,6 +10793,7 @@ hogy minden $u\in V$ mellett a
     melyre minden $x\in V$ mellett
     \[
         \varphi\left( x \right)=\ip{x}{z_\varphi}
+        \qedhere
     \]
 \end{proposition}
 A bizonyításból az is látszik, hogy amennyiben 
@@ -10748,6 +10846,7 @@ feltétel.
                 \|x\|^2=
                 \sum_{i=1}^k|\ip{x}{e_i}|^2.
             \)
+                \qedhere
     \end{enumerate}
 \end{proposition}
 
@@ -11493,5 +11592,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 13 Apr 2020 11:16:16 PM CEST
+Last Modified : Tue 14 Apr 2020 10:54:08 AM CEST
 
