@@ -1989,7 +1989,7 @@ Az abszolút érték legfontosabb tulajdonságai:
         \item $|z+w|\leq |z|+|w|$.\qedhere
     \end{enumerate}
 \end{proposition}
-Az utolsó egyenlőtlenséget \emph{háromszög egyenlőtlenségnek}\index{háromszög egyenlőtlenség} nevezik.
+Az utolsó egyenlőtlenséget \emph{háromszög-egyenlőtlenségnek}\index{háromszög-egyenlőtlenség} nevezik.
 Egy kevésbé népszerű, de ekvivalens alakja
 \[
     \left|\left( |z|-|w| \right)\right|\leq|z-w|.
@@ -9600,7 +9600,7 @@ a $\sigma$ permutáció egyik bástyája (sőt legalább két bástyája) zérus
 Így a determináns definíciója szerint az $n!$ elemszámú összegben a $\pi$ kivételével minden összeadandó zérus.
 Speciálisan, az identitás mátrix determinánsa 1.
 
-\paragraph{Egy felső (alsó) háromszög alakú mátrix determinánsa a diagonális elemek szorzata.}
+\paragraph{Egy felső- (alsó-)háromszög alakú mátrix determinánsa a diagonális elemek szorzata.}
 Ugyanis minden $\pi\neq\id$ permutáció esetén van egy bástya a diagonális alatt (és egy a diagonális felett).
 Ez azt jelenti, hogy a definícióban csak az identitás permutációhoz tartozó tag nem feltétlen zérus.
 Az identitáshoz tartozó tag pedig a diagonális elemek szorzata.
@@ -10664,8 +10664,18 @@ de erre még várnunk kell.
     Ha $v\neq 0$, akkor a $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ rendszer egyetlen elemű ortonormált rendszer.
     Alkalmazva a Bessel-egyenlőtlenséget $k=1$ mellett
     \[
-        |\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}|^2\leq \ip{u}{u}
+        \frac{1}{\ip{v}{v}}
+        \left|\ip{u}{v}\right|^2
+        =
+        \left|\frac{1}{\sqrt{\ip{v}{v}}}
+        \ip{u}{v}\right|^2
+        =
+        \left|\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}\right|^2
+        \leq \ip{u}{u},
     \]
+    ami a bizonyítandó állítás. 
+    Ha viszont $v=0$,
+    akkor az állítás mindkét oldala zérus.
 \end{proof}
 \begin{definition}[skalárisszorzat indukálta norma]
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
@@ -10676,7 +10686,6 @@ de erre még várnunk kell.
     tetszőleges $x,y\in V$ mellett jelölje $d\left( x,y \right)=\|x-y\|$.
 \end{definition}
 
-\section{Távolság, és hossz fogalma skalárisszorzatos-térben}
 
 \begin{proposition}
     Egy $V$ skalárisszorzatos-térben teljesül a \emph{Schwartz-egyenlőtlenség}, azaz 
@@ -10695,13 +10704,65 @@ de erre még várnunk kell.
             \qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Egyedül a 3. normált tér axióma nem teljesen evidens.
+    Emlékezzünk arra, hogy egy $\Re z\leq |z|$ minden $z\in\mathbb{K}$ szám mellett.
+    Így
+    \begin{multline*}
+        \|x+y\|^2
+        =
+        \ip{x+y}{x+y}
+        =
+        \ip{x}{x}+\ip{x}{y}+\ip{y}{x}+\ip{y}{y}
+        =\|x\|^2+\|y\|^2+2\Re\ip{x}{y}
+        \\
+        \leq
+        \|x\|^2+\|y\|^2+2|\ip{x}{y}|
+        \leq
+        \|x\|^2+\|y\|^2+\|x\|\|y\|
+        =\left( \|x\|+\|y\| \right)^2.
+    \end{multline*}
+    Mindkét oldal gyökét véve, kapjuk a háromszög-egyenlőtlenséget.
+\end{proof}
 
+\section{Pont és altér távolsága}
 
-\begin{proposition}
+\begin{proposition}[Pythagoras]\index{Pythagoras-tétel}
     Ha $u\perp v$, akkor $\|u+v\|^2=\|u\|^2+\|v\|^2$.
     Hasonlóan, ha $\left\{ u_1,\cdots,u_k \right\}$ ortogonális rendszer, akkor
     $\|\sum_{i=1}^ku_i\|^2=\sum_{i=1}^k\|u_i\|^2$.
 \end{proposition}
+\begin{proof}
+    Világos, hogy ha $\ip{u}{v}=0$, 
+    akkor 
+    \begin{math}
+        \|u+v\|^2
+        =
+        \ip{u+v}{u+v}
+        =\ip{u}{u}+\ip{u}{v}+\ip{v}{u}+\ip{v}{v}
+        =
+        \|u\|^2+\|v\|^2.
+    \end{math}
+    Most tegyük fel, hogy $k$-nál kisebb elemszámú ortogonális rendszerre igaz az állítás
+    és lássuk be $k$-ra.
+    Világos, hogy 
+    \begin{math}
+        \ip{\sum_{j=1}^{k-1}u_j}{u_k}=0.
+    \end{math}
+    Így a már bizonyított állítás és az indukciós feltevés szerint
+    \[
+        \|\sum_{j=1}^ku_j\|^2
+        =
+        \|\left( \sum_{j=1}^{k-1}u_j \right)+u_k\|^2
+        =
+        \|\sum_{j=1}^{k-1}u_j\|^2+\|u_k\|^2
+        =
+        \sum_{j=1}^{k-1}\|u_j\|^2+\|u_k\|^2
+        =
+        \sum_{j=1}^k\|u_j\|^2.
+        \qedhere
+    \]
+\end{proof}
 
 
 \begin{proposition}
@@ -11682,5 +11743,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 15 Apr 2020 07:57:07 AM CEST
+Last Modified : Fri 17 Apr 2020 09:43:08 PM CEST
 
