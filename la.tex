@@ -10437,8 +10437,8 @@ azaz a minimápolinom osztója a karakterisztikus polinomnak.
 Persze ebből is következik, hogy a minimálpolinom egy legfeljebb $n$-ed fokú polinom.
 
 \chapter{Skalárisszorzatos terek geometriája}
-A továbbiakban $\mathbb{K}$ feletti vektorterekről van szó.
-$\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
+A továbbiakban $\mathbb{K}$ feletti vektorterekről van szó,
+ahol $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
 \section{Definíciók}
 
 \begin{definition}[skalárisszorzatos-tér]\index{sakláris szorzat}
@@ -10458,15 +10458,16 @@ $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
     Ha a $V$ vektortéren adott a fenti skaláris szorzat, 
     akkor a $\left( V,\ip{\cdot}{\cdot} \right)$ párt \emph{skalárisszorzatos-térnek} mondjuk.\index{skalárisszorzatos-tér}
 \end{definition}
-Az első három pont szerint a skaláris szorzat rögzített második változóban lineáris, azaz 
+Az első három pont szerint a skaláris szorzat rögzített második változó melett az elsőben lineáris, azaz 
 $
     \ip{\sum_{j=1}^s\alpha_jx_j}{y}
     =
     \sum_{j=1}^s\alpha_j\ip{x_j}{y}$.
-Hasonlóan a skaláris szorzat rögzített első változóban \emph{konjugáltan lineáris}\index{konjugáltan lineáris}, 
+Hasonlóan, a skaláris szorzás operáció rögzített első változó mellett a második változó
+\emph{konjugáltan lineáris}\index{konjugáltan lineáris} függvénye, 
 azaz
 \begin{math}
-    \ip{x}{\sum_{k=1}^r\beta_jy_j}
+    \ip{x}{\sum_{k=1}^r\beta_ky_j}
     =
     \sum_{k=1}^r\overline{\beta_k}\ip{x}{y_k}.
 \end{math}
@@ -10477,7 +10478,7 @@ Persze ezeket nagyon sokszor vegyítjük is,
     =
     \sum_{j=1}^s\alpha_j\ip{x_j}{\sum_{k=1}^r\beta_ky_k}
     =
-    \sum_{j=1}^s\alpha_j\ip{x_j}{\sum_{k=1}^r\beta_ky_k}
+    \sum_{j=1}^s\alpha_j\sum_{k=1}^r\overline{\beta_k}\ip{x_j}{y_k}
     =
     \sum_{j=1}^s\sum_{k=1}^r\alpha_j\overline{\beta_k}\ip{x_j}{y_k}
 \]
@@ -10521,7 +10522,7 @@ Figyeljünk a folytonosság szerepére!
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszorzatos-tér.
     \begin{enumerate}
         \item 
-            Ha azz $x,y\in V$ két pontjára $\ip{x}{y}=0$, 
+            Ha az $x,y\in V$ két pontjára $\ip{x}{y}=0$, 
             akkor azt mondjuk hogy a két vektor \emph{merőleges}\index{merőleges} egymásra. 
             Jelölés: $x\perp y$.
         \item
@@ -10615,7 +10616,41 @@ de erre még várnunk kell.
             \qedhere
     \end{enumerate}
 \end{proposition}
-
+\begin{proof}
+    Jelölje a bizonyítás erejéig 
+    \begin{math}
+        \alpha_j=\ip{u}{x_j}.
+    \end{math}
+    Ekkor az $\hat{u}=u-\sum_{j=1}^k\alpha_jx_j$ vektorra
+    \begin{multline*}
+        0
+        \leq
+        \ip{\hat{u}}{\hat{u}}
+        =
+        \ip{u}{u}+\ip{u}{-\sum_{j=1}^k\alpha_jx_j}+\ip{-\sum_{j=1}^k\alpha_jx_j}{u}+\ip{-\sum_{j=1}^k\alpha_jx_j}{-\sum_{i=1}^k\alpha_ix_i}
+        \\
+        =
+        \ip{u}{u}-\sum_{j=1}^k\overline{\alpha_j}\ip{u}{x_j}-\sum_{j=1}^k\alpha_j\ip{x_j}{u}+\sum_{j=1}^k\sum_{i=1}^k\alpha_j\overline{\alpha_i}\ip{x_j}{x_i}
+        \\
+        =
+        \ip{u}{u}-\sum_{j=1}^k\overline{\alpha_j}\alpha_j-\sum_{j=1}^k\alpha_j\overline{\alpha_j}+\sum_{j=1}^k\alpha_j\overline{\alpha_j}
+        =\ip{u}{u}-\sum_{j=1}^k|\alpha_j|^2.
+    \end{multline*}
+    Ez éppen a Bessel-egyenlőtlenség.
+    A merőlegességre vonatkozó második állítás már sokkal egyszerűbb:
+    \[
+        \ip{\hat{u}}{x_j}
+        =
+        \ip{u-\sum_{i=1}^k\alpha_ix_i}{x_j}
+        =
+        \ip{u}{x_j}-\sum_{i=1}^k\alpha_i\ip{x_i}{x_j}
+        =
+        \alpha_j-\alpha_j
+        =
+        0.
+        \qedhere
+    \]
+\end{proof}
 \begin{proposition}[Schwartz-egyenlőtlenség]
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
     $u,v\in V$.
@@ -10624,6 +10659,14 @@ de erre még várnunk kell.
         |\ip{u}{v}|^2\leq \ip{u}{u}\ip{v}{v}.\qedhere
     \]
 \end{proposition}
+\begin{proof}
+    Ha $v=0$, akkor mindkét oldal zérus.
+    Ha $v\neq 0$, akkor a $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ rendszer egyetlen elemű ortonormált rendszer.
+    Alkalmazva a Bessel-egyenlőtlenséget $k=1$ mellett
+    \[
+        |\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}|^2\leq \ip{u}{u}
+    \]
+\end{proof}
 \begin{definition}[skalárisszorzat indukálta norma]
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
     jelölje minden $x\in V$ mellett $\|x\|=\sqrt{\ip{x}{x}}$.
@@ -10682,14 +10725,61 @@ hogy minden $u\in V$ mellett a
         =
         \min\left\{ d\left( u,w \right):w\in M \right\}
     \]
-    Ezt a számot nevezzük, az $u$ vektor és az $M$ altér távolságának.
-
+    Ezt az 
+    \begin{math}
+        \|u-\sum_{j=1}^k\ip{u}{x_j}x_j\|
+    \end{math}
+    számot nevezzük, az \emph{$u$ vektor és az $M$ altér távolságának.}
+\begin{proof}
+    Minden $w\in M$ mellett az $\hat{u}=u-\sum_{j=1}^k\ip{u}{x_j}x_j$ vektorra 
+    $\hat{u}\perp \left( \sum_{j=1}^k\ip{u}{x_j}x_j-w \right)$,
+    hiszen $\sum_{j=1}^k\ip{u}{x_j}x_j-w\in M$.
+    Így a Pythagoras-tétel szerint
+    \begin{multline*}
+        d\left( u,w \right)^2
+        =
+        \|u-w\|^2
+        \\
+        =
+        \|u-\sum_{j=1}^k\ip{u}{x_j}x_j+\sum_{j=1}^k\ip{u}{x_j}x_j-w\|^2
+        =
+        \|\hat{u}+\left( \sum_{j=1}^k\ip{u}{x_j}x_j-w \right)\|^2
+        \\
+        =
+        \|\hat{u}\|^2+\|\sum_{j=1}^k\ip{u}{x_j}x_j-w\|^2.
+    \end{multline*}
+    A jobboldali első kifejezés $\|\hat{u}\|^2$ független $w\in M$-től,
+    ezért 
+    \begin{math}
+        d\left( u,w \right)^2
+        \geq
+        \|\hat{u}\|^2.
+    \end{math}
+    Itt szigorú reláció áll fenn, minden $w\in M$-re, amelyre 
+    $w\neq\sum_{j=1}^k\ip{u}{x_j}x_j $, 
+    és persze egyenlőség áll fenn, ha 
+    $w=\sum_{j=1}^k\ip{u}{x_j}x_j $.
+    Ez azt jelenti,
+    hogy 
+    \[
+        \|\hat{u}\|
+        =
+        \min\left\{ d\left( u,w \right):w\in M \right\}
+        =
+        \| u-\sum_{j=1}^k\ip{u}{x_j}x_j\|
+        =
+        d\left( u,\sum_{j=1}^k\ip{u}{x_j}x_j\right),
+    \]
+    és a $u^\star=\sum_{j=1}^k\ip{u}{x_j}x_j $ egyetlen $M$-beli pont, amelyre $\|u-u^\star\|=\|\hat{u}\|$.
+    Ezt kellett belátni. 
+\end{proof}
 
 \begin{definition}[merőleges vetület, merőleges vetítés]
     Legyen $M=\lin\left\{ x_1,\cdots,x_k \right\}$, 
     ahol $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer.
 
-    Láttuk, hogy a $\sum_{i=1}^k\ip{u}{x_i}\in M$ vektor független
+    Láttuk, hogy a 
+    $\sum_{i=j}^k\ip{u}{x_j}\in M$ vektor független
     az $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer megválasztásától, hiszen
     ez az $u$-hoz az egyetlen legközelebbi $M$-beli vektor.
     Definiálja $p_M:V\to V$ az alábbi lineáris transzformációt:
@@ -11592,5 +11682,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 14 Apr 2020 10:54:08 AM CEST
+Last Modified : Wed 15 Apr 2020 07:57:07 AM CEST
 
