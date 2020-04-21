@@ -10853,9 +10853,9 @@ hogy minden $u\in V$ mellett a
 \end{definition}
 
 
-\section{Gram--Schmidt-ortogonalizáció}
+\section{Ortogonalizáció}
 
-\begin{proposition}
+\begin{proposition}[Bessel]
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
     Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer,
     $M=\lin\left\{ x_1,\cdots,x_k \right\}$
@@ -10872,25 +10872,35 @@ hogy minden $u\in V$ mellett a
     \end{enumerate}
 \end{proposition}
 
-\begin{proposition}[Gram--Schmidt]
+\begin{proposition}[Gram--Schmidt-ortogonalizáció]\index{Gram--Schmidt-ortogonalizáció}
     Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\cdots,y_k \right\}$ egy lineárisan független
     vektorrendszer. 
     Ehhez létezik olyan $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer, 
     amelyre minden $i=1,\cdots,k$ mellett $x_i\in\lin\left\{ y_1,\cdots,y_i \right\}$.
 \end{proposition}
 
-
-
-
-\begin{corollary}
+\begin{proposition}[o.n.b]\index{o.n.b}
     Véges dimenziós skalárisszorzatos-térnek van ortonormált bázisa.
     Ha $\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis, akkor minden $u\in V$ mellett
     \(
         u=
         \sum_{i=1}^n\ip{u}{x_i}x_i.
     \)
-\end{corollary}
-\begin{corollary}
+\end{proposition}
+Ez utóbbi gondolat szerint,
+ha egy $\left\{ x_1,\dots,x_n \right\}$ ortonormált bázis rögzítünk,
+akkor tetszőleges $x\in V$ vektornak ebben a bázisban felírt koordináta-vektora
+\[
+    [x]_{\left\{x_1,\dots,x_n\right\}}
+    =
+    \begin{pmatrix}
+        \ip{x}{e_1}\\ \vdots \\\ip{x}{e_n}
+    \end{pmatrix}
+\]
+Ugyanez, kicsit eltérő szintakszissal, hogy az ortonormált bázishoz tartozó
+$i$-edik duális lineáris funkcionál, amit korábban $x_i^\ast$-al jelöltünk, az $x\mapsto\ip{x}{x_i}$
+függvény.
+\begin{proposition}[Bessel]
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér, és $M$ egy 
     véges dimenziós altere.
     Ekkor minden $u\in V$ -hez
@@ -10911,11 +10921,9 @@ hogy minden $u\in V$ mellett a
             \) 
             \qedhere
     \end{enumerate}
-\end{corollary}
-
+\end{proposition}
 
 \section{Projekciós tétel}
-
 \begin{proposition}
     Legyen $V$ egy skalárisszorzatos-tér, és $M$ egy véges dimenziós altere.
     Ekkor 
@@ -10933,27 +10941,35 @@ hogy minden $u\in V$ mellett a
             \qedhere
     \end{enumerate}
 \end{proposition}
-
-
-\section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}
-
-\begin{proposition}
-    Legy $V$ egy véges dimenziós skalárisszorzatos-tér.
-    Ekkor minden $\varphi:V\to\mathbb{K}$ lineáris
-    funkcionálhoz létezik egyetlen $z_\varphi\in V$ vektor,
-    melyre minden $x\in V$ mellett
+\begin{proof}
+    Láttuk, hogy $M\subseteq M^{\perp\perp}$ minden halmazra is igaz.
+    Legyen a fordított tartalmazás igazolásához,
+    $u\in M^{\perp\perp}$.
+    A projekciós tétel miatt $u=u_1+u_2$, 
+    ahol $u_1\in M$ és $u_2\in M^{\perp}$.
+    Így
     \[
-        \varphi\left( x \right)=\ip{x}{z_\varphi}
+        \ip{u_2}{u_2}
+        =
+        \ip{u-u_1}{u_2}
+        =
+        \ip{u}{u_2}-\ip{u_1}{u_2}.
+    \]
+    Itt az első szám azért zérus, mert $u\perp u_2$, a második meg azért mert $u_1\perp u_2$.
+    Azt kaptuk tehát, hogy $u_2=0$, amiből már látszik is, hogy $u=u_1\in M$.
+
+    Teszőleges $H\subseteq V$ mellett $\lin H$ egy altér, így a már igazolt állítás miatt
+    $\lin H=(\lin H)^{\perp\perp}$. No de már korábban is láttuk, hogy 
+    $H^{\perp}=(\lin H)^\perp$, így 
+    \[
+        \lin H
+        =
+        (\lin H)^{\perp\perp}
+        =
+        ((\lin H)^\perp)^\perp=(H^{\perp})^\perp=H^{\perp\perp}.
         \qedhere
     \]
-\end{proposition}
-A bizonyításból az is látszik, hogy amennyiben 
-$\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis a térben, akkor
-\[
-    z_\varphi=
-    \sum_{i=1}^n\overline{\varphi\left( x_i \right)}x_i.
-\]
-
+\end{proof}
 
 \section{Ortonormált rendszer teljessége}
 \begin{definition}[T.O.N.R.]
@@ -10966,7 +10982,7 @@ $\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis a térben, akkor
 \end{definition}
 
 Persze ez ugyanaz mint az
-$$\left\{ e_1,\cdots,e_k \right\}^\perp =\left\{ 0 \right\}$$
+$\left\{ e_1,\cdots,e_k \right\}^\perp =\left\{ 0 \right\}$
 feltétel.
 
 \begin{proposition}
@@ -10975,10 +10991,10 @@ feltétel.
     $\left\{ e_1,\cdots,e_k \right\}$ egy ortonormált rendszert.
     Az alábbi feltevések ekvivalensek
     \begin{enumerate}
-        \item 
-            Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer ortonormált bázis;
         \item
             Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer teljes ortonormált rendszer;
+        \item 
+            Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer ortonormált bázis;
         \item
             Minden $x\in V$ mellett 
             \(
@@ -11001,21 +11017,41 @@ feltétel.
     \end{enumerate}
 \end{proposition}
 
+A fejezet elején láttunk konkrét példát véges dimenziós skalárisszorzatos-térre:
+egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skalárisszorzatban,
+a kiinduló bázis ortonormált bázissá is válik.
+Most azt látjuk, hogy a fenti példán kívül nem is lehet más skalárisszorzatot definiálni.
+Minden skalárisszorzat ugyanis, valamely bázishoz tartozó belső szorzat.
+Pontosan ezt állítja a fenti 4-es tulajdonság.
 
-
+Ezt a tényt a fontossága miatt külön is kiemeljük:
 \begin{corollary}
-    \begin{enumerate}
-        \item Legyen a $V$ skalárisszorzatos-térben egy 
-            $\left\{ e_1,\cdots,e_n \right\}$ ortonormált bázis rögzítve.
-            Ekkor minden $x\in V$ vektorra a rögzített bázisban felírt $i$-edik koordináta $\ip{x}{e_i}$.
-        \item
-            Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más, 
-            mint valamely ortonormált bázisban felírt belső szorzat.
-            Erre a célra tetszőleges ortonormált bázis megfelelő.
-    \end{enumerate}
+    Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más, 
+    mint erra a skalárisszorzatra nézve, de tetszőleges ortonormált bázishoz belső szorzat.
 \end{corollary}
 
-\section{Az adjungált operátor bevezetése}
+\chapter{Az adjungált operátor bevezetése}
+\section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}
+
+\begin{proposition}[Riesz-reprezentació]\index{Riesz-reprezentáció}
+    Legy $V$ egy véges dimenziós skalárisszorzatos-tér.
+    Ekkor minden $\varphi:V\to\mathbb{K}$ lineáris
+    funkcionálhoz létezik egyetlen $z_\varphi\in V$ vektor,
+    melyre minden $x\in V$ mellett
+    \[
+        \varphi\left( x \right)=\ip{x}{z_\varphi}
+        \qedhere
+    \]
+\end{proposition}
+A bizonyításból az is látszik, hogy amennyiben 
+$\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis a térben, akkor
+\[
+    z_\varphi=
+    \sum_{i=1}^n\overline{\varphi\left( x_i \right)}x_i.
+\]
+
+\section{Az adjungált operáció}
+\begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}
 Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
 $\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós skalárisszorzatos-tér.
 Rögzített $A\in L\left( V,W \right)$ lineáris operátor és rögzített $w\in W$ vektor mellett tekintsük a 
@@ -11035,6 +11071,7 @@ Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált az
     \ip{Av}{w}_W=\ip{v}{A^\star w}_V.
 \]
 Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
+\end{definition}
 
 
 \begin{note}
@@ -11078,6 +11115,19 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
         \item $\left( AB \right)^\star=B^\star A^\star$.
     \end{enumerate}
 \end{proposition}
+
+\begin{proposition}
+    Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
+    Ekkor 
+         $(\im A)^\perp=\ker A^\ast$ és
+         $(\ker A)^\perp=\im A^\ast.$
+    Emiatt 
+    \begin{eqnarray*}
+        \im A\oplus\ker A^\ast&=& W;\qquad\qquad\im A\perp\ker A^\ast;\\
+        \ker A\oplus\im A^\ast&=& V;\qquad\qquad\ker A\perp\im A^\ast.
+    \end{eqnarray*}
+\end{proposition}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -11743,5 +11793,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 17 Apr 2020 09:43:08 PM CEST
+Last Modified : Tue 21 Apr 2020 07:14:54 PM CEST
 
