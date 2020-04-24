@@ -11044,16 +11044,16 @@ Ezt a tényt a fontossága miatt külön is kiemeljük:
     \]
 \end{proposition}
 A bizonyításból az is látszik, hogy amennyiben 
-$\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis a térben, akkor
+$\left\{ v_1,\cdots,v_n \right\}$ egy ortonormált bázis a térben, akkor
 \[
     z_\varphi=
-    \sum_{i=1}^n\overline{\varphi\left( x_i \right)}x_i.
+    \sum_{i=1}^n\overline{\varphi\left( v_i \right)}v_i.
 \]
 
 \section{Az adjungált operáció}
 \begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}
 Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
-$\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós skalárisszorzatos-tér.
+$\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós skaláris\-szorzatos-tér.
 Rögzített $A\in L\left( V,W \right)$ lineáris operátor és rögzített $w\in W$ vektor mellett tekintsük a 
 \[
     \varphi_w=
@@ -11068,7 +11068,7 @@ $\varphi_w\left( v \right)=\ip{v}{v^\star}_V$ minden $v\in V$ mellett teljesül.
 Jelölje most $A^\star$ a $w\mapsto v^\star$ függvényt. 
 Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
 \[
-    \ip{Av}{w}_W=\ip{v}{A^\star w}_V.
+    \ip{Av}{w}_W=\ip{v}{A^\star w}_V.\tag{\dag}
 \]
 Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
 \end{definition}
@@ -11084,6 +11084,11 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
     \]
     Ebből azonnal adódik, hogy $A^\star:W\to V$ lineáris operátor.
 \end{note}
+\begin{proposition}
+    Legyenek $V,W$ skalárisszorzatos-terek, és $A\in L\left( V,W \right)$ lineáris operátor.
+    Ekkor az $A^\ast$ adjungált az egyetlen $L\left( W,V \right)$-beli operátor,
+    amelyre a (\dag) adjungált azonosság fennáll.
+\end{proposition}
 
 
 \begin{proposition}
@@ -11113,10 +11118,16 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
     \begin{enumerate}
         \item $I^\star=I$,
         \item $\left( AB \right)^\star=B^\star A^\star$.
+        \item Az $A$ lineáris operátor pontosan akkor reguláris ha $A^\ast$ adjungált operáció is az.
+            Ebben az estben az adjungált operáció inverze éppen az inverz operáció adjungáltja, magyarul
+            \begin{math}
+                \left( A^\ast \right)^{-1}=\left( A^{-1} \right)^\ast.
+            \end{math}
+            \qedhere
     \end{enumerate}
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}[skalárisszorzatos rang-tétel]
     Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
     Ekkor 
          $(\im A)^\perp=\ker A^\ast$ és
@@ -11124,11 +11135,50 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
     Emiatt 
     \begin{eqnarray*}
         \im A\oplus\ker A^\ast&=& W;\qquad\qquad\im A\perp\ker A^\ast;\\
-        \ker A\oplus\im A^\ast&=& V;\qquad\qquad\ker A\perp\im A^\ast.
+        \ker A\oplus\im A^\ast&=& V;\qquad\qquad\ker A\perp\im A^\ast,
     \end{eqnarray*}
+    így $\rho\left( A \right)=\rho\left( A^\ast \right)$.
 \end{proposition}
 
+\section{Önadjungált transzformációk}
+\begin{definition}
+    Legyen $V$ egy skalárisszorzatos-tér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Azt mondjuk, hogy $A$\emph{önadjungált}\index{önadjungált},
+    ha $A^\ast=A$.
+\end{definition}
 
+\begin{proposition}
+    A skalárisszorzatos-tér egy $A$ lineáris transzformációja pontosan akkor önadjungált,
+    ha minden $u,w\in V$ mellett
+    \[
+        \ip{Au}{v}
+        =
+        \ip{u}{Av}.
+        \qedhere
+    \]
+\end{proposition}
+Ha felírjuk a transzformáció mátrixát egy ortonormált bázisban, akkor messziről látszik,
+hogy a transzformáció önadjungált vagy sem.
+\begin{proposition}
+    A skalárisszorzatos-tér egy $A$ lineáris transzformációja pontosan akkor önadjungált,
+    valamely ortonormált bázisban felírt mátrixára
+    \[
+        [A]_{i,j}=\overline{[A]}_{j,i}.
+        \qedhere
+    \]
+\end{proposition}
+Persze a fenti tulajdonság, ha egy ortonormált bázis mellett teljesül,
+akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad.
+
+Érdemes felírni a skalárisszorzatos-terek rangtételét önadjungált transzformációra:
+\begin{proposition}
+    Legyen $A$ a $V$ tér egy önadjungált transzformációja.
+    Ekkor 
+    \[
+        \ker A\oplus\im A=V\qquad\text{ és }\qquad\ker A\perp\im A.
+        \qedhere
+    \]
+\end{proposition}
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -11793,5 +11843,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 21 Apr 2020 07:14:54 PM CEST
+Last Modified : Fri 24 Apr 2020 08:06:26 AM CEST
 
