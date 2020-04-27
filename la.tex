@@ -7650,7 +7650,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     \begin{proof}
         \Aref{pr:redukcio-primfelbontas}.~állításban láttuk, 
         hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
-        Minden egyes $p_j$ a minimálpolinom legalább lesőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
+        Minden egyes $p_j$ a minimálpolinom legalább elsőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
         Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
         dimenziós invariáns altér, vagy néhány ilyen direktösszege.
         Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
@@ -7668,7 +7668,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     ezért a feltételt egyszerűbben úgy is fogalmazhatjuk,
     a minimálpolinom gyökei egyszeresek, vagy ami ugyanaz: 
     a sajátértékek a minimálpolinom egyszeres gyökei.
-    \begin{proposition}
+    \begin{proposition}\label{pr:redukcio-primfelbontas-2}
         Tegyük fel, hogy $V$ egy $\mathbb{C}$ feletti vektortér és $A\in L\left( V \right)$ egy lineáris transzformáció.
         $A$ pontosan akkor diagonalizálható,
         ha minimálpolinomja gyökei egyszeres multiplicitásúak.
@@ -11050,6 +11050,7 @@ $\left\{ v_1,\cdots,v_n \right\}$ egy ortonormált bázis a térben, akkor
     \sum_{i=1}^n\overline{\varphi\left( v_i \right)}v_i.
 \]
 
+
 \section{Az adjungált operáció}
 \begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}
 Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
@@ -11072,7 +11073,6 @@ Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált az
 \]
 Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
 \end{definition}
-
 
 \begin{note}
     Láttuk a Riesz-reprezentációs tétel igazolásában, hogy ha $\left\{ v_1,\cdots,v_n \right\}\subset V$
@@ -11140,6 +11140,7 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
     így $\rho\left( A \right)=\rho\left( A^\ast \right)$.
 \end{proposition}
 
+
 \section{Önadjungált transzformációk}
 \begin{definition}
     Legyen $V$ egy skalárisszorzatos-tér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
@@ -11179,10 +11180,306 @@ akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad
         \qedhere
     \]
 \end{proposition}
+
+\chapter{Normális transzformációk diagonalizálhatósága}
+\begin{definition}[normális lineáris transzformáció]
+    A $V$ skalárisszorzatos-tér egy $A\in L\left( V \right)$ lineáris transzformációját
+    \emph{normálisnak}\index{normális transzformáció} nevezzük,
+    ha $$N^\ast N=NN^\ast$$ tehát, ha a transzformáció kommutál az adjungáltjával.
+\end{definition}
+Világos, hogy ha $N$ egy ortonormált bázisban diagonalizálható, akkor
+ebben a bázisban felírt matrixszára, a mátrix kommutál az adjungált mátrixszal, 
+így az eredeti transzformáció is normális.
+\begin{proposition}
+    Egy normális transzformáció polinomja is normális.
+\end{proposition}
+\begin{proof}
+    Először gondoljuk meg, hogy $(N^j)^\ast$ és $N^k$ kommutálnak minden $j,k≥0$ mellett.
+    Ez indukcióval könnyű:
+    \begin{multline*}
+        (N^j)^\ast N^k
+        =
+        (N^\ast)^jN^k
+        =
+        (N^\ast)^{j-1}N^\ast NN^{k-1}
+        =
+        (N^\ast)^{j-1}NN^\ast N^{k-1}
+        \\
+        =
+        N(N^\ast)^{j-1}N^{k-1}N^\ast
+        =
+        N(N^{j-1})^\ast N^{k-1}N^\ast
+        =
+        NN^{k-1}(N^{j-1})^\ast N^\ast
+        =
+        N^k(N^\ast)^j
+        =
+        N^k(N^j)^\ast.
+    \end{multline*}
+    Most legyen $p\in \mathbb{K}[t]$ egy plinom.
+    Ha $p\left( t \right)=\sum_{j=0}^N\alpha_jt^j,$
+    akkor
+    \begin{multline*}
+        \left( p\left( N \right) \right)^\ast p\left( N \right)
+        =
+        \left( \sum_{j=0}^m\alpha_jA^j \right)^\ast
+         \left( \sum_{k=0}^m\alpha_kA^k \right)
+        =
+        \left( \sum_{j=0}^m\bar{\alpha_j}(A^j)^\ast \right)
+        \left( \sum_{k=0}^m\alpha_kA^k \right)
+        \\
+        =
+        \sum_{j=0}^m\sum_{k=0}^m\bar{\alpha_j}\alpha_k(A^j)^\ast A^k
+        =
+        \sum_{k=0}^m\sum_{j=0}^m\alpha_k\bar{\alpha_j}A^k(A^j)^\ast
+        \\
+        =
+        \left( \sum_{k=0}^m\alpha_kA^k \right)
+        \left( \sum_{j=0}^m\bar{\alpha_j}(A^j)^\ast \right)
+        =
+        \left( \sum_{k=0}^m\alpha_kA^k \right)
+        \left( \sum_{j=0}^m\alpha_jA^j\right)^\ast
+        =
+        p\left( N \right)\left( p\left( N \right) \right)^\ast.
+    \end{multline*}
+\end{proof}
+\begin{proposition}
+    Legyen $N$ egy normális transzformáció. 
+    Ekkor $\ker N^\ast=\ker N$.
+\end{proposition}
+\begin{proof}
+    Legyen $u=\in V.$
+    Ekkor 
+    \[
+        \|Nu\|^2
+        =
+        \ip{Nu}{Nu}
+        =
+        \ip{u}{N^\ast Nu}
+        =
+        \ip{u}{NN^\ast u}
+        =
+        \ip{N^\ast u}{N^\ast u}
+        =
+        \|N^\ast u\|^2.
+    \]
+    Ez azt jelenti, hogy $Nu=0$ akkor és csak akkor áll fenn, 
+    ha $N^\ast u$ is fennáll.
+\end{proof}
+Korábban láttuk, 
+hogy tetszőleges lineáris transzformáció mellett $(\im A)^\perp=\ker A^\ast.$
+Normális transzformáció esetén ez még egyszerűbb:
+\begin{proposition}[Normális transzformációk rangtétele]
+    Legyen $V$ skalárisszorzatos-tér és $N\in L\left( V \right)$ egy normális lineáris transzformáció.
+    Ekkor 
+    \[
+        \im N\oplus\ker N=V\qquad\text{és}\qquad \im N\perp \ker N.
+        \qedhere
+    \]
+\end{proposition}
+
+Tudjuk, hogy $\lambda\in\sigma(N)$ akkor és csak akkor, ha $\ker(N-\lambda I)\neq \left\{ 0 \right\}$.
+Mivel normális transzformáció mellett az $N-\lambda I$, 
+az $N$-nek polinomja lévén,
+maga is normális,
+ezért az $\ker (N-\lambda I)$ és $\ker (N^\ast-\bar{\lambda}I)$ azonos alterek.
+Azt gondoltuk meg tehát, hogy normális $N$ mellett
+tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u=\bar{\lambda}u$.
+\begin{proposition}
+    Legyen $N$ egy normális transzformáció a $V$ skalárisszorzatos-téren.
+    Ekkor
+    \begin{enumerate}
+        \item 
+            A $\lambda\in\sigma\left( N \right)$ akkor és csak akkor, 
+            teljesül, ha
+            $\bar{\lambda}\in\sigma\left( N^\ast \right)$;
+        \item
+            Minden $\lambda\in\mathbb{K}$ mellett 
+            \begin{math}
+                \ker (N-\lambda I)=\ker (N^\ast-\bar{\lambda}I);
+            \end{math}
+        \item 
+            Különböző sajátértékekhez tartozó sajátalterek merőlegesek egymásra, azaz
+            \begin{math}
+                \ker \left( N-\lambda I \right)\perp\ker\left( N-\mu I \right),
+            \end{math}
+            ahol $\lambda\neq \mu$ és $\lambda,\nu\in\sigma\left( N \right)$.
+        \item Ha $N=N^\ast$, azaz $N$ önadjungált transzformáció, akkor
+            \begin{math}
+                \sigma\left( N \right)\subseteq \mathbb{R},
+            \end{math},
+            azaz önadjungált transzformációnak valósak a sajátértékei.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Az első két állítást már meggondoltuk.
+
+    Legyen 
+    \begin{math}
+        u\in\ker\left( N-\lambda I \right)
+    \end{math}
+    és
+    \begin{math}
+        v\in\ker\left( N-\mu I \right)
+    \end{math}.
+    Ekkor persze
+    \begin{math}
+        Au=\lambda u
+    \end{math}
+    és
+    \begin{math}
+        N^\ast=\bar{\lambda}v
+    \end{math}.
+    Így
+    \[
+        \left( \lambda-\mu \right)\ip{u}{v}
+        =
+        \ip{\lambda u}{v}-\ip{u}{\bar{\mu}v}
+        =
+        \ip{Nu}{v}-\ip{u}{N^\ast v}
+        =
+        0.
+    \]
+    Mivel a két sajátérték nem azonosak,
+    ezért $u\perp v$.
+    Ezt kellett belátni. 
+
+    Legyen most $N$ önadjungált, és $\lambda\in\sigma\left( N \right)$ egy sajátérték.
+    Van tehát olyan $u\neq 0$ vektor, amelyre $Nu=\lambda u$ és $N^\ast u=\bar{\lambda}u$.
+    Ekkor 
+    \[
+        \left( \lambda-\bar{\lambda} \right)u
+        =Nu-N^\ast u=Nu-Nu=0.
+    \]
+    Így persze az $u\neq 0$ feltétel miatt $\lambda-\bar{\lambda}=0$, tehát $\lambda\in\mathbb{R}.$
+\end{proof}
+Eddig minden gondolat $\mathbb{K}$ feletti skalárisszorzatos-téren volt.
+A komplex és a valós diagonalizálhatóság közös magja a következő állítás.
+\begin{proposition}\label{pr:normalis-mult1}
+    Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér, 
+    és $N\in L\left( V \right)$ egy normális transzformáció.
+    Ekkor $N$ minimálpolinomja különböző, normált, irreducibilis polinomok elsőfokú hatványainak szorzata.
+\end{proposition}
+\begin{proof}
+    Tegyük fel, hogy $p^k|m$, ahol $m$ a minimálpolinom, 
+    $p$ egy irredcibilis polinom, és $k≥2.$
+    Láttuk, hogy bevezetve a $V_1=\ker p\left( N \right)$, és
+    $A_1=N|_{V_1}$ jelöléseket,
+    az $A_1$ minimálpolinomja $p^k$.
+    Tehát ha $B=p(N)$, akkor $B|_{V_1}$ transzformáció $k$-ad rendben nillpotens,
+    létezik tehát $v\in V_1$, 
+    amelyre $B^{k-1}v\neq 0$, 
+    de $B^kv=0$. 
+    Mivel $k-1\geq 1$, ezért találtunk $x=B^{k-1}v\in\im p\left( N \right)$ 
+    nem zérus vektort,
+    amelyre $x\in\ker(p\left( N \right))$.
+    Ez ellentmond a normális transzformációk rangtételének.
+\end{proof}
+\section{Normális transzformációk diagonalizálhatósága komplex skalárisszorzatos-tereken}
+A fenti gondolat azonnali következménye a normális transzformációk diagonalizálhatósága $\mathbb{C}$ felett.
+\begin{proposition}
+    Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér.
+    Ekkor minden $N$ normális transzformáció ortonormált bázisban diagonalizálható.
+    Ez azt jelenti, hogy létezik a térnek $N$ sajátvektoraiból álló ortonormált bázisa.
+    Ebben a bázisban felírva $N$ mátrixát egy diagonális mátrixot kapunk,
+    amelynek diagonálisában $N$ sajátértékei vannak.
+\end{proposition}
+\begin{proof}
+    Az algebra alaptétele szerint irreducibilis $\mathbb{C}$ feletti polinom
+    csak első fokú polinom lehet.
+    Így a minimálpolinom, a normalitást kihasználva a fenti (\ref{pr:normalis-mult1}.) gondolat alapján,
+    \[
+        m\left( t \right)=\left( t-\lambda_1 \right)\dots\left( t-\lambda_s \right).
+    \]
+    Ezért a transzformációk redukálására vonatkozó \ref{pr:redukcio-primszorzat}.~állítás szerint
+    \[
+        V=\ker\left( N-\lambda_1I \right)\oplus\dots\oplus\ker\left( N-\lambda_sI \right).
+    \]
+    Most végezzünk Gram-Schmidt ortogonalizációt minden egyes fenti sajátaltérben külön-külön,
+    majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
+    Így $N$ sajátvektoraiból álló ortonormált bázist kapunk.
+\end{proof}
+Összefoglalva a komplex test feletti esetet: 
+\emph{
+    Egy transzformáció pontosan akkor normális, 
+ha ortonormált bázisban diagonalizálható.
+}
+
+\section{Szimmetrikus transzformációk diagonalizálhatósága valós skalárisszorzatos-tereken}
+A valós test feletti eset fontosságát hangsúlyozandó, 
+az önadjungált transzformációkra külön elnevezést vezetünk be.
+\begin{definition}[szimetrikus transzformáció]
+    Egy $\mathbb{R}$ feletti skalárisszorzatos-tér egy $A\in L\left( V \right)$ lineáris transzformációját
+    \emph{szimmetrikusnak} mondjuk, ha az önadjungált, azaz  $A^\ast=A$.
+\end{definition}
+Egy kicsit sem nyilvánvaló, hogy miért lenne egy szimmetrikus transzformációnak sajátértéke.
+Rögtön kiderül, hogy mindig van sajátértéke.
+
+Ha $\dim V=1$, akkor minden $A:V\to V$ transzformációra, ha $Av\neq 0$, akkor van olyan $\lambda\in\mathbb{R}$,
+hogy $Av=\lambda v$. Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
+van sajátértéke, és minden zérustól különböző vektor sajátvektor is.
+
+Most nézzük csak 2 dimenzióban.
+Ha $A$ mátrixa egy ortonormált bázisban 
+\begin{math}
+    \begin{pmatrix}
+        a&b\\b&c
+    \end{pmatrix}
+\end{math}
+akkor $A$ karakterisztikus polinomja $k\left( t \right)=\left( t-a \right)\left( t-c \right)-b^2=t^2-\left( a+c \right)-b^2.$
+E polinomnak van valós gyöke, tehát van $\lambda_1\in\sigma\left( A \right)$,
+tehát van $u\in V$, $\|u\|=1$ vektor, amelyre $Au=\lambda u.$
+Legyen most $v\in V$ olyan vektor, amelyre $v\perp u$ és $\|v\|=1$. 
+Mivel a tér 2 dimenziós, ezért van ilyen vektor, és $\lin\left\{ v \right\}=u^\perp$.
+Világos, hogy 
+\[
+    \ip{u}{Av}
+    =
+    \ip{Au}{v}
+    =
+    \lambda\ip{u}{v}
+    =0.
+\]
+Ez azt jelenti, hogy $u^\perp$ egy-dimenziós, az $A$-ra nézve invariáns altér.
+Minden nem zérus vektor az $u^\perp$ altérben egyben $A$ sajátvektora is.
+Meggondoltuk tehát, hogy egy 
+\emph{
+    2 dimenziós téren értelmezett szimmetrikus transzformációnak van sajátvektorokból ortonormált bázisa.
+}
+\begin{proposition}
+    Legyen $V$ egy $\mathbb{R}$ feletti skalárisszorzatos-tér.
+    Ekkor minden $A$ szimmetrikus transzformáció ortonormált bázisban diagonalizálható.
+    Ez azt jelenti, hogy létezik a térnek $A$ sajátvektoraiból álló ortonormált bázisa.
+    Ebben a bázisban felírva $A$ mátrixát egy diagonális mátrixot kapunk,
+    amelynek diagonálisában $A$ sajátértékei vannak.
+\end{proposition}
+\begin{proof}
+    Az algebra alaptétele szerint irreducibilis $\mathbb{R}$ feletti polinom
+    csak első- vagy másodfokú polinom lehet.
+    Mivel $A$ szimmetrikus, ezért persze normális is.
+    Így a minimálpolinom, a transzformáció normalitását használó \ref{pr:normalis-mult1}.~állítás alapján,
+    \[
+        m=p_1\dots p_s
+    \]
+    alakú, ahol $p_1,\dots,p_s$ egymástól különböző, normált, irreducibilis, legfeljebb másodfokú polinomok.
+    Ezért a transzformációk redukálására vonatkozó \ref{pr:redukcio-primszorzat}.~állítás szerint
+    a tér előáll mint legfeljebb két dimenziós invariáns alterei direktösszege.
+    Minden ilyen legfeljebb 2 dimenziós invariáns altérben van $A$ sajátvektoraiból álló bázis,
+    amelyeket egyesítve az egész $V$ vektortér egy egy olyan bázisát kapjuk, 
+    amelynek minden elem az $A$ sajátvektora.
+    Ezért
+    \[
+        V=\ker\left( A-\lambda_1I \right)\oplus\dots\oplus\ker\left( A-\lambda_sI \right).
+    \]
+    Most végezzünk Gram-Schmidt ortogonalizációt minden egyes fenti $A-\lambda_jI$ sajátaltérben külön-külön,
+    majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
+    Így $A$ sajátvektoraiból álló ortonormált bázist kapunk.
+\end{proof}
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
-
 \appendix
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
@@ -11843,5 +12140,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Fri 24 Apr 2020 08:06:26 AM CEST
+Last Modified : Mon 27 Apr 2020 09:35:13 PM CEST
 
