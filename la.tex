@@ -11144,7 +11144,8 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
 \section{Önadjungált transzformációk}
 \begin{definition}
     Legyen $V$ egy skalárisszorzatos-tér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
-    Azt mondjuk, hogy $A$\emph{önadjungált}\index{önadjungált},
+    Azt mondjuk, hogy az $A$ transzformáció 
+    \emph{önadjungált}\index{önadjungált},
     ha $A^\ast=A$.
 \end{definition}
 
@@ -11222,26 +11223,27 @@ ebben a bázisban felírt matrixszára, a mátrix kommutál az adjungált mátri
     \begin{multline*}
         \left( p\left( N \right) \right)^\ast p\left( N \right)
         =
-        \left( \sum_{j=0}^m\alpha_jA^j \right)^\ast
-         \left( \sum_{k=0}^m\alpha_kA^k \right)
+        \left( \sum_{j=0}^m\alpha_jN^j \right)^\ast
+         \left( \sum_{k=0}^m\alpha_kN^k \right)
         =
-        \left( \sum_{j=0}^m\bar{\alpha_j}(A^j)^\ast \right)
-        \left( \sum_{k=0}^m\alpha_kA^k \right)
+        \left( \sum_{j=0}^m\bar{\alpha_j}(N^j)^\ast \right)
+        \left( \sum_{k=0}^m\alpha_kN^k \right)
         \\
         =
-        \sum_{j=0}^m\sum_{k=0}^m\bar{\alpha_j}\alpha_k(A^j)^\ast A^k
+        \sum_{j=0}^m\sum_{k=0}^m\bar{\alpha_j}\alpha_k(N^j)^\ast N^k
         =
-        \sum_{k=0}^m\sum_{j=0}^m\alpha_k\bar{\alpha_j}A^k(A^j)^\ast
+        \sum_{k=0}^m\sum_{j=0}^m\alpha_k\bar{\alpha_j}N^k(N^j)^\ast
         \\
         =
-        \left( \sum_{k=0}^m\alpha_kA^k \right)
-        \left( \sum_{j=0}^m\bar{\alpha_j}(A^j)^\ast \right)
+        \left( \sum_{k=0}^m\alpha_kN^k \right)
+        \left( \sum_{j=0}^m\bar{\alpha_j}(N^j)^\ast \right)
         =
-        \left( \sum_{k=0}^m\alpha_kA^k \right)
-        \left( \sum_{j=0}^m\alpha_jA^j\right)^\ast
+        \left( \sum_{k=0}^m\alpha_kN^k \right)
+        \left( \sum_{j=0}^m\alpha_jN^j\right)^\ast
         =
         p\left( N \right)\left( p\left( N \right) \right)^\ast.
     \end{multline*}
+    Ezt kellett belátni. 
 \end{proof}
 \begin{proposition}
     Legyen $N$ egy normális transzformáció. 
@@ -11307,7 +11309,7 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
         \item Ha $N=N^\ast$, azaz $N$ önadjungált transzformáció, akkor
             \begin{math}
                 \sigma\left( N \right)\subseteq \mathbb{R},
-            \end{math},
+            \end{math}
             azaz önadjungált transzformációnak valósak a sajátértékei.
             \qedhere
     \end{enumerate}
@@ -11363,8 +11365,8 @@ A komplex és a valós diagonalizálhatóság közös magja a következő állí
 \end{proposition}
 \begin{proof}
     Tegyük fel, hogy $p^k|m$, ahol $m$ a minimálpolinom, 
-    $p$ egy irredcibilis polinom, és $k≥2.$
-    Láttuk, hogy bevezetve a $V_1=\ker p\left( N \right)$, és
+    $p$ egy irreducibilis polinom, és $k\geq 2.$
+    Láttuk, hogy bevezetve a $V_1=\ker p^k\left( N \right)$, és
     $A_1=N|_{V_1}$ jelöléseket,
     az $A_1$ minimálpolinomja $p^k$.
     Tehát ha $B=p(N)$, akkor $B|_{V_1}$ transzformáció $k$-ad rendben nillpotens,
@@ -11376,7 +11378,7 @@ A komplex és a valós diagonalizálhatóság közös magja a következő állí
     amelyre $x\in\ker(p\left( N \right))$.
     Ez ellentmond a normális transzformációk rangtételének.
 \end{proof}
-\section{Normális transzformációk diagonalizálhatósága komplex skalárisszorzatos-tereken}
+\subsection{Normális transzformációk diagonalizálhatósága komplex skalárisszorzatos-tereken}
 A fenti gondolat azonnali következménye a normális transzformációk diagonalizálhatósága $\mathbb{C}$ felett.
 \begin{proposition}
     Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér.
@@ -11396,7 +11398,8 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
     \[
         V=\ker\left( N-\lambda_1I \right)\oplus\dots\oplus\ker\left( N-\lambda_sI \right).
     \]
-    Most végezzünk Gram-Schmidt ortogonalizációt minden egyes fenti sajátaltérben külön-külön,
+    Most végezzünk Gram--Schmidt-ortogonalizációt\index{Gram--Schmidt-ortogonalizáció} 
+    minden egyes fenti sajátaltérben külön-külön,
     majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
     Így $N$ sajátvektoraiból álló ortonormált bázist kapunk.
 \end{proof}
@@ -11406,7 +11409,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 ha ortonormált bázisban diagonalizálható.
 }
 
-\section{Szimmetrikus transzformációk diagonalizálhatósága valós skalárisszorzatos-tereken}
+\subsection{Szimmetrikus transzformációk diagonalizálhatósága valós skalárisszorzatos-tereken}
 A valós test feletti eset fontosságát hangsúlyozandó, 
 az önadjungált transzformációkra külön elnevezést vezetünk be.
 \begin{definition}[szimetrikus transzformáció]
@@ -11472,12 +11475,177 @@ Meggondoltuk tehát, hogy egy
     \[
         V=\ker\left( A-\lambda_1I \right)\oplus\dots\oplus\ker\left( A-\lambda_sI \right).
     \]
-    Most végezzünk Gram-Schmidt ortogonalizációt minden egyes fenti $A-\lambda_jI$ sajátaltérben külön-külön,
+    Most végezzünk Gram--Schmidt-ortogonalizációt\index{Gram--Schmidt-ortogonalizáció} 
+    minden egyes fenti $A-\lambda_jI$ sajátaltérben külön-külön,
     majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
     Így $A$ sajátvektoraiból álló ortonormált bázist kapunk.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Ortogonális projekciók}
+\begin{definition}
+    Azt mondjuk, hogy a $P\in L\left( V \right)$ transzformáció egy
+    \emph{projekció}\index{projekció},
+    ha az idempotens, tehát fennáll a $P^2=P$ azonosság.
+\end{definition}
+\begin{proposition}
+    Egy $V$ skalárisszorzatos-tér minden $P$ projekciójára
+    \[
+        \ker P\oplus\im P=V.
+        \qedhere
+    \]
+\end{proposition}
+
+\begin{definition}
+    A $V$ skalárisszorzatos-tér egy $P\in L\left( V \right)$ lineáris transzformációját
+    \emph{ortogonális projekciónak}\index{ortogonális projekció}
+    mondunk, ha
+    \begin{enumerate}
+        \item $P^2=P$ és
+        \item $\ker P\perp\im P$.
+            \qedhere
+    \end{enumerate}
+\end{definition}
+\begin{proposition}
+    Ha $P\in L\left( V \right)$ a $V$ skalárisszorzatos-tér egy ortogonális projekciója,
+    akkor 
+    \[
+        \left( \ker P \right)^\perp=\im P.
+        \qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    A definíció szerint $\im P\subseteq (\ker P)^\perp$,
+    no de a két altér azonos dimenziós, ezért azonosak is.
+\end{proof}
+Láttuk korábban, hogy ha $M$ egy altere a $V$ skalárisszorzatos-térnek, 
+akkor az a $P_M\in L\left( V \right)$ transzformáció, 
+amely minden $v\in V$ vektorhoz hozzárendeli a $v$-hez $M$-ben legközelebb eső egyetlen $P_M\left( v \right)$ pontot,
+egy ortogonális projekció,
+hiszen $P_M|_{M}=I|_{M}$, amiből $P_M^2=P_M$,
+de azt is láttuk, hogy $\im P_M=M$ és $\ker P_M=M^\perp$.
+
+A következő állítás szerint nincs is más tipusú ortogonális projekció,
+mint valamely $M$ altérre eső merőleges vetítés.
+\begin{proposition}
+    Legyen $V$ egy skalárisszorzatos-tér,
+    és $P\in L\left( V \right)$ egy ortogonális projekció.
+    Jelölje $M=\im P$.
+    Ekkor
+    \[
+        P=P_M.
+        \qedhere
+    \]
+\end{proposition}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció a $V$ skalárisszorzatos-tér felett.
+    Az $A$ pontosan akkor ortogonális projekció, ha $P^\ast=P$ és $P^2=P$.
+\end{proposition}
+\begin{proof}
+    Láttuk korábban hogy egy $P_M$ merőleges vetítés önadjugált is, idempotens is.
+    No de minden ortogonális projekció $P_M$ alakú,
+    valamely $M$ altér megválasztása mellett, ezért $A$-ra is igaz, hogy önadjungált és idempotens.
+
+    Megfordítva, ha $A$ önadjungált, akkor a skalárisszorzatos rang tétel szerint $(\ker A)^\perp=\im A^\ast=\im A$,
+    amiből persze $\ker A\perp\im A$ már könnyen következik.
+\end{proof}
+Mivel minden $P$ ortogonális projekció $P=P_M$ alakú,
+ezért a Bessel-egyenlőség ortogonális projekciókra is igaz:\index{Bessel-egyenlőtlenség}
+\begin{proposition}[Bessel]
+    Minden  $P\in L\left( V \right)$ ortogonális projekcióra és minden $v\in V$ vektorra
+    \(
+        \|Pv\|\leq\|v\|.
+    \)
+\end{proposition}
+\begin{proof}
+    Jelölje $M=\im P$.
+    Ekkor 
+    \(
+        \|Pv\|
+        =
+        \|P_Mv\|
+        \leq
+        \|v\|.
+    \)
+\end{proof}
+
+\begin{proposition}
+    Legyen $P,Q\in L\left( V \right)$ ortogonális projekció.
+    A $QP=0$ pontosan akkor teljesül, ha $\im P\perp\im Q$.
+\end{proposition}
+\begin{proof}
+    Legyen $u\in \im P$ és $v\in \im Q$.
+    Ekkor
+    \[
+        \ip{u}{v}
+        =
+        \ip{Pu}{Qv}
+        =
+        \ip{Q^\ast Pu}{v}
+        =
+        \ip{QPu}{v}
+        =
+        \ip{0}{v}
+        =
+        0.
+    \]
+    Evvel igazoltuk, hogy $QP=0$ esetén $\im P\perp\im Q$.
+
+    Megfordítva, tetszőleges $u\in V$ mellett $Pu\in\im P$ és $QPu\in\im Q$.
+    Így
+    \[
+        \|QPu\|^2
+        =
+        \ip{QPu}{QPu}
+        =
+        \ip{Q^\ast QPu}{Pu}
+        =
+        \ip{Q^2Pu}{Pu}
+        =
+        \ip{QPu}{Pu}
+        =
+        0.
+        \qedhere
+    \]
+\end{proof}
+\begin{definition}[ortogonális projekciók merőlegessége]
+    Az $Q$ és $P$ ortogonális projekciókat egymásra \emph{merőlegesnek} mondjuk, ha $QP=0$ fennáll.
+    Jelölés: $Q\perp P$.
+\end{definition}
+Világos tehát, hogy $QP=0$, $\im P\perp \im Q$ és $PQ=0$ ekvivalens megfogalmazásai $Q\perp P$-nak,
+amennyiben $P,Q\in L\left( V \right)$ ortogonális projelciók.
+Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, ha $M_1\perp M_2$.
+\begin{proposition}
+    Legyenek $P_1,\dots,P_r$ ortogonális projekciók.
+    Jelölje $P=\sum_{j=1}^rP_j$ ezek összegét.
+    A $P$ összeg pontosan akkor ortogonális projekció, ha $P_i\perp P_j$ minden $i\neq j$ mellett.
+\end{proposition}
+
+\begin{proposition}
+    Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
+    Tegyük fel, hogy $P_1,\dots,P_k\in L\left( V \right)$ olyan ortogonális projekciók,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$ minden $j=1,\dots,k$ mellett.
+        \item $I=\sum_{j=1}^rP_j$.
+    \end{enumerate}
+    Legyenek a $\left\{ \lambda_1,\dots,\lambda_k \right\}\subseteq \mathbb{K}$
+    (nem feltétlenül különböző) számok tetszőlegesen rögzítve, és
+    jelölje
+    \(
+        N
+        =
+        \sum_{j=1}^k\lambda_jP_j.
+    \)
+    Ekkor az $N$ egy normális transzformáció, 
+    amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_k \right\}$.
+\end{proposition}
+\begin{proposition}
+    Tegyük fel, hogy az egymásra páronként merőleges $P_1,\dots,P_k$ ortogonális projekciókra
+    és a tetszőlegesen megválasztott $\lambda_1,\dots,\lambda_k\in\mathbb{K}$ számokra $N=\sum_{j=1}^k\lambda_jP_j$.
+    Ekkor minden $p\in\mathbb{K}[t]$ polinom mellett
+    $p\left( N \right)=\sum_{j=1}^kp\left( \lambda_j \right)P_j$.
+\end{proposition}
+
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
@@ -12140,5 +12308,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Mon 27 Apr 2020 09:35:13 PM CEST
+Last Modified : Tue 28 Apr 2020 08:58:32 PM CEST
 
