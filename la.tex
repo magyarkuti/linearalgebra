@@ -10610,8 +10610,9 @@ de erre még várnunk kell.
             \(
             \hat{u}\in
             \left\{ x_1,\dots,x_k \right\}^\perp
-            =
-            \left(\lin\left\{ x_1,\cdots,x_k \right\} \right)^\perp.
+            %=
+            %\left(\lin\left\{ x_1,\cdots,x_k \right\} \right)^\perp
+            .
             \)
             \qedhere
     \end{enumerate}
@@ -11031,6 +11032,7 @@ Ezt a tényt a fontossága miatt külön is kiemeljük:
 \end{corollary}
 
 \chapter{Az adjungált operátor bevezetése}
+Az egész fejezetben $V$ egy $\mathbb{K}$ feletti vektortér.
 \section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}
 
 \begin{proposition}[Riesz-reprezentació]\index{Riesz-reprezentáció}
@@ -11054,7 +11056,7 @@ $\left\{ v_1,\cdots,v_n \right\}$ egy ortonormált bázis a térben, akkor
 \section{Az adjungált operáció}
 \begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}
 Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
-$\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós skaláris\-szorzatos-tér.
+$\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós ska\-láris\-szor\-zatos-tér.
 Rögzített $A\in L\left( V,W \right)$ lineáris operátor és rögzített $w\in W$ vektor mellett tekintsük a 
 \[
     \varphi_w=
@@ -11145,7 +11147,7 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
 \begin{definition}
     Legyen $V$ egy skalárisszorzatos-tér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
     Azt mondjuk, hogy az $A$ transzformáció 
-    \emph{önadjungált}\index{önadjungált},
+    \emph{önadjungált}\index{önadjungált transzformáció},
     ha $A^\ast=A$.
 \end{definition}
 
@@ -11178,6 +11180,97 @@ akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad
     Ekkor 
     \[
         \ker A\oplus\im A=V\qquad\text{ és }\qquad\ker A\perp\im A.
+        \qedhere
+    \]
+\end{proposition}
+\section{Unitér transzformációk}
+\begin{definition}
+    Legyen $V$ egy skalárisszorzatos-tér, és $B\in L\left( V \right)$ egy lineáris transzformáció.
+    Azt mondjuk, hogy $B$
+    \emph{unitér}\index{unitér transzformáció},
+    ha $B$ reguláris és $B^{-1}=B^\ast$.
+\end{definition}
+\begin{proposition}
+    A $B\in L\left( V \right)$ transzformációra tett alábbi feltevések ekvivalensek.
+    \begin{enumerate}
+        \item $B$ unitér;
+        \item Minden $u,v\in V$ mellett $\ip{Bu}{Bv}=\ip{u}{v}$.
+        \item $B$ egy ortonormált bázist ortonormált bázisra képez.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    $1)\implies 2)$
+    \begin{math}
+        \ip{Bu}{Bv}
+        =
+        \ip{u}{B^\ast Bv}
+        =
+        \ip{u}{B^{-1}Bv}
+        =
+        \ip{u}{v}.
+    \end{math}
+
+    \noindent
+    $2)\implies 3)$
+    Legyen $u_1,\dots,u_n$ egy ortonormált bázis.
+    Ennek $B$ képére
+    \begin{math}
+        \ip{Bu_j}{Bu_k}
+        =
+        \ip{u_j}{u_k}
+        =\delta_{j,k}.
+    \end{math}
+    Ez azt jelenti, hogy a $\left\{ Bu_1,\dots,Bu_n \right\}$ egy ortonormált rendszer.
+    A tér $n$ dimenziós, hiszen $\left\{ u_1,\dots,u_n \right\}$ egy bázis.
+    Így
+    $\left\{ Bu_1,\dots,Bu_n \right\}$ egy maximális lineárisan független rendszerként maga is bázis.
+
+    \noindent
+    $3)\implies 1)$
+    Vegyünk $V$-ben egy $\left\{ u_1,\dots,u_n \right\}$ ortonormált bázist.
+    Feltevésünk szerint a $\left\{ Bu_1,\dots,Bu_n \right\}$ egy ortonormált rendszer.
+    Így minden $j,k$ mellett
+    \begin{displaymath}
+        \ip{u_k}{\left( B^\ast B-I \right)u_j}
+        =
+        \ip{u_k}{B^\ast Bu_j}-\ip{u_k}{u_j} 
+        =
+        \ip{Bu_k}{Bu_j}-\ip{u_k}{u_j}
+        =
+        \delta_{k,j}-\delta_{k,j}
+        =
+        0.
+    \end{displaymath}
+    Ez azt jelenti, hogy az $(B^\ast B-I)u_j$ vektor merőleges az $\left\{ u_1,\dots,u_n \right\}$ bázis minden elemére.
+    Az ortonormált rendszer teljessége szerint ez csak úgy lehetséges, ha minden $j$ indexre $B^\ast Bu_j=Iu_j$.
+    No de a lineáris transzformációk bázison egyértelműen meghatározottak,
+    ezért $B^\ast B=I$.
+    Ez azt jelenti, hogy $B$ reguláris és $B^{-1}=B^\ast$.
+\end{proof}
+Egy ortonormált bázisban felírva a $B$ transzformáció mátrixát,
+nagyon könnyen észrevehető, hogy unitér transzformációval állunk szemben.
+Ugyanis $B$ mátrixának $j$-edik oszlopa a $j$-edik bázis elem képe.
+Így ortonormált bázisból kiindulva a transzformáció pontosan akkor unitér, ha 
+a felírt $[B]$ mátrix oszlopai egy ortonormált rendszert alkotnak az eredeti bázisban felírt belső szorzattal.
+\begin{proposition}
+    Legyen $V$ egy skalárisszorzatos-tér és $B\in L\left( V \right)$ egy lineáris transzformáció.
+    A $B$ transzformáció pontosan akkor unitér,
+    ha tetszőleges ortonormált bázisban felírt mátrixának oszloprendszere egy ortonormált rendszer.
+\end{proposition}
+Egyszerűbben kifejezve, ha $B$ ortonormált bázisban felírt mátrixának elemei $\beta_{i,j}$,
+akkor a $B$ unitér voltának szükséges és elegendő feltétele, 
+hogy minden $i,j$-re
+$\sum_{k=1}^n\beta_{k,i}\overline{\beta_{k,j}}=\delta_{i,j}$.
+Ultra fontos következmény az alábbi:
+\begin{proposition}
+    Tegyük fel, hogy a $V$ skalárisszorzatos-tér, egy $A$ lineáris transzformációjának mátrixát felírtuk
+    két ortonormált bázisban.
+    Legyen $\left\{ u_1,\dots,u_n \right\}$ a régi ortonormált bázis és $\left\{ e_1,\dots,e_n \right\}$ az új ortonormált bázis.
+    Jelölje $B$ az áttérés lineáris transzformációt, tehát $Bu_j=e_j$ minden $j=1,\dots,n$ mellett.
+    Ekkor
+    \[
+        [A]_\uj=\overline{[B]}^T[A]_{\rgi}[B].
         \qedhere
     \]
 \end{proposition}
@@ -11636,7 +11729,7 @@ Olyan nem zérus ortogonális projekciók lineáris kombinációit vizsgáljuk,
 amelyek összege az identikus transzformáció. 
 Mivel az identikus transzformáció egyben projekció is,
 ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekciók még egymásra merőlegesek is.
-\begin{proposition}[komplex együtthatók]\label{pr:normlinkomb}\index{normális transzformáció}
+\begin{proposition}[komplex együtthatók]\label{pr:normlinkombkomplex}\index{normális transzformáció}
     Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
     Tegyük fel, hogy $P_1,\dots,P_r\in L\left( V \right)$ olyan ortogonális projekciók,
     amelyekre
@@ -11811,7 +11904,7 @@ Ezt kellett belátni.
 
 \subsection{Valós együtthatós lineáris kombináció}
 Most nézzük a valós együtthatós lineáris kombinációk esetét.
-\begin{proposition}\label{pr:normlinkomb}\index{önadjungált transzformáció}
+\begin{proposition}\label{pr:normlinkombvalos}\index{önadjungált transzformáció}
     Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
     Tegyük fel, hogy $P_1,\dots,P_r\in L\left( V \right)$ olyan ortogonális projekciók,
     amelyekre
@@ -11846,7 +11939,7 @@ Most nézzük a valós együtthatós lineáris kombinációk esetét.
 
 \subsection{Egy abszolútértékű együtthatókkal képzett lineáris kombináció}
 Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 1 abszolútértékű számok.
-\begin{proposition}\label{pr:normlinkomb}\index{unitér transzformáció}
+\begin{proposition}\label{pr:normlinkombegys}\index{unitér transzformáció}
     Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
     Tegyük fel, hogy $P_1,\dots,P_r\in L\left( V \right)$ olyan ortogonális projekciók,
     amelyekre
@@ -11973,7 +12066,7 @@ de azt is tudjuk, hogy az egyenlőség még a $\mathbb{K}=\mathbb{R}$ és $N^\as
     \]
     A 4. azonosság a 3. tulajdonságból az adjungálás tulajdonságai és $P^\ast=P$ figyelembe vételével adódik.
 \end{proof}
-Az eddigiek összefoglalásaként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+Az eddigiek összefoglalásaként (\ref{pr:normlinkombkomplex} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
 hogy egy komplex mátrix ortonormált bázisban diagonalizálható.
 \begin{proposition}[Normalitás karakterizációja a spektrális felbontással]
     Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér és $N\in L\left( V \right)$ egy lineáris transzformáció.
@@ -12036,7 +12129,7 @@ a normális transzformációk spektrális felbontásának speciális esete.
             \qedhere
     \end{enumerate}
 \end{proposition}
-Összefoglalásként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+Összefoglalásként (\ref{pr:normlinkombvalos} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
 hogy egy komplex mátrix ortonormált bázisban diagonalizálható, és a diagonális elemei valós számok.
 \begin{proposition}[Önadjungáltság karakterizációja a spektrális felbontással]
     Legyen $V$ egy $\mathbb{C}$ feletti ska\-lá\-ris\-szor\-za\-tos-tér és $A\in L\left( V \right)$ egy lineáris transzformáció.
@@ -12110,7 +12203,7 @@ a normális transzformációk spektrális felbontásának speciális esete.
             \qedhere
     \end{enumerate}
 \end{proposition}
-Összefoglalásként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+Összefoglalásként (\ref{pr:normlinkombegys} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
 hogy egy komplex mátrix ortonormált bázisban diagonalizálható, és a diagonális elemei egy abszolútértékű komplex számok.
 \begin{proposition}[Unitér karakterizáció a spektrális felbontással]
     Legyen $V$ egy $\mathbb{C}$ feletti ska\-lá\-ris\-szor\-za\-tos-tér és $A\in L\left( V \right)$ egy lineáris transzformáció.
@@ -12189,7 +12282,7 @@ ezért a komplex önadjungált esettel analóg állítás igaz valós vektortér
         \qedhere
     \]
 \end{proof}
-Összefoglalásként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+Összefoglalásként (\ref{pr:normlinkombkomplex} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
 hogy egy valós szimmetrikus mátrix ortonormált bázisban diagonalizálható.
 \begin{proposition}[Szimmetrikus karakterizáció spektrális felbontással]
     Legyen $V$ egy valós ska\-lá\-ris\-szor\-za\-tos-tér 
@@ -12213,7 +12306,7 @@ hogy egy valós szimmetrikus mátrix ortonormált bázisban diagonalizálható.
 
 
 
-\subsection{Ortogonális transzformáció}
+%\subsection{Ortogonális transzformáció}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -12879,5 +12972,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 05 May 2020 07:06:11 AM CEST
+Last Modified : Tue 05 May 2020 03:46:41 PM CEST
 
