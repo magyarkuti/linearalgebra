@@ -11188,9 +11188,20 @@ akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad
     \emph{normálisnak}\index{normális transzformáció} nevezzük,
     ha $$N^\ast N=NN^\ast$$ tehát, ha a transzformáció kommutál az adjungáltjával.
 \end{definition}
-Világos, hogy ha $N$ egy ortonormált bázisban diagonalizálható, akkor
+Nyilvánvaló példák normális transzformációkra:
+\begin{enumerate}
+    \item Ha $N$ önadjungált;
+    \item Ha $N$ reguláris és $N^{-1}=N^\ast$;\footnote{Az ilyen transzformációt nevezzük
+            \emph{unitér}\index{unitér}
+        transzformációnak.}
+    \item Ha létezik olyan $q$ polinom, amelyre $N^\ast=q\left( N \right)$;
+    \item
+        Ha $N$ egy ortonormált bázisban diagonalizálható, akkor
 ebben a bázisban felírt matrixszára, a mátrix kommutál az adjungált mátrixszal, 
 így az eredeti transzformáció is normális.
+\end{enumerate}
+Ki fog derülni a fejezetben, hogy a fenti példák közül a 3. és a 4. le is fedi valamennyi normális transzformációt.
+Az unitér transzformációk olyanok, amelyek $\mathbb{R}$ feletti esetben nem diagonalizálhatók.
 \begin{proposition}
     Egy normális transzformáció polinomja is normális.
 \end{proposition}
@@ -11287,7 +11298,7 @@ maga is normális,
 ezért az $\ker (N-\lambda I)$ és $\ker (N^\ast-\bar{\lambda}I)$ azonos alterek.
 Azt gondoltuk meg tehát, hogy normális $N$ mellett
 tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u=\bar{\lambda}u$.
-\begin{proposition}
+\begin{proposition}\label{pr:normtul}
     Legyen $N$ egy normális transzformáció a $V$ skalárisszorzatos-téren.
     Ekkor
     \begin{enumerate}
@@ -11620,32 +11631,592 @@ Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, 
     A $P$ összeg pontosan akkor ortogonális projekció, ha $P_i\perp P_j$ minden $i\neq j$ mellett.
 \end{proposition}
 
-\begin{proposition}
+\section{Ortogonális transzformációk lineáris kombinációja}
+Olyan nem zérus ortogonális projekciók lineáris kombinációit vizsgáljuk,
+amelyek összege az identikus transzformáció. 
+Mivel az identikus transzformáció egyben projekció is,
+ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekciók még egymásra merőlegesek is.
+\begin{proposition}[komplex együtthatók]\label{pr:normlinkomb}\index{normális transzformáció}
     Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
-    Tegyük fel, hogy $P_1,\dots,P_k\in L\left( V \right)$ olyan ortogonális projekciók,
+    Tegyük fel, hogy $P_1,\dots,P_r\in L\left( V \right)$ olyan ortogonális projekciók,
     amelyekre
     \begin{enumerate}
-        \item $P_j\neq 0$ minden $j=1,\dots,k$ mellett.
+        \item $P_j\neq 0$ minden $j=1,\dots,r$ mellett.
         \item $I=\sum_{j=1}^rP_j$.
     \end{enumerate}
-    Legyenek a $\left\{ \lambda_1,\dots,\lambda_k \right\}\subseteq \mathbb{K}$
+    Legyenek a $\left\{ \lambda_1,\dots,\lambda_r \right\}\subseteq \mathbb{K}$
     (nem feltétlenül különböző) számok tetszőlegesen rögzítve, és
     jelölje
     \(
         N
         =
-        \sum_{j=1}^k\lambda_jP_j.
+        \sum_{j=1}^r\lambda_jP_j.
     \)
-    Ekkor az $N$ egy normális transzformáció, 
-    amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_k \right\}$.
+    Ekkor az $N$ egy \emph{normális} transzformáció, 
+    amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$.
 \end{proposition}
+\begin{proof}
+    A feltétel szerint az ortogonális projekciók összege az identikus transzformáció, tehát
+    az összeg is egy ortogonális projekció.
+    Emiatt a $P_j$ projekciók egymásra páronként merőlegesek,
+    így
+    \[
+        N^\ast N
+        =
+        \sum_{j=1}^r|\lambda_j|^2P_j
+        =
+        NN^\ast.
+    \]
+
+    Most megmutatjuk, hogy 
+    $\left\{ \lambda_1,\dots,\lambda_r \right\}\subseteq \sigma(N)$.
+    Legyen $u_j\in\im P_j$ egy nem zérus vektor, azaz $u_j\neq 0$.
+    Ilyen vektor létezik, hiszen $P_{j}\neq 0$.
+    Világos, hogy minden $k$ mellett
+    \begin{math}
+        P_k\left( u_j \right)
+        =
+        P_k\left( P_j\left( u_j \right) \right)
+        =
+        P_kP_j\left( u_j \right)
+        =\delta_{k,j}u_j.
+    \end{math}
+   Így
+   \[
+       Nu_j
+       =
+       \left( \sum_{k=1}^r\lambda_kP_k \right)u_j
+       =
+       \sum_{k=1}^r\lambda_k\delta_{k,j}u_j
+       =
+       \lambda_ju_j,
+   \]
+   ami pont azt jelenti, hogy $\lambda_j$ az $N$ transzformáció egy sajátértéke.
+
+   Most azt mutatjuk meg, hogy
+   $\sigma(N)\subseteq \left\{ \lambda_1,\dots,\lambda_r \right\}$.
+   Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
+   Jelölje $s_j=P_js\in\im P_j$, minden $j=1,\dots,r$ mellett.
+   Itt
+   \[
+   s=Is
+   =
+   \left( \sum_{j=1}^rP_j \right)s
+   =
+   \left( \sum_{j=1}^rP_js \right)
+   =
+   \sum_{j=1}^rs_j.
+   \]
+   Ezért
+   \[
+       \sum_{j=1}^r\mu s_j
+       =
+       \mu\sum_{j=1}^rs_j
+       =
+       \mu s
+       =
+       Ns
+       =
+       \left( \sum_{j=1}^r\lambda_jP_j \right)s
+       =
+       \sum_{j=1}^r\lambda_jP_js
+       =
+       \sum_{j=1}^r\lambda_js_j.
+   \]
+   Azt kaptuk tehát, hogy
+   \[
+       \sum_{\substack{j=1\\s_j\neq 0}}^r\left(\lambda_j-\mu \right)s_j=0.\tag{\dag}
+   \]
+   Itt a baloldali szummának van legalább egy tagja, hiszen 
+   \(
+   0 \neq s=\sum_{j=1}^rs_j.
+   \)
+   Az 
+   $\left\{ s_j:j=1,\dots,r \right\}$ 
+   egy ortogonális rendszer,
+   hiszen a $P_j$ projekciók egymásra merőlegesek, ami ekvivalens avval, hogy
+   $\im P_k\perp \im P_j$ minden $k\neq j$ mellett.
+   Így az 
+   $\left\{ s_j:j=1,\dots,r, s_j\neq 0 \right\}$ vektorrendszer, 
+   zérus elemet nem tartalmazó ortogonális rendszerként lineárisan független rendszer.
+   Ez azt jelenti, hogy a $(\dag)$ lineáris kombináció együtthatói a test nullelemei, ergo
+   \begin{math}
+       \lambda_j-\mu=0
+   \end{math}
+   minden szóba jövő $j$-re, 
+   azaz minden olyan $j$ mellett, amelyre $s_j\neq 0$.
+   A már igazoltak szerint
+   \begin{math}
+       \mu=\lambda_j\in\sigma(N).
+   \end{math}
+   Ezt kellett belátni. 
+\end{proof}
+\begin{proposition}\label{pr:normpol}
+    Tegyük fel, hogy olyan 
+    $P_1,\dots,P_r$ ortogonális projekciókra, amelyek összege az identikus transzformáció,
+    és a tetszőlegesen megválasztott 
+    $\lambda_1,\dots,\lambda_r\in\mathbb{K}$ számokra $N=\sum_{j=1}^r\lambda_jP_j$.
+    Ekkor minden $q\in\mathbb{K}[t]$ polinom mellett
+    $q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+\end{proposition}
+\begin{proof}
+    Először gondoljuk meg azt, hogy minden $l\geq 0$ mellett
+    \begin{math}
+        N^l
+        =
+        \sum_{j=1}^k\lambda_j^lP_j.
+    \end{math}
+Ha $l=0$, akkor az ortogonális projekciók összege az identitás feltevést kapjuk.
+Ha az állítás igaz $l$-ig, akkor $l+1$-re:
+\[
+    N^{l+1}
+    =
+    N^lN
+    =
+    (\sum_{j=1}^r\lambda_j^lP_j)\left( \sum_{h=1}^r\lambda_hP_h \right)
+    =
+    \sum_{j=1}^r\sum_{h=1}^r\lambda_j^l\lambda_hP_jP_h
+    =
+    \sum_{j=1}^r\lambda_j^{l+1}P_j.
+\]
+Itt azt használtuk ki, hogy amennyiben az ortogonális projekciók összege is egy ortogonális projekció,
+akkor $P_jP_h=\delta_{j,h}P_j^2=\delta_{j,h}$.
+No de, ha a $q$ polinom $q\left( t \right)=\sum_{l=0}^m\alpha_lt^l$ alakú,
+akkor
+\begin{multline*}
+    q\left( N \right)
+    =
+    \sum_{l=0}^m\alpha_lN^l
+    =
+    \sum_{l=0}^m\alpha_l
+    \left( 
+        \sum_{j=1}^r\lambda_j^lP_j
+    \right)
+    =
+    \sum_{l=0}^m\sum_{j=1}^r\alpha_l\lambda_j^lP_j
+    \\
+    =
+    \sum_{j=1}^r\sum_{l=0}^m\alpha_l\lambda_j^lP_j
+    =
+    \sum_{j=1}^r
+        \left( 
+            \sum_{l=0}^m\alpha_l\lambda_j^l
+        \right)P_j
+    =
+    \sum_{j=1}^r
+        q\left(\lambda_j \right)P_j.
+\end{multline*}
+Ezt kellett belátni. 
+\end{proof}
+
+\subsection{Valós együtthatós lineáris kombináció}
+Most nézzük a valós együtthatós lineáris kombinációk esetét.
+\begin{proposition}\label{pr:normlinkomb}\index{önadjungált transzformáció}
+    Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
+    Tegyük fel, hogy $P_1,\dots,P_r\in L\left( V \right)$ olyan ortogonális projekciók,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$ minden $j=1,\dots,r$ mellett.
+        \item $I=\sum_{j=1}^rP_j$.
+    \end{enumerate}
+    Legyenek a $\left\{ \lambda_1,\dots,\lambda_r \right\}\subseteq \mathbb{R}$
+    (nem feltétlenül különböző) valós számok tetszőlegesen rögzítve, 
+    és jelölje
+    \(
+        N
+        =
+        \sum_{j=1}^r\lambda_jP_j.
+    \)
+    Ekkor az $N$ egy \emph{önadjungált} transzformáció, 
+    amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$.
+\end{proposition}
+\begin{proof}
+    Mivel az itt szerpelő $\lambda_j$ számok valósak,
+    ezért azonosak a konjugáltjukkal.
+    Így
+    \begin{displaymath}
+        N^\ast=
+        \sum_{j=1}^r\overline{\lambda_j}P_j^\ast
+        =
+        \sum_{j=1}^n\lambda_jP_j
+        =N.
+        \qedhere
+    \end{displaymath}
+\end{proof}
+
+\subsection{Egy abszolútértékű együtthatókkal képzett lineáris kombináció}
+Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 1 abszolútértékű számok.
+\begin{proposition}\label{pr:normlinkomb}\index{unitér transzformáció}
+    Legyen $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér.
+    Tegyük fel, hogy $P_1,\dots,P_r\in L\left( V \right)$ olyan ortogonális projekciók,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$ minden $j=1,\dots,r$ mellett.
+        \item $I=\sum_{j=1}^rP_j$.
+    \end{enumerate}
+    Legyenek a $\left\{ \lambda_1,\dots,\lambda_r \right\}\subseteq \mathbb{K}$
+    (nem feltétlenül különböző),
+    1 abszolútértékű számok tetszőlegesen rögzítve, 
+    és jelölje
+    \(
+        N
+        =
+        \sum_{j=1}^r\lambda_jP_j.
+    \)
+    Ekkor az $N$ egy \emph{unitér} transzformáció, 
+    amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$.
+\end{proposition}
+\begin{proof}
+    $N$ spektruma a zérust nem tartalmazza, tehát $N$ reguláris.
+    Persze $$NN^\ast=\sum_{j=1}^n|\lambda_j|^2P_j=\sum_{j=1}^nP_j=I$$ ami azt jelenti,
+    hogy $N^{-1}=N^\ast$.
+\end{proof}
+
+
+\chapter{Spektrális felbontások}
+\scwords A közös magja az úgynevezett spektrális felbontási tételeknek az identitikus operáció alábbi felbontása.
 \begin{proposition}
-    Tegyük fel, hogy az egymásra páronként merőleges $P_1,\dots,P_k$ ortogonális projekciókra
-    és a tetszőlegesen megválasztott $\lambda_1,\dots,\lambda_k\in\mathbb{K}$ számokra $N=\sum_{j=1}^k\lambda_jP_j$.
-    Ekkor minden $p\in\mathbb{K}[t]$ polinom mellett
-    $p\left( N \right)=\sum_{j=1}^kp\left( \lambda_j \right)P_j$.
+    Tegyük fel, hogy $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér,
+    és tegyük fel, hogy az $M_1,\dots,M_r$ alterekre
+    \[
+        V=M_1\oplus\dots\oplus M_r,
+        \qquad\text{ahol }M_j\perp M_k\text{ minden }j\neq k.
+    \]
+    Jelölje $P_j$ az $M_j$ altérre való merőleges vetítést.
+    Ekkor 
+    \[
+        I=\sum_{j=1}^rP_j
+    \]
+    és persze $P_j\perp P_k$ minden $j\neq k$ mellett.
+\end{proposition}
+\begin{proof}
+    Minden $s\in V$ vektor egyértelműen előáll
+    $s=\sum_{j=1}^rs_j$
+    alakban, ahol $s_j\in M_j$.
+    Felhasználva, hogy $P_j|M_j=\id$ és $\sum_{\substack{k=1\\k\neq j}}^rM_k\subseteq M_j^\perp=\ker P_j$ minden $k\neq j$ mellett
+    \[
+        \left( 
+            \sum_{j=1}^rP_j
+        \right)s
+        =
+        \sum_{j=1}^rP_js
+        =
+        \sum_{j=1}^rP_j\left( s_j+\sum_{\substack{k=1\\k\neq j}}^rs_k \right)
+        =
+        \sum_{j=1}^r\left( P_js_j+P_j\left( \sum_{\substack{k=1\\k\neq j}}^rs_k \right) \right)
+        =
+        \sum_{j=1}^rs_j
+        =
+        Is.
+        \qedhere
+    \]
+\end{proof}
+Emlékezzünk arra, hogy ha $\left\{ \lambda_1,\dots,\lambda_r \right\}$ az $N$ normális transzformáció
+sajátértékei,
+akkor bevezetve az $M_i=\ker\left( N-\lambda_i I \right)$ jelölést
+\[
+        M_1\oplus\dots\oplus M_r\subseteq V
+        \qquad\text{ahol }M_j\perp M_k\text{ minden }j\neq k.
+\]
+Még azt is láttuk, hogy $\mathbb{K}=\mathbb{C}$ esetben itt egyenlőség is van,
+de azt is tudjuk, hogy az egyenlőség még a $\mathbb{K}=\mathbb{R}$ és $N^\ast=N$ esetben is fennáll.
+\section{Komplex eset}
+
+\subsection{Normális transzformáció}
+\begin{proposition}[spektrális felbontás]
+    Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $N\in L\left( V \right)$
+    egy normális lineáris transzformáció.
+    Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\dots,\lambda_k  \right\}$ az $N$ különböző sajátértékeit.
+    Láttuk, hogy $N$ diagonalizálható, ezért $k\geq 1$.
+    Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $j=1,\dots,r$ mellett $P_j\neq 0$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $N=\sum_{j=1}^r\lambda_jP_j$;
+        \item $N^\ast=\sum_{j=1}^r\overline{\lambda_j}P_j$.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Láttuk, hogy $N$ diagonalizálható, azaz létezik a térnek $N$ sajátvektoraiból álló
+    bázisa,
+    ezért
+    \[
+        M_1\oplus\dots\oplus M_r=V
+        \qquad\text{itt }M_j\perp M_k\text{ minden }j\neq k,\tag{\dag}
+    \]
+    ahol $M_j=\ker\left( N-\lambda_jI \right)$.
+
+    Világos, 
+    hogy minden $j$ mellett létezik $u_j\neq 0$, hogy $Nu_j=\lambda_ju_j$, 
+    így $M_j\neq \left\{ 0 \right\}$,
+    ergo $P_j\neq 0.$
+
+    Láttuk korábban, hogy (\dag)-ből $I=\sum_{j=1}^{r}P_j$ is következik.
+
+    A 3. azonossághoz azt vegyük észre, 
+    hogy tetszőleges $v\in V$ mellett $P_jv\in M_j$ a $\lambda_j$-hez tartozó sajátaltér egy eleme,
+    így $NP_jv=\lambda_jP_jv$. Tehát
+    \[
+        Nv
+        =
+        N\left( Iv \right)
+        =
+        N\left( \sum_{j=1}^rP_jv \right)
+        =
+        \sum_{j=1}^rNP_jv
+        =
+        \sum_{j=1}^r\lambda_jP_jv
+        =
+        \left( \sum_{j=1}^r\lambda_jP_j \right)v.
+    \]
+    A 4. azonosság a 3. tulajdonságból az adjungálás tulajdonságai és $P^\ast=P$ figyelembe vételével adódik.
+\end{proof}
+Az eddigiek összefoglalásaként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+hogy egy komplex mátrix ortonormált bázisban diagonalizálható.
+\begin{proposition}[Normalitás karakterizációja a spektrális felbontással]
+    Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér és $N\in L\left( V \right)$ egy lineáris transzformáció.
+    Az $N$ transzformáció pontosan akkor normális,
+    ha létezik $r\geq 1$ egész, léteznek $P_1,\dots,P_r$ ortogonális projekciók és
+    léteznek $\lambda_1,\dots,\lambda_r\in\mathbb{C}$ komplex számok,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$, minden $j=1,\dots,r$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $N=\sum_{j=1}^r\lambda_jP_j$.
+    \end{enumerate}
+    Ha $N$ normális, 
+    akkor $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$,
+    $N^\ast=\sum_{j=1}^r\overline{\lambda_j}P_j$, 
+    és tetszőleges $q\in\mathbb{C}[t]$ komplex együtthatós polinom mellett
+    $q\left( N \right)$ is normális, 
+    továbbá
+    $q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+\end{proposition}
+\subsubsection{Önadjungált transzformáció}
+Először azt kell látnunk, 
+hogy komplex vektortér esetében a normális transzformációk közül éppen azok az önadjungáltak,
+amelyeknek a -- nem üres -- spektruma valós.
+\begin{proposition}
+    Legyen $V$ egy a komplex számtest feletti skalárisszorzatos-tér.
+    $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Az $A$ pontosan akkor önadjungált, ha $A$ normális és $\sigma\left( A \right)\subseteq\mathbb{R}$
+\end{proposition}
+\begin{proof}
+    Az, hogy önadjungált transzformáció normális és a (lehetséges, hogy üreshalmaz) spektruma valós,
+    még $\mathbb{K}$ feletti skalárisszorzatos-tér mellett is igaz. (\ref{pr:normtul}).
+    Megfordítva, 
+    ha egy komplex vektortéren $A$ normális, akkor van spektrális felbontása:
+    \[
+        A=\sum_{j=1}^r\lambda_jP_j,
+    \]
+    ahol $\left\{ \lambda_1,\dots,\lambda_k \right\}$ a spektrum elemei.
+    Mivel ezek valós számok, 
+    ezért 
+    \[
+        A^\ast=\sum_{j=1}^r\overline{\lambda_j}P_j=
+        \sum_{j=1}^r\lambda_jP_j=A.
+        \qedhere
+    \]
+\end{proof}
+Az önadjungált transzformációk spektrális felbontása 
+a normális transzformációk spektrális felbontásának speciális esete.
+\begin{proposition}[spektrális felbontás]
+    Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
+    egy önadjungált lineáris transzformáció.
+    Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\dots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
+    Láttuk, hogy $k\geq 1$, és $\sigma\left( A \right)\subseteq \mathbb{R}$.
+    Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $j=1,\dots,r$ mellett $P_j\neq 0$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $A=\sum_{j=1}^r\lambda_jP_j$.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+Összefoglalásként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+hogy egy komplex mátrix ortonormált bázisban diagonalizálható, és a diagonális elemei valós számok.
+\begin{proposition}[Önadjungáltság karakterizációja a spektrális felbontással]
+    Legyen $V$ egy $\mathbb{C}$ feletti ska\-lá\-ris\-szor\-za\-tos-tér és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Az $A$ transzformáció pontosan akkor önadjungált,
+    ha létezik $r\geq 1$ egész, léteznek $P_1,\dots,P_r$ ortogonális projekciók és
+    léteznek $\lambda_1,\dots,\lambda_r\in\mathbb{R}$ valós számok,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$, minden $j=1,\dots,r$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $A=\sum_{j=1}^r\lambda_jP_j$.
+    \end{enumerate}
+    Ha $A$ önadjungált, 
+    akkor $\sigma\left( A \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$,
+    és tetszőleges $q\in\mathbb{R}[t]$ valós együtthatós polinom mellett
+    $q\left( N \right)$ is önadjungált, 
+    továbbá
+    $q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
 \end{proposition}
 
+\subsubsection{Unitér transzformáció}
+Először azt kell látnunk, 
+hogy komplex vektortér esetében a normális transzformációk közül éppen azok az unitér transzformációk,
+amelyekre a -- nem üres -- spektruma minden pontja egységnyi abszolútértékű.
+\begin{proposition}
+    Legyen $V$ egy a komplex számtest feletti skalárisszorzatos-tér.
+    $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Az $A$ pontosan akkor unitér, ha $A$ normális és minden $\lambda\in\sigma\left( A \right)$ sajátértékre
+    $|\lambda|=1$.
+\end{proposition}
+\begin{proof}
+    Még $\mathbb{K}$ feletti skalárisszorzatos-tér mellett is igaz,
+    hogy egy unitér transzformáció normális,
+    és a (lehetséges, hogy üreshalmaz) spektruma minden pontja egységnyi abszolútértékű:
+    Ugyanis a $\lambda$ spektrum pontra $\lambda\neq 0$, 
+    és valamely $u\neq 0$ vektor mellett
+    $Au=\lambda u$, $A^\ast u=\overline{\lambda}u$. Így 
+    \[
+        \left( \frac{1}{\lambda}-\overline{\lambda} \right)u
+        =
+        \frac{1}{\lambda}u-\overline{\lambda}u
+        =
+        A^{-1}u-A^\ast u
+        =0.
+    \]
+    Ebből már 
+    $u\neq 0$ miatt $|\lambda|=1$ következik.
+
+    Megfordítva,
+    mivel komplex tér felett vagyunk, 
+    ezért $A$-nak normális volta miatt van
+    $A=\sum_{j=1}^r\lambda_jPj$ spektrális felbontása,
+    ahol $\lambda_1,\dots,\lambda_r$ az $A$ sajátértékei.
+    Tehát $A$ ortogonális projekciók egységnyi abszolútértékű együtthatókkal képzett lineáris kombinációja,
+    amiről korábban már láttuk, hogy mindig unitér transzformációt eredményez.
+\end{proof}
+Az unitér transzformációk spektrális felbontása is
+a normális transzformációk spektrális felbontásának speciális esete.
+\begin{proposition}[spektrális felbontás]
+    Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
+    egy unitér lineáris transzformáció.
+    Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\dots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
+    Láttuk, hogy $k\geq 1$, $|\lambda_j|=1$ minden $j=1,\dots,r$ mellett
+    Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $j=1,\dots,r$ mellett $P_j\neq 0$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $A=\sum_{j=1}^r\lambda_jP_j$;
+        \item $A^\ast=\sum_{j=1}^r\frac{1}{\lambda_j}P_j$.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+Összefoglalásként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+hogy egy komplex mátrix ortonormált bázisban diagonalizálható, és a diagonális elemei egy abszolútértékű komplex számok.
+\begin{proposition}[Unitér karakterizáció a spektrális felbontással]
+    Legyen $V$ egy $\mathbb{C}$ feletti ska\-lá\-ris\-szor\-za\-tos-tér és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Az $A$ transzformáció pontosan akkor unitér,
+    ha létezik $r\geq 1$ egész, léteznek $P_1,\dots,P_r$ ortogonális projekciók és
+    léteznek $\lambda_1,\dots,\lambda_r\in\mathbb{C}$ egységnyi abszolútértékű komplex számok,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$, minden $j=1,\dots,r$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $A=\sum_{j=1}^r\lambda_jP_j$.
+    \end{enumerate}
+    Ha $A$ unitér, 
+    akkor $\sigma\left( A \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$,
+    és $A^{-1}=\sum_{j=1}^r\frac{1}{\lambda_j}P_j=A^\ast$ is fennáll.
+\end{proposition}
+
+
+
+
+\section{Valós eset}
+Mivel valós test feletti skalárisszorzatos-tér felett még az is előfordulhat,
+hogy egy normális transzformációnak még sajátértéke sincs,
+ezért nem várható általános eredmény normális transzformációk diagonalizálhatóságára.
+\subsection{Szimmetrikus transzformáció}
+Láttuk, hogy szimmetrikus transzformációk diagonalizálhatók,
+ezért a komplex önadjungált esettel analóg állítás igaz valós vektortér esetére.
+\begin{proposition}[spektrális felbontás]
+    Legyen $V$ egy $\mathbb{R}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
+    egy szimmetrikus lineáris transzformáció.
+    Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\dots,\lambda_k  \right\}\subseteq\mathbb{R}$ az $A$ különböző sajátértékeit.
+    Láttuk, hogy $k\geq 1$.
+    Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $j=1,\dots,r$ mellett $P_j\neq 0$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $A=\sum_{j=1}^r\lambda_jP_j$.
+            \qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Láttuk, hogy $A$ diagonalizálható
+    \footnote{Innen a bizonyítás szó szerint azonos a komplex tér feletti normális transzformáció spektrálfebontásának igazolásával.}%
+    , azaz létezik a térnek $A$ sajátvektoraiból álló
+    bázisa,
+    ezért
+    \[
+        M_1\oplus\dots\oplus M_r=V
+        \qquad\text{itt }M_j\perp M_k\text{ minden }j\neq k,\tag{\dag}
+    \]
+    ahol $M_j=\ker\left( N-\lambda_jI \right)$.
+
+    Világos, 
+    hogy minden $j$ mellett létezik $u_j\neq 0$, hogy $Au_j=\lambda_ju_j$, 
+    így $M_j\neq \left\{ 0 \right\}$,
+    ergo $P_j\neq 0.$
+
+    Láttuk korábban, hogy (\dag)-ből $I=\sum_{j=1}^{r}P_j$ is következik.
+
+    A 3. azonossághoz azt vegyük észre, 
+    hogy tetszőleges $v\in V$ mellett $P_jv\in M_j$ a $\lambda_j$-hez tartozó sajátaltér egy eleme,
+    így $AP_jv=\lambda_jP_jv$. Tehát
+    \[
+        Av
+        =
+        A\left( Iv \right)
+        =
+        A\left( \sum_{j=1}^rP_jv \right)
+        =
+        \sum_{j=1}^rAP_jv
+        =
+        \sum_{j=1}^r\lambda_jP_jv
+        =
+        \left( \sum_{j=1}^r\lambda_jP_j \right)v.
+        \qedhere
+    \]
+\end{proof}
+Összefoglalásként (\ref{pr:normlinkomb} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
+hogy egy valós szimmetrikus mátrix ortonormált bázisban diagonalizálható.
+\begin{proposition}[Szimmetrikus karakterizáció spektrális felbontással]
+    Legyen $V$ egy valós ska\-lá\-ris\-szor\-za\-tos-tér 
+    és $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Az $A$ transzformáció pontosan akkor szimmetrikus,
+    ha létezik $r\geq 1$ egész, léteznek $P_1,\dots,P_r$ ortogonális projekciók és
+    léteznek $\lambda_1,\dots,\lambda_r\in\mathbb{R}$ valós számok,
+    amelyekre
+    \begin{enumerate}
+        \item $P_j\neq 0$, minden $j=1,\dots,r$;
+        \item $I=\sum_{j=1}^rP_j$;
+        \item $A=\sum_{j=1}^r\lambda_jP_j$.
+    \end{enumerate}
+    Ha $A$ szimmetrikus, 
+    akkor $\sigma\left( A \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$,
+    és tetszőleges $q\in\mathbb{R}[t]$ valós együtthatós polinom mellett
+    $q\left( N \right)$ is szimmetrikus, 
+    továbbá
+    $q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+\end{proposition}
+
+
+
+\subsection{Ortogonális transzformáció}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
@@ -12308,5 +12879,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 28 Apr 2020 08:58:32 PM CEST
+Last Modified : Tue 05 May 2020 07:06:11 AM CEST
 
