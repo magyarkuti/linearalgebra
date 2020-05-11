@@ -177,6 +177,8 @@
 \newcommand{\uj}{\text{új}}
 \newcommand{\rgi}{\text{régi}}
 \newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\Star}[1]{#1\ensuremath{^*}\kern-\scriptspace}
+\newcommand{\CStar}{\Star{\ensuremath{\mathrm{C}}}}
 %\citeindextrue
 \makeindex
 \synctex=1
@@ -1994,8 +1996,22 @@ Egy kevésbé népszerű, de ekvivalens alakja
 \[
     \left|\left( |z|-|w| \right)\right|\leq|z-w|.
 \]
+A definícó szerint $|z|^2=\bar{z}z$. 
+Véve mindkét oldal abszolútértékét, 
+azt kapjuk, hogy%
+\footnote{Ezt az azonosságot a komplex számok 
+    \emph{\CStar-azonosságának}\index{Ccsillag@\CStar-azonosság}
+    mondjuk}, 
+\[
+    |\bar{z}z|=|z|^2.
+\]%
+Felhasználva a szorzat konjugáltjára vonatkozó állítást,
+a $|\bar{z}|=|z|$ fontos azonosság is látszik.
+
+
 Vegyük észre, hogy a valós abszolút érték függvény tulajdonságait sem használtuk,
 és a fenti tulajdonságokat valós esetre is újra igazoltuk.
+
 \section{A komplex számok trigonometrikus alakja}
 Láttuk, hogy $z,w\in\mathbb{C}$ komplex szám mellett
 \[
@@ -6332,7 +6348,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
     amikor $\lambda$
     egy sajátértéke $A$-nak. Tehát a $\lambda$ sajátértékhez tartozó 
     $\ker \left( A-\lambda I \right)$ sajátaltér egy 1 dimenziós invariáns altere
-    $A$-nak.\index{saját altér}
+    $A$-nak.\index{sajátaltér}
     \begin{definition}
         Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
         ha $p\left( A \right)=0$.
@@ -10441,7 +10457,7 @@ A továbbiakban $\mathbb{K}$ feletti vektorterekről van szó,
 ahol $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
 \section{Definíciók}
 
-\begin{definition}[skalárisszorzatos-tér]\index{sakláris szorzat}
+\begin{definition}[skalárisszorzatos-tér]\index{skaláris szorzat}
     Egy $\ip{\cdot}{\cdot}:V\times V\to \mathbb{K}$ függvényt \emph{skaláris szorzatnak} mondunk, ha
     teljesülnek az alábbi axiómák:
     \begin{enumerate}
@@ -11956,7 +11972,7 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
         =
         \sum_{j=1}^r\lambda_jP_j.
     \)
-    Ekkor az $N$ egy \emph{unitér} transzformáció, 
+    Ekkor az $N$ egy \emph{unitér transzformáció} transzformáció, 
     amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\dots,\lambda_r \right\}$.
 \end{proposition}
 \begin{proof}
@@ -11964,7 +11980,6 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
     Persze $$NN^\ast=\sum_{j=1}^n|\lambda_j|^2P_j=\sum_{j=1}^nP_j=I$$ ami azt jelenti,
     hogy $N^{-1}=N^\ast$.
 \end{proof}
-
 
 \chapter{Spektrális felbontások}
 \scwords A közös magja az úgynevezett spektrális felbontási tételeknek az identitikus operáció alábbi felbontása.
@@ -12304,17 +12319,309 @@ hogy egy valós szimmetrikus mátrix ortonormált bázisban diagonalizálható.
     $q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
 \end{proposition}
 
-
-
 %\subsection{Ortogonális transzformáció}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Operátornorma}
+A spektrális felbontási tétel egy fontos következménye, 
+hogy egy normális transzformációt egyértelműen meghatározza a spektruma, és a sajátaltereire való
+ortogonális projekciók.
+Ez lehetőséget ad egy tetszőleges $A$ lineáris operáció normájának meghatározására az $A^\ast A$ spektrumának ismeretében.
+
+Ebben a szakaszban feltesszük,
+hogy az operátornorma definíciója és alaptulajdonságai ismertek.
+Összefoglalom az általunk használt legfontosabb tényeket.
+Ha $A\in L\left( V,W \right)$ véges dimenziós normált téren értelmezett és a $W$ normált térbe képező lineáris operáció,
+akkor 
+\[
+    \max\left\{ \|Ax\|:\|x\|\leq 1 \right\}
+    =
+    \min\left\{ K\geq 0:\|Ax\|\leq K\|x\|\quad\forall x\in V \right\}
+\]
+számok azonosak és végesek. A közös érték az $\|A\|$ \emph{operátornorma}.\index{operátornorma} 
+Ha az $L\left( V,W \right)$ lineáris operációk vektorterét ellátjuk az operátornormával,
+akkor egy normált teret kapunk.
+A $W=V$ speciális esetben $A,B\in L\left( V \right)$-re $\|AB\|\leq \|A\|\|B\|$ egyenlőtlenség is fennáll.
+
+A továbbiakban $V$ egy véges dimenziós $\mathbb{K}$ feletti skalárisszorzatos-tér.
+\begin{definition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció, 
+    amelynek spektruma nem üres.
+    Ekkor az $r\left( A \right)=\max\left\{ |\lambda|:\lambda\in\sigma\left( A \right) \right\}$
+    számot az $A$ transzformáció 
+    \emph{spektrálsugarának}\index{spektrálsugár}
+    mondjuk.
+\end{definition}
+Világos, hogy $r\left( A \right)$ a legkisebb olyan sugár, 
+amellyel a komplex síkra rajzolt origó középpontú kör tartalmazza az $A$ valamennyi sajátértékét.
+Ezzel ekvivalens azt mondani,
+hogy a spektrálsugár a sajátértékek origótol vett távolságainak maximuma.
+
+Ha például $\sigma\left( A \right)\subseteq\mathbb{R}$, azaz valós sajátértékek vannak
+\footnote{Például ha $A$ önadjungált, akkor így van.}, akkor a 
+$\lambda_{max}=\max\sigma\left( A \right)$ és 
+$\lambda_{min}=\min\sigma\left( A \right)$ jelölések értelmesek, 
+és $r\left( A \right)=\max\left\{ |\lambda_{min}|,|\lambda_{max}| \right\}$.
+Ha még azt is feltesszük, hogy minden sajátérték nem negatív,
+akkor 
+$r\left( A \right)=\lambda_{max}.$
+
+\begin{proposition}
+    Lgyen $V,W$ ugyanazon $\mathbb{K}$ test feletti skalárisszorzatos-terek.
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operáció.
+    Ekkor az $A^\ast A$ egy önadjungált transzformáció, 
+    így $\sigma\left( A^\ast A \right)\neq \emptyset$,
+    $A^\ast A$ valamennyi sajátértéke nem negatív valós szám, 
+    ezért 
+    $r\left( A^\ast A \right)=\max\sigma\left( A^\ast A \right)$.
+\end{proposition}
+\begin{proof}
+    Világos, hogy $(A^\ast A)^\ast=A^\ast (A^\ast)^\ast=A^\ast A$, 
+    ergo $A^\ast A$ valóban egy önadjungált lineáris transzformációja a $V$ vektortérnek.
+    Láttuk, hogy $A$ még diagonalizálható is, tehát spektruma nem üres.
+    Azt is láttuk, hogy önadjungált transzformáció minden sajátértéke valós.
+    No de, ha $\lambda\in\sigma\left( A^\ast A \right)$ és $x\in V$ egy nem zérus vektor,
+    amelyre $A^\ast Ax=\lambda x$, akkor
+    \[
+        \lambda\ip{x}{x}
+        =
+        \ip{\lambda x}{x}
+        =
+        \ip{A^\ast Ax}{x}
+        =
+        \ip{Ax}{Ax}
+        =\|Ax\|^2.
+        \
+    \]
+    Ebből persze $\lambda\geq 0$ azonnal következik.
+\end{proof}
+\begin{proposition}
+    Legyen mint az előző állitásban $A\in L\left( V,W \right)$.
+    Definálja $Q\left( v \right)=\ip{A^\ast Av}{v}$ a $Q:V\to\left[ 0,\infty \right)$ nem negatív, valós függvényt.
+    Legyen $\lambda_{max}=\max\sigma\left( A^\ast A \right)$, 
+    továbbá legyen 
+    $v_{max}\in V$ az $A^\ast A$ transzformációnak a $\lambda_{max}$ sajátértékéhez tartozó olyan sajátvektora, 
+    amelyre $\|v_{max}\|=1$.
+    Ekkor 
+    \[
+        \max\left\{ Q\left( v \right):v\in V,\|v\|\leq 1 \right\}
+        =
+        \lambda_{max}
+        =
+        Q\left( v_{max} \right).
+        \qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Tudjuk, hogy $A^\ast A$ önadjungált, ezért mind $\mathbb{R}$, mind $\mathbb{C}$ felett diagonalizálható.
+    Létezik tehát $u_1,\dots,u_n$ ortonormált bázis $V$-ben, 
+    amelynek minden vektora sajátvektora $A^\ast A$-nak.
+    Ha $v=\sum_{j=1}^n\alpha_ju_j$ olyan vektor,
+    amelyre $\|v\|^2=\sum_{j=1}^n|\alpha_j|^2=1$,
+    akkor
+    \begin{multline*}
+        Q\left( v \right)
+        =
+        \ip{A^\ast A\left( \sum_{j=1}^n\alpha_ju_j \right)}{\left( \sum_{k=1}^n\alpha_ku_k \right)}
+        =
+        \sum_{j=1}^n\sum_{k=1}^n\alpha_j\bar{\alpha}_k\ip{A^\ast Au_j}{u_k}
+        \\
+        =
+        \sum_{j=1}^n\sum_{k=1}^n\alpha_j\bar{\alpha}_k\lambda_j\ip{u_j}{u_k}
+        =
+        \sum_{j=1}^n\alpha_j\bar{\alpha}_j\lambda_j
+        =
+        \sum_{j=1}^n|\alpha_j|^2\lambda_j
+        \leq
+        \lambda_{max}\sum_{j=1}^n|\alpha_j|^2
+        =
+        \lambda_{max}.
+    \end{multline*}
+    Itt az $u_i$ sajátvektorok tartoznak a $\lambda_i$ sajátértékekhez.
+    Így
+    \begin{math}
+        \sup\left\{ Q\left( v \right):v\in V,\|v\|\leq 1 \right\}
+        \leq 
+        \lambda_{max}.
+    \end{math}
+
+    No de, 
+    \begin{math}
+        Q\left( v_{max} \right)
+        =
+        \ip{A^\ast Av_{max}}{v_{max}}
+        =
+        \lambda_{max}\ip{v_{max}}{v_{max}}
+        =\lambda_{max},
+    \end{math}
+    amiből már az is látszik, hogy
+    \begin{math}
+        \lambda_{max}
+        =
+        Q\left( v_{max} \right)
+        \leq
+        \sup\left\{ Q\left( v \right):v\in V,\|v\|\leq 1 \right\}.
+    \end{math}
+\end{proof}
+Összefoglalásként kapjuk az operátornorma és a spektrálsugár közti kapcsolatot:
+\begin{proposition}
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operáció.
+    Ekkor
+    \[
+        \|A\|^2=r\left( A^\ast A \right)=\max\sigma(A^\ast A).
+        \qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Az $x \mapsto x^2$ függvény a számegyenes nem negatív része felett szigorúan monoton növő,
+    ezért
+    \[
+        \|A\|^2
+        =
+        \left( 
+            \sup\left\{ \|Av\|:\|v\|\leq 1 \right\}
+        \right)^2
+        =
+        \sup\left\{ \|Av\|^2:\|v\|\leq 1 \right\}
+        =
+        \sup\left\{ Q(v):\|v\|\leq 1 \right\}
+        =
+        \max\sigma\left( A^\ast A \right).
+        \qedhere
+    \]
+\end{proof}
+Ha ezt egy önadjungált transzformációra írjuk fel, 
+akkor még egyszerűbb állítást kapunk.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy önadjungált lineáris transzformáció a 
+    $V$ véges dimenziós, $\mathbb{K}$ feletti ska\-lá\-ris\-szor\-za\-tos-té\-ren.
+    Ekkor
+    \[
+        \|A\|
+        =
+        r(A)
+        =
+        \max\left\{ |\min\sigma(A)|,|\max\sigma(A)| \right\}.
+        \qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Mivel $A$ önadjungált, 
+    ezért $A$-nak van spektrálfelbontása, és ha ez $A=\sum_{j=1}^r\lambda_jPj$,
+    akkor az $A^2$ spektrálfelbontása $A^2=\sum_{j=1}^r\lambda_j^2P_j$, 
+    ahol $\lambda_1,\dots,\lambda_r$ valós számok.
+    Ez azt jelenti, hogy $A^2$ minden sajátértéke négyzete $A$ valamelyik sajátértékének.
+    Így
+    \[
+        r\left( A^2 \right)
+        =
+        \max\left\{ \lambda_j^2:j=1,\dots,r \right\}
+        =
+        \left( 
+        \max\left\{ |\lambda_{min}|,|\lambda_{max}| \right\}
+        \right)^2
+        =
+        r\left( A \right)^2.
+    \]
+    No de, újra használva $A^\ast=A$ feltevést
+    \[
+        \|A\|^2
+        =
+        r\left( A^\ast A \right)
+        =
+        r\left( A^2 \right)
+        =
+        r\left( A \right)^2.
+        \qedhere
+    \]
+\end{proof}
+\begin{proposition}
+    Tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
+    \begin{enumerate}
+        \item Teljesül az úgynevezett 
+            \emph{\CStar-azonosság}\index{Ccsillag@\CStar-azonosság}:
+            \[
+                \|A\|^2=\|A^\ast A\|.
+            \]
+        \item A transzformációnak és az adjungáltjának azonos a normája, azaz
+            \[
+                \|A\|
+                =
+                \|A^\ast\|.
+            \]
+        \item Az $A^\ast A\in L\left( V \right)$ és az $AA^\ast\in L\left( W \right)$
+            transzformációk spektrálsugara azonos, azaz
+            \[
+                r\left( A^\ast A \right)=r\left( AA^\ast \right).
+                \qedhere
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Mivel $A^\ast A$ önadjungált, ezért 
+    \[
+        \|A^\ast A\|=r\left(A^\ast A  \right)=\|A\|^2,
+    \]
+    ami éppen a \CStar-azonosság.
+
+    Felhasználva, hogy transzformációk szorzatának normája legfeljebb a normák szorzata, 
+    a \CStar-azonosság szerint 
+    \begin{math}
+        \|A\|^2
+        \leq
+        \|A^\ast\|\|A\|,
+    \end{math}
+    amiből $\|A\|\leq\|A^\ast\|$ következik.
+    No de, ez minden lineáris operácációra igaz, 
+    speciálisan az $A^\ast$ adjungáltra is.
+    Emiatt az
+    \begin{math}
+        \|A^\ast\|
+        \leq
+        \|(A^\ast)^\ast\|
+        =
+        \|A\|
+    \end{math}
+    egyenlőtlenség is teljesül igazolva, 
+    hogy egy lineáris operácációnak és adjungáltjának azonos a normája.
+
+    Alkalmazva az eddig igazoltatakat
+    \[
+        r\left( A^\ast A \right)
+        =
+        \|A\|^2
+        =
+        \|A^\ast\|^2
+        =
+        r\left( AA^\ast \right).
+        \qedhere
+    \]
+\end{proof}
+Fontos megérteni az utolsó azonosság jelentőségét. 
+Az $A^\ast A$ és az $AA^\ast$ más-más vektortereken vannak értelmezve.
+Képzeljük el, hogy $V$ egy nyolc dimenziós tér és $W$ egy két dimenziós tér, $A\in L\left( V,W \right)$.
+Ekkor $A$ mátrixa egy $2\times 8$ méretű mátrix, ezért $A^\ast A$ mátrixa egy $8\times 8$ méretű mátrix.
+Hasonlóan $AA^\ast$ egy $2\times 2$ méretű mátrix.
+Ha az $A$ operátor normáját kell meghatároznunk,
+akkor nagyon nem mindegy, 
+hogy egy $8\times 8$ méretű-, vagy egy $2\times 2$ méretű önadjungált mátrix legnagyobb sajátértékét kell megtalálnunk.
+
+Legvégül a \CStar-azonosság és következményei egy sorban
+\[
+    \|A\|^2=\|A^\ast A\|=r\left( A^\ast A \right)
+    =
+    r\left( AA^\ast \right)=\|A A^\ast\|=\|A^\ast\|^2.
+\]
+
+
 \appendix
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
+
 \chapter{A komplex számokról}
 Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján
 \section{Lineáris algebrai megközelítés}
@@ -12972,5 +13279,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 05 May 2020 03:46:41 PM CEST
+Last Modified : Mon 11 May 2020 09:13:45 PM CEST
 
