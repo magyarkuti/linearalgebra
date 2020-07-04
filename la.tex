@@ -10729,7 +10729,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \begin{proof}
     Ha $v=0$, akkor mindkét oldal zérus.
     Ha $v\neq 0$, akkor a $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ rendszer egyetlen elemű ortonormált rendszer.
-    Alkalmazva a Bessel-egyenlőtlenséget $k=1$ mellett
+    Alkalmazva a Bessel-egyenlőtlenséget\index{Bessel-egyenlőtlenség} $k=1$ mellett
     \[
         \frac{1}{\ip{v}{v}}
         \left|\ip{u}{v}\right|^2
@@ -10837,8 +10837,7 @@ Ehhez először a kis iskolából jól ismert Pythagoras-tételelt kell megfogal
     \]
 \end{proof}
 
-
-\begin{proposition}
+\begin{proposition}[legközelebbi pont]\index{legközelebbi pont}\label{pr:legkozelebb}
     Legyen $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer és 
     jelölje $M=\lin\left\{ x_1,\cdots,x_k \right\}$.
     Ekkor minden $u\in V$ vektorhoz létezik egyetlen $u^\star\in M$
@@ -10945,10 +10944,17 @@ Mivel a skalárisszorzás rögzített második változó mellett,
 az első változó lineáris függvénye,
 ezért egy rögzített $x\in V$ vektor mellett az $u\mapsto\ip{u}{x}x$ függvény egy $V\to V$ lineáris operáció.
 Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetítés a $V$ vektortér egy lineáris transzformációja.
-
 \section{Ortogonalizáció}
+A merőleges vetítés operáció bevezetésének feltétele volt, hogy ha az $M$ altérre vonatkozó
+merőleges vetítést akarjuk használni, akkor léteznie kell egy ortonormált bázisnak az $M$ altérben.
+Az eddigi tételeinkben ez a tétel feltevése volt.
+Most megmutatjuk, hogy egy skalárisszorzatos térnek minden véges dimenziós altere rendelkezik ezzel a 
+tulajdonsággal, így egy véges dimenziós altérre eső merőleges vetítés mindig definiált.
 
-\begin{proposition}[Bessel]
+Először is érdemes újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel} gondolatot, 
+a bevezetett merőleges vetítés és hosszúság fogalom felhasználásával.
+Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az állítás feltevése.
+\begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel2}
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
     Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer,
     $M=\lin\left\{ x_1,\cdots,x_k \right\}$
@@ -10964,22 +10970,131 @@ Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetít�
             \qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Világos, hogy 
+    $
+    \|p_M\left( u \right)\|^2
+    =
+    \|\sum_{j=1}^k\ip{u}{x_j}x_j\|^2
+    =
+    \sum_{j=1}^k\|\ip{u}{x_j}x_j\|^2
+    =
+    \sum_{j=1}^k|\ip{u}{x_j}|^2
+    \leq
+    \ip{u}{u}
+    =
+    \|u\|^2
+    $
+    a \ref{pr:Bessel}.~állítás szerint.
+    Hasonlóan 
+    $
+    u-p_M\left( u \right)\in \left\{ x_1,\dots,x_k \right\}^\perp
+    =
+    \lin\left\{ x_1,\dots,x_k \right\}^\perp
+    =
+    M^\perp.
+    $
+\end{proof}
 
-\begin{proposition}[Gram--Schmidt-ortogonalizáció]\index{Gram--Schmidt-ortogonalizáció}
+\begin{proposition}[Gram--Schmidt-ortogonalizáció]\index{Gram--Schmidt-ortogonalizáció}\label{pr:GS}
     Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\cdots,y_k \right\}$ egy lineárisan független
     vektorrendszer. 
     Ehhez létezik olyan $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer, 
     amelyre minden $i=1,\cdots,k$ mellett $x_i\in\lin\left\{ y_1,\cdots,y_i \right\}$.
 \end{proposition}
+\begin{proof}
+    Teljes indukció, a lineárisan független rendszer elemszáma szerint.
+    Ha $k=1$, akkor $y_1\neq 0$, így az $x_1=\frac{1}{\|y_1\|}y_1$ jelöléssel az 
+    $\left\{ x_1 \right\}$ egy egyelemű ortonormált rendszer, amelyre $x_1\in\lin\left\{ y_1 \right\}$ is teljesül.
 
+    Tegyük fel, hogy igaz az állítás $k$-nál kisebb elemszámú lineárisan független rendszerre és lássuk be $k\geq 2$-re.
+    Jelölje $M=\lin\left\{ y_1,\dots,y_{k-1} \right\}$. 
+    Az indukciós feltevés szerint létezik $\left\{ x_1,\dots,x_{k-1} \right\}$ ortonormált rendszer,
+    amelyre még az
+    \begin{math}
+        \left\{ x_1,\dots,x_{k-1} \right\}\subseteq M
+    \end{math}
+    tartalmazás is fennáll.
+    No de $\dim M=k-1$, ezért $\left\{ x_1,\dots,x_{k-1} \right\}$ nem csak lineárisan független, 
+    de maximális lineárisan független rendszer $M$-ben, ergo generátorrendszer is, ezért
+    \[
+        \lin\left\{ x_1,\dots,x_{k-1} \right\}=M
+    \]
+    is teljesül. 
+    Találtunk tehát az $M$ altérben egy ortonormált bázist,
+    így evvel az ortonormált bázissal felírt merőleges vetítés értelmesen definiált.
+    Legyen ez $p_M$, azaz minden $u\in V$ vektorra $p_M\left( u \right)=\sum_{j=1}^{k-1}\ip{u}{x_j}x_j$.
+    Tekintsük az 
+    \[
+        \hat{y}_k=y_k-p_M\left( y_k \right)
+    \] 
+    vektort. 
+    Ha ez a zérus vektor lenne, akkor $y_k\in M$ lenne, ami ellentmondana az $\left\{ y_1,\dots,y_k \right\}$ rendszer
+    lineárisan függetlenségének.
+    Ezek szerint az 
+    \[
+        x_k
+        =
+        \frac{1}{\|\hat{y}_k\|}\hat{y}_k
+%        =
+%        \frac{1}{\|y_k-p_M\left( y_k \right)\|}\left( y_k-p_M\left( y_k \right) \right)
+    \]
+    vektorra $\|x_k\|=1$, $x_k\in M^\perp$, ezért az $\left\{ x_1,\dots,x_k \right\}$ vektorrendszer valóban ortonormált.
+
+    Már csak azt kell igazolnunk, hogy minden $j\leq k$ mellett $x_j\in\lin\left\{ y_1,\dots,y_j \right\}$.
+    Ez a $j\leq k-1$ esetben az indukciós feltevés miatt van így.
+    A $j=k$ esetre $p_M\left( y_k \right)\in M=\lin\left\{ y_1,\dots,y_{k-1} \right\}$,
+    emiatt $\hat{y}_k\in\lin\left\{ y_1,\dots,y_k \right\}$, 
+    amiből persze egy $\mathbb{K}$ testbeli elemmel való szorzás után már $x_k\in\lin\left\{ y_1,\dots,y_k \right\}$ is következik.
+\end{proof}
+A fenti bizonyitás kiemelt soraiból leolvasható az ú.n. \emph{Gram--Schmidt-ortogonalizációs algoritmus}.
+Ha adott az $\left\{ y_1,\dots,y_n \right\}$ lineárisan független vektorok rendszere, akkor abból egy 
+$\left\{ x_1,\dots,x_n \right\}$ ortonormált rendszer konstruálható.
+Az első lépés:
+\[
+    x_1=\frac{1}{\|y_1\|}y_1.
+\]
+Ha az első $k-1$ darab vektort már definiáltuk úgy, hogy $\left\{ x_1,\dots,x_{k-1} \right\}$ ortonormált rendszer,
+akkor a $k$-adik vektort a következőképpen kapjuk.
+Legyen $\hat{y}_k=y_k-p_M\left( y_k \right)$, 
+ahol 
+$p_M\left( y_k \right)=\sum_{j=1}^{k-1}\ip{y_k}{x_j}x_j,$
+majd 
+\[
+    x_k=\frac{1}{\|\hat{y}_k\|}\hat{y}_k.
+\]
+
+A Gram--Schmidt-ortogonalizációról szóló állítás azonnali következménye az ortonormált bázisok egzisztenciáját biztosító állítás:
 \begin{proposition}[o.n.b]\index{o.n.b}
-    Véges dimenziós skalárisszorzatos-térnek van ortonormált bázisa.
-    Ha $\left\{ x_1,\cdots,x_n \right\}$ egy ortonormált bázis, akkor minden $u\in V$ mellett
+    Egy véges dimenziós skalárisszorzatos-térnek mindig van ortonormált bázisa, azaz olyan $\left\{ x_1,\dots,x_n \right\}$ ortonormált
+    rendszere, amely generátorrendszer is.
+
+    Ha $\left\{ x_1,\dots,x_n \right\}$ egy ortonormált bázis, akkor minden $v\in V$ mellett
     \(
-        u=
-        \sum_{i=1}^n\ip{u}{x_i}x_i.
+        v=
+        \sum_{j=1}^n\ip{v}{x_j}x_j.
     \)
 \end{proposition}
+\begin{proof}
+    Tudjuk, hogy $V$ vektortérnek van $\left\{ y_1,\dots,y_n \right\}$ bázisa.
+    Vegyünk egy ilyen bázist, tehát lineárisan független rendszert, majd alkalmazzuk a \ref{pr:GS}.~állítást.
+    Így kapunk egy 
+    \begin{math}
+        \left\{ x_1,\dots,x_n \right\}\subseteq V
+    \end{math}
+    ortonormált rendszert.
+    No de, $\dim V=n$ és az ortonormált rendszer elemei közt a zérus vektor nem szerepel,
+    így az ortonormált rendszer lineárisan független rendszer is. 
+    Mivel annak $n=\dim V$ darab eleme van, 
+    ezért az maximális lineárisan független rendszer $V$-ben, ergo bázis is.
+    Konstruáltunk tehát egy ortonormált bázist.
+
+    Jelölje most $P_V$ egy $\left\{ x_1,\dots,x_n \right\}$
+    ortonormált bázis definiálta merőleges vetítést az egész $V$ vektortérre, mint egy altérre.
+    Világos, hogy $P_V$ az identitás függvény, 
+    hiszen minden vektorra igaz, hogy saját maga a hozzá legközelebbi $V$-beli pont.
+    Így minden $v\in V$ mellett $v=p_V\left( v \right)=\sum_{j=1}^n\ip{v}{x_j}x_j.$
+\end{proof}
 Ez utóbbi gondolat szerint,
 ha egy $\left\{ x_1,\dots,x_n \right\}$ ortonormált bázis rögzítünk,
 akkor tetszőleges $x\in V$ vektornak ebben a bázisban felírt koordináta-vektora
@@ -10990,10 +11105,32 @@ akkor tetszőleges $x\in V$ vektornak ebben a bázisban felírt koordináta-vekt
         \ip{x}{e_1}\\ \vdots \\\ip{x}{e_n}
     \end{pmatrix}
 \]
-Ugyanez, kicsit eltérő szintakszissal, hogy az ortonormált bázishoz tartozó
-$i$-edik duális lineáris funkcionál, amit korábban $x_i^\ast$-al jelöltünk, az $x\mapsto\ip{x}{x_i}$
+Ugyanez, kicsit eltérő szintaxissal, hogy az ortonormált bázishoz tartozó
+$i$-edik duális lineáris funkcionál\index{duális bázis}, 
+amit korábban $x_i^\ast$-al jelöltünk, az $x\mapsto\ip{x}{x_i}$
 függvény.
-\begin{proposition}[Bessel]
+\section{Projekciós tétel}
+Láttuk tehát, hogy egy véges dimenziós altérnek mindig van ortonormált bázisa.
+Ezért ha egy véges dimenziós altérre való merőleges vetítést akarunk használni,
+nem kell kikötnünk, hogy legyen az altérben egy ortonormált bázis, hiszen ilyen mindig van.
+Persze ahogyan bázis is sok van, ugyanúgy ortonormált bázisból is nagyon sok lehet.
+Meggondoltuk viszont, hogy függetlenül attól, hogy az $\left\{ x_1,\dots,x_k \right\}\subseteq M$ 
+vagy az $\left\{ y_1,\dots,y_k \right\}\subseteq M$ ortonormált bázis segítségével írjuk fel az $M$
+altérre vonatkozó merőleges vetítést a vetület mindig azonos, nevezetesen a ponthoz az $M$-beli legközelebbi pont:
+\[
+    \sum_{j=1}^{k}\ip{u}{x_j}x_j
+    =
+    P_M\left( u \right)
+    =
+    \sum_{j=1}^{k}\ip{u}{y_j}y_j.
+\]
+
+Ennek fényében először is érdemes újra és újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel2}.~ gondolatot.
+Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte nem szerepel a feltételek közt,
+hanem helyette az altér véges dimenziós volta szerepel.%
+\footnote{Majd mikor funkcionálanalízist és mértékelméletet tanulunk látjuk, hogy a feltétel még tovább gyengíthető,
+arra az esetre, mikor $M$ a $V$ Hilbert-tér egy zárt altere.}
+\begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel3}
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér, és $M$ egy 
     véges dimenziós altere.
     Ekkor minden $u\in V$ -hez
@@ -11005,7 +11142,7 @@ függvény.
         \min\left\{ d\left( u,w \right):w\in M \right\}.
         \)
         Erre a vektorra teljesül az $u^\star=p_M\left( u \right)=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség, 
-        az $M$ altér tetszőlegesen választott  $\left\{ x_1,\cdots,x_k \right\}$ ortonormált bázisa mellett;
+        az $M$ altér tetszőlegesen választott  $\left\{ x_1,\dots,x_k \right\}$ ortonormált bázisa mellett;
         \item
             $\|p_M\left( u \right)\|\leq\|u\|$;
         \item
@@ -11015,9 +11152,16 @@ függvény.
             \qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Mivel $M$ a $V$ skalárisszorzatos tér egy véges dimenziós altere, 
+    ezért az $M$ altérnek van
+    ortonormált bázisa, amint azt \aref{pr:GS}.~állításban Gram--Schmidt-ortogonalizációnál láttuk.
+    Legyen ez $\left\{ x_1,\dots,x_k \right\}$. 
+    Írjuk fel evvel az ortonormált rendszerrel \aref{pr:legkozelebb}. legközelebbi pontról szóló, 
+    és \aref{pr:Bessel2}. Bessel-egyen\-lőt\-lenség\-ről szóló állításokat.
+\end{proof}
 
-\section{Projekciós tétel}
-\begin{proposition}
+\begin{proposition}[projekciós-tétel]\index{projekciós-tétel}\label{pr:projekcios}
     Legyen $V$ egy skalárisszorzatos-tér, és $M$ egy véges dimenziós altere.
     Ekkor 
     \[
@@ -11025,12 +11169,25 @@ függvény.
         \qedhere
     \]
 \end{proposition}
+\begin{proof}
+    Az $M$ és az $M^\perp$ egymástól diszjunkt alterek.
+    Tetszőleges $u\in V$ vektorra fennáll az 
+    \[
+        u=p_M\left( u \right)+\left( u-p_M\left( u \right) \right)
+    \]
+    nyilvánvaló egyenlőség.
+    Itt az első vektorra $p_M\left( u \right)\in M$, és a második vektorra $u-p_M\left( u \right)\in M^\perp$
+    \aref{pr:Bessel3}.~állítás szerint. 
+    Ez azt jelenti, hogy $M+M^\perp=V$ azonosság is teljesül,
+    ahol $M+M^\perp$ az $M$ és az $M^\perp$ ortokomplementerének a Minkowski-összege.
+\end{proof}
 \begin{proposition}
-    Legyen $V$ egy véges dimenziós skalárisszorzatos-tér.
+    Legyen $V$ egy skalárisszorzatos-tér.
     Ekkor
     \begin{enumerate}
-        \item Minden $M\subseteq V$ altér mellett $M=M^{\perp\perp}$,
-        \item Minden $H\subseteq V$ részhalmaz mellett $\lin H=H^{\perp\perp}$.
+        \item Minden $M\subseteq V$ véges dimenziós altér mellett $M=M^{\perp\perp}$,
+        \item Minden olyan $H\subseteq V$ részhalmazra, 
+            amelyre $\lin H$ véges dimenziós altér, fennáll az $\lin H=H^{\perp\perp}$ egyenlőség.
             \qedhere
     \end{enumerate}
 \end{proposition}
@@ -11046,13 +11203,18 @@ függvény.
         =
         \ip{u-u_1}{u_2}
         =
-        \ip{u}{u_2}-\ip{u_1}{u_2}.
+        \ip{u}{u_2}-\ip{u_1}{u_2}=0.
     \]
-    Itt az első szám azért zérus, mert $u\perp u_2$, a második meg azért mert $u_1\perp u_2$.
+    Itt a jobb oldali első szám azért zérus, 
+    mert $u\in M^{\perp\perp}$ és $u_2\in M^\perp$, 
+    a második meg azért zérus, 
+    mert $u_1\in M$ és $u_2\in M^\perp$.
     Azt kaptuk tehát, hogy $u_2=0$, amiből már látszik is, hogy $u=u_1\in M$.
 
-    Teszőleges $H\subseteq V$ mellett $\lin H$ egy altér, így a már igazolt állítás miatt
-    $\lin H=(\lin H)^{\perp\perp}$. No de már korábban is láttuk, hogy 
+    Tetszőleges $H\subseteq V$ mellett $\lin H$ egy véges dimenziós altér, 
+    így a már igazolt állítás miatt
+    $\lin H=(\lin H)^{\perp\perp}$. 
+    No de már korábban is láttuk, hogy 
     $H^{\perp}=(\lin H)^\perp$, így 
     \[
         \lin H
@@ -13355,5 +13517,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 04 Jul 2020 09:01:14 AM CEST
+Last Modified : Sat 04 Jul 2020 03:25:06 PM CEST
 
