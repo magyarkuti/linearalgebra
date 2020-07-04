@@ -3564,7 +3564,7 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
 \end{proposition}
 \begin{proof}
     Az alábbi lépéseket követjük.
-    \begin{itemize}
+    \begin{description}
         \item[1.\Rightarrow 2.]
             Ha a vektorrendszer nem lenne generátorrendszer is,
             akkor a lineáris burkán kívül lenne egy vektor.
@@ -3582,7 +3582,7 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
             Mivel a vektorrendszer egyik eleme, sincs a többi lineáris burkában,
             ezért egyetlen elemet sem hagyhatunk el a generátorrendszer tulajdonság megtartásával,
             ami azt jelenti, hogy ez egy minimális generátorrendszer.\qedhere
-    \end{itemize}
+    \end{description}
 \end{proof}
 Egy a zéró vektort tartalmazó vektorrendszer persze lineárisan összefüggő, 
 és egy nem zérus vektorból álló egyelemű vektorrendszer lineárisan független.
@@ -11243,7 +11243,7 @@ feltétellel.
     Legyen $V$ egy skalárisszorzatos-tér, 
     és tekintsünk egy a továbbiakban rögzített 
     $\left\{ e_1,\dots,e_n \right\}$ egy ortonormált rendszert.
-    Az alábbi feltevések ekvivalensek
+    Az alábbi feltevések ekvivalensek.
     \begin{enumerate}
         \item
             Az $\left\{ e_1,\dots,e_n \right\}$ vektorrendszer teljes ortonormált rendszer;
@@ -11271,7 +11271,9 @@ feltétellel.
     \end{enumerate}
 \end{proposition}
 \begin{proof}
-    $1.\rightarrow 2.$
+    Körbe bizonyítunk:
+    \begin{description}
+        \item[$1.\Rightarrow 2.$]
     Mivel egy ortonormált rendszer egy zérus elemet nem tartalmazó ortogonális rendszer, 
     ezért lineárisan független.
     Jelölje $H=\left\{ e_1,\dots,e_n \right\}$. 
@@ -11290,9 +11292,11 @@ feltétellel.
     \]
     Ez azt jelenti, hogy a $H$ vektorrendszer egy lineárisan független generátorrendszer, ergo bázis.
 
-    $2.\rightarrow 3.$ Már beláttuk \aref{pr:onb}.~állítás második felében.
+    \item[$2.\Rightarrow 3.$]
+    Már beláttuk \aref{pr:onb}.~állítás második felében.
 
-    $3.\rightarrow 4.$ Jelölje $x\in V$ mellett $\xi_j=\ip{x}{e_j}$ és $y\in V$ mellett
+    \item[$3.\Rightarrow 4.$]
+    Jelölje $x\in V$ mellett $\xi_j=\ip{x}{e_j}$ és $y\in V$ mellett
     $\eta_j=\ip{y}{e_j}$.
     A 3. feltevés szerint
     \[
@@ -11309,7 +11313,8 @@ feltétellel.
         \sum_{j=1}^n\ip{x}{e_j}\overline{\ip{y}{e_j}}.
     \]
 
-    $4.\rightarrow 5.$ Az $x=y$ speciális esetben 4. szerint
+    \item[$4.\Rightarrow 5.$]
+    Az $x=y$ speciális esetben 4. szerint
     \[
         \|x\|^2
         =
@@ -11320,16 +11325,20 @@ feltétellel.
         \sum_{j=1}^n|\ip{x}{e_j}|^2.
     \]
 
-    $5.\Rightarrow 1.$
+    \item[$5.\Rightarrow 1.$]
     Ha fennáll 5. és $v\in\left\{ e_1,\dots,e_n \right\}^\perp$,
-    akkor minden $j$ mellett $\ip{x}{e_j}=0$, ergo 
+    akkor minden $j$ mellett $\ip{v}{e_j}=0$, ezért 
     \[
-        \|x\|^2
+        \|v\|^2
         =
-        \sum_{j=1}^n\ip{x}{e_j}e_j
+        \sum_{j=1}^n\ip{v}{e_j}e_j
         =
-        0.\qedhere
+        0.
     \]
+    emiatt $v=0$ is fennáll. 
+    Ez azt jelenti, hogy $\left\{ e_1,\dots,e_n \right\}^\perp=\left\{ 0 \right\}$, 
+    ergo az $\left\{ e_1,\dots,e_n \right\}$ ortonormált rendszer teljes.\qedhere
+    \end{description}
 \end{proof}
 A fejezet elején láttunk konkrét példát véges dimenziós skalárisszorzatos-térre:
 egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skalárisszorzatban,
@@ -11341,31 +11350,97 @@ Pontosan ezt állítja a fenti 4-es tulajdonság.
 Ezt a tényt a fontossága miatt külön is kiemeljük:
 \begin{corollary}
     Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más, 
-    mint erre a skalárisszorzatra nézve, de tetszőleges ortonormált bázishoz belső szorzat.
+    mint erre a skalárisszorzatra nézve, 
+    de tetszőleges ortonormált bázishoz felírt belső szorzat.
 \end{corollary}
 
 \chapter{Az adjungált operátor bevezetése}
 Az egész fejezetben $V$ egy $\mathbb{K}$ feletti vektortér.
 \section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}
-
-\begin{proposition}[Riesz-reprezentació]\index{Riesz-reprezentáció}
+\begin{proposition}[Riesz-reprezentació]\index{Riesz-reprezentáció}\label{pr:Riesz}
     Legy $V$ egy véges dimenziós skalárisszorzatos-tér.
-    Ekkor minden $\varphi:V\to\mathbb{K}$ lineáris
-    funkcionálhoz létezik egyetlen $z_\varphi\in V$ vektor,
-    melyre minden $x\in V$ mellett
+    Ekkor minden $\varphi:V\to\mathbb{K}$ lineáris funkcionálhoz létezik egyetlen $z_\varphi\in V$ vektor,
+    amelyre minden $x\in V$ mellett
     \[
         \varphi\left( x \right)=\ip{x}{z_\varphi}
         \qedhere
     \]
 \end{proposition}
+Ezt az egyetlen $z_\varphi$ vektort nevezzük a $\varphi$ lineáris funkcionált \emph{reprezentáló} vektornak.
+\begin{proof}
+    Először az unicitást lássuk be. 
+    Tegyük fel, hogy $z_1,z_2\in V$ is reprezentáló vektorok, 
+    azaz minden $x\in V$ mellett
+    \[
+        \ip{x}{z_1}
+        =
+        \varphi\left( x \right)
+        =
+        \ip{x}{z_2}.
+    \]
+    Ekkor $(z_1-z_2)\perp x$ minden $x\in V$-re tehát $z_1-z_2=0$,
+    ergo $z_1=z_2$.
+
+    Az egzisztencia igazolásához legyen $\left\{ v_1,\dots,v_n \right\}$ egy ortonormált bázisa a $V$ skalárisszorzatos-térnek.
+    Tudjuk -- lásd \aref{pr:onb}.~állítást --, hogy minden $x\in V$ vektor 
+    \begin{math}
+        x=
+        \sum_{j=1}^n\ip{x}{v_j}v_j
+    \end{math}
+    alakú.
+    Emiatt
+    \[
+        \varphi\left( x \right)
+        =
+        \varphi\left( 
+        \sum_{j=1}^n\ip{x}{v_j}v_j
+        \right)
+        =
+        \sum_{j=1}^n
+        \ip{x}{v_j}
+        \varphi\left( 
+        v_j
+        \right)
+        =
+        \sum_{j=1}^n
+        \ip{x}{\overline{\varphi\left( 
+            v_j\right)}
+        v_j}
+        =
+        \ip{x}{
+        \sum_{j=1}^n
+            \overline{\varphi\left( 
+            v_j\right)}
+        v_j}.
+    \]
+    Ha tehát bevezetjük a 
+    \begin{math}
+        z_\varphi
+        =
+        \sum_{j=1}^n
+            \overline{\varphi\left( 
+            v_j\right)}v_j
+    \end{math}
+    jelölést, akkor készen is vagyunk.
+\end{proof}
 A bizonyításból az is látszik, hogy amennyiben 
-$\left\{ v_1,\cdots,v_n \right\}$ egy ortonormált bázis a térben, akkor
+$\left\{ v_1,\cdots,v_n \right\}$ a tér akármelyik ortonormált bázisa,
+akkor a reprezentáló vektort a 
 \[
     z_\varphi=
-    \sum_{i=1}^n\overline{\varphi\left( v_i \right)}v_i.
+    \sum_{i=1}^n\overline{\varphi\left( v_i \right)}v_i
 \]
-
-
+formula szolgáltatja.
+Mivel csak egyetlen reprezentáló vektor van, ezért ha például 
+$\left\{ x_1,\dots,x_n \right\}$ egy másik ortonormált bázisa a térnek,
+akkor
+\[
+    \sum_{i=1}^n\overline{\varphi\left( v_i \right)}v_i
+    =
+    z_\varphi
+    =
+    \sum_{i=1}^n\overline{\varphi\left( x_i \right)}x_i.
+\]
 \section{Az adjungált operáció}
 \begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}
 Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
@@ -13576,5 +13651,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 04 Jul 2020 05:08:27 PM CEST
+Last Modified : Sat 04 Jul 2020 09:00:46 PM CEST
 
