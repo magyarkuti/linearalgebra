@@ -11065,7 +11065,7 @@ majd
 \]
 
 A Gram--Schmidt-ortogonalizációról szóló állítás azonnali következménye az ortonormált bázisok egzisztenciáját biztosító állítás:
-\begin{proposition}[o.n.b]\index{o.n.b}
+\begin{proposition}[o.n.b]\index{o.n.b}\label{pr:onb}
     Egy véges dimenziós skalárisszorzatos-térnek mindig van ortonormált bázisa, azaz olyan $\left\{ x_1,\dots,x_n \right\}$ ortonormált
     rendszere, amely generátorrendszer is.
 
@@ -11155,7 +11155,7 @@ arra az esetre, mikor $M$ a $V$ Hilbert-tér egy zárt altere.}
 \begin{proof}
     Mivel $M$ a $V$ skalárisszorzatos tér egy véges dimenziós altere, 
     ezért az $M$ altérnek van
-    ortonormált bázisa, amint azt \aref{pr:GS}.~állításban Gram--Schmidt-ortogonalizációnál láttuk.
+    ortonormált bázisa, amint azt \aref{pr:onb}.~állításban Gram--Schmidt-ortogonalizációnál láttuk.
     Legyen ez $\left\{ x_1,\dots,x_k \right\}$. 
     Írjuk fel evvel az ortonormált rendszerrel \aref{pr:legkozelebb}. legközelebbi pontról szóló, 
     és \aref{pr:Bessel2}. Bessel-egyen\-lőt\-lenség\-ről szóló állításokat.
@@ -11235,43 +11235,102 @@ arra az esetre, mikor $M$ a $V$ Hilbert-tér egy zárt altere.}
     \]
     implikáció teljesül.
 \end{definition}
-
-Persze ez ugyanaz mint az
+Először is vegyük észre, hogy a fenti implikáció ekvivalens az 
 $\left\{ e_1,\cdots,e_k \right\}^\perp =\left\{ 0 \right\}$
-feltétel.
+feltétellel.
 
 \begin{proposition}
     Legyen $V$ egy skalárisszorzatos-tér, 
     és tekintsünk egy a továbbiakban rögzített 
-    $\left\{ e_1,\cdots,e_k \right\}$ egy ortonormált rendszert.
+    $\left\{ e_1,\dots,e_n \right\}$ egy ortonormált rendszert.
     Az alábbi feltevések ekvivalensek
     \begin{enumerate}
         \item
-            Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer teljes ortonormált rendszer;
+            Az $\left\{ e_1,\dots,e_n \right\}$ vektorrendszer teljes ortonormált rendszer;
         \item 
-            Az $\left\{ e_1,\cdots,e_k \right\}$ vektorrendszer ortonormált bázis;
+            Az $\left\{ e_1,\dots,e_n \right\}$ vektorrendszer ortonormált bázis;
         \item
             Minden $x\in V$ mellett 
             \(
                 x=
-                \sum_{i=1}^k\ip{x}{e_i}e_i;
+                \sum_{j=1}^n\ip{x}{e_j}e_j;
             \)
         \item
             Minden $x,y\in V$ mellett
             \(
                 \ip{x}{y}=
-                \sum_{i=1}^k\ip{x}{e_i}\overline{\ip{y}{e_i}};
+                \sum_{j=1}^n\ip{x}{e_j}\overline{\ip{y}{e_j}};
             \)
         \item
             Minden $x\in V$ mellett
             \(
                 \|x\|^2=
-                \sum_{i=1}^k|\ip{x}{e_i}|^2.
+                \sum_{j=1}^n|\ip{x}{e_j}|^2.
             \)
                 \qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    $1.\rightarrow 2.$
+    Mivel egy ortonormált rendszer egy zérus elemet nem tartalmazó ortogonális rendszer, 
+    ezért lineárisan független.
+    Jelölje $H=\left\{ e_1,\dots,e_n \right\}$. 
+    Világos, hogy $\lin H$ véges dimeniós, ezért a projekciós tétel előző következménye miatt
+    $\lin H=H^{\perp\perp}$.
+    No de a teljesség szerint $H^\perp=\left\{ 0 \right\}$,
+    ergo
+    \[
+        \lin H
+        =
+        H^{\perp\perp}
+        =
+        {0}^\perp
+        =
+        V.
+    \]
+    Ez azt jelenti, hogy a $H$ vektorrendszer egy lineárisan független generátorrendszer, ergo bázis.
 
+    $2.\rightarrow 3.$ Már beláttuk \aref{pr:onb}.~állítás második felében.
+
+    $3.\rightarrow 4.$ Jelölje $x\in V$ mellett $\xi_j=\ip{x}{e_j}$ és $y\in V$ mellett
+    $\eta_j=\ip{y}{e_j}$.
+    A 3. feltevés szerint
+    \[
+        \ip{x}{y}
+        =
+        \ip{\sum_{j=1}^n\xi_je_j}{\sum_{k=1}^n\eta_ke_k}
+        =
+        \sum_{j=1}^n\sum_{k=1}^n\xi_j\overline{\eta_k}\ip{e_j}{e_k}
+        =
+        \sum_{j=1}^n\sum_{k=1}^n\xi_j\overline{\eta_k}\delta_{j,k}
+        =
+        \sum_{j=1}^n\xi_j\overline{\eta_j}
+        =
+        \sum_{j=1}^n\ip{x}{e_j}\overline{\ip{y}{e_j}}.
+    \]
+
+    $4.\rightarrow 5.$ Az $x=y$ speciális esetben 4. szerint
+    \[
+        \|x\|^2
+        =
+        \ip{x}{x}
+        =
+        \sum_{j=1}^n\ip{x}{e_j}\overline{\ip{x}{e_j}}
+        =
+        \sum_{j=1}^n|\ip{x}{e_j}|^2.
+    \]
+
+    $5.\Rightarrow 1.$
+    Ha fennáll 5. és $v\in\left\{ e_1,\dots,e_n \right\}^\perp$,
+    akkor minden $j$ mellett $\ip{x}{e_j}=0$, ergo 
+    \[
+        \|x\|^2
+        =
+        \sum_{j=1}^n\ip{x}{e_j}e_j
+        =
+        0.\qedhere
+    \]
+\end{proof}
 A fejezet elején láttunk konkrét példát véges dimenziós skalárisszorzatos-térre:
 egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skalárisszorzatban,
 a kiinduló bázis ortonormált bázissá is válik.
@@ -11282,7 +11341,7 @@ Pontosan ezt állítja a fenti 4-es tulajdonság.
 Ezt a tényt a fontossága miatt külön is kiemeljük:
 \begin{corollary}
     Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más, 
-    mint erra a skalárisszorzatra nézve, de tetszőleges ortonormált bázishoz belső szorzat.
+    mint erre a skalárisszorzatra nézve, de tetszőleges ortonormált bázishoz belső szorzat.
 \end{corollary}
 
 \chapter{Az adjungált operátor bevezetése}
@@ -13517,5 +13576,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 04 Jul 2020 03:25:06 PM CEST
+Last Modified : Sat 04 Jul 2020 05:08:27 PM CEST
 
