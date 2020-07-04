@@ -10524,12 +10524,12 @@ azaz
 \end{math}
 és
 \begin{math}
-    y=\sum_{j=1}^n\eta_jv_j
+    y=\sum_{j=1}^n\eta_jv_j.
 \end{math}
 Ezek belső szorzatát 
-\begin{math}
+\begin{displaymath}
     \left[ x,y \right]=\sum_{j=1}^n\xi_j\bar{\eta_j}
-\end{math}
+\end{displaymath}
 definiálja.
 Nagyon fontos észrevenni, 
 hogy a belső szorzat a definíciója szerint függ a vektorok koordinátáitól, 
@@ -10548,7 +10548,7 @@ Definiálja $f,g\in C\left[ a,b \right]$ két folytonos függvény skaláris szo
 Könnyen látható, hogy a fenti függvény kielégíti a skaláris szorzat definíciójában követelteket.
 Figyeljünk a folytonosság szerepére!
 
-\begin{definition}[merőlegesség]
+\begin{definition}[merőlegesség, halmaz ortokomplementere]
     Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszorzatos-tér.
     \begin{enumerate}
         \item 
@@ -10559,9 +10559,9 @@ Figyeljünk a folytonosság szerepére!
             Legyen most, $H\subseteq V$ egy részhalmaz.
             Definiálja
             \(
-                H^{\perp}=\left\{ x\in V:x\perp \forall a\in H \right\}
+            H^{\perp}=\left\{ x\in V:x\perp a \text{ minden } a\in H \right\}
             \)
-            a \emph{$H$ halmaz merőlegesét}.\qedhere
+            a \emph{$H$ halmaz merőlegesét}, vagy \emph{ortokomplemeterét}\index{ortokomplementer}.\qedhere
     \end{enumerate}
 \end{definition}
 A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, hiszen ekkor sajátmagára is merőleges,
@@ -10584,9 +10584,19 @@ adni. Persze az ${}$ üres vektorrendszer ortogonális, de ortonormált is.
 Az látható, hogy egy ortogonális rendszert tetszőlegesen sok zérus vektorral kiegészítve ortogonális rendszert kapunk.
 Persze a zérus vektor egy ortonormált rendszerhez nem tartozhat elemként,
 de ha van a vektortérben egy $v\neq 0$ elem,
-akkor az egyelemű $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ vektorrendszert egy ortonormált rendszert alkot.
-Ennél több elemű rendszert most nem tudunk mondani, de később ennek oka rögtön világos lesz.
-Látjuk majd, hogy egy $n$-dimenziós térben van $n$ elemű ortonormált rendszert, de annál több elemű nincsen.
+akkor az egyelemű $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ vektorrendszer egy ortonormált rendszert alkot.
+(Mivel csak egyetlen elem van, ezért bármely két különböző elem merőleges egymásra;
+valamint
+$\ip{\frac{1}{\sqrt{\ip{v}{v}}}v}{\frac{1}{\sqrt{\ip{v}{v}}}v}
+=
+\frac{1}{\sqrt{\ip{v}{v}}}
+\frac{1}{\sqrt{\ip{v}{v}}}
+\ip{v}{v}=1.
+$)
+
+Egynél több elemből álló ortonormált rendszert most nem tudunk mutatni, 
+de később ennek oka egészen világos lesz.
+Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.Hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, az már látható is:
 \begin{proposition}
     Egy zérus elemeket nem tartalmazó ortogonális rendszer lineárisan független rendszer is.
 \end{proposition}
@@ -10605,21 +10615,47 @@ Látjuk majd, hogy egy $n$-dimenziós térben van $n$ elemű ortonormált rendsz
     Ez a skaláris szorzás definíciója szerint csak abban az esetben lehetséges, 
     ha $v_k=0$, ami ellentmond annak a feltételnek, hogy a rendszer a null vektort nem tartalmazza.
 \end{proof}
-Speciálisan, egy ortonormált rendszer is lineárisan független rendszer, így a Steinitz-lemma szerint,
+Speciálisan, egy ortonormált rendszer a zérus vektort nem tartalmazza, 
+emiatt lineárisan független rendszer.
+Így tehát a Steinitz-lemma szerint,
 egy $n$-dimenziós vektortérben nem lehet több mint $n$ elemű ortonormált rendszert mutatni.
-Később látni fogjuk, hogy $n$ elemű ortonormált rendszer viszont mindig van egy $n$-dimenziós vektortérben,
-de erre még várnunk kell.
+Később látni fogjuk, 
+hogy $n$ elemű ortonormált rendszer viszont mindig konstruálható egy $n$-dimenziós vektortérben,
+de erre itt még várnunk kell.
+
+Az alábbiakban a merőlegesség legnyilvánvalóbb tualjdonságait foglaljuk össze. 
+Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \begin{proposition}[Merőlegesség tulajdonságai]
     Legyen most is $V$ egy skalárisszorzatos-tér, $H,H_1\subseteq V$.
     Ekkor
     \begin{enumerate}
-        \item $H\cap H^{\perp}=\left\{ 0 \right\},$
+        \item $H\cap H^{\perp}\subseteq\left\{ 0 \right\},$
         \item $H\subseteq H_1\implies H_1^\perp\subseteq H^\perp,$
         \item $H\subseteq \left( H^\perp \right)^\perp,$
         \item $H^{\perp}=\left( \lin H \right)^\perp,$
-        \item $H^\perp$ altér.
+        \item $H^\perp$ altér.\qedhere
     \end{enumerate}
-\end{proposition}
+\end{proposition}\
+\begin{proof}
+    Ha $v\in H\cap H^\perp$, akkor $v\perp v$, ergo $v=0$, ami az 1. pontot igazolja.
+    Ha $H\subseteq H_1$ és a $v$ vektor a $H_1$ minden pontjára merőleges, akkor persze ez a $v$ a $H$ minden pontjára is merőleges,
+    azaz 2. pontot is meggondoltuk.
+    Ha $v\in H$ rögzített és $a\in H^\perp$ egy vektor, akkor $v\perp a$, ami azt jelenti, hogy $H\subseteq \left( H^\perp \right)^\perp$.
+    A $(\lin H)^\perp\subseteq H^\perp$ tartalmazás nyilvánvaló a már meggondolt 2. tulajdonság szerint. 
+    Ha viszont $v\in H^\perp$ és $u_1,\dots,u_n\in H$, akkor ezek tetszőleges lineáris kombinációjára
+    \begin{math}
+        \ip{v}{\sum_{j=1}^n\alpha_ju_j}
+        =
+        \sum_{j=1}^n\alpha_j\ip{v}{u_j}
+        =
+        0,
+    \end{math}
+    hiszen $v\perp u_j$.
+    Meggondoltuk tehát, hogy $v$ merőleges a $H$-beli elemekből képzett tetszőleges lineáris kombinációra,
+    ergo $H^\perp\subseteq\left( \lin H \right)^\perp.$
+    Vilagos, hogy $0\in H^\perp$, ha $v_1,v_2\in H^\perp$, akkor $\alpha_1v_1+\alpha_2v_2\in H^\perp$, azaz
+    $H^\perp$ minden $H$ részhalmaz mellett egy altér.
+\end{proof} 
 
 \section{Egyenlőtlenségek}
 \begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel}
@@ -10757,6 +10793,12 @@ de erre még várnunk kell.
 \end{proof}
 
 \section{Pont és altér távolsága}
+Ebben a szakaszban azt mutatjuk meg, hogy ha a $V$ skalárisszorzatos térnek $M$ egy olyan
+altere, amelyben van véges ortonormált bázis, akkor a tér tetszőleges $V$ pontjának,
+van $M$-hez legközelebbi pontja.
+Mi több, ilyen legközelebbi pontból csak egyetlen egy van.
+
+Ehhez először a kis iskolából jól ismert Pythagoras-tételelt kell megfogalmaznunk.
 
 \begin{proposition}[Pythagoras]\index{Pythagoras-tétel}
     Ha $u\perp v$, akkor $\|u+v\|^2=\|u\|^2+\|v\|^2$.
@@ -10799,14 +10841,14 @@ de erre még várnunk kell.
 \begin{proposition}
     Legyen $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer és 
     jelölje $M=\lin\left\{ x_1,\cdots,x_k \right\}$.
-    Minden $u\in V$-hez létezik egyetlen $u^\star\in M$
+    Ekkor minden $u\in V$ vektorhoz létezik egyetlen $u^\star\in M$
     vektor, amelyre
     \[
         d\left( u,u^\star\right)
         =
         \inf\left\{ d\left( u,w \right):w\in M \right\}.
     \]
-    Erre a vektorra $u^\star=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség teljesül.
+    Erre az $M$ altérbeli $u^\star$ vektorra teljesül az $u^\star=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség.
 \end{proposition}
 Ez azt jelenti, 
 hogy minden $u\in V$ mellett a 
@@ -10815,7 +10857,7 @@ hogy minden $u\in V$ mellett a
     \[
         d\left( u,\sum_{i=1}^k\ip{u}{x_i}x_i \right)
         =
-        \min\left\{ d\left( u,w \right):w\in M \right\}
+        \min\left\{ d\left( u,w \right):w\in M \right\}.
     \]
     Ezt az 
     \begin{math}
@@ -10854,35 +10896,55 @@ hogy minden $u\in V$ mellett a
     Ez azt jelenti,
     hogy 
     \[
-        \|\hat{u}\|
-        =
         \min\left\{ d\left( u,w \right):w\in M \right\}
+        =
+        \|\hat{u}\|
         =
         \| u-\sum_{j=1}^k\ip{u}{x_j}x_j\|
         =
         d\left( u,\sum_{j=1}^k\ip{u}{x_j}x_j\right),
     \]
-    és a $u^\star=\sum_{j=1}^k\ip{u}{x_j}x_j $ egyetlen $M$-beli pont, amelyre $\|u-u^\star\|=\|\hat{u}\|$.
+    és az $u^\star=\sum_{j=1}^k\ip{u}{x_j}x_j $ az egyetlen olyan $M$-beli pont, amelyre 
+    az
+    $\|u-u^\star\|=\min\left\{ \|u-w\|:w\in M  \right\}$ egyenlőség fennáll.
     Ezt kellett belátni. 
 \end{proof}
 
+Láttuk tehát, hogy ha az $M$ altérben található véges ortonormált bázis,
+akkor tetszőleges ponthoz van egy és csak egy legközelebbi pontja az $M$ altérnek.
+Ez a korábbi tapasztalataink szerint egy kicsit sem meglepő.
+Az már sokkal érdekesebb, hogy mivel csak egy legközelebbi pont van, ezért
+ha az $M$ altérben egy másik ortonormált bázist veszünk kiindulásul, akkor az azzal képzett
+$\sum_{j=1}^k\ip{u}{x_j}x_j$ vektor is a ugyanazt a vektort, az $u$-hoz legközelebbi $M$-beli vektort adja.
+Ez formálisan nézve már meglepő, hiszen az 
+\[
+    \sum_{j=1}^k\ip{u}{x_j}x_j
+\]
+vektor felírása szerint függ az $\left\{ x_1,\dots,x_k \right\}\subseteq M$ ortonormált bázis megválasztásától,
+ugyanis a fent kiemelt képletben szerepelnek a bázis elemei. 
+Viszont tudjuk, hogy a fenti vektor az $u$-hoz legközelebb eső vektora $M$-nek, amiből persze csak egy van,
+emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált bázisának megválasztásától.
+Ez utóbbi gondolat már nagyon is meglepő.
 \begin{definition}[merőleges vetület, merőleges vetítés]
     Legyen $M=\lin\left\{ x_1,\cdots,x_k \right\}$, 
     ahol $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer.
 
     Láttuk, hogy a 
     $\sum_{i=j}^k\ip{u}{x_j}\in M$ vektor független
-    az $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer megválasztásától, hiszen
-    ez az $u$-hoz az egyetlen legközelebbi $M$-beli vektor.
-    Definiálja $p_M:V\to V$ az alábbi lineáris transzformációt:
+    az $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer megválasztásától, 
+    hiszen ez vektor az $u$ vektorhoz legközelebb eső vektora az $M$ altérnek.
+    Definiálja $p_M:V\to V$ az alábbi függvényt
     \[
         p_M\left( u \right)=
         \sum_{i=1}^k\ip{u}{x_i}x_i.
     \]
-    A $p_M\left( u \right)\in M$ vektor $u$-nak $M$ altérre vonatkozó \emph{merőleges vetülete}.
-    A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}
+    A $p_M\left( u \right)\in M$ vektort nevezzük az $u$-nak $M$ altérre eső \emph{merőleges vetületének}.
+    A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}.
 \end{definition}
-
+Mivel a skalárisszorzás rögzített második változó mellett, 
+az első változó lineáris függvénye,
+ezért egy rögzített $x\in V$ vektor mellett az $u\mapsto\ip{u}{x}x$ függvény egy $V\to V$ lineáris operáció.
+Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetítés a $V$ vektortér egy lineáris transzformációja.
 
 \section{Ortogonalizáció}
 
@@ -13293,5 +13355,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 26 May 2020 05:22:40 PM CEST
+Last Modified : Sat 04 Jul 2020 09:01:14 AM CEST
 
