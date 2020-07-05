@@ -273,22 +273,22 @@ Magyarkuti Gyula
     $\varphi_1,\dots,\varphi_n$ a $H$ halmazon értelmezett műveletek.
 \end{definition}
 \begin{definition}[félcsoport]\index{félcsoport}
-    Egy $\left( S,\star \right)$ algebrai struktúrát \emph{félcsoportnak} mondjuk,
-    ha $\star$ egy kétváltozós \emph{asszociatív}\index{asszociatív}
+    Egy $\left( S,\ast \right)$ algebrai struktúrát \emph{félcsoportnak} mondjuk,
+    ha $\ast$ egy kétváltozós \emph{asszociatív}\index{asszociatív}
     művelete az $S$ halmaznak,
     azaz minden $a,b,c\in S$ mellett
     \[
-        a\star\left( b\star c \right)=\left( a\star b\right)\star c.\qedhere
+        a\ast\left( b\ast c \right)=\left( a\ast b\right)\ast c.\qedhere
     \]
 \end{definition}
 Lefordítva ez azt jelenti, hogy 
 \begin{enumerate}
-    \item minden $a,b\in S$ mellett $a\star b\in S$, és
-    \item minden $a,b,c\in S$ esetén $a\star\left( b\star c \right)=a\star\left( b\star c \right)$
+    \item minden $a,b\in S$ mellett $a\ast b\in S$, és
+    \item minden $a,b,c\in S$ esetén $a\ast\left( b\ast c \right)=a\ast\left( b\ast c \right)$
 \end{enumerate}
 \begin{definition}[neutrális elem]\index{neutrális elem}\index{neutrális elemes félcsoport}
-    Az $\left( S,\star \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
-    ha $s\star t=t$ ($t\star s=t$) minden $t\in S$ mellett.
+    Az $\left( S,\ast \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
+    ha $s\ast t=t$ ($t\ast s=t$) minden $t\in S$ mellett.
     Ha $s\in S$ balról is és jobbról is neutrális, akkor $s$-et egy \emph{neutrális elemnek}
     mondjuk.
     A félcsoportot \emph{neutrális elemes félcsoportnak} nevezzük, ha van benne neutrális elem.
@@ -302,21 +302,21 @@ Lefordítva ez azt jelenti, hogy
     Legyen $s_1$ balról-- és $s_2$ jobbról neutrális elem.
     Ekkor
     \(
-    s_1=s_1\star s_2=s_2.
+    s_1=s_1\ast s_2=s_2.
     \)
 \end{proof}
 A félcsoport additív írásmódja esetén természetes a neutrális elemet \emph{zérusnak},
 míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
 \begin{definition}[csoport]\index{csoport}
-    Egy $\left( G,\star \right)$ algebrai struktúrát \emph{csoportnak} nevezünk,
+    Egy $\left( G,\ast \right)$ algebrai struktúrát \emph{csoportnak} nevezünk,
     ha neutrális elemes félcsoport, amelyben minden $g\in G$-hez létezik $g'\in G$, hogy
     \[
-        g\star g'=e=g'\star g.\tag{\dag}
+        g\ast g'=e=g'\ast g.\tag{\dag}
     \]
     Itt $e\in G$ jelöli a $G$ csoport neutrális elemét.
 \end{definition}
 \begin{defprop}[inverz elem]\index{inverz}
-    Legyen $\left( G,\star \right)$ egy csoport.
+    Legyen $\left( G,\ast \right)$ egy csoport.
     Ekkor minden $g\in G$-hez, csak egyetlen $g'\in G$ létezik, 
     amelyre a fenti ($\dag$) azonosság fennáll.
     Adott $g$-hez ezt ez egyetlen $g'\in G$ elemet, 
@@ -327,10 +327,10 @@ míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
     Azt mutatjuk meg, hogy ha $g'$ baloldali-- és $g''$ jobboldali inverze $g$-nek,
     akkor a két elem megegyezik:
     \[
-        g'=g'\star e=
-        g'\star\left( g\star g'' \right)=
-        \left(g'\star g\right)\star g'' =
-        e\star g''=g''.\qedhere
+        g'=g'\ast e=
+        g'\ast\left( g\ast g'' \right)=
+        \left(g'\ast g\right)\ast g'' =
+        e\ast g''=g''.\qedhere
     \]
 \end{proof}
 Példaként gondoljuk meg, hogy a $H\to H$ függvény halmaza a kompozíció művelettel
@@ -339,25 +339,25 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
 \begin{proposition}[egyszerűsítési szabály]\index{egyszerűsítési szabály}
     Csoportban igaz az egyszerűsítési szabály, azaz
     \[
-        a\star c=b\star c\implies a=b.\qedhere
+        a\ast c=b\ast c\implies a=b.\qedhere
     \]
 \end{proposition}
 \begin{proof}
     \begin{math}
-        a=a\star e
+        a=a\ast e
         =
-        a\star \left( c\star c'\right)=
-        \left( a\star c \right)\star c'=
-        \left( b\star c \right)\star c'=
-        b\star\left( c\star c' \right)=
-        b\star e=
+        a\ast \left( c\ast c'\right)=
+        \left( a\ast c \right)\ast c'=
+        \left( b\ast c \right)\ast c'=
+        b\ast\left( c\ast c' \right)=
+        b\ast e=
         b.
     \end{math}
 \end{proof}
 \begin{definition}[Abel-csoport]\index{Abel-csoport}
-    Egy $\left( G,\star \right)$ csoportot \emph{Abel-csoportnak} nevezünk,
+    Egy $\left( G,\ast \right)$ csoportot \emph{Abel-csoportnak} nevezünk,
     ha a művelete \emph{kommutatív}\index{kommutatív} is, 
-    azaz minden $s,t\in G$ mellett $s\star t=t\star s$.
+    azaz minden $s,t\in G$ mellett $s\ast t=t\ast s$.
 \end{definition}
 \begin{definition}[gyűrű]\index{gyűrű}
     A kétműveletes $\left( R,+,\cdot \right)$ algebrai struktúrát \emph{gyűrűnek} nevezzük,
@@ -2342,9 +2342,9 @@ a\#b=a\cdot b,
 \)
 majd tetszőleges $\alpha$ valós szám és $a$ pozitív valós számra legyen
 \(
-\alpha\star a=a^\alpha.
+\alpha\ast a=a^\alpha.
 \)
-\footnote{Itt $a\star\alpha$ mit jelent?}
+\footnote{Itt $a\ast\alpha$ mit jelent?}
 
 A vektorteret sokszor csak az additív művelet alaphalmazával jelöljük.
 Kicsit pontosabb ha az alaphalmaz mellett a testet is konkrétan specifikáljuk, 
@@ -4910,7 +4910,7 @@ Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V
 akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
 \end{proposition}
 Nyilvánvaló következmény még a rang-defektus--tétel is.
-\begin{proposition}[rang-defektus--tétel]
+\begin{proposition}[rang-defektus--tétel]\index{rang-defektus--tétel}
     Legyen $V$ egy véges dimenziós vektortér,
     és $W$ egy tetszőleges vektortér, 
     továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
@@ -9221,7 +9221,7 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
                 Ekkor a $v$-edik sor bástyája az $i$-sorbeli bástyával nincs inverzióban,
                 de a $j$-sorbeli bástyával inverzióban van. 
                 A $\pi$-nél tehát az inverziók száma 2.
-                Ugyanez a helyzet $\pi^\star$-nál is, 
+                Ugyanez a helyzet $\pi^\ast$-nál is, 
                 ergo a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma azonos.
 
             \item[ii.]  Ha $\pi \left( v\right) <
@@ -9234,7 +9234,7 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
                         <
                         \max \left( \pi \left( j\right) ,\pi \left(i\right) \right) .$\\
                 Ha $\pi\left( j \right)<\pi\left( i \right)$, akkor az inverziók száma $\pi$-nél 2,
-                $\pi^\star$-nál zérus.
+                $\pi^\ast$-nál zérus.
                 Ha viszont $\pi\left( j \right)>\pi\left( i \right)$, akkor az inverziók száma $\pi$-nél 0,
                 de $\pi^\ast$-nál 2.
                 Mindkét esetben tehát 2 a különbség, 
@@ -9478,7 +9478,7 @@ E hosszú, de ultra fontos interpretáció után nézzük az egysoros bizonyít�
     kapunk, kivétel az identikus permutáció,
     amelynek előjele $+1$ és 
     $
-    \prod_{i=1}^ne_i^\star e_{\id(i)}
+    \prod_{i=1}^ne_i^\ast e_{\id(i)}
     =
     \prod_{i=1}^n\delta_{i,i}=1.
     $
@@ -10840,14 +10840,14 @@ Ehhez először a kis iskolából jól ismert Pythagoras-tételelt kell megfogal
 \begin{proposition}[legközelebbi pont]\index{legközelebbi pont}\label{pr:legkozelebb}
     Legyen $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer és 
     jelölje $M=\lin\left\{ x_1,\cdots,x_k \right\}$.
-    Ekkor minden $u\in V$ vektorhoz létezik egyetlen $u^\star\in M$
+    Ekkor minden $u\in V$ vektorhoz létezik egyetlen $u^\ast\in M$
     vektor, amelyre
     \[
-        d\left( u,u^\star\right)
+        d\left( u,u^\ast\right)
         =
         \inf\left\{ d\left( u,w \right):w\in M \right\}.
     \]
-    Erre az $M$ altérbeli $u^\star$ vektorra teljesül az $u^\star=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség.
+    Erre az $M$ altérbeli $u^\ast$ vektorra teljesül az $u^\ast=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség.
 \end{proposition}
 Ez azt jelenti, 
 hogy minden $u\in V$ mellett a 
@@ -10903,9 +10903,9 @@ hogy minden $u\in V$ mellett a
         =
         d\left( u,\sum_{j=1}^k\ip{u}{x_j}x_j\right),
     \]
-    és az $u^\star=\sum_{j=1}^k\ip{u}{x_j}x_j $ az egyetlen olyan $M$-beli pont, amelyre 
+    és az $u^\ast=\sum_{j=1}^k\ip{u}{x_j}x_j $ az egyetlen olyan $M$-beli pont, amelyre 
     az
-    $\|u-u^\star\|=\min\left\{ \|u-w\|:w\in M  \right\}$ egyenlőség fennáll.
+    $\|u-u^\ast\|=\min\left\{ \|u-w\|:w\in M  \right\}$ egyenlőség fennáll.
     Ezt kellett belátni. 
 \end{proof}
 
@@ -11135,13 +11135,13 @@ arra az esetre, mikor $M$ a $V$ Hilbert-tér egy zárt altere.}
     véges dimenziós altere.
     Ekkor minden $u\in V$ -hez
     \begin{enumerate}
-        \item létezik egyetlen $u^\star\in M$ vektor, amelyre
+        \item létezik egyetlen $u^\ast\in M$ vektor, amelyre
         \(
-        d\left( u,u^\star\right)
+        d\left( u,u^\ast\right)
         =
         \min\left\{ d\left( u,w \right):w\in M \right\}.
         \)
-        Erre a vektorra teljesül az $u^\star=p_M\left( u \right)=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség, 
+        Erre a vektorra teljesül az $u^\ast=p_M\left( u \right)=\sum_{i=1}^k\ip{u}{x_i}x_i$ egyenlőség, 
         az $M$ altér tetszőlegesen választott  $\left\{ x_1,\dots,x_k \right\}$ ortonormált bázisa mellett;
         \item
             $\|p_M\left( u \right)\|\leq\|u\|$;
@@ -11356,7 +11356,7 @@ Ezt a tényt a fontossága miatt külön is kiemeljük:
 
 \chapter{Az adjungált operátor bevezetése}
 Az egész fejezetben $V$ egy $\mathbb{K}$ feletti vektortér.
-\section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}
+\section{Riesz-reprezentáció véges dimenziós skalárisszorzatos-térben}\index{Riesz-reprezentáció}
 \begin{proposition}[Riesz-reprezentació]\index{Riesz-reprezentáció}\label{pr:Riesz}
     Legy $V$ egy véges dimenziós skalárisszorzatos-tér.
     Ekkor minden $\varphi:V\to\mathbb{K}$ lineáris funkcionálhoz létezik egyetlen $z_\varphi\in V$ vektor,
@@ -11442,7 +11442,7 @@ akkor
     \sum_{i=1}^n\overline{\varphi\left( x_i \right)}x_i.
 \]
 \section{Az adjungált operáció}
-\begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}
+\begin{definition}[adjungált, adjungált azonosság]\index{adjungált}\index{adjungált azonosság}\index{Riesz-reprezentáció}
 Legyen $\left( V,\ip{\cdot}{\cdot}_V \right)$ és
 $\left( W,\ip{\cdot}{\cdot}_W \right)$ véges dimenziós ska\-láris\-szor\-zatos-tér.
 Rögzített $A\in L\left( V,W \right)$ lineáris operátor és rögzített $w\in W$ vektor mellett tekintsük a 
@@ -11452,62 +11452,111 @@ Rögzített $A\in L\left( V,W \right)$ lineáris operátor és rögzített $w\in
 \]
 függvényt. 
 Világos, hogy $\varphi_w:V\to\mathbb{K}$ lineáris funkcionál $V$-n, 
-így a Riesz-reprezentációs tétel szerint létezik egyetlen $v^\star\in V$, 
+így a Riesz-reprezentációs tétel szerint létezik egyetlen $w^\ast\in V$, 
 amelyre
-$\varphi_w\left( v \right)=\ip{v}{v^\star}_V$ minden $v\in V$ mellett teljesül.
+$\varphi_w\left( v \right)=\ip{v}{w^\ast}_V$ minden $v\in V$ mellett teljesül.
 
-Jelölje most $A^\star$ a $w\mapsto v^\star$ függvényt. 
+Jelölje most $A^\ast$ a $w\mapsto w^\ast$ függvényt, tehát
+$A^\ast:W\to V$.
 Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
 \[
-    \ip{Av}{w}_W=\ip{v}{A^\star w}_V.\tag{\dag}
+    \ip{Av}{w}_W
+    =
+    \varphi_w\left( v \right)
+    =
+    \ip{v}{w^\ast}_V
+    =
+    \ip{v}{A^\ast w}_V.\tag{\dag}
 \]
-Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
+Ezt az $A^\ast:W\to V$ függvényt nevezzük az $A$ lineáris transzformáció \emph{adjungáltjának}.
 \end{definition}
 
-\begin{note}
-    Láttuk a Riesz-reprezentációs tétel igazolásában, hogy ha $\left\{ v_1,\cdots,v_n \right\}\subset V$
-    tetszőleges ortonormált bázis, akkor 
+\paragraph{Az adjungált függvény linearitása.}
+\Aref{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk, 
+hogy ha tetszőlegesen adott egy
+    $\left\{ v_1,\cdots,v_n \right\}\subseteq V$
+ortonormált bázis, akkor 
     \[
-        A^\star w=
-        \sum_{i=1}^n\overline{\varphi_w\left( v_i \right)}v_i=
-        \sum_{i=1}^n\ip{w}{Av_i}_Wv_i.
+        A^\ast w
+        =
+        \sum_{j=1}^n\overline{\varphi_w\left( v_j \right)}v_j
+        =
+        \sum_{j=1}^n\overline{\ip{Av_j}{w}}_Wv_j
+        =
+        \sum_{j=1}^n\ip{w}{Av_j}_Wv_j.
     \]
-    Ebből azonnal adódik, hogy $A^\star:W\to V$ lineáris operátor.
-\end{note}
+Ebből már adódik, hogy $A^\ast:W\to V$ lineáris operátor.
+Ugyanis a skalárisszorzat rögzített második változó mellett az első változóban lineáris,
+emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó lineáris függvénye. A fenti kiemelt sor szerint $A^\ast$ ilyen függvények összegeként maga is lineáris.
 \begin{proposition}
     Legyenek $V,W$ skalárisszorzatos-terek, és $A\in L\left( V,W \right)$ lineáris operátor.
-    Ekkor az $A^\ast$ adjungált az egyetlen $L\left( W,V \right)$-beli operátor,
+    Ekkor az $A^\ast$ adjungált az egyetlen $W\to V$ függvény,
     amelyre a (\dag) adjungált azonosság fennáll.
 \end{proposition}
-
+\begin{proof}
+    Legyen $B:W\to V$ olyan függvény, amelyre szintén fennáll adjungált azonosság,
+    azaz
+    \[
+        \ip{v}{Bw}
+        =
+        \ip{Av}{w}
+        =
+        \ip{v}{A^\ast w}
+    \]
+    fennáll minden $v\in V$ és $w\in W$ mellett.
+    Mivel a skalárisszorzás rögzített első változó mellett a második változóban additív, 
+    ezért 
+    $\ip{v}{\left( A^\ast-B \right)w}=0$ fennáll minden $v\in V$ és $w\in W$ mellett.
+    Speciálisan ez igaz $v=\left( A^\ast-B \right)w$-re is, ergo minden $w\in W$-re 
+    $\left( A^\ast-B \right)w=0$.
+    Ez éppen azt jelenti, hogy $A^\ast=B$.
+\end{proof}
 
 \begin{proposition}
     Legyen $V$ és $W$ véges dimenziós skalárisszorzatos-tér.
     Rögzítsünk egy $\left\{ v_1,\cdots,v_m \right\}$ ortonormált bázist $V$-ben,
     és rögzítsünk egy $\left\{w_1,\cdots,w_n\right\}$ ortonormált bázist $W$-ben.
-    Legyen $A\in L\left( V,W \right)$ egy lineáris operátor és $A^\star\in L\left( W,V \right)$ az adjungáltja.
+    Legyen $A\in L\left( V,W \right)$ egy lineáris operátor és $A^\ast\in L\left( W,V \right)$ az adjungáltja.
     Ekkor $A$-nak a fenti bázisokban rögzített mátrixa azonos 
-    $A^\star$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrix-szal.
+    $A^\ast$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrix-szal.
 
     Formálisan:
     \[
-        \left[ A \right]_{i,j}=\overline{\left[ A^\star \right]}_{j,i}
+        \left[ A \right]_{i,j}=\overline{\left[ A^\ast \right]}_{j,i}
     \]
     minden $j=1,\cdots,m$ és minden $i=1,\cdots,n$ esetén.
 \end{proposition}
+\begin{proof}
+    \begin{math}
+        [A]_{i,j}
+        =
+        \ip{Av_j}{w_i}
+        =
+        \ip{v_j}{A^\ast w_i}
+        =
+        \overline{
+            \ip{A^\ast w_i}{v_j}
+        }
+        =
+        \overline{
+            [A^\ast]
+        }_{j,i}
+    \end{math},
+    \aref{pr:onb}.~állítás, és a skalárisszorzás tulajdonságai szerint.
+\end{proof}
 
 \begin{proposition}
     Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
     Ekkor
     \begin{enumerate}
-        \item $\left( A+B \right)^\star=A^\star+B^\star,$
-        \item $\left( \alpha A \right)^\star=\overline\alpha A^\star,$
-        \item $(A^\star)^\star=A$
+        \item $\left( A+B \right)^\ast=A^\ast+B^\ast,$
+        \item $\left( \alpha A \right)^\ast=\overline\alpha A^\ast,$
+        \item $(A^\ast)^\ast=A$
     \end{enumerate}
     Ha $I\in L\left( V \right)$ jelöli az identitás transzformációt, továbbá $A,B\in L\left( V \right)$, akkor
     \begin{enumerate}
-        \item $I^\star=I$,
-        \item $\left( AB \right)^\star=B^\star A^\star$.
+        \item $I^\ast=I$,
+        \item $\left( AB \right)^\ast=B^\ast A^\ast$.
         \item Az $A$ lineáris operátor pontosan akkor reguláris ha $A^\ast$ adjungált operáció is az.
             Ebben az estben az adjungált operáció inverze éppen az inverz operáció adjungáltja, magyarul
             \begin{math}
@@ -11529,6 +11578,52 @@ Ez az $A^\star:W\to V$ függvény az $A$ \emph{adjungáltja}.
     \end{eqnarray*}
     így $\rho\left( A \right)=\rho\left( A^\ast \right)$.
 \end{proposition}
+\begin{proof}
+    Az adjungált azonosság szerint egy $w\in W$ vektorra az alábbi feltevések ekvivalensek
+    \begin{multline*}
+        w\in\left( \im A \right)^\perp
+        \\
+        \iff
+        \ip{Av}{w}=0 \forall v\in V
+        \iff
+        \ip{v}{A^\ast w}=0 \forall v\in V
+        \iff
+        A^\ast w\in V^\perp
+        \iff
+        A^\ast w=0
+        \\
+        \iff
+        w\in\ker A^\ast,
+    \end{multline*}
+    ami igazolja az $\left( \im A \right)^\perp=\ker A^\ast$ azonosságot.
+    
+    A projekciós tételt alkalmazva: 
+    \begin{math}
+        \im A=(\im A)^{\perp\perp}=(\ker A^\ast)^\perp
+    \end{math}.
+    Ez persze az $A^\ast$ adjungált operátorra is igaz, 
+    ergo
+    \begin{math}
+        \im A^\ast = \left( \ker A \right)^\perp.
+    \end{math}
+
+    Újra felírva a projekciós tételt: 
+    \begin{math}
+        W=\im A\oplus\left( \im A \right)^\perp
+        =\im A\oplus\ker A^\ast
+    \end{math}
+    valamint 
+    \begin{math}
+        V=\ker A\oplus\left( \ker A \right)^\perp
+        =
+        \ker A\oplus\im A^\ast.
+    \end{math}
+
+    A direktösszegek dimenziójára vonatkozó állítás és a rang-defektus\index{rang-defektus--tétel} tételnek az adjungált operációra vonatkozó alakja szerint
+    \begin{math}
+        \rho\left( A \right)=\dim W-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
+    \end{math}
+\end{proof}
 
 
 \section{Önadjungált transzformációk}
@@ -13651,5 +13746,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 04 Jul 2020 09:00:46 PM CEST
+Last Modified : Sun 05 Jul 2020 05:01:26 PM CEST
 
