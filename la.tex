@@ -3565,20 +3565,20 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
 \begin{proof}
     Az alábbi lépéseket követjük.
     \begin{description}
-        \item[1.\Rightarrow 2.]
+        \item[$1.\Rightarrow 2.$]
             Ha a vektorrendszer nem lenne generátorrendszer is,
             akkor a lineáris burkán kívül lenne egy vektor.
             Ezt a vektorrendszerhez illesztve, a vektorrendszer egy valódi lineárisan független bővítését kapjuk,
             ami ellentmond a maximalitás feltételének.
-        \item[3.\Rightarrow 2.]
+        \item[$3.\Rightarrow 2.$]
             Ha a vektorrendszer egyik eleme a többi elem lineáris kombinációja,
             akkor azt az elemet elhagyva is generátorrendszert kapunk,
             ami ellentmond a minimalitás feltételének.
-        \item[2.\Rightarrow 1.]
+        \item[$2.\Rightarrow 1.$]
             Ha nem lenne maximális a lineárisan független tulajdonságra nézve,
             akkor létezne egy vektor a lineáris burkán kívül is,
             ami ellentmond a generátorrendszer tulajdonságnak.
-        \item[2.\Rightarrow 3.]
+        \item[$2.\Rightarrow 3.$]
             Mivel a vektorrendszer egyik eleme, sincs a többi lineáris burkában,
             ezért egyetlen elemet sem hagyhatunk el a generátorrendszer tulajdonság megtartásával,
             ami azt jelenti, hogy ez egy minimális generátorrendszer.\qedhere
@@ -9200,12 +9200,12 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
     Lássuk tehát a különböző eseteket:
 
     \begin{description}
-    \item[1.]  Az $u$ és $v$ egyike sem egyezik $i$ és $j$ egyikével sem.\\
+    \item[$1.$]  Az $u$ és $v$ egyike sem egyezik $i$ és $j$ egyikével sem.\\
         Világos, hogy ebben az esetben a $\pi $ melletti és a $\pi ^{\ast }$ melletti
         inverziók száma azonos, hiszen egyik itt vizsgált bástyapár sem mozdul a $\pi$-ről $\pi^\ast$-ra
         való áttérés során.
 
-    \item[2.]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v>j.$\\
+    \item[$2.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v>j.$\\
         Tekintsünk egy $u,v$ sorbeli bástyapárt.
         Az $i$-edik és a $j$-edik sor felcseréléséve az $u$-adik sorban álló bástya megmozdul, 
         de az oszlop koordinátáját megtartja, és sor koordinátája is $v$-nél kisebb marad.
@@ -9213,10 +9213,10 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
         hogy ugyan azok bástyapárok lesznek inverzióban a $\pi$-nél, mint $\pi^\ast$-nál, ergo a 
         $\pi$-nél és $\pi^\ast$-nál inverzióban álló párok száma azonos.
 
-    \item[3.]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $i<v<j.$\\
+    \item[$3.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $i<v<j.$\\
         Különböztessünk meg ezen belül is három esetet.
         \begin{description}
-            \item[i.]  Ha $\pi \left( v\right) >
+            \item[$i.$]  Ha $\pi \left( v\right) >
                        \max \left( \pi \left( j\right) ,\pi\left( i\right) \right)$.\\
                 Ekkor a $v$-edik sor bástyája az $i$-sorbeli bástyával nincs inverzióban,
                 de a $j$-sorbeli bástyával inverzióban van. 
@@ -9224,11 +9224,11 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
                 Ugyanez a helyzet $\pi^\ast$-nál is, 
                 ergo a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma azonos.
 
-            \item[ii.]  Ha $\pi \left( v\right) <
+            \item[$ii.$]  Ha $\pi \left( v\right) <
                 \min \left( \pi \left( j\right) ,\pi \left( i\right) \right) .$\\
                 Analóg [i]-vel.
 
-            \item[iii.]  Ha $\min \left( \pi \left( j\right) ,\pi \left( i\right)\right) 
+            \item[$iii.$]  Ha $\min \left( \pi \left( j\right) ,\pi \left( i\right)\right) 
                         <
                         \pi \left( v\right) 
                         <
@@ -9242,10 +9242,10 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
                 de a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma páros számban különbözik.
         \end{description}
 
-    \item[4.]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v<i.$\\
+    \item[$4.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v<i.$\\
         Analóg a második esettel.
 
-    \item[5.]  Az $u$ is és a $v$ is megegyezik az $i$ és $j$ egyikével.\\
+    \item[$5.$]  Az $u$ is és a $v$ is megegyezik az $i$ és $j$ egyikével.\\
         Ekkor ha az $u$ és $v$ sorbeli bástyák inverzióban vannak $\pi$-nél,
         akkor nem lesznek inverzióban $\pi^\ast$-nál,
         és hasonlóan, ha nincsenek inverzióban $\pi$-nél,
@@ -11470,24 +11470,6 @@ Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált az
 \]
 Ezt az $A^\ast:W\to V$ függvényt nevezzük az $A$ lineáris transzformáció \emph{adjungáltjának}.
 \end{definition}
-
-\paragraph{Az adjungált függvény linearitása.}
-\Aref{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk, 
-hogy ha tetszőlegesen adott egy
-    $\left\{ v_1,\cdots,v_n \right\}\subseteq V$
-ortonormált bázis, akkor 
-    \[
-        A^\ast w
-        =
-        \sum_{j=1}^n\overline{\varphi_w\left( v_j \right)}v_j
-        =
-        \sum_{j=1}^n\overline{\ip{Av_j}{w}}_Wv_j
-        =
-        \sum_{j=1}^n\ip{w}{Av_j}_Wv_j.
-    \]
-Ebből már adódik, hogy $A^\ast:W\to V$ lineáris operátor.
-Ugyanis a skalárisszorzat rögzített második változó mellett az első változóban lineáris,
-emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó lineáris függvénye. A fenti kiemelt sor szerint $A^\ast$ ilyen függvények összegeként maga is lineáris.
 \begin{proposition}
     Legyenek $V,W$ skalárisszorzatos-terek, és $A\in L\left( V,W \right)$ lineáris operátor.
     Ekkor az $A^\ast$ adjungált az egyetlen $W\to V$ függvény,
@@ -11511,6 +11493,57 @@ emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó
     $\left( A^\ast-B \right)w=0$.
     Ez éppen azt jelenti, hogy $A^\ast=B$.
 \end{proof}
+Látni fogjuk, hogy a (\dag) adjungált azonosság szinte fontosabb mint a definíció.
+A definíció arra való, hogy megmutassuk: adott $A\in L\left( V,W \right)$ lineáris transzformációhoz van olyan 
+$A^\ast:W\to V$ függvény, amelyre minden $u\in W$ és minden $w\in W$ mellett fennáll az adjungált azonosság:
+\[
+    \ip{Av}{w}
+    =
+    \ip{v}{A^\ast w}.
+    \tag{\dag}
+\]
+Az adjungált unicitása, és összes fontos tulajdonsága az adjungált azonosságon alapul.
+\paragraph{Az adjungált függvény linearitása.}
+\Aref{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk, 
+hogy ha tetszőlegesen adott egy
+    $\left\{ v_1,\cdots,v_n \right\}\subseteq V$
+ortonormált bázis, akkor 
+    \[
+        A^\ast w
+        =
+        \sum_{j=1}^n\overline{\varphi_w\left( v_j \right)}v_j
+        =
+        \sum_{j=1}^n\overline{\ip{Av_j}{w}}_Wv_j
+        =
+        \sum_{j=1}^n\ip{w}{Av_j}_Wv_j.
+    \]
+Ebből már adódik, hogy $A^\ast:W\to V$ lineáris operátor.
+Ugyanis a skalárisszorzat rögzített második változó mellett az első változóban lineáris,
+emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó lineáris függvénye. A fenti kiemelt sor szerint $A^\ast$ ilyen függvények összegeként maga is lineáris.
+
+Alternatív indoklást kapunk az adjungált operáció linearitására az (\dag) adjungált azonosság háromszori felírásával.
+Itt kihasználjuk a tényt, hogy a skalárisszorzás rögzített első változó mellett a második változó konjugáltan lineáris függvénye.
+\begin{multline*}
+    \ip{u}{A^\ast\left( \alpha_1w_1+\alpha_2w_2 \right)}
+    =
+    \ip{Au}{\alpha_1w_1+\alpha_2w_2}
+    =\\
+    \overline{\alpha}_1\ip{Au}{w_1}+\overline{\alpha}_2\ip{Au}{w_2}
+    =
+    \overline{\alpha}_1\ip{u}{A^\ast w_1}+\overline{\alpha}_2\ip{u}{A^\ast w_2}
+    =
+    \ip{u}{\alpha_1 A^\ast w_1}+\ip{u}{\alpha_2 A^\ast w_2}
+    =\\
+    \ip{u}{\alpha_1 A^\ast w_1+\alpha_2 A^\ast w_2}.
+\end{multline*}
+Mivel ez minden $u\in V$ és minden $w_1,w_2\in W$ esetén fennáll, 
+ezért az
+\begin{displaymath}
+    A^\ast\left( \alpha_1w_1+\alpha_2w_2 \right)
+    =
+    \alpha_1A^\ast w_1+ \alpha_2A^\ast w_2
+\end{displaymath}
+azonosság is teljesül.
 
 \begin{proposition}
     Legyen $V$ és $W$ véges dimenziós skalárisszorzatos-tér.
@@ -11542,22 +11575,24 @@ emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó
             [A^\ast]
         }_{j,i}
     \end{math},
-    \aref{pr:onb}.~állítás, és a skalárisszorzás tulajdonságai szerint.
+    \aref{pr:onb}.~állítás, a (\dag) adjungált azonosság, és a skalárisszorzás tulajdonságai szerint.
 \end{proof}
 
+Most összefoglaljuk az adjungálás operáció legfontosabb tulajdonságait, 
+amelyeket későbbi számolásaink során külön hivatkozás nélkül használunk.
 \begin{proposition}
     Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
     Ekkor
     \begin{enumerate}
-        \item $\left( A+B \right)^\ast=A^\ast+B^\ast,$
-        \item $\left( \alpha A \right)^\ast=\overline\alpha A^\ast,$
-        \item $(A^\ast)^\ast=A$
+        \item[1.] $\left( A+B \right)^\ast=A^\ast+B^\ast,$
+        \item[2.] $\left( \alpha A \right)^\ast=\overline\alpha A^\ast,$
+        \item[3.] $(A^\ast)^\ast=A$
     \end{enumerate}
     Ha $I\in L\left( V \right)$ jelöli az identitás transzformációt, továbbá $A,B\in L\left( V \right)$, akkor
     \begin{enumerate}
-        \item $I^\ast=I$,
-        \item $\left( AB \right)^\ast=B^\ast A^\ast$.
-        \item Az $A$ lineáris operátor pontosan akkor reguláris ha $A^\ast$ adjungált operáció is az.
+        \item[4.] $I^\ast=I$,
+        \item[5.] $\left( AB \right)^\ast=B^\ast A^\ast$.
+        \item[6.] Az $A$ lineáris operátor pontosan akkor reguláris ha $A^\ast$ adjungált operáció is az.
             Ebben az estben az adjungált operáció inverze éppen az inverz operáció adjungáltja, magyarul
             \begin{math}
                 \left( A^\ast \right)^{-1}=\left( A^{-1} \right)^\ast.
@@ -11565,8 +11600,72 @@ emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó
             \qedhere
     \end{enumerate}
 \end{proposition}
-
-\begin{proposition}[skalárisszorzatos rang-tétel]
+\begin{proof}
+    Az első öt tulajdonság teljesen nyilvánvaló az adjungált mátrixának felírásából.
+    Csak azért, hogy hangsúlyozzuk az adjungált azonosság hasznosságát a mátrixokra való hivatkozások nélküli indoklást is adunk.
+    \begin{description}
+        \item[$1., 2.$ ]
+            \begin{multline*}
+                \ip{u}{(\alpha A+B)^\ast w}
+                =\\
+                \ip{\left( \alpha A+B \right)u}{w}
+                =
+                \alpha\ip{Au}{w}+\ip{Bu}{w}
+                =
+                \alpha\ip{u}{A^\ast w}+\ip{u}{B^\ast w}
+                =
+                \ip{u}{\overline{\alpha}A^\ast w}+\ip{u}{B^\ast w}
+                =\\
+                \ip{u}{\left( \overline{\alpha}A^\ast +B^\ast \right)w}
+            \end{multline*}
+            Ez minden $\alpha\in\mathbb{K}$, $u\in V$ és minden $w\in W$ mellett, tehát
+            \begin{math}
+                \left( \alpha A+B \right)^\ast=\overline{\alpha}A^\ast+B^\ast.
+            \end{math}
+        \item[$3.$]
+            \(
+                \ip{Au}{w}
+                =
+                \ip{u}{A^\ast w}
+                =
+                \overline{
+                    \ip{A^\ast w}{u}
+                }
+                =
+                \overline{
+                    \ip{w}{A^{\ast\ast} u}
+                }
+                =
+                \ip{A^{\ast\ast} u}{w}.
+            \)
+        \item[$4.$]
+            \(
+            \ip{u}{Iv}
+            =
+            \ip{Iu}{v}
+            =
+            \ip{u}{I^\ast v}.
+            \)
+        \item[$5.$]
+            \begin{math}
+                \ip{u}{\left( AB \right)^\ast v}
+                =
+                \ip{ABu}{v}
+                =
+                \ip{Bu}{A^\ast v}
+                =
+                \ip{u}{B^\ast A^\ast v}.
+            \end{math}
+        \item[$6.$] $A$ pontosan akkor reguláris, ha létezik $B$, amelyre $AB=I$, ami ekvivalens $B^\ast A^\ast=I$-vel,
+            ami ekvivalens avval, hogy $A^\ast$ reguláris.
+            Világos, hogy ebben az esetben $\left( A^\ast \right)^{-1}=B^\ast=\left( A^{-1} \right)^\ast$.
+            \qedhere
+    \end{description}
+\end{proof}
+Felépítésünk sarokköve a skalárisszorzatos terek rangtétele. 
+Legfontosabb következménye, hogy zérus vektoron kívül nincs olyan vektor,
+amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
+\begin{proposition}[skalárisszorzatos rang-tétel]\label{pr:skrang}
     Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
     Ekkor 
          $(\im A)^\perp=\ker A^\ast$ és
@@ -11657,15 +11756,12 @@ hogy a transzformáció önadjungált vagy sem.
 Persze a fenti tulajdonság, ha egy ortonormált bázis mellett teljesül,
 akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad.
 
-Érdemes felírni a skalárisszorzatos-terek rangtételét önadjungált transzformációra:
-\begin{proposition}
-    Legyen $A$ a $V$ tér egy önadjungált transzformációja.
-    Ekkor 
-    \[
-        \ker A\oplus\im A=V\qquad\text{ és }\qquad\ker A\perp\im A.
-        \qedhere
-    \]
-\end{proposition}
+A skalárisszorzatos-terek rangtétele, -- tehát \aref{pr:skrang}.~állítás -- önadjungált transzformációk mellett azt jelenti, 
+hogy
+a $\ker A$ és az $\im A$ egymásra merőleges alterek, 
+amelyek direktösszege az egész tér.
+Később látjuk majd, hogy ez nem csak önadjungált transzformációkra igaz,
+hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref{pr:normalisrang}.~állítást} is teljesül.
 \section{Unitér transzformációk}
 \begin{definition}
     Legyen $V$ egy skalárisszorzatos-tér, és $B\in L\left( V \right)$ egy lineáris transzformáció.
@@ -11683,53 +11779,52 @@ akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad
     \end{enumerate}
 \end{proposition}
 \begin{proof}
-    $1)\implies 2)$
-    \begin{math}
-        \ip{Bu}{Bv}
-        =
-        \ip{u}{B^\ast Bv}
-        =
-        \ip{u}{B^{-1}Bv}
-        =
-        \ip{u}{v}.
-    \end{math}
-
-    \noindent
-    $2)\implies 3)$
-    Legyen $u_1,\dots,u_n$ egy ortonormált bázis.
-    Ennek $B$ képére
-    \begin{math}
-        \ip{Bu_j}{Bu_k}
-        =
-        \ip{u_j}{u_k}
-        =\delta_{j,k}.
-    \end{math}
-    Ez azt jelenti, hogy a $\left\{ Bu_1,\dots,Bu_n \right\}$ egy ortonormált rendszer.
-    A tér $n$ dimenziós, hiszen $\left\{ u_1,\dots,u_n \right\}$ egy bázis.
-    Így
-    $\left\{ Bu_1,\dots,Bu_n \right\}$ egy maximális lineárisan független rendszerként maga is bázis.
-
-    \noindent
-    $3)\implies 1)$
-    Vegyünk $V$-ben egy $\left\{ u_1,\dots,u_n \right\}$ ortonormált bázist.
-    Feltevésünk szerint a $\left\{ Bu_1,\dots,Bu_n \right\}$ egy ortonormált rendszer.
-    Így minden $j,k$ mellett
-    \begin{displaymath}
-        \ip{u_k}{\left( B^\ast B-I \right)u_j}
-        =
-        \ip{u_k}{B^\ast Bu_j}-\ip{u_k}{u_j} 
-        =
-        \ip{Bu_k}{Bu_j}-\ip{u_k}{u_j}
-        =
-        \delta_{k,j}-\delta_{k,j}
-        =
-        0.
-    \end{displaymath}
-    Ez azt jelenti, hogy az $(B^\ast B-I)u_j$ vektor merőleges az $\left\{ u_1,\dots,u_n \right\}$ bázis minden elemére.
-    Az ortonormált rendszer teljessége szerint ez csak úgy lehetséges, ha minden $j$ indexre $B^\ast Bu_j=Iu_j$.
-    No de a lineáris transzformációk bázison egyértelműen meghatározottak,
-    ezért $B^\ast B=I$.
-    Ez azt jelenti, hogy $B$ reguláris és $B^{-1}=B^\ast$.
+    Körben bizonyítunk:
+    \begin{description}
+        \item[$1.\Rightarrow 2.$]
+            \begin{math}
+            \ip{Bu}{Bv}
+            =
+            \ip{u}{B^\ast Bv}
+            =
+            \ip{u}{B^{-1}Bv}
+            =
+            \ip{u}{v}.
+        \end{math}
+    \item[$2.\Rightarrow 3.$]
+        Legyen $u_1,\dots,u_n$ egy ortonormált bázis.
+        Ennek $B$ képére
+        \begin{math}
+            \ip{Bu_j}{Bu_k}
+            =
+            \ip{u_j}{u_k}
+            =\delta_{j,k}.
+        \end{math}
+        Ez azt jelenti, hogy a $\left\{ Bu_1,\dots,Bu_n \right\}$ egy ortonormált rendszer.
+        A tér $n$ dimenziós, hiszen $\left\{ u_1,\dots,u_n \right\}$ egy bázis.
+        Így
+        $\left\{ Bu_1,\dots,Bu_n \right\}$ egy maximális lineárisan független rendszerként maga is bázis.
+    \item[$3.\Rightarrow 1.$]
+        Vegyünk $V$-ben egy $\left\{ u_1,\dots,u_n \right\}$ ortonormált bázist.
+        Feltevésünk szerint a $\left\{ Bu_1,\dots,Bu_n \right\}$ egy ortonormált rendszer.
+        Így minden $j,k$ mellett
+        \begin{displaymath}
+            \ip{u_k}{\left( B^\ast B-I \right)u_j}
+            =
+            \ip{u_k}{B^\ast Bu_j}-\ip{u_k}{u_j} 
+            =
+            \ip{Bu_k}{Bu_j}-\ip{u_k}{u_j}
+            =
+            \delta_{k,j}-\delta_{k,j}
+            =
+            0.
+        \end{displaymath}
+        Ez azt jelenti, hogy az $(B^\ast B-I)u_j$ vektor merőleges az $\left\{ u_1,\dots,u_n \right\}$ bázis minden elemére.
+        Az ortonormált rendszer teljessége szerint ez csak úgy lehetséges, ha minden $j$ indexre $B^\ast Bu_j=Iu_j$.
+        No de a lineáris transzformációk bázison egyértelműen meghatározottak,
+        ezért $B^\ast B=I$.
+        Ez azt jelenti, hogy $B$ reguláris és $B^{-1}=B^\ast$.
+    \end{description}
 \end{proof}
 Egy ortonormált bázisban felírva a $B$ transzformáció mátrixát,
 nagyon könnyen észrevehető, hogy unitér transzformációval állunk szemben.
@@ -11858,7 +11953,7 @@ Az unitér transzformációk olyanok, amelyek $\mathbb{R}$ feletti esetben nem d
 Korábban láttuk, 
 hogy tetszőleges lineáris transzformáció mellett $(\im A)^\perp=\ker A^\ast.$
 Normális transzformáció esetén ez még egyszerűbb:
-\begin{proposition}[Normális transzformációk rangtétele]
+\begin{proposition}[Normális transzformációk rangtétele]\label{pr:normalisrang}
     Legyen $V$ skalárisszorzatos-tér és $N\in L\left( V \right)$ egy normális lineáris transzformáció.
     Ekkor 
     \[
@@ -13746,5 +13841,5 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 \end{thebibliography}
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sun 05 Jul 2020 05:01:26 PM CEST
+Last Modified : Tue 07 Jul 2020 07:07:10 PM CEST
 
