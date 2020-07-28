@@ -9,3 +9,104 @@ Number,Quote,Author
 8,"Try not to become a man of success, but rather try to become a man of value.", Albert Einstein
 9,"The starting point of all achievement is desire.", Napoleon Hill
 10,"Whosoever desires constant success must change his conduct with the times.", Niccolo Machiavelli
+11,"We are what we repeatedly do. Excellence, therefore, is not an act but a habit.",Aristotle
+12,"The best way out is always through.",Robert Frost
+13,Do not wait to strike till the iron is hot; but make it hot by striking.,William B Sprague
+14,Great spirits have always encountered violent opposition from mediocre minds.,Albert Einstein
+15,"Whether you think you can or think you can't, you're right.",Henry Ford
+16,2019-01-06,6,January,2019,Sunday,I know for sure that what we dwell on is who we become.,Oprah Winfrey
+17,"I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times, I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.",Michael Jordan
+18,You must be the change you want to see in the world.,Mahatma Gandhi
+19,What you get by achieving your goals is not as important as what you become by achieving your goals.,Goethe
+20,You can get everything in life you want if you will just help enough other people get what they want.,Zig Ziglar
+21,"Whatever you do will be insignificant, but it is very important that you do it.",Mahatma Gandhi
+22,"Desire is the starting point of all achievement, not a hope, not a wish, but a keen pulsating desire which transcends everything.",Napoleon Hill
+23,Failure is the condiment that gives success its flavor.,Truman Capote
+24,Vision without action is daydream. Action without vision is nightmare.,Japanese Proverb
+25,"In any situation, the best thing you can do is the right thing; the next best thing you can do is the wrong thing; the worst thing you can do is nothing.",Theodore Roosevelt
+26,"If you keep saying things are going to be bad, you have a chance of being a prophet.",Isaac B Singer
+27,Success consists of doing the common things of life uncommonly well.,Unknown
+28,"Keep on going and the chances are you will stumble on something, perhaps when you are least expecting it. I have never heard of anyone stumbling on something sitting down.","Charles F Kettering, Engineer and Inventor"
+29,Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.,Mark Twain
+30,Losers visualize the penalties of failure. Winners visualize the rewards of success.,Unknown
+31,Some succeed because they are destined. Some succeed because they are determined.,Unknown
+32,Experience is what you get when you don't get what you want.,Dan Stanford
+33,Setting an example is not the main means of influencing others; it is the only means.,Albert Einstein
+34,"A happy person is not a person in a certain set of circumstances, but rather a person with a certain set of attitudes.",Hugh Downs
+35,"If you're going to be able to look back on something and laugh about it, you might as well laugh about it now.",Marie Osmond
+36,"Remember that happiness is a way of travel, not a destination.",Roy Goodman
+37,"If you want to test your memory, try to recall what you were worrying about one year ago today.",E Joseph Cossman
+38,What lies behind us and what lies before us are tiny matters compared to what lies within us.,Ralph Waldo Emerson
+39,We judge of man's wisdom by his hope.,Ralph Waldo Emerson
+40,The best way to cheer yourself up is to try to cheer somebody else up.,Mark Twain
+41,"Age is an issue of mind over matter. If you don't mind, it doesn't matter.",Mark Twain
+42,"Whenever you find yourself on the side of the majority, it's time to pause and reflect.",Mark Twain
+43,"Keep away from people who try to belittle your ambitions. Small people always do that, but the really great make you feel that you, too, can become great.",Mark Twain
+44,The surest way not to fail is to determine to succeed.,Richard B Sheridan
+45,"Take the first step in faith. You don't have to see the whole staircase, just take the first step.",Dr Martin Luther King Jr
+46,Act or accept.,Anonymous
+47,"Many great ideas go unexecuted, and many great executioners are without ideas. One without the other is worthless.",Tim Blixseth
+48,The world is more malleable than you think and it's waiting for you to hammer it into shape.,Bono
+49,Sometimes you just got to give yourself what you wish someone else would give you.,Dr Phil
+50,"Motivation is a fire from within. If someone else tries to light that fire under you, chances are it will burn very briefly.",Stephen R Covey
+51,People become really quite remarkable when they start thinking that they can do things. When they believe in themselves they have the first secret of success.,Norman Vincent Peale
+52,Whenever you find whole world against you just turn around and lead the world.,Anonymous
+53,Being defeated is only a temporary condition; giving up is what makes it permanent.,"Marilyn vos Savant, Author and Advice Columnist"
+54,I can't understand why people are frightened by new ideas. I'm frightened by old ones.,John Cage
+55,Setting an example is not the main means of influencing others; it is the only means.,Albert Einstein
+56,The difference between ordinary and extraordinary is that little extra.,Unknown
+57,The best way to predict the future is to create it.,Unknown
+58,Anyone can do something when they WANT to do it. Really successful people do things when they don't want to do it.,Dr Phil
+59,"There are two primary choices in life: to accept conditions as they exist, or accept the responsibility for changing them.",Dr Denis Waitley
+60,Success is the ability to go from failure to failure without losing your enthusiasm.,Sir Winston Churchill
+61,Success seems to be connected with action. Successful people keep moving. They make mistakes but don't quit.,Conrad Hilton
+62,Attitudes are contagious. Make yours worth catching.,Unknown
+63,Do not let what you cannot do interfere with what you can do.,John Wooden
+64,"There are only two rules for being successful. One, figure out exactly what you want to do, and two, do it.",Mario Cuomo
+65,"Sooner or later, those who win are those who think they can.",Richard Bach
+66,Vision doesn't usually come as a lightening bolt. Rather it comes as a slow crystallization of life challenges that we one day recognize as a beautiful diamond with great value to ourselves and others.,Dr Michael Norwood
+67,"Success is a state of mind. If you want success, start thinking of yourself as a success.",Dr Joyce Brothers
+68,Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.,Samuel Beckett
+69,Flops are a part of life's menu and I've never been a girl to miss out on any of the courses.,Rosalind Russell
+70,Cause change and lead. Accept change and survive. Resist change and die.,"Ray Norda, Chairman, Novell"
+71,"Winners lose much more often than losers. So if you keep losing but you're still trying, keep it up! You're right on track.",Matthew Keith Groves
+72,"An idea can turn to dust or magic, depending on the talent that rubs against it.",Bill Bernbach
+73,An obstacle is often a stepping stone.,Prescott
+74,Life is trying things to see if they work,Ray Bradbury
+75,"If you worry about yesterday's failures, then today's successes will be few.",Anonymous
+76,Life is 10\% what happens to us and 90\% how we react to it.,Dennis P Kimbro
+77,"We are all inventors, each sailing out on a voyage of discovery, guided each by a private chart, of which there is no duplicate. The world is all gates, all opportunities.",Ralph Waldo Emerson
+78,Knowing is not enough; we must apply. Willing is not enough; we must do.,Johann Wolfgang von Goethe
+79,"In matters of style, swim with the current; in matters of principle, stand like a rock.",Thomas Jefferson
+80,"I think and think for months and years. Ninety-nine times, the conclusion is false. The hundredth time I am right.",Albert Einstein
+81,"Where the willingness is great, the difficulties cannot be great.",Machiavelli
+82,Strength does not come from physical capacity. It comes from an indomitable will.,Mahatma Gandhi
+83,You are what you think about all day long.,Dr Robert Schuller
+84,What you do speaks so loudly that I cannot hear what you say.,Ralph Waldo Emerson
+85,"Success is not to be measured by the position someone has reached in life, but the obstacles he has overcome while trying to succeed.",Booker T Washington
+86,"Talent is formed in solitude, character in the bustle of the world.",Johann Wolfgang von Goethe
+87,"To avoid criticism do nothing, say nothing, be nothing.",Elbert Hubbard
+88,"If you want to make your dreams come true, the first thing you have to do is wake up.",JM Power
+89,By working faithfully eight hours a day you may eventually get to be boss and work twelve hours a day,Robert Frost
+90,"I've learned that no matter what happens, or how bad it seems today, life does go on, and it will be better tomorrow.",Maya Angelou
+91,The art of being wise is the art of knowing what to overlook.,William James
+92,"When I hear somebody sigh, ‘Life is hard,' I am always tempted to ask, ‘Compared to what?'",Sydney Harris
+93,Don't let life discourage you; everyone who got where he is had to begin where he was.,Richard L Evans
+94,In three words I can sum up everything I've learned about life: It goes on.,Robert Frost
+95,"You gain strength, courage and confidence by every experience in which you stop to look fear in the face.",Eleanor Roosevelt
+96,Sometimes even to live is an act of courage.,Seneca
+97,"Do first things first, and second things not at all.",Peter Drucker
+98,The only people who find what they are looking for in life are the fault finders.,Foster's Law
+99,Defeat is not bitter unless you swallow it.,Joe Clark
+100,"Sunday,I am an optimist. It does not seem too much use being anything else.",Winston Churchill
+101,Positive anything is better than negative thinking.,Elbert Hubbard
+102,People seem not to see that their opinion of the world is also a confession of character.,Ralph Waldo Emerson
+103,"Those who wish to sing, always find a song.",Swedish Proverb
+104,"If you're going through hell, keep going.",Winston Churchill
+105,"The sun shines and warms and lights us and we have no curiosity to know why this is so; but we ask the reason of all evil, of pain, and hunger, and mosquitoes and silly people.",Ralph Waldo Emerson
+106,Life is a shipwreck but we must not forget to sing in the lifeboats.,Voltaire
+107,"Enduring habits I hate\dots. Yes, at the very bottom of my soul I feel grateful to all my misery and bouts of sickness and everything about me that is imperfect, because this sort of thing leaves me with a hundred backdoors through which I can escape from enduring habits.","Friedrich Nietzsche, The Gay Science, 1882"
+108,There is no education like adversity.,Disraeli
+109,He who has a why to live can bear almost any how.,Friedrich Nietzsche
+110,Adversity introduces a man to himself.,Unknown
+111,"\dots~Evezz a mélyre,~\dots","Lk 5,4"
