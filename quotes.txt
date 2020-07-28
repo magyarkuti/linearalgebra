@@ -1,0 +1,11 @@
+Number,Quote,Author
+1,"Success is not final, failure is not fatal: it is the courage to continue that counts.", Winston Churchill
+2,"Coming together is a beginning; keeping together is progress; working together is success.", Henry Ford
+3,"The price of success is hard work, dedication to the job at hand, and the determination that whether we win or lose, we have applied the best of ourselves to the task at hand.", Vince Lombardi
+4,"Success consists of going from failure to failure without loss of enthusiasm.", Winston Churchill
+5,"A successful man is one who can lay a firm foundation with the bricks others have thrown at him.", David Brinkley
+6,"Always be yourself, express yourself, have faith in yourself, do not go out and look for a successful personality and duplicate it.", Bruce Lee
+7,"To succeed in life, you need two things: ignorance and confidence.", Mark Twain
+8,"Try not to become a man of success, but rather try to become a man of value.", Albert Einstein
+9,"The starting point of all achievement is desire.", Napoleon Hill
+10,"Whosoever desires constant success must change his conduct with the times.", Niccolo Machiavelli
