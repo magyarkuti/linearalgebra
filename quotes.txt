@@ -98,7 +98,7 @@ Number,Quote,Author
 97,"Do first things first, and second things not at all.",Peter Drucker
 98,The only people who find what they are looking for in life are the fault finders.,Foster's Law
 99,Defeat is not bitter unless you swallow it.,Joe Clark
-100,"Sunday,I am an optimist. It does not seem too much use being anything else.",Winston Churchill
+100,"Sunday, I am an optimist. It does not seem too much use being anything else.",Winston Churchill
 101,Positive anything is better than negative thinking.,Elbert Hubbard
 102,People seem not to see that their opinion of the world is also a confession of character.,Ralph Waldo Emerson
 103,"Those who wish to sing, always find a song.",Swedish Proverb
@@ -109,4 +109,5 @@ Number,Quote,Author
 108,There is no education like adversity.,Disraeli
 109,He who has a why to live can bear almost any how.,Friedrich Nietzsche
 110,Adversity introduces a man to himself.,Unknown
-111,"\dots~Evezz a mélyre,~\dots","Lk 5,4"
+111,"\dots Evezz a mélyre, \dots","Lk 5,4"
+112,"The theorem was never about the theorem. It was always about the proof.","Michael Bode, Queensland University of Technology"

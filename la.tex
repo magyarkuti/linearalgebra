@@ -185,7 +185,8 @@
 \usepackage{graphicx, datatool}
 \DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
      \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
-     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
+%     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
+     \dtlgetrow{quotes}{111}% Retrieve random quote
      \dtlgetentryfromcurrentrow{\Number}{1}\dtlgetentryfromcurrentrow{\Quote}{2}\dtlgetentryfromcurrentrow{\Author}{3}%
      \typeout{\Number:~\Quote~---~\Author}
 \begin{document}
@@ -203,7 +204,10 @@
 \phantom{Ez egy szándékosan üres lap}
 \newpage
 \thispagestyle{empty}
-\section*{Verzió információk}
+%{\renewcommand\familydefault{\ttdefault}
+\section*{\texttt{Verzió információk}}
+%}
+{\ttfamily
 \begin{center}
 \begin{tabular}{l|r}
     \hline
@@ -221,6 +225,7 @@ Describe & \gitDescribe \\
 \hline
 \end{tabular}
 \end{center}
+}
 \chapter*{Előszó}
 \epigraphhead[70]{\epigraph{\Quote}{\textit{\Author}}}
 \scwords%
@@ -13842,4 +13847,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 28 Jul 2020 07:58:15 PM CEST
+Last Modified : Thu 30 Jul 2020 12:25:47 PM CEST
