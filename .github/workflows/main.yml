@@ -2,7 +2,7 @@ name: Build LaTeX document
 on:
   push:
     branches:
-      - develop
+      - master
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -19,3 +19,22 @@ jobs:
         with:
            name: la.pdf
            path: la.pdf
+      - name: Upload to gh-pages
+        run: |
+          # configure git
+          git config --global user.name "Gyula Magyarkuti"
+          git config --global user.email "magyarkuti@gmail.com"
+          # setup ssh
+          mkdir ~/.ssh
+          chmod 700 ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+          git clone --depth=1 --branch gh-pages git@github.com:magyarkuti/linearalgebra.git "$GITHUB_WORKSPACE/deploy"
+          cp -f la.pdf "$GITHUB_WORKSPACE/deploy/la.pdf"
+          cd "$GITHUB_WORKSPACE/deploy"
+          git add -f la.pdf
+          git commit -m "[github actions] deploy"
+          git push
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
