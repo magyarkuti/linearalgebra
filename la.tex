@@ -185,10 +185,12 @@
 \usepackage{graphicx, datatool}
 \DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
      \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
-%     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
-     \dtlgetrow{quotes}{111}% Retrieve random quote
+     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
+%     \dtlgetrow{quotes}{112}% Retrieve the row 113
      \dtlgetentryfromcurrentrow{\Number}{1}\dtlgetentryfromcurrentrow{\Quote}{2}\dtlgetentryfromcurrentrow{\Author}{3}%
-     \typeout{\Number:~\Quote~---~\Author}
+     \typeout{A bölcsesség:}
+     \typeout{\Number:\Quote -- \Author}
+     \typeout{ }
 \begin{document}
 \frontmatter*
 \thispagestyle{empty}
@@ -13847,4 +13849,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 30 Jul 2020 12:25:47 PM CEST
+Last Modified : Thu 30 Jul 2020 01:31:07 PM CEST
