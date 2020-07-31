@@ -1,0 +1,21 @@
+name: Build LaTeX document for develop branch
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: la.tex
+          args:  -lualatex --file-line-error --interaction=nonstopmode
+      - name: Upload to workflows
+        uses: actions/upload-artifact@v1
+        with:
+           name: la.pdf
+           path: la.pdf
