@@ -56,73 +56,72 @@ Az alábbi tételjegyzéket igyekeztem úgy összeállítani, hogy egy tétel na
 * Euklideszi algoritmus
 * Bézout-formula
 
-=== Polinomok faktorizációja ===
-# A gyöktényező faktorizálható
-# Irreducibilis polinom fogalma
-# Minden legalább elsőfokú polinom előáll irreducibilis polinomok szorzataként
-# Prim és irreducibilis polinomok
-# A polinom faktorizáció egyértelműsége
+### Polinomok faktorizációja 
+* A gyöktényező faktorizálható
+* Irreducibilis polinom fogalma
+* Minden legalább elsőfokú polinom előáll irreducibilis polinomok szorzataként
+* Prim és irreducibilis polinomok
+* A polinom faktorizáció egyértelműsége
 
-=== Komplex számok ===
-# Komplex számtest mint a sík pontjain definiált test
-# Algebrai struktúrák izomorfiája
-# A valós test beágyazása a komplex testbe
-# Normálalak
-# Abszolútérték
-# Trigonometrikus alak
-# Moivre-formula
-# Egységgyökök
+### Komplex számok 
+* Komplex számtest mint a sík pontjain definiált test
+* Algebrai struktúrák izomorfiája
+* A valós test beágyazása a komplex testbe
+* Normálalak
+* Abszolútérték
+* Trigonometrikus alak
+* Moivre-formula
+* Egységgyökök
 
-=== Az algebra alaptételének következményei ===
-# Irreducibilis polinom a komplex számtest felett
-# Polinomfaktorizáció a komplex számtest felett
-# Polinomfaktorizáció a valós számtest felett
-# Irreducibilis polinomok a valós számtest felett
-# Valódi komplex gyökökből páros sok van.
-# Páratlan fokú polinomnak van valós gyöke.
+### Az algebra alaptételének következményei 
+* Irreducibilis polinom a komplex számtest felett
+* Polinomfaktorizáció a komplex számtest felett
+* Polinomfaktorizáció a valós számtest felett
+* Irreducibilis polinomok a valós számtest felett
+* Valódi komplex gyökökből páros sok van.
+* Páratlan fokú polinomnak van valós gyöke.
 
-=== Vektorterek bevezetése ===
-# Vektortér mint algebrai struktúra
-# Példák vektorterekre
+### Vektorterek bevezetése 
+* Vektortér mint algebrai struktúra
+* Példák vektorterekre
 
-=== Vektortér alterei ===
-# Generátorrendszer
-# Lineáris burok
+### Vektortér alterei 
+* Generátorrendszer
+* Lineáris burok
 
-=== Lineáris függetlenség ===
-# Ekvivalens megfogalmazások
-# Nem véges rendszer lineáris függetlensége
-# Lineáris összefüggőség
+### Lineáris függetlenség 
+* Ekvivalens megfogalmazások
+* Nem véges rendszer lineáris függetlensége
+* Lineáris összefüggőség
 
-=== Független és generátorrendszer elemszáma ===
+### Független és generátorrendszer elemszáma 
 
-=== Bázis ===
+### Bázis 
 
-=== Koordinátázás, Izomorf vektorterek ===
+### Koordinátázás, Izomorf vektorterek 
 
-=== Maximális és minimális vektorrendszerek ===
+### Maximális és minimális vektorrendszerek 
 
-=== Direktösszegek ===
+### Direktösszegek 
 
-=== Faktorterek ===
+### Faktorterek 
 
-=== Mátrixok ===
-# Mátrixok vektorterének dimenziója
-# Mátrixszorzás
-# Transzponált
-# Bázisfaktorizáció
-# Rangtétel
-# Homogén lineáris egyenletrendszer megoldása
-# Inhomogén lineáris egyenletrendszer megoldása
-# Magtér és képtér
-# Magtér és képtér meghatározása
-# A rang-defektus tétel
+### Mátrixok 
+* Mátrixok vektorterének dimenziója
+* Mátrixszorzás
+* Transzponált
+* Bázisfaktorizáció
+* Rangtétel
+* Homogén lineáris egyenletrendszer megoldása
+* Inhomogén lineáris egyenletrendszer megoldása
+* Magtér és képtér
+* Magtér és képtér meghatározása
+* A rang-defektus tétel
 
-=== Lineáris egyenletrendszerek megoldása ===
-# Homogén lineáris egyenletrendszer fogalma
-# Ezek ekvivalenciája
-# Elemi sorműveletek
-# Gauss-Jordan eliminációs lépés
-# Homogén lineáris egyenletrendszernek, amelyben az ismeretlenek száma több mint az egyenletek száma, mindig van nem triviális megoldása
-# Gauss-Jordan elimináció táblázattal
-
+### Lineáris egyenletrendszerek megoldása 
+* Homogén lineáris egyenletrendszer fogalma
+* Ezek ekvivalenciája
+* Elemi sorműveletek
+* Gauss-Jordan eliminációs lépés
+* Homogén lineáris egyenletrendszernek, amelyben az ismeretlenek száma több mint az egyenletek száma, mindig van nem triviális megoldása
+* Gauss-Jordan elimináció táblázattal
