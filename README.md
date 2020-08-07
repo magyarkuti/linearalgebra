@@ -6,58 +6,55 @@ Minden egyes *MASTER* commit után az aktuális [pdf file](https://github.com/ma
 A Corvinus Egyetem Matematika Tanszéke Lineáris Algebra 1 kurzusának weblapja.
 A kurzus közvetlen folytatása: [[Algebra-II]].
 
-== Jegyzetek ==
-A tankönyv: [http://hunteka.uni-corvinus.hu/record/-/record/BCEKK379187 Puskás Csaba, Dancs István: Vektorterek].
-
+# Jegyzetek
+A tankönyv: [Puskás Csaba, Dancs István: Vektorterek](http://hunteka.uni-corvinus.hu/record/-/record/BCEKK379187).
 A könyvben sok sok minden van,  amire nem jut majd időnk. 
 Ezért egy szűkített változat és a gyakorlatokon használt feladatgyűjtemény
-Puskás tanárúr [http://web.uni-corvinus.hu/puskas honlapjáról] letölthető.
+Puskás tanárúr [honlapjáról](http://web.uni-corvinus.hu/puskas) letölthető.
 
 Egy még tovább szűkített változat: [http://web.uni-corvinus.hu/magyarkuti/pages_7-58.pdf pages_7-58.pdf]
 
 Az eredmények a kis dolgozatok után: [http://web.uni-corvinus.hu/magyarkuti/Algebra1Eredmenyek.pdf Eredmények]
 
-== Órarend a 2019-20 tanév őszi félévében ==
-
+## Órarend a 2019-20 tanév őszi félévében
 Előadás: Szerda 8-9.30
-
 Gyakorlat: Szerda 9.50-11.20 és Csütörtök 13.40-15.10
 
-== Követemények ==
+## Követemények
 <!--
 A kurzus szillabusza [http://web.uni-corvinus.hu/magyarkuti/4MA12NAK62B-2018.pdf letölthető],
 de itt összefoglalom legfontosabbakat:
 -->
-# Fogadó órám: Péntek 18 óra, S218/B. Kérem előtte lévő nap este 8 óráig jelezzék részvételi szándékukat;
-# Az órákon és a gyakorlatokon a megjelenés kötelező;
-# Osztályzás: 
-## A 3.,6.,9.,12, héten dolgozatot írunk 5-5 pontért. 
-## A téli vizsgaidőszakban esedékes dolgozat 30 pontért. Az így megszerezhető 50 pont képezi az írásbeli jegyet.
-## A vizsgaidőszakban szóbeli vizsga, a szóbeli és az írásbeli vizsga átlagaként kapják a végső jegyet.
+ Fogadó órám: Péntek 18 óra, S218/B. Kérem előtte lévő nap este 8 óráig jelezzék részvételi szándékukat;
+ Az órákon és a gyakorlatokon a megjelenés kötelező;
+ Osztályzás: 
+ A 3.,6.,9.,12, héten dolgozatot írunk 5-5 pontért. 
+ A téli vizsgaidőszakban esedékes dolgozat 30 pontért. Az így megszerezhető 50 pont képezi az írásbeli jegyet.
+ A vizsgaidőszakban szóbeli vizsga, a szóbeli és az írásbeli vizsga átlagaként kapják a végső jegyet.
 
-== Tételjegyzék ==
+## Tételjegyzék
 Az alábbi tételjegyzéket igyekeztem úgy összeállítani, hogy egy tétel nagyjából egy heti tananyag legyen.
 Így az anyag heti bontásban a következő:
-=== Algebrai struktúrák ===
-# Félcsoport
-# Neutrális elemes félcsoport
-# Additív multiplikatív írásmód
-# Csoport
-# Példák csoportokra
-# Csoportban egyszerűsítési szabály
-# Ábel csoport
-# Gyűrű, egységelemes gyűrű, kommutatív egységelemes gyűrű, nullosztómentes gyűrű
-# Test
-# Test nullosztómentessége
+### Algebrai struktúrák
+* Félcsoport
+* Neutrális elemes félcsoport
+* Additív multiplikatív írásmód
+* Csoport
+* Példák csoportokra
+* Csoportban egyszerűsítési szabály
+* Ábel csoport
+* Gyűrű, egységelemes gyűrű, kommutatív egységelemes gyűrű, nullosztómentes gyűrű
+* Test
+* Test nullosztómentessége
 
-=== Polinomok ===
-# Egy test feletti polinomok, kummutatív egységelemes, nullosztómentes gyűrűt alkotnak
-# Polinomok fokszáma
-# Polinomok oszthatósága
-# Polinomok legnagyobb közös osztója
-# Polinomok maradékos osztása
-# Euklideszi algoritmus
-# Bézout-formula
+### Polinomok
+* Egy test feletti polinomok, kummutatív egységelemes, nullosztómentes gyűrűt alkotnak
+* Polinomok fokszáma
+* Polinomok oszthatósága
+* Polinomok legnagyobb közös osztója
+* Polinomok maradékos osztása
+* Euklideszi algoritmus
+* Bézout-formula
 
 === Polinomok faktorizációja ===
 # A gyöktényező faktorizálható
