@@ -639,9 +639,38 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
         \text{ ahol }
         c_j
         =
-        \sum_{k=0}^j\alpha_k\beta_{j-k}.\qedhere
+        \sum_{k=0}^j\alpha_k\beta_{j-k}.
+        \qedhere
     \]
 \end{definition}
+    Mind az összeadás, mind a szorzás definíciójában úgy kell a formulát érteni,
+    hogy amikor a hivatkozott együtthatók nem léteznek,
+    akkor értékük legyen zérus.
+    Például a szorzat legmagasabb indexű együtthatójára 
+    $c_{n+m}=\alpha_n\beta_m$, hiszen az $\alpha_k,\beta_{n+m-k}$ számok 
+    csak egyetlen $k$ mellett értelmezettek közösen, mikor $k=n$.
+    \footnote
+    {
+        Ha már követjük a konvenciót, 
+        amely szerint a nem definiált együtthatókat zérusnak tekintjük,
+        akkor persze 
+    \(
+        \left( p+q \right)\left( t \right)
+        =
+        \sum_{j=0}^\infty\left( \alpha_j+\beta_j \right)t^j;
+    \)
+    és
+    \(
+        \left( pq \right)\left( t \right)
+        =
+        \sum_{j=0}^\infty\left( \sum_{k=0}^\infty\alpha_k\beta_{j-k} \right)t^j
+    \)
+    is írható.
+    Itt a fenti összegek nem végtelen összegek, hiszen a két polinom együtthatói
+    csak véges sok esetben különböznek zérustól.
+    Így ebben az esetben a formálisan végtelen összeg definíciója
+    egyszerűen a véges sok nem zérus elem összege. 
+    }
 \begin{proposition}
     Legyenek $p,q\in\mathbb{F}[t]$ polinomok az $\mathbb{F}$ test felett.
     Ekkor
@@ -655,6 +684,9 @@ Két polinom összegét és szorzatát a szokásos módon definiáljuk:
     és vegyük észre, hogy az szorzat polinomra vonatkozó állítás azért igaz, 
     mert a test nullosztómentes.
 \end{proof}
+A következő állítás igazolását az olvasóra bízom.
+Aprólékosan igazoljuk a test axiómák gyakorlásaként.
+Vigyázat: a szorzás asszociativitása nem is olyan egyszerű.
 \begin{proposition}
     Egy $\mathbb{F}$ test feletti $\mathbb{F}\left[ t \right]$ formális polinomok 
     a fent bevezetett összeadás és szorzás műveletekkel,
@@ -857,7 +889,11 @@ Ilyenből a normált polinomok közül csak egy van.
 Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója vagy legkisebb közös többszöröse, és hány ilyen van?
 \begin{proposition}\label{pr:lkkt}
     Bármely $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ nem zérus polinomoknak
-    létezik egyetlen legkisebb közös többszörösük.
+    létezik egyetlen legkisebb közös többszöröse.
+    Jelesül, a legkisebb közös többszörös, a
+    \(
+        \cap_{j=1}^rJ\left( p_j \right)
+    \) ideálnak, mint főideálnak az egyetlen normált generátora.
 \end{proposition}
 \begin{proof}
     Világos, hogy ideálok metszete is ideál, emiatt 
@@ -889,14 +925,17 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
 \end{proof}
 \begin{proposition}
     Bármely $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ nem zérus polinomoknak
-    létezik egyetlen legnagyobb közös osztójuk.
-    A $d$ legnagyobb közös osztó kifejezhető
+    létezik egyetlen legnagyobb közös osztója.
+    Jelesül,
+    a legnagyobb közös osztó a $J\left( p_1,\dots,p_r \right)$ ideálnak mint főideálnak az egyetlen generáló eleme.
+    Ezért a $d$ legnagyobb közös osztó kifejezhető
     \[
         d\left( t \right)=f_1\left( t \right)p_1\left( t \right)+
         \dots+
         f_r\left( t \right)p_r\left( t \right)
     \]
-    alakban valamely $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok segítségével.
+    alakban,
+    valamely $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok segítségével.
 \end{proposition}
 \begin{proof}
     Láttuk, hogy létezik egyetlen normált $d$ polinom, amelyre $J\left( d \right)=J\left( p_1,\dots,p_r \right)$.
@@ -911,8 +950,9 @@ Persze az első kérdés, hogy van-e a polinomoknak legnagyobb közös osztója 
 
     Az egyértelműség mint a legkisebb közös többszörösnél.
 \end{proof}
-A következő állítás azonosságát Bezout-azonosságnak mondjuk.
-\begin{proposition}[Bezout-azonosság]\index{Bezout-azonosság}
+Az előző állítás kiemelt azonosságát \emph{Bezout-azonosságnak}\index{Bezout-azonosság}
+ mondjuk.
+\begin{proposition}
     Legyenek a $p_1,\dots,p_r\in\mathbb{F}\left[ t \right]$ tetszőleges $\mathbb{F}$ test feletti polinomok.
     Ezek pontosan akkor relatív prímek, 
     ha léteznek $f_1,\dots,f_r\in\mathbb{F}\left[ t \right]$ polinomok, hogy
@@ -13849,4 +13889,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Wed 09 Sep 2020 02:50:40 PM CEST
+Last Modified : Tue 15 Sep 2020 07:59:04 PM CEST
