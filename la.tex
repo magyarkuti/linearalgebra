@@ -1172,32 +1172,44 @@ Most a legkisebb közös többszörös algoritmikus meghatározására töreksz�
 \begin{proof}
     Legyen $p=dr_1$ és $q=dr_2$.
     Először megmutatjuk, hogy $r_1$ és $r_2$ relatív prímek.
-    Ha $s$ polinomom közös osztójuk, akkor $ds$ is közös osztója $p$-nek és $q$-nak,
-    amiből $ds|s$ következik.
-    A fokszámokat összehasonlítva ez csak akkor lehetséges, ha $s$ konstans polinomom, 
-    azaz $s|1$ valóban fennáll.
+    A Bezout-azonosság szerint valamely $f,g$ polinomra
+    \(
+    d=fdr_1+gdr_2.
+    \)
+    Kihasználva, hogy nullosztómentes gyűrűben nem zérus elemmel egyszerűsíteni lehet,
+    kapjuk az
+    \(
+    1=fr_1+gr_2
+    \)
+    azonosságot. 
+    Ez azt jelenti, hogy $r_1$ és $r_2$ relatív prímek.
+%    Ha $s$ polinom közös osztójuk, akkor $ds$ is közös osztója $p$-nek és $q$-nak,
+%    amiből $ds|s$ következik.
+%    A fokszámokat összehasonlítva ez csak akkor lehetséges, ha $s$ konstans polinom, 
+%    azaz $s|1$ valóban fennáll.
 
-    Most megmutatjuk, hogy az $m$ legkisebb közös többszörösre
+    Most megmutatjuk, hogy
     \[
-        m=dr_1r_2.\tag{\dag}
+        dr_1r_2\tag{\dag}
     \]
-    Világos, hogy $dr_1r_2$ egy közös többszöröse a $p,q$ polinomoknak.
+    a legkisebb közös többszörös.
+    Világos, hogy ez egy közös többszöröse a $p,q$ polinomoknak.
     Tegyük fel, hogy $s$ egy másik közös többszörös, azaz 
     $s=ps_1$ és $s=qs_2$.
     Ekkor 
     \begin{math}
         dr_1s_1=ps_1=s=qs_2=dr_2s_2,
     \end{math}
-    amiből a nullosztómentesség szerint 
+    amiből újra a nullosztómentesség szerint 
     \[
         r_1s_1=r_2s_2.
     \]
     Na most,
     a fent kiemelt azonosság szerint szerint $r_1|r_2s_2$, ahol $r_1$ és $r_2$ relatív prímek.
     Ebből azonnal kapjuk, hogy $r_1|s_2$.
-    No de $s=qs_2=dr_1s_2$, amiből már látszik, 
+    No de $s=qs_2=dr_2s_2$, amiből már látszik, 
     hogy $s$ egy többszöröse a $dr_1r_2$ polinomnak.
-    Ez éppen (\dag) azonosságot jelenti.
+    Az is világos, hogy (\dag) normált polinom, ez az $m$ legkisebb közös többszörös.
     Innen
     $d\cdot m=d(dr_1r_2)=(dr_1)(dr_2)=p\cdot q$ már nyilvánvaló.
 \end{proof}
@@ -13889,4 +13901,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 15 Sep 2020 07:59:04 PM CEST
+Last Modified : Thu 24 Sep 2020 06:46:29 PM CEST
