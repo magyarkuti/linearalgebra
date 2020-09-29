@@ -1269,13 +1269,16 @@ A következő állítás viszont minden test mellett igaz.
     Az indukciós feltevés szerint $f$ és $g$, emiatt $p=fg$ is előáll irreducibilis polinomok szorzataként.
 \end{proof}
 
-Érdemes látni, hogy ha $p$ irreducibilis, 
-és $f$ egy tetszőleges polinom, akkor vagy $p|f$ vagy $p$ és $f$ relatív prímek.
-Ugyanis ha $g$ egy közös osztójuk, akkor $p$ iredducibilitása miatt,
-$\deg g=0$, vagy $\deg g=\deg p$. 
-Ez utóbbi esetben $g$ a $p$ konstans szorosa, ergo $p|f$,
-az előbbi eset pedig éppen azt jelenti, hogy $p$ és $f$ relatív prímek.
-\begin{proposition}[prím tulajdonság]
+Érdemes látni, 
+hogy ha a $d$ polinom egy irreducibilis $p$ polinom osztója,
+akkor csak 
+$\deg d=0$, vagy $\deg d=\deg p$ lehetséges.
+Ezért egy tetszőleges $f$ polinomra igaz, hogy 
+vagy $p|f$ vagy $p$ és $f$ relatív prímek.
+Ugyanis, 
+ha az $f$ és $p$ polinomok $d$ legnagyobb közös osztója nem $1$, 
+akkor csak $d=p$ lehetséges, ergo $p|f$.
+\begin{proposition}[prím tulajdonság]\index{prím polinom}
     Legyen $p\in\mathbb{F}\left[ t \right]$ irreducibilis polinom, amelyre
     $p|(f_1\cdots f_n)$, valamely $f_j\in\mathbb{F}\left[ t \right]$ polinomokra, ahol $j=1\dots,n\geq 1$.
     Ekkor létezik $1\leq j\leq n$, amelyre $p|f_j$.\qedhere
@@ -1295,7 +1298,10 @@ az előbbi eset pedig éppen azt jelenti, hogy $p$ és $f$ relatív prímek.
     akkor $p$ irreducibilis volta miatt relatív prímek.
     Ekkor \aref{pr:rprim}. állítás szerint $p|f_n$.
 \end{proof}
-Az állítás fordítva is igaz, de azt a gyakorlatokra hagyjuk.
+Az is igaz, hogy ha egy polinom reducibilis, akkor az nem prím, de ezt a gyakorlatokra hagyjuk.
+Összeségében látjuk tehát,
+hogy a polinomok irreducibilitása és prímtulajdonsága azonos fogalmak.
+
 Az irreducibilis polinomok prím tulajdonsága segítségével a polinomok faktorizáció egyértelműségét is igazolhatjuk.
 \begin{proposition}
     Legyen $p \in\mathbb{F}\left[ t \right]$ egy legalább elsőfokú normált polinom.
@@ -1310,11 +1316,16 @@ legalább elsőfokú, normált, irreducibilis polinomok szorzataként,
 akkor $s=r$ és a $p_1,\dots,p_s$ polinomok alkalmas átindexelése után $p_j=q_j$,
 minden $j=1,\dots,s$ mellett.
 \begin{proof}
-    \Aref{pr:polfact}. állításban már tisztáztuk az egzisztenciális részt, 
-    így már csak az unicitás maradt,
-    amit a felbontandó polinom fokszáma szerinti indukcióval végzünk most is.
-    Ha a polinom elsőfokú, akkor az unicitás is nyilvánvaló.
+    \Aref{pr:polfact}. állítás
+    szerint $p$ előáll, mint normált, irreducibilis polinomok szorzata.
+    Itt legalább egy polinom legalább elsőfokú, hiszen $p$ legalább elsőfokú.
+    Ha van a szorzat tagjai közt nulladfokú, akkor az csak 1 lehet a normáltság szerint, 
+    ezért egyszerűen elhagyható.
+    Meggondoltuk tehát, hogy $p$ legalább elsőfokú, normált, irreducibilis polinomok szorzata.
 
+    Az unicitást,
+    a felbontandó polinom fokszáma szerinti indukcióval igazoljuk:
+    Ha a polinom elsőfokú, akkor a felbontás egyértelműsége is nyilvánvaló.
     Tegyük fel, hogy igaz az egyértelműség $n$-nél alacsonyabb fokszámú polinomokra,
     és tegyük fel, hogy $\deg p=n>1$.
     Nézzünk két lehetséges előállítást
@@ -1329,7 +1340,7 @@ minden $j=1,\dots,s$ mellett.
     tehát a normáltság szerint $q_1=p_1$.
     A polinomgyűrű nullosztó mentessége szerint az első polinomokkal egyszerűsíthetünk, ergo
     \[
-        p_2\cdots p_s=p=q_2\cdots q_r,
+        p_2\cdots p_s=q_2\cdots q_r,
     \]
     is fennáll. 
     A fenti polinom már $n$-nél alacsonyabb fokú, 
@@ -1338,10 +1349,12 @@ minden $j=1,\dots,s$ mellett.
 \end{proof}
 Az egész szakaszt összefoglalhatjuk így is:
 \begin{proposition}
-    Minden legalább elsőfokú normált polinomhoz léteznek,
+    Minden legalább elsőfokú normált polinomhoz léteznek
+    -- 
     méghozzá sorrendjüktől eltekintve egyértelműen léteznek 
-    $q_1,\dots,q_s$ normált, irreducibilis polinomok,
-    és $n_1,\dots,n_s$ pozitív egészek, 
+    --
+    olyan $q_1,\dots,q_s$ egymástól különböző, normált, irreducibilis polinomok;
+    és olyan $n_1,\dots,n_s$ pozitív egészek;
     amelyekre
     \[
         p\left( t \right)
@@ -1371,9 +1384,6 @@ Az egész szakaszt összefoglalhatjuk így is:
 
     A mátrixot a mérete és az elemei határozzák meg.
     Emiatt két mátrix akkor azonos, ha azonos méretűek, és a megfelelő elemeik is azonosak.
-
-    \emph{Diádnak}\index{diad@diád} nevezzük egy oszlop és egy sor szorzatát.
-    Ha az oszlopnak és a sornak rendre azonosak az elemei, akkor \emph{szimmetrikus diádról} beszélünk.\index{szimmetrikus diád}
 \end{definition}
 Az azonos típusú mátrixok közt műveleteket definiálunk:
 \begin{definition}[mátrixok összege]\index{matrix@mátrixok összege}
@@ -1422,8 +1432,19 @@ Könnyen ellenőrizhetőek a következő számolási szabályok:
 Az utolsó két állítást, \ref{pr:matrixokVS1}. és \ref{pr:matrixokVS2}.,
 együtt később úgy fogjuk fogalmazni, 
 hogy adott test feletti tetszőleges méretű mátrixok \emph{vektorteret}\index{vektortér} alkotnak.
+Ha az $A_1,\dots,A_k$ azonos méretű mátrixok adottak, 
+akkor tetszőleges $\alpha_1,\dots,\alpha_k\in\mathbb{F}$
+számok mellett értelmes az $A_1,\dots,A_k$ mátrixoknak az $\alpha_1,\dots,\alpha_k$ számokkal
+mint együtthatókkal képzett \emph{lineáris kombinációja}\index{lineáris kombináció}:
+\[
+    \alpha_1A_1+\alpha_2A_2+\dots+\alpha_kA_k.
+\]
+Minden eddig megértett dolog persze az $m=1$ speciális esetben, 
+és az $n=1$ speciális esetben is igaz.
+Ha $m=1$, akkor a mátrixot \emph{sorvektornak}\index{sorvektor}; 
+ha pedig $n=1$, akkor a mátrixot \emph{oszlopvektornak}\index{oszlopvektor} mondjuk.
 
-Most mátrixok szorzatát definiáljuk:
+Most a mátrixok között a szorzás műveletet definiáljuk.
 \begin{definition}[mátrixok szorzata]\index{matrix@mátrixok szorzata}
     Legyen $A\in\mathbb{F}^{m\times k}$ és $B\in\mathbb{F}^{k\times n}$ mátrix.
     Fontos, hogy $A$ oszlopainak száma azonos $B$ sorainak számával.
@@ -1434,7 +1455,12 @@ Most mátrixok szorzatát definiáljuk:
     \]
     Itt persze $i=1,\dots,m$ és $j=1,\dots,n.$
 \end{definition}
-Az összeadás és szorzás műveleteket a disztributivitás kapcsolja össze:
+Figyeljünk arra, hogy a fenti definícióban az $A$ és $B$ mátrixok sorrendje is fontos.
+Például, ha $n\neq m$, akkor $BA$ nem is értelmes.
+Még $m=n$ esetén is $BA$ egy $k\times k$ méretű mátrix, míg $AB$ egy $n\times n$ méretű mátrix,
+azaz az $AB$ szorzatnak általában véve semmi köze a $BA$ szorzathoz.
+
+A bevezetett összeadás és szorzás műveletekre teljesül a disztributivitás is:
 \begin{proposition}
     Legyen $A\in\mathbb{F}^{m\times k}$, valamint a $B,C\in\mathbb{F}^{k\times n}$ mátrixok.
     Ekkor
@@ -1448,13 +1474,44 @@ Az összeadás és szorzás műveleteket a disztributivitás kapcsolja össze:
         \left( A+B \right)C=AC+BC.\qedhere
     \end{displaymath}
 \end{proposition}
+\begin{proof}
+    Az első disztributivitást mutatjuk meg, a második evvel analóg.
+    Világos, hogy mindkét oldalon azonos méretű mátrixok vannak.
+    Minden szóba jövő $i,j$ index mellett
+    \begin{multline*}
+        \left[ A\left( B+C \right) \right]_{i,j}
+        =
+        \sum_{s=1}^k[A]_{i,s}\left[ B+C \right]_{s,j}
+        =
+        \sum_{s=1}^k[A]_{i,s}\left([B]_{s,j}+[C]_{s,j} \right)
+        =
+        \sum_{s=1}^k\left( [A]_{i,s}[B]_{s,j}\right)+\left([A]_{i,s}[C]_{s,j} \right)
+        =
+        \\
+        \sum_{s=1}^k[A]_{i,s}[B]_{s,j}
+        +
+        \sum_{s=1}^k[A]_{i,s}[C]_{s,j}
+        =
+        \left[ AB \right]_{i,j}+\left[ AC \right]_{i,j}
+        =
+        [AB+AC]_{i,j}.
+        \qedhere
+    \end{multline*}
+\end{proof}
+Szinte banalitás, 
+de egy mátrix az elemei összesége, de a sorainak összesége, sőt az oszlopainak összesége is.
+A következő ultrafontos állítás arról szól, hogy a szorzás operációt hogyan kell látnunk
+attól függően, hogy a szorzat mátrixra, 
+mint elemei összeségére, mint oszlopai összeségére, vagy mint sorainak összeségére gondolunk.
 \begin{proposition}
     Legyen $A\in\mathbb{F}^{m\times k}$ és $B\in\mathbb{F}^{k\times n}$ mátrix.
     Jelölje $C=AB$ ezek szorzatát ebben a sorrendben.
     Ekkor
     \begin{enumerate}
-        \item A szorzat mátrix $i$-edik sorának $j$-edik eleme Az $A$ mátrix $i$-edik sorának és a $B$ mátrix $j$-edik
-            oszlopának szorzata. Magyarul: minden $1\leq i\leq m$ és $1\leq j \leq n$ mellett
+        \item A szorzat mátrix $i$-edik sorának $j$-edik eleme,
+            az $A$ mátrix $i$-edik sorának és a $B$ mátrix $j$-edik
+            oszlopának, mint speciális mátrixoknak a szorzata. 
+            Magyarul: minden $1\leq i\leq m$ és $1\leq j \leq n$ mellett
             \[
                 [C]_{i,j}=[A]_i\cdot [B]^j.
             \]
@@ -1476,8 +1533,12 @@ Az összeadás és szorzás műveleteket a disztributivitás kapcsolja össze:
             A szorzat mátrix az $A$ oszlopaiból, és a $B$ soraiból alkotott diádok összege.\index{diad@diád}
             Magyarul:
             \[
-                [C]=\sum_{s=1}^k[A]^s[B]_s.\qedhere
+                [C]=\sum_{s=1}^k[A]^s[B]_s.
             \]
+            \emph{Diádnak}\index{diad@diád} nevezzük egy oszlop- és egy sorvektor szorzatát.
+            Ha az oszlopnak és a sornak rendre azonosak az elemei, akkor 
+            \emph{szimmetrikus diádról} beszélünk.\index{szimmetrikus diád}
+            \qedhere
     \end{enumerate}
 \end{proposition}
 \begin{proof}[1. bizonyítása]
@@ -13901,4 +13962,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Thu 24 Sep 2020 06:46:29 PM CEST
+Last Modified : Tue 29 Sep 2020 02:58:32 PM CEST
