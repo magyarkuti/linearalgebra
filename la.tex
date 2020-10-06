@@ -1495,14 +1495,16 @@ A bevezetett összeadás és szorzás műveletekre teljesül a disztributivitás
         \left[ AB \right]_{i,j}+\left[ AC \right]_{i,j}
         =
         [AB+AC]_{i,j}.
-        \qedhere
     \end{multline*}
+    Ez éppen  az $A\left( B+C \right)=AB+AC$ mátrixazonosságot jelenti.
 \end{proof}
 Szinte banalitás, 
-de egy mátrix az elemei összesége, de a sorainak összesége, sőt az oszlopainak összesége is.
-A következő ultrafontos állítás arról szól, hogy a szorzás operációt hogyan kell látnunk
-attól függően, hogy a szorzat mátrixra, 
-mint elemei összeségére, mint oszlopai összeségére, vagy mint sorainak összeségére gondolunk.
+de egy mátrix az elemei összesége, de a sorai összesége, sőt az oszlopai összesége is.
+A következő ultrafontos állítás arról szól, hogy a szorzás operációt hogyan kell látnunk attól függően, 
+hogy a szorzat mátrixra, 
+mint elemei összeségére, 
+mint oszlopai összeségére, 
+vagy mint sorainak összeségére gondolunk.
 \begin{proposition}
     Legyen $A\in\mathbb{F}^{m\times k}$ és $B\in\mathbb{F}^{k\times n}$ mátrix.
     Jelölje $C=AB$ ezek szorzatát ebben a sorrendben.
@@ -2760,7 +2762,7 @@ Az alábbi feladatot lineáris egyenletrendszernek nevezzük.
 \]
 Itt az $n,m\in\mathbb{N}$, az $a_{i,j}\in\mathbb{F}$ testbeli számok előre adottak
 minden $i=1,\dots,m$ és minden $j=1,\dots,n$ mellett.
-Adottak még az egyenletek jobb oldalát képező $b_i\in\mathbb{F}$ számok.
+Adottak még az egyenletek jobboldalát képező $b_i\in\mathbb{F}$ számok.
 A feladat megoldása annyit tesz, hogy keressük az $x_1,\dots,x_n$ ismeretlenek 
 összes olyan értékét az $\mathbb{F}$ testből,
 amelyre fenti egyenletek mind teljesülnek.
@@ -2812,7 +2814,7 @@ Ugyan ez egy táblázatban megfogalmazva.
 Itt a baloldali mátrix az együttható mátrix, amelynek
 a $j$-edik oszlopa van külön kiemelve.
 $L_1,\dots,L_m$ jelöli az együttható-mátrix sorait
-A jobb oldali mátrix az elimináció eredménye, a megfelelő sorműveletekkel az egyes sorok
+A jobboldali mátrix az elimináció eredménye, a megfelelő sorműveletekkel az egyes sorok
 címkéiben:
 \[
     \begin{array}{ccc|c}
@@ -3262,7 +3264,7 @@ Az általános megoldás tehát
 \end{proposition}
 Ebben az esetben persze az algoritmusból adódó partikuláris megoldás az egyetlen megoldás.
 
-A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint sora van egy rendszernek, akkor megválasztható olyan jobb oldali vektor, amellyel az inhomogén lineáris egyenletrendszernek nincs megoldása.
+A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint sora van egy rendszernek, akkor megválasztható olyan jobboldali vektor, amellyel az inhomogén lineáris egyenletrendszernek nincs megoldása.
 \begin{proposition}
     Legyen $A\in\mathbb{F}^{m\times r}$ olyan mátrix, ahol $r<m$.
     Ekkor létezik $b\in\mathbb{F}^m$ vektor, 
@@ -3338,7 +3340,7 @@ akkor az azt jelenti, hogy az első sorba elimináltuk az $j$-edik ismeretlent,
 tehát a megoldás $j$-edik koordinátáját tartalmazza az $m+k$-adik oszlop első eleme.
 
 Ha tehát úgy cseréljük fel a táblázat sorait, 
-hogy a bal oldali $m\times m$ méretű mátrix váljon az identitás mátrixszá, 
+hogy a baloldali $m\times m$ méretű mátrix váljon az identitás mátrixszá, 
 akkor az $Ax=e_k$ egyenlet egyetlen partikuláris megoldása jelentkezik az egész táblázat
 $m+k$ adik oszlopában.
 Mivel a keresett $B$ mátrixnak éppen ez a $k$-adik oszlopa,
@@ -4670,7 +4672,7 @@ A fenti állítás konkrét alkalmazhatóságához nagy segítség a most követ
         \sum_{j=k+1}^{s}v_j.
     \]
     Legyen $t$ a legnagyobb olyan szám, amelyre $k\leq t\leq s$ és $v_t\neq 0$.
-    Ha $k=1$, akkor a jobb oldali első szumma üres, emiatt $t>1$.
+    Ha $k=1$, akkor a jobboldali első szumma üres, emiatt $t>1$.
     Ha viszont $k>1$, akkor $1<k\leq t$.
     Mindkét esetben látjuk tehát, hogy $t>1$.
     Ekkor az
@@ -4690,8 +4692,8 @@ A fenti állítás konkrét alkalmazhatóságához nagy segítség a most követ
         +
         \sum_{j=k+1}^{t-1}v_j.
     \]
-    Itt a bal oldali nem zérus vektor $M_t$-beli, 
-    a jobb oldali vektor $\sum_{j=1}^{t-1}M_j$-beli, 
+    Itt a baloldali nem zérus vektor $M_t$-beli, 
+    a jobboldali vektor $\sum_{j=1}^{t-1}M_j$-beli, 
     ergo valamely $1<t\leq s$ mellett találtunk az $M_t\cap\left( \sum_{j=1}^{t-1}M_j \right)$
     altérben is egy nem zérus elemet.
 \end{proof}
@@ -5900,10 +5902,10 @@ kapcsolódik össze.
     $\left[ A \right]$ mérete $n\times r$, $\left[ B \right]$ mérete $r\times m$.
     Így az $[A]\cdot[B]$ szorzat értelmes és a szorzás eredménye egy $n\times m$ mátrix.
     A $[C]$ szintén egy $n\times m$ méretű mátrix, 
-    így a bal és a jobb oldal összehasonlítása is értelmes.
+    így a bal és a jobboldal összehasonlítása is értelmes.
 
     Már csak azt kell meggondolni, 
-    hogy a bal oldali mátrix minden eleme azonos a jobb oldali szorzatmátrix megfelelő elemével.
+    hogy a baloldali mátrix minden eleme azonos a jobboldali szorzatmátrix megfelelő elemével.
     Az $\alpha,\beta,\gamma$ szimbólumokkal jelöljük az $[A],[B], [C]$ mátrixok megfelelő elemeit.
     Ez azt jelenti, hogy
     \[
@@ -6081,7 +6083,7 @@ Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa a
     \]
 \end{proposition}
 \begin{proof}
-    Azt mutatjuk meg, hogy a bal oldali mátrix és a jobb oldali szorzat mátrix megfelelő oszlopai megegyeznek.
+    Azt mutatjuk meg, hogy a baloldali mátrix és a jobboldali szorzat mátrix megfelelő oszlopai megegyeznek.
     A $j$-edik oszlopra:
     \begin{multline*}
         \left[ A \right]_{\uj}^j
@@ -6794,11 +6796,11 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
             =
             J(m).
         \]
-        No de, a bal oldali ideál $d$ generáló eleme 
+        No de, a baloldali ideál $d$ generáló eleme 
         -- \aref{pr:lkkt}. állítás szerint --
         a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse.
         Mivel egy főidálnak csak egy normált generáló eleme van, 
-        ezért a $d$ legkisebb közös többszörös azonos a jobb oldali ideált generáló $m$ minimálpolinommal.
+        ezért a $d$ legkisebb közös többszörös azonos a jobboldali ideált generáló $m$ minimálpolinommal.
     \end{proof}
     \section{Sajátvektorok és diagonalizálhatóság}\index{sajátvektor}\index{diagonalizálhatóság}
 
@@ -7451,7 +7453,7 @@ A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós 
             \lin\left( v;A \right)
         \]
         No de, 
-        a bal és jobb oldali altér azonos dimenziós alterek,
+        a bal- és a jobboldali altér azonos dimenziós alterek,
         emiatt fent mindenütt egyenlőség van.
         Speciálisan 
         $\lin\left( v;A \right)=\lin\left( v;A \right)\cap K$,
@@ -10315,7 +10317,7 @@ Magyarra áttérve:
         ha az együttható mátrix reguláris.
         Jelölje  ezért $A$ a reguláris együttható mátrixot, 
         és $B_k$ azt a mátrixot, amelyet úgy kapunk, 
-        hogy az egyenlet jobb oldalát reprezentáló oszlopvektort az $A$ együttható mátrix $k$-adik 
+        hogy az egyenlet jobboldalát reprezentáló oszlopvektort az $A$ együttható mátrix $k$-adik 
         oszlopára írjuk.
         Ekkor az $x$ megoldásvektor $k$-adik koordinátájára
         \[
@@ -11331,7 +11333,7 @@ arra az esetre, mikor $M$ a $V$ Hilbert-tér egy zárt altere.}
         =
         \ip{u}{u_2}-\ip{u_1}{u_2}=0.
     \]
-    Itt a jobb oldali első szám azért zérus, 
+    Itt a jobboldali első szám azért zérus, 
     mert $u\in M^{\perp\perp}$ és $u_2\in M^\perp$, 
     a második meg azért zérus, 
     mert $u_1\in M$ és $u_2\in M^\perp$.
@@ -13962,4 +13964,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 29 Sep 2020 02:58:32 PM CEST
+Last Modified : Tue 06 Oct 2020 08:19:42 AM CEST
