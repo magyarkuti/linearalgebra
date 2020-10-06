@@ -1649,6 +1649,19 @@ A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativit�
     \end{multline*}
     A testben fennálló asszociativitás és kommutativitás miatt a bal- és a jobboldali kifejezés azonos.
 \end{proof}
+Ha tehát adottak az $A_1,A_2,\dots,A_p$ mátrixok, úgy hogy a sorban egymás után következőknek értelmes a szorzata,
+akkor ezek bármilyen zárójelezésével képzett szorzata is értelmes,
+és ugyan azt a mátrixot eredményezi.
+Mint azt a számok esetén megszoktuk, 
+használhatjuk az $A_1A_2\dots A_p$ jelölést ezen mátrixok bármelyik zárójelezésével képzett szorzatára.
+Érdemes a fenti bizonyításból megjegyezni a formulát, 
+amelyet három mátrix szorzatára kapunk:
+\[
+    \left[ ABC \right]_{i,j}
+    =
+    \sum_{s=1}^k\sum_{r=1}^l\left[ A \right]_{i,s}\left[ B \right]_{s,r}\left[ C \right]_{r,j}.
+\]
+Foglaljuk össze az eddigieket négyzetes mátrixok mellett:
 \begin{proposition}
     Legyen $n\in\mathbb{N}$ természetes szám, és tekintsük az $n\times n$ méretű mátrixok
     halmazát, ellátva ezt a halmazt a mátrix összeadással és a mátrixszorzással.
@@ -1708,7 +1721,7 @@ de ez e nélkül is nagyon egyszerűen látszik.%
         c&d
     \end{pmatrix}
     \)
-    inverze lenne akkor a jobb alsó sarokra figyelve $0\cdot b +0\cdot d=1$ lenne, de egy testben $1\neq 0$.
+    jobboldali inverze lenne akkor a jobb alsó sarokra figyelve $0\cdot b +0\cdot d=1$ lenne, de egy testben $1\neq 0$.
 }
 Gyakorlatként próbáljunk magasabb $n$ számok mellett is a kommutativitás és a nullosztómentesség hiányára 
 példát találni.
@@ -2091,13 +2104,14 @@ A valós számokra jól ismert abszolút érték függvényt terjesztjük ki kom
     \]
 \end{proposition}
 Most használjuk először a valós számok rendezését.
-Az $\mathbb{R}$ testen a $\geq $ relációt az algebrai műveletekkel a következő két axióma kapcsolja össze:
+Az $\mathbb{R}$ testen a $\geq $ reflexív, antiszimmetrikus, tranzitív relációt az algebrai műveletekkel a következő két axióma kapcsolja össze:
 Minden $a,b,c\in\mathbb{R}$ mellett
 \[
     a\geq b\text{ esetén }a+c\geq b+c,\qquad a,b\geq 0\text{ esetén }ab\geq 0.
 \]
 Az $a^2-b^2=\left( a+b \right)\left( a-b \right)$ azonosság szerint,
-ha $a\geq b\geq 0$ akkor $a^2\geq b^2$ is fennáll.
+az $a,b$ nem negatív valós számok mellett $a\geq b$ akkor és csak akkor, ha $a^2\geq b^2$.
+Speciálisan $a^2=b^2$ akkor és csak akkor, ha $a=b$.
 
 \begin{definition}[komplex szám abszolút értéke]\index{abszolút érték}
     Legyen $z\in\mathbb{C}$ egy komplex szám.
@@ -2107,7 +2121,7 @@ ha $a\geq b\geq 0$ akkor $a^2\geq b^2$ is fennáll.
     E szám négyzetgyökét nevezzük a $z$ komplex szám \emph{abszolút értékének}.
     Jelölés: $|z|=\sqrt{z\bar{z}}$.
 \end{definition}
-Fontos látni, hogy ha speciálisan $\Im z=0$, 
+Ha speciálisan $\Im z=0$, 
 tehát ha $z$ egy valós szám,
 akkor e definíció szerint
 \[
@@ -2119,10 +2133,30 @@ akkor e definíció szerint
     \end{cases}
 \]
 ami egybeesik a valós számok abszolút értékének definíciójával.
-Világos, hogy $|\Re z|^2\leq(\Re z)^2+(\Im z)^2=z\bar{z}$, emiatt
+A fentiből azonnal látszik, hogy minden $a\in\mathbb{R}$ valós szám mellett $a\leq|a|$. 
+
+Mivel $z\bar{z}=\bar{z}z$, ezért $|z|=|\bar{z}|$, azaz komplex számnak és konjugáltjának azonos az abszolút értéke.
+Szokásos technika, hogy a komplex szám abszolútértékére vonatkozó állításokat, az abszolútértékek négyzetére fogalmazzuk át.
+Ez megtehető, hiszen nem negatív valós számok egyenlősége és azok négyzetének egyenlősége azonos fogalmak.
+Például $|z|=0$, akkor és csak akkor, ha $z\bar{z}=0$, ami akkor és csak akkor teljesül ha $z=0$.
+Hasonlóan, ha $z,w$ komplex számok, akkor $|zw|^2=zw(\overline{zw})=zw\bar{z}\bar{w}=z\bar{z}w\bar{w}=|z|^2|w|^2=\left( |z||w| \right)^2$,
+ergo $|zw|=|z||w|$.
+
+Világos, hogy $|\Re z|^2\leq(\Re z)^2+(\Im z)^2=z\bar{z}=|z|^2$, emiatt
+\(
+    |\Re z|\leq |z|.
+\)
+Ezt alkalmazva tetszőleges $z,w$ komplex számok mellett
 \[
-    \Re z\leq |z|.
+    |
+    \Re (z\bar{w})
+    |
+    \leq
+    |z\bar{w}|
+    =
+    |z||w|,
 \]
+amit \emph{Cauchy--Schwartz-egyenlőtlenségnek}\index{Schwartz-egyenlőtlenség} mondunk.
 Az abszolút érték legfontosabb tulajdonságai:
 \begin{proposition}
     Legyen $z,w\in\mathbb{C}$ komplex szám.
@@ -2138,6 +2172,28 @@ Egy kevésbé népszerű, de ekvivalens alakja
 \[
     \left|\left( |z|-|w| \right)\right|\leq|z-w|.
 \]
+\begin{proof}
+    Csak a háromszög-egyenlőtlenséget nem gondoltuk meg eddig:
+    \begin{multline*}
+        |z+w|^2=
+        \left( z+w \right)\left( \overline{z+w} \right)
+        =
+        \left( z+w \right)\left( \bar{z}+\bar{w} \right)
+        =
+        z\bar{z}+w\bar{w}+z\bar{w}+\overline{z\bar{w}}
+        =
+        \\
+        |z|^2+|w|^2+2\Re (z\bar{w})
+        \leq
+        |z|^2+|w|^2+2|\Re (z\bar{w})|
+        \leq
+        |z|^2+|w|^2+2|z||w|
+        =
+        \left( |z|+|w| \right)^2.
+    \end{multline*}
+    Az első egyenlőtlenség, hogy egy valós szám nem nagyobb az abszolút értékénél, 
+    a második egyenlőtlenség pedig a Cauchy--Schwartz-egyenlőtlenség.
+\end{proof}
 A definícó szerint $|z|^2=\bar{z}z$. 
 Véve mindkét oldal abszolútértékét, 
 azt kapjuk, hogy%
@@ -2147,12 +2203,9 @@ azt kapjuk, hogy%
 \[
     |\bar{z}z|=|z|^2.
 \]%
-Felhasználva a szorzat konjugáltjára vonatkozó állítást,
-a $|\bar{z}|=|z|$ fontos azonosság is látszik.
 
-
-Vegyük észre, hogy a valós abszolút érték függvény tulajdonságait sem használtuk,
-és a fenti tulajdonságokat valós esetre is újra igazoltuk.
+Persze valós számok esetén az iménti állítás 1., 2., 3. pontját korábban is sokszor használtuk már.
+Vegyük észre, hogy fent a valós esetet is újra igazoltuk.
 
 \section{A komplex számok trigonometrikus alakja}
 Láttuk, hogy $z,w\in\mathbb{C}$ komplex szám mellett
@@ -11353,7 +11406,6 @@ arra az esetre, mikor $M$ a $V$ Hilbert-tér egy zárt altere.}
         \qedhere
     \]
 \end{proof}
-
 \section{Ortonormált rendszer teljessége}
 \begin{definition}[T.O.N.R.]
     Legyen $\left\{ e_1,\cdots,e_k \right\}$ egy ortonormált rendszer a $V$ skalárisszorzatos-térben.
@@ -13964,4 +14016,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 06 Oct 2020 08:19:42 AM CEST
+Last Modified : Tue 06 Oct 2020 01:37:02 PM CEST
