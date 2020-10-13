@@ -336,9 +336,9 @@ míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
     amelyre ($\dag$) teljesül a $g$ elem \emph{inverzének} mondjuk.
 \end{defprop}
 \begin{proof}
-    Tegyük fel, hogy $g',g''$ inverz elemei $g$-nek.
-    Azt mutatjuk meg, hogy ha $g'$ baloldali-- és $g''$ jobboldali inverze $g$-nek,
-    akkor a két elem megegyezik:
+    Jelölje $e$ a csoport neutrális elemét,
+    és tegyük fel, hogy $g',g''$ inverz elemei $g$-nek.
+    Azt mutatjuk meg, hogy $g'\ast g=e$ és $g\ast g''=e$ esetén a két inverz megegyezik.
     \[
         g'=g'\ast e=
         g'\ast\left( g\ast g'' \right)=
@@ -346,8 +346,9 @@ míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
         e\ast g''=g''.\qedhere
     \]
 \end{proof}
-Példaként gondoljuk meg, hogy a $H\to H$ függvény halmaza a kompozíció művelettel
-neutrális elemes félcsoport, és a $H\to H$ kölcsönösen egyértelmű függvények halmaza a kompozíció művelettel csoportot alkotnak. 
+Példaként gondoljuk meg, hogy az összes $H\to H$ függvények halmaza a kompozíció művelettel
+neutrális elemes félcsoportot, 
+és az összes $H\to H$ kölcsönösen egyértelmű függvények halmaza a kompozíció művelettel csoportot alkotnak. 
 Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}.
 \begin{proposition}[egyszerűsítési szabály]\index{egyszerűsítési szabály}
     Csoportban igaz az egyszerűsítési szabály, azaz
@@ -520,6 +521,7 @@ A generált ideál fogalma nagyon fontos.
 
 
 Világos, hogy $\left\{ 0 \right\}$ és maga az egész $R$ ideálok.
+
 A legfontosabb struktúrák számunkra a következők:
 \begin{itemize}
     \item 
@@ -596,7 +598,7 @@ vagy egy konkrét $t$-re kiértékelt testbeli elemet.
 
 \begin{definition}[polinom foka]\index{polinom foka}
     Legyen $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy polinom.
-    Azt mondjuk, hogy a $n$ nem negatív egész szám e \emph{polinom fokszáma},
+    Azt mondjuk, hogy az $n$ nem negatív egész szám e \emph{polinom fokszáma},
     ha $n$ a legnagyobb nemzérus együttható indexe.
     A legnagyobb nemzérus együtthatót \emph{főegyütthatónak}\index{főegyüttható} nevezzük.
     Azt mondjuk, hogy egy nemzérus polinom \emph{normált}\index{normált polinom}, ha $1$ a főegyütthatója.
@@ -1051,7 +1053,7 @@ hogy a polinomokat függvényeknek, vagy formális algebrai kifejezéseknek gond
 A lényeg hogy egy $n$-ed fokú polinomot az $n+1$ együtthatója, definíció szerint, 
 de az $n+1$ különböző helyen felvett helyettesítési értéke is egyértelműen meghatározza.
 
-\section{Az Euklideszi--algoritmus}
+\section{Az Euklideszi-algoritmus}
 Algoritmust keresünk polinomok legnagyobb közös osztójának és legkisebb közös többszörösének meghatározására.
 Ha egy pillanatra $\left( p_1,\dots,p_n \right)$ jelöli az adott $p_1,\dots,p_n$ polinomok legnagyobb közös osztóját,
 akkor nem nehéz meggondolni, 
@@ -1064,20 +1066,24 @@ hogy ha módszerünk van két polinom legnagyobb közös osztójának meghatáro
 akkor evvel már akárhány -- persze véges sok -- polinom legnagyobb közös osztója is meghatározható.
 Analóg módon ugyanez igaz a legkisebb közös többszörösre is.
 Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös többszörösét és legkisebb közös osztóját,
-akkor ugyan ezt mát meg tudnánk tenni véges sok polinom esetén is.
+akkor ugyanezt már meg tudnánk tenni több polinom esetén is.
 
 Az Euklideszi-algoritmus két polinom legnagyobb közös osztójának meghatározására szolgál.
 Az eddigi ismereteink szerint a $p,q$ legnagyobb közös osztója a $J\left( p,q \right)$ ideál legalacsonyabb 
 fokú, normált tagja. 
-Véges sok lépésben végrehajtható, ezért a fentinél sokkal egyszerűbben működő algoritmust ad.
-Emlékezzünk arra, hogy ha $p,q\in\mathbb{F}\left[ t \right]$ valamely polinomok, akkor
+Az Euklideszi-algoritmus egy véges sok lépésben végrehajtható algoritmus, 
+egy a definíciónál sokkal hatékonyabb eljárás, két polinom generálta főideál generáló elemének, 
+azaz a legnagyobb közös osztónak a meghatározására.
+
+Az algoritmus megértése előtt emlékeznünk kell arra,
+hogy ha $p,q\in\mathbb{F}\left[ t \right]$ valamely polinomok, akkor
 \(
 J\left( p,q \right)=\left\{ fp+gq:f,g\in\mathbb{F}\left[ t \right] \right\}
 \)
 jelöli a $p$ és a $q$ polinomokat tartalmazó legszűkebb ideált.
 Világos, hogy ha $r_1,r_2\in J\left( p,q \right)$, akkor 
 $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
-\begin{proposition}[Euklidesz]\index{Euklideszi algoritmus}
+\begin{proposition}[Euklidesz]\index{Euklideszi-algoritmus}
     Legyen $p,q\in\mathbb{F}\left[ t \right]$ nem zérus polinomok.
     Definiálja $p_{-1}=p,p_{0}=q$. 
     Folytatva, ha valamely $i\geq 0$ számra $p_{i-1}$ és $p_i$ már definiált és $p_i\neq 0$, 
@@ -1089,7 +1095,8 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
         \deg p_{i+1}<\deg p_i.\tag{\dag}
     \]
     Mivel minden egyes lépésben csökken a fokszám,
-    ezért van olyan $s>0$, hogy $p_s\neq 0$, de $p_{s+1}=0$.
+    ezért van olyan $s\geq 0$, 
+    hogy $p_s\neq 0$, de $p_{s+1}=0$.
     \\
     Erre a $p_s$ polinomra $J\left( p_s \right)=J\left( p,q \right)$, ezért
     $p_s$ normáltja a $p\text{ és a }q$ polinomok legnagyobb közös osztója.
@@ -1121,11 +1128,11 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
     \end{math}
     következik.
     Így minden $i=0,\dots,s$-re végül is
-    \(
-    J\left( p_{i-1},p_i \right)
-    =
-    J\left( p_i,p_{i+1} \right).
-    \)
+    \[
+        J\left( p_{i-1},p_i \right)
+        =
+        J\left( p_i,p_{i+1} \right).
+    \]
     Alkalmazva ezt minden $i=0,\dots,s$ mellett
     \[
         J\left( p,q \right)
@@ -1243,7 +1250,14 @@ végrehajtható módszer a legnagyobb közös osztó és a legkisebb közös tö
 
 Ebben a szakaszban azt mutatjuk meg, hogy prímtényezős előállításról szóló tétel a polinomok gyűrűjében is igaz marad.
 Természetesen konkrét algoritmust nem adunk, hiszen ilyen még számokra sem igen van.%
-\footnote{Ha ilyen lenne senki nem tudna interneten két számla közt pénzt mozgatni. Lásd például: \url{https://en.wikipedia.org/wiki/RSA_(cryptosystem)}}
+\footnote{Természetesen számokra működik az az algoritmus, amit általános iskolában tanultunk,
+    csak annyira lassú, hogy egy nagy szám primtényezős előállítását esetleg többszáz évig számolná a földkerekség valamennyi számítógépe. 
+    Ez egy szép példája annak, 
+    mennyire hasznos lehet az a tudás, 
+    ami valaminek a nem tudásáról szól,
+    hiszen 
+    emiatt tudunk biztonságos módon két számla közt pénzt mozgatni. 
+    Lásd például: \url{https://en.wikipedia.org/wiki/RSA_(cryptosystem)}}
 \begin{definition}[reducibilis polinom]\index{reducibilis polinom}\index{irreducibilis polinom}
     Egy polinomot \emph{reducibilisnek} mondunk, 
     ha előáll mint két legalább elsőfokú polinom szorzata.
@@ -1300,7 +1314,7 @@ akkor csak $d=p$ lehetséges, ergo $p|f$.
 \end{proof}
 Az is igaz, hogy ha egy polinom reducibilis, akkor az nem prím, de ezt a gyakorlatokra hagyjuk.
 Összeségében látjuk tehát,
-hogy a polinomok irreducibilitása és prímtulajdonsága azonos fogalmak.
+hogy a polinomok irreducibilitása és prím tulajdonsága azonos fogalmak.
 
 Az irreducibilis polinomok prím tulajdonsága segítségével a polinomok faktorizáció egyértelműségét is igazolhatjuk.
 \begin{proposition}
@@ -1527,7 +1541,7 @@ vagy mint sorainak összeségére gondolunk.
         \item
             A szorzat mátrix minden sora a $B$ mátrix sorainak az $A$ mátrix megfelelő sorából vett elemekkel képzett
             lineáris kombinációja.
-            Magyarul: minden $1\leq i\leq n$ mellett
+            Magyarul: minden $1\leq i\leq m$ mellett
             \[
                 [C]_i=\sum_{s=1}^k[A]_i^s[B]_s.
             \]
@@ -1651,7 +1665,7 @@ A mátrixok szorzásának legérdekesebb tulajdonsága a szorzás asszociativit�
 \end{proof}
 Ha tehát adottak az $A_1,A_2,\dots,A_p$ mátrixok, úgy hogy a sorban egymás után következőknek értelmes a szorzata,
 akkor ezek bármilyen zárójelezésével képzett szorzata is értelmes,
-és ugyan azt a mátrixot eredményezi.
+és ugyanazt a mátrixot eredményezi.
 Mint azt a számok esetén megszoktuk, 
 használhatjuk az $A_1A_2\dots A_p$ jelölést ezen mátrixok bármelyik zárójelezésével képzett szorzatára.
 Érdemes a fenti bizonyításból megjegyezni a formulát, 
@@ -1731,8 +1745,13 @@ A számolás közben a mátrixok sorrendjén nem változtathatunk.
 Persze előfordul, hogy két mátrix szorzata nem függ a sorrendtől. 
 Ilyenkor a két mátrixot egymással \emph{felcserélhetőnek}, vagy \emph{kommutálónak} mondjuk.\index{kommutáló mátrixok}
 Például, az identitás mátrixszal minden más mátrix kommutál.
-Egy mátrixot \emph{diagonális alakúnak}\index{diagonális mátrix} mondunk, 
-ha minden nem zérus eleme a fő diagonálisában van.
+A mátrix azon elemeit, ahol a sor- és az oszlopindexek azonosak 
+\emph{fődiagonálisbeli}\index{fődiagonális} 
+elemeknek mondjuk.
+Egy mátrixot 
+\emph{diagonális alakúnak}\index{diagonális mátrix}
+mondunk, 
+ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
@@ -1816,7 +1835,7 @@ A $2\times 2$ méretű valós mátrixok még sok-sok más testet is tartalmaznak
 Ezek közül számunkra a legfontosabb a következő részhalmaz.
 \begin{defprop}[komplex számtest]
     Jelölje két tetszőleges $a,b\in\mathbb{R}$ valós szám mellett $M_{a,b}$ az 
-    az $\left( a,b \right)$ valós számpárhoz tartozó 
+    $\left( a,b \right)$ valós számpárhoz tartozó 
     \(
     M_{a,b}
     =
@@ -1912,7 +1931,7 @@ Ezek közül számunkra a legfontosabb a következő részhalmaz.
 \end{proof}
 Ebben a $\mathbb{C}$ testben az 
 \(
-M_{0,-1}=
+M_{0,1}=
 \begin{pmatrix}
     0&-1\\
     1&0
@@ -1920,7 +1939,7 @@ M_{0,-1}=
 \)
 elem olyan, hogy a négyzete a szorzásra nézve reprodukáló elemnek az összeadásra nézve képzett inverze:
 \[
-    M_{0,-1}\cdot M_{0,-1}
+    M_{0,1}\cdot M_{0,1}
     =
     \begin{pmatrix}
         0&-1\\
@@ -1996,7 +2015,7 @@ jelölést\index{i komplex szám@$i$ komplex szám}, akkor minden komplex szám
 \]
 alakban írható.
 Emlékezzünk arra, 
-hogy a valós számtest is részhalmaza a komplex számoktestnek abban az értelemben, 
+hogy a valós számtest is részhalmaza a komplex számtestnek abban az értelemben, 
 ha minden $a$ valós számot az
 \begin{math}
     \begin{pmatrix}
@@ -2074,8 +2093,8 @@ Az összeadáshoz (\dag) csak el kell végezni a műveletet majd kiemelni $i$-t,
 a szorzás definíciójához (\ddag) 
 az $i$ kiemelése után jutunk.
 
-\section{A komplex számok abszolút értéke}
-A valós számokra jól ismert abszolút érték függvényt terjesztjük ki komplex számtest elemeire.
+\section{A komplex számok abszolútértéke}
+A valós számokra jól ismert abszolútérték függvényt terjesztjük ki komplex számtest elemeire.
 \begin{definition}[valós rész, képzetes rész]\index{komplex szám valós része}\index{komplex szám képzetes része}
     Legyen $z\in\mathbb{C}$, $z=a+ib$.
     Ekkor $a\in\mathbb{R}$ a $z$ komplex szám \emph{valós része}, 
@@ -2100,7 +2119,7 @@ A konjugált definíciója alapján, egyszerű számolgatással kapjuk az alább
     azaz bármely két $z,w\in\mathbb{C}$ komplex szám esetén igaz, hogy
     \[
         \overline{z+w}=\bar{z}+\bar{w},\quad
-        \overline{zw}=\bar{z}\overline{w},\quad
+        \overline{z\cdot w}=\bar{z}\cdot\bar{w},\quad
         \overline{z-w}=\bar{z}-\bar{w},\quad
         \overline{\left( \frac{z}{w} \right)}=\frac{\bar{z}}{\bar{w}}\quad\text{ feltéve, hogy }w\neq 0.\qedhere
     \]
@@ -2115,12 +2134,12 @@ Az $a^2-b^2=\left( a+b \right)\left( a-b \right)$ azonosság szerint,
 az $a,b$ nem negatív valós számok mellett $a\geq b$ akkor és csak akkor, ha $a^2\geq b^2$.
 Speciálisan $a^2=b^2$ akkor és csak akkor, ha $a=b$.
 
-\begin{definition}[komplex szám abszolút értéke]\index{abszolút érték}
+\begin{definition}[komplex szám abszolútértéke]\index{abszolútérték}
     Legyen $z\in\mathbb{C}$ egy komplex szám.
     Láttuk, hogy 
     $z\bar{z}\in\mathbb{R}$ és  
     $z\bar{z}\geq 0$.
-    E szám négyzetgyökét nevezzük a $z$ komplex szám \emph{abszolút értékének}.
+    E szám négyzetgyökét nevezzük a $z$ komplex szám \emph{abszolútértékének}.
     Jelölés: $|z|=\sqrt{z\bar{z}}$.
 \end{definition}
 Ha speciálisan $\Im z=0$, 
@@ -2134,10 +2153,10 @@ akkor e definíció szerint
         -z&\text{, ha }z<0\text{,}
     \end{cases}
 \]
-ami egybeesik a valós számok abszolút értékének definíciójával.
+ami egybeesik a valós számok abszolútértékének definíciójával.
 A fentiből azonnal látszik, hogy minden $a\in\mathbb{R}$ valós szám mellett $a\leq|a|$. 
 
-Mivel $z\bar{z}=\bar{z}z$, ezért $|z|=|\bar{z}|$, azaz komplex számnak és konjugáltjának azonos az abszolút értéke.
+Mivel $z\bar{z}=\bar{z}z$, ezért $|z|=|\bar{z}|$, azaz komplex számnak és konjugáltjának azonos az abszolútértéke.
 Szokásos technika, hogy a komplex szám abszolútértékére vonatkozó állításokat, az abszolútértékek négyzetére fogalmazzuk át.
 Ez megtehető, hiszen nem negatív valós számok egyenlősége és azok négyzetének egyenlősége azonos fogalmak.
 Például $|z|=0$, akkor és csak akkor, ha $z\bar{z}=0$, ami akkor és csak akkor teljesül ha $z=0$.
@@ -2159,7 +2178,7 @@ Ezt alkalmazva tetszőleges $z,w$ komplex számok mellett
     |z||w|,
 \]
 amit \emph{Cauchy--Schwartz-egyenlőtlenségnek}\index{Schwartz-egyenlőtlenség} mondunk.
-Az abszolút érték legfontosabb tulajdonságai:
+Az abszolútérték legfontosabb tulajdonságai:
 \begin{proposition}
     Legyen $z,w\in\mathbb{C}$ komplex szám.
     Ekkor
@@ -2193,8 +2212,26 @@ Egy kevésbé népszerű, de ekvivalens alakja
         =
         \left( |z|+|w| \right)^2.
     \end{multline*}
-    Az első egyenlőtlenség, hogy egy valós szám nem nagyobb az abszolút értékénél, 
+    Az első egyenlőtlenség, hogy egy valós szám nem nagyobb az abszolútértékénél, 
     a második egyenlőtlenség pedig a Cauchy--Schwartz-egyenlőtlenség.
+
+    A kevésbé populáris alakhoz használjuk a már igazolt egyenlőtlenséget:
+    \begin{math}
+        |z|
+        =
+        |(z-w)+w|
+        \leq
+        |z-w|+|w|,
+    \end{math}
+    majd ugyanezt a $z$ és a $w$ számok felcserélése után mégegyszer felírva
+    \[
+        |z|-|w|\leq |z-w|
+        \quad\text{ és }\quad
+        |w|-|z|\leq |w-z|.
+    \]
+    Na most, azt ugyan nem tudjuk, hogy a $||z|-|w||$ szám a baloldali számok közül melyikkel azonos,
+    de az egyikkel biztosan egybeesik.
+    No de mindegy is melyikkel, hiszen a jobboldal mindkét esetben a kívánt $|z-w|$.
 \end{proof}
 A definícó szerint $|z|^2=\bar{z}z$. 
 Véve mindkét oldal abszolútértékét, 
@@ -2233,11 +2270,11 @@ akkor a komplex számok szorzása mit jelent a komplex számoknak megfeleltetett
         z=
         |z|\left( \cos\varphi+i\sin\varphi \right)\tag{\dag}
     \]
-    Ezt a $\varphi$ számot nevezzük a $z$ komplex szám \emph{argumentumának}, és $\arg z$ módon jelöljük.
+    Egy ilyen $\varphi$ számot nevezzük a $z$ komplex szám egy \emph{argumentumának}, és néha $\arg z$ módon jelöljük.
     \index{komplex szám argumentuma}
     A (\dag) alak a komplex szám \emph{trigonometrikus alakja}.
 
-    Két nem zérus komplex szám egyenlősége azt jelenti, hogy az abszolút értékük azonos,
+    Két nem zérus komplex szám egyenlősége azt jelenti, hogy az abszolútértékük azonos,
     és az argumentumaik különbsége $2\pi$ többszöröse.
 \end{defprop}
 \begin{proof}
@@ -2250,9 +2287,9 @@ akkor a komplex számok szorzása mit jelent a komplex számoknak megfeleltetett
     Ha $x$ jelöli a fenti zárójelben a valós részt és $y$ a képzetes részt,
     akkor $x^2+y^2=1$.
     Így az $\left( x,y \right)$ pár a sík egységkörének egy pontja.
-    A $\cos$ és $\sin$ függvény definíciója szerint,
-    ha $\varphi$ jelöli az origót az $\left( x,y \right)$ 
-    ponttal a körcikk peremén mért ív hosszát,
+    A trigonometrikus függvények középiskolai definíciója szerint,
+    ha $\varphi$ jelöli az $\left( 1,0 \right)$ pontot az $\left( x,y \right)$ 
+    ponttal összekötő ív hosszát, -- az óramutató járásával ellentétes irányban mérve a körcikk peremén --
     akkor $x=\cos\varphi$ és $y=\sin\varphi$.
 \end{proof}
 \begin{proposition}
@@ -2263,7 +2300,8 @@ akkor a komplex számok szorzása mit jelent a komplex számoknak megfeleltetett
         w=|w|\left( \cos\psi+i\sin\psi \right).
     \]
     Ekkor a két szám szorzatának abszolútértéke az abszolútértékek szorzata
-    és a szorzat argumentuma az argumentumok összege, azaz
+    és a szorzat egy argumentumát is megkapjuk mint az argumentumok összege.
+    Magyarul:
     \[
         zw=
         |z||w|\left( \cos\left( \varphi+\psi \right)+i\sin\left( \varphi+\psi \right) \right).
@@ -2286,7 +2324,7 @@ amely egy $\arg z$ szöggel való forgatásból és egy $|z|$-szeres origó köz
 \end{definition}
 Az $n$-edik komplex egységgyökök a komplex számsík pontosan $n$ különböző pontját alkotják,
 és az $n$-edik hatványuk $1$, azaz 
-és $(\epsilon_k^{(n)})^n=1$.
+$(\epsilon_k^{(n)})^n=1$.
 Emiatt minden $w\neq 0$ komplex szám mellett pontosan $n$ komplex gyöke van a $t^n-w$ polinomnak.
 Ha ugyanis $w$ trigonometrikus alakja $w=|w|\left( \cos\psi+i\sin\psi \right)$,
 akkor legyen például $z_0=\sqrt[n]{|w|}\left( \cos(\psi/n)+i\sin(\psi/n) \right)$,
@@ -2295,7 +2333,9 @@ akkor legyen például $z_0=\sqrt[n]{|w|}\left( \cos(\psi/n)+i\sin(\psi/n) \righ
 A komplex számtest felett minden nem konstans polinomnak van gyöke.
 Formálisabban:
 \begin{FA}
-    Ha $p\left( t \right)\in\mathbb{C}[t]$ nem konstans polinom,
+    Minden legalább elsőfokú komplex együtthatós polinomnak van komplex gyöke.
+    Azaz 
+    ha $p\left( t \right)\in\mathbb{C}[t]$ egy nem konstans polinom,
     akkor létezik $z\in\mathbb{C}$ komplex szám, 
     amelyre $p\left( z \right)=0$.
 \end{FA}
@@ -2369,8 +2409,6 @@ Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti poli
         =
         \sum_{j=0}^n\overline{\alpha_jz^j}
         =
-        \sum_{j=0}^n\overline{\alpha_j}\overline{(z^j)}
-        =
         \sum_{j=0}^n\bar{\alpha_j}\bar{z}^j
         =
         \sum_{j=0}^n\alpha_j\bar{z}^j
@@ -2380,7 +2418,7 @@ Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti poli
     Emiatt valós együtthatós $p$ polinomra és $z$ komplex számra 
     $p\left( z \right)=0$ akkor és csak akkor, ha $p\left( \bar{z} \right)=0.$
 
-    Ha a gyök speciálisan valós szám, akkor az állítás semmit mondó.
+    Ha a gyök speciálisan valós szám, akkor a multiplicitásra vonatkozó állítás semmit mondó.
     Ha most $z$ egy nem valós komplex gyök,
     akkor $p(t)=\left( t-z \right)\left( t-\bar{z} \right)h\left( t \right)$, ahol 
     $h\left( z \right)=0$ pontosan akkor, ha $h\left( \bar{z} \right)=0$.
@@ -2440,13 +2478,15 @@ Tekintsük a $p$ polinomot mint a komplex számtest feletti polinomgyűrű egy e
     =
     t^2-2\Re z_k+|z_k|^2
     $.
-    Így $\alpha_k=|z_k|^2$ és $\beta_k=2\Re z_k$, választással készen is vagyunk.
+    Így $\alpha_k=|z_k|^2$ és $\beta_k=-2\Re z_k$, választással készen is vagyunk.
 \end{proof}
 A fenti állításból két dolog azonnal látszik.
 Az első, 
 hogy \emph{valós számtest felett minden legalább harmadfokú polinom reducibilis},
 a második pedig, 
-hogy \emph{minden páratlan fokú valós együtthatós polinomnak van valós gyöke.}
+hogy ha egy valós együtthatós polinomnak nincs valós gyöke, 
+akkor csak páros fokú lehet, vagy ami ugyanaz:
+\emph{minden páratlan fokú valós együtthatós polinomnak van valós gyöke.}
 
 %\chapter{Gauss--Jordan elimináció}
 %\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrendszer}
@@ -2510,7 +2550,7 @@ feletti vektorteret alkotnak, vagy ha ezek közül csak a differenciálható fü
 akkor ezen függvénytér is vektortér az $\mathbb{R}$ test felett.
 
 Rögzítenünk kell magunkban, hogy a vektortér definíciójában a test is fontos szerepet játszik.
-Más test felett ugyan az Ábel-csoport már egy másik vektorteret alkot.
+Más test felett ugyanaz az Ábel-csoport már egy másik vektortérhez tartozik.
 Világos például, hogy $\mathbb{R}$ az $\mathbb{R}$ test felett vektortér a szokásos műveletekkel,
 de látjuk majd, hogy egészen más tulajdonságai vannak annak a vektortérnek, 
 amit akkor kapunk, 
@@ -3210,7 +3250,7 @@ akkor már az inhomogén rendszer általános megoldása is egyszerűen felírha
 \end{proof}
 Egy nem nyilvánvaló következmény, 
 hogy akármelyik partikuláris megoldással toljuk is el az
-inhomogén rendszer megoldását mindig ugyan azt a halmazt kapjuk, 
+inhomogén rendszer megoldását mindig ugyanazt a halmazt kapjuk, 
 emiatt mindegy melyik partikuláris megoldást rögzítettük.
 
 Persze a kérdés, hogy hogyan találunk egyáltalán partikuláris megoldást.
@@ -9322,7 +9362,7 @@ melynél nincs inverzióban álló bástyapár.
     \]
     Ez azt jelenti, hogy az $i$ és $j$ sorokat foglaló bástyapár pontosan akkor van inverzióban $\pi$-szerint,
     ha a $\pi\left( i \right)$ és a $\pi\left( j \right)$ sorokat foglaló bástyapár inverzióban van $\pi^{-1}$ szerint.
-%    Tehát ha a diagonálisra való tükrözéssel áttérünk $\pi$ bástyafelrakásából a $\pi^{-1}$ bástyafelrakásába,     akkor ugyan azok a bástyapárok lesznek inverzióban a tükrözés előtt mint után.
+%    Tehát ha a diagonálisra való tükrözéssel áttérünk $\pi$ bástyafelrakásából a $\pi^{-1}$ bástyafelrakásába,     akkor ugyanazok a bástyapárok lesznek inverzióban a tükrözés előtt mint után.
     Mivel az $\left( i,j \right)\mapsto \left( \pi(i),\pi(j) \right)$ leképezés az $\left\{ \left( i,j \right):i\neq j:1\leq i,j\leq n \right\}$ 
     halmaznak önmagára képező bijekciója, 
     ezért kölcsönösen egyértelmű leképezést találtunk a $\pi$ és a  $\pi^\ast$ inverzióban álló bástyapárjai közt.
@@ -9393,7 +9433,7 @@ egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjér
         Az $i$-edik és a $j$-edik sor felcseréléséve az $u$-adik sorban álló bástya megmozdul, 
         de az oszlop koordinátáját megtartja, és sor koordinátája is $v$-nél kisebb marad.
         Ez azt jelenti, 
-        hogy ugyan azok bástyapárok lesznek inverzióban a $\pi$-nél, mint $\pi^\ast$-nál, ergo a 
+        hogy ugyanazok bástyapárok lesznek inverzióban a $\pi$-nél, mint $\pi^\ast$-nál, ergo a 
         $\pi$-nél és $\pi^\ast$-nál inverzióban álló párok száma azonos.
 
     \item[$3.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $i<v<j.$\\
@@ -14018,4 +14058,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Sat 10 Oct 2020 10:49:13 am CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST
+Last Modified : Tue 13 Oct 2020 12:50:33 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST
