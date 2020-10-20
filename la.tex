@@ -2458,7 +2458,7 @@ Tekintsük a $p$ polinomot mint a komplex számtest feletti polinomgyűrű egy e
     Legyenek $x_1,\dots,x_r$ a különböző valós gyökök, amelyek multiplicitása rendre
     $n_1,\dots,n_r$.
     Legyenek $z_1,\overline{z_1},\dots,z_s,\overline{z_s}$ a különböző nem valós de komplex gyökök,
-    ahol $m_1,\dots,m_s$ rendre a konjugált gyök párok multiplicitása.
+    ahol $m_1,\dots,m_s$ rendre a konjugált gyökpárok multiplicitása.
     Így
     \[
         p\left( t \right)=
@@ -2476,7 +2476,7 @@ Tekintsük a $p$ polinomot mint a komplex számtest feletti polinomgyűrű egy e
     $
     \left( t-z_k \right)\left( t-\bar{z_k} \right)
     =
-    t^2-2\Re z_k+|z_k|^2
+    t^2-2\Re z_kt+|z_k|^2
     $.
     Így $\alpha_k=|z_k|^2$ és $\beta_k=-2\Re z_k$, választással készen is vagyunk.
 \end{proof}
@@ -2499,9 +2499,9 @@ amelyek nélkül nem tárgyalhatók a lineáris algebrához szükséges gondolat
 \begin{definition}[Vektortér]\index{vektortér}
     Legyen adva egy $\mathbb{F}$ test, és egy $V$ halmaz.
     Tegyük fel, hogy adott egy $+:V\times V\to V$ két változós művelet (ezt összeadásnak nevezzük)
-    és adott egy $\cdot:\mathbb{F}\times V\to V$ szintén kétváltozós művelet (ezt skalárral való szorzásnak, vagy számmal való mondjuk).
+    és adott egy $\cdot:\mathbb{F}\times V\to V$ szintén kétváltozós művelet (ezt skalárral való szorzásnak, vagy számmal való szorzásnak mondjuk).
     A $V$-t az $\mathbb{F}$ test feletti \emph{vektortérnek} nevezzük,
-    ha $\left( V,+ \right)$ egy Ábel-csoport, 
+    ha $\left( V,+ \right)$ egy Abel-csoport, 
     és a számmal valós szorzás műveletre teljesülnek az alábbi axiómák:
     \begin{enumerate}
         \item Minden $\alpha\in\mathbb{F}$ és minden $u,v\in V$ mellett 
@@ -2550,11 +2550,11 @@ feletti vektorteret alkotnak, vagy ha ezek közül csak a differenciálható fü
 akkor ezen függvénytér is vektortér az $\mathbb{R}$ test felett.
 
 Rögzítenünk kell magunkban, hogy a vektortér definíciójában a test is fontos szerepet játszik.
-Más test felett ugyanaz az Ábel-csoport már egy másik vektortérhez tartozik.
+Más test felett ugyanaz az Abel-csoport már egy másik vektortérhez tartozik.
 Világos például, hogy $\mathbb{R}$ az $\mathbb{R}$ test felett vektortér a szokásos műveletekkel,
 de látjuk majd, hogy egészen más tulajdonságai vannak annak a vektortérnek, 
 amit akkor kapunk, 
-ha az $\mathbb{R}$ valós számok Ábel-csoportját, 
+ha az $\mathbb{R}$ valós számok Abel-csoportját, 
 mint a $\mathbb{Q}$ racionális test feletti vektortérnek tekintjük.
 
 Játékos példaként gondoljuk meg, 
@@ -2654,7 +2654,14 @@ Ki fog derülni, hogy a lineáris burok mindig egybeesik a legszűkebb altérrel
     Világos, hogy $H\subseteq \lin H$, világos hogy $\lin H$ egy altér, 
     és az is nyilvánvaló, hogy ha $H\subseteq M$ egy tetszőleges altér, 
     akkor $\lin H\subseteq M$.
-    Így $\lin H=\gen H$.
+
+    A $\lin H$ egy a $H$-t tartalmazó altér, 
+    és $\gen H$ az összes ilyen alterek metszete, ezért 
+    $\gen H\subseteq\lin H$.
+    Másoldalról, a $\lin H$ altér részhalmaza minden $H$-t tartalmazó altérnek,
+    így azok közös részének is,
+    ergo 
+    $\lin H\subseteq \gen H$.
 \end{proof}
 Ha $H$ egy véges halmaz, akkor $\lin H$ kicsit egyszerűbben írható.
 Mint arról már a definícióban is szó volt $\lin \emptyset=\left\{ 0 \right\}$.
@@ -2697,13 +2704,13 @@ hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendsze
 \end{lemma}
 \begin{proof}
     Fejezzük ki $x_k$-t az $y$-ra felírt formulából:
-    \(
+    \(\displaystyle
     x_k=\frac{1}{\eta_k}y+\sum_{\substack{j=1\\j\neq k}}^m\frac{-1}{\eta_k}\eta_jx_j.
     \)
     Ha $a$ eredetileg 
-    \[
+    \(\displaystyle
         a=\sum_{j=1}^m\alpha_jx_j
-    \]
+    \)
     alakú, akkor $x_k$ helyére betéve, a fent kifejezett formulát és bevezetve a 
     $\delta=\frac{\alpha_k}{\eta_k}$ jelölést, azt kapjuk hogy:
     \begin{multline*}
@@ -2933,13 +2940,17 @@ mint az együttható-mátrix $j$-edik $\left[ A \right]^j$ oszlopának becserél
 
 Az algoritmus célja, hogy
 a generátorrendszerbe annyi oszlopot cseréljünk be amennyit csak tudunk, 
-de persze egy már korábban becserélt vektort nem cserélünk ki egy újabb oszlopra.
-Az algoritmus tehát akkor áll meg,
-ha minden oszlopot becseréltünk, 
-vagy van ugyan nem becserélt oszlop de annak minden koordinátája zérus az eredeti generátorrendszer nem cserélt helyein.
-Ezt utóbbi mondatot egyszerűbben úgy fogalmazhatjuk, 
-hogy ha a táblázat minden nem zérus sora egy becserélt vektorhoz tartozik,
-akkor véget ér az algoritmus.
+de persze egy már korábban becserélt vektort nem cserélünk ki egy újabbra.
+Az algoritmus akkor áll meg, ha nem tudunk új oszlopot becserélni.
+Ez pontosan akkor fordul elő,
+ha a táblázat minden nem zérus sora egy már becserélt vektorhoz tartozik.
+
+%Ennek két oka lehet.
+%Vagy minden oszlopot becseréltünk, vagy
+%valamennyi eddig be nem cserélt oszlop minden tagja zérus az eredeti generátorrendszer nem cserélt helyein.
+%Ez utóbbi mondatot egyszerűbben úgy fogalmazhatjuk, 
+%hogy ha a táblázat minden nem zérus sora egy becserélt vektorhoz tartozik,
+%akkor véget ér az algoritmus.
 
 A lineáris egyenletrendszerek nyelvére átültetve ez azt jelenti, 
 hogy az algoritmus célja a változók eliminálása,
@@ -2971,10 +2982,10 @@ A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló
     a kötött változó száma legfeljebb a sorok száma az pedig szigorúan kisebb mint az összes ismeretlenek száma.
     Van tehát szabad változó, amelynek értéke tetszőleges lehet.
 \end{proof}
-Az teljesen nyilvánvaló, hogy a kötött változók száma és a szabad változók száma azonos a változók számával.
+Mivel a változók vagy kötöttek vagy szabadok, 
+ezért a kötött változók számának és a szabad változók számának az összege a változók száma.
 Ebben a pillanatban még nem látszik,
 de később ki fog derülni, 
-hogy a kötött így a szabad változók száma is független az algoritmus során választott pivot elemektől.\index{pivot elem}
 
 Érdemes a rendszer egy megoldásra úgy gondolni, mint egy $x\in\mathbb{F}^n$ oszlopvektorra,
 amelynek $i$-edik koordinátája az $x_i$ változó aktuális értéke.
@@ -14058,4 +14069,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified : Tue 13 Oct 2020 12:50:33 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST
+Last Modified : Tue 20 Oct 2020 02:17:40 PM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST
