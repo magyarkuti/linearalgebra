@@ -1,0 +1,43 @@
+specialBeginEnd:
+    displayMath:
+        begin: '\\\['
+        end: '\\\]'
+        lookForThis: 1
+    inlineMath:
+        begin: '(?<!\$)(?<!\\)\$(?!\$)'
+        end: '(?<!\\)\$(?!\$)'
+        lookForThis: 0
+    displayMathTeX:
+        begin: '\$\$'
+        end: '\$\$'
+        lookForThis: 1
+    specialBeforeCommand: 0
+modifyLineBreaks:
+    environments:
+        BeginStartsOnOwnLine: 1
+        BodyStartsOnOwnLine: 1
+        EndStartsOnOwnLine: 1
+        EndFinishesWithLineBreak: 1
+        equation*:
+            BeginStartsOnOwnLine: 1
+            BodyStartsOnOwnLine: 1
+            EndStartsOnOwnLine: 1
+            EndFinishesWithLineBreak: 1
+    oneSentencePerLine:
+        manipulateSentences: 1
+        removeSentenceLineBreaks: 1
+        sentencesBeginWith:
+            other: "\$|[0-9]|É|Á|Ő|Ú|Ű|Ó|Ü|Ö"
+    items:
+        ItemStartsOnOwnLine: 1
+        ItemFinishesWithLineBreak: 1
+    namedGroupingBracesBrackets:
+        NameStartsOnOwnLine: 1
+        NameFinishesWithLineBreak: 1
+    specialBeginEnd:
+        SpecialBeginStartsOnOwnLine: 1
+        SpecialBodyStartsOnOwnLine: 1
+        SpecialEndStartsOnOwnLine: 1
+        SpecialEndFinishesWithLineBreak: 1
+
+
