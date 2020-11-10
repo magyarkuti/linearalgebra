@@ -3718,7 +3718,7 @@ de az $\left\{  \right\}$ üres rendszer is.
 		      Tegyük fel, hogy $y_k=\sum_{j=1}^{k-1}\eta_jy_j+\sum_{j=k+1}^n\eta_jy_j$.
 		      Ekkor az alábbi együttható rendszerek
 		      \[
-			      \left( \alpha_1,\dots,\alpha_{k-1},0,\alpha_{k+1},\dots,\alpha_n \right)
+			      \left( \eta_1,\dots,\eta_{k-1},0,\eta_{k+1},\dots,\eta_n \right)
 			      \qquad
 			      \left( 0,\dots,0,1,0,\dots,0 \right)
 		      \]
@@ -3754,10 +3754,32 @@ Fontos észrevétel a következő.
     Egy nem véges vektorrendszert \emph{lineárisan összefüggőnek} nevezünk,
 	ha van véges részrendszere, amely lineárisan összefüggő.
 \end{definition}
+Persze továbbra is igaz, hogy egy összefüggő rendszert tartalmazó rendszer is összefüggő marad.
+
+A lineárisan összefüggőség a lineáris burok operációval is megfogható:
+\begin{proposition}
+    Egy vektortér $H$ vektorrendszere pontosan akkor lineárisan összefüggő, ha létezik $y\in H$, amelyre $y\in\lin(H\smallsetminus\left\{ y \right\})$.
+\end{proposition}
+\begin{proof}
+    Ha $H$ lineárisan összefüggő, akkor van $\left\{ x_1,\dots,x_k \right\}$ véges összefüggő vektorrendszere.
+    Itt az egyik vektor előáll mint a többi lineáris kombinációja. 
+    Ha ezt a vektort $y$ jelöli, akkor $y\in\lin\left( H\smallsetminus\left\{ y \right\} \right)$.
+    Megfordítva, ha valamely $y\in H$ mellett van $\left\{ x_1,\dots,x_k \right\}\subseteq H\smallsetminus\left\{ y \right\}$ vektorrendszer, amelynek egy lineáris kombinációja éppen $y$, 
+    akkor az $\left\{ x_1,\dots,x_k,y \right\}$ véges rendszer egy lineárisan összefüggő rendszere $H$-nak, ergo $H$ valóban lineárisan összefüggő.
+\end{proof}
 \begin{definition}[lineárisan független vektorrendszer]\index{lineárisan független rendszer}
 	Egy vektorrendszer \emph{lineárisan független}, ha nem lineárisan összefüggő.
 \end{definition}
-Így egy nem véges vektorrendszer akkor lineárisan független, ha minden véges részrendszere is az.
+Az előző állítás tagadásával azonnal meg is kapjuk a lineárisan független rendszerek jellemzését
+a lineáris burok operáció segítségével.
+\begin{proposition}
+    Egy vektortér $H$ vektorrendszere pontosan akkor lineárisan független, ha minden $y\in H$ mellet $y\notin\lin(H\smallsetminus\left\{ y \right\})$ is teljesül.
+\end{proposition}
+Fontos észrevétel a következő:
+\begin{proposition}
+    Egy lineárisan független rendszer minden részrendszere is lineáris független marad.
+\end{proposition}
+A definíció szerint egy nem véges vektorrendszer akkor lineárisan független, ha minden véges részrendszere is az.
 Egy véges vektorrendszer lineárisan függetlenségét, pedig a következő egymással ekvivalens állítások karakterizálják.
 \begin{proposition}
 	Legyen $\left\{ y_1,\dots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
@@ -3827,10 +3849,12 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
 \begin{proposition}
     Legyen $H$ egy (nem feltétlen véges) vektorrendszer a V vektortérben.
     \begin{enumerate}
-        \item Tegyük fel, hogy $H$ lineárisan független.
-            Ekkor minden $y\notin H$ vektorra a $H\cup\left\{ y \right\}$ pontosan akkor lineárisan összefüggő, ha $y\in\lin H$.
-        \item Tegyük fel, hogy $H$ generátorrendszer.
-            Ekkor minden $y\in H$ vektorra a $H\smallsetminus\left\{ y \right\}$ pontosan akkor generátorrendszer, ha $y\in\lin\left( H\smallsetminus \left\{ y \right\} \right)$.
+        \item Tegyük fel, hogy $y\notin H$ és $H$ lineárisan független.
+            \\
+            A $H\cup\left\{ y \right\}$ pontosan akkor lineárisan összefüggő, ha $y\in\lin H$.
+        \item Tegyük fel, hogy $y\in H$ és $H$ generátorrendszer.
+            \\
+            A $H\smallsetminus\left\{ y \right\}$ pontosan akkor generátorrendszer, ha $y\in\lin\left( H\smallsetminus \left\{ y \right\} \right)$.
             \qedhere
     \end{enumerate}
 \end{proposition}
@@ -3845,7 +3869,7 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
             Ha $H\cup\left\{ y \right\}$ lineárisan összefüggő, akkor van $H\cup\left\{ y \right\}$-nak véges részrendszere, amely lineárisan összefüggő.
             Ebben a rendszerben $y$-nak szerepelnie kell hiszen $H$ lineárisan független.
             Azt kapjuk tehát, hogy bizonyos $x_1,\dots,x_k\in H$ vektorok mellett az $\left\{ x_1,\dots,x_k,y \right\}$ vektorrendszer lineáris összefüggő.
-            No de, $H$ lineárisan független, ezért csak az utolsó vektor, az $y$ vektor lehet a többi vektor lineáris burkában.
+            No de, $H$ lineárisan független, ezért csak az utolsó vektor, az $y$ vektor lehet az előző vektorok lineáris burkában.
         \item[$2.\Rightarrow$]
             Ha $H\smallsetminus\left\{ y \right\}$ generátorrendszer, akkor minden vektor így az $y$ is eleme a $\lin\left( H\smallsetminus\left\{ y \right\} \right)$ altérnek.
         \item[$2.\Leftarrow$]
@@ -3856,37 +3880,19 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
             \qedhere
     \end{description}
 \end{proof}
+A előző állítás 1. pontját úgy érdemes értelmeznünk, hogy a $V$ vektortér egy $H\subseteq V$ lineáris független rendszere pontosan akkor és csak akkor nem bővíthető a lineárisan függetlenség megtartásával, ha $\lin H=V$, azaz $H$ egy generátorrendszer.
+\\
+A 2. pont is hasonló: A $H$ generátorrendszer egyetlen eleme sem elhagyható a generátorrendszer tulajdonság megtartásával akkor és csak akkor, ha minden $y\in H$ mellett $y\notin\lin\left( H\smallsetminus\left\{y \right\} \right)$, azaz $H$ egy lineárisan független rendszer.
+
+Bebizonyítottuk tehát az alábbi fontos állítást.
 \begin{proposition}
-	Legyen $\left\{ x_1,\dots,x_m \right\}$ egy vektorrendszere a $V$ vektortérnek.
-	Az alábbi feltevések ekvivalensek.
+	Egy vektortér egy vektorrendszerére az alábbi feltevések ekvivalensek.
 	\begin{enumerate}
 		\item A vektorrendszer maximális lineárisan független rendszer.
 		\item A vektorrendszer egyszerre lineárisan független és generátorrendszer.
 		\item A vektorrendszer minimális generátorrendszer.\qedhere
 	\end{enumerate}
 \end{proposition}
-\begin{proof}
-	Az alábbi lépéseket követjük.
-	\begin{description}
-		\item[$1.\Rightarrow 2.$]
-		      Ha a vektorrendszer nem lenne generátorrendszer is,
-		      akkor a lineáris burkán kívül lenne egy vektor.
-		      Ezt a vektorrendszerhez illesztve, a vektorrendszer egy valódi lineárisan független bővítését kapjuk,
-		      ami ellentmond a maximalitás feltételének.
-		\item[$3.\Rightarrow 2.$]
-		      Ha a vektorrendszer egyik eleme a többi elem lineáris kombinációja,
-		      akkor azt az elemet elhagyva is generátorrendszert kapunk,
-		      ami ellentmond a minimalitás feltételének.
-		\item[$2.\Rightarrow 1.$]
-		      Ha nem lenne maximális a lineárisan független tulajdonságra nézve,
-		      akkor létezne egy vektor a lineáris burkán kívül is,
-		      ami ellentmond a generátorrendszer tulajdonságnak.
-		\item[$2.\Rightarrow 3.$]
-		      Mivel a vektorrendszer egyik eleme, sincs a többi lineáris burkában,
-		      ezért egyetlen elemet sem hagyhatunk el a generátorrendszer tulajdonság megtartásával,
-		      ami azt jelenti, hogy ez egy minimális generátorrendszer.\qedhere
-	\end{description}
-\end{proof}
 \begin{lemma}[független rendszer csere]\label{le:fgtlncsere}
 	Legyen $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszere valamely vektortérnek,
 	és tegyük fel, hogy a tér valamely $x$ vektorára
@@ -14102,4 +14108,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 10 Nov 2020 04:51:45 PM CET CEST CEST CEST CEST
+Last Modified: Tue 10 Nov 2020 07:42:17 pm CET CET CET CET CET CET CET CEST CEST CEST CEST
