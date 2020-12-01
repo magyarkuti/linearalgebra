@@ -3983,11 +3983,11 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 \section{Rang-tétel}
 \begin{definition}[mátrix feszítőrangja]
 	Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
-	Azt mondjuk, hogy feszítő rangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
+	Azt mondjuk, hogy feszítőrangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
 	\[
 		A=BC
 	\]
-	alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times n}$.
+	alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
 \end{definition}
 Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
 A rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
@@ -4049,19 +4049,20 @@ Ha $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek feszítőrangja $r$,
 akkor $A$ bármelyik maximális lineárisan független oszloprendszerének $r$ az elemszáma.
 Ezeket az oszlopokat egy $B\in\mathbb{F}^{n\times r}$ mátrixba rendezve az $A$ oszlopvektortének
 egy generátorrendszerét kapjuk,
-így létezik $B\in\mathbb{F}^{r\times m}$ mátrix, amelyre $AB=A$ teljesül.
+így létezik $C\in\mathbb{F}^{r\times m}$ mátrix, amelyre $A=BC$ teljesül.
 Mivel két mátrix szorzata diádok összegeként is felírható, \index{diad@diád}
 úgy azt kaptuk, hogy egy $r$ feszítőrangú mátrix felírható mint $r$ darab diád,
 tehát 1 rangú mátrix, összegeként.
 Itt a diádokat alkotó oszlop rendszer és sorrendszer is lineárisan független.
 A következő gondolat szerint több is igaz.
 \begin{proposition}
-	Tegyük fel, hogy az $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek feszítőrangja $r$ előáll
+	Tegyük fel, hogy az $A\in\mathbb{F}^{n\times m}$ nem zérus mátrix, 
+    amelynek feszítőrangja $r$ előáll
 	\[
 		A=\sum_{j=1}^rb_j\cdot c_j
 	\]
 	$r$ darab diád összegének alakjában,
-	ahol $b_j\in\mathbb{F}^n$ oszlopvektorok és $c_j\in\mathbb{F}^m$ sorvektorok.
+    ahol $b_j\in\mathbb{F}^{n\times 1}$ oszlopvektorok és $c_j\in\mathbb{F}^{1\times m}$ sorvektorok.
 	Ekkor a diádok oszlopaiból illetve soraiból alkotott
 	\[
 		\left\{ b_j:j=1,\dots,r \right\} \text{ és }
@@ -4226,18 +4227,24 @@ együttes alkalmazásaként kapjuk a következő lemmát.
 \end{lemma}
 
 \begin{proposition}
-	Egy végesen generált altér minden altere is végesen generált.
-	Ha $M\subseteq V$ egy altér és $V$ végesen generált,
-	akkor $\dim M\leq \dim V$.
+	Egy végesen generált $V$ vektortér minden $M\subseteq V$ altere is végesen generált.
+    Ekkor $\dim M\leq \dim V$ és egyenlőség csak $V=M$ esetben lehetséges.
 \end{proposition}
 \begin{proof}
 	Mivel $V$-ben nincs tetszőleges nagy lineárisan független rendszer,
-	ezért $M$-ben van véges elemszámú maximális lineárisan független rendszer,
-	amiről tudjuk, hogy egyben generátorrendszer is.
+	ezért $M$-ben van véges elemszámú maximális lineárisan független rendszer.
+	Erről tudjuk, hogy egyben generátorrendszer is.
 
 	Van tehát $V$-ben is $M$-ben is bázis.
-	Mivel az $M$-beli bázis egyben lineárisan független rendszer $V$-ben,
-	ezért a Steinitz-lemma\index{Steinitz-lemma}  szerint $\dim M\leq\dim V$.
+	Mivel az $M$-beli bázis egyben lineárisan független rendszer,
+	ezért a Steinitz-lemma\index{Steinitz-lemma} szerint 
+    elemszáma nem nagyobb mint a rögzített bázis mint generátorrendszer elemszáma,
+    azaz $\dim M\leq \dim V.$
+
+    Ha $\dim M=\dim V=n$, akkor $M$ az altér egy $\left\{ x_1,\dots,x_n \right\}$ bázisa olyan lineárisan független rendszer $V$-ben, 
+    amelynek annyi eleme van, mint a $V$ dimenziója.
+    Így ez egy $V$-beli generátorrendszer is, ezért 
+    $M=\lin\left( \left\{ x_1,\dots,x_n \right\}\right)=V. $
 \end{proof}
 \chapter{Koordinátázás}
 \scwords A koordináta-tér fogalmát vezetjük be.
@@ -5454,10 +5461,10 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 %Nem definiálhatom, 
 %mint az oszlop vagy sorvektortér dimenzióját, hiszen a felépítés jelen szintjén még nincs bázis.
 %Természetesen azt sem tudjuk még, hogy a maximális lineárisan független sor- vagy oszloprendszer választástól függetlenül mindig azonos elemszámú.
-%A mátrix feszítő rangja viszont definiálható.
+%A mátrix feszítőrangja viszont definiálható.
 %\begin{definition}[mátrix feszítőrangja]
 %    Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
-%    Azt mondjuk, hogy feszítő rangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
+%    Azt mondjuk, hogy feszítőrangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
 %    \[
 %        A=BC
 %    \]
@@ -14108,4 +14115,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 10 Nov 2020 07:42:17 pm CET CET CET CET CET CET CET CEST CEST CEST CEST
+Last Modified: Tue 01 Dec 2020 05:41:07 PM CET
