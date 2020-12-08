@@ -4459,7 +4459,7 @@ ha a bázisban egy elemet megváltoztatunk.
 	E két halmaz \emph{összegén} vagy \emph{Minkowski-összegén}
 	az
 	\[
-		H_1+H_1=\left\{ a+b:a\in H_1,b\in H_2 \right\}
+		H_1+H_2=\left\{ a+b:a\in H_1,b\in H_2 \right\}
 	\]
 	halmazt értjük.
 	Hasonlóan, $\alpha\in\mathbb{F}$ szám mellett jelölje
@@ -4481,7 +4481,7 @@ a Minkowski-összegre és a számmal való szorzásra.
 		\item $A+B=B+A$;
 		\item $\left( A+B \right)+C=A+\left( B+C \right)$;
 		\item $A+\left\{ 0 \right\}=A$;
-		\item $\alpha\left( A+B \right)=\alpha A+\beta B$;
+		\item $\alpha\left( A+B \right)=\alpha A+\alpha B$;
 		\item $\left( \alpha+\beta \right) A\subseteq \alpha A+\beta A$%
 		      \footnote{
 			      Egy $A\subseteq V$ halmazt \emph{affin halmaznak}\index{affin halmaz}
@@ -4553,16 +4553,11 @@ akkor többet is állíthatunk:
 	legszűkebb altér.
 \end{proposition}
 \begin{proof}
-	Ha $R$ egy altér, amelyre $M\subseteq R$ és $N\subseteq R$ is fennáll,
-	akkor $M+N\subseteq R+R\subseteq R$, emiatt
-	$M+N\subseteq \gen(M\cup N)$.
-	Másrészt világos, hogy $M+N$ egy az $M\cup N$ halmazt tartalmazó altér,
-	Így azt kaptuk, hogy
-	\begin{math}
-		\gen(M\cup N)\subseteq M+N.
-	\end{math}
-	Figyelembe véve, hogy $\gen(M\cup N)=\lin(M\cup N)$,
-	készen is vagyunk.
+    Először is gondoljuk meg, hogy $M+N$ egy altér, amely az $N$ és az $M$ altereket is tartalmazza.
+    Ezért $\lin\left( M\cup N \right)\subseteq \lin\left( M+N \right)=M+N$.
+    Másrészt a $\lin\left( M\cup N \right)$ halmazra, 
+    mint az $M\cup N$ halmazból képzett összes lineáris kombinációk halmazára gondolva
+    nyilvánvaló, hogy $\lin\left( M\cup N \right)\subseteq M+N$.
 \end{proof}
 
 A következő állítás szerint,
@@ -4631,7 +4626,7 @@ a két alteret tartalmazó legszűkebb altér dimenziójának,
 		\sum_{j=1}^s\alpha_j m_j+\sum_{j=1}^r\gamma_j p_j=0,
 	\]
 	amiből az $\left\{ m_1,\dots,m_s,p_1,\dots,p_r \right\}$ rendszer lineárisan függetlenségét használva kapjuk,
-	hogy $\alpha_1=\dots=\alpha_s=\gamma_1=\dots=\gamma_t=0$.
+	hogy $\alpha_1=\dots=\alpha_s=\gamma_1=\dots=\gamma_r=0$.
 
 
 	Megmutattuk tehát, hogy $(\dag)$ vektorrendszer bázisa $M+N$-nek.
@@ -4645,6 +4640,70 @@ a két alteret tartalmazó legszűkebb altér dimenziójának,
 Szokásos szóhasználat alterek esetén, hogy két alteret \emph{diszjunktnak}\index{diszjunkt alterek}
 mondunk,
 ha metszetük csak a vektortér zérus elemét tartalmazza.
+A következő gondolat nem csak kettő hanem véges sok altérről szól.
+Gondoljuk meg, hogy akárhány de véges sok altér összege is altér.
+\begin{proposition}
+    \label{pr:direktosszegsorrend}
+    Legyenek az $M_1,\dots,M_s\subseteq V$ alterek a $V$ vektortér alterei ($s\geq 2$).
+    Az alábbi feltételek ekvivalensek:
+    \begin{enumerate}
+		\item 
+            $\left( \sum_{j=1}^{k-1}M_j \right)\cap M_k
+			=
+			\left\{ 0 \right\}
+            $
+		    minden $k=2,\dots,s$ mellett.
+        \item
+            A nullvektor csak egyetlen egyféleképpen áll elő, mint $M_j$-beli vektorok összege,
+            azaz $\sum_{j=1}^su_j=0, u_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $u_j=0$ is teljesül.
+        \item
+            $\left( \sum_{\substack{j=1\\j\neq k}}^sM_j \right)\cap M_k
+			=
+			\left\{ 0 \right\}
+            $
+		    minden $k=1,\dots,s$ mellett.
+    \end{enumerate}
+    Szokásos szóhasználat, hogy azt mondjuk, hogy az $M_1,\dots,M_s$ altereknek \emph{értelmezhető a direktösszege},   vagy a \emph{direktösszege értelmes}, ha a fenti feltételek egyike (ezért mindegyike) fennáll.
+\end{proposition}
+\begin{proof}[Az $1.\Rightarrow 2.$ igazolása]
+    Ha $2.$ nem áll fenn, akkor valamely $u_j\in M_j$ vektorokra $\sum_{j=1}^su_j=0$ úgy áll fenn,
+    hogy nem minden $u_j=0$.
+    Legyen $k$ a legnagyobb olyan $j$ index, amihez nem zérus vektor tartozik.
+    Világos, hogy van ilyen index; 
+    világos, hogy $u_k\neq 0$, de
+    \[
+        u_1+\dots+u_k=0;
+    \]
+    így az is világos, hogy $2\leq k\leq s$.
+    Ekkor persze $u_k$ egy nem zérus vektor az $\left( \sum_{j=1}^{k-1}M_j \right)\cap M_k$ altérben.
+    Megmutattuk tehát, hogy ha $2.$ nem áll fenn, akkor valamely $k$ mellett $1.$ sem teljesül.
+\end{proof}
+\begin{proof}[A $2.\Rightarrow 3.$ igazolása]
+        Legyen $v_k\in M_k$ olyan, hogy valamely $v_j\in M_j$ vektorokra 
+        $v_k=\sum_{\substack{j=1\\j\neq k}}^sv_j$
+        teljesül. 
+        Ekkor persze 
+        $v_k+\sum_{\substack{j=1\\j\neq k}}^s-v_j=0$. 
+        No de, a $2.$ feltétel szerint ez csak úgy lehet, ha minden vektor zérus, speciálisan $v_k=0$.
+        Az mutattuk meg tehát, hogy minden $k$ mellett a $k$-adik altér diszjunkt az összes többi összegétől.
+\end{proof}
+\begin{proof}[Végül a $3.\Rightarrow 1.$]
+    Nyilvánvalóan következik a
+    $\sum_{j=1}^{k-1}M_j
+    \subseteq
+    \sum_{\substack{j=1\\j\neq k}}^sM_j
+    $
+    tartalmazásból.
+\end{proof}
+Ezek szerint a direktösszeg akkor értelmes, ha az alterek mindegyike diszjunkt az összes többi altér direktösszegétől.
+Azt gondoltuk meg éppen, hogy ezzel ekvivalens feltevés, 
+hogy minden altér diszjunkt csak a sorban előtte álló alterek direktösszegétől.
+E második tulajdonság úgy tűnhet mintha függne az alterek sorrendjétől, 
+de mivel ekvivalens az első tulajdonsággal,
+ezért persze nem függ az alterek sorrendjétől.
+Mind a kettő ugyanazt fejezi ki: A zérus vektor csak egyféleképpen áll elő, mint az egyes alterekből vett vektorok összege.
+
+A következő definíció szerint, amennyiben az alterek direktösszege értelemes, úgy a direktösszeg egyszerűen a szóban forgó alterek Minkowski-összege.
 \begin{definition}[direkt összeg]
 	Legyenek az $M_1,\dots,M_s\subseteq V$ alterek a $V$ vektortér alterei ($s\geq 2$).
 	Azt mondjuk, hogy az $N\subseteq V$ altér az $M_1,\dots,M_s$ alterek \emph{direkt összege}\index{direkt összeg},
@@ -4661,6 +4720,15 @@ ha metszetük csak a vektortér zérus elemét tartalmazza.
 Külön érdemes figyelni az $s=2$, tehát csak két altér direkt összegének esetére.
 Ilyenkor a fenti definíció azt jelenti,
 hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
+
+\Aref{pr:direktosszegsorrend}. állításban 3. feltétel előnye, hogy ennek alapján teljesen világos, hogy az
+$M_1\oplus\dots\oplus M_s$ direkt összeg nem függ az alterek sorrendjétől.
+Az evvel ekivalens 1. feltevés előnye pedig,
+hogy ha képeznünk kell az $M_1,\dots,M_s$ alterek direkt összegét,
+akkor rekurzívan járhatunk el:
+ha a korábbi lépésben ellenőriztük, hogy az $M_1\oplus\dots\oplus M_{n-1}$ értelmes, akkor
+a következő lépésben csak azt kell ellenőriznünk,
+hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 \begin{proposition}
 	Legyen az $M_1,\dots,M_s,N\subseteq V$ a $V$ vektortér altere.
 	Az $N=M_1\oplus\dots\oplus M_s$ pontosan akkor teljesül,
@@ -4668,8 +4736,8 @@ hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
 	\begin{enumerate}
 		\item minden $k=1,\dots,s$ mellett $M_k\subseteq N$, és
 		\item
-		      minden $v\in N$ vektorhoz létezik egyetlen $v_j\in M_j, j=1,\dots,s$
-		      vektor, amelyre
+            minden $v\in N$ vektorhoz létezik egyetlen $\left\{ v_1,\dots,v_s \right\}\subseteq V$ vektorrendszer,
+            amelyre $v_j\in M_j, j=1,\dots,s$ és
 		      \[
 			      v=\sum_{j=1}^sv_j.\qedhere
 		      \]
@@ -4682,70 +4750,33 @@ hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
 	$v=v_1+\dots+v_s$.
 	Most tegyük fel, hogy $v$ előáll $v=u_1+\dots+u_s$ alakban is,
 	ahol $u_j\in V_j$ minden $j=1,\dots,s$ mellett.
-	Ekkor minden rögzített $k=1,\dots,s$ mellett
+	Ekkor 
 	\[
-		u_k-v_k=\sum_{\substack{j=1\\j\neq k}}^s\left( v_j-u_j \right).
+        0=\sum_{\substack{j=1}}^s\left( v_j-u_j \right), \text{ ahol } v_j-u_j\in M_j.
 	\]
-	No de, a baloldali vektor $M_k$-beli,
-	míg a jobboldali vektor $\sum_{\substack{j=1\\j\neq k}}^sM_j$-beli.
-	A feltétel szerint ilyen vektor egyedül a zérus vektor,
-	amiből $u_k=v_k$ következik.
-	Mivel ezt minden $k=1,\dots,s$ mellett elismételhetjük,
-	ezért az előállítás egyértelműségét be is láttuk.
+	No de, a direktösszeg értelmes, ezért ez csak úgy lehet, hogy $v_j=u_j$ áll fenn minden $j=1,\dots,s$ mellett,
+    azaz az előállítás valóban egyértelmű is.
 
 	Megfordítva,
 	most azt tegyük fel, hogy a két feltétel fennáll.
-	Ekkor 1. szerint $M_1+\dots+M_s\subseteq N+\dots+N=N$,
-	és 2. szerint $N\subseteq M_1+\dots+M_s$,
+    Ekkor $1.$ szerint $\sum_{j=1}^sM_j\subseteq N+\dots+N=N$,
+	és $2.$ szerint $N\subseteq M_1+\dots+M_s$,
 	amiből már
 	\begin{math}
 		\sum_{j=1}^sM_j=N
 	\end{math}
 	következik is.
-	Most képzeljük el,
-	hogy valamely $k$ mellett $v_k\neq 0, v_k\in M_k$
-	és
-	$v_k=\sum_{\substack{j=1\\j\neq k}}^sv_j$, ahol $v_j\in M_j$ minden $j=1,\dots,s$ mellett.
-	Ekkor
-	\[
-		v_k-\sum_{\substack{j=1\\j\neq k}}^sv_j
-		=
-		0
-		=
-		\sum_{j=1}^s 0
-	\]
-	az $N$ vektortér zérus elemének két különböző előállítása,
-	hiszen a $k$-adik vektortérbeli elem a baloldalon a $v_k$ nem zérus vektora $M_k$-nak,
-	míg a jobboldalon a zérus vektor szerepel $M_k$-ból (is).
+    \\
+    Persze 2. speciálisan az $N$ altér nullvektorára is igaz, ami azt jelenti, hogy az alterek direktösszege értelmes.
 \end{proof}
 Érdemes észrevenni,
 hogy a fenti állítás 2. feltétele nem más mint az alábbi két feltétel együttesének tömör megfogalmazása:
 \emph{
 	\begin{itemize}
-		\item[2a.] $N=M_1+\dots+M_s$,
+		\item[2a.] $N\subseteq M_1+\dots+M_s$,
 		\item[2b.] $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $v_j=0$.
 	\end{itemize}
 }
-Így a következő állítást is meggondoltuk:
-\begin{proposition}
-	Legyen az $M_1,\dots,M_s,N\subseteq V$ a $V$ vektortér altere.
-	Az $N=M_1\oplus\dots\oplus M_s$ pontosan akkor teljesül,
-	ha
-	\begin{enumerate}
-		\item $M_k\subseteq N$ minden $k=1,\dots,s$ mellett;
-		\item[2a.] $N=M_1+\dots+M_s$;
-		\item[2b.] $\sum_{j=1}^sv_j=0$, $v_j\in M_j$ esetén minden $j=1,\dots,s$ mellett $v_j=0$.
-		      \qedhere
-	\end{enumerate}
-\end{proposition}
-Ha tehát csak az $M_1,\dots,M_s$ alterek adottak,
-akkor annak szükséges és elegendő feltétele,
-hogy ezeknek a direktösszege értelmezhető legyen éppen a fenti 2b feltétel.
-Ebben az esetben az $N=\sum_{j=1}^sM_j$ altér lesz az $M_1,\dots,M_s$ alterek
-\[
-	N=M_1\oplus\dots\oplus M_s
-\]
-direktösszege.
 
 Megint csak a két vektortér speciális esetére figyelve
 azt igazoltuk, hogy $N$ pontosan akkor az $M_1$ és $M_2$ direkt összege,
@@ -4789,74 +4820,6 @@ Világos ugyanis, hogy az egyesített rendszer $N$-nek generátorrendszere,
 Azt kaptuk tehát, hogy ez egy minimális generátorrendszere $N$-nek,
 ergo egy bázis.
 
-A fenti állítás konkrét alkalmazhatóságához nagy segítség a most következő észrevétel.
-\begin{proposition}\label{pr:dirosszegelozo}
-	Adottak az $M_1,\dots,M_s\subseteq V$ alterek, ahol $s\geq 2$.
-	Az alábbi feltételek ekvivalensek:
-	\begin{enumerate}
-		\item Minden $k=1,\dots,s$ mellett
-		      $M_k\cap\left( \sum_{\substack{j=1\\j\neq k}}^sM_j \right)=\left\{ 0 \right\}$.
-		\item Minden $k=2,\dots,s$ mellett
-		      $M_k\cap\left( \sum_{\substack{j=1}}^{k-1}M_j \right)=\left\{ 0 \right\}$.
-	\end{enumerate}
-\end{proposition}
-\begin{proof}
-	Mivel $k\geq 2$ mellett
-	$
-		\sum_{\substack{j=1}}^{k-1}M_j
-		\subseteq
-		\sum_{\substack{j=1\\j\neq k}}^sM_j,
-	$
-	ezért $1.\Rightarrow 2.$ nyilvánvaló.
-
-	Most azt mutatjuk meg, hogy ha 1. feltétel nem igaz, akkor 2. feltétel sem áll.
-	Tegyük fel tehát,
-	hogy van olyan $1\leq k\leq s$,
-	amelyre
-	$M_k\cap\left( \sum_{\substack{j=1\\j\neq k}}^sM_j \right)\neq\left\{ 0 \right\}$.
-	Ha $k=s$, akkor készen is vagyunk.
-	Legyen emiatt a továbbiakban $k<s$.
-	Eszerint léteznek $v_j\in M_j (j=1,\dots,s)$ vektorok, amelyekre
-	\[
-		0\neq v_k=
-		\sum_{j=1}^{k-1}v_j
-		+
-		\sum_{j=k+1}^{s}v_j.
-	\]
-	Legyen $t$ a legnagyobb olyan szám, amelyre $k\leq t\leq s$ és $v_t\neq 0$.
-	Ha $k=1$, akkor a jobboldali első szumma üres, emiatt $t>1$.
-	Ha viszont $k>1$, akkor $1<k\leq t$.
-	Mindkét esetben látjuk tehát, hogy $t>1$.
-	Ekkor az
-	\[
-		v_k=
-		\sum_{j=1}^{k-1}v_j
-		+
-		\sum_{j=k+1}^{t}v_j.
-	\]
-	azonosságot átrendezve kapjuk, hogy
-	\[
-		-v_t
-		=
-		\sum_{j=1}^{k-1}v_j
-		-
-		v_k
-		+
-		\sum_{j=k+1}^{t-1}v_j.
-	\]
-	Itt a baloldali nem zérus vektor $M_t$-beli,
-	a jobboldali vektor $\sum_{j=1}^{t-1}M_j$-beli,
-	ergo valamely $1<t\leq s$ mellett találtunk az $M_t\cap\left( \sum_{j=1}^{t-1}M_j \right)$
-	altérben is egy nem zérus elemet.
-\end{proof}
-Az 1. feltétel előnye, hogy ennek alapján teljesen világos, hogy az
-$M_1\oplus\dots\oplus M_s$ direkt összeg nem függ az alterek sorrendjétől,
-2. előnye pedig,
-hogy ha képeznünk kell az $M_1,\dots,M_s$ alterek direkt összegét,
-akkor rekurzívan járhatunk el:
-ha a korábbi lépésben ellenőriztük, hogy az $M_1\oplus\dots\oplus M_{n-1}$ értelmes, akkor
-a következő lépésben csak azt kell ellenőriznünk,
-hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 
 \section{Direkt kiegészítő}
 \begin{proposition}\index{direkt kiegészítő}
@@ -7439,7 +7402,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Teljesül tehát a $V_1,\dots,V_{n-1},V_n$ alterekre,
 	hogy mind diszjunkt -- az itt adott sorrendben -- az előzőek összegétől,
 	és a Minkowski-összegük az egész $V$ vektortér.\index{Minkowski-összeg}
-	\Aref{pr:dirosszegelozo}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
+	\Aref{pr:direktosszegsorrend}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
 \end{proof}
 \section{Sajátvektorok, minimálpolinom és diagonalizálhatóság}
 Alkalom nyílik,
@@ -14115,4 +14078,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 01 Dec 2020 05:41:07 PM CET
+Last Modified: Tue 08 Dec 2020 01:48:17 PM CET
