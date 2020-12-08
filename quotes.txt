@@ -55,7 +55,7 @@ Number,Quote,Author
 54,I can't understand why people are frightened by new ideas. I'm frightened by old ones.,John Cage
 55,Setting an example is not the main means of influencing others; it is the only means.,Albert Einstein
 56,The difference between ordinary and extraordinary is that little extra.,Unknown
-57,The best way to predict the future is to create it.,Unknown
+57,"\dots Evezz a mélyre, \dots","Lk 5,4"
 58,Anyone can do something when they WANT to do it. Really successful people do things when they don't want to do it.,Dr Phil
 59,"There are two primary choices in life: to accept conditions as they exist, or accept the responsibility for changing them.",Dr Denis Waitley
 60,Success is the ability to go from failure to failure without losing your enthusiasm.,Sir Winston Churchill
