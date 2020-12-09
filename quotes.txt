@@ -42,7 +42,7 @@ Number,Quote,Author
 41,"Age is an issue of mind over matter. If you don't mind, it doesn't matter.",Mark Twain
 42,"Whenever you find yourself on the side of the majority, it's time to pause and reflect.",Mark Twain
 43,"Keep away from people who try to belittle your ambitions. Small people always do that, but the really great make you feel that you, too, can become great.",Mark Twain
-44,The surest way not to fail is to determine to succeed.,Richard B Sheridan
+44,"\dots Evezz a mélyre, \dots","Lk 5,4"
 45,"Take the first step in faith. You don't have to see the whole staircase, just take the first step.",Dr Martin Luther King Jr
 46,Act or accept.,Anonymous
 47,"Many great ideas go unexecuted, and many great executioners are without ideas. One without the other is worthless.",Tim Blixseth

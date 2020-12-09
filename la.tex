@@ -3981,7 +3981,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 	amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
 \section{Rang-tétel}
-\begin{definition}[mátrix feszítőrangja]
+\begin{definition}[mátrix feszítőrangja]\index{feszítőrang}
 	Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
 	Azt mondjuk, hogy feszítőrangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
 	\[
@@ -4246,6 +4246,48 @@ együttes alkalmazásaként kapjuk a következő lemmát.
     Így ez egy $V$-beli generátorrendszer is, ezért 
     $M=\lin\left( \left\{ x_1,\dots,x_n \right\}\right)=V. $
 \end{proof}
+\section{Rang és feszítőrang}
+\begin{definition}[mátrix rangja]\index{rang}
+    Egy mátrix \emph{rangja} az oszlopai által generált vektortér dimenziója.
+\end{definition}
+A két szélsőséges eset, mikor a lineárisan független oszlopok száma zérus,
+és mikor a lineárisan független oszlopok száma annyi mint az összes oszlopok száma.
+Ez utóbbi esetben a rang az oszlopok száma, hiszen egy független rendszer generálta altérben a független rendszer generátorrendszer is, ezért egy bázis is.
+Az első eset azt jelenti, hogy a zérus mátrixszal állunk szemben, tehát a rang a $\left\{ 0 \right\}$ vektortér dimenziója, azaz 0.
+\begin{proposition}
+    Tetszőleges nem zérus mátrix rangja azonos feszítőrangjával.
+\end{proposition}
+\begin{proof}
+    Legyen az $A\in\mathbb{F}^{m\times n}$ mátrix rangja $\rho$;
+    a feszítőrangja $r$; 
+    és $r_c$ az $A$ maximális lineárisan független oszloprendszereinek elemeszáma.
+    Jól tudjuk, hogy $r_c=r$.
+    Jelölje $M$ az $A$ oszlopai generálta vektorteret, definíció szerint $\dim M=\rho$.
+    Legyen $A=BC$ egy olyan felbontás, ahol $B$ egy $m\times r$ méretű és $C$ egy $r\times n$ mátrix. 
+    Jelölje $W$ a $B$ mátrix oszlopai generálta vektorteret.
+    Világos, hogy
+    \[
+        M\subseteq W\subseteq \mathbb{F}^n,
+    \]
+    az $A=BC$ egyenlőség és a mátrix szorzás definíciója szerint.
+    Ezért 
+    \[
+        r_c\leq\dim M\leq\dim W\leq r=r_c.
+    \]
+    Ez azt jelenti, hogy $\rho=\dim M=\dim W=r$.
+\end{proof}
+A fenti bizonyításból az is leolvasható, hogy $M=W$, azaz az $A$ oszlopai generálta altér
+és a $B$ oszlopai generálta altér azonos alterek.
+Mivel ennek az altérnek dimenziója $r_c=r=\rho$, ezért 
+$A$ oszlopainak olyan lineárisan független rendszere, amely maximális az oszlopok közt,
+egy $r_c$ elemű lineárisan független rendszer az $r_c$ dimenziós $M$ vektortérben, tehát nem csak az oszlopok közt maximálisan lineárisan független rendszer, hanem az oszlopok generálta $M$ altérben is maximálisan lineárisan független rendszert ad.
+Ugyanígy $B$ oszlopainak rendszere egy $r$ elemű generátorrendszer az $r$ dimenziós $W$ vektortérben.
+Így $B$ oszlopai lineárisan független rendszert alkotnak.
+
+Analóg módon meggondolható, hogy egy mátrix sorai generálta altér dimenziója is azonos a fe\-szí\-tő\-rang\-gal.
+Másik gondolat az lehet, hogy észre vesszük, hogy egy mátrixnak és a transzponáltjának azonos a feszítőrangja, majd a fentieket elismételjük a mátrix transzponáltjára.
+Mivel a mátrix sorai éppen a transzponált oszlopai, ezért a mátrix sorai generálta vektortér dimenziója
+azonos a transzponált mátrix feszítőrangjával, ami azonos az eredeti mátrix feszítőrangjával.
 \chapter{Koordinátázás}
 \scwords A koordináta-tér fogalmát vezetjük be.
 Látni fogjuk, hogy véges dimenziós vektortérre ,,lényegében'' az egyetlen példa,
@@ -14078,4 +14120,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 08 Dec 2020 01:48:17 PM CET
+Last Modified: Wed 09 Dec 2020 01:28:20 AM CET
