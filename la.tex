@@ -1755,7 +1755,7 @@ ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
-Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss--Jordan\index{Gauss--Jordan-elimináció} eliminációs algoritmusra,
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra,
 amiket majd később vezetünk be.\label{pg:kommutal}\index{kommutáló mátrixok}
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
@@ -2177,7 +2177,7 @@ Ezt alkalmazva tetszőleges $z,w$ komplex számok mellett
 	=
 	|z||w|,
 \]
-amit \emph{Cauchy--Schwartz-egyenlőtlenségnek}\index{Schwartz-egyenlőtlenség} mondunk.
+amit \emph{Cauchy\,--\,Schwartz-egyenlőtlenségnek}\index{Schwartz-egyenlőtlenség} mondunk.
 Az abszolútérték legfontosabb tulajdonságai:
 \begin{proposition}
 	Legyen $z,w\in\mathbb{C}$ komplex szám.
@@ -2213,7 +2213,7 @@ Egy kevésbé népszerű, de ekvivalens alakja
 		\left( |z|+|w| \right)^2.
 	\end{multline*}
 	Az első egyenlőtlenség, hogy egy valós szám nem nagyobb az abszolútértékénél,
-	a második egyenlőtlenség pedig a Cauchy--Schwartz-egyenlőtlenség.
+	a második egyenlőtlenség pedig a Cauchy\,--\,Schwartz-egyenlőtlenség.
 
 	A kevésbé populáris alakhoz használjuk a már igazolt egyenlőtlenséget:
 	\begin{math}
@@ -2488,7 +2488,7 @@ hogy ha egy valós együtthatós polinomnak nincs valós gyöke,
 akkor csak páros fokú lehet, vagy ami ugyanaz:
 \emph{minden páratlan fokú valós együtthatós polinomnak van valós gyöke.}
 
-%\chapter{Gauss--Jordan elimináció}
+%\chapter{Gauss\,--\,Jordan-elimináció}
 %\scwords Lineáris egyenletrendszerek megoldását automatizáljuk.\index{lineáris egyenletrendszer}
 
 
@@ -2850,7 +2850,7 @@ Látjuk tehát, hogy összesen két fajta sorművelettel alakítottuk a kiindul�
 Világos, hogy ez ugyanaz, mintha a feladat az lett volna,
 hogy a fenti két sorművelet használva az $y$ oszlopában minden számot el kell tüntetni,
 a $k$-adikat pedig $1$-re kell beállítani.
-Ez a \emph{Gauss--Jordan-elimináció}.\index{Gauss--Jordan-elimináció}
+Ez a \emph{Gauss\,--\,Jordan-elimináció}.\index{Gauss\,--\,Jordan-elimináció}
 
 \subsection{Homogén lineáris egyenletrendszer}
 Az alábbi feladatot lineáris egyenletrendszernek nevezzük.
@@ -2897,7 +2897,7 @@ Ha az egyenletek egyikét egy nemzérus számmal szorozzuk,
 akkor a megoldások nem változnak,
 azaz ekvivalens átalakítást hajtunk végre.
 
-Egy Gauss--Jordan-eliminációs\index{Gauss--Jordan-elimináció}  lépésre tekinthetünk úgy is,
+Egy Gauss\,--\,Jordan-eliminációs\index{Gauss\,--\,Jordan-elimináció}  lépésre tekinthetünk úgy is,
 mint rögzített $i,j$ mellett a $j$-edik változó kiküszöbölésére
 -- azaz eliminációjára --
 valamennyi nem az $i$-edik sorból,
@@ -2907,7 +2907,7 @@ ha az $i$-edik sort osztjuk az $a_{i,j}\neq 0$ számmal, akkor e sor $j$-edik
 eleme $1$-re változik.
 Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
-Ha ezt minden $k=1,\dots,m$ mellet kiszámoljuk, akkor éppen egy Gauss--Jordan-%
+Ha ezt minden $k=1,\dots,m$ mellet kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot\footnote{sarok elem}\index{pivot elem} elem választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
@@ -2978,7 +2978,7 @@ A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló
 	akkor a rendszernek van nem zéró megoldása.
 \end{proposition}
 \begin{proof}
-	Gauss--Jordan-algoritmus\index{Gauss--Jordan-elimináció}  legutolsó táblázatában
+	Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  legutolsó táblázatában
 	a kötött változó száma legfeljebb a sorok száma az pedig szigorúan kisebb mint az összes ismeretlenek száma.
 	Van tehát szabad változó, amelynek értéke tetszőleges lehet.
 \end{proof}
@@ -3007,7 +3007,7 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 		      }
 	      \]
 	      homogén  lineáris egyenletrendszert.
-	      A Gauss--Jordan-algoritmus\index{Gauss--Jordan-elimináció}  lehet például a következő:
+	      A Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
 	      \[
 		      \begin{array}{|rrr}
 			      a         & b & c \\
@@ -3149,7 +3149,7 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 \end{enumerate}
 Egy homogén lineáris egyenletrendszernek a zérus vektor mindig megoldása,
 ezt nevezzük triviális megoldásnak.
-A Gauss--Jordan-eliminációs\index{Gauss--Jordan-elimináció}  algoritmusból világos a következő gondolat.
+A Gauss\,--\,Jordan-eliminációs\index{Gauss\,--\,Jordan-elimináció}  algoritmusból világos a következő gondolat.
 A rendszernek pontosan akkor nincs nem triviális megoldása,
 ha nincs szabad változó, azaz minden változó kötött:
 \begin{proposition}
@@ -3157,7 +3157,7 @@ ha nincs szabad változó, azaz minden változó kötött:
 	ha az eliminációs algoritmusban minden oszlop a generátorrendszerbe cserélhető.
 \end{proposition}
 \subsection{Mátrix faktorizáció}
-Érdemes a Gauss--Jordan-eliminációs\index{Gauss--Jordan-elimináció}  algoritmust az egyenletrendszerek megoldásától függetlenül is szemlélni.
+Érdemes a Gauss\,--\,Jordan-eliminációt\index{Gauss\,--\,Jordan-elimináció}  az egyenletrendszerek megoldásától függetlenül is szemlélni.
 Ide másolom az előző feladat megoldásának táblázatát:
 \[
 	\begin{array}{r|rrrrr}
@@ -3271,10 +3271,10 @@ Máshogyan fogalmazva: mikor van egyáltalán megoldása egy inhomogén rendszer
 	ha $b$ előáll mint $A$ oszlopainak valamilyen lineáris kombinációja,
 	azaz a $b$ vektor az $A$ mátrix oszlopvektorteréhez tartozik.
 \end{proposition}
-Konkrétan adott $A$ és $b$ mellett Gauss--Jordan-algoritmussal\index{Gauss--Jordan-elimináció}  el tudjuk dönteni, hogy
+Konkrétan adott $A$ és $b$ mellett Gauss\,--\,Jordan-algoritmussal\index{Gauss\,--\,Jordan-elimináció}  el tudjuk dönteni, hogy
 $b$ vektor eleme-e az $A$ mátrix oszlopvektorterének.
 Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
-Most hajtsuk végre a Gauss--Jordan-eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
+Most hajtsuk végre a Gauss\,--\,Jordan-eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
 csak az első n oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
 Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
 Az algoritmus úgy ér véget,
@@ -3308,7 +3308,7 @@ Nézzünk egy példát.
 		3x_1+x_2+4x_3-x_4+5x_5=  & 10
 	\end{array}
 \]
-A Gauss--Jordan-algoritmus:\index{Gauss--Jordan-elimináció}
+A Gauss\,--\,Jordan-algoritmus:\index{Gauss\,--\,Jordan-elimináció}
 \begin{multline*}
 	\begin{array}{c|rrrrr|r}
 		 & a_1       & a_2 & a_3 & a_4 & a_5 & b  \\
@@ -3366,7 +3366,7 @@ Az általános megoldás tehát
 \]
 \begin{proposition}
 	Az $Ax=b$ inhomogén lineáris egyenletrendszernek pontosan akkor van egyetlen
-	megoldása, ha $b$ az $A$ képteréhez tartozik és $A$ minden oszlopa a Gauss--Jordan-eliminációs algoritmussal\index{Gauss--Jordan-elimináció}  a generátorrendszerbe cserélhető.
+	megoldása, ha $b$ az $A$ képteréhez tartozik és $A$ minden oszlopa a Gauss\,--\,Jordan-eliminációs algoritmussal\index{Gauss\,--\,Jordan-elimináció}  a generátorrendszerbe cserélhető.
 \end{proposition}
 Ebben az esetben persze az algoritmusból adódó partikuláris megoldás az egyetlen megoldás.
 
@@ -3378,7 +3378,7 @@ A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint
 \end{proposition}
 \begin{proof}
 	Tegyük fel tehát, hogy kevesebb ismeretlen van mint sor.
-	Mikor az $A$ mátrixra alkalmazott Gauss--Jordan-algoritmus\index{Gauss--Jordan-elimináció}  véget ér,
+	Mikor az $A$ mátrixra alkalmazott Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  véget ér,
 	akkor minden nem zérus sorban pontosan egy eliminált ismeretlen van.
 	Eszerint minden egyes sor vagy zéró sor,
 	vagy van benne eliminált ismeretlen.
@@ -3388,7 +3388,7 @@ A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint
 	amelynek a $k$-adik koordinátája nem zérus, de minden más koordináta zérus meg is felel.
 \end{proof}
 \subsection{Inverz mátrix}
-Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss--Jordan-algoritmust.\index{Gauss--Jordan-elimináció}
+Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss\,--\,Jordan-algoritmust.\index{Gauss\,--\,Jordan-elimináció}
 Mivel sorműveletekről van szó, természetes gondolat, hogy az $A\in\mathbb{F}^{m\times n}$
 mátrix transzformálásához $m\times m$ méretű mátrixokat használjunk,
 amelyekkel balról szorozzuk $A$-t.
@@ -3413,7 +3413,7 @@ Valóban, ha $m\times m$ méretű identitás mátrix
 
 Tekintsünk most, egy $m\times m$ méretű négyzetes mátrixot.
 Tegyük fel, hogy a mátrix minden oszlopát a generátorrendszerbe cserélhetjük
-a szokásos Gauss--Jordan-eliminációs algoritmus\index{Gauss--Jordan-elimináció}  során.
+a szokásos Gauss\,--\,Jordan-eliminációs algoritmus\index{Gauss\,--\,Jordan-elimináció}  során.
 Láttuk korábban, hogy ez azt jelenti, hogy az $Ax=b$ inhomogén lineáris egyenletrendszer
 minden $b$ vektor mellett egyértelműen megoldható.
 
@@ -3426,7 +3426,7 @@ akkor a mátrix szorzás definíciója szerint
 	AB=I
 \]
 teljesül.
-A $B$ mátrixot tehát $m$ darab $m$ lépéses Gauss--Jordan-eliminációval\index{Gauss--Jordan-elimináció}  meg tudnánk határozni.
+A $B$ mátrixot tehát $m$ darab $m$ lépéses Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció}  meg tudnánk határozni.
 
 Egyszerűbb,
 ha egyetlen eliminációs algoritmus használunk, de arra az $m\times 2m$ méretű mátrixra,
@@ -3454,7 +3454,7 @@ ezért maga a $B$ mátrix áll a táblázat jobboldali $m\times m$ méretű rés
 
 Most meggondoljuk, hogy $BA=I$ is fennáll.
 Az iménti algoritmussal az $[A|I]$ mátrixot transzformáltuk a $[I|B]$ mátrixszá.
-A transzformáció során a Gauss--Jordan-eliminációt használtuk,\index{Gauss--Jordan-elimináció}  amely a szakasz elején említett 1) és 2) típusú mátrixokkal mint balszorzásokkal hajtható végre.
+A transzformáció során a Gauss\,--\,Jordan-eliminációt használtuk,\index{Gauss\,--\,Jordan-elimináció}  amely a szakasz elején említett 1) és 2) típusú mátrixokkal mint balszorzásokkal hajtható végre.
 Az algoritmus végén még sorokat is felcseréltünk, ami egy 3) típusú balszorzást jelent.
 Ha az 1) vagy 2) vagy 3) típusú mátrixot \emph{elemi mátrixnak}\index{elemi mátrix}
 nevezünk,
@@ -3494,7 +3494,7 @@ amiből már következik, hogy
 			      AB=I.
 		      \end{math}
 		\item
-		      Gauss--Jordan-eliminációval\index{Gauss--Jordan-elimináció}  az $A$ minden oszlopa a generátorrendszerbe cserélhető.
+		      Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció}  az $A$ minden oszlopa a generátorrendszerbe cserélhető.
 	\end{enumerate}
 	Ha a fenti feltevések egyike (ergo mindegyike) fennáll,
 	akkor az 2)-ben szereplő $B$ mátrixból csak egy van,
@@ -3505,7 +3505,7 @@ amiből már következik, hogy
 	\begin{description}
 		\item[$1.\Rightarrow 2.$] Nyilvánvaló.
 		\item[$2.\Rightarrow 3.$]
-		      Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss--Jordan-algoritmus megáll, ahol $r<m$.
+		      Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss\,--\,Jordan-algoritmus megáll, ahol $r<m$.
 		      Ez azt jelenti, hogy az $A$ oszlop-vektorterének van $r$ elemű generátorrendszere.
 		      E generátorrendszer vektorait mint oszlopokat egy $A_1$ mátrixba téve egy $m\times r$ mátrixot kapunk.
 		      Mivel az oszlopok lineáris burkában az $A$ valamennyi oszlopa szerepel,
@@ -5451,7 +5451,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 %    \item Vektorrendszer lineáris függetlensége;
 %    \item Altér, lineáris burok, generátorrendszer;
 %    \item Mátrix szorzás,
-%    \item Gauss--Jordan-elimináció.\index{Gauss--Jordan-elimináció}  Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
+%    \item Gauss\,--\,Jordan-elimináció.\index{Gauss\,--\,Jordan-elimináció}  Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
 %        lineárisan függetlenek, akkor az elemi sor műveletekkel az identikus mátrixszá transzformálható.
 %        Mivel az elemi sorműveletek, bal-szorzások alkalmas mátrixszal, 
 %        azt kapjuk, hogy létezik $P$ mátrix, amelyre $PQ=I$.
@@ -8196,7 +8196,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 Később ki fog derülni,
 hogy a transzformáció karakterisztikus polinomjának, amely pontosan $\dim V$-ed fokú,
 is mindig gyöke a transzformáció.
-Ez az úgynevezett Cayley--Hamilton-tétel.\index{Cayley--Hamilton}
+Ez az úgynevezett Cayley\,--\,Hamilton-tétel.\index{Cayley\,--\,Hamilton}
 \chapter{Nilpotens transzformációk}
 \section{Hatvány függvény alakú minimálpolinom}
 \begin{definition}[nillpotens transzformáció]
@@ -9203,10 +9203,10 @@ hogy \emph{az $A$ transzformáció karakterisztikus polinomjának is gyöke maga
 Ezt az eredményt gondoltuk meg, mikor a vektortér olyan test felett van értelmezve,
 ahol minden polinomnak van gyöke.
 A gondolat általánosabban is igaz, tetszőleges test feletti vektorterek esetére.
-Ez a \emph{Cayley--Hamilton-tétel}\index{Cayley--Hamilton}.
+Ez a \emph{Cayley\,--\,Hamilton-tétel}\index{Cayley\,--\,Hamilton}.
 
 Mivel a karakterisztikus polinom mindig pontosan egy $\dim V$-ed fokú normált polinom,
-ezért a Cayley--Hamilton-tételből is nevetve következik,
+ezért a Cayley\,--\,Hamilton-tételből is nevetve következik,
 hogy a minimálpolinom mindig legfeljebb $\dim V$-ed fokú.
 
 Szokás azt mondani, hogy a $\lambda\in\sigma\left( A \right)$ sajátérték
@@ -9240,7 +9240,7 @@ ha egy explicit formulánk van, egy képlet amibe csak be kell helyettesíteni,
 egy reguláris mátrix-szú inhomogén lineáris egyenletrendszer megoldására,
 vagy egy mátrix inverzének felírására.
 A determináns fogalmát valóban nagyon sokszor csak arra használják,
-hogy a lineáris algebra alap algoritmusát, a Gauss--Jordan-eliminációt, egy explicit formulára cseréljék.
+hogy a lineáris algebra alap algoritmusát, a Gauss\,--\,Jordan-eliminációt, egy explicit formulára cseréljék.
 Azt szeretném itt hangsúlyozni,
 hogy pusztán emiatt nem érdemes előnyben részesíteni a determináns használatát.
 Az algoritmus éppen olyan jól,
@@ -9921,7 +9921,7 @@ Ez azt jelenti, hogy a definícióban csak az identitás permutációhoz tartoz�
 Az identitáshoz tartozó tag pedig a diagonális elemek szorzata.
 Speciálisan, az identitás mátrix determinánsa 1.
 
-\paragraph{Egy mátrix determinánsa Gauss--Jordan-eliminációval.}
+\paragraph{Egy mátrix determinánsa Gauss\,--\,Jordan-eliminációval.}
 Képzeljük el, hogy adott egy reguláris mátrix, tehát olyan, amelynek oszlopai lineárisan függetlenek.
 Az eliminációs algoritmusnak arra az alakjára gondoljunk először, amikor a bázisba bevont oszlopvektornak
 is kiírjuk az új bázisban a koordinátáit.
@@ -9941,7 +9941,7 @@ Tehát az előbbi összefüggést lépésenként alkalmazva
 \]
 Ezek szerint az algoritmus a következő:
 \emph{
-	$A$ determinánsának kiszámításához az összes oszlopot Gauss--Jordan-eliminációval bevisszük a bázisba.
+	$A$ determinánsának kiszámításához az összes oszlopot Gauss\,--\,Jordan-eliminációval bevisszük a bázisba.
 	A determináns a pivot elemek szorzata szorozva +1, vagy -1-el.
 	Az utolsó táblázatban, az új bázis elemeit az eredeti oszlopvektorok alkotják.
 	Számoljuk meg, hogy hány sorcserét kell kapnunk ahhoz, hogy az eredeti oszlopvektorok természetes sorrendjébe cseréljük az elimináció
@@ -9960,7 +9960,7 @@ akkor ehhez az oszlophoz véges sokszor egy másik oszlop skalárszorosát adva 
 amelyben ez az oszlop csupa zérus, és a determinánsa azonos a kiinduló mátrix determinánsával.
 Látjuk tehát, hogy ha az oszlopok lineárisan összefüggők, akkor a mátrix determinánsa zérus.
 Viszont ha az oszlopok lineárisan függetlenek,
-akkor Gauss--Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
+akkor Gauss\,--\,Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
 E szorzat nem lehet zérus, hiszen egyik pivot elem sem lehet zérus.
 Meggondoltuk tehát:
 \emph{
@@ -10030,13 +10030,13 @@ Ekkor
 	\end{multline*}
 	Ezt kellett indokolni.
 \end{proof}
-\begin{proof}[Gauss--Jordan-elimináció alapján]
+\begin{proof}[Gauss\,--\,Jordan-elimináció alapján]
 	Először is azt vegyük észre, hogy az $A_{2,1}$ nullmátrix léte miatt,
 	ha $A$ oszlopai lineárisan összefüggők,
 	akkor az $A_{1,1}$ és $A_{2,2}$ mátrixok egyikének oszlopai is lineárisan összefüggők.
 	Az állítás tehát teljesül, ha $|A|=0$.
 	Feltesszük, hogy $A$ oszlopai lineárisan függetlenek.
-	Végezzünk Gauss--Jordan-eliminációt az $A$ mátrixon de úgy,
+	Végezzünk Gauss\,--\,Jordan-eliminációt az $A$ mátrixon de úgy,
 	hogy az első $n$ lépésben $A_{1,1}$ részéből, utána $A_{2,2}$ részéből választjuk a pivot elemeket.
 	Ez megtehető, hiszen $A_{1,1}$ oszlopai is lineárisan függetlenek.
 	Legyenek a pivot elemek $r_1,\dots,r_n,r_{n+1},\dots,r_m$,
@@ -10593,10 +10593,10 @@ $m_i\leq\dim\left( \ker\left( A-\lambda_iI \right)^{m_i} \right)
 	=
 	\nu\left( \left( A-\lambda_iI \right)^{m_i} \right)=k_i$.
 Ebből azonnal látjuk, hogy a minimálpolinom osztója a karakterisztikus polinomnak.
-Meggondoltuk tehát a Cayley--Hamilton-tételt abban a speciális esetben,
+Meggondoltuk tehát a Cayley\,--\,Hamilton-tételt abban a speciális esetben,
 mikor a test a kompex számtest.
 
-A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rögtön megmutatjuk.
+A Cayley\,--\,Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rögtön megmutatjuk.
 \begin{lemma}
 	Legyen $\mathbb{F}$ egy test, amelyben $1+1\neq 0$.
 	Tetszőlegesen választott $\alpha_0,\dots,\alpha_{n-1}\in\mathbb{F}$ számok mellett
@@ -10678,7 +10678,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 		t^n+\alpha_{n-1}t^{n-1}+\dots+\alpha_1t+\alpha_0.\qedhere
 	\]
 \end{proof}
-\begin{proposition}[Cayley--Hamilton]
+\begin{proposition}[Cayley\,--\,Hamilton]
 	Legyen $V$ egy tetszőleges test feletti vektortér,
 	és $A\in L\left( V \right)$ egy lineáris transzformáció.
 	Ekkor $A$ gyöke a karakterisztikus polinomjának,
@@ -11281,7 +11281,7 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 	$
 \end{proof}
 
-\begin{proposition}[Gram--Schmidt-ortogonalizáció]\index{Gram--Schmidt-ortogonalizáció}\label{pr:GS}
+\begin{proposition}[Gram\,--\,Schmidt-ortogonalizáció]\index{Gram\,--\,Schmidt-ortogonalizáció}\label{pr:GS}
 	Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\cdots,y_k \right\}$ egy lineárisan független
 	vektorrendszer.
 	Ehhez létezik olyan $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer,
@@ -11332,7 +11332,7 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 	emiatt $\hat{y}_k\in\lin\left\{ y_1,\dots,y_k \right\}$,
 	amiből persze egy $\mathbb{K}$ testbeli elemmel való szorzás után már $x_k\in\lin\left\{ y_1,\dots,y_k \right\}$ is következik.
 \end{proof}
-A fenti bizonyitás kiemelt soraiból leolvasható az ú.n. \emph{Gram--Schmidt-ortogonalizációs algoritmus}.
+A fenti bizonyitás kiemelt soraiból leolvasható az ú.n. \emph{Gram\,--\,Schmidt-ortogonalizációs algoritmus}.
 Ha adott az $\left\{ y_1,\dots,y_n \right\}$ lineárisan független vektorok rendszere, akkor abból egy
 $\left\{ x_1,\dots,x_n \right\}$ ortonormált rendszer konstruálható.
 Az első lépés:
@@ -11349,7 +11349,7 @@ majd
 	x_k=\frac{1}{\|\hat{y}_k\|}\hat{y}_k.
 \]
 
-A Gram--Schmidt-ortogonalizációról szóló állítás azonnali következménye az ortonormált bázisok egzisztenciáját biztosító állítás:
+A Gram\,--\,Schmidt-ortogonalizációról szóló állítás azonnali következménye az ortonormált bázisok egzisztenciáját biztosító állítás:
 \begin{proposition}[o.n.b]\index{o.n.b}\label{pr:onb}
 	Egy véges dimenziós skalárisszorzatos-térnek mindig van ortonormált bázisa, azaz olyan $\left\{ x_1,\dots,x_n \right\}$ ortonormált
 	rendszere, amely generátorrendszer is.
@@ -11440,7 +11440,7 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 \begin{proof}
 	Mivel $M$ a $V$ skalárisszorzatos tér egy véges dimenziós altere,
 	ezért az $M$ altérnek van
-	ortonormált bázisa, amint azt \aref{pr:onb}.~állításban Gram--Schmidt-ortogonalizációnál láttuk.
+	ortonormált bázisa, amint azt \aref{pr:onb}.~állításban Gram\,--\,Schmidt-ortogonalizációnál láttuk.
 	Legyen ez $\left\{ x_1,\dots,x_k \right\}$.
 	Írjuk fel evvel az ortonormált rendszerrel \aref{pr:legkozelebb}. legközelebbi pontról szóló,
 	és \aref{pr:Bessel2}. Bessel-egyen\-lőt\-lenség\-ről szóló állításokat.
@@ -12364,8 +12364,8 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 	\[
 		V=\ker\left( N-\lambda_1I \right)\oplus\dots\oplus\ker\left( N-\lambda_sI \right).
 	\]
-	Most végezzünk Gram--Schmidt-ortogonalizációt\index{Gram--Schmidt-ortogonalizáció}
-	minden egyes fenti sajátaltérben külön-külön,
+	Most végezzünk Gram\,--\,Schmidt-ortogonalizációt\index{Gram\,--\,Schmidt-ortogonalizáció}
+	minden egyes sajátaltérben külön-külön,
 	majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
 	Így $N$ sajátvektoraiból álló ortonormált bázist kapunk.
 \end{proof}
@@ -12441,7 +12441,7 @@ Meggondoltuk tehát, hogy egy
 	\[
 		V=\ker\left( A-\lambda_1I \right)\oplus\dots\oplus\ker\left( A-\lambda_sI \right).
 	\]
-	Most végezzünk Gram--Schmidt-ortogonalizációt\index{Gram--Schmidt-ortogonalizáció}
+	Most végezzünk Gram\,--\,Schmidt-ortogonalizációt\index{Gram\,--\,Schmidt-ortogonalizáció}
 	minden egyes fenti $A-\lambda_jI$ sajátaltérben külön-külön,
 	majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
 	Így $A$ sajátvektoraiból álló ortonormált bázist kapunk.
@@ -14120,4 +14120,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 09 Dec 2020 01:28:20 AM CET
+Last Modified: Wed 16 Dec 2020 08:26:09 pm CET CET CET CET CET
