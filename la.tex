@@ -848,7 +848,7 @@ ahogyan azt az egész számok közt megszoktuk.
 		\deg r<\deg d.
 	\]
 	Mivel $p,d\in J$, és $J$ egy ideál, ezért $r\in J$.
-	No de $d$ konstrukciója szerint ilyen csak a zérus polinom van,
+	No de, $d$ konstrukciója szerint ilyen csak a zérus polinom van,
 	ezért valóban $d|p$.
 	Ez éppen azt jelenti, hogy
 	\(
@@ -1214,7 +1214,7 @@ Most a legkisebb közös többszörös algoritmikus meghatározására töreksz�
 	Na most,
 	a fent kiemelt azonosság szerint szerint $r_1|r_2s_2$, ahol $r_1$ és $r_2$ relatív prímek.
 	Ebből azonnal kapjuk, hogy $r_1|s_2$.
-	No de $s=qs_2=dr_2s_2$, amiből már látszik,
+	No de, $s=qs_2=dr_2s_2$, amiből már látszik,
 	hogy $s$ egy többszöröse a $dr_1r_2$ polinomnak.
 	Az is világos, hogy (\dag) normált polinom, ez az $m$ legkisebb közös többszörös.
 	Innen
@@ -2231,7 +2231,7 @@ Egy kevésbé népszerű, de ekvivalens alakja
 	\]
 	Na most, azt ugyan nem tudjuk, hogy a $||z|-|w||$ szám a baloldali számok közül melyikkel azonos,
 	de az egyikkel biztosan egybeesik.
-	No de mindegy is melyikkel, hiszen a jobboldal mindkét esetben a kívánt $|z-w|$.
+	No de, mindegy is melyikkel, hiszen a jobboldal mindkét esetben a kívánt $|z-w|$.
 \end{proof}
 A definícó szerint $|z|^2=\bar{z}z$.
 Véve mindkét oldal abszolútértékét,
@@ -3990,7 +3990,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 	alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
 \end{definition}
 Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
-A rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
+A Rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
 
 \begin{proposition}[Rang-tétel]
 	Minden nemzérus mátrixban
@@ -4426,7 +4426,7 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 \end{proposition}
 \begin{proof}
 	Ha $V$ izomorf $W$-vel, akkor létezik köztük izomorfizmus.
-	No de izomorfizmus bázist bázisra visz, ami azt jelenti, hogy azonos elemszámú
+	No de, izomorfizmus bázist bázisra visz, ami azt jelenti, hogy azonos elemszámú
 	bázisa van mindkét térnek.
 
 	Ha $\dim V=\dim W=n$, akkor mindkét vektortér izomorf $\mathbb{F}^n$ vektortérrel,
@@ -4568,7 +4568,7 @@ Az alábbi állítás csak átfogalmazása az altér definíciójának.
 
 Látható, hogy egy affin halmaz eltoltja affin marad,
 hiszen ha
-$N$ egy altér $v\in V$ egy vektor,
+$N$ egy affin halmaz és $x\in V$ egy vektor,
 akkor
 $
 	\lambda\left( x+N \right)+\left( 1-\lambda \right)\left( x+N \right)
@@ -4593,16 +4593,19 @@ akkor többet is állíthatunk:
 \begin{proposition}
 	Legyenek $M,N\subseteq V$ alterek.
 	Ekkor
-	$\lin(M\cup N)=M+N$,
-	tehát az alterek Minkowski-összege\index{Minkowski-összeg} is altér, sőt ez az $M$ és $N$ altereket tartalmazó
-	legszűkebb altér.
+    \[
+	    \lin(M\cup N)=M+N,
+    \]
+	tehát alterek Minkowski-összege\index{Minkowski-összeg} is altér, 
+    sőt ez az $M$ és az $N$ altereket tartalmazó legszűkebb altér.
 \end{proposition}
 \begin{proof}
-    Először is gondoljuk meg, hogy $M+N$ egy altér, amely az $N$ és az $M$ altereket is tartalmazza.
-    Ezért $\lin\left( M\cup N \right)\subseteq \lin\left( M+N \right)=M+N$.
+    Először is gondoljuk meg, hogy $M+N$ egy altér.
+    Világos, hogy $M\cup N\subseteq M+N$,
+    ezért $\lin\left( M\cup N \right)\subseteq \lin\left( M+N \right)=M+N$.
     Másrészt a $\lin\left( M\cup N \right)$ halmazra, 
     mint az $M\cup N$ halmazból képzett összes lineáris kombinációk halmazára gondolva
-    nyilvánvaló, hogy $\lin\left( M\cup N \right)\subseteq M+N$.
+    látszik, hogy $M+N\subseteq \lin\left( M\cup N \right)$.
 \end{proof}
 
 A következő állítás szerint,
@@ -4799,7 +4802,7 @@ hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 	\[
         0=\sum_{\substack{j=1}}^s\left( v_j-u_j \right), \text{ ahol } v_j-u_j\in M_j.
 	\]
-	No de, a direktösszeg értelmes, ezért ez csak úgy lehet, hogy $v_j=u_j$ áll fenn minden $j=1,\dots,s$ mellett,
+	No de, a direkt összeg értelmes, ezért ez csak úgy lehet, hogy $v_j=u_j$ áll fenn minden $j=1,\dots,s$ mellett,
     azaz az előállítás valóban egyértelmű is.
 
 	Megfordítva,
@@ -4874,12 +4877,46 @@ ergo egy bázis.
 	Egy ilyen alteret az $M$ altér \emph{direkt kiegészítőjének} nevezünk.
 	Az $N$ altér valamennyi direkt kiegészítője egymással izomorf.
 \end{proposition}
+\begin{proof}
+    Vegyünk fel $M$-ben egy $\{m_1,\dots,m_r\}$ bázist.
+    Ez persze $V$-ben is lineárisan független, 
+    ezért kiegészíthető a $V$ egy $\left\{ m_1,\dots,m_r,n_1,\dots,n_s \right\}$ bázisává.
+    Definiálja $N=\lin\left\{ n_1,\dots,n_s \right\}$.
+    
+    Ha $x\in N\cap M$, akkor $x$ egyrészt $x=\sum_{j=1}^r\alpha_jm_j$, 
+    másrészt $x=\sum_{j=1}^s\beta_jn_j$ alakú.
+    Ebből azt kapjuk, hogy
+    \[
+        \sum_{j=1}^r\alpha_jm_j+\sum_{j=1}^s-\beta_jn_j=0.
+    \]
+    No de, $V$ fenti bázisa lineárisan független is,
+    ezért a kiemelt lineáris kombináció minden együtthatója zérus, ami azt jelenti, hogy $x=0$,
+    azaz $M\cap N=\left\{ 0 \right\}$.
+    Az $M$ és $N$ alterek direkt összege tehát értelmes.
+    Az is világos, hogy ha $x\in V$ egy tetszőleges vektor, akkor valamely $\alpha_1,\dots,\alpha_r$ és valamely $\beta_1,\dots,\beta_s$ együtthatók mellett
+    \[
+        \sum_{j=1}^r\alpha_jm_j+\sum_{j=1}^s\beta_jn_j=x,
+    \]
+    hiszen a $V$ fenti bázisa egyben $V$ generátorrendszere is.
+    Ha itt az első szumma értékét $v$-vel jelöljük, a második szumma értékét pedig $u$-val,
+    akkor az $u\in N$ és a $v\in M$ vektorokra $u+v=x$,
+    ergo $M+N=V$.
+    Ez azt jelenti, hogy konstruáltunk $N\subseteq V$ alteret, amelyre $M\oplus N=V$ teljesül.
+
+    Ha $L\subseteq V$ egy másik olyan altere $V$-nek, amire $M\oplus L=V$ fennáll,
+    akkor felhasználva a dimenziók összeadásáról szóló állítást azt kapjuk, hogy
+    \[
+        \dim L=\dim V-\dim M=\dim N.
+    \]
+    Emlékezzünk arra, hogy végesen generált vektorterek izomorf voltának szükséges és elegendő feltétele, hogy a két altér dimenzió száma  azonos legyen.
+    Megmutattuk tehát, hogy az $M$ altér bármely direkt kiegészítője egymással izomorf.
+\end{proof}
 Egy altérnek sok-sok direkt kiegészítője lehet.
 Például tekintsük a folytonos függvények $C\left[ 0,1 \right]$ vektorterét $\mathbb{R}$ felett,
 és legyen $N$ az az altér, amely azon $f\in C\left[ 0,1 \right]$ függvényeket tartalmazza,
 amelyekre $f\left( 0 \right)=0$.
-Látható, hogy tetszőleges $g\in C\left[ 0,1 \right]$, függvényre, amelyre $g\left( 0 \right)\neq 0$,
-az $g$ által generált egydimenziós altér direkt kiegészítője az $N$ altérnek.%
+Látható, hogy tetszőleges $g\in C\left[ 0,1 \right]$ függvényre, amelyre $g\left( 0 \right)\neq 0$,
+a $g$ által generált egydimenziós altér direkt kiegészítője az $N$ altérnek.%
 \footnote{
 	Ha véges dimenziós példára vágyunk,
 	helyettesítsük $C\left[ 0,1 \right]$-et a legfeljebb $n$-ed fokú
@@ -4935,7 +4972,7 @@ hogy az ekvivalencia osztályok affin\index{affin halmaz} halmazok.
 	Megfordítva, most igazoljuk, hogy $u+M\subseteq M_x$.
 	Legyen tehát $v\in u+M$.
 	Ekkor $v-u\in M$, ergo $v\sim u$.
-	No de $u\sim x$ is fel van téve,
+	No de, $u\sim x$ is fel van téve,
 	emiatt $v\sim x$, azaz $v\in M_x$.
 \end{proof}
 Most definiálni szeretnénk az ekvivalencia osztályok halmazán összeadás és egy testbeli elemmel való
@@ -4998,15 +5035,18 @@ sőt
 		V/M=\left\{ M_x:x\in V \right\}
 	\]
 	az ekvivalencia osztályok halmazát.
-	Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt
-	a Minkowski--összeget és a skalárral való szorzást:
+	Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt az összeadás nevű műveletet
+    mint a halmazok 
+	a Minkowski--összegét és a skalárral való szorzást műveletet mint a $\ast$ fent bevezetett szorzást.
+    (Láttuk, hogy az
 	\[
 		M_{x_1}+M_{x_2}=M_{x_1+x_2},
 		\qquad
 		\text{és}
 		\qquad
-		\alpha\ast M_x=M_{\alpha\cdot x}.
+		\alpha\ast M_x=M_{\alpha\cdot x}
 	\]
+    azonosságok minden $x_1,x_2,x\in V$ és miden $\alpha\in\mathbb{F}$ mellett fennállnak.)
 	Ekkor az itt bevezetett $(V/M,+,\ast)$ struktúra az $\mathbb{F}$ test feletti vektorteret alkot.
 	Ezt a vektorteret nevezzük a $V$ vektortér $M$ szerinti \emph{faktorterének}\index{faktortér}.
 \end{proposition}
@@ -5119,7 +5159,7 @@ sőt
 	Most nézzük, hogy $\Phi$ is szürjekció marad.
 	Ha $A\in V/M$ egy ekvivalencia osztály,
 	akkor létezik $x\in V$, amelyre $\varphi\left( x \right)=A$.
-	No de $x=u+v$ alakú, ahol $u\in M$ és $v\in N$, és $M=M_0$ az $V/M$ vektortér neutrális eleme.
+	No de, $x=u+v$ alakú, ahol $u\in M$ és $v\in N$, és $M=M_0$ az $V/M$ vektortér neutrális eleme.
 	Így
 	$
 		A=\varphi\left( x \right)=\varphi\left( u+v \right)=\varphi\left( u \right)+\varphi\left( v \right)
@@ -5165,7 +5205,7 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	amelyre $V=M\oplus N$.
 	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
 	emiatt $V/M$ is végesen generált, és
-	$\dim V/M=\dim N=\codim M$.
+	$\dim \left( V/M \right)=\dim N=\codim M$.
 \end{proof}
 \begin{proposition}
 	Legyenek $V,W$ vektorterek,
@@ -5178,11 +5218,19 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 \end{proposition}
 \begin{proof}
 	Legyen $\im A$ egy bázisa $\left\{ Ax_1,\dots,Ax_r \right\}$.
+    Ha például $x_i$ előállna, mint a többi $x_j$ vektor lineáris kombinációja,
+    akkor az $A$ linearitása miatt $Ax_i$ is előállna ugyanazon együtthatókkal mint a többi $Ax_j$
+    lineáris kombinációja.
+    Ez azt jelenti, hogy $\left\{ x_1,\dots,x_r \right\}$ is lineárisan független vektorrendszer.
 	Definiálja $N=\lin\left\{ x_1,\dots,x_r \right\}$.
+    Persze $\left\{ x_1,\dots,x_r \right\}$ egy bázisa $N$-nek,
+    ergo $\dim N=r$.
+
 	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
 	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
 	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
 	esetben lehetséges az $\left\{ Ax_1,\dots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
+    Megmutattuk tehát, hogy $\ker A\cap N=\left\{ 0 \right\}$, ergo $\ker A$-nak és $N$-nek értelmes a direkt összege.
 
 	Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
 	$Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
@@ -5192,13 +5240,12 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
 	Az is világos, hogy $\codim\left( \ker A \right)=\dim N=r=\dim\left( \im A \right)$.
 \end{proof}
-Magától értetődik a következő észrevétel.
+Magától értetődik a következő két észrevétel.
 \begin{proposition}
 	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
 	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
 \end{proposition}
-Nyilvánvaló következmény még a rang-defektus--tétel is.
-\begin{proposition}[rang-defektus--tétel]\index{rang-defektus--tétel}
+\begin{proposition}[Rang--defektus-tétel]\index{Rang--defektus-tétel}
 	Legyen $V$ egy véges dimenziós vektortér,
 	és $W$ egy tetszőleges vektortér,
 	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
@@ -5271,7 +5318,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 	azaz
 	$\Omega\left( y \right)=M$.
 	Ez $\Omega$ definíciója szerint csak úgy lehet, ha $M=M_x$, ahol $Ax=y$.
-	No de $M=M_0$, így $y=A0=0$.
+	No de, $M=M_0$, így $y=A0=0$.
 	Megmutattuk tehát, hogy $\ker \Omega=\left\{ 0 \right\}$,
 	ami éppen $\Omega$ injektivitása.
 \end{proof}
@@ -5378,7 +5425,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 %    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \parencite{Wardlaw2005}}
 %\end{definition}
 %\begin{note}
-%    Érdemes a rang-tétel következő összegzését megjegyezni.
+%    Érdemes a Rang-tétel következő összegzését megjegyezni.
 %    Legyen $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek $r$ a rangja.
 %    Ekkor létezik $A=BC$ felbontása, ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
 %    Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlop-vektorterének nagyon sok bázisa van.
@@ -5479,7 +5526,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 %    alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times n}$.
 %\end{definition}
 %Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
-%A rang-tételnek a szokásosnál egy kicsit erősebb formáját lehet megfogalmazni a dimenzió fogalmának bevezetése nélkül,
+%A Rang-tételnek a szokásosnál egy kicsit erősebb formáját lehet megfogalmazni a dimenzió fogalmának bevezetése nélkül,
 %ami a lenti 3. állítás.
 %
 %\begin{proposition}
@@ -5611,7 +5658,7 @@ hogy az egy $x\in\mathbb{F}^m$ oszlopvektorhoz a mátrix szorzás definíciójá
 az $A\cdot x\in\mathbb{F}^n$ oszlopvektort rendeli.
 Ebben a fejezetben a mátrixok ezen interpretációját erősítjük tovább.
 
-\section{Rang-defektus--tétel következménye}
+\section{Rang--defektus-tétel következménye}
 Láttuk, hogy tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
 \[
 	\nu\left( A \right)+\rho\left( A \right)=\dim V,
@@ -5634,7 +5681,7 @@ vagy egyszerre nem teljesül:
 		      \begin{enumerate}
 			      \item $A$ injektív;
 			      \item $A$ szürjektív;
-			      \item $A$ vektortér--izomorfizmus.
+			      \item $A$ vektortér-izomorfizmus.
 			      \item Létezik $B\in L\left( V \right)$ lineáris transzformáció, amelyre $A\circ B=I$.
 		      \end{enumerate}
 		\item
@@ -5654,7 +5701,7 @@ vagy egyszerre nem teljesül:
 
 	Most tegyük fel, hogy valamely $B\in L\left( V \right)$-re $A\circ B=I$.
 	Ekkor a) szerint $A$ injektív is, ergo $\ker A=\left\{ 0 \right\}$.
-	No de minden $x\in V$ mellett
+	No de, minden $x\in V$ mellett
 	\[
 		A\left( (B\circ A)x-x \right)
 		=
@@ -5791,7 +5838,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 		=
 		\sum_{i=1}^n\alpha_{i,k}f_i.
 	\]
-	No de az $\left\{f_1,\dots,f_n  \right\}$ egy lineárisan független rendszer,
+	No de, az $\left\{f_1,\dots,f_n  \right\}$ egy lineárisan független rendszer,
 	ergo csak a  triviális lineáris kombinációja zérus,
 	ergo $\alpha_{i,k}=0$ minden $i=1,\dots,n$ mellett.
 	Persze ez minden $k$ mellett megismételhető, tehát azt kaptuk, hogy valamennyi $\alpha_{i,j}$ együttható
@@ -6088,7 +6135,7 @@ kapcsolódik össze.
 		=
 		\sum_{i=1}^n\left( \sum_{k=1}^r\alpha_{i,k}\beta_{k,j} \right)f_i.
 	\end{multline*}
-	No de az $\{f_1,\dots,f_n\}$ rendszer lineárisan független,
+	No de, az $\{f_1,\dots,f_n\}$ rendszer lineárisan független,
 	tehát a lineáris burkában minden elem előállítása egyértelmű,
 	ami éppen azt jelenti, hogy minden $i=1,\dots,n$ és minden $j=1,\dots,m$ mellett
 	\[
@@ -6142,7 +6189,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 
 	Világos, hogy $A$ pontosan akkor izomorfizmus,
 	ha létezik $B\in L\left( V \right)$, amelyre $AB=I$.
-	No de ez ekvivalens avval, hogy $[A][B]=[I]$, ami pedig a szükséges és elegendő feltétele
+	No de, ez ekvivalens avval, hogy $[A][B]=[I]$, ami pedig a szükséges és elegendő feltétele
 	$[A]$ mátrix invertálhatóságának.
 	Ekkor $[A]^{-1}=[B]=\left[ A^{-1} \right]$.
 \end{proof}
@@ -6416,7 +6463,7 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 
 	Ha $m=0$, akkor $A^tv\in N$, hiszen a fenti (\ddag) lineárisan összefüggő rendszerre,
 	az egyik elem előáll mint az előző elemek lineáris kombinációja.
-	No de ez elem csak az utolsó lehet,
+	No de, ez elem csak az utolsó lehet,
 	hiszen az utolsó elem nélküli (\dag) rendszer még lineárisan független.
 
 	Most tegyük fel, hogy $A^{t+m}v\in N$ és lássuk be, hogy $A^{t+m+1}v\in N$ is teljesül.
@@ -6780,7 +6827,7 @@ amely mindig használható.
 	Láttuk, hogy $\left\{ v,Av,\dots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
 	Világos, hogy $A^kv\in\lin\left( v;A \right)$, emiatt a kívánt előállítás valóban létezik.
 	Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
-	No de $k$-nal alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
+	No de, $k$-nal alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
 	hiszen $\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineárisan független.
 	Azt láttuk tehát, hogy $n$ a legalcsonyabb fokú nem zérus eleme $J_{A,v}$-nek,
 	tehát $n$ generálja a főideált.
@@ -6904,7 +6951,7 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 	Mivel a $k+1$ elemű rendszer lineárisan összefüggő és a $k$ elemű rendszer lineárisan független,
 	ezért a kívánt előállítás valóban létezik.
 	Ezt átrendezve kapjuk, hogy $m$ valóban olyan normált polinom, amelyre $m\left( A \right)=0$ fennáll.
-	No de $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
+	No de, $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
 	hiszen $\left\{ I,A,\dots,A^{k-1} \right\}$ lineárisan független.
 	Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
 	tehát az $m$ polinom generálja a főideált.\index{főideál}
@@ -7171,7 +7218,7 @@ mátrixot.
 		v_s=\sum_{j=1}^{s-1}\alpha_jv_j
 	\]
 	lenne.
-	No de
+	No de,
 	\begin{equation*}
 		\sum_{j=1}^{s-1}\lambda_s\alpha_jv_j
 		=
@@ -7242,7 +7289,7 @@ ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója
 	Ez egy olyan lineáris kombináció, amelyben minden vektor együtthatója 1.
 	Emiatt a $\left\{ v_1,\dots,v_s \right\}$ vektorrendszer nem zérus vektorai is összefüggő rendszert alkotnak,
 	feltéve hogy vannak ilyenek.
-	No de egy $v_j\in M_j$ vektor ha nem zérus, akkor egy sajátvektor.
+	No de, egy $v_j\in M_j$ vektor ha nem zérus, akkor egy sajátvektor.
 	Tehát ha a vektorrendszerben lenne nem zérus elem,
 	akkor találnánk különböző sajátértékekhez tartozó sajátvektorok egy lineárisan összefüggő rendszerét,
 	ami \aref{pr:svlinfgtlen}.~állítás szerint nem lehetséges.
@@ -7590,7 +7637,7 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 	\index{kis minimálpolinom}
 	Legyen adott $v\neq 0$ vektor mellett $p_v$ a $v$-hez tartozó kis minimálpolinom.
 	Mivel $m\left( A \right)v=0$, ezért $p_v|m$.
-	No de $m$ irreducibilis, ezért $m=p_v$.
+	No de, $m$ irreducibilis, ezért $m=p_v$.
 	Ekkor viszont
 	\[
 		k=\deg m=\deg p_v
@@ -8076,7 +8123,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		=
 		\sum_{k=1}^r\alpha_{t,k}B^{m-1}x_k.
 	\]
-	No de az $\left\{ B^{m-1}x_1,\dots,B^{m-1}x_k \right\}$ egy lineárisan független rendszer,
+	No de, az $\left\{ B^{m-1}x_1,\dots,B^{m-1}x_k \right\}$ egy lineárisan független rendszer,
 	amiből már következik,
 	hogy minden $\alpha_{t,k}=0$,
 	ami ellentmondásban van a $t$ index definíciójával.
@@ -9312,7 +9359,7 @@ Ha a bástyafelrakásra gondolunk,
 akkor további feltétel,
 hogy egyetlen oszlopban se legyen két bástya,
 ami éppen a $\pi$ függvény injektivitását jelenti.
-No de egy véges halmaznak önmagára képező injekciója egyben szürjekció is,
+No de, egy véges halmaznak önmagára képező injekciója egyben szürjekció is,
 emiatt a bástyafelrakások a bijekciókkal azonosíthatók.
 
 A determináns fogalmának megértését nagyban segíti,
@@ -9706,7 +9753,7 @@ Képzeljük el, hogy egy $n\times n$ méretű sakktábla $j$-edik oszlopába ír
 minden $j=1,\dots,n$ mellett.
 Tegyünk fel erre a sakktáblára egy $\pi$ permutációt, azaz a $\pi$ bástyafelrakását.
 Minden $i$-re az $i$-edik sor $\pi\left( i \right)$-edik elemén áll tehát egy bástya.
-No de a $\pi\left( i \right)$ edik oszlop $i$-edik helyére $v_{\pi\left( i \right)}$ vektor $i$-edik koordinátája,
+No de, a $\pi\left( i \right)$ edik oszlop $i$-edik helyére $v_{\pi\left( i \right)}$ vektor $i$-edik koordinátája,
 azaz $e_i^\ast v_{\pi(i)}$ van írva.
 Így az $\prod_{i=1}^n e_i^\ast v_{\pi\left( i \right)}$ szám egyszerűen a bástyafelrakásban a bástyák taposta számok szorzata.
 A baloldali számhoz ezt kell megszorozni még a szóban forgó permutáció előjelével,
@@ -10061,7 +10108,7 @@ Ekkor
 	|P|=(-1)^{k+l}=\left( -1 \right)^k\left( -1 \right)^l=|P_{1,1}||P_{2,2}|.
 	\)
 	Világos, hogy $|A_1|=r_1\cdots r_n|P_{1,1}|$.
-	No de $A_{2,1}$ a nullmátrix, ezért az elimináció első $n$ lépésében $A_{2,2}$ változatlan marad,
+	No de, $A_{2,1}$ a nullmátrix, ezért az elimináció első $n$ lépésében $A_{2,2}$ változatlan marad,
 	így $|A_{2,2}|=r_{n+1}\cdots r_{n+m}|P_{2,2}|$.
 	Összefoglalva:
 	\[
@@ -10427,7 +10474,7 @@ amelyeket a fejezet bevezetőjében említettem.
 		=
 		\sum_{i=1}^na_{i,k}d(a_1,\dots,e_i,\dots,a_n).
 	\]
-	No de itt $d(a_1,\dots,e_i,\dots,a_n)$ az előző állításban felülírt mátrix determinánsa,
+	No de, itt $d(a_1,\dots,e_i,\dots,a_n)$ az előző állításban felülírt mátrix determinánsa,
 	azaz $\left( -1 \right)^{i+k}|A_{i,k}|$.
 	Éppen ezt kellett belátni az 1. pont indoklásához.
 
@@ -11301,7 +11348,7 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 		\left\{ x_1,\dots,x_{k-1} \right\}\subseteq M
 	\end{math}
 	tartalmazás is fennáll.
-	No de $\dim M=k-1$, ezért $\left\{ x_1,\dots,x_{k-1} \right\}$ nem csak lineárisan független,
+	No de, $\dim M=k-1$, ezért $\left\{ x_1,\dots,x_{k-1} \right\}$ nem csak lineárisan független,
 	de maximális lineárisan független rendszer $M$-ben, ergo generátorrendszer is, ezért
 	\[
 		\lin\left\{ x_1,\dots,x_{k-1} \right\}=M
@@ -11500,7 +11547,7 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 	Tetszőleges $H\subseteq V$ mellett $\lin H$ egy véges dimenziós altér,
 	így a már igazolt állítás miatt
 	$\lin H=(\lin H)^{\perp\perp}$.
-	No de már korábban is láttuk, hogy
+	No de, már korábban is láttuk, hogy
 	$H^{\perp}=(\lin H)^\perp$, így
 	\[
 		\lin H
@@ -11564,7 +11611,7 @@ feltétellel.
 		      Jelölje $H=\left\{ e_1,\dots,e_n \right\}$.
 		      Világos, hogy $\lin H$ véges dimeniós, ezért a projekciós tétel előző következménye miatt
 		      $\lin H=H^{\perp\perp}$.
-		      No de a teljesség szerint $H^\perp=\left\{ 0 \right\}$,
+		      No de, a teljesség szerint $H^\perp=\left\{ 0 \right\}$,
 		      ergo
 		      \[
 			      \lin H
@@ -11950,7 +11997,7 @@ amelyeket későbbi számolásaink során külön hivatkozás nélkül használu
 Felépítésünk sarokköve a skalárisszorzatos terek rangtétele.
 Legfontosabb következménye, hogy zérus vektoron kívül nincs olyan vektor,
 amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
-\begin{proposition}[skalárisszorzatos rang-tétel]\label{pr:skrang}
+\begin{proposition}[skalárisszorzatos Rang-tétel]\label{pr:skrang}
 	Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
 	Ekkor
 	$(\im A)^\perp=\ker A^\ast$ és
@@ -12003,7 +12050,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 		\ker A\oplus\im A^\ast.
 	\end{math}
 
-	A direktösszegek dimenziójára vonatkozó állítás és a rang-defektus\index{rang-defektus--tétel} tételnek az adjungált operációra vonatkozó alakja szerint
+	A direktösszegek dimenziójára vonatkozó állítás és a Rang--defektus\index{rang--defektus--tétel}-tételnek az adjungált operációra vonatkozó alakja szerint
 	\begin{math}
 		\rho\left( A \right)=\dim W-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
 	\end{math}
@@ -12106,7 +12153,7 @@ hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref
 		      \end{displaymath}
 		      Ez azt jelenti, hogy az $(B^\ast B-I)u_j$ vektor merőleges az $\left\{ u_1,\dots,u_n \right\}$ bázis minden elemére.
 		      Az ortonormált rendszer teljessége szerint ez csak úgy lehetséges, ha minden $j$ indexre $B^\ast Bu_j=Iu_j$.
-		      No de a lineáris transzformációk bázison egyértelműen meghatározottak,
+		      No de, a lineáris transzformációk bázison egyértelműen meghatározottak,
 		      ezért $B^\ast B=I$.
 		      Ez azt jelenti, hogy $B$ reguláris és $B^{-1}=B^\ast$.
 	\end{description}
@@ -12509,7 +12556,7 @@ mint valamely $M$ altérre eső merőleges vetítés.
 \end{proposition}
 \begin{proof}
 	Láttuk korábban hogy egy $P_M$ merőleges vetítés önadjugált is, idempotens is.
-	No de minden ortogonális projekció $P_M$ alakú,
+	No de, minden ortogonális projekció $P_M$ alakú,
 	valamely $M$ altér megválasztása mellett, ezért $A$-ra is igaz, hogy önadjungált és idempotens.
 
 	Megfordítva, ha $A$ önadjungált, akkor a skalárisszorzatos rang tétel szerint $(\ker A)^\perp=\im A^\ast=\im A$,
@@ -14121,4 +14168,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 10 Feb 2021 08:02:40 AM CET
+Last Modified: Fri 12 Feb 2021 06:00:53 pm CET CET CET CET CET CET CET CET CET CET
