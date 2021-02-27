@@ -5892,7 +5892,7 @@ amelyekre az
 egyenlőség teljesül:
 $\alpha_{i,j}$ a $j$-edik bázis elem $A$ képének $i$-edik koordinátája.
 Ugyanez a koordináta-vektor fogalmával:
-Az $Ae_j\in W$ vektornak az $\left\{ y_,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának az elemei
+Az $Ae_j\in W$ vektornak az $\left\{ y_1,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának az elemei
 adják az $\alpha_{1,j},\alpha_{2,j},\dots,\alpha_{n,j}$ számokat, formálisabban:
 \[
 	\left[ Ae_j \right]_{\left\{ y_1,\dots,y_n \right\}}
@@ -6028,7 +6028,7 @@ Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
 	\[
 		[Ax]_{\left\{ f_1,\dots,f_n \right\}}
 		=
-		[A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+		[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
 		\cdot
 		[x]_{\left\{ e_1,\dots,e_m \right\}}.
 	\]
@@ -6052,15 +6052,15 @@ Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
 	\begin{multline*}
 		[Ax]_{\left\{ f_1,\dots,f_n \right\}}
 		=
-		\left[ \sum_{j=1}^n\xi_jAe_j \right]_{\left\{ f_1,\dots,f_n \right\}}
+		\left[ \sum_{j=1}^m\xi_jAe_j \right]_{\left\{ f_1,\dots,f_n \right\}}
 		=
-		\sum_{j=1}^n\xi_j[Ae_j]_{\left\{ f_1,\dots,f_n \right\}}
+		\sum_{j=1}^m\xi_j[Ae_j]_{\left\{ f_1,\dots,f_n \right\}}
 		=
-		\sum_{j=1}^n\xi_j[A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}^j
+		\sum_{j=1}^m\xi_j[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}^j
 		=\\
-		[A]_{\substack{\left\{ e_1,\dots,e_n \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
+		[A]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
 		\cdot
-		[x]_{\left\{ f_1,\dots,f_n \right\}}.
+		[x]_{\left\{ e_1,\dots,e_m \right\}}.
 	\end{multline*}
 
 	Ebből persze már könnyen adódik, ahogy $Ax=0$ ekvivalens $[A][x]=0$ feltétellel, emiatt
@@ -6237,7 +6237,7 @@ $\left[ B \right]^{-1}$ inverze.
 	Könnyen látható, hogy $B$-nek a régi és az új bázisban felírt mátrixa azonos, de ez később egyszerű következményként is adódik.}
 \section{Vektor koordinátái az új bázisban}
 \begin{proposition}
-	Legyen az $\left\{ e_1,\dots,e_m \right\}$ a régi bázis,
+	Legyen az $\left\{ e_1,\dots,e_n \right\}$ a régi bázis,
 	és $\left\{ f_1,\dots,f_n \right\}$ az új bázis.
 	Jelölje $B$ a régi bázisról az új bázisra való áttérést
 	Ekkor tetszőleges $x\in V$ vektor mellett
@@ -6371,7 +6371,7 @@ altér egy lineáris transzformációja, azaz
 	A|_M\in L\left( M \right).
 \]
 
-Nyilvánvaló példa invariáns alterekre $M$ és $\{0\}$.
+Nyilvánvaló példa invariáns alterekre a teljes $V$ vektortér és a $\{0\}$ altér.
 Tetszőleges $A$ lineáris transzformáció mellett $\ker A$ és $\im A$ mindig invariáns alterek.
 Ugyanis, ha $u\in\ker A$, akkor $A\left( Au \right)=A0=0$, tehát $Au\in\ker A$.
 Az $\im A$ altér esete még egyszerűbb: A tér minden elemének képe $\im A$-ban van, speciálisan persze ez $\im A$ elemeire is igaz.
@@ -6713,11 +6713,11 @@ ami egyben az ideál generáló eleme is.
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja,
 	és legyen $v\in V$ egy rögzített vektor.
 	Tekintsük az
-	$\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát.
+	$\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát:
 	\[
 		J_{A,v}
 		=
-		\left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v=0 \right\}
+		\left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v=0 \right\}.
 	\]
 	Ez a halmaz egy ideálja $\mathbb{F}\left[ t \right]$-nek,
 	amelynek van legfeljebb $\dim V$-ed fokú, de nem konstans zérus polinomja.
@@ -6771,15 +6771,14 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 \end{definition}
 
 \begin{proposition}
-	Ha  $n$ az $A$ transzformáció $v$ vektorhoz tartozó kis minimálpolinomja,
-	akkor
+	Az  $n$  polinom pontosan akkor az $A$ transzformáció $v$ vektorhoz tartozó kis minimálpolinomja, ha
 	\begin{enumerate}
 		\item $n$ normált polinom,
 		\item $n\left( A \right)v=0$,
 		\item ha $p\in\mathbb{F}\left[ t \right], p\neq 0$, amelyre
-		      $p\left( A \right)v=0$, akkor $n|p$,
-		\item $\deg n\leq\dim V$.\qedhere
+		      $p\left( A \right)v=0$, akkor $n|p$.
 	\end{enumerate}
+	A kis minimálpolinom foka legfeljebb a tér dimenziója.
 \end{proposition}
 \begin{proof}
 	Definíció szerint $n$ azon $p$ polinomok közül,
@@ -6807,8 +6806,8 @@ A következő állítás módszert ad a kis minimálpolinom meghatározására,
 amely mindig használható.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ és $v\neq 0.$
-	Mivel $V$ egy véges dimenziós altér,
-	ezért létezik $1\leq k \leq \dim V$,
+	Feltéve, hogy $V$ egy véges dimenziós vektortér,
+	létezik $1\leq k \leq \dim V$,
 	hogy
 	$\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineáris független,
 	de $\left\{ v,Av,\dots,A^{k-1}v,A^{k}v \right\}$ lineárisan összefüggő.
@@ -6833,7 +6832,7 @@ amely mindig használható.
 	tehát $n$ generálja a főideált.
 \end{proof}
 
-\section{Minimál polinom}
+\section{Minimálpolinom}
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
 	Tekintsük az
@@ -6891,7 +6890,7 @@ hiszen $p(t)=c, (c\neq 0)$ mellett
 $p\left( A \right)=cI\neq 0$,
 tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinom legalább első fokú.
 \begin{proposition}
-	Ha  $m\in\mathbb{F}\left[ t \right]$ polinom akkor és csak akkor
+	Az  $m\in\mathbb{F}\left[ t \right]$ polinom pontosan akkor
 	az $A\in L\left( V \right)$ transzformáció minimálpolinomja,
 	ha
 	\begin{enumerate}
@@ -6943,7 +6942,7 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 	Ekkor az $A$ operátor minimálpolinomja.
 	\[
 		m\left( t \right)=
-		t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0.\qedhere
+		t^k-\alpha_{k-1}t^{k-1}-\dots-\alpha_1t-\alpha_0.\qedhere
 	\]
 \end{proposition}
 \begin{proof}
@@ -6961,7 +6960,7 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
 	Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja $m$.
 	Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ egy bázisa $V$-nek,
 	és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimálpolinomok.
-	Ekkor a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse az $m$ minimal polinom.
+	Ekkor a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse az $m$ minimálpolinom.
 	\index{legkisebb közös többszörös}
 \end{proposition}
 \begin{proof}
@@ -10794,7 +10793,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 \end{proof}
 Mivel egy lineáris transzformáció gyöke a saját karakterisztikus polinomjának,
 ezért a karakterisztikus polinom egy pontosan $n$-ed fokú polinom,
-amely a minimál polinom többszöröse,
+amely a minimálpolinom többszöröse,
 azaz a minimápolinom osztója a karakterisztikus polinomnak.
 Persze ebből is következik, hogy a minimálpolinom egy legfeljebb $n$-ed fokú polinom.
 
