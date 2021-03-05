@@ -8099,7 +8099,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 \begin{proof}
 	Tekintsük ezen vektorok egy
 	\[
-		\sum_{j=0}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jx_k=0
+		\sum_{j=0}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jv_k=0
 	\]
 	lineáris kombinációját.
 	Meg kell mutatnunk, hogy az összes $\alpha_{j,k}=0$.
@@ -8107,7 +8107,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	együttható, akkor a $t$-edik index előtt,
 	minden együttható zérus, ergo
 	\[
-		\sum_{j=t}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jx_k=0
+		\sum_{j=t}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^jv_k=0
 	\]
 	Erre alkalmazva a $B^{m-t-1}$ transzformációt azt kapjuk, hogy
 	\[
@@ -8115,13 +8115,13 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		=
 		B^{m-t-1}0
 		=
-		\sum_{j=t}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^{j+m-t-1}x_k
+		\sum_{j=t}^{m-1}\sum_{k=1}^r\alpha_{j,k}B^{j+m-t-1}v_k
 		=
-		\sum_{k=1}^r\alpha_{t,k}B^{t+m-t-1}x_k
+		\sum_{k=1}^r\alpha_{t,k}B^{t+m-t-1}v_k
 		=
-		\sum_{k=1}^r\alpha_{t,k}B^{m-1}x_k.
+		\sum_{k=1}^r\alpha_{t,k}B^{m-1}v_k.
 	\]
-	No de, az $\left\{ B^{m-1}x_1,\dots,B^{m-1}x_k \right\}$ egy lineárisan független rendszer,
+	No de, az $\left\{ B^{m-1}v_1,\dots,B^{m-1}v_k \right\}$ egy lineárisan független rendszer,
 	amiből már következik,
 	hogy minden $\alpha_{t,k}=0$,
 	ami ellentmondásban van a $t$ index definíciójával.
