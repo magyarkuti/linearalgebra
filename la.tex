@@ -7492,7 +7492,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	és a Minkowski-összegük az egész $V$ vektortér.\index{Minkowski-összeg}
 	\Aref{pr:direktosszegsorrend}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
 \end{proof}
-\section{Sajátvektorok, minimálpolinom és diagonalizálhatóság}
+\section{Minimálpolinom és diagonalizálhatóság}
 Alkalom nyílik,
 hogy a lineáris transzformáció diagonalizálhatóságát karakterizáló \aref{pr:diagkar}.~állítást
 tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
@@ -7673,14 +7673,14 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 	Ha $V=V_1$,
 	akkor $V$ egy $k$-dimenziós vektortér.
 
-	Ha $V\neq V_1$, akkor van van $v_2\in V\smallsetminus V_1$.
+	Ha $V\neq V_1$, akkor van van $v_2\in V\smallsetminus V_1$, $v_2\neq 0$ vektor.
 	Mivel $V_1$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_2=\lin\left( v_2;A \right)$
 	jelölést $V_2\cap V_1=\left\{ 0 \right\}$.
 	Értelmes tehát venni e két invariáns altér direktösszegét.
 	Ha $V=V_1\oplus V_2$, akkor $V$ előállt két $k$ dimenziós invariáns alterének direktösszegeként.
 
-	Ha $V\neq V_1\oplus V_2$, akkor van van $v_3\in V\smallsetminus (V_1\oplus V_2)$.
+	Ha $V\neq V_1\oplus V_2$, akkor van van $v_3\in V\smallsetminus (V_1\oplus V_2)$, $v_3\neq 0$ vektor.
 	Mivel $V_1\oplus V_2$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_3=\lin\left( v_3;A \right)$
 	jelölést $V_3\cap (V_1\oplus V_2)=\left\{ 0 \right\}$.
@@ -7691,7 +7691,7 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 	akkor $V$ előállt három $k$ dimenziós invariáns alterének direktösszegeként.
 
 	Ha $V\neq V_1\oplus\dots\oplus V_t$, valamely $t\geq 2$ mellett,
-	akkor van van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$.
+    akkor van van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$, $v_{t+1}\neq 0$ vektor.
 	Mivel $V_1\oplus\dots\oplus V_t$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_{t+1}=\lin\left( v_{t+1};A \right)$
 	jelölést $V_{t+1}\cap (V_1\oplus\dots\oplus V_t)=\left\{ 0 \right\}$.
@@ -14165,4 +14165,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 01 Mar 2021 09:54:51 AM CET
+Last Modified: Mon 08 Mar 2021 09:30:00 AM CET
