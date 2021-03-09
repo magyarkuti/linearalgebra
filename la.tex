@@ -7496,7 +7496,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 Alkalom nyílik,
 hogy a lineáris transzformáció diagonalizálhatóságát karakterizáló \aref{pr:diagkar}.~állítást
 tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
-\begin{proposition}[diagonalizálhatóság]
+\begin{proposition}[diagonalizálhatóság]\label{pr:diagonalizalhatosag}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
 	Jelölje $\left\{ \lambda_1,\dots,\lambda_s \right\}=\sigma\left( A \right)$
 	az $A$ spektrumát,
@@ -7735,6 +7735,89 @@ Házi feladatként gondoljuk meg, hogy minden nem konstans $m\left( t \right)\in
 polinomhoz létezik egy $\mathbb{F}$ feletti vektortér, és azon egy lineáris transzformáció,
 amelynek minimálpolinomja éppen $m$.
 ({\footnotesize Segítség: Nézzük és csodáljuk a fenti mátrixot.})
+\section{Irreducibilis polinommal képzett magtér redukálása}
+Legyen most $p$ egy tetszőleges $k$-ad fokú irreducibilis polinom,
+és $A\in L(V)$ egy lineáris transzformáció.
+Tekintsük a $V_1=\ker p\left( A \right)$ invariáns alteret, amelyre szorítsuk meg az $A$
+transzformációt, azaz $A_1=A|V_1$.
+Világos, hogy $p\left( A_1 \right)=0\in L\left( V_1 \right)$,
+ezért alkalmazhatjuk a fent igazolt \ref{pr:irred_redukcio}.~állítást
+a $V_1$ altérre és az $A_1$ transzformációra.
+\begin{proposition}\label{pr:csaba}
+	Legyen $V$ egy véges dimenziós vektortér, $A\in L\left( V \right)$ egy lineáris transzformáció,
+	és $p\in\mathbb{F}\left[ t \right]$ egy irreducibilis polinom.
+	Ekkor:
+	\begin{enumerate}
+		\item Minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
+		      \(
+		      \dim\lin(v;A)=\deg p;
+		      \)
+		\item A $\ker p\left( A \right)$ altér nulla dimenziós,
+		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direktösszege.
+		      Pontosabban fogalmazva
+		      ha $\nu\left( A \right)>0$, akkor létezik $r\geq 1$ szám,
+		      és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
+		      \[
+			      \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)
+			      =
+			      \ker p\left( A \right).
+			      \qedhere
+		      \]
+	\end{enumerate}
+\end{proposition}
+Összefoglalhatjuk azt az esetet,
+mikor a minimálpolinom különböző irreducibilis polinomok szorzata.
+Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
+\begin{proposition}\label{pr:minpolelsofokufelbontas}
+	Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
+	amelynek minimálpolinomja $m\in\mathbb{F}\left[ t \right]$.
+	Tegyük fel,
+	hogy $m$ előáll mint a különböző normált, irreduciblis polinomok elsőfokú hatványainak
+	\[
+		m=p_1p_2\dots p_s
+	\]
+	szorzata.
+	Ekkor $V$ előáll mint néhány -- de legalább egy-egy darab --
+	$\deg p_1,\deg p_2,\dots,\deg p_s$ dimenziós minimális invariáns alterének direktösszege.
+\end{proposition}
+\begin{proof}
+	\Aref{pr:redukcio-primfelbontas}.~állításban láttuk,
+	hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
+	Minden egyes $p_j$ a minimálpolinom legalább elsőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
+	Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
+	dimenziós invariáns altér, vagy néhány ilyen direktösszege.
+	Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
+\end{proof}
+\subsection{A komplex és a valós eset}
+Nézzük meg mit jelent \aref{pr:minpolelsofokufelbontas}.~állítás abban a speciális esetben,
+mikor az $\mathbb{F}$ test a komplex számok, vagy a valós számok teste.
+
+Elsőként tegyük fel, hogy a $V$ vektortér a $\mathbb{C}$ komplex számtest feletti vektortér.
+Ekkor az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja egy komplex együtthatós polinom.
+Az algebra alaptétele szerint irreducibilis normált polinom csak elsőfokú, azaz $t-\lambda$ alakú lehet,
+tehát az előző, \aref{pr:minpolelsofokufelbontas}.~állítás feltétele most abba megy át, hogy $A$ minimálpolinomja
+\[
+	m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
+\]
+alakú, ahol $\lambda_1,\dots,\lambda_s$ az $m$ különböző gyökei.
+Az állítas implikációja, hogy ekkor a vektortér előáll mint egy dimenziós $A$-invariáns
+altereinek direktösszege, ergo az $A$ transzformáció diagonalizálható.
+Kiderült tehát, hogy nincs új a napalatt, hiszen azt már korábban is tudtuk, -- lásd:\ref{pr:diagonalizalhatosag} -- hogy $A$ pontosan akkor diagonalizálható, ha a minimálpolinomja a fenti kiemelt alakú.%
+\footnote{
+    Mitöbb ez utóbbi tetszőleges test feletti vektortéren is igaz, nem csak $\mathbb{C}$ felett.
+}
+
+Ha most a valós vektortér esetére szorítkozunk, akkor arra kell emlékeznünk, hogy
+egy a valós test feletti irreducibilis polinomom első- vagy másodfokú lehet csak.
+Ezért állításunk feltétel most azt jelenti, hogy a minimálpolinom előáll mint páronként relatív prím, első vagy másodfokú polinomok szorzata.
+Az konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direktösszege. Bebizonyítottuk tehát a következő állítást.
+\begin{proposition}
+	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
+    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
+    Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direktösszege,
+    ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonalisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
+\end{proposition}
+Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális felett és a diagonális alatt lehetnek nem zérus számok.
 \subsubsection{Illusztráció}
 \textit{%
 	Bontsuk lehető legalacsonyabb invariáns alterek direktösszegére az alábbi $\mathbb{R}$
@@ -7962,107 +8045,6 @@ amelynek minimálpolinomja éppen $m$.
 			0 & 1 & -1 & 0
 		\end{pmatrix}.\qedhere
 	\]
-\end{proof}
-\section{Irreducibilis polinommal képzett magtér redukálása}
-Legyen most $p$ egy tetszőleges $k$-ad fokú irreducibilis polinom,
-és $A\in L(V)$ egy lineáris transzformáció.
-Tekintsük a $V_1=\ker p\left( A \right)$ invariáns alteret, amelyre szorítsuk meg az $A$
-transzformációt, azaz $A_1=A|V_1$.
-Világos, hogy $p\left( A_1 \right)=0\in L\left( V_1 \right)$,
-ezért alkalmazhatjuk a fent igazolt \ref{pr:irred_redukcio}.~állítást
-a $V_1$ altérre és az $A_1$ transzformációra.
-\begin{proposition}
-	Legyen $V$ egy véges dimenziós vektortér, $A\in L\left( V \right)$ egy lineáris transzformáció,
-	és $p\in\mathbb{F}\left[ t \right]$ egy irreducibilis polinom.
-	Ekkor:
-	\begin{enumerate}
-		\item Minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
-		      \(
-		      \dim\lin(v;A)=\deg p;
-		      \)
-		\item A $\ker p\left( A \right)$ altér nulla dimenziós,
-		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direktösszege.
-		      Pontosabban fogalmazva
-		      ha $\nu\left( A \right)>0$, akkor létezik $r\geq 1$ szám,
-		      és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
-		      \[
-			      \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)
-			      =
-			      \ker p\left( A \right).
-			      \qedhere
-		      \]
-	\end{enumerate}
-\end{proposition}
-Összefoglalhatjuk azt az esetet,
-mikor a minimálpolinom különböző irreducibilis polinomok szorzata.
-Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
-\begin{proposition}
-	Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
-	amelynek minimálpolinomja $m\in\mathbb{F}\left[ t \right]$.
-	Tegyük fel,
-	hogy $m$ előáll mint a különböző normált, irreduciblis polinomok elsőfokú hatványainak
-	\[
-		m=p_1p_2\dots p_s
-	\]
-	szorzata.
-	Ekkor $V$ előáll mint néhány -- de legalább egy-egy darab --
-	$\deg p_1,\deg p_2,\dots,\deg p_s$ dimenziós minimális invariáns alterének direktösszege.
-\end{proposition}
-\begin{proof}
-	\Aref{pr:redukcio-primfelbontas}.~állításban láttuk,
-	hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
-	Minden egyes $p_j$ a minimálpolinom legalább elsőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
-	Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
-	dimenziós invariáns altér, vagy néhány ilyen direktösszege.
-	Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
-\end{proof}
-\subsection{A komplex és a valós eset}
-Most az tegyük fel, hogy a $V$ vektortér a $\mathbb{C}$ komplex számtest feletti vektortér.
-Ekkor az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja egy komplex együtthatós polinom.
-Az algebra alaptétele szerint irreducibilis normált polinom csak elsőfokú, azaz $t-\lambda$ alakú lehet,
-tehát az előző állítás feltétele most abba megy át, hogy $A$ minimálpolinomja
-\[
-	m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
-\]
-alakú, ahol $\lambda_1,\dots,\lambda_s$ az $m$ különböző gyökei.
-Tudjuk viszont, hogy a minimálpolinom gyökei a sajátértékek,
-ezért a feltételt egyszerűbben úgy is fogalmazhatjuk,
-a minimálpolinom gyökei egyszeresek, vagy ami ugyanaz:
-a sajátértékek a minimálpolinom egyszeres gyökei.
-\begin{proposition}\label{pr:redukcio-primfelbontas-2}
-	Tegyük fel, hogy $V$ egy $\mathbb{C}$ feletti vektortér és $A\in L\left( V \right)$ egy lineáris transzformáció.
-	$A$ pontosan akkor diagonalizálható,
-	ha minimálpolinomja gyökei egyszeres multiplicitásúak.
-\end{proposition}
-\begin{proof}
-	Ha a sajátértékek a minimálpolinomnak egyszeres multiplicitású gyökei,
-	akkor fennállnak az előző tétel feltételei.
-	Így $V$ előáll mint néhány egydimenziós invariáns alterének direktösszege,
-	ami azt jelenti, hogy van sajátvektorokból álló bázisa, ergo diagonalizálható.
-
-	Megfordítva, ha $A$ diagonalizálható, akkor a diagonálisban a sajátértékei vannak.
-	Ha $\left\{ \lambda_1,\dots,\lambda_s \right\}$ a diagonális különböző elemei,
-	akkor az $A$ minimálpolinomja nyilvánvalóan
-	\[
-		m\left( t \right)
-		=
-		\prod_{j=1}^s\left( t-\lambda_j \right)
-	\]
-	alakú.
-	Ez persze olyan polinom,
-	amelyben minden gyöktényező csak egyszer szerepel.
-\end{proof}
-Mivel a valós test feletti irreducibilis polinomok első-- vagy másodfokúak,
-ezért a valós esetben is szép állítást kapunk.
-\footnote{Ha nem is annyira szépet mint a komplex esetben.}
-\begin{proposition}
-	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$.
-	A $V$ pontosan akkor bontható fel egy vagy két dimenziós minimális $A$-invariáns alterek direktösszegére,
-	ha az $A$ transzformáció $m$
-	minimálpolinomjának felbontásában minden irreducibilis polinom az első hatványon szerepel.
-\end{proposition}
-\begin{proof}
-	A komplex esettel analóg.
 \end{proof}
 \chapter{A minimálpolinom fokszámáról}
 \scwords A minimálpolinom definiálásakor csak annyit láttunk,
@@ -14165,4 +14147,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 08 Mar 2021 09:30:00 AM CET
+Last Modified: Tue 09 Mar 2021 12:39:29 pm CET CET CET
