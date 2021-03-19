@@ -6541,7 +6541,7 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 A $\lin\left( v;A \right)$ tehát a fenti $k$-ra egy $k$-dimenziós altér,
 amelynek bázisa $\left\{A^{k-1}v,\dots,Av,v \right\}$.
 A játék kedvéért írjuk fel az $A|_{\lin\left( v;A \right)}$ transzformáció mátrixát
-ebben a bázisban:
+ebben a bázisban:\label{ar:elsomegjelenes}
 \[
 	\begin{array}{r|ccccc}
 		         & A^kv         & A^{k-1}v & A^{k-2}v & \dots      & Av     \\
@@ -6811,16 +6811,30 @@ amely mindig használható.
 	hogy
 	$\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineáris független,
 	de $\left\{ v,Av,\dots,A^{k-1}v,A^{k}v \right\}$ lineárisan összefüggő.
-	Ekkor léteznek $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
+	Léteznek tehát $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
 	számok, amelyekre
 	\[
-		A^{k}v=\sum_{j=0}^{k-1}\alpha_jA^{j}v
+		A^{k}v=\sum_{j=0}^{k-1}\alpha_jA^{j}v.
 	\]
-	Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimálpolinomja
-	\[
-		n\left( t \right)=
-		t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0.\qedhere
-	\]
+    Ekkor
+    \begin{enumerate}
+        \item 
+	    Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimálpolinomja
+    	\[
+	    	n\left( t \right)=
+    		t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0;
+    	\]
+        \item
+        A $v$-hez tartozó kis minimálpolinom foka megegyezik a $v$-t tartalmazó legszűkebb invariáns altér dimenziójával, azaz 
+        \[
+            \deg n=\dim\left( \lin\left( v;A \right) \right).
+        \]
+        \item
+        Sőt, minden $x\in\lin\left( v;A \right)$ mellett $n\left( A \right)x=0$ is fennáll, azaz
+        \[
+            n(A)|_{\lin\left( v;A \right)}=0|_{\lin\left( v;A \right)}.\qedhere
+        \]
+    \end{enumerate}
 \end{proposition}
 \begin{proof}
 	Láttuk, hogy $\left\{ v,Av,\dots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
@@ -6828,9 +6842,155 @@ amely mindig használható.
 	Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
 	No de, $k$-nal alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
 	hiszen $\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineárisan független.
-	Azt láttuk tehát, hogy $n$ a legalcsonyabb fokú nem zérus eleme $J_{A,v}$-nek,
+	Azt láttuk tehát, hogy $n$ a legalacsonyabb fokú nem zérus eleme $J_{A,v}$-nek,
 	tehát $n$ generálja a főideált.
+
+    A fentiek szerint $\dim\left( \lin\left( v;A \right) \right)=k=\deg n$.
+
+    Azt már láttuk, hogy $n\left( A \right)v=0$. 
+    A $\lin\left( v;A \right)$ egy bázisa $\left\{ v,Av,\dots,A^{k-1}v \right\}$ és minden bázis elemre
+    \[
+        n\left( A \right)\left( A^jv \right)=A^j\left( n\left( A \right)v \right)=A^j\left( 0 \right)=0,
+    \]
+    hiszen $n\left( A \right)$ és $A^j$ kommutáló transzformációk.
+    Azt kaptuk tehát, hogy az $n\left( A \right)$ transzformáció a $\lin\left( v;A \right)$ egy bázisát zérusra viszi,
+    ezért maga $n\left( A \right)$ a $\lin\left( v;A \right)$ altér zérus transzformációja.
 \end{proof}
+\subsubsection{Illusztráció}
+Legyen $\left\{ u_1,u_2,u_3 \right\}$ bázisa a $\mathbb{C}$ komplex számtest feletti $V$ vektortérnek.
+Az $A\in L\left( V \right)$ lineáris transzformációra
+\[
+    A\left( \alpha u_1+\beta u_2 +\gamma u_3 \right)
+    =
+    \left( -3\beta -2\gamma \right)u_1 +
+    \left( \alpha-\beta\gamma \right)u_2+
+    \left( -\alpha+3\beta+\gamma \right)u_3.
+\]
+Írjuk fel az $u_3$ vektorhoz tartozó kis minimálpolinomot.
+
+Világos, hogy $A$ mátrixa a megadott bázisban
+\[
+    \begin{pmatrix}
+        0&-3&-2\\
+        1&-1&1\\
+        -1&3&1
+    \end{pmatrix}.
+\]
+Az előző állításban megadott algoritmust használjuk:
+\[
+\begin{array}{r|ccc}
+	     & Au_3        & A^2u_3 & A^3u_3\\
+	\hline
+	     & -1          &     -5 &     -6\\
+         &\framebox{1} &     -2 &      3\\
+	u_3  &  1          &      6 &      5\\
+	\hline
+	     &\delta       &     -2 &      3
+\end{array}
+\quad
+\begin{array}{r|cc}
+	     &  A^2u_3      & A^3u_3\\
+	\hline
+        &\framebox{-9} &     0 \\
+	Au_3 &      -2      &     3 \\
+	u_3  &       8      &     2 \\
+	\hline
+	     &\delta        &     0
+\end{array}
+\quad
+\begin{array}{r|l}
+	     &A^3u_3\\
+	\hline
+   A^2u_3&    0 \phantom{\framebox{0}}\\
+	Au_3 &    3 \\
+	u_3  &    2 \\
+	\hline
+         &\phantom{\delta}
+\end{array}
+\]
+Azt kapjuk tehát, hogy
+\(
+	\left\{ u_3,Au_3,A^2u_3\right\}
+    \)
+még lineárisan független, de
+\(
+A^3u_3-3Au_3-2u_3=0.
+\)
+Ezek szerint az $u_3$ vektorhoz tartozó kis minimálpolinom:
+\(
+n\left( t \right)=t^3-3t-2,
+\)
+amivel a feladatot meg is oldottuk.
+
+Érdemes még látni, hogy mit mond az előző állítás a fenti transzformációról.
+Mivel $\lin\left( u_3;A \right)$ egy 3 dimenziós altere a $V$ három dimenziós vektortérnek,
+ezért $\lin\left( u_3;A \right)=V$, így $A^{3}-3A-2I=0$ nem csak $u_3$ vektort, de $V$ minden vektorát zérusra viszi,
+azaz $n\left( A \right)=A^3-3A-2I=0$.
+Alkalmazhatjuk \apageref{ar:elsomegjelenes}.~lapon felírt mátrixot erre a transzformációra.
+Így azt kapjuk, hogy $A$-nak az $\left\{A^2u_3,Au_3,u_3\right\}$ bázisban felírt mátrixa a következő.
+\[
+    \begin{pmatrix}
+        0&1&0\\
+        3&0&1\\
+        2&0&0
+    \end{pmatrix}.
+\]
+Azt érdemes látni, hogy ebben a mátrixban az első oszlopban találjuk a $v_3$ vektorhoz tartozó kis minimálpolinom együtthatóinak ellentetjét
+a $k-1$-ediktől kezdve sorban lefelé (a $k$ adik a legmagasabb fokú együttható mindig 1.)
+A mátrix szuper diagonálisában csupa 1-es szerepel, és az összes többi tag zérus. 
+Az ilyen mátrixoknak központi szerepe van, amint azt később látni fogjuk.
+
+Első alkalmazásként megmutatjuk, hogy minden nem konstans normált polinom lehet kis minimálpolinom.
+\begin{proposition}
+    Legyen $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy tetszőleges normált $k$-ad fokú polinom, ahol $k\geq 1$.
+    Ekkor tetszőleges $V$ éppen $k$ dimenziós vektortér tetszőleges $v\in V$, $v\neq 0$ vektorához van olyan $A\in L\left( V \right)$
+    lineáris transzformáció, amelyre a $v$-hez tartozó kis minimálpolinom éppen $p$.
+\end{proposition}
+\begin{proof}
+    Jelölje 
+    \(
+    p\left( t \right)=t^k+\alpha_{k-1}t^{k-1}+\dots+\alpha_1t+\alpha_0,
+    \)
+    $v_1=v.$ 
+    A $v_1\neq 0$ vektor mint egy elemű vektorrendszer lineárisan független, ezért kiegészíthető a tér
+    $\left\{ v_k,\dots,v_2,v_1 \right\}$ bázisává.
+    Legyen $A\in L\left( V \right)$ az a lineáris transzformáció, 
+    amelynek ebben a bázisban felírt mátrixa\footnote{Az első oszlopban sorban lefelé $p\left( t \right)$ együtthatóinak ellentetje, a szuper diagonálisban 1, mindenütt másutt zérus.}
+    \[
+        \begin{pmatrix}
+            -\alpha_{k-1}&1&0&\dots&0\\
+            -\alpha_{k-2}&0&1&\dots&0\\
+            \vdots       &\vdots &\ddots & \ddots    &\vdots\\
+            -\alpha_1    &0&0&\ddots&1\\
+            -\alpha_0    &0&0&\dots&0
+        \end{pmatrix}.
+    \]
+    Ez persze azonos avval, mintha $A$-t a $\left\{ v_k,\dots,v_1 \right\}$
+    bázison definiálnánk az alábbi módon:
+    \[
+        A\left( v_j \right)=v_{j+1}, j=1,\dots,k-1\mbox{ esetén, és } 
+        A\left( v_k \right)=\sum_{j=0}^{k-1}-\alpha_jv_{j+1}.
+    \]
+    Ekkor minden $j=0,\dots,k-1$ mellett $v_{j+1}=A^jv_1$, 
+    ezért $\left\{ v_1,Av_1,\dots,A^{k-1}v_1 \right\}=\left\{ v_1,v_2,\dots,v_{k} \right\}$ lineárisan független rendszer.
+    A mátrix első oszlopa szerint 
+    \[
+        A^kv_1=
+        A\left( A^{k-1}v_1 \right)=
+        A\left( v_k \right)=
+        \sum_{j=0}^{k-1}-\alpha_jv_{j+1}=
+        \sum_{j=0}^{k-1}-\alpha_jA^jv_1,
+    \]
+    ami pont azt jelenti, hogy $p(A)v_1=0$, 
+    ezért valóban $p\left( t \right)$ a $v_1$-hez tartozó kis minimálpolinom.
+\end{proof}
+Vegyük észre, hogy a fenti bizonyításban
+$V$ éppen $k$ dimenziós, így csak $\lin\left( v_1;A \right)=V$ lehetséges.
+Ez azt jelenti, hogy $p\left( A \right)$ nem csak $v_1$-et, de $V$ valamennyi más vektorát is zérusra viszi,
+ergo $p\left( A \right)=0$, sőt $p$ a legalacsonyabb fokú polinom, amire ez teljesül,
+hiszen $\left\{ v_1,Av_1,\dots,A^{k-1}v_1 \right\}$ vektorrendszer még lineárisan független.
+
+Ez vezet a minimálpolinom fogalmához.
 
 \section{Minimálpolinom}
 \begin{proposition}
@@ -9030,7 +9190,7 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 	vektorrendszer bázisa $W$-nek.
 
 	A $B$ transzformációnak ebben a bázisban felírt mátrixa olyan, hogy
-	a szuper diagonálisán kívük minden elem zérus,
+	a szuper diagonálisán kívül minden elem zérus,
 	a szuper diagonálisban $n_1-1$ db $1$-es, aztán egy zérus, majd $n_2-1$ db $1$-es aztán egy zérus, stb.
 	Adjuk a $B=A-\lambda I$ mátrixához a $\lambda I$ diagonális mátrixot!
 	Ekkor kapjuk az $A$-nak a $(\dag)$ bázisban felírt mátrixát.
@@ -14147,4 +14307,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 17 Mar 2021 04:59:46 pm CET CET CET CET
+Last Modified: Fri 19 Mar 2021 10:07:11 PM CET CET CET CET CET
