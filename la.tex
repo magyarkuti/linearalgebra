@@ -4711,7 +4711,7 @@ Gondoljuk meg, hogy akárhány de véges sok altér összege is altér.
             $
 		    minden $k=1,\dots,s$ mellett.
     \end{enumerate}
-    Szokásos szóhasználat, hogy azt mondjuk, hogy az $M_1,\dots,M_s$ altereknek \emph{értelmezhető a direktösszege},   vagy a \emph{direktösszege értelmes}, ha a fenti feltételek egyike (ezért mindegyike) fennáll.
+    Szokásos szóhasználat, hogy azt mondjuk, hogy az $M_1,\dots,M_s$ altereknek \emph{értelmezhető a direkt összege},   vagy a \emph{direkt összege értelmes}, ha a fenti feltételek egyike (ezért mindegyike) fennáll.
 \end{proposition}
 \begin{proof}[Az $1.\Rightarrow 2.$ igazolása]
     Ha $2.$ nem áll fenn, akkor valamely $u_j\in M_j$ vektorokra $\sum_{j=1}^su_j=0$ úgy áll fenn,
@@ -4743,15 +4743,15 @@ Gondoljuk meg, hogy akárhány de véges sok altér összege is altér.
     $
     tartalmazásból.
 \end{proof}
-Ezek szerint a direktösszeg akkor értelmes, ha az alterek mindegyike diszjunkt az összes többi altér direktösszegétől.
+Ezek szerint a direkt összeg akkor értelmes, ha az alterek mindegyike diszjunkt az összes többi altér direkt összegétől.
 Azt gondoltuk meg éppen, hogy ezzel ekvivalens feltevés, 
-hogy minden altér diszjunkt csak a sorban előtte álló alterek direktösszegétől.
+hogy minden altér diszjunkt csak a sorban előtte álló alterek direkt összegétől.
 E második tulajdonság úgy tűnhet mintha függne az alterek sorrendjétől, 
 de mivel ekvivalens az első tulajdonsággal,
 ezért persze nem függ az alterek sorrendjétől.
 Mind a kettő ugyanazt fejezi ki: A zérus vektor csak egyféleképpen áll elő, mint az egyes alterekből vett vektorok összege.
 
-A következő definíció szerint, amennyiben az alterek direktösszege értelemes, úgy a direktösszeg egyszerűen a szóban forgó alterek Minkowski-összege.
+A következő definíció szerint, amennyiben az alterek direkt összege értelmes, úgy a direkt összeg egyszerűen a szóban forgó alterek Minkowski-összege.
 \begin{definition}[direkt összeg]
 	Legyenek az $M_1,\dots,M_s\subseteq V$ alterek a $V$ vektortér alterei ($s\geq 2$).
 	Azt mondjuk, hogy az $N\subseteq V$ altér az $M_1,\dots,M_s$ alterek \emph{direkt összege}\index{direkt összeg},
@@ -4815,7 +4815,7 @@ hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 	\end{math}
 	következik is.
     \\
-    Persze 2. speciálisan az $N$ altér nullvektorára is igaz, ami azt jelenti, hogy az alterek direktösszege értelmes.
+    Persze 2. speciálisan az $N$ altér nullvektorára is igaz, ami azt jelenti, hogy az alterek direkt összege értelmes.
 \end{proof}
 Érdemes észrevenni,
 hogy a fenti állítás 2. feltétele nem más mint az alábbi két feltétel együttesének tömör megfogalmazása:
@@ -6376,7 +6376,7 @@ Tetszőleges $A$ lineáris transzformáció mellett $\ker A$ és $\im A$ mindig 
 Ugyanis, ha $u\in\ker A$, akkor $A\left( Au \right)=A0=0$, tehát $Au\in\ker A$.
 Az $\im A$ altér esete még egyszerűbb: A tér minden elemének képe $\im A$-ban van, speciálisan persze ez $\im A$ elemeire is igaz.
 
-A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós terek direktösszegeként.
+A célunk, hogy a teret előállítsuk lehetőleg minél alacsonyabb dimenziós terek direkt összegeként.
 
 \begin{definition}[legszűkebb invariáns altér]
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
@@ -6856,7 +6856,7 @@ amely mindig használható.
     Azt kaptuk tehát, hogy az $n\left( A \right)$ transzformáció a $\lin\left( v;A \right)$ egy bázisát zérusra viszi,
     ezért maga $n\left( A \right)$ a $\lin\left( v;A \right)$ altér zérus transzformációja.
 \end{proof}
-\subsubsection{Illusztráció}
+\subsubsection{Illusztráció}\label{se:kisminimalillusztracio}
 Legyen $\left\{ u_1,u_2,u_3 \right\}$ bázisa a $\mathbb{C}$ komplex számtest feletti $V$ vektortérnek.
 Az $A\in L\left( V \right)$ lineáris transzformációra
 \[
@@ -6940,8 +6940,8 @@ a $k-1$-ediktől kezdve sorban lefelé (a $k$ adik a legmagasabb fokú együttha
 A mátrix szuper diagonálisában csupa 1-es szerepel, és az összes többi tag zérus. 
 Az ilyen mátrixoknak központi szerepe van, amint azt később látni fogjuk.
 
-Első alkalmazásként megmutatjuk, hogy minden nem konstans normált polinom lehet kis minimálpolinom.
-\begin{proposition}
+Első alkalmazásként megmutatjuk, hogy minden normált polinom lehet kis minimálpolinom.
+\begin{proposition}\label{pr:polinom-kis-minimalpolinom}
     Legyen $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy tetszőleges normált $k$-ad fokú polinom, ahol $k\geq 1$.
     Ekkor tetszőleges $V$ éppen $k$ dimenziós vektortér tetszőleges $v\in V$, $v\neq 0$ vektorához van olyan $A\in L\left( V \right)$
     lineáris transzformáció, amelyre a $v$-hez tartozó kis minimálpolinom éppen $p$.
@@ -7096,10 +7096,10 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 	de $\left\{ I,A,\dots,A^{k-1},A^{k} \right\}$ lineárisan összefüggő.
 	Ekkor léteznek $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
 	számok, amelyekre
-	\[
-		A^{k}=\sum_{j=0}^{k-1}\alpha_jA^{j}.
-	\]
-	Ekkor az $A$ operátor minimálpolinomja.
+	\(
+		A^{k}=\sum_{j=0}^{k-1}\alpha_jA^{j},
+	\)
+	így az $A$ transzformáció minimálpolinomja a következő alakú:
 	\[
 		m\left( t \right)=
 		t^k-\alpha_{k-1}t^{k-1}-\dots-\alpha_1t-\alpha_0.\qedhere
@@ -7116,7 +7116,7 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 \end{proof}
 A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is használhatók.
 \begin{proposition}
-	\index{kis minimálpolinom}
+    \index{kis minimálpolinom}\label{pr:lkkt-minimalpolinom}
 	Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja $m$.
 	Tegyük fel, hogy az $\left\{ e_1,\dots,e_n \right\}$ egy bázisa $V$-nek,
 	és $p_1,\dots,p_n$ rendre a bázis elemekhez tartozó kis minimálpolinomok.
@@ -7165,6 +7165,111 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
 	Mivel egy főidálnak csak egy normált generáló eleme van,
 	ezért a $d$ legkisebb közös többszörös azonos a jobboldali ideált generáló $m$ minimálpolinommal.
 \end{proof}
+\subsubsection{Illusztráció}\label{se:minimalillusztracio}
+Újra vegyük elő \apageref{se:kisminimalillusztracio}.~oldalon vett mátrixot.
+\[
+    A=
+    \begin{pmatrix}
+        0&-3&-2\\
+        1&-1&1\\
+        -1&3&1
+    \end{pmatrix}.
+\]
+Láttuk, hogy az $u_3$ bázis vektorhoz tartozó kis minimálpolinom $t^3-3t-2$.
+Az is világos, hogy az $u_3$ vektort tartalmazó legszűkebb invariáns altér dimenziója a kis minimálpolinom foka, 
+ergo 3.
+Így $\lin\left( u_3;A \right)=V$, tehát $A^3-3A-2I=0$.
+Az is meggondoltuk, hogy $3$-nál alacsonyabb fokú normált polinom nincs, ami $u_3$ vektort zérusra viszi,
+azaz $m\left( t \right)=t^{3}-3t-2$ az $A$ minimálpolinomja.
+
+Persze itt a szerencsénk, hogy $u_3$ tartalmazó legszűkebb invariáns altér az egész vektortér.
+Ha ezt nem használjuk, 
+akkor \aref{pr:lkkt-minimalpolinom}.~állítás eliminációs algoritmusát alkalmazhatjuk a bázis elemekhez tartozó kis minimálpolinomok felírására, 
+majd ezek legkisebb közös többszöröseként kapjuk a transzformáció minimálpolinomját.
+\[
+		\begin{array}{r|cc}
+			    & Au_1          & A^2u_1 \\
+			\hline
+			u_1 &  0            &-1      \\
+			    & \framebox{1}  &-2      \\
+			    & -1            & 2      \\
+			\hline
+			    & \delta        &-2
+		\end{array}
+		\qquad
+		\begin{array}{r|c}
+			     & A^2u_1 \\
+			\hline
+			u_1  & -1     \\
+			Au_1 & -2     \\
+			     & 0      \\
+			\hline
+			     &
+		\end{array}
+		\qquad\qquad
+		\begin{array}{r}
+			\left\{ u_1,Au_1 \right\}\mbox{ lineárisan független, de} \\
+			A^2u_1+2Au_1+u_1=0,                                        \\
+			\mbox{ezért } p_1\left( t \right)=t^2+2t+1=\left( t+1 \right)^2.
+		\end{array}
+\]
+Tehát itt nem volt olyan szerencsénk mint $u_3$ esetében.
+Most $\lin\left( u_1;A \right)$ egy 2 dimenziós altér $V$-ben.
+Csak $x\in\lin\left( u_1;A \right)$ vektoraira tudjuk, hogy $A^2x+2Ax+x=0$.
+Folytatnunk kell a második bázis vektorra:
+\[
+		\begin{array}{r|cc}
+			    & Au_2          & A^2u_2 \\
+			\hline
+			    & -3            &-3      \\
+		   u_2  & -1            & 1      \\
+                & \framebox{3}  & 3      \\
+			\hline
+			    & \delta        & 1
+		\end{array}
+		\qquad
+		\begin{array}{r|c}
+			     & A^2u_2 \\
+			\hline
+			     &  0     \\
+			 u_2 &  2     \\
+			Au_2 &  1     \\
+			\hline
+			     &
+		\end{array}
+		\qquad\qquad
+		\begin{array}{r}
+			\left\{ u_2,Au_2 \right\}\mbox{ lineárisan független, de} \\
+			A^2u_2-Au_2-2u_1=0,                                        \\
+			\mbox{ezért } p_2\left( t \right)=t^2-t-2=\left( t+1 \right)\left( t-2 \right).
+		\end{array}
+\]
+Ugyanúgy mint az imént az $u_2$ vektort tartalmazó legszűkebb invariáns altér csak két dimenziós.
+Látni fogjuk, hogy a minimálpolinom foka legfeljebb a tér dimenziója. 
+Ha ezt most felhasználjuk, akkor nem is kell tovább lépnünk, hiszen egy olyan legfeljebb 3-ad fokú normált polinomot keresünk, amely mind $p_1\left( t \right)=\left( t+1 \right)^2$ polinomnak,
+mind $p_2\left( t \right)=\left( t+1 \right)\left( t-2 \right)$ polinomnak többszöröse.
+Persze ilyen polinom csak egy van az
+\[
+    m\left( t \right)=\left( t+1 \right)^2\left( t-2 \right).
+\]
+Egy kicsi szerencsénk mégis volt a fenti eljárásban, 
+hiszen már a második bázis vektor után kiderült a minimálpolinom. 
+Általában csak azt tudjuk, hogy a kis minimálpolinomok legkisebb közös többszöröse a minimálpolinom.
+Ez a mi konkrét esetünkben azt jelenti, 
+hogy az $m(t)$ minimálpolinom a $p_1(t)=\left( t+1 \right)^2$, 
+a $p_2\left( t \right)=(t+1)(t-2)$ és a $p_3(t)=t^3-3t-2=\left( t+1 \right)^2\left( t-2 \right)$ polinomok legkisebb közös többszöröse, ami most nyilvánvaló módon teljesül.
+
+Hasonlóan mint a kis minimálpolinom esetében, most is igaz, hogy minden normált polinom egy minimálpolinom.
+Ez \aref{pr:polinom-kis-minimalpolinom}.~állítás kiterjesztése. 
+Csak azt kell még észrevennünk $A|_{\lin\left( v;A \right)}$ transzformáció minimálpolinomja éppen a $v$-hez tartozó
+kis minimálpolinom.
+\begin{proposition}\label{pr:polinom-minimalpolinom}
+    Legyen $m\left( t \right)\in\mathbb{F}\left[ t \right]$ egy tetszőleges normált $k$-ad fokú polinom, ahol $k\geq 1$.
+    Ekkor tetszőleges $V$ éppen $k$ dimenziós vektortér tetszőleges $v\in V$, $v\neq 0$ vektorához van olyan $A\in L\left( V \right)$
+    lineáris transzformáció, 
+    amelyre a $v$-hez tartozó kis minimálpolinom éppen $m$.
+    Így $\lin\left( v;A \right)$ is $k$-dimenziós, ezért $m$ a minimálpolinomja is az $A$-nak.
+\end{proposition}
 \section{Sajátvektorok és diagonalizálhatóság}\index{sajátvektor}\index{diagonalizálhatóság}
 
 \begin{proposition}
@@ -7434,7 +7539,7 @@ ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója
 	$\left\{ \lambda_1,\dots,\lambda_s \right\}\subseteq\sigma\left( A \right)$,
 	a spektrum különböző elemei.
 	Jelölje $M_j=\ker\left( A-\lambda_j I \right)$.
-	Ekkor értelmes az $M_1\oplus\dots\oplus M_s$ direktösszeg.
+	Ekkor értelmes az $M_1\oplus\dots\oplus M_s$ direkt összeg.
 \end{proposition}
 \begin{proof}
 	Megmutatjuk, hogy a $\sum_{j=1}^sM_j$ összegben minden elem előállítása egyértelmű.
@@ -7463,7 +7568,7 @@ altér egy -- sajátvektorokból álló -- bázisa.
 Rögzítsük is ezt a fontos gondolatot,
 amelyet a feladatok megoldása során sokszor használjuk majd.
 \begin{proposition}
-	A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direktösszegének egy bázisa.
+	A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direkt összegének egy bázisa.
 \end{proposition}
 \begin{proposition}[diagonalizálhatóság]\label{pr:diagkar}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
@@ -7527,7 +7632,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	szorzata.
 	Ekkor a tér szétesik a
 	$\ker p\left( A \right)$ és a
-	$\ker q\left( A \right)$ invariáns alterei direktösszegére, azaz
+	$\ker q\left( A \right)$ invariáns alterei direkt összegére, azaz
 	\[
 		\ker p\left( A \right)\oplus
 		\ker q\left( A \right)=
@@ -7560,7 +7665,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	$g\left( A \right)q\left( A \right)x\in\ker p\left( A \right)$.
 	Ez azt jelenti, hogy $\ker q\left( A \right)+\ker p\left( A \right)=V$ azonosság is fennáll.
 	Megmutattuk tehát, hogy $V$ előáll mint a $\ker p\left( A \right)$ és a
-	$\ker q\left( A \right)$ alterek direktösszege.
+	$\ker q\left( A \right)$ alterek direkt összege.
 
 	Világos, hogy minden $u\in\ker p\left( A \right)$ mellett
 	$p\left( A_1 \right)u
@@ -7568,7 +7673,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 		p\left( A \right)u=0$.
 
 	Ha $h$ egy másik olyan polinom, amelyre $h\left( A_1 \right)=0\in L\left( \ker p\left( A \right) \right)$,
-	akkor mivel a direktösszegre vonatkozó állítást már igazoltuk
+	akkor mivel a direkt összegre vonatkozó állítást már igazoltuk
 	\[
 		(hq)\left( A \right)x=
 		h\left( A \right)q\left( A \right)\left( x_1+x_2 \right)
@@ -7781,7 +7886,7 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 		\item
 		      a $V$ altér nulla dimenziós,
 		      vagy $k$ dimenziós,
-		      vagy $k$ dimenziós $A$ invariáns alterek direktösszege.
+		      vagy $k$ dimenziós $A$ invariáns alterek direkt összege.
 		      Pontosabban,
 		      ha $\dim V>0$, akkor létezik $r\geq 1$ szám,
 		      és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
@@ -7837,29 +7942,29 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 	Mivel $V_1$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_2=\lin\left( v_2;A \right)$
 	jelölést $V_2\cap V_1=\left\{ 0 \right\}$.
-	Értelmes tehát venni e két invariáns altér direktösszegét.
-	Ha $V=V_1\oplus V_2$, akkor $V$ előállt két $k$ dimenziós invariáns alterének direktösszegeként.
+	Értelmes tehát venni e két invariáns altér direkt összegét.
+	Ha $V=V_1\oplus V_2$, akkor $V$ előállt két $k$ dimenziós invariáns alterének direkt összegeként.
 
 	Ha $V\neq V_1\oplus V_2$, akkor van van $v_3\in V\smallsetminus (V_1\oplus V_2)$, $v_3\neq 0$ vektor.
 	Mivel $V_1\oplus V_2$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_3=\lin\left( v_3;A \right)$
 	jelölést $V_3\cap (V_1\oplus V_2)=\left\{ 0 \right\}$.
-	Értelmes tehát venni e három invariáns altér direktösszegét, hiszen
+	Értelmes tehát venni e három invariáns altér direkt összegét, hiszen
 	a $V_1,V_2,V_3$ alterek ebben a sorrendben véve olyanok,
 	hogy mind diszjunkt az előzőek összegétől.
 	Ha $V=V_1\oplus V_2\oplus V_2$,
-	akkor $V$ előállt három $k$ dimenziós invariáns alterének direktösszegeként.
+	akkor $V$ előállt három $k$ dimenziós invariáns alterének direkt összegeként.
 
 	Ha $V\neq V_1\oplus\dots\oplus V_t$, valamely $t\geq 2$ mellett,
     akkor van van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$, $v_{t+1}\neq 0$ vektor.
 	Mivel $V_1\oplus\dots\oplus V_t$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_{t+1}=\lin\left( v_{t+1};A \right)$
 	jelölést $V_{t+1}\cap (V_1\oplus\dots\oplus V_t)=\left\{ 0 \right\}$.
-	Értelmes tehát venni ezen $t+1$ invariáns altér direktösszegét, hiszen
+	Értelmes tehát venni ezen $t+1$ invariáns altér direkt összegét, hiszen
 	a $V_1,V_2,V_3,\dots,V_t,V_{t+1}$ alterek ebben a sorrendben véve olyanok,
 	hogy mind diszjunkt az előzőek összegétől.
 	Ha $V=V_1\oplus\dots\oplus V_{t+1}$,
-	akkor $V$ előállt $t+1$ darab $k$ dimenziós invariáns alterének direktösszegeként.
+	akkor $V$ előállt $t+1$ darab $k$ dimenziós invariáns alterének direkt összegeként.
 
 	Az eljárás előbb utóbb a $V$ vektortér véges dimenziós volta miatt megáll.
 \end{proof}
@@ -7891,10 +7996,24 @@ Meggondoltuk tehát, hogy ha a transzformáció $m$ minimálpolinomja irreducibi
 alakú, akkor a térnek van olyan bázisa, amelyben a transzformáció mátrixa a fenti mátrix
 diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\dim V$.
 
-Házi feladatként gondoljuk meg, hogy minden nem konstans $m\left( t \right)\in\mathbb{F}\left[ t \right]$
-polinomhoz létezik egy $\mathbb{F}$ feletti vektortér, és azon egy lineáris transzformáció,
-amelynek minimálpolinomja éppen $m$.
-({\footnotesize Segítség: Nézzük és csodáljuk a fenti mátrixot.})
+Korábban -- lásd \aref{pr:polinom-minimalpolinom}.~állítást -- láttuk, 
+hogy ha $m\left( t \right)$ egy előre adott $k$-adfokú normált polinom,
+akkor például a fenti mátrix által reprezentált,
+$k$-dimenziós téren értelmezett lineáris transzformációnak $m\left( t \right)$
+a minimálpolinomja. 
+Most megmutattuk azt, hogy amennyiben $m\left( t \right)$ még irreducibilis is, 
+akkor egyedül a fenti transzformációnak lehet $m\left( t \right)$ a minimálpolinomja,
+amennyiben a $k$-dimenziós vektortereken értelmezett lineáris transzformációkra hagyatkozunk.
+Ha feloldjuk ezt a dimenzió korlátot, akkor még az $rk$ dimenziós téren értelmezett transzformációk is szóba jönnek
+fent megértett módon, tehát pl az $5k$ dimenziós téren annak és csak annak a transzformációnak a minimálpolinomja $m$,
+amelynek alkalmas bázisban felírt mátrixa 5 darab fenti típusú mátrix diagonális elrendezésével keletkezik.
+
+%Itt nagyon fontos volt, hogy $m\left( t \right)$ irreducibilis. 
+%Kérdés:
+%Igaz-e, hogy nem irreducibilis polinom esetén több egymástól különböző transzformáció is definiálható egy akkora dimenziós téren mint a polinom foka, 
+%úgy hogy azok minimálpolinomja az előre megadott polinom legyen. 
+%Ezt nem tudom, hogy igaz-e????
+
 \section{Irreducibilis polinommal képzett magtér redukálása}
 Legyen most $p$ egy tetszőleges $k$-ad fokú irreducibilis polinom,
 és $A\in L(V)$ egy lineáris transzformáció.
@@ -7913,7 +8032,7 @@ a $V_1$ altérre és az $A_1$ transzformációra.
 		      \dim\lin(v;A)=\deg p;
 		      \)
 		\item A $\ker p\left( A \right)$ altér nulla dimenziós,
-		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direktösszege.
+		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direkt összege.
 		      Pontosabban fogalmazva
 		      ha $\nu\left( A \right)>0$, akkor létezik $r\geq 1$ szám,
 		      és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
@@ -7938,14 +8057,14 @@ Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
 	\]
 	szorzata.
 	Ekkor $V$ előáll mint néhány -- de legalább egy-egy darab --
-	$\deg p_1,\deg p_2,\dots,\deg p_s$ dimenziós minimális invariáns alterének direktösszege.
+	$\deg p_1,\deg p_2,\dots,\deg p_s$ dimenziós minimális invariáns alterének direkt összege.
 \end{proposition}
 \begin{proof}
 	\Aref{pr:redukcio-primfelbontas}.~állításban láttuk,
 	hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
 	Minden egyes $p_j$ a minimálpolinom legalább elsőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
 	Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
-	dimenziós invariáns altér, vagy néhány ilyen direktösszege.
+	dimenziós invariáns altér, vagy néhány ilyen direkt összege.
 	Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
 \end{proof}
 \subsection{A komplex és a valós eset}
@@ -7960,27 +8079,27 @@ tehát az előző, \aref{pr:minpolelsofokufelbontas}.~állítás feltétele most
 	m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
 \]
 alakú, ahol $\lambda_1,\dots,\lambda_s$ az $m$ különböző gyökei.
-Az állítas implikációja, hogy ekkor a vektortér előáll mint egy dimenziós $A$-invariáns
-altereinek direktösszege, ergo az $A$ transzformáció diagonalizálható.
-Kiderült tehát, hogy nincs új a napalatt, hiszen azt már korábban is tudtuk, -- lásd:\ref{pr:diagonalizalhatosag} -- hogy $A$ pontosan akkor diagonalizálható, ha a minimálpolinomja a fenti kiemelt alakú.%
+Az állítás implikációja, hogy ekkor a vektortér előáll mint egy dimenziós $A$-invariáns
+altereinek direkt összege, ergo az $A$ transzformáció diagonalizálható.
+Kiderült tehát, hogy nincs új a nap alatt, hiszen azt már korábban is tudtuk, -- lásd:\ref{pr:diagonalizalhatosag} -- hogy $A$ pontosan akkor diagonalizálható, ha a minimálpolinomja a fenti kiemelt alakú.%
 \footnote{
-    Mitöbb ez utóbbi tetszőleges test feletti vektortéren is igaz, nem csak $\mathbb{C}$ felett.
+    Mi több, ez utóbbi tetszőleges test feletti vektortéren is igaz nem csak $\mathbb{C}$ felett.
 }
 
 Ha most a valós vektortér esetére szorítkozunk, akkor arra kell emlékeznünk, hogy
 egy a valós test feletti irreducibilis polinomom első- vagy másodfokú lehet csak.
 Ezért állításunk feltétel most azt jelenti, hogy a minimálpolinom előáll mint páronként relatív prím, első vagy másodfokú polinomok szorzata.
-Az konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direktösszege. Bebizonyítottuk tehát a következő állítást.
+Az konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
     az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
-    Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direktösszege,
-    ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonalisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
+    Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direkt összege,
+    ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonálisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
 \end{proposition}
 Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális felett és a diagonális alatt lehetnek nem zérus számok.
 \subsubsection{Illusztráció}
 \textit{%
-	Bontsuk lehető legalacsonyabb invariáns alterek direktösszegére az alábbi $\mathbb{R}$
+	Bontsuk lehető legalacsonyabb invariáns alterek direkt összegére az alábbi $\mathbb{R}$
 	feletti vektortéren értelmezett lineáris transzformáció értelmezési tartományát,
 	és írjuk fel $A$ mátrixát a lehető legegyszerűbb módon.
 	A transzformáció definíciója egy
@@ -8301,7 +8420,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		\dim\lin\left( v;A \right)=\deg p=k,
 	\]
 	amiből persze következik, hogy a tér legalább $k$ dimenziós.
-	\footnote{Sőt még azt is láttuk, hogy néhány -- lehet, hogy csak egy -- $k$ dimenziós invariáns altér direktösszege.}
+	\footnote{Sőt még azt is láttuk, hogy néhány -- lehet, hogy csak egy -- $k$ dimenziós invariáns altér direkt összege.}
 
 	Most nézzük az érdekes esetet,
 	mikor $\deg p\geq 1$ és $m\geq 2$.
@@ -8594,7 +8713,7 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	$v$-t tartalmazó legszűkebb $B$ invariáns altérnek.
 	Ezt kellett belátni.
 \end{proof}
-Ahhoz, hogy megkapjuk az egész vektorteret $v$-invariáns altérként vagy ilyenek direktösszegeként, az előző tételt
+Ahhoz, hogy megkapjuk az egész vektorteret $v$-invariáns altérként vagy ilyenek direkt összegeként, az előző tételt
 kell rekurzívan alkalmaznunk.
 A $W$ vektortér véges dimenziós volta garantálja, hogy a rekurzió véget ér.
 
@@ -8618,7 +8737,7 @@ Az első két lépést összefoglalva:
 	K_2=W,
 \]
 Az eljárást folytatva minden lépésben legalább eggyel csökken a kiegészítő invariáns altér dimenziója.
-Végül a vektortér előáll néhány, mondjuk $r$ darab $B$-re invariáns altér direktösszegeként:
+Végül a vektortér előáll néhány, mondjuk $r$ darab $B$-re invariáns altér direkt összegeként:
 \[
 	\lin\left\{ v_1;B \right\}
 	\oplus
@@ -8696,7 +8815,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 \end{proof}
 \begin{lemma}
 	Legyen $A\in L\left( V \right)$ és tegyük fel, hogy a $V$ vektortér előáll a $K_1,K_2$ invariáns alterei
-	direktösszegeként, azaz
+	direkt összegeként, azaz
 	\(
 	V=K_1\oplus K_2.
 	\)
@@ -8781,7 +8900,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 		\nu\left( A \right)=\sum_{k=1}^r\nu\left( A|\lin\left\{ v_k;A \right\} \right)=
 		\sum_{k=1}^r1=r.
 	\]
-	Ugyanígy a másik direktösszeg felbontásból kapjuk, hogy $\nu\left( A \right)=s$.
+	Ugyanígy a másik direkt összeg felbontásból kapjuk, hogy $\nu\left( A \right)=s$.
 
 	A negyedik állítás.
 	Tegyük fel -- indirekt --, hogy $m_k=n_k$ nem teljesül minden $k=1,\dots,r$ számra.
@@ -8792,7 +8911,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\[
 		m_1=n_1\geq m_2=n_2\geq\dots\geq m_{t-1}=n_{t-1}\geq m_t>n_t.
 	\]
-	Ekkor az első direktösszeg felbontásban a $t$-nél magasabb indexű tagokat elhagyva
+	Ekkor az első direkt összeg felbontásban a $t$-nél magasabb indexű tagokat elhagyva
 	\[
 		\rho\left( A^{n_t} \right)
 		\geq
@@ -8801,7 +8920,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 		=
 		\left( \sum_{k=1}^{t-1}(m_k-n_t) \right)+m_t-n_t.
 	\]
-	Hasonlóan, a második direktösszeg felbontásban a $t$-edik, és a $t$-nél magasabb indexű rangok zérók, így
+	Hasonlóan, a második direkt összeg felbontásban a $t$-edik, és a $t$-nél magasabb indexű rangok zérók, így
 	\[
 		\rho\left( A^{n_t} \right)
 		=
@@ -8919,7 +9038,7 @@ a nillpotens transzformációtól függ.
 Több bázis is lehetséges, amelyben a nillpotens transzformáció normálalakú,
 de nem csak hogy minden normálalakban azonos számú blokk van ($B$ defektusa),
 de a blokkok mérete is azonos.
-A nillpotens felbontásban szereplő direktösszeadandó alterek páronként izomorfak egymással.
+A nillpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
 \section{Illusztrációk}
 \subsection{Egyetlen invariáns altér}
 Írjuk fel a $W$ vektortéren értelmezett lineáris transzformáció normál alakját,
@@ -9057,7 +9176,7 @@ Emlékszünk, hogy a minimálpolinom a $p_1,p_2,p_3,p_4$ legkisebb közös több
 ergo $m\left( t \right)=t^3$, és $B$ egy harmadrendben nilpotens transzformáció.
 
 Írjuk fel a fenti tételben szereplő invariáns direktfelbontást.
-Mivel a $B$ rangja ránézésre 2, így a magtere 2 dimenziós, ergo két invariáns altér direktösszege $W$, amiből
+Mivel a $B$ rangja ránézésre 2, így a magtere 2 dimenziós, ergo két invariáns altér direkt összege $W$, amiből
 az egyik 3 dimenziós, így a másik csak egydimenziós lehet, ezért azt csak a magtér egyik eleme generálhatja!
 A három dimenziós altér lehet például a $\lin\left\{ u_4;B \right\}$,
 hiszen éppen az imént láttuk, hogy $B^2u_4\neq 0$.
@@ -9261,7 +9380,7 @@ de nem csak hogy minden normálalakban azonos számú Jordan-blokk van,
 \footnote{A Jordan-blokkok száma az $B=A-\lambda I$ defektusa, azaz a $\lambda$ sajátérték
 	geometriai dimenziója.\index{sajátérték geometriai dimenziója}}
 de a blokkok mérete is azonos.
-A felbontásban szereplő direktösszeadandó alterek páronként izomorfak egymással.
+A felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
 \section{Jordan-normálalak: az általános eset}
 \begin{definition}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció valamely $\mathbb{F}$ test
@@ -12190,7 +12309,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 		\ker A\oplus\im A^\ast.
 	\end{math}
 
-	A direktösszegek dimenziójára vonatkozó állítás és a Rang--defektus\index{rang--defektus--tétel}-tételnek az adjungált operációra vonatkozó alakja szerint
+	A direkt összegek dimenziójára vonatkozó állítás és a Rang--defektus\index{rang--defektus--tétel}-tételnek az adjungált operációra vonatkozó alakja szerint
 	\begin{math}
 		\rho\left( A \right)=\dim W-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
 	\end{math}
@@ -12231,7 +12350,7 @@ akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad
 A skalárisszorzatos-terek rangtétele, -- tehát \aref{pr:skrang}.~állítás -- önadjungált transzformációk mellett azt jelenti,
 hogy
 a $\ker A$ és az $\im A$ egymásra merőleges alterek,
-amelyek direktösszege az egész tér.
+amelyek direkt összege az egész tér.
 Később látjuk majd, hogy ez nem csak önadjungált transzformációkra igaz,
 hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref{pr:normalisrang}.~állítást} is teljesül.
 \section{Unitér transzformációk}
@@ -12621,7 +12740,7 @@ Meggondoltuk tehát, hogy egy
 	\]
 	alakú, ahol $p_1,\dots,p_s$ egymástól különböző, normált, irreducibilis, legfeljebb másodfokú polinomok.
 	Ezért a transzformációk redukálására vonatkozó \ref{pr:redukcio-primszorzat}.~állítás szerint
-	a tér előáll mint legfeljebb két dimenziós invariáns alterei direktösszege.
+	a tér előáll mint legfeljebb két dimenziós invariáns alterei direkt összege.
 	Minden ilyen legfeljebb 2 dimenziós invariáns altérben van $A$ sajátvektoraiból álló bázis,
 	amelyeket egyesítve az egész $V$ vektortér egy egy olyan bázisát kapjuk,
 	amelynek minden elem az $A$ sajátvektora.
@@ -14307,4 +14426,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Fri 19 Mar 2021 10:07:11 PM CET CET CET CET CET
+Last Modified: Sat 20 Mar 2021 01:33:02 PM CET CET CET CET CET
