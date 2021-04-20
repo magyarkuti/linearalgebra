@@ -11188,7 +11188,8 @@ $)
 
 Egynél több elemből álló ortonormált rendszert most nem tudunk mutatni,
 de később ennek oka egészen világos lesz.
-Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.Hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, az már látható is:
+Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.
+Ebből annyi, hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, az már látható is:
 \begin{proposition}
 	Egy zérus elemeket nem tartalmazó ortogonális rendszer lineárisan független rendszer is.
 \end{proposition}
@@ -11333,8 +11334,6 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		\leq \ip{u}{u},
 	\]
 	ami a bizonyítandó állítás.
-	Ha viszont $v=0$,
-	akkor az állítás mindkét oldala zérus.
 \end{proof}
 \begin{definition}[skalárisszorzat indukálta norma]
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
@@ -11390,7 +11389,7 @@ altere, amelyben van véges ortonormált bázis, akkor a tér tetszőleges $V$ p
 van $M$-hez legközelebbi pontja.
 Mi több, ilyen legközelebbi pontból csak egyetlen egy van.
 
-Ehhez először a kis iskolából jól ismert Pythagoras-tételelt kell megfogalmaznunk.
+Ehhez először a jól ismert Pythagoras-tételt kell megfogalmaznunk.
 
 \begin{proposition}[Pythagoras]\index{Pythagoras-tétel}
 	Ha $u\perp v$, akkor $\|u+v\|^2=\|u\|^2+\|v\|^2$.
@@ -11515,7 +11514,6 @@ vektor felírása szerint függ az $\left\{ x_1,\dots,x_k \right\}\subseteq M$ o
 ugyanis a fent kiemelt képletben szerepelnek a bázis elemei.
 Viszont tudjuk, hogy a fenti vektor az $u$-hoz legközelebb eső vektora $M$-nek, amiből persze csak egy van,
 emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált bázisának megválasztásától.
-Ez utóbbi gondolat már nagyon is meglepő.
 \begin{definition}[merőleges vetület, merőleges vetítés]
 	Legyen $M=\lin\left\{ x_1,\cdots,x_k \right\}$,
 	ahol $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer.
@@ -11778,8 +11776,8 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 	Ekkor
 	\begin{enumerate}
 		\item Minden $M\subseteq V$ véges dimenziós altér mellett $M=M^{\perp\perp}$,
-		\item Minden olyan $H\subseteq V$ részhalmazra,
-		      amelyre $\lin H$ véges dimenziós altér, fennáll az $\lin H=H^{\perp\perp}$ egyenlőség.
+		\item Ha a $H\subseteq V$ részhalmazra a $\lin H$ egy véges dimenziós altér, 
+            akkor $\lin H=H^{\perp\perp}$.
 		      \qedhere
 	\end{enumerate}
 \end{proposition}
@@ -14427,7 +14425,7 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
 <<<<<<< HEAD
-Last Modified: Sat 20 Mar 2021 01:33:02 PM CET CET CET CET CET
+Last Modified: Tue 20 Apr 2021 12:51:23 pm CEST CET CET CET CET
 =======
-Last Modified: Mon 22 Mar 2021 06:16:33 pm CET CET CET CET CET
+Last Modified: Tue 20 Apr 2021 12:51:23 pm CEST CET CET CET CET CET
 >>>>>>> 597a2a06cdeceb96020778a4cc7c992661eb5b0c
