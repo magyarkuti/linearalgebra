@@ -12013,7 +12013,7 @@ Ezt az egyetlen $z_\varphi$ vektort nevezzük a $\varphi$ lineáris funkcionált
 	jelölést, akkor készen is vagyunk.
 \end{proof}
 A bizonyításból az is látszik, hogy amennyiben
-$\left\{ v_1,\cdots,v_n \right\}$ a tér akármelyik ortonormált bázisa,
+$\left\{ v_1,\dots,v_n \right\}$ a tér akármelyik ortonormált bázisa,
 akkor a reprezentáló vektort a
 \[
 	z_\varphi=
@@ -12095,7 +12095,7 @@ Az adjungált unicitása, és összes fontos tulajdonsága az adjungált azonoss
 \paragraph{Az adjungált függvény linearitása.}
 \Aref{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk,
 hogy ha tetszőlegesen adott egy
-$\left\{ v_1,\cdots,v_n \right\}\subseteq V$
+$\left\{ v_1,\dots,v_n \right\}\subseteq V$
 ortonormált bázis, akkor
 \[
 	A^\ast w
@@ -12136,17 +12136,16 @@ azonosság is teljesül.
 
 \begin{proposition}
 	Legyen $V$ és $W$ véges dimenziós skalárisszorzatos-tér.
-	Rögzítsünk egy $\left\{ v_1,\cdots,v_m \right\}$ ortonormált bázist $V$-ben,
-	és rögzítsünk egy $\left\{w_1,\cdots,w_n\right\}$ ortonormált bázist $W$-ben.
+	Rögzítsünk egy $\left\{ v_1,\dots,v_m \right\}$ ortonormált bázist $V$-ben,
+	és rögzítsünk egy $\left\{w_1,\dots,w_n\right\}$ ortonormált bázist $W$-ben.
 	Legyen $A\in L\left( V,W \right)$ egy lineáris operátor és $A^\ast\in L\left( W,V \right)$ az adjungáltja.
 	Ekkor $A$-nak a fenti bázisokban rögzített mátrixa azonos
 	$A^\ast$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrix-szal.
-
 	Formálisan:
 	\[
 		\left[ A \right]_{i,j}=\overline{\left[ A^\ast \right]}_{j,i}
 	\]
-	minden $j=1,\cdots,m$ és minden $i=1,\cdots,n$ esetén.
+	minden $j=1,\dots,m$ és minden $i=1,\dots,n$ esetén.
 \end{proposition}
 \begin{proof}
 	\begin{math}
@@ -12461,7 +12460,7 @@ Nyilvánvaló példák normális transzformációkra:
 	      így az eredeti transzformáció is normális.
 \end{enumerate}
 Ki fog derülni a fejezetben, hogy a fenti példák közül a 3. és a 4. le is fedi valamennyi normális transzformációt.
-Az unitér transzformációk olyanok, amelyek $\mathbb{R}$ feletti esetben nem diagonalizálhatók.
+Az unitér transzformációk olyanok, amelyek $\mathbb{R}$ feletti esetben általában nem diagonalizálhatók.
 \begin{proposition}
 	Egy normális transzformáció polinomja is normális.
 \end{proposition}
@@ -12521,7 +12520,7 @@ Az unitér transzformációk olyanok, amelyek $\mathbb{R}$ feletti esetben nem d
 	Ekkor $\ker N^\ast=\ker N$.
 \end{proposition}
 \begin{proof}
-	Legyen $u=\in V.$
+	Legyen $u\in V.$
 	Ekkor
 	\[
 		\|Nu\|^2
@@ -12594,15 +12593,15 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 	\end{math}
 	és
 	\begin{math}
-		v\in\ker\left( N-\mu I \right)
+        v\in\ker\left( N-\mu I \right)=\ker\left( N^\ast-\bar{\mu}I \right)
 	\end{math}.
 	Ekkor persze
 	\begin{math}
-		Au=\lambda u
+		Nu=\lambda u
 	\end{math}
 	és
 	\begin{math}
-		N^\ast=\bar{\lambda}v
+		N^\ast v=\bar{\mu}v
 	\end{math}.
 	Így
 	\[
@@ -12612,11 +12611,12 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 		=
 		\ip{Nu}{v}-\ip{u}{N^\ast v}
 		=
+		\ip{u}{N^\ast v}-\ip{u}{N^\ast v}
+		=
 		0.
 	\]
-	Mivel a két sajátérték nem azonosak,
+	No de, a sajátértékek nem azonosak,
 	ezért $u\perp v$.
-	Ezt kellett belátni.
 
 	Legyen most $N$ önadjungált, és $\lambda\in\sigma\left( N \right)$ egy sajátérték.
 	Van tehát olyan $u\neq 0$ vektor, amelyre $Nu=\lambda u$ és $N^\ast u=\bar{\lambda}u$.
@@ -12625,7 +12625,7 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 		\left( \lambda-\bar{\lambda} \right)u
 		=Nu-N^\ast u=Nu-Nu=0.
 	\]
-	Így persze az $u\neq 0$ feltétel miatt $\lambda-\bar{\lambda}=0$, tehát $\lambda\in\mathbb{R}.$
+	No de, az $u\neq 0$ feltétel miatt $\lambda-\bar{\lambda}=0$, tehát $\lambda\in\mathbb{R}.$
 \end{proof}
 Eddig minden gondolat $\mathbb{K}$ feletti skalárisszorzatos-téren volt.
 A komplex és a valós diagonalizálhatóság közös magja a következő állítás.
@@ -12690,8 +12690,10 @@ az önadjungált transzformációkra külön elnevezést vezetünk be.
 Egy kicsit sem nyilvánvaló, hogy miért lenne egy szimmetrikus transzformációnak sajátértéke.
 Rögtön kiderül, hogy mindig van sajátértéke.
 
-Ha $\dim V=1$, akkor minden $A:V\to V$ transzformációra, ha $Av\neq 0$, akkor van olyan $\lambda\in\mathbb{R}$,
-hogy $Av=\lambda v$. Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
+Ha $\dim V=1$, akkor minden $A:V\to V$ transzformációra igaz, hogy ha $v\neq 0$ vektor, 
+akkor van olyan $\lambda\in\mathbb{R}$,
+hogy $Av=\lambda v$. 
+Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
 van sajátértéke, és minden zérustól különböző vektor sajátvektor is.
 
 Most nézzük csak 2 dimenzióban.
@@ -12701,25 +12703,22 @@ Ha $A$ mátrixa egy ortonormált bázisban
 		a & b \\b&c
 	\end{pmatrix}
 \end{math}
-akkor $A$ karakterisztikus polinomja $k\left( t \right)=\left( t-a \right)\left( t-c \right)-b^2=t^2-\left( a+c \right)-b^2.$
-E polinomnak van valós gyöke, tehát van $\lambda_1\in\sigma\left( A \right)$,
-tehát van $u\in V$, $\|u\|=1$ vektor, amelyre $Au=\lambda u.$
-Legyen most $v\in V$ olyan vektor, amelyre $v\perp u$ és $\|v\|=1$.
-Mivel a tér 2 dimenziós, ezért van ilyen vektor, és $\lin\left\{ v \right\}=u^\perp$.
-Világos, hogy
-\[
-	\ip{u}{Av}
-	=
-	\ip{Au}{v}
-	=
-	\lambda\ip{u}{v}
-	=0.
-\]
-Ez azt jelenti, hogy $u^\perp$ egy-dimenziós, az $A$-ra nézve invariáns altér.
-Minden nem zérus vektor az $u^\perp$ altérben egyben $A$ sajátvektora is.
+akkor $A$ karakterisztikus polinomja 
+$   k\left( t \right)
+    =
+    \left( t-a \right)\left( t-c \right)-b^2
+    =
+    t^2-\left( a+c \right)t+ac-b^2.$
+E polinom diszkriminánsa 
+\(
+    \left( a-c \right)^2+4b^2\geq 0.
+\)
+Ha a diszkrimináns éppen zérus, akkor $b=0$, $a=c$, ergo $A=aI$, így $A$ tetszőleges bázisban diagonális.
+Ha a diszkrimináns pozitív, akkor két különböző sajátértéke van $A$-nak, amely egy 2 dimenziós 
+vektortéren van értelmezve, ergo diagonalizálható.
 Meggondoltuk tehát, hogy egy
 \emph{
-	2 dimenziós téren értelmezett szimmetrikus transzformációnak van sajátvektorokból ortonormált bázisa.
+	2 dimenziós téren értelmezett szimmetrikus transzformációnak van sajátvektorokból bázisa.
 }
 \begin{proposition}
 	Legyen $V$ egy $\mathbb{R}$ feletti skalárisszorzatos-tér.
@@ -12737,20 +12736,24 @@ Meggondoltuk tehát, hogy egy
 		m=p_1\dots p_s
 	\]
 	alakú, ahol $p_1,\dots,p_s$ egymástól különböző, normált, irreducibilis, legfeljebb másodfokú polinomok.
-	Ezért a transzformációk redukálására vonatkozó \ref{pr:redukcio-primszorzat}.~állítás szerint
+	Ezért a transzformációk redukálására vonatkozó \ref{pr:minpolelsofokufelbontas}.~állítás szerint
 	a tér előáll mint legfeljebb két dimenziós invariáns alterei direkt összege.
 	Minden ilyen legfeljebb 2 dimenziós invariáns altérben van $A$ sajátvektoraiból álló bázis,
 	amelyeket egyesítve az egész $V$ vektortér egy egy olyan bázisát kapjuk,
-	amelynek minden elem az $A$ sajátvektora.
-	Ezért
+	amelynek minden eleme az $A$ sajátvektora.
+	Ezért valamely $r\geq s$ mellett
 	\[
-		V=\ker\left( A-\lambda_1I \right)\oplus\dots\oplus\ker\left( A-\lambda_sI \right).
+		V=\ker\left( A-\lambda_1I \right)\oplus\dots\oplus\ker\left( A-\lambda_rI \right).
 	\]
 	Most végezzünk Gram--Schmidt-ortogonalizációt\index{Gram--Schmidt-ortogonalizáció}
 	minden egyes fenti $A-\lambda_jI$ sajátaltérben külön-külön,
 	majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
 	Így $A$ sajátvektoraiból álló ortonormált bázist kapunk.
 \end{proof}
+A valós számtest feletti esetet is összefoglaljuk:
+\emph{
+    Egy transzformáció pontosan akkor szimmetrikus, ha ortonormált bázisban diagonalizálható.
+}
 
 \chapter{Ortogonális projekciók}
 \begin{definition}
@@ -14424,8 +14427,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-<<<<<<< HEAD
-Last Modified: Wed 21 Apr 2021 09:05:37 am CEST CEST CET CET CET CET
-=======
-Last Modified: Wed 21 Apr 2021 09:05:37 am CEST CEST CET CET CET CET CET
->>>>>>> 597a2a06cdeceb96020778a4cc7c992661eb5b0c
+Last Modified: Tue 27 Apr 2021 09:56:40 am CEST CEST CEST CEST CEST CEST 
