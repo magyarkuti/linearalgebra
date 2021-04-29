@@ -12893,6 +12893,60 @@ Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, 
 	Jelölje $P=\sum_{j=1}^rP_j$ ezek összegét.
 	A $P$ összeg pontosan akkor ortogonális projekció, ha $P_i\perp P_j$ minden $i\neq j$ mellett.
 \end{proposition}
+\begin{proof}
+    Tegyük fel először, hogy $P_i\perp P_j$ minden $i\neq j$ mellett és legyen $P$ az összeg.
+    Ekkor
+    \[
+        P^\ast
+        =
+        \sum_{j=1}^rP_j^\ast
+        =
+        \sum_{j=1}^rP_j
+        =
+        P,
+        \quad\text{és}\quad
+        P^2
+        =
+        \sum_{k=1}^r\sum_{j=1}^rP_iP_j
+        =
+        \sum_{k=1}^rP_i^2
+        =
+        \sum_{k=1}^rP_i
+        =
+        P.
+    \]
+    Azt kaptuk tehát, hogy a $P$ összeg önadjungált és idempotens,
+    ergo egy ortogonális projekció.
+
+    Megfordítva, most azt tegyük fel, hogy $P$ ortogonális projekció.
+    Megmutatjuk, hogy tetszőleges $j\neq i$-re
+    $P_iP_j=0$.
+    Legyen ezért $u\in V$ rögzítve, és jelölje valamely rögzített $j$ index mellett $x_j=P_ju$.
+    Ekkor
+    \[
+        \|x_j\|^2
+        \geq
+        \|Px_j\|^2
+        =
+        \ip{x_j}{Px_j}
+        =
+        \ip{x_j}{\sum_{i=1}^rP_ix_j}
+        =
+        \sum_{i=1}^r\ip{x_j}{P_ix_j}
+        =
+        \sum_{i=1}^r\|P_ix_j\|^2
+        \geq
+        \|P_jx_j\|^2
+        =
+        \|x_j\|^2.
+    \]
+    Ezek szerint az utolsó egyenlőtlenség is egyenlőség, 
+    ergo minden $i\neq j$ esetén
+    \(
+    \|P_ix_j\|=0,
+    \)
+    ergo $P_i\left( P_ju \right)=0.$
+\end{proof}
 
 \section{Ortogonális transzformációk lineáris kombinációja}
 Olyan nem zérus ortogonális projekciók lineáris kombinációit vizsgáljuk,
@@ -14427,4 +14481,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 27 Apr 2021 09:56:40 am CEST CEST CEST CEST CEST CEST 
+Last Modified: Thu 29 Apr 2021 09:21:47 am CEST CEST CEST CEST CEST CEST CEST 
