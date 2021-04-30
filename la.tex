@@ -12810,6 +12810,34 @@ mint valamely $M$ altérre eső merőleges vetítés.
 		\qedhere
 	\]
 \end{proposition}
+\begin{proof}
+    Tudjuk, hogy $M\oplus M^\perp=V$. 
+    Ha tehát veszünk egy ortonormált rendszert $M$-ben, és veszünk egy ortonormált rendszert $M^\perp$-ben, akkor az összeillesztett rendszer az egész $V$ egy ortonormált bázisa lesz.
+    Formálisabban: $\left\{ x_1,\dots,x_k \right\}\subseteq M$, $\left\{ x_{k+1},\dots,x_n \right\}\subseteq M^\perp$, így minden $x\in V$ mellett
+    \[
+        x
+        =
+        \sum_{j=1}^n\ip{x}{x_j}x_j
+        =
+        \sum_{j=1}^k\ip{x}{x_j}x_j+\sum_{j=k+1}^n\ip{x}{x_j}x_j
+        =
+        P_M\left( x \right)+P_{M^\perp}\left( x \right).
+    \]
+    Mivel $P$ egy projekció, ezért $P|_M=\id$, és mivel $P$ egy ortogonális projekció, 
+    ezét $P|_{M^\perp}=0$.
+    Így minden $x\in V$ mellett az $x=P_Mx+P_{M^\perp}x$ azonosságra $P$-t alkalmazva
+    azt kapjuk, hogy
+    \[
+        Px
+        =
+        P\underbrace{\left( P_Mx \right)}_{\in M}+P\underbrace{\left( P_{M^\perp}x \right)}_{\in M^\perp}
+        =
+        P_Mx+0
+        =
+        P_Mx.
+        \qedhere
+    \]
+\end{proof}
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció a $V$ skalárisszorzatos-tér felett.
 	Az $A$ pontosan akkor ortogonális projekció, ha $P^\ast=P$ és $P^2=P$.
@@ -12827,12 +12855,16 @@ ezért a Bessel-egyenlőség ortogonális projekciókra is igaz:\index{Bessel-eg
 \begin{proposition}[Bessel]
 	Minden  $P\in L\left( V \right)$ ortogonális projekcióra és minden $v\in V$ vektorra
 	\(
-	\|Pv\|\leq\|v\|.
-	\)
+	\|Pv\|\leq\|v\|
+	\),
+    és
+    \(
+    \|Pv\|^2=\ip{v}{Pv}
+    \).
 \end{proposition}
 \begin{proof}
 	Jelölje $M=\im P$.
-	Ekkor
+    Láttuk, hogy $P=P_M$ ezért
 	\(
 	\|Pv\|
 	=
@@ -12840,6 +12872,11 @@ ezért a Bessel-egyenlőség ortogonális projekciókra is igaz:\index{Bessel-eg
 	\leq
 	\|v\|.
 	\)
+    Mivel $P$ önadjungált és idempotens, 
+    ezért
+    \(
+    \|Pv\|^2=\ip{Pv}{Pv}=\ip{v}{P^\ast Pv}=\ip{v}{P^2v}=\ip{v}{Pv}
+    \).
 \end{proof}
 
 \begin{proposition}
@@ -12945,7 +12982,10 @@ Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, 
     \(
     \|P_ix_j\|=0,
     \)
-    ergo $P_i\left( P_ju \right)=0.$
+    ergo
+    \(P_ix_j=0\),
+    ergo
+    $P_i\left( P_ju \right)=0.$
 \end{proof}
 
 \section{Ortogonális transzformációk lineáris kombinációja}
@@ -14481,4 +14521,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 29 Apr 2021 09:21:47 am CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Fri 30 Apr 2021 10:11:32 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
