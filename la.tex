@@ -12811,11 +12811,14 @@ Ez a mátrix a transzponáltjának konjugáltja, ergo $P_M$ egy önadjungált tr
     \ip{u}{P_Mv}.
     $
 }
+
+Most azokat a tulajdonságokat keressük, amelyek karekterizálják a merőleges vetítéseket.
 \begin{definition}
 	Azt mondjuk, hogy a $P\in L\left( V \right)$ transzformáció egy
 	\emph{projekció}\index{projekció},
 	ha az idempotens, tehát fennáll a $P^2=P$ azonosság.
 \end{definition}
+Vegyük észre, hogy $P$ pontosan akkor projekció, ha $P|_{\im P}=\id.$
 \begin{proposition}
 	Egy $V$ skalárisszorzatos-tér minden $P$ projekciójára
 	\[
@@ -12823,7 +12826,17 @@ Ez a mátrix a transzponáltjának konjugáltja, ergo $P_M$ egy önadjungált tr
 		\qedhere
 	\]
 \end{proposition}
+\begin{proof}
+    Világos, hogy minden $v\in V$ vektor mellett
+    $v=Pv+\left( v-Pv \right)$. 
+    Itt $Pv\in\im P$, és $P\left( v-Pv \right)=Pv-P^2v=Pv-Pv=0$,
+    ergo $v-Pv\in\ker P$.
 
+    Ha $x\in\ker P\cap\im P$, akkor $x=Pv$ valamely $v$ vektorral, 
+    és $0=Px=\id(x)=x$.
+
+    Megmutattuk tehát, hogy $\ker P$ és $\im P$ olyan diszjunkt alterek, amelyek Minkowski-összege $V$.
+\end{proof}
 \begin{definition}
 	A $V$ skalárisszorzatos-tér egy $P\in L\left( V \right)$ lineáris transzformációját
 	\emph{ortogonális projekciónak}\index{ortogonális projekció}
@@ -12834,26 +12847,25 @@ Ez a mátrix a transzponáltjának konjugáltja, ergo $P_M$ egy önadjungált tr
 		      \qedhere
 	\end{enumerate}
 \end{definition}
-\begin{proposition}
-	Ha $P\in L\left( V \right)$ a $V$ skalárisszorzatos-tér egy ortogonális projekciója,
-	akkor
-	\[
-		\left( \ker P \right)^\perp=\im P.
-		\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	A definíció szerint $\im P\subseteq (\ker P)^\perp$,
-	no de a két altér azonos dimenziós, ezért azonosak is.
-\end{proof}
-Láttuk korábban, hogy ha $M$ egy altere a $V$ skalárisszorzatos-térnek,
-akkor az a $P_M\in L\left( V \right)$ transzformáció,
-amely minden $v\in V$ vektorhoz hozzárendeli a $v$-hez $M$-ben legközelebb eső egyetlen $P_M\left( v \right)$ pontot,
-egy ortogonális projekció,
-hiszen $P_M|_{M}=I|_{M}$, amiből $P_M^2=P_M$,
-de azt is láttuk, hogy $\im P_M=M$ és $\ker P_M=M^\perp$.
-
-A következő állítás szerint nincs is más tipusú ortogonális projekció,
+Ezek szerint az ortogonális projekció olyan speciális projekciók, amelyekre nem csak a
+\[
+    \ker P\oplus\im P=V
+\]
+direktösszeg alakú felbontás áll fenn, hanem azontúl az
+\[
+    \ker P\oplus\im P=V,\quad \ker P\perp\im P
+\]
+ortogonális direktösszeg alakú felbontás is igaz. Persze ekkor 
+$\left( \im P \right)^\perp=\ker P$ is fennáll.
+Gondolhatunk ezért úgy is az ortogonális projekció definíciójára, hogy a két tulajdonság a $P$ transzformációnak az $\im P$ altéren és annak ortokomplementerén való viselkedést írja elő.
+Tehát ha $P$ egy ortogonális projekció, akkor
+\[
+    P|_{\im P}=\id,
+    \text{ és }
+    P|_{{\left( \im P \right)}^\perp}=0.
+\]
+Láttuk, hogy tetszőleges $M\subseteq V$ altér mellett a $P_M$ merőleges vetítés egy példa ortogonális projekcióra. 
+A következő állítás szerint nincs is más típusú ortogonális projekció,
 mint valamely $M$ altérre eső merőleges vetítés.
 \begin{proposition}
 	Legyen $V$ egy skalárisszorzatos-tér,
@@ -12866,22 +12878,9 @@ mint valamely $M$ altérre eső merőleges vetítés.
 	\]
 \end{proposition}
 \begin{proof}
-    Tudjuk, hogy $M\oplus M^\perp=V$. 
-    Ha tehát veszünk egy ortonormált rendszert $M$-ben, és veszünk egy ortonormált rendszert $M^\perp$-ben, akkor az összeillesztett rendszer az egész $V$ egy ortonormált bázisa lesz.
-    Formálisabban: $\left\{ x_1,\dots,x_k \right\}\subseteq M$, $\left\{ x_{k+1},\dots,x_n \right\}\subseteq M^\perp$, így minden $x\in V$ mellett
-    \[
-        x
-        =
-        \sum_{j=1}^n\ip{x}{x_j}x_j
-        =
-        \sum_{j=1}^k\ip{x}{x_j}x_j+\sum_{j=k+1}^n\ip{x}{x_j}x_j
-        =
-        P_M\left( x \right)+P_{M^\perp}\left( x \right).
-    \]
     Mivel $P$ egy projekció, ezért $P|_M=\id$, és mivel $P$ egy ortogonális projekció, 
-    ezét $P|_{M^\perp}=0$.
-    Így minden $x\in V$ mellett az $x=P_Mx+P_{M^\perp}x$ azonosságra $P$-t alkalmazva
-    azt kapjuk, hogy
+    ezért $P|_{M^\perp}=0$.
+    Így minden $x\in V$ mellett az $x=P_Mx+P_{M^\perp}x$ azonosságra a $P$ transzformaciót alkalmazva azt kapjuk, hogy
     \[
         Px
         =
@@ -12895,7 +12894,7 @@ mint valamely $M$ altérre eső merőleges vetítés.
 \end{proof}
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció a $V$ skalárisszorzatos-tér felett.
-	Az $A$ pontosan akkor ortogonális projekció, ha $P^\ast=P$ és $P^2=P$.
+	Az $A$ pontosan akkor ortogonális projekció, ha $A^\ast=A$ és $A^2=A$.
 \end{proposition}
 \begin{proof}
 	Láttuk korábban hogy egy $P_M$ merőleges vetítés önadjugált is, idempotens is.
@@ -13043,7 +13042,7 @@ Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, 
     $P_i\left( P_ju \right)=0.$
 \end{proof}
 
-\section{Ortogonális transzformációk lineáris kombinációja}
+\section{Ortogonális projekciók lineáris kombinációja}
 Olyan nem zérus ortogonális projekciók lineáris kombinációit vizsgáljuk,
 amelyek összege az identikus transzformáció.
 Mivel az identikus transzformáció egyben projekció is,
@@ -13192,7 +13191,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		\sum_{j=1}^r\lambda_j^{l+1}P_j.
 	\]
 	Itt azt használtuk ki, hogy amennyiben az ortogonális projekciók összege is egy ortogonális projekció,
-	akkor $P_jP_h=\delta_{j,h}P_j^2=\delta_{j,h}$.
+	akkor $P_jP_h=\delta_{j,h}P_j^2=\delta_{j,h}P_j$.
 	No de, ha a $q$ polinom $q\left( t \right)=\sum_{l=0}^m\alpha_lt^l$ alakú,
 	akkor
 	\begin{multline*}
@@ -13285,7 +13284,7 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 \end{proof}
 
 \chapter{Spektrális felbontások}
-\scwords A közös magja az úgynevezett spektrális felbontási tételeknek az identitikus operáció alábbi felbontása.
+\scwords A közös mag az identikus operáció alábbi felbontása.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér,
 	és tegyük fel, hogy az $M_1,\dots,M_r$ alterekre
@@ -14576,4 +14575,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 01 May 2021 01:38:14 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Sat 01 May 2021 06:14:20 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
