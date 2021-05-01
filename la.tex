@@ -12756,6 +12756,61 @@ A valós számtest feletti esetet is összefoglaljuk:
 }
 
 \chapter{Ortogonális projekciók}
+A fejezetben visszatérünk a skalárisszorzatos terek geometriai tulajdonságainak vizsgálatához.
+Emlékezzünk arra, hogy bevezettük a merőleges vetítés transzformációt.
+Egy $M\subseteq V$ altér esetén $P_M\in L\left( V \right)$ az a transzformáció, amely egy $v\in V$ vektorhoz hozzárendeli a $v$-hez legközelebb eső $M$-beli vektort.
+Megmutattuk, hogy ilyen vektor van és csak egy van az $M$ altérben.
+Ez jelöljük $P_Mv$-vel.
+Azt is láttuk, hogy $v-P_Mv\in M^\perp$, igy a tér előáll 
+$V=M\oplus M^\perp$ ortogonális direktösszeg alakban.
+
+Végül is elmondhatjuk, hogy a tér minden $v$ vektora egyértelműen felbomlik egy $M$-beli és egy $M^\perp$ vektor összegére,
+és ebben a felbontásban az $M$-beli komponens a $P_Mv$, a $v$-nek
+$M$-re eső merőleges vetülete.
+Egy $v$ vektornak pontosan akkor a zérus vektor az $M$-beli komponense, ha $v\in M^\perp$ teljesül, 
+ami éppen azt jelenti, hogy $\ker P_M=M^\perp$.
+Az is világos, hogy $\im P_M=M$, 
+emiatt $\ker P_M\perp\im P_M$, és $P_M^2=P_M$.
+
+Eddig is többször használtuk már, hogy $P|_M=\id$.
+Emiatt ha egy $v\in V$ vektorra $v=v_1+v_2$, ahol $v_1\in M$ és $v_2\in M^\perp$, akkor $P_Mv=v_1$ és $P_{M^\perp}v=v_2$, ergo $P_M+P_{M^\perp}=\id$.
+
+Érdemes még meggondolni, hogy milyen szép egy ortogonális projekció mátrixa, ha megfelelő bázist választunk.
+Legyen $\left\{ x_1,\dots,x_k \right\}$ egy $M$-beli teljes ortonormált rendszer, és $\left\{ x_{k+1},\dots,x_{n} \right\}$ egy $M^\perp$ beli teljes ortonormált rendszer.
+Világos, hogy ha ezeket egyesítjük, akkor az egész $V$ vektortérnek ortonormált bázisát kapjuk, ahol $P_Mx_j=x_j$ minden $j=1,\dots,k$ mellett és $P_{M}x_j=0$ valamennyi $j=k+1,\dots,n$ esetén.
+Ez azt jelenti, hogy $P_M$ mátrixa ebben az ortonormált bázisban olyan diagonáls mátrix, ahol a diagonális első $k$ eleme $1$, minden más elem zérus.
+\footnote{A gyakorlatokon azt s meggondoltuk, hogy ha $\left\{ e_1,\dots,e_n \right\}$ ortonormált bázis $V$-ben, és $\left\{ x_1,\dots,x_k \right\}$ egy teljes ortonormált rendszer $M$-ben,
+akkor a $\sum_{j=1}^k[x_j]\cdot\overline{[x_j]^T}$ diadikus szorzatok összege adja $P_M$ mátrixát az $\left\{ e_1,\dots,e_n \right\}$ bázisban. 
+Itt az $[x_j]$ oszlopvektor az $x_j$ vektor koordinátavektora a fent rögzített bázisban.}
+Ez a mátrix a transzponáltjának konjugáltja, ergo $P_M$ egy önadjungált transzformáció.
+\footnote{
+    A $P_M=P_M^\ast$ azonosság mátrixmentes indoklása: 
+    legyen $u=u_1+u_2$, és $v=v_1+v_2$,
+    ahol $u_1,v_1\in M$, valamint $u_2,v_2\in M^\perp$.
+    Ekkor 
+    $
+    \ip{P_Mu}{v}=
+    \ip{u_1}{v_1+v_2}
+    =
+    \ip{u_1}{v_1}
+    $,
+    és hasonlóan
+    $
+    \ip{u}{P_Mv}
+    =
+    \ip{u_1+u_2}{v_1}
+    =
+    \ip{u_1}{v_1}
+    $.
+    Ergo 
+    $
+    \ip{P_Mu}{v}
+ %   =
+ %   \ip{u_1}{v_1}
+    =
+    \ip{u}{P_Mv}.
+    $
+}
 \begin{definition}
 	Azt mondjuk, hogy a $P\in L\left( V \right)$ transzformáció egy
 	\emph{projekció}\index{projekció},
@@ -14521,4 +14576,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Fri 30 Apr 2021 10:11:32 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Sat 01 May 2021 01:38:14 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
