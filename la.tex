@@ -9544,7 +9544,7 @@ hogy egyszerű egy mátrix szingularitására következtetni,
 ha egy konkrét függvény argumentumába helyettesítve a mátrixunkat zérust kapunk.
 Hasonlóan egyszerű,
 ha egy explicit formulánk van, egy képlet amibe csak be kell helyettesíteni,
-egy reguláris mátrix-szú inhomogén lineáris egyenletrendszer megoldására,
+egy reguláris mátrixszú inhomogén lineáris egyenletrendszer megoldására,
 vagy egy mátrix inverzének felírására.
 A determináns fogalmát valóban nagyon sokszor csak arra használják,
 hogy a lineáris algebra alap algoritmusát, a Gauss--Jordan-eliminációt, egy explicit formulára cseréljék.
@@ -10903,7 +10903,7 @@ Ebből azonnal látjuk, hogy a minimálpolinom osztója a karakterisztikus polin
 Meggondoltuk tehát a Cayley--Hamilton-tételt abban a speciális esetben,
 mikor a test a kompex számtest.
 
-A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rögtön megmutatjuk.
+A Cayley--Hamilton-tétel nem függ az algebra alaptételétől, amint azt rögtön megmutatjuk.
 \begin{lemma}
 	Legyen $\mathbb{F}$ egy test, amelyben $1+1\neq 0$.
 	Tetszőlegesen választott $\alpha_0,\dots,\alpha_{n-1}\in\mathbb{F}$ számok mellett
@@ -10912,7 +10912,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 	A=
 	\begin{pmatrix}
 		-\alpha_{n-1} & 1      & 0      & \dots  & 0 \\
-		-\alpha_{n-1} & 0      & 1      & \dots  & 0 \\
+		-\alpha_{n-2} & 0      & 1      & \dots  & 0 \\
 		\vdots        & \cdots & \cdots & \ddots & 0 \\
 		-\alpha_1     & 0      & 0      & \dots  & 1 \\
 		-\alpha_0     & 0      & 0      & \dots  & 0
@@ -10932,7 +10932,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 	tI-A=
 	\begin{pmatrix}
 		t+\alpha_{n-1} & -1     & 0      & \dots  & 0  \\
-		\alpha_{n-1}   & t      & -1     & \dots  & 0  \\
+		\alpha_{n-2}   & t      & -1     & \dots  & 0  \\
 		\vdots         & \cdots & \cdots & \ddots & 0  \\
 		\alpha_1       & 0      & 0      & \dots  & -1 \\
 		\alpha_0       & 0      & 0      & \dots  & t
@@ -10961,9 +10961,9 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 		+t\left( -1 \right)^{n+n}
 		\left|
 		\begin{pmatrix}
-			t+\alpha_{n-1} & -1     & 0      & \dots  & 0  \\
-			\alpha_{n-1}   & t      & -1     & \dots  &    \\
-			\vdots         & \cdots & \cdots & \ddots & -1 \\
+			t+\alpha_{n-1} & -1     & 0      & \dots  & 0       \\
+			\alpha_{n-2}   & t      & -1     & \dots  &   \\
+			\vdots         & \cdots & \cdots & \ddots & -1      \\
 			\alpha_1       & 0      & 0      & \dots  & t
 		\end{pmatrix}
 		\right|.
@@ -11011,7 +11011,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 		A_{1,1}=
 		\begin{pmatrix}
 			-\alpha_{n-1} & 1      & 0      & \dots  & 0 \\
-			-\alpha_{n-1} & 0      & 1      & \dots  & 0 \\
+			-\alpha_{n-2} & 0      & 1      & \dots  & 0 \\
 			\vdots        & \cdots & \cdots & \ddots & 0 \\
 			-\alpha_1     & 0      & 0      & \dots  & 1 \\
 			-\alpha_0     & 0      & 0      & \dots  & 0
@@ -11021,7 +11021,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 	Az előző gondolat szerint $A_{1,1}$ karakterisztikus polinomja éppen $p_v\left( t \right)$.
 
 	Egészítsük ki $\lin\left( v;A \right)$ fenti bázisát az egész $V$ vektortér bázisává.
-	Ebben a bázisban felírva $A$ mátrix-sza
+	Ebben a bázisban felírva $A$ mátrixsza
 	\begin{math}
 		[A]=
 		\begin{pmatrix}
@@ -11029,7 +11029,7 @@ A Cayley--Hamilton-tétel nem függ az algebrai alaptételétől, amint azt rög
 			A_{2,1} & A_{2,2}
 		\end{pmatrix}
 	\end{math}
-	alakú, ahol $A_{1,1}$ azonos $A|_{\lin\left( v;A \right)}$ fenti mátrix-szával, és mivel a
+	alakú, ahol $A_{1,1}$ azonos $A|_{\lin\left( v;A \right)}$ fenti mátrixszával, és mivel a
 	$\lin\left( v;A \right)$ egy invariáns altér,
 	ezért az $A_{1,1}$ alatt elhelyezkedő $\left( m-n \right)\times n$ méretű $A_{2,1}$ mátrix minden eleme zérus.
 	Egy ilyen módon partícionált mátrix determinánsa már könnyen számolható:
@@ -12140,7 +12140,7 @@ azonosság is teljesül.
 	és rögzítsünk egy $\left\{w_1,\dots,w_n\right\}$ ortonormált bázist $W$-ben.
 	Legyen $A\in L\left( V,W \right)$ egy lineáris operátor és $A^\ast\in L\left( W,V \right)$ az adjungáltja.
 	Ekkor $A$-nak a fenti bázisokban rögzített mátrixa azonos
-	$A^\ast$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrix-szal.
+	$A^\ast$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrixszal.
 	Formálisan:
 	\[
 		\left[ A \right]_{i,j}=\overline{\left[ A^\ast \right]}_{j,i}
@@ -14575,4 +14575,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 01 May 2021 06:14:20 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 14 Jun 2021 07:09:10 AM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
