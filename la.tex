@@ -1744,7 +1744,7 @@ Nagyon fontos látni, hogy a kommutativitás hiánya, az eddigiektől eltérő s
 A számolás közben a mátrixok sorrendjén nem változtathatunk.
 Persze előfordul, hogy két mátrix szorzata nem függ a sorrendtől.
 Ilyenkor a két mátrixot egymással \emph{felcserélhetőnek}, vagy \emph{kommutálónak} mondjuk.\index{kommutáló mátrixok}
-Például, az identitás mátrixal minden más mátrix kommutál.
+Például, az identitás mátrixszal minden más mátrix kommutál.
 A mátrix azon elemeit, ahol a sor- és az oszlopindexek azonosak
 \emph{fődiagonálisbeli}\index{fődiagonális}
 elemeknek mondjuk.
@@ -1828,7 +1828,7 @@ azaz egy $a$ valós számot az
 		0 & a
 	\end{pmatrix}
 \end{math}
-mátrixal reprezentálunk (írunk le).
+mátrixszal reprezentálunk (írunk le).
 
 A $2\times 2$ méretű valós mátrixok még sok-sok más testet is tartalmaznak.%
 \footnote{Karakterizációjukat lásd: \parencite{MR1415833}-ben.}
@@ -2023,7 +2023,7 @@ ha minden $a$ valós számot az
 		0 & a
 	\end{pmatrix}
 \end{math}
-mátrixal reprezentálunk. ($\mathcal{R}\subseteq\mathcal{C}$).
+mátrixszal reprezentálunk. ($\mathcal{R}\subseteq\mathcal{C}$).
 Ha tehát megegyezünk abban, hogy az $a$ valós számra nézve mi az
 \(
 \begin{pmatrix}
@@ -2826,7 +2826,7 @@ Továbbra is az $y$-t cseréljük a generátorrendszerbe, így a
 \end{eqnarray*}
 a transzformációt hajtjuk végre.
 Most arra figyeljünk,
-hogy végül is a keretben lévő $m\times 4$-es mátrixal sorműveleteket hajtottunk végre:
+hogy végül is a keretben lévő $m\times 4$-es mátrixszal sorműveleteket hajtottunk végre:
 \begin{itemize}
 	\item
 	      Eldöntöttük, hogy az $y,a,b,c$ vektorok közül az $y$-t cseréljük be a generátorrendszerbe,
@@ -3438,7 +3438,7 @@ Feltevésünk szerint $m$ lépés után áll le az algoritmus.
 Ekkor egy  olyan táblázat van előttünk, amelynek első $m$ oszlopa egy olyan négyzetes
 mátrixot alkot, amelynek minden oszlopa és minden sora egyetlen 1-est tartalmaz a többi elem zérus.
 Vegyük észre,
-hogy egy ilyen mátrix a sorok felcserélésével az identitás mátrixá transzformálható.
+hogy egy ilyen mátrix a sorok felcserélésével az identitás mátrixszá transzformálható.
 
 Az $Ax=e_k$ egyenlet megoldása a jobboldali $m\times m$ mátrix $k$-adik oszlopából olvasható le.
 Ha például az első sor $j$-edik elemén van 1-es,
@@ -3446,14 +3446,14 @@ akkor az azt jelenti, hogy az első sorba elimináltuk az $j$-edik ismeretlent,
 tehát a megoldás $j$-edik koordinátáját tartalmazza az $m+k$-adik oszlop első eleme.
 
 Ha tehát úgy cseréljük fel a táblázat sorait,
-hogy a baloldali $m\times m$ méretű mátrix váljon az identitás mátrixá,
+hogy a baloldali $m\times m$ méretű mátrix váljon az identitás mátrixszá,
 akkor az $Ax=e_k$ egyenlet egyetlen partikuláris megoldása jelentkezik az egész táblázat
 $m+k$ adik oszlopában.
 Mivel a keresett $B$ mátrixnak éppen ez a $k$-adik oszlopa,
 ezért maga a $B$ mátrix áll a táblázat jobboldali $m\times m$ méretű részén.
 
 Most meggondoljuk, hogy $BA=I$ is fennáll.
-Az iménti algoritmussal az $[A|I]$ mátrixot transzformáltuk a $[I|B]$ mátrixá.
+Az iménti algoritmussal az $[A|I]$ mátrixot transzformáltuk a $[I|B]$ mátrixszá.
 A transzformáció során a Gauss--Jordan-eliminációt használtuk,\index{Gauss--Jordan-elimináció}  amely a szakasz elején említett 1) és 2) típusú mátrixokkal mint balszorzásokkal hajtható végre.
 Az algoritmus végén még sorokat is felcseréltünk, ami egy 3) típusú balszorzást jelent.
 Ha az 1) vagy 2) vagy 3) típusú mátrixot \emph{elemi mátrixnak}\index{elemi mátrix}
@@ -4253,7 +4253,7 @@ együttes alkalmazásaként kapjuk a következő lemmát.
 A két szélsőséges eset, mikor a lineárisan független oszlopok száma zérus,
 és mikor a lineárisan független oszlopok száma annyi mint az összes oszlopok száma.
 Ez utóbbi esetben a rang az oszlopok száma, hiszen egy független rendszer generálta altérben a független rendszer generátorrendszer is, ezért egy bázis is.
-Az első eset azt jelenti, hogy a zérus mátrixal állunk szemben, tehát a rang a $\left\{ 0 \right\}$ vektortér dimenziója, azaz 0.
+Az első eset azt jelenti, hogy a zérus mátrixszal állunk szemben, tehát a rang a $\left\{ 0 \right\}$ vektortér dimenziója, azaz 0.
 \begin{proposition}
     Tetszőleges nem zérus mátrix rangja azonos feszítőrangjával.
 \end{proposition}
@@ -6077,7 +6077,7 @@ Látni fogjuk, hogy lineáris operátornak és mátrixának rangja azonos.
 
 \section{Lineáris operátorok szorzata}
 Emlékezzünk arra, hogy a lineáris operáció mátrixát úgy kaptuk, hogy a koordinátáit $n$ elemenként
-megtörve az oszlopvektort egy mátrixá rendeztük át.
+megtörve az oszlopvektort egy mátrixszá rendeztük át.
 Ennek az átrendezésnek az igazi értelme, hogy ilyen módon a mátrix szorzás művelet a lineáris operátorok kompozíciójával
 kapcsolódik össze.
 \begin{proposition}
@@ -6092,7 +6092,7 @@ kapcsolódik össze.
 	bázisokat.
 	Jelölje $C=A\circ B$ a kompozíció lineáris operátort.
 
-	Ekkor $C$ mátrixa az $A$ és $B$ mátrixának szorzata.
+	Ekkor $C$ mátrixa az $A$ és $B$ mátrixszának szorzata.
 	Formálisabban:
 	\[
 		\left[ C \right]_{\substack{\left\{ e_1,\dots,e_m \right\}\\ \left\{ f_1,\dots,f_n \right\}}}
@@ -6268,7 +6268,7 @@ $\left[ B \right]^{-1}$ inverze.
 		=\left[ B \right]_\rgi\cdot \left[ x \right]_\uj.
 	\]
 	A kívánt azonosságot kapjuk,
-	ha balról szorozzuk mindkét oldalt $\left[ B \right]^{-1}_\rgi$ inverz mátrixal.
+	ha balról szorozzuk mindkét oldalt $\left[ B \right]^{-1}_\rgi$ inverz mátrixszal.
 \end{proof}
 
 \section{Lineáris operátorok mátrixa új bázis párban}
@@ -7331,7 +7331,7 @@ hogy diagonalizálhatóság szükséges és elegendő módon megragadható a saj
 	pontosan akkor diagonalizálható,
 	ha van térnek csupa sajátvektorokból álló bázisa.
 
-	Ebben az esetben a transzformációnak a $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban felírt mátrixának
+	Ebben az esetben a transzformációnak a $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban felírt mátrixszának
 	$j$-edik diagonális eleme,
 	éppen az a $\lambda_j$ sajátértéke $A$-nak,
 	amelyre $Av_j=\lambda_jv_j$.
@@ -12140,7 +12140,7 @@ azonosság is teljesül.
 	és rögzítsünk egy $\left\{w_1,\dots,w_n\right\}$ ortonormált bázist $W$-ben.
 	Legyen $A\in L\left( V,W \right)$ egy lineáris operátor és $A^\ast\in L\left( W,V \right)$ az adjungáltja.
 	Ekkor $A$-nak a fenti bázisokban rögzített mátrixa azonos
-	$A^\ast$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrixal.
+	$A^\ast$ mátrix sorainak és oszlopainak felcserélésével, majd konjugálásával kapott mátrixszal.
 	Formálisan:
 	\[
 		\left[ A \right]_{i,j}=\overline{\left[ A^\ast \right]}_{j,i}
@@ -12456,7 +12456,7 @@ Nyilvánvaló példák normális transzformációkra:
 	\item Ha létezik olyan $q$ polinom, amelyre $N^\ast=q\left( N \right)$;
 	\item
 	      Ha $N$ egy ortonormált bázisban diagonalizálható, akkor
-	      ebben a bázisban felírt matrixszára, a mátrix kommutál az adjungált mátrixal,
+	      ebben a bázisban felírt matrixszára, a mátrix kommutál az adjungált mátrixszal,
 	      így az eredeti transzformáció is normális.
 \end{enumerate}
 Ki fog derülni a fejezetben, hogy a fenti példák közül a 3. és a 4. le is fedi valamennyi normális transzformációt.
@@ -14575,4 +14575,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 14 Jun 2021 07:51:38 AM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 14 Jun 2021 12:30:26 PM CEST 
