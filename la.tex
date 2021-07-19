@@ -10676,7 +10676,7 @@ Világos, hogy $f$ valóban egy mérték $L\left( M \right)$ felett,
     |[A_{1,1}]|\cdot
     \left|
     \begin{pmatrix}
-        I&A_{1,2}\\0&A_{2,1}
+        I&A_{1,2}\\0&A_{2,2}
     \end{pmatrix}
     \right|.
 \end{multline*}
@@ -10698,7 +10698,7 @@ Meggondoltuk tehát, hogy ha a bal alsó partíció zérus, akkor
     \right|.\tag{\dag}
 \]
 Az egész eddigi gondolatot analóg módon ismételhetjük arra az esetre, 
-mikor a jobb felső partíció zérus (és persze ekkor a bal alsó $A_{2,1}$ partíció akármilyen lehet.)
+mikor a jobb felső partíció zérus (és persze ekkor a bal alsó $A_{2,1}$ partíció akármilyen lehet).
 Kapjuk tehát, hogy
 \[
     \left|
@@ -10712,7 +10712,7 @@ Kapjuk tehát, hogy
     \left|
     \begin{pmatrix}
         A_{1,1}&0\\
-        A_{1,2}&I
+        A_{2,1}&I
     \end{pmatrix}
     \right|.\tag{\ddag}
 \]
@@ -10722,7 +10722,7 @@ Ugyanis:
 \begin{multline*}
     \left|
     \begin{pmatrix}
-        A_{1,1}&A_{2,1}\\
+        A_{1,1}&A_{1,2}\\
         0&A_{2,2}
     \end{pmatrix}
     \right|
@@ -10730,7 +10730,7 @@ Ugyanis:
     |A_{1,1}|\cdot
     \left|
     \begin{pmatrix}
-        I&A_{2,1}\\
+        I&A_{1,2}\\
         0&A_{2,2}
     \end{pmatrix}
     \right|
@@ -10739,7 +10739,7 @@ Ugyanis:
     \left|
     \begin{pmatrix}
         I&0\\
-        A_{2,1}^T&A_{2,2}^T
+        A_{1,2}^T&A_{2,2}^T
     \end{pmatrix}
     \right|
     \\
@@ -10748,13 +10748,13 @@ Ugyanis:
     \left|
     \begin{pmatrix}
         I&0\\
-        A_{2,1}^T&I
+        A_{1,2}^T&I
     \end{pmatrix}
     \right|
     =
     |A_{1,1}|\cdot |A_{2,2}|.
 \end{multline*}
-Az utolsó lépésben a particionált mátrix egy olyan alsóháromszög mátrix, amelynek a diagonálisa csupa 1 számból áll, ezért a deerminánsa is 1.
+Az utolsó lépésben a particionált mátrix egy olyan alsóháromszög mátrix, amelynek a diagonálisa csupa 1 számból áll, ezért a determinánsa is 1.
 
 \section{A determináns kifejtése}
 A kifejtési tétel arra való,
@@ -14702,4 +14702,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 19 Jul 2021 01:48:23 pm CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 19 Jul 2021 05:24:12 PM CEST CEST CEST CEST CEST CEST CEST CEST 
