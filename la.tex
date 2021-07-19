@@ -10629,6 +10629,133 @@ Ekkor $AA^{-1}=I$, igy véve a determinánsokat, $|A|\cdot|A^{-1}|=1$, azaz
 $|A^{-1}|=\frac{1}{|A|}$.
 Összefoglalva, az inverz determinánsa a determináns reciproka.
 
+Ugyan korábban már két indoklást láttunk a particionált mátrix determinánsának kiszámítására (\ref{par:particionalt}), 
+de érdemes még egyszer átgondolnunk, hogyan következik ez a mértékek segítségével.
+\paragraph{Particionált mátrix determinánsa.}\label{par:particionalt2}
+Tegyük fel, hogy $[A]$ egy $(n+m)\times(n+m)$ méretű mátrix,
+amely
+\[
+    [A]
+	=
+	\begin{pmatrix}
+		A_{1,1} & A_{1,2} \\
+		A_{2,1} & A_{2,2}
+	\end{pmatrix}
+\]
+módon van particionálva, ahol $A_{1,1}$ egy $n\times n$, $A_{2,2}$ egy $m\times m$ méretű négyzetes mátrix,
+továbbá $A_{2,1}$ egy $m\times n$ méretű és $A_{1,2}$ egy $n\times m$ méretű részmátrix,
+Tegyük fel most is, hogy a bal alsó $A_{2,1}$ partíció minden eleme zérus.
+Legyen ezért $A\in L\left( \mathbb{F}^{n+m} \right)$ az a transzformáció,
+amelynek az $\left\{ e_1,\dots,e_n,e_{n+1},\dots,e_m \right\}$ bázisban felírt mátrixa $[A]$.
+Világos, hogy az $M=\lin\left\{ e_1,\dots,e_n \right\}$ jelöléssel az $M$ altér egy $A$-ra nézve invariáns altér, hiszen az $[A_{2,1}]$ partíció zérus.
+Definíció szerint a szóban forgó bázisban az $A$ transzformáció $M$ altérre való megszorításának mátrixára $[A|_M]=[A_{1,1}]$.
+Jelölje $d$ az $\mathbb{F}^{n+m}$ fent rögzített bázisához tartozó szokásos mértéket, azaz
+\[
+    d\left( v_1,\dots,v_n,v_{n+1},\dots,v_{n+m} \right)
+    =
+    \sum_{\pi\in S_{n+m}}\sgn \pi\prod_{j=1}^{n+m}e_j^\ast v_{\pi\left( j \right)}.
+\]
+Tudjuk, hogy $d\left( Ae_1,\dots,Ae_{n},Ae_{n+1},\dots,Ae_{n+m} \right)=|[A]|$.
+Definiáljuk most az $L\left( M \right)$ feletti mértéket a következőképpen:
+\[
+    f\left( v_1,\dots,v_{n} \right)
+    =
+    d\left( v_1,\dots,v_n, Ae_{n+1},\dots,Ae_{n+m} \right)
+\]
+Világos, hogy $f$ valóban egy mérték $L\left( M \right)$ felett,
+és az $A|_M$ megszorított transzformáció determinánsának definíciója szerint
+\begin{multline*}
+    |[A]|=
+    f\left( Ae_1,\dots,Ae_n \right)
+    =
+    \det\left( A|_M \right)f\left( e_1,\dots,e_n \right)
+    \\
+    =
+    \det\left( A|_M \right)d\left( e_1,\dots,e_n,Ae_{n+1},\dots,Ae_{n+m} \right)
+    =
+    |[A_{1,1}]|\cdot
+    \left|
+    \begin{pmatrix}
+        I&A_{1,2}\\0&A_{2,1}
+    \end{pmatrix}
+    \right|.
+\end{multline*}
+Meggondoltuk tehát, hogy ha a bal alsó partíció zérus, akkor
+\[
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&A_{2,1}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot
+    \left|
+    \begin{pmatrix}
+        I&A_{2,1}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|.\tag{\dag}
+\]
+Az egész eddigi gondolatot analóg módon ismételhetjük arra az esetre, 
+mikor a jobb felső partíció zérus (és persze ekkor a bal alsó $A_{2,1}$ partíció akármilyen lehet.)
+Kapjuk tehát, hogy
+\[
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&0\\
+        A_{2,1}&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{2,2}|\cdot
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&0\\
+        A_{1,2}&I
+    \end{pmatrix}
+    \right|.\tag{\ddag}
+\]
+A fent kiemelt (\dag) és (\ddag) alakokból a (\ref{par:particionalt}) állítás is könnyen adódik.
+Csak arra kell még emlékeznünk, hogy a mátrixnak és a transzponáltjának azonos a determinánsa.
+Ugyanis:
+\begin{multline*}
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&A_{2,1}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot
+    \left|
+    \begin{pmatrix}
+        I&A_{2,1}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot
+    \left|
+    \begin{pmatrix}
+        I&0\\
+        A_{2,1}^T&A_{2,2}^T
+    \end{pmatrix}
+    \right|
+    \\
+    =
+    |A_{1,1}|\cdot |A_{2,2}^T|\cdot
+    \left|
+    \begin{pmatrix}
+        I&0\\
+        A_{2,1}^T&I
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot |A_{2,2}|.
+\end{multline*}
+Az utolsó lépésben a particionált mátrix egy olyan alsóháromszög mátrix, amelynek a diagonálisa csupa 1 számból áll, ezért a deerminánsa is 1.
+
 \section{A determináns kifejtése}
 A kifejtési tétel arra való,
 hogy a determináns kiszámítását visszavezessük 1-el kisebb méretű mátrixok determinánsának kiszámolására.
@@ -14575,4 +14702,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 14 Jun 2021 12:30:26 PM CEST 
+Last Modified: Mon 19 Jul 2021 01:48:23 pm CEST CEST CEST CEST CEST CEST CEST 
