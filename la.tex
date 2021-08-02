@@ -4438,7 +4438,7 @@ már akkor is változik a vektort koordináta-vektora.
 \Aref{le:gencsere}., \aref{le:fgtlncsere}.  és \aref{le:baziscsere}. lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái,
 ha a bázisban egy elemet megváltoztatunk.
-\begin{lemma}[bázis transzformáció]\label{le:bazistrafo}
+\begin{lemma}[bázistranszformáció]\label{le:bazistrafo}
 	Legyen $\left\{ x_1,\dots,x_m \right\}$ egy bázisa valamely vektortérnek,
 	és tegyük fel,
 	hogy egy $y$ olyan vektor
@@ -6201,7 +6201,7 @@ felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
 Az $L\left( V \right)$ és a $F^{\dim V\times \dim V}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
 amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
 
-\chapter{Általános bázis-transzformáció}
+\chapter{Általános bázistranszformáció}
 \scwords Egy vektor koordinátái függnek a bázis megválasztásától.
 Az elemi bázistranszformáció arra szolgál hogy felírjuk az új bázisban a vektor koordinátáit,
 amikor az új bázis és a régi bázis csak egyetlen vektorban különbözik.
@@ -6320,12 +6320,13 @@ $\left[ B \right]^{-1}$ inverze.
 		\left[ A \right]_\rgi
 		\left[ B \right]_\rgi^j
 		=
-		\left( \left[ D \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
+        \left[ \left[ D \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right]^j.
 	\end{multline*}
 	Közben használtuk a mátrix szorzás művelet asszociativitását,
 	és azt a tényt,
 	hogy tetszőleges $\left[ E \right],\left[ F \right]$ mátrixok mellett
-	$\left( \left[ E \right]\left[ F \right] \right)^j=\left[ E \right]\left( \left[F  \right]^j \right)$.
+    $\left[ \left[ E \right]\left[ F \right] \right]^j=\left[ E \right]\left( \left[F  \right]^j \right)$, azaz
+    az $\left[ \left[ E \right]\left[ F \right] \right]$ szorzat $j$-edik oszlopa azonos az $\left[ E \right]$ mátrixnak az $\left[ F \right]$ mátrix $j$-edik oszlopával való szorzatával.
 \end{proof}
 \section{Lineáris transzformáció mátrixa az új bázisban}
 \begin{proposition}
@@ -8299,7 +8300,7 @@ Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális fel
 	\end{pmatrix}
 	\)
 	alakú.
-	Emlékezve az általános bázis transzformációra azt kaptuk, hogy
+	Emlékezve az általános bázistranszformációra azt kaptuk, hogy
 	\[
 		\begin{pmatrix}
 			-1 & 1 & 0  & 0 \\
@@ -14705,4 +14706,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 02 Aug 2021 05:09:16 PM CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 02 Aug 2021 05:22:19 PM CEST CEST CEST CEST CEST CEST CEST CEST 
