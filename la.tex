@@ -2383,7 +2383,7 @@ ugyanis minden negatív diszkriminánsú másodfokú valós polinom jó is ellen
 Ez a jelenség az oka annak,
 hogy a komplex számtest felett sokkal kényelmesebb dolgoznunk mint a valós számok felett.
 
-Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti polinom gyűrűre nézve.
+Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti polinomgyűrűre nézve.
 \begin{proposition}
 	Legyen $p\left( t \right)\in\mathbb{C}[t]$ a komplex polinomgyűrű egy olyan eleme,
 	amelynek minden együtthatója valós.
@@ -6660,7 +6660,7 @@ Ugyanúgy mint mátrixokra, két lineáris transzformációt \emph{kommutálóna
 mondunk, ha szorzatuk a szorzás sorrendjétől független.
 Például az $I$ identitás minden transzformációval kommutál.
 Azt is láttuk, hogy ha $AB=I$, akkor $BA=I$ is fennáll, azaz $A$ és $B$ kommutálnak.
-Nagyon fontos, de nyilvánvaló küvetkezménye a fenti számolási szabálynak,
+Nagyon fontos, de nyilvánvaló következménye a fenti számolási szabálynak,
 hogy ha $p,q$ tetszőleges polinomok, akkor a $p\left( A \right)$ és $q\left( A \right)$ egymással kommutáló lineáris transzformációk lesznek, hiszen az
 $\mathbb{F}\left[ t \right]$ egy kommutatív gyűrű,
 azért ha $r=pq$, akkor $qp=r$,
@@ -6717,7 +6717,7 @@ ami egyben az ideál generáló eleme is.
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja,
 	és legyen $v\in V$ egy rögzített vektor.
 	Tekintsük az
-	$\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát:
+	$\mathbb{F}\left[ t \right]$ polinomgyűrű következő részhalmazát:
 	\[
 		J_{A,v}
 		=
@@ -6737,7 +6737,7 @@ ami egyben az ideál generáló eleme is.
 		\left( hp \right)(A)v=h\left( A \right)p\left( A \right)v=h\left( A \right)0=0,
 	$
 	azaz $hp\in J_{A,v}$.
-	Megmutattuk tehát, hogy $J_{A,v}$ egy ideálja a polinom gyűrűnek.
+	Megmutattuk tehát, hogy $J_{A,v}$ egy ideálja a polinomgyűrűnek.
 
 	Jelölje $n=\dim V$ és tekintsük az $n+1$ elemű
 	$\left\{ v,Av,\dots,A^nv \right\}$ vektorrendszert.
@@ -6768,10 +6768,11 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	\]
 	az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
 	Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
-	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$.
+	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$-t.
 	Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
-	Ezt a polinomot nevezzük az $A$ transzformáció, $v$ vektorhoz tartozó
+	Ezt a polinomot nevezzük az $A$ transzformáció, 
 	\emph{kis minimálpolinomjának}\index{kis minimálpolinom}.
+    a $v$ pontban.
 \end{definition}
 
 \begin{proposition}
@@ -6787,7 +6788,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 \begin{proof}
 	Definíció szerint $n$ azon $p$ polinomok közül,
 	amelyek normáltak, és $p\left( A \right)v=0$, a legalacsonyabb fokú.
-	Láttuk hogy ilyen polinom csak egy van, es erre a polinomra
+	Láttuk hogy ilyen polinom csak egy van, és erre a polinomra
 	\[
 		J_{A,v}=J\left( n \right)=\left\{ hn:h\in\mathbb{F}\left[ t \right] \right\}.
 	\]
@@ -6799,7 +6800,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak minimálpolinomja legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább első fokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
 	akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
 	ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
@@ -6818,7 +6819,7 @@ amely mindig használható.
 	Léteznek tehát $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
 	számok, amelyekre
 	\[
-		A^{k}v=\sum_{j=0}^{k-1}\alpha_jA^{j}v.
+		A^{k}v+\sum_{j=0}^{k-1}\alpha_jA^{j}v=0.
 	\]
     Ekkor
     \begin{enumerate}
@@ -6826,7 +6827,7 @@ amely mindig használható.
 	    Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimálpolinomja
     	\[
 	    	n\left( t \right)=
-    		t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0;
+            t^k+\alpha_{k-1}t^{k-1}+\cdots+\alpha_1t+\alpha_0.
     	\]
         \item
         A $v$-hez tartozó kis minimálpolinom foka megegyezik a $v$-t tartalmazó legszűkebb invariáns altér dimenziójával, azaz 
@@ -6844,7 +6845,7 @@ amely mindig használható.
 	Láttuk, hogy $\left\{ v,Av,\dots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
 	Világos, hogy $A^kv\in\lin\left( v;A \right)$, emiatt a kívánt előállítás valóban létezik.
 	Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
-	No de, $k$-nal alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
+	No de, $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
 	hiszen $\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineárisan független.
 	Azt láttuk tehát, hogy $n$ a legalacsonyabb fokú nem zérus eleme $J_{A,v}$-nek,
 	tehát $n$ generálja a főideált.
@@ -6867,7 +6868,7 @@ Az $A\in L\left( V \right)$ lineáris transzformációra
     A\left( \alpha u_1+\beta u_2 +\gamma u_3 \right)
     =
     \left( -3\beta -2\gamma \right)u_1 +
-    \left( \alpha-\beta\gamma \right)u_2+
+    \left( \alpha-\beta+\gamma \right)u_2+
     \left( -\alpha+3\beta+\gamma \right)u_3.
 \]
 Írjuk fel az $u_3$ vektorhoz tartozó kis minimálpolinomot.
@@ -6885,7 +6886,7 @@ Az előző állításban megadott algoritmust használjuk:
 \begin{array}{r|ccc}
 	     & Au_3        & A^2u_3 & A^3u_3\\
 	\hline
-	     & -1          &     -5 &     -6\\
+	     & -2          &     -5 &     -6\\
          &\framebox{1} &     -2 &      3\\
 	u_3  &  1          &      6 &      5\\
 	\hline
@@ -7000,7 +7001,7 @@ Ez vezet a minimálpolinom fogalmához.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
 	Tekintsük az
-	$\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát.
+	$\mathbb{F}\left[ t \right]$ polinomgyűrű következő részhalmazát.
 	\[
 		J_{A}
 		=
@@ -7021,7 +7022,7 @@ Ez vezet a minimálpolinom fogalmához.
 		\left( hp \right)(A)=h\left( A \right)p\left( A \right)=h\left( A \right)0=0,
 	$
 	azaz $hp\in J_{A}$.
-	Megmutattuk tehát, hogy $J_{A}$ egy ideálja a polinom gyűrűnek.
+	Megmutattuk tehát, hogy $J_{A}$ egy ideálja a polinomgyűrűnek.
 
 	Jelölje $n=\dim V$ és tekintsük az $n^2+1$ elemű
 	$\left\{ I,A,\dots,A^{n^2} \right\}$ rendszerét az $L\left( V \right)$ vektortérnek.
@@ -7052,7 +7053,7 @@ Ha $V\neq\left\{ 0 \right\}$, ergo $\dim V\geq 1$,
 akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja,
 hiszen $p(t)=c, (c\neq 0)$ mellett
 $p\left( A \right)=cI\neq 0$,
-tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinom legalább első fokú.
+tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább első fokú.
 \begin{proposition}
 	Az  $m\in\mathbb{F}\left[ t \right]$ polinom pontosan akkor
 	az $A\in L\left( V \right)$ transzformáció minimálpolinomja,
@@ -7064,13 +7065,13 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 		      $p\left( A \right)=0$, akkor $m|p$.
 	\end{enumerate}
 	A minimálpolinom fokszámára:%
-	\footnote{Kis vártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
+	\footnote{Kisvártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
 	$\deg m\leq(\dim V)^2$.
 \end{proposition}
 \begin{proof}
 	Definíció szerint $m$ azon $p$ polinomok közül,
 	amelyek normáltak, és $p\left( A \right)=0$, a legalacsonyabb fokú.
-	Láttuk hogy ilyen polinom csak egy van, es erre a polinomra
+	Láttuk hogy ilyen polinom csak egy van, és erre a polinomra
 	\[
 		J_{A}=J\left( m \right)=\left\{ hm:h\in\mathbb{F}\left[ t \right] \right\}.
 	\]
@@ -7096,7 +7097,7 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 	Mivel $\dim L\left( V \right)=\left( \dim V \right)^2$ egy véges dimenziós vektortér,
 	ezért létezik $1\leq k \leq (\dim V)^2$,
 	hogy
-	$\left\{ I,A,\dots,A^{k-1} \right\}$ lineáris független,
+	$\left\{ I,A,\dots,A^{k-1} \right\}$ lineárisan független,
 	de $\left\{ I,A,\dots,A^{k-1},A^{k} \right\}$ lineárisan összefüggő.
 	Ekkor léteznek $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
 	számok, amelyekre
@@ -7118,7 +7119,7 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 	Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
 	tehát az $m$ polinom generálja a főideált.\index{főideál}
 \end{proof}
-A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is használhatók.
+A minimálpolinom algoritmikus meghatározásához a kis minimálpolinomok is használhatók.
 \begin{proposition}
     \index{kis minimálpolinom}\label{pr:lkkt-minimalpolinom}
 	Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja $m$.
@@ -7153,8 +7154,6 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
 	ha $p\in J_{A,e_i}$ a bázis minden $e_i$ elemére.
 	Így
 	\[
-		J\left( d \right)
-		=
 		\cap_{i=1}^nJ(p_i)
 		=
 		\cap_{i=1}^nJ_{A,e_i}
@@ -7163,11 +7162,11 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
 		=
 		J(m).
 	\]
-	No de, a baloldali ideál $d$ generáló eleme
+	No de, a baloldali ideál is főideál, aminek a normált generáló eleme
 	-- \aref{pr:lkkt}. állítás szerint --
 	a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse.
 	Mivel egy főidálnak csak egy normált generáló eleme van,
-	ezért a $d$ legkisebb közös többszörös azonos a jobboldali ideált generáló $m$ minimálpolinommal.
+	ezért a legkisebb közös többszörös azonos az $m$ minimálpolinommal.
 \end{proof}
 \subsubsection{Illusztráció}\label{se:minimalillusztracio}
 Újra vegyük elő \apageref{se:kisminimalillusztracio}.~oldalon vett mátrixot.
@@ -7179,11 +7178,11 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
         -1&3&1
     \end{pmatrix}.
 \]
-Láttuk, hogy az $u_3$ bázis vektorhoz tartozó kis minimálpolinom $t^3-3t-2$.
+Láttuk, hogy az $u_3$ bázisvektorhoz tartozó kis minimálpolinom $t^3-3t-2$.
 Az is világos, hogy az $u_3$ vektort tartalmazó legszűkebb invariáns altér dimenziója a kis minimálpolinom foka, 
 ergo 3.
 Így $\lin\left( u_3;A \right)=V$, tehát $A^3-3A-2I=0$.
-Az is meggondoltuk, hogy $3$-nál alacsonyabb fokú normált polinom nincs, ami $u_3$ vektort zérusra viszi,
+Azt is meggondoltuk, hogy $3$-nál alacsonyabb fokú normált polinom nincs, ami $u_3$ vektort zérusra viszi,
 azaz $m\left( t \right)=t^{3}-3t-2$ az $A$ minimálpolinomja.
 
 Persze itt a szerencsénk, hogy $u_3$ tartalmazó legszűkebb invariáns altér az egész vektortér.
@@ -7220,7 +7219,7 @@ majd ezek legkisebb közös többszöröseként kapjuk a transzformáció minim�
 Tehát itt nem volt olyan szerencsénk mint $u_3$ esetében.
 Most $\lin\left( u_1;A \right)$ egy 2 dimenziós altér $V$-ben.
 Csak $x\in\lin\left( u_1;A \right)$ vektoraira tudjuk, hogy $A^2x+2Ax+x=0$.
-Folytatnunk kell a második bázis vektorra:
+Folytatnunk kell a második bázisvektorra:
 \[
 		\begin{array}{r|cc}
 			    & Au_2          & A^2u_2 \\
@@ -7244,7 +7243,7 @@ Folytatnunk kell a második bázis vektorra:
 		\qquad\qquad
 		\begin{array}{r}
 			\left\{ u_2,Au_2 \right\}\mbox{ lineárisan független, de} \\
-			A^2u_2-Au_2-2u_1=0,                                        \\
+			A^2u_2-Au_2-2u_2=0,                                        \\
 			\mbox{ezért } p_2\left( t \right)=t^2-t-2=\left( t+1 \right)\left( t-2 \right).
 		\end{array}
 \]
@@ -7257,7 +7256,7 @@ Persze ilyen polinom csak egy van az
     m\left( t \right)=\left( t+1 \right)^2\left( t-2 \right).
 \]
 Egy kicsi szerencsénk mégis volt a fenti eljárásban, 
-hiszen már a második bázis vektor után kiderült a minimálpolinom. 
+hiszen már a második bázisvektor után kiderült a minimálpolinom. 
 Általában csak azt tudjuk, hogy a kis minimálpolinomok legkisebb közös többszöröse a minimálpolinom.
 Ez a mi konkrét esetünkben azt jelenti, 
 hogy az $m(t)$ minimálpolinom a $p_1(t)=\left( t+1 \right)^2$, 
@@ -7293,8 +7292,7 @@ kis minimálpolinom.
 \end{proof}
 \begin{proposition}[sajátérték és minimálpolinom]\index{sajátérték}
 	Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós
-	vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
-	polinomja.
+	vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimálpolinomja.
 	Az alábbi feltevések ekvivalensek:
 	\index{kis minimálpolinom}
 	\begin{enumerate}
@@ -7324,7 +7322,7 @@ Az egyik legfontosabb definícióhoz érkeztünk.
 Az $\left[ A \right]$ négyzetes mátrix tehát pontosan akkor diagonális alakú,
 ha minden $i\neq j$ mellett $\left[ A \right]_{i,j}=0.$
 Ez azt jelenti hogy a $j$-edik bázis elem képének a nem $j$-edik koordinátája zérus,
-azaz az $e_j$ bázis vektorra $Ae_j=\lambda e_j$ áll fenn,
+azaz az $e_j$ bázisvektorra $Ae_j=\lambda e_j$ áll fenn,
 valamely $\lambda\in\mathbb{F}$ számmal.
 Ez éppen azt jelenti,
 hogy az $e_j$ bázisvektor egy sajátvektor.
@@ -7335,10 +7333,10 @@ hogy diagonalizálhatóság szükséges és elegendő módon megragadható a saj
 	pontosan akkor diagonalizálható,
 	ha van térnek csupa sajátvektorokból álló bázisa.
 
-	Ebben az esetben a transzformációnak a $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban felírt mátrixszának
-	$j$-edik diagonális eleme,
-	éppen az a $\lambda_j$ sajátértéke $A$-nak,
-	amelyre $Av_j=\lambda_jv_j$.
+	Ebben az esetben a transzformáció $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban, mint bázisban,
+    felírt mátrixának a $j$-edik diagonális eleme,
+    éppen az a $\lambda_j$ sajátértéke $A$-nak,
+    amelyre $Av_j=\lambda_jv_j$.
 \end{proposition}
 Mivel a
 \begin{math}
@@ -7380,7 +7378,7 @@ mátrixot.
 Mind az $\mathbb{R}$,
 mind a $\mathbb{C}$ test felett diagonalizálható,
 hiszen $\sigma\left( A \right)=\left\{ 0,2 \right\}$, továbbá
-a $\lambda=0$-hoz tartozó sajáteltérre
+a $\lambda=0$-hoz tartozó sajátaltérre
 $\ker A=\lin\left\{
 	\begin{pmatrix}
 		1 \\-1
@@ -7497,7 +7495,7 @@ mátrixot.
 		=
 		\sum_{j=1}^{s-1}\alpha_j\lambda_jv_j,
 	\end{equation*}
-	ami a az első $s-1$ elem lineárisan függetlensége szerint csak úgy lehetséges,
+	ami az első $s-1$ elem lineárisan függetlensége szerint csak úgy lehetséges,
 	ha minden $j=1,\dots s-1$ mellett
 	\begin{math}
 		\lambda_s\alpha_j
@@ -7532,9 +7530,9 @@ ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója
 
 \begin{definition}[geometriai multiplicitás]
 	Ha $A\in L\left( V \right)$ egy lineáris transzformáció,
-	és $\lambda\in\sigma\left( A \right)$ annak egy sajátérétke,
+	és $\lambda\in\sigma\left( A \right)$ annak egy sajátértéke,
 	akkor az $A-\lambda I$ sajátaltér defektusát,
-	tehát az $\ker\left( A-\lambda I \right)$ altér dimenzióját,
+	tehát a $\ker\left( A-\lambda I \right)$ altér dimenzióját,
 	a $\lambda$ sajátérték \emph{geometriai multiplicitásának}\index{geometriai multiplicitás}
 	mondjuk.
 \end{definition}
@@ -7572,7 +7570,7 @@ altér egy -- sajátvektorokból álló -- bázisa.
 Rögzítsük is ezt a fontos gondolatot,
 amelyet a feladatok megoldása során sokszor használjuk majd.
 \begin{proposition}
-	A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direkt összegének egy bázisa.
+	A különböző sajátértékekhez tartozó sajátalterek bázisainak egyesítése a sajátalterek direkt összegének egy bázisa.
 \end{proposition}
 \begin{proposition}[diagonalizálhatóság]\label{pr:diagkar}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
@@ -7615,7 +7613,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	ami éppen a 3. feltétel.
 	Így a 2. és a 3. feltételek ekvivalenciáját is megértettük.
 
-	Ha 3., ezért 2. fennáll, akkor az egyes $\ker\left( A-\lambda_j I \right)$ sajátelterek bázisait egyesítve a
+	Ha 3., ezért 2. fennáll, akkor az egyes $\ker\left( A-\lambda_j I \right)$ sajátalterek bázisait egyesítve a
 	$V$ tér egy sajátvektorokból álló bázisát kapjuk,
 	ergo az $A$ diagonalizálható transzformáció.
 	Megfordítva,
@@ -14706,4 +14704,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 02 Aug 2021 05:22:19 PM CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 02 Aug 2021 07:12:23 PM CEST CEST CEST CEST CEST CEST CEST CEST 
