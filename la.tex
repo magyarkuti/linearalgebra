@@ -34,7 +34,6 @@
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
 \usepackage[unicode]{hyperref}\hypersetup{final}\usepackage{memhfixc}
-
 \usepackage[inline]{enumitem}
 \usepackage[a4paper]{geometry}
 \usepackage[missing={GitHub: \today},dirty={Continuous integration},mark]{gitinfo2}
@@ -1118,7 +1117,7 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
 		J\left( p_{i-1},p_i \right)\subseteq J\left( p_i,p_{i+1} \right)
 	\end{math}
 	tartalmazás adódik.
-	Másrészt a (\dag) azonosságot értelmezhetjük úgyis, hogy
+	Másrészt a (\dag) azonosságot értelmezhetjük úgy is, hogy
 	\(
 	p_{i+1}\in J\left( p_{i-1},p_i \right)
 	\),
@@ -2383,7 +2382,7 @@ ugyanis minden negatív diszkriminánsú másodfokú valós polinom jó is ellen
 Ez a jelenség az oka annak,
 hogy a komplex számtest felett sokkal kényelmesebb dolgoznunk mint a valós számok felett.
 
-Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti polinom gyűrűre nézve.
+Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti polinomgyűrűre nézve.
 \begin{proposition}
 	Legyen $p\left( t \right)\in\mathbb{C}[t]$ a komplex polinomgyűrű egy olyan eleme,
 	amelynek minden együtthatója valós.
@@ -3960,7 +3959,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 		      \]
 		      vektorrendszer is generátorrendszer.
 	\end{enumerate}
-	Ilyen $k$ biztosan van van, hiszen $k=0$ triviálisan jó.
+	Ilyen $k$ biztosan van, hiszen $k=0$ triviálisan jó.
 	Összesen azt kell meggondolnunk, hogy $k=n$.
 	Ha $k<n$ lenne,
 	\begin{itemize}
@@ -4228,7 +4227,7 @@ együttes alkalmazásaként kapjuk a következő lemmát.
 
 \begin{proposition}
 	Egy végesen generált $V$ vektortér minden $M\subseteq V$ altere is végesen generált.
-    Ekkor $\dim M\leq \dim V$ és egyenlőség csak $V=M$ esetben lehetséges.
+    Ekkor $\dim(M)\leq \dim(V)$ és egyenlőség csak $V=M$ esetben lehetséges.
 \end{proposition}
 \begin{proof}
 	Mivel $V$-ben nincs tetszőleges nagy lineárisan független rendszer,
@@ -4239,9 +4238,9 @@ együttes alkalmazásaként kapjuk a következő lemmát.
 	Mivel az $M$-beli bázis egyben lineárisan független rendszer,
 	ezért a Steinitz-lemma\index{Steinitz-lemma} szerint 
     elemszáma nem nagyobb mint a rögzített bázis mint generátorrendszer elemszáma,
-    azaz $\dim M\leq \dim V.$
+    azaz $\dim(M)\leq \dim(V).$
 
-    Ha $\dim M=\dim V=n$, akkor $M$ az altér egy $\left\{ x_1,\dots,x_n \right\}$ bázisa olyan lineárisan független rendszer $V$-ben, 
+    Ha $\dim(M)=\dim(V)=n$, akkor $M$ az altér egy $\left\{ x_1,\dots,x_n \right\}$ bázisa olyan lineárisan független rendszer $V$-ben, 
     amelynek annyi eleme van, mint a $V$ dimenziója.
     Így ez egy $V$-beli generátorrendszer is, ezért 
     $M=\lin\left( \left\{ x_1,\dots,x_n \right\}\right)=V. $
@@ -4262,7 +4261,7 @@ Az első eset azt jelenti, hogy a zérus mátrixszal állunk szemben, tehát a r
     a feszítőrangja $r$; 
     és $r_c$ az $A$ maximális lineárisan független oszloprendszereinek elemeszáma.
     Jól tudjuk, hogy $r_c=r$.
-    Jelölje $M$ az $A$ oszlopai generálta vektorteret, definíció szerint $\dim M=\rho$.
+    Jelölje $M$ az $A$ oszlopai generálta vektorteret, definíció szerint $\dim(M)=\rho$.
     Legyen $A=BC$ egy olyan felbontás, ahol $B$ egy $m\times r$ méretű és $C$ egy $r\times n$ mátrix. 
     Jelölje $W$ a $B$ mátrix oszlopai generálta vektorteret.
     Világos, hogy
@@ -4272,9 +4271,9 @@ Az első eset azt jelenti, hogy a zérus mátrixszal állunk szemben, tehát a r
     az $A=BC$ egyenlőség és a mátrix szorzás definíciója szerint.
     Ezért 
     \[
-        r_c\leq\dim M\leq\dim W\leq r=r_c.
+        r_c\leq\dim(M)\leq\dim(W)\leq r=r_c.
     \]
-    Ez azt jelenti, hogy $\rho=\dim M=\dim W=r$.
+    Ez azt jelenti, hogy $\rho=\dim(M)=\dim(W)=r$.
 \end{proof}
 A fenti bizonyításból az is leolvasható, hogy $M=W$, azaz az $A$ oszlopai generálta altér
 és a $B$ oszlopai generálta altér azonos alterek.
@@ -4386,7 +4385,7 @@ azaz (1) minden vektortér izomorf saját magával; (2) ha $V$ izomorf $W$-vel,
 akkor $W$ is $V$-vel; (3) ha $V_1$ és $V_2$ izomorfak, továbbá ha $V_2$ és $V_3$ izomorfak, akkor
 $V_1$ és $V_3$ is izomorfak.
 \begin{proposition}
-	Minden az $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim V}$
+	Minden az $\mathbb{F}$ test feletti véges dimenziós $V$ vektortér izomorf az $\mathbb{F}^{\dim(V)}$
 	koordináta-térrel.
 \end{proposition}
 \begin{proof}
@@ -4429,7 +4428,7 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 	No de, izomorfizmus bázist bázisra visz, ami azt jelenti, hogy azonos elemszámú
 	bázisa van mindkét térnek.
 
-	Ha $\dim V=\dim W=n$, akkor mindkét vektortér izomorf $\mathbb{F}^n$ vektortérrel,
+	Ha $\dim(V)=\dim(W)=n$, akkor mindkét vektortér izomorf $\mathbb{F}^n$ vektortérrel,
 	ergo egymással is izomorfak.
 \end{proof}
 Fontos látni, hogy a vektor koordináta-vektora függ a bázis megválasztásától.
@@ -4438,7 +4437,7 @@ már akkor is változik a vektort koordináta-vektora.
 \Aref{le:gencsere}., \aref{le:fgtlncsere}.  és \aref{le:baziscsere}. lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái,
 ha a bázisban egy elemet megváltoztatunk.
-\begin{lemma}[bázis transzformáció]\label{le:bazistrafo}
+\begin{lemma}[bázistranszformáció]\label{le:bazistrafo}
 	Legyen $\left\{ x_1,\dots,x_m \right\}$ egy bázisa valamely vektortérnek,
 	és tegyük fel,
 	hogy egy $y$ olyan vektor
@@ -4502,7 +4501,7 @@ ha a bázisban egy elemet megváltoztatunk.
 \begin{definition}\index{Minkowski-összeg}
 	Legyen $V$ egy $\mathbb{F}$ test feletti vektortér és $H_1, H_2\subseteq V$ részhalmazok.
 	E két halmaz \emph{összegén} vagy \emph{Minkowski-összegén}
-	az
+	a
 	\[
 		H_1+H_2=\left\{ a+b:a\in H_1,b\in H_2 \right\}
 	\]
@@ -4511,9 +4510,9 @@ ha a bázisban egy elemet megváltoztatunk.
 	\[
 		\alpha H_1=\left\{ \alpha a:a\in H_1 \right\}
 	\]
-	az $\alpha$ szám és $H_1$ halmaz szorzatát.
+	az $\alpha$ szám és a $H_1$ halmaz szorzatát.
 \end{definition}
-Világos, hogy ha például $H_1$ üres, akkor $H_1+H_2$ is, és a $\alpha H_1$ halmazok is üresek.
+Világos, hogy ha például $H_1$ üres, akkor $H_1+H_2$ is, és az $\alpha H_1$ halmazok is üresek.
 
 Az alábbi tulajdonságok, a vektortér axiómák közvetlen következményei.
 Azokat a tulajdonságokat foglaljuk össze, amelyeket a vektortér axiómákból meg tudunk menteni
@@ -4617,7 +4616,7 @@ a két alteret tartalmazó legszűkebb altér dimenziójának,
 	Ekkor az $M+N$ altér is végesen generált,
 	továbbá
 	\[
-		\dim\left( M+N \right)=\dim M+\dim N-\dim \left( M\cap N \right).\qedhere
+		\dim\left( M+N \right)=\dim(M)+\dim(N)-\dim \left( M\cap N \right).\qedhere
 	\]
 \end{proposition}
 \begin{proof}
@@ -4792,12 +4791,12 @@ hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 	\end{enumerate}
 \end{proposition}
 \begin{proof}
-	Tegyük fel, hogy $M$ direkt összege az $M_1,\dots,M_s$ altereknek.
-	Minden szóba jövő $k$-ra $M_k\subseteq\sum_{j=1}^sM_j=M.$
-	Mivel $M=M_1+\dots+M_s$, ezért minden $v\in M$-hez létezik $v_j\in M_j$, hogy
+	Tegyük fel, hogy $N$ direkt összege az $M_1,\dots,M_s$ altereknek.
+	Minden szóba jövő $k$-ra $M_k\subseteq\sum_{j=1}^sM_j=N.$
+	Mivel $N=M_1+\dots+M_s$, ezért minden $v\in N$-hez létezik $v_j\in M_j$, hogy
 	$v=v_1+\dots+v_s$.
 	Most tegyük fel, hogy $v$ előáll $v=u_1+\dots+u_s$ alakban is,
-	ahol $u_j\in V_j$ minden $j=1,\dots,s$ mellett.
+	ahol $u_j\in M_j$ minden $j=1,\dots,s$ mellett.
 	Ekkor 
 	\[
         0=\sum_{\substack{j=1}}^s\left( v_j-u_j \right), \text{ ahol } v_j-u_j\in M_j.
@@ -4838,8 +4837,8 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
 	\)
 	Ekkor
 	\(
-	\dim N=
-	\dim M_1+\dots+\dim M_s.
+	\dim(N)=
+	\dim(M_1)+\dots+\dim(M_s).
 	\)
 \end{proposition}
 \begin{proof}
@@ -4851,20 +4850,20 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
 	Világos, hogy $M=M_1\oplus\dots\oplus M_{s-1}$ és $M\oplus M_s=N$.
 	A már igazolt $s=2$ eset és az indirekt feltevés szerint
 	\[
-		\dim N
+		\dim(N)
 		=
-		\dim M+\dim M_s
+		\dim(M)+\dim(M_s)
 		=
-		\sum_{j=1}^{s-1}\dim M_j+\dim M_s
+		\sum_{j=1}^{s-1}\dim(M_j)+\dim(M_s)
 		=
-		\sum_{j=1}^{s}\dim M_j.\qedhere
+		\sum_{j=1}^{s}\dim(M_j).\qedhere
 	\]
 \end{proof}
 Az állításból azonnal adódik,
 hogy ha az $M_1, M_2, \dots,M_s$ alterek bázisait, egy közös vektorrendszerbe tesszük,
 akkor az így kapott vektorrendszer az $N$ tér egy bázisává válik.
 Világos ugyanis, hogy az egyesített rendszer $N$-nek generátorrendszere,
-és az elemeinek száma \aref{pr:drosszeg}.~állítás szerint éppen $\dim N$.
+és az elemeinek száma \aref{pr:drosszeg}.~állítás szerint éppen $\dim(N)$.
 Azt kaptuk tehát, hogy ez egy minimális generátorrendszere $N$-nek,
 ergo egy bázis.
 
@@ -4898,15 +4897,15 @@ ergo egy bázis.
         \sum_{j=1}^r\alpha_jm_j+\sum_{j=1}^s\beta_jn_j=x,
     \]
     hiszen a $V$ fenti bázisa egyben $V$ generátorrendszere is.
-    Ha itt az első szumma értékét $v$-vel jelöljük, a második szumma értékét pedig $u$-val,
-    akkor az $u\in N$ és a $v\in M$ vektorokra $u+v=x$,
+    Ha itt az első szumma értékét $u$-val jelöljük, a második szumma értékét pedig $v$-vel,
+    akkor az $u\in M$ és a $v\in N$ vektorokra $u+v=x$,
     ergo $M+N=V$.
     Ez azt jelenti, hogy konstruáltunk $N\subseteq V$ alteret, amelyre $M\oplus N=V$ teljesül.
 
     Ha $L\subseteq V$ egy másik olyan altere $V$-nek, amire $M\oplus L=V$ fennáll,
     akkor felhasználva a dimenziók összeadásáról szóló állítást azt kapjuk, hogy
     \[
-        \dim L=\dim V-\dim M=\dim N.
+        \dim(L)=\dim(V)-\dim(M)=\dim(N).
     \]
     Emlékezzünk arra, hogy végesen generált vektorterek izomorf voltának szükséges és elegendő feltétele, hogy a két altér dimenzió száma  azonos legyen.
     Megmutattuk tehát, hogy az $M$ altér bármely direkt kiegészítője egymással izomorf.
@@ -4954,7 +4953,7 @@ ha valamely $x,y\in V$ mellett $M_x\cap M_y\neq\emptyset$,
 akkor $M_x=M_y$;
 és minden $x\in V$ mellett $M_x\neq\emptyset$.
 
-Most azt gondoljuk meg, hogy minden egyes ekvivalencia osztály tekinthető úgyis mint,
+Most azt gondoljuk meg, hogy minden egyes ekvivalencia osztály tekinthető úgy is mint,
 bármelyik elemével való eltoltja az $M$ vektortérnek.
 Speciálisan az is adódik,
 hogy az ekvivalencia osztályok affin\index{affin halmaz} halmazok.
@@ -5024,20 +5023,20 @@ egy ekvivalencia osztálynak egy számmal való szorzata egy ekvivalencia osztá
 sőt
 \emph{egy vektorhoz tartozó ekvivalencia osztály $\alpha$ szorosa azonos e vektor $\alpha$-szorosához tartozó
 	ekvivalencia osztállyal}.
-\begin{proposition}[faktortér]
+\begin{defprop}[faktortér]
 	Legyen $V$ egy az $\mathbb{F}$ test feletti vektortér,
 	és $M\subseteq V$ egy rögzített altér.
-	Legyen $\sim$ a $V$ vektortér elemein értelmzett reláció,
-	amelyre $x\sim y$, ha $x-y\in M$ ekvivalencia reláció.
+	Jelölje $\sim$ azt $V$ vektortér elemein értelmezett relációt,
+	amelyre $x\sim y$, akkor és csak akkor, ha $x-y\in M$.
 	Láttuk, hogy ez ekvivalencia reláció.
 	Jelölje
 	\[
 		V/M=\left\{ M_x:x\in V \right\}
 	\]
 	az ekvivalencia osztályok halmazát.
-	Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt az összeadás nevű műveletet
-    mint a halmazok 
-	a Minkowski--összegét és a skalárral való szorzást műveletet mint a $\ast$ fent bevezetett szorzást.
+	Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt az összeadás nevű műveletet mint a halmazok 
+	Minkowski--összegét;
+    és a skalárral való szorzást műveletet mint a $\ast$ fent bevezetett szorzást.
     (Láttuk, hogy az
 	\[
 		M_{x_1}+M_{x_2}=M_{x_1+x_2},
@@ -5048,8 +5047,8 @@ sőt
 	\]
     azonosságok minden $x_1,x_2,x\in V$ és miden $\alpha\in\mathbb{F}$ mellett fennállnak.)
 	Ekkor az itt bevezetett $(V/M,+,\ast)$ struktúra az $\mathbb{F}$ test feletti vektorteret alkot.
-	Ezt a vektorteret nevezzük a $V$ vektortér $M$ szerinti \emph{faktorterének}\index{faktortér}.
-\end{proposition}
+	Ezt a vektorteret nevezzük a $V$ vektortér $M$ altere szerinti \emph{faktorterének}\index{faktortér}.
+\end{defprop}
 \begin{proof}
 	Meggondoltuk már, hogy a Minkowski--összeg és a $\ast$ szorzás eredménye egy ekvivalencia osztály.
 	Most vegyük sorra a vektortér axiómákat:
@@ -5068,7 +5067,7 @@ sőt
 		\item[4.] Minden $M_x$ ekvivalencia osztályra $M_x+M_{-x}=M$,\\
 		      hiszen
 		      $M_x+M_{-x}=M_{x+\left( -x \right)}=M_0=M$,
-		      felhasználva a már igazolt $\dag$ azonosságot.
+		      felhasználva a már igazolt $(\dag)$ azonosságot.
 	\end{enumerate}
 	A $\ast$ szorzás és az összeadás kapcsolatát leíró aximák ellenőrzéséhez használjuk
 	$(\dag)$ és $(\ddag)$ azonosságokat:
@@ -5187,7 +5186,7 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	Azt mondjuk, hogy a $V$ vektortér $M$ altere \emph{$k$ co-dimenziós},
 	ha létezik $k$-dimenziós direkt kiegészítője $M$-nek,
 	azaz létezik olyan $N$ altere $V$-nek, amelyre $M\oplus N=V$
-	és $\dim N=k$.
+	és $\dim(N)=k$.
 	A tényt,
 	hogy $M$ altérnek létezik $k$-dimenziós direkt kiegészítője
 	$\codim M=k$ módon jelöljük.
@@ -5205,7 +5204,7 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	amelyre $V=M\oplus N$.
 	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
 	emiatt $V/M$ is végesen generált, és
-	$\dim \left( V/M \right)=\dim N=\codim M$.
+	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
 \end{proof}
 \begin{proposition}
 	Legyenek $V,W$ vektorterek,
@@ -5224,7 +5223,7 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
     Ez azt jelenti, hogy $\left\{ x_1,\dots,x_r \right\}$ is lineárisan független vektorrendszer.
 	Definiálja $N=\lin\left\{ x_1,\dots,x_r \right\}$.
     Persze $\left\{ x_1,\dots,x_r \right\}$ egy bázisa $N$-nek,
-    ergo $\dim N=r$.
+    ergo $\dim(N)=r$.
 
 	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
 	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
@@ -5238,7 +5237,7 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	ami igazolja, hogy $V=\ker A+N$.
 
 	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
-	Az is világos, hogy $\codim\left( \ker A \right)=\dim N=r=\dim\left( \im A \right)$.
+	Az is világos, hogy $\codim\left( \ker A \right)=\dim(N)=r=\dim\left( \im A \right)$.
 \end{proof}
 Magától értetődik a következő két észrevétel.
 \begin{proposition}
@@ -5252,7 +5251,7 @@ Magától értetődik a következő két észrevétel.
 	Ekkor
 	$\im A$ is véges dimenziós, és
 	\[
-		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim V.\qedhere
+		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim(V).\qedhere
 	\]
 \end{proposition}
 
@@ -5265,7 +5264,7 @@ akkor láttuk, hogy
 	=
 	\dim\left( V/\ker A \right).
 \]
-Tudjuk, hogy azonos dimenziójú vektorterek egy mással izomorfak,
+Tudjuk, hogy azonos dimenziójú vektorterek egymással izomorfak,
 emiatt $\im A$ izomorf $V/\ker A$ faktortérrel.
 A következő állítás ennek a gondolatnak a nem véges dimenziós esetre vonatkozó általánosítása,
 de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
@@ -5661,12 +5660,12 @@ Ebben a fejezetben a mátrixok ezen interpretációját erősítjük tovább.
 \section{Rang--defektus-tétel következménye}
 Láttuk, hogy tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
 \[
-	\nu\left( A \right)+\rho\left( A \right)=\dim V,
+	\nu\left( A \right)+\rho\left( A \right)=\dim(V),
 \]
 ahol $\nu\left( A \right)=\dim\left( \ker A \right)$ az $A$ defektusa,
 $\rho\left( A \right)=\dim\left(\im A \right)$ az $A$ rangja.
 Ebből adódóan, ha $A\in L\left( V \right)$ egy lineáris transzformáció,
-akkor $\nu\left( A \right)=0$ és $\rho\left( A \right)=\dim V$ egymással ekvivalens feltevések.
+akkor $\nu\left( A \right)=0$ és $\rho\left( A \right)=\dim(V)$ egymással ekvivalens feltevések.
 
 Itt az első feltétel pontosan $A$ injektivitását,
 míg a második feltétel pontosan $A$ szürjektivitását jelenti.
@@ -5674,7 +5673,7 @@ Azt látjuk tehát,
 hogy lineáris transzformációk esetén a transzformáció injektivitása és szürjektivitása egyszerre teljesül,
 vagy egyszerre nem teljesül:
 \begin{proposition}
-	Legyen az $V$ egy véges dimenziós vektortér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
+	Legyen $V$ egy véges dimenziós vektortér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
 	\begin{enumerate}
 		\item
 		      Ekkor az alábbi feltételek egymással ekvivalensek.
@@ -5691,8 +5690,8 @@ vagy egyszerre nem teljesül:
 \begin{proof}
 	Az első három pont ekvivalens voltát már meggondoltuk.
 
-	Ha $A\circ B=I$, akkor $A$ szürjektív, hiszen az $y\in V$ vektor elő áll,
-	mit a $By$ vektor $A$ képe.
+	Ha $A\circ B=I$, akkor $A$ szürjektív, hiszen az $y\in V$ vektor előáll,
+	mint a $By$ vektor $A$ képe.
 
 	Megfordítva, ha $A$ szürjektív, akkor a) szerint injektív is, van tehát $V\to V$ inverze.
 	De lineáris függvény inverze is lineáris,
@@ -5731,7 +5730,7 @@ akkor az
 \[
 	\left\{ A_{i,j}:i=1,\dots,n;j=1,\dots,m\right\}
 \]
-mátrixok rendszere bázisa az $\mathbb{F}^{n\times m}$ térben.
+mátrixok rendszere egy bázis az $\mathbb{F}^{n\times m}$ térben.
 Így persze $\dim \mathbb{F}^{n\times m} = n\cdot m$.
 
 Most áttérünk az $L\left( V,W \right)$ lineáris operációk vektorterének vizsgálatára.
@@ -5746,7 +5745,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 \end{proposition}
 \begin{proof}
 	Definiáljuk az $A:V\to W$ függvényt a következőképpen.
-	Minden $v\in V$ egyértelműen áll elő mint $v=\sum_{j=1}^m\alpha_jv_j$ alakban.
+	Minden $v\in V$ egyértelműen áll elő mint $v=\sum_{j=1}^m\alpha_jv_j$.
 	Egy ilyen $v$ mellett legyen
 	\[
 		A\left( v \right)=\sum_{j=1}^m\alpha_jw_j.
@@ -5800,7 +5799,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 	lineáris operációk rendszere egy bázisa az $L\left( V,W \right)$ vektortérnek,
 	ezért
 	\[
-		\dim L\left( V,W \right)=n\cdot m.\qedhere
+		\dim \left( L\left( V,W \right) \right)=n\cdot m.\qedhere
 	\]
 \end{proposition}
 \begin{proof}
@@ -5849,7 +5848,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 	Legyen $A\in L\left( V,W \right)$ egy rögzített lineáris operáció.
 	Definiáljuk az $\alpha_{i,j}$ számokat,
 	mint az $Ae_{j}\in W$ vektor $\left\{ y_1,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának
-	$j$-edik elemét.
+	$i$-edik elemét.
 	Magyarul
 	\[
 		Ae_j=
@@ -5871,7 +5870,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 		\sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}
 	\end{math}
 	lineáris operátorok az $\left\{ e_1,\dots,e_m \right\}$ bázis minden elemén megegyeznek.
-	Láttuk, egy bázison felvett értékek már egyértelműen meghatározzák a lineáris operációt,
+	Láttuk, hogy bázison felvett értékek már egyértelműen meghatározzák a lineáris operációt,
 	ezért e két lineáris operáció is azonos.
 	Találtunk tehát $\alpha_{i,j}$ számokat, amelyekre
 	\begin{math}
@@ -5904,7 +5903,7 @@ adják az $\alpha_{1,j},\alpha_{2,j},\dots,\alpha_{n,j}$ számokat, formálisabb
 
 A következő gondolat előtt arra kell emlékeznünk,
 hogy minden véges dimenziós vektortér izomorf a koordináta-terével.
-Láttuk, hogy $\dim L\left( V,W \right)=\dim V\cdot\dim W$.
+Láttuk, hogy $\dim \left( L\left( V,W \right) \right)=\dim(V)\cdot\dim(W)$.
 De mi lesz $L\left( V,W \right)$ koordináta-tere?
 A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 \begin{definition}[lineáris operátor mátrixa]
@@ -5956,12 +5955,13 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 	Ezt a mátrixot nevezzük az
 	$A\in L\left( V,W \right)$ \emph{lineáris operáció mátrixának}\index{lineáris operáció mátrixa}
 	az előre rögzített
-	$\left\{e_1,\dots,e_m  \right\}\subseteq V$ és $\left\{ f_1,\dots,f_m \right\}$ bázisok mellett.
+	$\left\{e_1,\dots,e_m  \right\}\subseteq V$ és $\left\{ f_1,\dots,f_n \right\}$ bázisok mellett.
 \end{definition}
 Meggondoltuk tehát, hogy a kapcsolat lineáris operáció és mátrixa között azonos avval a kapcsolattal,
 ami általában egy vektor és koordinátái közt van.
 
-Nagyon fontos, hogy egy lineáris operáció mátrixát fel tudjuk írni, emiatt összefoglalom az eddigieket.
+Nagyon fontos, hogy bármilyen lineáris operáció mátrixát fel tudjuk írni, 
+emiatt foglaljuk össze az eddigieket.
 \begin{proposition}
 	Tegyük fel, hogy $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Rögzítsük a $V$ és a $W$ vektortér egy-egy bázisát.
@@ -6006,7 +6006,7 @@ mátrixára:
 \]
 
 Meggondoltuk tehát, hogy az $L\left( V,W \right)$ lineáris operátorok vektortere izomorf az
-$\mathbb{F}^{\dim W\times \dim V}$ mátrixok vektorterével.
+$\mathbb{F}^{\dim(W)\times \dim(V)}$ mátrixok vektorterével.
 Az izomorfizmus tehát az a leképezés,
 amely egy lineáris transzformációhoz hozzárendeli annak
 -- valamely előre megadott bázisokban felírt --
@@ -6166,7 +6166,7 @@ akkor a mátrixaik szorzata is értelmes, továbbá
 	akkor legyen $A^{n+1}=AA^n$.
 \end{definition}
 Világos, hogy ha $n,m$ nem negatív egészek, akkor $A^{n+m}=A^n\cdot A^m$.
-Az is nyilvánvaló, hogy az $I$ identitás operációnak akár melyik bázisban felírt mátrixa ugyanaz a mátrix,
+Az is nyilvánvaló, hogy az $I$ identitás operációnak akármelyik bázisban felírt mátrixa ugyanaz a mátrix,
 mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális elemek, amelyek értéke 1.)
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció, és legyen rögzítve a tér egy bázisa,
@@ -6175,7 +6175,8 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	\(
 	\left[ A^n \right]=\left[ A \right]^n
 	\),
-	továbbá $A$ pontosan akkor izomorfizmus, ha $[A]$ reguláris\index{reguláris mátrix} és
+	továbbá az $A$ transzformáció pontosan akkor izomorfizmus, 
+    ha az $[A]$ mátrixa reguláris\index{reguláris mátrix} és
 	\begin{math}
 		\left[ A^{-1} \right]
 		=
@@ -6183,7 +6184,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	\end{math}
 \end{proposition}
 \begin{proof}
-	A (\ref{eq:gyuru}.) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
+	A (\ref{eq:gyuru}) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
 	$\left[ A^n \right]=\left[ A \right]^n$
 	azonosságot.
 
@@ -6193,12 +6194,13 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	$[A]$ mátrix invertálhatóságának.
 	Ekkor $[A]^{-1}=[B]=\left[ A^{-1} \right]$.
 \end{proof}
-A (\ref{eq:vt}.) és a (\ref{eq:gyuru}.) szerint egy lineáris operátorhoz hozzárendeli valamely báziskban
+A (\ref{eq:vt}) és a (\ref{eq:gyuru}) azonosságok szerint 
+egy lineáris operátorhoz hozzárendelni annak valamely bázisban
 felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
-Az $L\left( V \right)$ és a $F^{\dim V\times \dim V}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
+Az $L\left( V \right)$ és a $F^{\dim(V)\times \dim(V)}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
 amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
 
-\chapter{Általános bázis-transzformáció}
+\chapter{Általános bázistranszformáció}
 \scwords Egy vektor koordinátái függnek a bázis megválasztásától.
 Az elemi bázistranszformáció arra szolgál hogy felírjuk az új bázisban a vektor koordinátáit,
 amikor az új bázis és a régi bázis csak egyetlen vektorban különbözik.
@@ -6317,12 +6319,13 @@ $\left[ B \right]^{-1}$ inverze.
 		\left[ A \right]_\rgi
 		\left[ B \right]_\rgi^j
 		=
-		\left( \left[ D \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right)^j.
+        \left[ \left[ D \right]^{-1}_\rgi\left[ A \right]_\rgi\left[ B \right]_\rgi \right]^j.
 	\end{multline*}
 	Közben használtuk a mátrix szorzás művelet asszociativitását,
 	és azt a tényt,
 	hogy tetszőleges $\left[ E \right],\left[ F \right]$ mátrixok mellett
-	$\left( \left[ E \right]\left[ F \right] \right)^j=\left[ E \right]\left( \left[F  \right]^j \right)$.
+    $\left[ \left[ E \right]\left[ F \right] \right]^j=\left[ E \right]\left( \left[F  \right]^j \right)$, azaz
+    az $\left[ \left[ E \right]\left[ F \right] \right]$ szorzat $j$-edik oszlopa azonos az $\left[ E \right]$ mátrixnak az $\left[ F \right]$ mátrix $j$-edik oszlopával való szorzatával.
 \end{proof}
 \section{Lineáris transzformáció mátrixa az új bázisban}
 \begin{proposition}
@@ -6486,7 +6489,7 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 	Legyen $V$ egy véges dimenziós vektortér.
 	$A\in L\left( V \right)$ lineáris transzformáció,
 	és $v\in V$ egy $v\neq 0$ vektor.
-	Ekkor létezik egyetlen $1\leq k\leq \dim V$ szám,
+	Ekkor létezik egyetlen $1\leq k\leq \dim(V)$ szám,
 	amelyre
 	\[
 		\left\{ v,Av,\dots,A^{k-1}v \right\} \text{ lineárisan független}\tag{\dag}
@@ -6510,7 +6513,7 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 	ha lineárisan független, akkor folytatjuk egy újabb elem hozzá vételével.
 	Az eljárás előbb-utóbb megáll a vektorrendszer összefüggővé válásával,
 	hiszen a Steinitz-lemma \index{Steinitz-lemma} szerint egy véges dimenziós vektortérben legfeljebb
-	$\dim V$ elemszámú lineárisan független vektorrendszer van.
+	$\dim(V)$ elemszámú lineárisan független vektorrendszer van.
 
 	Mivel $\lin\left( v;A \right)$ egy $v$-t tartalmazó $A$-invariáns altér,
 	ezért
@@ -6656,7 +6659,7 @@ Ugyanúgy mint mátrixokra, két lineáris transzformációt \emph{kommutálóna
 mondunk, ha szorzatuk a szorzás sorrendjétől független.
 Például az $I$ identitás minden transzformációval kommutál.
 Azt is láttuk, hogy ha $AB=I$, akkor $BA=I$ is fennáll, azaz $A$ és $B$ kommutálnak.
-Nagyon fontos, de nyilvánvaló küvetkezménye a fenti számolási szabálynak,
+Nagyon fontos, de nyilvánvaló következménye a fenti számolási szabálynak,
 hogy ha $p,q$ tetszőleges polinomok, akkor a $p\left( A \right)$ és $q\left( A \right)$ egymással kommutáló lineáris transzformációk lesznek, hiszen az
 $\mathbb{F}\left[ t \right]$ egy kommutatív gyűrű,
 azért ha $r=pq$, akkor $qp=r$,
@@ -6713,14 +6716,14 @@ ami egyben az ideál generáló eleme is.
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja,
 	és legyen $v\in V$ egy rögzített vektor.
 	Tekintsük az
-	$\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát:
+	$\mathbb{F}\left[ t \right]$ polinomgyűrű következő részhalmazát:
 	\[
 		J_{A,v}
 		=
 		\left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v=0 \right\}.
 	\]
 	Ez a halmaz egy ideálja $\mathbb{F}\left[ t \right]$-nek,
-	amelynek van legfeljebb $\dim V$-ed fokú, de nem konstans zérus polinomja.
+	amelynek van legfeljebb $\dim(V)$-ed fokú, de nem konstans zérus polinomja.
 \end{proposition}
 \begin{proof}
 	Ha $p,q\in J_{A,v}$,
@@ -6733,9 +6736,9 @@ ami egyben az ideál generáló eleme is.
 		\left( hp \right)(A)v=h\left( A \right)p\left( A \right)v=h\left( A \right)0=0,
 	$
 	azaz $hp\in J_{A,v}$.
-	Megmutattuk tehát, hogy $J_{A,v}$ egy ideálja a polinom gyűrűnek.
+	Megmutattuk tehát, hogy $J_{A,v}$ egy ideálja a polinomgyűrűnek.
 
-	Jelölje $n=\dim V$ és tekintsük az $n+1$ elemű
+	Jelölje $n=\dim(V)$ és tekintsük az $n+1$ elemű
 	$\left\{ v,Av,\dots,A^nv \right\}$ vektorrendszert.
 	Mivel a Steinitz-lemma szerint \index{Steinitz-lemma}
 	$n+1$ vektor egy $n$-dimenziós vektortérben lineárisan összefüggő,
@@ -6764,10 +6767,11 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	\]
 	az $\mathbb{F}\left[ t \right]$ gyűrű egy ideálja, amely nem csak a konstans zéruspolinomot tartalmazza.
 	Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
-	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$.
+	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$-t.
 	Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
-	Ezt a polinomot nevezzük az $A$ transzformáció, $v$ vektorhoz tartozó
+	Ezt a polinomot nevezzük az $A$ transzformáció, 
 	\emph{kis minimálpolinomjának}\index{kis minimálpolinom}.
+    a $v$ pontban.
 \end{definition}
 
 \begin{proposition}
@@ -6783,7 +6787,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 \begin{proof}
 	Definíció szerint $n$ azon $p$ polinomok közül,
 	amelyek normáltak, és $p\left( A \right)v=0$, a legalacsonyabb fokú.
-	Láttuk hogy ilyen polinom csak egy van, es erre a polinomra
+	Láttuk hogy ilyen polinom csak egy van, és erre a polinomra
 	\[
 		J_{A,v}=J\left( n \right)=\left\{ hn:h\in\mathbb{F}\left[ t \right] \right\}.
 	\]
@@ -6795,7 +6799,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak minimálpolinomja legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább első fokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
 	akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
 	ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
@@ -6807,14 +6811,14 @@ amely mindig használható.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ és $v\neq 0.$
 	Feltéve, hogy $V$ egy véges dimenziós vektortér,
-	létezik $1\leq k \leq \dim V$,
+	létezik $1\leq k \leq \dim(V)$,
 	hogy
 	$\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineáris független,
 	de $\left\{ v,Av,\dots,A^{k-1}v,A^{k}v \right\}$ lineárisan összefüggő.
 	Léteznek tehát $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
 	számok, amelyekre
 	\[
-		A^{k}v=\sum_{j=0}^{k-1}\alpha_jA^{j}v.
+		A^{k}v+\sum_{j=0}^{k-1}\alpha_jA^{j}v=0.
 	\]
     Ekkor
     \begin{enumerate}
@@ -6822,7 +6826,7 @@ amely mindig használható.
 	    Az $A$ operátor ezen $v$ vektorhoz tartozó kis minimálpolinomja
     	\[
 	    	n\left( t \right)=
-    		t^k-\alpha_{k-1}t^k-\dots-\alpha_1t-\alpha_0;
+            t^k+\alpha_{k-1}t^{k-1}+\cdots+\alpha_1t+\alpha_0.
     	\]
         \item
         A $v$-hez tartozó kis minimálpolinom foka megegyezik a $v$-t tartalmazó legszűkebb invariáns altér dimenziójával, azaz 
@@ -6840,7 +6844,7 @@ amely mindig használható.
 	Láttuk, hogy $\left\{ v,Av,\dots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
 	Világos, hogy $A^kv\in\lin\left( v;A \right)$, emiatt a kívánt előállítás valóban létezik.
 	Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
-	No de, $k$-nal alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
+	No de, $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
 	hiszen $\left\{ v,Av,\dots,A^{k-1}v \right\}$ lineárisan független.
 	Azt láttuk tehát, hogy $n$ a legalacsonyabb fokú nem zérus eleme $J_{A,v}$-nek,
 	tehát $n$ generálja a főideált.
@@ -6863,7 +6867,7 @@ Az $A\in L\left( V \right)$ lineáris transzformációra
     A\left( \alpha u_1+\beta u_2 +\gamma u_3 \right)
     =
     \left( -3\beta -2\gamma \right)u_1 +
-    \left( \alpha-\beta\gamma \right)u_2+
+    \left( \alpha-\beta+\gamma \right)u_2+
     \left( -\alpha+3\beta+\gamma \right)u_3.
 \]
 Írjuk fel az $u_3$ vektorhoz tartozó kis minimálpolinomot.
@@ -6881,7 +6885,7 @@ Az előző állításban megadott algoritmust használjuk:
 \begin{array}{r|ccc}
 	     & Au_3        & A^2u_3 & A^3u_3\\
 	\hline
-	     & -1          &     -5 &     -6\\
+	     & -2          &     -5 &     -6\\
          &\framebox{1} &     -2 &      3\\
 	u_3  &  1          &      6 &      5\\
 	\hline
@@ -6996,14 +7000,14 @@ Ez vezet a minimálpolinom fogalmához.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
 	Tekintsük az
-	$\mathbb{F}\left[ t \right]$ polinom gyűrű következő részhalmazát.
+	$\mathbb{F}\left[ t \right]$ polinomgyűrű következő részhalmazát.
 	\[
 		J_{A}
 		=
 		\left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)=0 \right\}
 	\]
 	Ez a halmaz egy ideálja $\mathbb{F}\left[ t \right]$-nek,
-	amelynek van legfeljebb $\left( \dim V \right)^2$-ed fokú,
+	amelynek van legfeljebb $\left( \dim(V) \right)^2$-ed fokú,
 	de nem konstans zérus polinomja.
 \end{proposition}
 \begin{proof}
@@ -7017,9 +7021,9 @@ Ez vezet a minimálpolinom fogalmához.
 		\left( hp \right)(A)=h\left( A \right)p\left( A \right)=h\left( A \right)0=0,
 	$
 	azaz $hp\in J_{A}$.
-	Megmutattuk tehát, hogy $J_{A}$ egy ideálja a polinom gyűrűnek.
+	Megmutattuk tehát, hogy $J_{A}$ egy ideálja a polinomgyűrűnek.
 
-	Jelölje $n=\dim V$ és tekintsük az $n^2+1$ elemű
+	Jelölje $n=\dim(V)$ és tekintsük az $n^2+1$ elemű
 	$\left\{ I,A,\dots,A^{n^2} \right\}$ rendszerét az $L\left( V \right)$ vektortérnek.
 	Mivel a Steinitz-lemma szerint \index{Steinitz-lemma}
 	$n^2+1$ vektor egy $n^2$-dimenziós vektortérben lineárisan összefüggő,
@@ -7044,11 +7048,11 @@ Ez vezet a minimálpolinom fogalmához.
 	Ez a $J_{A}$ legkisebb fokú, normált polinomja,
 	amit $A$ transzformáció \emph{minimálpolinomjának} nevezünk.
 \end{definition}
-Ha $V\neq\left\{ 0 \right\}$, ergo $\dim V\geq 1$,
+Ha $V\neq\left\{ 0 \right\}$, ergo $\dim(V)\geq 1$,
 akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja,
 hiszen $p(t)=c, (c\neq 0)$ mellett
 $p\left( A \right)=cI\neq 0$,
-tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinom legalább első fokú.
+tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább első fokú.
 \begin{proposition}
 	Az  $m\in\mathbb{F}\left[ t \right]$ polinom pontosan akkor
 	az $A\in L\left( V \right)$ transzformáció minimálpolinomja,
@@ -7060,13 +7064,13 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 		      $p\left( A \right)=0$, akkor $m|p$.
 	\end{enumerate}
 	A minimálpolinom fokszámára:%
-	\footnote{Kis vártatva kiderül, hogy $\deg m\leq \dim V$ is igaz.}%
-	$\deg m\leq(\dim V)^2$.
+	\footnote{Kisvártatva kiderül, hogy $\deg m\leq \dim(V)$ is igaz.}%
+	$\deg m\leq\dim(V)^2$.
 \end{proposition}
 \begin{proof}
 	Definíció szerint $m$ azon $p$ polinomok közül,
 	amelyek normáltak, és $p\left( A \right)=0$, a legalacsonyabb fokú.
-	Láttuk hogy ilyen polinom csak egy van, es erre a polinomra
+	Láttuk hogy ilyen polinom csak egy van, és erre a polinomra
 	\[
 		J_{A}=J\left( m \right)=\left\{ hm:h\in\mathbb{F}\left[ t \right] \right\}.
 	\]
@@ -7088,11 +7092,11 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 
 A következő állítás módszert ad a minimálpolinom meghatározására.
 \begin{proposition}
-	Legyen $A\in L\left( V \right)$, ahol $\dim V\geq 1$.
-	Mivel $\dim L\left( V \right)=\left( \dim V \right)^2$ egy véges dimenziós vektortér,
-	ezért létezik $1\leq k \leq (\dim V)^2$,
+	Legyen $A\in L\left( V \right)$, ahol $\dim(V)\geq 1$.
+	Mivel $\dim(L)\left( V \right)=\left( \dim(V) \right)^2$ egy véges dimenziós vektortér,
+	ezért létezik $1\leq k \leq (\dim(V))^2$,
 	hogy
-	$\left\{ I,A,\dots,A^{k-1} \right\}$ lineáris független,
+	$\left\{ I,A,\dots,A^{k-1} \right\}$ lineárisan független,
 	de $\left\{ I,A,\dots,A^{k-1},A^{k} \right\}$ lineárisan összefüggő.
 	Ekkor léteznek $\alpha_0,\dots,\alpha_{k-1}\in\mathbb{F}$
 	számok, amelyekre
@@ -7114,7 +7118,7 @@ A következő állítás módszert ad a minimálpolinom meghatározására.
 	Azt láttuk tehát, hogy $m$ a legalcsonyabb fokú nem zérus eleme $J_{A}$-nek,
 	tehát az $m$ polinom generálja a főideált.\index{főideál}
 \end{proof}
-A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is használhatók.
+A minimálpolinom algoritmikus meghatározásához a kis minimálpolinomok is használhatók.
 \begin{proposition}
     \index{kis minimálpolinom}\label{pr:lkkt-minimalpolinom}
 	Legyen az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja $m$.
@@ -7149,8 +7153,6 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
 	ha $p\in J_{A,e_i}$ a bázis minden $e_i$ elemére.
 	Így
 	\[
-		J\left( d \right)
-		=
 		\cap_{i=1}^nJ(p_i)
 		=
 		\cap_{i=1}^nJ_{A,e_i}
@@ -7159,11 +7161,11 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
 		=
 		J(m).
 	\]
-	No de, a baloldali ideál $d$ generáló eleme
+	No de, a baloldali ideál is főideál, aminek a normált generáló eleme
 	-- \aref{pr:lkkt}. állítás szerint --
 	a $p_1,\dots,p_n$ polinomok legkisebb közös többszöröse.
 	Mivel egy főidálnak csak egy normált generáló eleme van,
-	ezért a $d$ legkisebb közös többszörös azonos a jobboldali ideált generáló $m$ minimálpolinommal.
+	ezért a legkisebb közös többszörös azonos az $m$ minimálpolinommal.
 \end{proof}
 \subsubsection{Illusztráció}\label{se:minimalillusztracio}
 Újra vegyük elő \apageref{se:kisminimalillusztracio}.~oldalon vett mátrixot.
@@ -7175,11 +7177,11 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinom is hasz
         -1&3&1
     \end{pmatrix}.
 \]
-Láttuk, hogy az $u_3$ bázis vektorhoz tartozó kis minimálpolinom $t^3-3t-2$.
+Láttuk, hogy az $u_3$ bázisvektorhoz tartozó kis minimálpolinom $t^3-3t-2$.
 Az is világos, hogy az $u_3$ vektort tartalmazó legszűkebb invariáns altér dimenziója a kis minimálpolinom foka, 
 ergo 3.
 Így $\lin\left( u_3;A \right)=V$, tehát $A^3-3A-2I=0$.
-Az is meggondoltuk, hogy $3$-nál alacsonyabb fokú normált polinom nincs, ami $u_3$ vektort zérusra viszi,
+Azt is meggondoltuk, hogy $3$-nál alacsonyabb fokú normált polinom nincs, ami $u_3$ vektort zérusra viszi,
 azaz $m\left( t \right)=t^{3}-3t-2$ az $A$ minimálpolinomja.
 
 Persze itt a szerencsénk, hogy $u_3$ tartalmazó legszűkebb invariáns altér az egész vektortér.
@@ -7216,7 +7218,7 @@ majd ezek legkisebb közös többszöröseként kapjuk a transzformáció minim�
 Tehát itt nem volt olyan szerencsénk mint $u_3$ esetében.
 Most $\lin\left( u_1;A \right)$ egy 2 dimenziós altér $V$-ben.
 Csak $x\in\lin\left( u_1;A \right)$ vektoraira tudjuk, hogy $A^2x+2Ax+x=0$.
-Folytatnunk kell a második bázis vektorra:
+Folytatnunk kell a második bázisvektorra:
 \[
 		\begin{array}{r|cc}
 			    & Au_2          & A^2u_2 \\
@@ -7240,7 +7242,7 @@ Folytatnunk kell a második bázis vektorra:
 		\qquad\qquad
 		\begin{array}{r}
 			\left\{ u_2,Au_2 \right\}\mbox{ lineárisan független, de} \\
-			A^2u_2-Au_2-2u_1=0,                                        \\
+			A^2u_2-Au_2-2u_2=0,                                        \\
 			\mbox{ezért } p_2\left( t \right)=t^2-t-2=\left( t+1 \right)\left( t-2 \right).
 		\end{array}
 \]
@@ -7253,7 +7255,7 @@ Persze ilyen polinom csak egy van az
     m\left( t \right)=\left( t+1 \right)^2\left( t-2 \right).
 \]
 Egy kicsi szerencsénk mégis volt a fenti eljárásban, 
-hiszen már a második bázis vektor után kiderült a minimálpolinom. 
+hiszen már a második bázisvektor után kiderült a minimálpolinom. 
 Általában csak azt tudjuk, hogy a kis minimálpolinomok legkisebb közös többszöröse a minimálpolinom.
 Ez a mi konkrét esetünkben azt jelenti, 
 hogy az $m(t)$ minimálpolinom a $p_1(t)=\left( t+1 \right)^2$, 
@@ -7289,8 +7291,7 @@ kis minimálpolinom.
 \end{proof}
 \begin{proposition}[sajátérték és minimálpolinom]\index{sajátérték}
 	Legyen $A\in L\left( V \right)$ lineáris transzformációja a $V$ véges dimenziós
-	vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimál
-	polinomja.
+	vektortérnek, és $\lambda\in\mathbb{F}$ egy szám, valamint $m$ az $A$ minimálpolinomja.
 	Az alábbi feltevések ekvivalensek:
 	\index{kis minimálpolinom}
 	\begin{enumerate}
@@ -7320,7 +7321,7 @@ Az egyik legfontosabb definícióhoz érkeztünk.
 Az $\left[ A \right]$ négyzetes mátrix tehát pontosan akkor diagonális alakú,
 ha minden $i\neq j$ mellett $\left[ A \right]_{i,j}=0.$
 Ez azt jelenti hogy a $j$-edik bázis elem képének a nem $j$-edik koordinátája zérus,
-azaz az $e_j$ bázis vektorra $Ae_j=\lambda e_j$ áll fenn,
+azaz az $e_j$ bázisvektorra $Ae_j=\lambda e_j$ áll fenn,
 valamely $\lambda\in\mathbb{F}$ számmal.
 Ez éppen azt jelenti,
 hogy az $e_j$ bázisvektor egy sajátvektor.
@@ -7331,10 +7332,10 @@ hogy diagonalizálhatóság szükséges és elegendő módon megragadható a saj
 	pontosan akkor diagonalizálható,
 	ha van térnek csupa sajátvektorokból álló bázisa.
 
-	Ebben az esetben a transzformációnak a $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban felírt mátrixszának
-	$j$-edik diagonális eleme,
-	éppen az a $\lambda_j$ sajátértéke $A$-nak,
-	amelyre $Av_j=\lambda_jv_j$.
+	Ebben az esetben a transzformáció $\left\{ v_1,\dots,v_n \right\}$ sajátvektorokban, mint bázisban,
+    felírt mátrixának a $j$-edik diagonális eleme,
+    éppen az a $\lambda_j$ sajátértéke $A$-nak,
+    amelyre $Av_j=\lambda_jv_j$.
 \end{proposition}
 Mivel a
 \begin{math}
@@ -7376,7 +7377,7 @@ mátrixot.
 Mind az $\mathbb{R}$,
 mind a $\mathbb{C}$ test felett diagonalizálható,
 hiszen $\sigma\left( A \right)=\left\{ 0,2 \right\}$, továbbá
-a $\lambda=0$-hoz tartozó sajáteltérre
+a $\lambda=0$-hoz tartozó sajátaltérre
 $\ker A=\lin\left\{
 	\begin{pmatrix}
 		1 \\-1
@@ -7493,7 +7494,7 @@ mátrixot.
 		=
 		\sum_{j=1}^{s-1}\alpha_j\lambda_jv_j,
 	\end{equation*}
-	ami a az első $s-1$ elem lineárisan függetlensége szerint csak úgy lehetséges,
+	ami az első $s-1$ elem lineárisan függetlensége szerint csak úgy lehetséges,
 	ha minden $j=1,\dots s-1$ mellett
 	\begin{math}
 		\lambda_s\alpha_j
@@ -7523,14 +7524,14 @@ Mivel $n$-dimenziós térben legfeljebb $n$ elemű linárisan független rendsze
 ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója:
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
-	Ekkor $A$-nak legfeljebb $\dim V$ darab különböző sajátértéke lehet.
+	Ekkor $A$-nak legfeljebb $\dim(V)$ darab különböző sajátértéke lehet.
 \end{proposition}
 
 \begin{definition}[geometriai multiplicitás]
 	Ha $A\in L\left( V \right)$ egy lineáris transzformáció,
-	és $\lambda\in\sigma\left( A \right)$ annak egy sajátérétke,
+	és $\lambda\in\sigma\left( A \right)$ annak egy sajátértéke,
 	akkor az $A-\lambda I$ sajátaltér defektusát,
-	tehát az $\ker\left( A-\lambda I \right)$ altér dimenzióját,
+	tehát a $\ker\left( A-\lambda I \right)$ altér dimenzióját,
 	a $\lambda$ sajátérték \emph{geometriai multiplicitásának}\index{geometriai multiplicitás}
 	mondjuk.
 \end{definition}
@@ -7568,7 +7569,7 @@ altér egy -- sajátvektorokból álló -- bázisa.
 Rögzítsük is ezt a fontos gondolatot,
 amelyet a feladatok megoldása során sokszor használjuk majd.
 \begin{proposition}
-	A különböző sajátértékekhez tartozó sajátelterek bázisainak egyesítése a sajátalterek direkt összegének egy bázisa.
+	A különböző sajátértékekhez tartozó sajátalterek bázisainak egyesítése a sajátalterek direkt összegének egy bázisa.
 \end{proposition}
 \begin{proposition}[diagonalizálhatóság]\label{pr:diagkar}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
@@ -7577,7 +7578,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	azaz valamennyi különböző sajátértékét.
 	Az alábbi feltevések ekvivalensek.
 	\begin{enumerate}
-		\item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim V$,
+		\item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim(V)$,
 		\item
 		      \begin{math}
 			      \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)=V,
@@ -7596,7 +7597,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 		\dim\left(
 		\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
 		\right)
-		=\dim V,
+		=\dim(V),
 	\]
 	ami éppen a geometriai multiplicitásra vonatkozó feltétel.
 	Így az első két feltevés ekvivalenciáját megértettük.
@@ -7611,7 +7612,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	ami éppen a 3. feltétel.
 	Így a 2. és a 3. feltételek ekvivalenciáját is megértettük.
 
-	Ha 3., ezért 2. fennáll, akkor az egyes $\ker\left( A-\lambda_j I \right)$ sajátelterek bázisait egyesítve a
+	Ha 3., ezért 2. fennáll, akkor az egyes $\ker\left( A-\lambda_j I \right)$ sajátalterek bázisait egyesítve a
 	$V$ tér egy sajátvektorokból álló bázisát kapjuk,
 	ergo az $A$ diagonalizálható transzformáció.
 	Megfordítva,
@@ -7702,7 +7703,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Tegyük fel, hogy $m$ előáll mint a páronként relatív prím
 	normált polinomok
 	\[
-		m=p_1p_2\dots p_n
+		m=p_1p_2\cdots p_n
 	\]
 	szorzata.
 	Jelölje minden $i=1,\dots,n$ mellett $V_i=\ker p_i\left( A \right)$
@@ -7722,7 +7723,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Most tegyük fel, hogy az állítás $n$-nél kevesebb polinom szorzatára igaz,
 	és lássuk be $n$-re.
 	Feltehető tehát, hogy $n\geq 3$.
-	Legyen $p=p_1,\dots,p_{n-1}$.
+	Legyen $p=p_1\cdots p_{n-1}$.
 	Világos, hogy $p$ és $p_n$ relatív prímek, hiszen ha $d$ irreducibilis osztója
 	$p$-nek és $p_n$-nek,
 	akkor $d$ prím tulajdonsága szerint $d|p_i$ valamely $i<n$-re,
@@ -7744,7 +7745,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Ott az $A_{|\ker p\left( A \right)}$ lineáris transzformáció $p$ minimálpolinomja
 	előáll mint $n-1$ páronként relatív prím polinom szorzata:
 	\[
-		p=p_1,\dots,p_{n-1}.
+		p=p_1\cdots p_{n-1}.
 	\]
 	Világos tehát, hogy
 	\begin{enumerate}
@@ -7768,7 +7769,7 @@ tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
 	azaz valamennyi különböző sajátértékét.
 	Az alábbi feltevések ekvivalensek.
 	\begin{enumerate}
-		\item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim V$;
+		\item Az $A$ sajátértékei geometriai multiplicitásának összege $\dim(V)$;
 		\item
 		      \begin{math}
 			      \ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)=V
@@ -7802,9 +7803,9 @@ tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
 	amelynek gyöke $A$.
 	\footnote{
 		Egy másik érv: $t-\lambda_j$ a $\lambda_j$ sajátértékhez tartozó sajátvektor kis minimálpolinomja.
-		Mivel a sajátvektorok egy bazist alkotnak,
+		Mivel a sajátvektorok egy bázist alkotnak,
 		ezért ezen polinomok legkisebb közös többszöröse a minimálpolinom.
-		Persze $\dim V$ darab elsőfokú polinom normált polinom legkisebb közös többszöröse,
+		Persze $\dim(V)$ darab elsőfokú normált polinom legkisebb közös többszöröse,
 		ezek közül a különbözők szorzata.
 		\index{kis minimálpolinom}
 	}
@@ -7815,7 +7816,7 @@ tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
 	ezért az éppen igazolt \ref{pr:redukcio-primszorzat}.~állítás szerint
 	\begin{equation*}
 		V=
-		\ker p_1\left( A \right)\oplus\dots\oplus\ker p_j\left( A \right)
+		\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)
 		=
 		\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
 	\end{equation*}
@@ -7859,8 +7860,8 @@ teljesül valamely $\alpha\in\mathbb{C}$ komplex szám és $n\in\mathbb{N}$ egé
 Ilyen $A$ transzformációra, ha $B$ jelöli a $B=A-\alpha I$ lineáris transzformációt,
 akkor a $B$ olyan,
 hogy valamely egész kitevős hatványa a konstans zérus transzformáció.
-Ez vezet majd a \emph{nillpotens}\index{nillpotens transzformáció} fogalmához.
-Ha felírjuk valamely bázisban egy ilyen $B$ nillpotens transzformáció mátrixát,
+Ez vezet majd a \emph{nilpotens}\index{nilpotens transzformáció} fogalmához.
+Ha felírjuk valamely bázisban egy ilyen $B$ nilpotens transzformáció mátrixát,
 akkor $A$ mátrixa is könnyen adódik $B$ mátrixából.
 Ehhez csak az $\alpha [I]$ mátrixot kell $\left[ B \right]$-hez adni,
 ami praktikusan nem jelent többet,
@@ -7888,7 +7889,7 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 		      vagy $k$ dimenziós,
 		      vagy $k$ dimenziós $A$ invariáns alterek direkt összege.
 		      Pontosabban,
-		      ha $\dim V>0$, akkor létezik $r\geq 1$ szám,
+		      ha $\dim(V)>0$, akkor létezik $r\geq 1$ szám,
 		      és léteznek $v_1,\dots,v_r$ vektorok, amelyekre
 		      \[
 			      \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)=V.
@@ -7931,32 +7932,32 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 \end{proof}
 \begin{proof}[Bizonyítás (3.)]
 	Először is gondoljuk meg, hogy invariáns alterek Minkowski--összege is invariáns altér marad.
-	Ha $V$ nem tartalmaz nem zérus vektort, akkor $\dim V=\left\{ 0 \right\}$.
+	Ha $V$ nem tartalmaz nem zérus vektort, akkor $\dim(V)= 0$.
 
 	Ha $v_1\in V$ egy nem zérus vektor,
 	akkor jelölje $V_1=\lin\left( v_1;A \right)$.
 	Ha $V=V_1$,
 	akkor $V$ egy $k$-dimenziós vektortér.
 
-	Ha $V\neq V_1$, akkor van van $v_2\in V\smallsetminus V_1$, $v_2\neq 0$ vektor.
+	Ha $V\neq V_1$, akkor van $v_2\in V\smallsetminus V_1$, $v_2\neq 0$ vektor.
 	Mivel $V_1$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_2=\lin\left( v_2;A \right)$
 	jelölést $V_2\cap V_1=\left\{ 0 \right\}$.
 	Értelmes tehát venni e két invariáns altér direkt összegét.
 	Ha $V=V_1\oplus V_2$, akkor $V$ előállt két $k$ dimenziós invariáns alterének direkt összegeként.
 
-	Ha $V\neq V_1\oplus V_2$, akkor van van $v_3\in V\smallsetminus (V_1\oplus V_2)$, $v_3\neq 0$ vektor.
+	Ha $V\neq V_1\oplus V_2$, akkor van $v_3\in V\smallsetminus (V_1\oplus V_2)$, $v_3\neq 0$ vektor.
 	Mivel $V_1\oplus V_2$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_3=\lin\left( v_3;A \right)$
 	jelölést $V_3\cap (V_1\oplus V_2)=\left\{ 0 \right\}$.
 	Értelmes tehát venni e három invariáns altér direkt összegét, hiszen
 	a $V_1,V_2,V_3$ alterek ebben a sorrendben véve olyanok,
 	hogy mind diszjunkt az előzőek összegétől.
-	Ha $V=V_1\oplus V_2\oplus V_2$,
+	Ha $V=V_1\oplus V_2\oplus V_3$,
 	akkor $V$ előállt három $k$ dimenziós invariáns alterének direkt összegeként.
 
 	Ha $V\neq V_1\oplus\dots\oplus V_t$, valamely $t\geq 2$ mellett,
-    akkor van van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$, $v_{t+1}\neq 0$ vektor.
+    akkor van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$, $v_{t+1}\neq 0$ vektor.
 	Mivel $V_1\oplus\dots\oplus V_t$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_{t+1}=\lin\left( v_{t+1};A \right)$
 	jelölést $V_{t+1}\cap (V_1\oplus\dots\oplus V_t)=\left\{ 0 \right\}$.
@@ -7972,14 +7973,14 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 Világos, hogy
 \(
 \left\{
-A^{k-1}v_1, A^{k-2}v_1,v_1,\dots,Av_1,v_1
+A^{k-1}v_1, A^{k-2}v_1,\dots,Av_1,v_1
 \right\}
 \)
-bázisa a $\lin\left\{ v_1;A \right\}$
+bázisa a $\lin( v_1;A)$
 invariáns altérnek.
 Ha ebben a bázisban felírjuk a transzformáció mátrixát,
 akkor az első oszlopban vannak a minimálpolinom együtthatóinak ellentettjei,
-a diagonális feletti $1$-ek, vannak és minden más elem zérus:
+a diagonális felett $1$-ek vannak és minden más elem zérus:
 \[
 	\begin{pmatrix}
 		-\alpha_{k-1} & 1      & 0      & \dots  & 0      \\
@@ -7994,7 +7995,7 @@ Meggondoltuk tehát, hogy ha a transzformáció $m$ minimálpolinomja irreducibi
 	=\alpha_0+\alpha_1t+\dots+\alpha_{k-1}t^{k-1}+t^k
 \]
 alakú, akkor a térnek van olyan bázisa, amelyben a transzformáció mátrixa a fenti mátrix
-diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\dim V$.
+diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\dim(V)$.
 
 Korábban -- lásd \aref{pr:polinom-minimalpolinom}.~állítást -- láttuk, 
 hogy ha $m\left( t \right)$ egy előre adott $k$-adfokú normált polinom,
@@ -8029,7 +8030,7 @@ a $V_1$ altérre és az $A_1$ transzformációra.
 	\begin{enumerate}
 		\item Minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
 		      \(
-		      \dim\lin(v;A)=\deg p;
+		      \dim\left( \lin(v;A) \right)=\deg p;
 		      \)
 		\item A $\ker p\left( A \right)$ altér nulla dimenziós,
 		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direkt összege.
@@ -8088,15 +8089,17 @@ Kiderült tehát, hogy nincs új a nap alatt, hiszen azt már korábban is tudtu
 
 Ha most a valós vektortér esetére szorítkozunk, akkor arra kell emlékeznünk, hogy
 egy a valós test feletti irreducibilis polinomom első- vagy másodfokú lehet csak.
-Ezért állításunk feltétel most azt jelenti, hogy a minimálpolinom előáll mint páronként relatív prím, első vagy másodfokú polinomok szorzata.
-Az konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
+Ezért állításunk feltétele most azt jelenti, 
+hogy a minimálpolinom előáll mint páronként relatív prím, első vagy másodfokú polinomok szorzata.
+A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
     az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
     Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direkt összege,
     ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonálisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
 \end{proposition}
-Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális felett és a diagonális alatt lehetnek nem zérus számok.
+%Emiatt csak a diagonálisban, a diagonális felett és a diagonális alatt lehetnek nem zérus számok.
+
 \subsubsection{Illusztráció}
 \textit{%
 	Bontsuk lehető legalacsonyabb invariáns alterek direkt összegére az alábbi $\mathbb{R}$
@@ -8264,8 +8267,8 @@ Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális fel
 	A mátrix, tehát két darab
 	\(
 	\begin{pmatrix}
-		-1,1 \\
-		-1,0
+		-1&1 \\
+		-1&0
 	\end{pmatrix}
 	\)
 	mátrix diagonális elrendezésű partíciója.
@@ -8296,7 +8299,7 @@ Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális fel
 	\end{pmatrix}
 	\)
 	alakú.
-	Emlékezve az általános bázis transzformációra azt kaptuk, hogy
+	Emlékezve az általános bázistranszformációra azt kaptuk, hogy
 	\[
 		\begin{pmatrix}
 			-1 & 1 & 0  & 0 \\
@@ -8355,7 +8358,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		\right\}
 	\]
 	vektorrendszer is lineárisan független.
-	\label{le:nillp-fgtlen}
+	\label{le:nilp-fgtlen}
 \end{lemma}
 \begin{proof}
 	Tekintsük ezen vektorok egy
@@ -8389,13 +8392,13 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 \end{proof}
 \begin{proposition}
 	Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
-	Ekkor $\dim V\geq m\rho\left( B^{m-1} \right)$.
-	\label{th:nilldim}
+	Ekkor $\dim(V)\geq m\rho\left( B^{m-1} \right)$.
+	\label{th:nildim}
 \end{proposition}
 \begin{proof}
 	Létezik tehát olyan $\left\{ B^{m-1}v_1,B^{m-1}v_2,\dots,B^{m-1}v_r \right\}$
 	lineárisan független vektorrendszer, ahol $r=\rho(B^{m-1})$ a $B^{m-1}$ transzformáció képterének dimenziója.
-	\Aref{le:nillp-fgtlen}.~lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
+	\Aref{le:nilp-fgtlen}.~lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
 	ergo a tér legalább $mr=m\rho\left( B^{m-1} \right)$ dimenziós.
 \end{proof}
 \begin{proposition}
@@ -8417,7 +8420,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	de van $v\in V$ nem zérus vektor.
 	Láttuk, hogy ilyenkor
 	\[
-		\dim\lin\left( v;A \right)=\deg p=k,
+		\dim\left( \lin\left( v;A \right) \right)=\deg p=k,
 	\]
 	amiből persze következik, hogy a tér legalább $k$ dimenziós.
 	\footnote{Sőt még azt is láttuk, hogy néhány -- lehet, hogy csak egy -- $k$ dimenziós invariáns altér direkt összege.}
@@ -8438,7 +8441,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	és $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós,
 	ezért
 	\[
-		\lin\left\{ B^{m-1}v;A \right\}=
+		\lin(B^{m-1}v;A)=
 		\lin\left\{
 		B^{m-1}v,
 		AB^{m-1}v,
@@ -8453,9 +8456,9 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\[
 		\rho\left( B^{m-1}\right)\geq k.
 	\]
-	Alkalmazva $B$-re az imént igazolt \ref{th:nilldim} tételt kapjuk a kívánt
+	Alkalmazva $B$-re az imént igazolt \ref{th:nildim} tételt kapjuk a kívánt
 	\(
-	\dim V\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
+	\dim(V)\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
 	\)
 	becslést.
 \end{proof}
@@ -8496,28 +8499,28 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		\leq
 		\sum_{i=1}^r\dim(\ker p_i^{m_i}\left( A \right))
 		=
-		\dim V.\qedhere
+		\dim(V).\qedhere
 	\]
 	%    \end{IEEEeqnarray}
 \end{proof}
 Később ki fog derülni,
-hogy a transzformáció karakterisztikus polinomjának, amely pontosan $\dim V$-ed fokú,
+hogy a transzformáció karakterisztikus polinomjának, amely pontosan $\dim(V)$-ed fokú,
 is mindig gyöke a transzformáció.
 Ez az úgynevezett Cayley\,--\,Hamilton-tétel.\index{Cayley\,--\,Hamilton}
 \chapter{Nilpotens transzformációk}
 \section{Hatvány függvény alakú minimálpolinom}
-\begin{definition}[nillpotens transzformáció]
+\begin{definition}[nilpotens transzformáció]
 	Egy $A\in L\left( V \right)$ lineáris transzformációt
-	\emph{nillpotensnek} mondjuk, ha
+	\emph{nilpotensnek} mondjuk, ha
 	létezik $k\in\mathbb{N}$, melyre $A^k=0$.
-	Ha $A$ egy nillpotens transzformáció, akkor azt a legkisebb $m$ számot, melyre $A^m=0$ a \emph{nillpotencia rendjének} nevezzük.
+	Ha $A$ egy nilpotens transzformáció, akkor azt a legkisebb $m$ számot, melyre $A^m=0$ a \emph{nilpotencia rendjének} nevezzük.
 \end{definition}
 
 Például egy 5 dimenziós téren könnyen definiálhatunk első-, másod-, harmad-, negyed, és ötöd-rendű nilpotens transzformációkat.
-De van-e mondjuk hatod-rendű nillpotens transzformáció ezen öt dimenziós vektortéren?
+De van-e mondjuk hatod-rendű nilpotens transzformáció ezen öt dimenziós vektortéren?
 Az első észrevétel adja a negatív választ.
 \begin{proposition}
-	Legyen $B$ egy $m$-ed rendben nillpotens operátor.
+	Legyen $B$ egy $m$-ed rendben nilpotens operátor.
 	Ekkor létezik $v\in V$ vektor,
 	melyre $B^{m-1}v\neq 0$.
 	Minden ilyen $v$ vektorra a
@@ -8526,24 +8529,24 @@ Az első észrevétel adja a negatív választ.
 	\]
 	$m$ elemű vektorrendszer lineárisan független.
 
-	Emiatt ha a $V$ vektortérnek van $m$-edrendben nillpotens lineáris transzformációja, akkor $\dim V\geq m$,
-	azaz a nillpotencia rendje legfeljebb a tér dimenziója.
+	Emiatt ha a $V$ vektortérnek van $m$-edrendben nilpotens lineáris transzformációja, akkor $\dim(V)\geq m$,
+	azaz a nilpotencia rendje legfeljebb a tér dimenziója.
 	\label{th:fgtlen}
 \end{proposition}
 \begin{proof}
 	Mivel $B^{m-1}\neq 0$, ezért valóban létezik $v\in V$ vektor,
 	melyre $B^{m-1}v\neq 0$.
 	Persze ekkor a $\left\{ B^{m-1}v \right\}$ egy elemet tartalmazó rendszer lineárisan független,
-	ezért \aref{le:nillp-fgtlen}.~lemma szerint a tételbéli rendszer is lineárisan független.
+	ezért \aref{le:nilp-fgtlen}.~lemma szerint a tételbéli rendszer is lineárisan független.
 \end{proof}
 \begin{proposition}
-	Egy lineáris transzformáció pontosan akkor nillpotens,
-	ha valamely $m\leq\dim V$ mellett a minimálpolinomja
+	Egy lineáris transzformáció pontosan akkor nilpotens,
+	ha valamely $m\leq\dim(V)$ mellett a minimálpolinomja
 	$m\left( t \right)=t^m$ alakú.
 \end{proposition}
 \begin{proof}
 	Tegyük fel először, hogy $B$ lineáris transzformáció $m$-ed rendben
-	nillpotens.
+	nilpotens.
 	Legyen $p\left( t \right)=t^m$.
 	Ekkor $p\in J_A$, így a minimálpolinom $p$ osztója.
 	Másrészt \aref{th:fgtlen}.~állítás szerint van a térnek olyan vektora,
@@ -8552,7 +8555,7 @@ Az első észrevétel adja a negatív választ.
 
 	Megfordítva, ha $m\left( t \right)=t^m$ a minimálpolinomja $B$-nek,
 	akkor $B^m=0$ és ez $m$-nél kisebb kitevőre nem teljesülhet.
-	Ez éppen azt jelenti, hogy $B$ transzformáció $m$-ed rendben nillpotens.
+	Ez éppen azt jelenti, hogy $B$ transzformáció $m$-ed rendben nilpotens.
 	\index{kis minimálpolinom}
 \end{proof}
 
@@ -8563,7 +8566,7 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
 	Legyenek $V_1$ és $V_2$ diszjunkt alterei a véges dimenziós $W$ vektortérnek.
 	Ekkor $V_1$-nek létezik $V_2$ alteret tartalmazó direkkiegészítője,
 	azaz
-	létezik $K\subset W$ altér, amelyre $V_2\subseteq K$ és $V_1\oplus K=V.$
+	létezik $K\subset W$ altér, amelyre $V_2\subseteq K$ és $V_1\oplus K=W.$
 	\label{felb0}
 \end{lemma}
 \begin{proof}
@@ -8575,7 +8578,7 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
 	$V_1+K=W$.
 \end{proof}
 A következő lemmának nagyon fontos szerepe lesz a fejezet leglényegesebb állításában
-a nillpotens operátorok redukcióját biztosító állításban.
+a nilpotens operátorok redukcióját biztosító állításban.
 \begin{lemma}\label{lem:felb}
 	Legyen a $W$ véges dimenziós vektortérnek $H,K_0,\bar{K}$ altere.
 	Tegyük fel, hogy
@@ -8623,10 +8626,10 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	\)
 	Ez éppen azt jelenti, hogy $K$ direkt kiegészítője $H$-nak.
 \end{proof}
-\begin{proposition}[nillpotens operátorok felbontása]
-	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nillpotens lineáris transzformáció.
+\begin{proposition}[nilpotens operátorok felbontása]
+	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nilpotens lineáris transzformáció.
 	Ekkor minden olyan $v\in V$ vektorhoz,
-	amelyre $B^{m-1}v\neq 0$, a $\lin\left\{ v;B \right\}$ invariáns altérnek van invariáns altér
+	amelyre $B^{m-1}v\neq 0$, a $\lin(v;B)$ invariáns altérnek van invariáns altér
 	direkt kiegészítője.
 
 	Formálisabban: létezik $K\subseteq W$ invariáns altér, amelyre
@@ -8636,16 +8639,16 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	\label{pr:nilpfelb}
 \end{proposition}
 \begin{proof}
-	A nillpotens transzformáció rendje szerinti teljes indukció.
+	A nilpotens transzformáció rendje szerinti teljes indukció.
 	Ha $m=1$, akkor $B=0$, de a konstans zérus operátorra nézve minden altér invariáns,
 	így a tétel összesen annyit állít, hogy egy nem zérus $v$ vektor generálta egydimenziós altérnek van direkt kiegészítője.
 
-	Tegyük fel, hogy igaz az állítás minden vektortér legfeljebb $m-1$-ed rendben nillpotens transzformációjára.
-	Legyen tehát $m>1$ és $B$ egy a $W$ vektortéren értelmezett $m$-ed rendben nillpotens lineáris transzformáció.
+	Tegyük fel, hogy igaz az állítás minden vektortér legfeljebb $m-1$-ed rendben nilpotens transzformációjára.
+	Legyen tehát $m>1$ és $B$ egy a $W$ vektortéren értelmezett $m$-ed rendben nilpotens lineáris transzformáció.
 	Rögzítsünk egy $v\in W$ elemet, amelyre $B^{m-1}v\neq 0$.
 	Tekintsük az $\im B$ invariáns alteret.
 	Világos, hogy $B|_{\im B}$ egy lineáris transzformáció az $\im B$ vektortéren.
-	Az is világos, hogy $B|_{\im B}$ egy $m-1$-rendben nillpotens lineáris transzformáció, hiszen
+	Az is világos, hogy $B|_{\im B}$ egy $m-1$-rendben nilpotens lineáris transzformáció, hiszen
 	minden $u\in\im B$ mellett $B^{m-1}u=0$.
 	Azt is vegyük észre, hogy ezek szerint $v\notin\im B$.
 
@@ -8657,13 +8660,13 @@ a nillpotens operátorok redukcióját biztosító állításban.
 		\lin\left\{ Bv,B^2v,\dots,B^{m-1}v \right\}\oplus K_0 = \im B.
 	\]
 
-	Most megmutatjuk, hogy $\lin\left\{ v;B \right\}\cap K_0=\left\{ 0 \right\}.$
+	Most megmutatjuk, hogy $\lin(v;B)\cap K_0=\left\{ 0 \right\}.$
 	Ugyanis, ha
 	$
 		x=\sum_{k=0}^{m-1}\alpha_kB^kv\in K_0\subseteq\im B
 	$, akkor $\alpha_0v\in\im B$,
 	ami csak úgy lehetséges, hogy $\alpha_0=0$.
-	Ezek szerint $x\in\lin\left\{ Bv;B \right\}$ altérnek melynek direkt kiegészítője $K_0$.
+	Ezek szerint $x\in\lin(Bv;B)$ altérnek melynek direkt kiegészítője $K_0$.
 	Ez persze csak úgy lehetséges, hogy $x=0$.
 
 	Definiálja
@@ -8673,7 +8676,7 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	Mivel $K_0$ egy altér, ezért $\bar{K}$ is az.
 	Mivel a $K_0$ altér $B$-invariáns, azért teljesül a $K_0\subseteq \bar{K}$ tartalmazás.
 
-	Most megmutatjuk, hogy $\lin\left\{ v;B \right\}+\bar{K}=W$.
+	Most megmutatjuk, hogy $\lin(v;B)+\bar{K}=W$.
 	Válasszunk egy $u\in W$ vektort.
 	Persze $Bu\in\im B$, ezért előáll
 	\[
@@ -8704,11 +8707,11 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	\in
 	\bar{K}.
 	\)
-	Előállítottuk tehát az $u$ vektort egy $\lin\left\{ v;B \right\}$-beli és egy
+	Előállítottuk tehát az $u$ vektort egy $\lin(v;B)$-beli és egy
 	$\bar{K}$-beli vektor összegeként.
 
 	Alkalmazhatjuk tehát \aref{lem:felb}.~lemmát.
-	Így létezik $K_0\subseteq K\subseteq\bar{K}$ altér, melyre $\lin\left\{ v;B \right\}\oplus K=W.$
+	Így létezik $K_0\subseteq K\subseteq\bar{K}$ altér, melyre $\lin(v;B)\oplus K=W.$
 	Persze ha $u\in K\subseteq\bar{K}$, akkor $Bu\in K_0\subseteq K$, ergo $K$ egy $B$-invariáns direkt kiegészítője a
 	$v$-t tartalmazó legszűkebb $B$ invariáns altérnek.
 	Ezt kellett belátni.
@@ -8718,7 +8721,7 @@ kell rekurzívan alkalmaznunk.
 A $W$ vektortér véges dimenziós volta garantálja, hogy a rekurzió véget ér.
 
 Persze $B|_K$ a $K$ altér lineáris transzformációja,
-ami $m\geq n_2\geq 1$ rendben nillpotens.
+ami $m\geq n_2\geq 1$ rendben nilpotens.
 Ha alkalmazzuk a fenti tételt, akkor kapjuk,
 hogy létezik $v_2\in K, v_2\neq 0$ elem és létezik $K_2\subseteq K$ a $B$-re nézve invariáns altér,
 amelyre
@@ -8727,27 +8730,28 @@ amelyre
 	\oplus
 	K_2=K.
 \]
-Itt persze $\dim K_2<\dim K$, hiszen a baloldali első invariáns altér legalább egydimenziós.
+Itt persze $\dim(K_2)<\dim(K)$, hiszen a baloldali első invariáns altér legalább egydimenziós.
 Az első két lépést összefoglalva:
 \[
-	\lin\left\{ v_1;B \right\}
+	\lin(v_1;B)
 	\oplus
-	\lin\left\{ v_2;B \right\}
+	\lin(v_2;B)
 	\oplus
 	K_2=W,
 \]
 Az eljárást folytatva minden lépésben legalább eggyel csökken a kiegészítő invariáns altér dimenziója.
 Végül a vektortér előáll néhány, mondjuk $r$ darab $B$-re invariáns altér direkt összegeként:
 \[
-	\lin\left\{ v_1;B \right\}
+	\lin(v_1;B)
 	\oplus
-	\lin\left\{ v_2;B \right\}
+	\lin(v_2;B)
 	\oplus
 	\ldots
-	\lin\left\{ v_r;B \right\}
+    \oplus
+	\lin(v_r;B)
 	=W.
 \]
-\begin{proposition}[nillpotens transzformáció redukálása]
+\begin{proposition}[nilpotens transzformáció redukálása]
 	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nilpotens transzformáció.
 	Ekkor léteznek olyan $v_1,v_2\dots,v_r\in W$ vektorok és
 	léteznek olyan $m=n_1\geq n_2\geq \dots\geq n_r\geq 1$ pozitív egészek,
@@ -8777,8 +8781,8 @@ Végül a vektortér előáll néhány, mondjuk $r$ darab $B$-re invariáns alt�
 \end{proposition}
 \section{Egyértelműség}
 Azt mutatjuk meg, hogy a normálalakban $r=\nu\left( B \right)$,
-és az $n_1,n_2,\dots,n_r$ számok is a $B$ nilpotens transzformáció altal egyertelműen meghatározottak.
-Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normálalakja van.
+és az $n_1,n_2,\dots,n_r$ számok is a $B$ nilpotens transzformáció által egyértelműen meghatározottak.
+Ez azt jelenti, hogy minden nilpotens transzformációnak csak egyetlen normálalakja van.
 \begin{lemma}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció, és $v\in V$ olyan vektor, amelyre
 	$A^mv=0$, de $A^{m-1}v\neq 0$.
@@ -8786,15 +8790,15 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\begin{enumerate}
 		\item
 		      $\left\{ v,Av,\dots,A^{m-1}v \right\}$ lineárisan független,
-		      így $\lin\left\{ v;A \right\}=\lin\left\{ v,Av,\dots,A^{m-1}v \right\}$;
+		      így $\lin(v;A )=\lin\left\{ v,Av,\dots,A^{m-1}v \right\}$;
 		\item
 		      Minden $0\leq l\leq m$ mellett
 		      \begin{math}
-			      \nu\left( A^l|\lin\left\{ v;A \right\} \right)=l
+			      \nu\left( A^l|\lin(v;A) \right)=l
 		      \end{math}
 		      és
 		      \begin{math}
-			      \rho\left( A^l|\lin\left\{ v;A \right\} \right)=m-l.
+			      \rho\left( A^l|\lin(v;A) \right)=m-l.
 		      \end{math}\qedhere
 	\end{enumerate}
 \end{lemma}
@@ -8802,15 +8806,15 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	Ha $l=m$, akkor mindkét állítás triviálisan teljesül. Legyen tehát $0\leq l<m$.
 	Az $A^l$ transzformáció az $\left\{ A^{m-l}v,\dots,A^{m-1}v \right\}$
 	lineárisan független vektorrendszert nullára viszi,
-	így $l\leq\nu\left( A^l|\lin\left\{ v;A \right\} \right)$.
+	így $l\leq\nu\left( A^l|\lin(v;A)\right)$.
 	A maradékot, a
 	$\left\{ v,\dots,A^{m-l-1}v \right\}$ vektorrendszert pedig az
 	$\left\{ A^lv,\dots,A^{m-1}v \right\}$ lineárisan független rendszerre képezi.
 	Így
-	$m-l\leq \rho\left( A^l |\lin\left\{ v;A \right\}\right)$,
+	$m-l\leq \rho\left( A^l |\lin(v;A)\right)$,
 	amiből
 	\[
-		l\leq\nu\left( A^l|\lin\left\{ v;A \right\} \right)=m-\rho\left( A^l|\lin\left\{ v;A \right\} \right)\leq l.\qedhere
+		l\leq\nu\left( A^l|\lin(v;A) \right)=m-\rho\left( A^l|\lin(v;A) \right)\leq l.\qedhere
 	\]
 \end{proof}
 \begin{lemma}
@@ -8841,8 +8845,8 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 		\rho\left( A \right)=
 		\dim\left( A\left( V \right) \right)
 		=
-		\dim A\left( K_1 \right)+
-		\dim A\left( K_2 \right)
+		\dim \left( A\left( K_1 \right) \right)+
+		\dim \left( A\left( K_2 \right) \right)
 		=
 		\rho\left( A|K_1 \right)+\rho\left( A|K_2 \right).
 	\]
@@ -8858,25 +8862,25 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	könnyen adódik.
 \end{proof}
 
-\begin{proposition}[A nillpotens felbontás egyértelműsége]
+\begin{proposition}[A nilpotens felbontás egyértelműsége]
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
 	Tegyük fel, hogy valamely $\left\{ v_1,\dots,v_r \right\}$ vektorrendszerre és valamilyen
 	$m_1\geq m_2\geq \dots\geq m_r$ pozitív számokra
 	$A^{m_k-1}v_k\neq 0$, de $A^{m_k}v_k=0$ fennáll minden $k=1,\dots,r$, továbbá
 	\[
-		V=\lin\left\{ v_1;A \right\}\oplus \dots \oplus\lin\left\{ v_r;A \right\}.
+		V=\lin(v_1;A)\oplus \dots \oplus\lin(v_r;A).
 	\]
 	Tegyük fel még azt is,
 	hogy valamely másik $\left\{ w_1,\dots,w_s \right\}$ vektorrendszerre és valamely más
 	$n_1\geq n_2\geq \dots\geq n_s$ pozitív számokra
-	$A^{n_k-1}v_k\neq 0$, de $A^{n_k}v_k=0$ fennáll minden $k=1,\dots,s$ mellett, és
+	$A^{n_k-1}w_k\neq 0$, de $A^{n_k}w_k=0$ fennáll minden $k=1,\dots,s$ mellett, és
 	\[
-		V=\lin\left\{ w_1;A \right\}\oplus \dots \oplus\lin\left\{ w_s;A \right\}.
+		V=\lin(w_1;A)\oplus \dots \oplus\lin(w_s;A).
 	\]
 	Ekkor
 	\begin{enumerate}
-		\item $A$ nillpotens lineáris transzformációja $V$-nek;
-		\item Ha $m$ jelöli a nillpotencia rendjét, akkor
+		\item $A$ nilpotens lineáris transzformációja $V$-nek;
+		\item Ha $m$ jelöli a nilpotencia rendjét, akkor
 		      \(
 		      m_1=m=n_1
 		      \);
@@ -8892,12 +8896,12 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 \end{proposition}
 \begin{proof}
 	Az első két állítás nyilvánvaló, mivel a rendezettség szerint
-	$A^{m_1}|_{\lin\left\{ v_k;A \right\}}=0$,
+    $A^{m_1}|_{\lin(v_k;A)}=0$,
 	minden $k=1,\dots,r$ mellett
 
 	A harmadik állításhoz:
 	\[
-		\nu\left( A \right)=\sum_{k=1}^r\nu\left( A|\lin\left\{ v_k;A \right\} \right)=
+		\nu\left( A \right)=\sum_{k=1}^r\nu\left( A|\lin(v_k;A) \right)=
 		\sum_{k=1}^r1=r.
 	\]
 	Ugyanígy a másik direkt összeg felbontásból kapjuk, hogy $\nu\left( A \right)=s$.
@@ -8915,8 +8919,8 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\[
 		\rho\left( A^{n_t} \right)
 		\geq
-		\left( \sum_{k=1}^{t-1}\rho\left( A^{n_t}|\lin\left\{ v_k;A \right\} \right) \right)
-		+\rho\left( A^{n_t}|\lin\left\{ v_t;A \right\} \right)
+		\left( \sum_{k=1}^{t-1}\rho\left( A^{n_t}|\lin(v_k;A) \right) \right)
+		+\rho\left( A^{n_t}|\lin(v_t;A) \right)
 		=
 		\left( \sum_{k=1}^{t-1}(m_k-n_t) \right)+m_t-n_t.
 	\]
@@ -8924,7 +8928,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\[
 		\rho\left( A^{n_t} \right)
 		=
-		\sum_{k=1}^{t-1}\rho\left( A^{n_t}|\lin\left\{ w_k;A \right\} \right)
+		\sum_{k=1}^{t-1}\rho\left( A^{n_t}|\lin(w_k;A) \right)
 		=
 		\sum_{k=1}^{t-1}(n_k-n_t)
 		=
@@ -8932,8 +8936,8 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\]
 	ami ellentmond $m_t>n_t$ feltételnek.
 \end{proof}
-Az alábbiakban a nillpotens felbontási tételt annak egyértelműségével együtt foglaljuk össze.
-\begin{proposition}[nillpotens transzformáció normálakja]\label{pr:nillpnormal}
+Az alábbiakban a nilpotens felbontási tételt annak egyértelműségével együtt foglaljuk össze.
+\begin{proposition}[nilpotens transzformáció normálakja]\label{pr:nilpnormal}
 	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nilpotens transzformáció.
 	Jelölje $r=\nu\left( B \right)$ a $B$ defektusát.
 	Ekkor léteznek olyan $v_1,v_2\dots,v_r\in W$ vektorok és
@@ -8970,8 +8974,8 @@ Az alábbiakban a nillpotens felbontási tételt annak egyértelműségével egy
 	Minden ilyen blokkban csak a (felső) mellék diagonális elemei nem nullák.
 	A mellék diagonális elemei 1-esek.
 	Minden más elem zérus.
-	Ezt a mátrixot nevezzük a $B$ nillpotens transzformáció \emph{normálalakjának}.
-	\index{nillpotens transzformáció normálalakja}
+	Ezt a mátrixot nevezzük a $B$ nilpotens transzformáció \emph{normálalakjának}.
+	\index{nilpotens transzformáció}
 \end{proposition}
 Adott $1\leq j\leq r$ mellett tehát, $\mathbf{B}_j\in \mathbb{F}^{n_j\times n_j}$
 a fenti $j$-edik invariáns altérre leszorított $B$ leképezésnek a
@@ -9034,11 +9038,11 @@ a fenti tipusú mátrixok diagonális alakú elrendezésével adódik:
 	\end{pmatrix}.
 \end{displaymath}
 Hangsúlyozni szeretném, hogy az egyértelműség szerint a $\mathbf{B}_j$ blokkok száma, és azok mérete is csak
-a nillpotens transzformációtól függ.
-Több bázis is lehetséges, amelyben a nillpotens transzformáció normálalakú,
+a nilpotens transzformációtól függ.
+Több bázis is lehetséges, amelyben a nilpotens transzformáció normálalakú,
 de nem csak hogy minden normálalakban azonos számú blokk van ($B$ defektusa),
 de a blokkok mérete is azonos.
-A nillpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+A nilpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
 \section{Illusztrációk}
 \subsection{Egyetlen invariáns altér}
 Írjuk fel a $W$ vektortéren értelmezett lineáris transzformáció normál alakját,
@@ -9075,15 +9079,15 @@ Az $u_1$ bázis elemhez
 Mivel az első négy oszlop lineárisan független,
 ezért az $u_1$-hez tartozó kis minimálpolinom $p_1=t^4.$
 Mivel tudjuk, hogy a minimálpolinom legfeljebb 4-ed fokú, és
-$p_1$ osztója, ezért csak $m\left( t \right)=t^4$ lehetséges,
-ezért $B$ transzformáció 4-ed rendben nillpotens.
+$p_1$ osztja, ezért csak $m\left( t \right)=t^4$ lehetséges,
+ezért $B$ transzformáció 4-ed rendben nilpotens.
 Éppen most számoltuk ki, hogy $B^3u_1\neq 0$, ezért
 az $u_1$-et tartalmazó legszűkebb $B$ invariáns altér az egész $W$,
 tehát
 \[
 	\lin\left\{ u_1,Bu_1,B^2u_1,B^3u_1 \right\}=W
 \]
-és a $\left\{ B^3u_1,Bu_1,Bu_1,u_1 \right\}$ bázisban $B$ mátrixa
+és a $\left\{ B^3u_1,B^2u_1,Bu_1,u_1 \right\}$ sorrendű bázisban $B$ mátrixa
 \[
 	\begin{pmatrix}
 		0 & 1 & 0 & 0 \\
@@ -9178,12 +9182,12 @@ ergo $m\left( t \right)=t^3$, és $B$ egy harmadrendben nilpotens transzformáci
 Írjuk fel a fenti tételben szereplő invariáns direktfelbontást.
 Mivel a $B$ rangja ránézésre 2, így a magtere 2 dimenziós, ergo két invariáns altér direkt összege $W$, amiből
 az egyik 3 dimenziós, így a másik csak egydimenziós lehet, ezért azt csak a magtér egyik eleme generálhatja!
-A három dimenziós altér lehet például a $\lin\left\{ u_4;B \right\}$,
+A három dimenziós altér lehet például a $\lin(u_4;B)$,
 hiszen éppen az imént láttuk, hogy $B^2u_4\neq 0$.
 A fenti \ref{pr:nilpfelb}.~állítás éppen azt mondja, hogy ennek az altérnek van olyan $K$ invariáns altér direkt kiegészítője,
 aminek van olyan bázisa, amely annyi magtérbeli elemet tartalmaz, ami a $B|_K$ nilpotens operátor rendje, tehát legalább 1.
 Így most nyilvánvaló, hogy az
-egydimenziós invariáns alteret generálhatja a $\ker A$ magtérbármely olyan eleme,
+egydimenziós invariáns alteret generálhatja a $\ker A$ magtér bármely olyan eleme,
 amely lineárisan független $B^2u_4$-től.
 Például $u_1$.\footnote{Vagy bármi, ami $\alpha u_1+\beta u_2$ alakú, ahol $\alpha\neq\beta$.}
 Ilyen módon
@@ -9208,8 +9212,8 @@ vektorok olyan bázisát adják a térnek, melyben $B$ mátrixa az alábbi alak�
 		0 & 0 & 0 & 0
 	\end{pmatrix}.
 \]
-\section{A nillpotens felbontási tétel nélkül?}
-Legyen $B\in L\left( V \right)$ egy $m$-edrendben nillpotens operátor.
+\section{A nilpotens felbontási tétel nélkül?}
+Legyen $B\in L\left( V \right)$ egy $m$-edrendben nilpotens operátor.
 Világos, hogy $\nu\left( B \right)\geq 1$,
 hiszen egyébként $B$ valamennyi hatványa is reguláris maradna.
 
@@ -9243,8 +9247,8 @@ majd föléjük a megfelelő csökkenő $B$ hatványokat.%
 		B^{m_1-1}v_1 & B^{m_2-1}v_2 & B^{m_3-1}v_3 & \dots  & B^{m_r-1}v_r
 	\end{matrix}
 \]
-Felmerül, hogy a fenti vektorrendszer bázis, evvel a nillpotens felbontási tételt megkerülve
-kapnánk a nillpotens normálalak igazolását.
+Felmerül, hogy a fenti vektorrendszer bázis, evvel a nilpotens felbontási tételt megkerülve
+kapnánk a nilpotens normálalak igazolását.
 
 Sajnos nem feltétlen bázis a fenti vektorrendszer.
 A lineárisan függetlenség a korábbi technikával igazolható -- tegyük ezt meg! --, de a rendszer nem mindig
@@ -9268,7 +9272,7 @@ amelynek egyik eleme sem esik $B$ képterébe, hiszen egyik elem sem az $e_1$ sk
 Ilyen módon a fent konstruált vektorrendszer csak három elemű lesz, ergo nem bázisa a négy
 dimenziós térnek.
 
-A nillpontens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olyan alkalmasan megválasztott bázisa, amelyre a fenti konstrukcióban kapott vektorrendszer a térnek generátorrendszere, ergo bázisa.
+A nilpontens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olyan alkalmasan megválasztott bázisa, amelyre a fenti konstrukcióban kapott vektorrendszer a térnek generátorrendszere, ergo bázisa.
 Persze amikor konkrétan a normálalakot konstruáljuk, akkor elegendő olyan bázisát keresni $\ker B$-nek,
 amelyből kiindulva a fenti vektorrendszer elemeinek száma a tér dimneziójával egyezik meg.
 Az így kapott rendszer persze bázis lesz.
@@ -9290,10 +9294,10 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 		\left( t-\lambda \right)^m
 	\]
 	alakú, valamely $\lambda\in\mathbb{F}$ és $m$ pozitív egész mellett.
-	Világos, hogy $B=A-\lambda I$ éppen $m$-edrendben nillpotens.
-	Alkalmazaható tehát $B$-re \aref{pr:nillpnormal}.~állítás.
+	Világos, hogy $B=A-\lambda I$ éppen $m$-edrendben nilpotens.
+	Alkalmazaható tehát $B$-re \aref{pr:nilpnormal}.~állítás.
 	Jelölje tehát $r=\nu\left( B \right)$ a $B$ defektusát.
-	Így léteznek olyan $v_1,v_2\dots,v_r\in W$ vektorok és
+	Így léteznek olyan $v_1,v_2\dots,v_r\in V$ vektorok és
 	létezik pozitív egészek egyetlen olyan $m=n_1\geq n_2\geq \dots\geq n_r\geq 1$ véges sorozata,
 	amelyekre a
 	\[
@@ -9306,7 +9310,7 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 		\left\{ B^{n_r-1}v_r,\dots,Bv_r,v_r \right\}
 		\tag{\dag}
 	\]
-	vektorrendszer bázisa $W$-nek.
+	vektorrendszer bázisa $V$-nek.
 
 	A $B$ transzformációnak ebben a bázisban felírt mátrixa olyan, hogy
 	a szuper diagonálisán kívül minden elem zérus,
@@ -9377,7 +9381,7 @@ Hangsúlyozni szeretném, hogy az egyértelműség szerint a Jordan blokkok szá
 az $A$ transzformációtól függ.
 Több bázis is lehetséges, amelyben a transzformáció Jordan-normálalakú,
 de nem csak hogy minden normálalakban azonos számú Jordan-blokk van,
-\footnote{A Jordan-blokkok száma az $B=A-\lambda I$ defektusa, azaz a $\lambda$ sajátérték
+\footnote{A Jordan-blokkok száma a $B=A-\lambda I$ defektusa, azaz a $\lambda$ sajátérték
 	geometriai dimenziója.\index{sajátérték geometriai dimenziója}}
 de a blokkok mérete is azonos.
 A felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
@@ -9486,7 +9490,7 @@ hogy a fenti Jordan normálakról szóló tétel speciális esetként tartalmaz 
 de későbbi fontos eredményünket feltéve, hogy az alaptest a komplex számtest.
 
 Az egyes sajátértékekhez tartozó első Jordan blokk mérete $m_j$.
-Ezért a minimálpolinom fokszámánál, a $\sum_{j=1}^sm_j$ számnál a tér dimenziója nem lehet kisseb.
+Ezért a minimálpolinom fokszámánál, a $\sum_{j=1}^sm_j$ számnál a tér dimenziója nem lehet kisebb.
 Meggondoltuk tehát, hogy \emph{a minimálpolinom foka legfeljebb  a tér dimenziója.}
 
 Az is nyilvánvaló, hogy a Jordan-normálalak pontosan akkor diagonális, ha minden Jordan-blokk diagonális.
@@ -9512,18 +9516,18 @@ ahol minden polinomnak van gyöke.
 A gondolat általánosabban is igaz, tetszőleges test feletti vektorterek esetére.
 Ez a \emph{Cayley\,--\,Hamilton-tétel}\index{Cayley\,--\,Hamilton}.
 
-Mivel a karakterisztikus polinom mindig pontosan egy $\dim V$-ed fokú normált polinom,
-ezért a Cayley\,--\,Hamilton-tételből is nevetve következik,
-hogy a minimálpolinom mindig legfeljebb $\dim V$-ed fokú.
+Mivel a karakterisztikus polinom mindig pontosan egy $\dim(V)$-ed fokú normált polinom,
+ezért a Cayley--Hamilton-tételből is nevetve következik,
+hogy a minimálpolinom mindig legfeljebb $\dim(V)$-ed fokú.
 
 Szokás azt mondani, hogy a $\lambda\in\sigma\left( A \right)$ sajátérték
 \emph{algebrai multiplicitása}\index{sajátérték algebrai multiplicitása} $k$,
 ha a Jordan-normálalakban $\lambda_j$ éppen $k$-szor szerepel.
-Világos, hogy ez azonos avval, hogy az transzformáció karakterisztikus polinomjának
+Világos, hogy ez azonos avval, hogy a transzformáció karakterisztikus polinomjának
 $\lambda$ egy $k$-szoros multiplicitású gyöke.
 Mivel minden egyes Jordan-blokk legalább $1\times 1$ méretű,
 ezért a $\lambda_j$ geometriai multiplicitása,
-azaz a $\lambda_j$-hez tartozó Jordan-blokkok száma legfeljebb legfeljebb ezen blokkokban lévő diagonális elemek száma,
+azaz a $\lambda_j$-hez tartozó Jordan-blokkok száma legfeljebb ezen blokkokban lévő diagonális elemek száma,
 ergo a $\lambda_j$ algebrai multiplicitása.
 Az is világos, hogy e két multiplicitás pontosan akkor egyezik meg,
 ha minden Jordan-blokk $1\times 1$ méretű, tehát ha diagonalizálható.
@@ -10629,6 +10633,133 @@ Ekkor $AA^{-1}=I$, igy véve a determinánsokat, $|A|\cdot|A^{-1}|=1$, azaz
 $|A^{-1}|=\frac{1}{|A|}$.
 Összefoglalva, az inverz determinánsa a determináns reciproka.
 
+Ugyan korábban már két indoklást láttunk a particionált mátrix determinánsának kiszámítására (\ref{par:particionalt}), 
+de érdemes még egyszer átgondolnunk, hogyan következik ez a mértékek segítségével.
+\paragraph{Particionált mátrix determinánsa.}\label{par:particionalt2}
+Tegyük fel, hogy $[A]$ egy $(n+m)\times(n+m)$ méretű mátrix,
+amely
+\[
+    [A]
+	=
+	\begin{pmatrix}
+		A_{1,1} & A_{1,2} \\
+		A_{2,1} & A_{2,2}
+	\end{pmatrix}
+\]
+módon van particionálva, ahol $A_{1,1}$ egy $n\times n$, $A_{2,2}$ egy $m\times m$ méretű négyzetes mátrix,
+továbbá $A_{2,1}$ egy $m\times n$ méretű és $A_{1,2}$ egy $n\times m$ méretű részmátrix.
+Tegyük fel most is, hogy a bal alsó $A_{2,1}$ partíció minden eleme zérus.
+Legyen ezért $A\in L\left( \mathbb{F}^{n+m} \right)$ az a transzformáció,
+amelynek az $\left\{ e_1,\dots,e_n,e_{n+1},\dots,e_m \right\}$ bázisban felírt mátrixa $[A]$.
+Világos, hogy az $M=\lin\left\{ e_1,\dots,e_n \right\}$ jelöléssel az $M$ altér egy $A$-ra nézve invariáns altér, hiszen az $[A_{2,1}]$ partíció zérus.
+Definíció szerint a szóban forgó bázisban az $A$ transzformáció $M$ altérre való megszorításának mátrixára $[A|_M]=[A_{1,1}]$.
+Jelölje $d$ az $\mathbb{F}^{n+m}$ fent rögzített bázisához tartozó szokásos mértéket, azaz
+\[
+    d\left( v_1,\dots,v_n,v_{n+1},\dots,v_{n+m} \right)
+    =
+    \sum_{\pi\in S_{n+m}}\sgn \pi\prod_{j=1}^{n+m}e_j^\ast v_{\pi\left( j \right)}.
+\]
+Tudjuk, hogy $d\left( Ae_1,\dots,Ae_{n},Ae_{n+1},\dots,Ae_{n+m} \right)=|[A]|$.
+Definiáljuk most az $L\left( M \right)$ feletti mértéket a következőképpen:
+\[
+    f\left( v_1,\dots,v_{n} \right)
+    =
+    d\left( v_1,\dots,v_n, Ae_{n+1},\dots,Ae_{n+m} \right)
+\]
+Világos, hogy $f$ valóban egy mérték $L\left( M \right)$ felett,
+és az $A|_M$ megszorított transzformáció determinánsának definíciója szerint
+\begin{multline*}
+    |[A]|=
+    f\left( Ae_1,\dots,Ae_n \right)
+    =
+    \det\left( A|_M \right)f\left( e_1,\dots,e_n \right)
+    \\
+    =
+    \det\left( A|_M \right)d\left( e_1,\dots,e_n,Ae_{n+1},\dots,Ae_{n+m} \right)
+    =
+    |[A_{1,1}]|\cdot
+    \left|
+    \begin{pmatrix}
+        I&A_{1,2}\\0&A_{2,2}
+    \end{pmatrix}
+    \right|.
+\end{multline*}
+Meggondoltuk tehát, hogy ha a bal alsó partíció zérus, akkor
+\[
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&A_{2,1}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot
+    \left|
+    \begin{pmatrix}
+        I&A_{2,1}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|.\tag{\dag}
+\]
+Az egész eddigi gondolatot analóg módon ismételhetjük arra az esetre, 
+mikor a jobb felső partíció zérus (és persze ekkor a bal alsó $A_{2,1}$ partíció akármilyen lehet).
+Kapjuk tehát, hogy
+\[
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&0\\
+        A_{2,1}&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{2,2}|\cdot
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&0\\
+        A_{2,1}&I
+    \end{pmatrix}
+    \right|.\tag{\ddag}
+\]
+A fent kiemelt (\dag) és (\ddag) alakokból a (\ref{par:particionalt}) állítás is könnyen adódik.
+Csak arra kell még emlékeznünk, hogy a mátrixnak és a transzponáltjának azonos a determinánsa.
+Ugyanis:
+\begin{multline*}
+    \left|
+    \begin{pmatrix}
+        A_{1,1}&A_{1,2}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot
+    \left|
+    \begin{pmatrix}
+        I&A_{1,2}\\
+        0&A_{2,2}
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot
+    \left|
+    \begin{pmatrix}
+        I&0\\
+        A_{1,2}^T&A_{2,2}^T
+    \end{pmatrix}
+    \right|
+    \\
+    =
+    |A_{1,1}|\cdot |A_{2,2}^T|\cdot
+    \left|
+    \begin{pmatrix}
+        I&0\\
+        A_{1,2}^T&I
+    \end{pmatrix}
+    \right|
+    =
+    |A_{1,1}|\cdot |A_{2,2}|.
+\end{multline*}
+Az utolsó lépésben a particionált mátrix egy olyan alsóháromszög mátrix, amelynek a diagonálisa csupa 1 számból áll, ezért a determinánsa is 1.
+
 \section{A determináns kifejtése}
 A kifejtési tétel arra való,
 hogy a determináns kiszámítását visszavezessük 1-el kisebb méretű mátrixok determinánsának kiszámolására.
@@ -10893,8 +11024,8 @@ ezért a következő tételt gondoltuk meg.
 		\left( t-\lambda_1 \right)^{k_1}\dots\left( t-\lambda_s \right)^{k_s}.\qedhere
 	\]
 \end{proposition}
-No persze az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nillpotens transzformáció,
-de tudjuk hogy a nillpotencia rendje legfeljebb a tér dimenziója,
+No persze az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nilpotens transzformáció,
+de tudjuk hogy a nilpotencia rendje legfeljebb a tér dimenziója,
 ergo
 $m_i\leq\dim\left( \ker\left( A-\lambda_iI \right)^{m_i} \right)
 	=
@@ -10993,7 +11124,7 @@ A Cayley--Hamilton-tétel nem függ az algebra alaptételétől, amint azt rögt
 		(\in L\left( V \right))$.
 \end{proposition}
 \begin{proof}
-	Legyen $m=\dim V$, és $v\in V$ egy nem zérus elem.
+	Legyen $m=\dim(V)$, és $v\in V$ egy nem zérus elem.
 	Tekintsük a $v$ által generált legszűkebb $A$-invariáns alteret, azaz
 	$\lin\left( v;A \right)$-t.
 	Ha ez $n$ dimenziós ($1\leq n\leq m$),
@@ -11605,7 +11736,7 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 		\left\{ x_1,\dots,x_{k-1} \right\}\subseteq M
 	\end{math}
 	tartalmazás is fennáll.
-	No de, $\dim M=k-1$, ezért $\left\{ x_1,\dots,x_{k-1} \right\}$ nem csak lineárisan független,
+	No de, $\dim(M)=k-1$, ezért $\left\{ x_1,\dots,x_{k-1} \right\}$ nem csak lineárisan független,
 	de maximális lineárisan független rendszer $M$-ben, ergo generátorrendszer is, ezért
 	\[
 		\lin\left\{ x_1,\dots,x_{k-1} \right\}=M
@@ -11673,9 +11804,9 @@ A Gram\,--\,Schmidt-ortogonalizációról szóló állítás azonnali következm
 		\left\{ x_1,\dots,x_n \right\}\subseteq V
 	\end{math}
 	ortonormált rendszert.
-	No de, $\dim V=n$ és az ortonormált rendszer elemei közt a zérus vektor nem szerepel,
+	No de, $\dim(V)=n$ és az ortonormált rendszer elemei közt a zérus vektor nem szerepel,
 	így az ortonormált rendszer lineárisan független rendszer is.
-	Mivel annak $n=\dim V$ darab eleme van,
+	Mivel annak $n=\dim(V)$ darab eleme van,
 	ezért az maximális lineárisan független rendszer $V$-ben, ergo bázis is.
 	Konstruáltunk tehát egy ortonormált bázist.
 
@@ -12308,7 +12439,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 
 	A direkt összegek dimenziójára vonatkozó állítás és a Rang--defektus\index{rang--defektus--tétel}-tételnek az adjungált operációra vonatkozó alakja szerint
 	\begin{math}
-		\rho\left( A \right)=\dim W-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
+		\rho\left( A \right)=\dim(W)-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
 	\end{math}
 \end{proof}
 
@@ -12640,7 +12771,7 @@ A komplex és a valós diagonalizálhatóság közös magja a következő állí
 	Láttuk, hogy bevezetve a $V_1=\ker p^k\left( N \right)$, és
 	$A_1=N|_{V_1}$ jelöléseket,
 	az $A_1$ minimálpolinomja $p^k$.
-	Tehát ha $B=p(N)$, akkor $B|_{V_1}$ transzformáció $k$-ad rendben nillpotens,
+	Tehát ha $B=p(N)$, akkor $B|_{V_1}$ transzformáció $k$-ad rendben nilpotens,
 	létezik tehát $v\in V_1$,
 	amelyre $B^{k-1}v\neq 0$,
 	de $B^kv=0$.
@@ -12690,7 +12821,7 @@ az önadjungált transzformációkra külön elnevezést vezetünk be.
 Egy kicsit sem nyilvánvaló, hogy miért lenne egy szimmetrikus transzformációnak sajátértéke.
 Rögtön kiderül, hogy mindig van sajátértéke.
 
-Ha $\dim V=1$, akkor minden $A:V\to V$ transzformációra igaz, hogy ha $v\neq 0$ vektor, 
+Ha $\dim(V)=1$, akkor minden $A:V\to V$ transzformációra igaz, hogy ha $v\neq 0$ vektor, 
 akkor van olyan $\lambda\in\mathbb{R}$,
 hogy $Av=\lambda v$. 
 Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
@@ -14141,7 +14272,7 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
 	Ez egy komplex vektortér,
 	amelyre
 	\[
-		\dim\mathcal{S}=
+        \dim\left( \mathcal{S} \right)=
 		\frac{2^kn\left( 2^kn+1 \right)}{2}=
 		2^{k-1}n\left(2^kn+1  \right)=
 		2^{k-1}n',
@@ -14575,4 +14706,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 19 Jul 2021 07:30:24 am CEST 
+Last Modified: Mon 02 Aug 2021 10:23:35 PM CEST 
