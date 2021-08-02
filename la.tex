@@ -5674,7 +5674,7 @@ Azt látjuk tehát,
 hogy lineáris transzformációk esetén a transzformáció injektivitása és szürjektivitása egyszerre teljesül,
 vagy egyszerre nem teljesül:
 \begin{proposition}
-	Legyen az $V$ egy véges dimenziós vektortér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
+	Legyen $V$ egy véges dimenziós vektortér, és $A\in L\left( V \right)$ egy lineáris transzformáció.
 	\begin{enumerate}
 		\item
 		      Ekkor az alábbi feltételek egymással ekvivalensek.
@@ -5691,8 +5691,8 @@ vagy egyszerre nem teljesül:
 \begin{proof}
 	Az első három pont ekvivalens voltát már meggondoltuk.
 
-	Ha $A\circ B=I$, akkor $A$ szürjektív, hiszen az $y\in V$ vektor elő áll,
-	mit a $By$ vektor $A$ képe.
+	Ha $A\circ B=I$, akkor $A$ szürjektív, hiszen az $y\in V$ vektor előáll,
+	mint a $By$ vektor $A$ képe.
 
 	Megfordítva, ha $A$ szürjektív, akkor a) szerint injektív is, van tehát $V\to V$ inverze.
 	De lineáris függvény inverze is lineáris,
@@ -5731,7 +5731,7 @@ akkor az
 \[
 	\left\{ A_{i,j}:i=1,\dots,n;j=1,\dots,m\right\}
 \]
-mátrixok rendszere bázisa az $\mathbb{F}^{n\times m}$ térben.
+mátrixok rendszere egy bázis az $\mathbb{F}^{n\times m}$ térben.
 Így persze $\dim \mathbb{F}^{n\times m} = n\cdot m$.
 
 Most áttérünk az $L\left( V,W \right)$ lineáris operációk vektorterének vizsgálatára.
@@ -5746,7 +5746,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 \end{proposition}
 \begin{proof}
 	Definiáljuk az $A:V\to W$ függvényt a következőképpen.
-	Minden $v\in V$ egyértelműen áll elő mint $v=\sum_{j=1}^m\alpha_jv_j$ alakban.
+	Minden $v\in V$ egyértelműen áll elő mint $v=\sum_{j=1}^m\alpha_jv_j$.
 	Egy ilyen $v$ mellett legyen
 	\[
 		A\left( v \right)=\sum_{j=1}^m\alpha_jw_j.
@@ -5849,7 +5849,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 	Legyen $A\in L\left( V,W \right)$ egy rögzített lineáris operáció.
 	Definiáljuk az $\alpha_{i,j}$ számokat,
 	mint az $Ae_{j}\in W$ vektor $\left\{ y_1,\dots,y_n \right\}$ bázisban felírt koordináta-vektorának
-	$j$-edik elemét.
+	$i$-edik elemét.
 	Magyarul
 	\[
 		Ae_j=
@@ -5871,7 +5871,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 		\sum_{i=1}^n\sum_{j=1}^m\alpha_{i,j}A_{i,j}
 	\end{math}
 	lineáris operátorok az $\left\{ e_1,\dots,e_m \right\}$ bázis minden elemén megegyeznek.
-	Láttuk, egy bázison felvett értékek már egyértelműen meghatározzák a lineáris operációt,
+	Láttuk, hogy bázison felvett értékek már egyértelműen meghatározzák a lineáris operációt,
 	ezért e két lineáris operáció is azonos.
 	Találtunk tehát $\alpha_{i,j}$ számokat, amelyekre
 	\begin{math}
@@ -5956,12 +5956,13 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 	Ezt a mátrixot nevezzük az
 	$A\in L\left( V,W \right)$ \emph{lineáris operáció mátrixának}\index{lineáris operáció mátrixa}
 	az előre rögzített
-	$\left\{e_1,\dots,e_m  \right\}\subseteq V$ és $\left\{ f_1,\dots,f_m \right\}$ bázisok mellett.
+	$\left\{e_1,\dots,e_m  \right\}\subseteq V$ és $\left\{ f_1,\dots,f_n \right\}$ bázisok mellett.
 \end{definition}
 Meggondoltuk tehát, hogy a kapcsolat lineáris operáció és mátrixa között azonos avval a kapcsolattal,
 ami általában egy vektor és koordinátái közt van.
 
-Nagyon fontos, hogy egy lineáris operáció mátrixát fel tudjuk írni, emiatt összefoglalom az eddigieket.
+Nagyon fontos, hogy bármilyen lineáris operáció mátrixát fel tudjuk írni, 
+emiatt foglaljuk össze az eddigieket.
 \begin{proposition}
 	Tegyük fel, hogy $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Rögzítsük a $V$ és a $W$ vektortér egy-egy bázisát.
@@ -6166,7 +6167,7 @@ akkor a mátrixaik szorzata is értelmes, továbbá
 	akkor legyen $A^{n+1}=AA^n$.
 \end{definition}
 Világos, hogy ha $n,m$ nem negatív egészek, akkor $A^{n+m}=A^n\cdot A^m$.
-Az is nyilvánvaló, hogy az $I$ identitás operációnak akár melyik bázisban felírt mátrixa ugyanaz a mátrix,
+Az is nyilvánvaló, hogy az $I$ identitás operációnak akármelyik bázisban felírt mátrixa ugyanaz a mátrix,
 mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális elemek, amelyek értéke 1.)
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció, és legyen rögzítve a tér egy bázisa,
@@ -6175,7 +6176,8 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	\(
 	\left[ A^n \right]=\left[ A \right]^n
 	\),
-	továbbá $A$ pontosan akkor izomorfizmus, ha $[A]$ reguláris\index{reguláris mátrix} és
+	továbbá az $A$ transzformáció pontosan akkor izomorfizmus, 
+    ha az $[A]$ mátrixa reguláris\index{reguláris mátrix} és
 	\begin{math}
 		\left[ A^{-1} \right]
 		=
@@ -6183,7 +6185,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	\end{math}
 \end{proposition}
 \begin{proof}
-	A (\ref{eq:gyuru}.) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
+	A (\ref{eq:gyuru}) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
 	$\left[ A^n \right]=\left[ A \right]^n$
 	azonosságot.
 
@@ -6193,7 +6195,8 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	$[A]$ mátrix invertálhatóságának.
 	Ekkor $[A]^{-1}=[B]=\left[ A^{-1} \right]$.
 \end{proof}
-A (\ref{eq:vt}.) és a (\ref{eq:gyuru}.) szerint egy lineáris operátorhoz hozzárendeli valamely báziskban
+A (\ref{eq:vt}) és a (\ref{eq:gyuru}) azonosságok szerint 
+egy lineáris operátorhoz hozzárendelni annak valamely bázisban
 felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
 Az $L\left( V \right)$ és a $F^{\dim V\times \dim V}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
 amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
@@ -14702,4 +14705,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 02 Aug 2021 04:40:54 PM CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 02 Aug 2021 05:09:16 PM CEST CEST CEST CEST CEST CEST CEST CEST 
