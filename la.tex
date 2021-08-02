@@ -1118,7 +1118,7 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
 		J\left( p_{i-1},p_i \right)\subseteq J\left( p_i,p_{i+1} \right)
 	\end{math}
 	tartalmazás adódik.
-	Másrészt a (\dag) azonosságot értelmezhetjük úgyis, hogy
+	Másrészt a (\dag) azonosságot értelmezhetjük úgy is, hogy
 	\(
 	p_{i+1}\in J\left( p_{i-1},p_i \right)
 	\),
@@ -4502,7 +4502,7 @@ ha a bázisban egy elemet megváltoztatunk.
 \begin{definition}\index{Minkowski-összeg}
 	Legyen $V$ egy $\mathbb{F}$ test feletti vektortér és $H_1, H_2\subseteq V$ részhalmazok.
 	E két halmaz \emph{összegén} vagy \emph{Minkowski-összegén}
-	az
+	a
 	\[
 		H_1+H_2=\left\{ a+b:a\in H_1,b\in H_2 \right\}
 	\]
@@ -4511,9 +4511,9 @@ ha a bázisban egy elemet megváltoztatunk.
 	\[
 		\alpha H_1=\left\{ \alpha a:a\in H_1 \right\}
 	\]
-	az $\alpha$ szám és $H_1$ halmaz szorzatát.
+	az $\alpha$ szám és a $H_1$ halmaz szorzatát.
 \end{definition}
-Világos, hogy ha például $H_1$ üres, akkor $H_1+H_2$ is, és a $\alpha H_1$ halmazok is üresek.
+Világos, hogy ha például $H_1$ üres, akkor $H_1+H_2$ is, és az $\alpha H_1$ halmazok is üresek.
 
 Az alábbi tulajdonságok, a vektortér axiómák közvetlen következményei.
 Azokat a tulajdonságokat foglaljuk össze, amelyeket a vektortér axiómákból meg tudunk menteni
@@ -4792,12 +4792,12 @@ hogy $M_n$ diszjunkt az első $n-1$ altér direkt összegétől.
 	\end{enumerate}
 \end{proposition}
 \begin{proof}
-	Tegyük fel, hogy $M$ direkt összege az $M_1,\dots,M_s$ altereknek.
-	Minden szóba jövő $k$-ra $M_k\subseteq\sum_{j=1}^sM_j=M.$
-	Mivel $M=M_1+\dots+M_s$, ezért minden $v\in M$-hez létezik $v_j\in M_j$, hogy
+	Tegyük fel, hogy $N$ direkt összege az $M_1,\dots,M_s$ altereknek.
+	Minden szóba jövő $k$-ra $M_k\subseteq\sum_{j=1}^sM_j=N.$
+	Mivel $N=M_1+\dots+M_s$, ezért minden $v\in N$-hez létezik $v_j\in M_j$, hogy
 	$v=v_1+\dots+v_s$.
 	Most tegyük fel, hogy $v$ előáll $v=u_1+\dots+u_s$ alakban is,
-	ahol $u_j\in V_j$ minden $j=1,\dots,s$ mellett.
+	ahol $u_j\in M_j$ minden $j=1,\dots,s$ mellett.
 	Ekkor 
 	\[
         0=\sum_{\substack{j=1}}^s\left( v_j-u_j \right), \text{ ahol } v_j-u_j\in M_j.
@@ -4898,8 +4898,8 @@ ergo egy bázis.
         \sum_{j=1}^r\alpha_jm_j+\sum_{j=1}^s\beta_jn_j=x,
     \]
     hiszen a $V$ fenti bázisa egyben $V$ generátorrendszere is.
-    Ha itt az első szumma értékét $v$-vel jelöljük, a második szumma értékét pedig $u$-val,
-    akkor az $u\in N$ és a $v\in M$ vektorokra $u+v=x$,
+    Ha itt az első szumma értékét $u$-val jelöljük, a második szumma értékét pedig $v$-vel,
+    akkor az $u\in M$ és a $v\in N$ vektorokra $u+v=x$,
     ergo $M+N=V$.
     Ez azt jelenti, hogy konstruáltunk $N\subseteq V$ alteret, amelyre $M\oplus N=V$ teljesül.
 
@@ -4954,7 +4954,7 @@ ha valamely $x,y\in V$ mellett $M_x\cap M_y\neq\emptyset$,
 akkor $M_x=M_y$;
 és minden $x\in V$ mellett $M_x\neq\emptyset$.
 
-Most azt gondoljuk meg, hogy minden egyes ekvivalencia osztály tekinthető úgyis mint,
+Most azt gondoljuk meg, hogy minden egyes ekvivalencia osztály tekinthető úgy is mint,
 bármelyik elemével való eltoltja az $M$ vektortérnek.
 Speciálisan az is adódik,
 hogy az ekvivalencia osztályok affin\index{affin halmaz} halmazok.
@@ -5024,20 +5024,20 @@ egy ekvivalencia osztálynak egy számmal való szorzata egy ekvivalencia osztá
 sőt
 \emph{egy vektorhoz tartozó ekvivalencia osztály $\alpha$ szorosa azonos e vektor $\alpha$-szorosához tartozó
 	ekvivalencia osztállyal}.
-\begin{proposition}[faktortér]
+\begin{defprop}[faktortér]
 	Legyen $V$ egy az $\mathbb{F}$ test feletti vektortér,
 	és $M\subseteq V$ egy rögzített altér.
-	Legyen $\sim$ a $V$ vektortér elemein értelmzett reláció,
-	amelyre $x\sim y$, ha $x-y\in M$ ekvivalencia reláció.
+	Jelölje $\sim$ azt $V$ vektortér elemein értelmezett relációt,
+	amelyre $x\sim y$, akkor és csak akkor, ha $x-y\in M$.
 	Láttuk, hogy ez ekvivalencia reláció.
 	Jelölje
 	\[
 		V/M=\left\{ M_x:x\in V \right\}
 	\]
 	az ekvivalencia osztályok halmazát.
-	Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt az összeadás nevű műveletet
-    mint a halmazok 
-	a Minkowski--összegét és a skalárral való szorzást műveletet mint a $\ast$ fent bevezetett szorzást.
+	Definiáljuk a $V/M$ halmazrendszer elemei mint halmazok közt az összeadás nevű műveletet mint a halmazok 
+	Minkowski--összegét;
+    és a skalárral való szorzást műveletet mint a $\ast$ fent bevezetett szorzást.
     (Láttuk, hogy az
 	\[
 		M_{x_1}+M_{x_2}=M_{x_1+x_2},
@@ -5048,8 +5048,8 @@ sőt
 	\]
     azonosságok minden $x_1,x_2,x\in V$ és miden $\alpha\in\mathbb{F}$ mellett fennállnak.)
 	Ekkor az itt bevezetett $(V/M,+,\ast)$ struktúra az $\mathbb{F}$ test feletti vektorteret alkot.
-	Ezt a vektorteret nevezzük a $V$ vektortér $M$ szerinti \emph{faktorterének}\index{faktortér}.
-\end{proposition}
+	Ezt a vektorteret nevezzük a $V$ vektortér $M$ altere szerinti \emph{faktorterének}\index{faktortér}.
+\end{defprop}
 \begin{proof}
 	Meggondoltuk már, hogy a Minkowski--összeg és a $\ast$ szorzás eredménye egy ekvivalencia osztály.
 	Most vegyük sorra a vektortér axiómákat:
@@ -5068,7 +5068,7 @@ sőt
 		\item[4.] Minden $M_x$ ekvivalencia osztályra $M_x+M_{-x}=M$,\\
 		      hiszen
 		      $M_x+M_{-x}=M_{x+\left( -x \right)}=M_0=M$,
-		      felhasználva a már igazolt $\dag$ azonosságot.
+		      felhasználva a már igazolt $(\dag)$ azonosságot.
 	\end{enumerate}
 	A $\ast$ szorzás és az összeadás kapcsolatát leíró aximák ellenőrzéséhez használjuk
 	$(\dag)$ és $(\ddag)$ azonosságokat:
@@ -5265,7 +5265,7 @@ akkor láttuk, hogy
 	=
 	\dim\left( V/\ker A \right).
 \]
-Tudjuk, hogy azonos dimenziójú vektorterek egy mással izomorfak,
+Tudjuk, hogy azonos dimenziójú vektorterek egymással izomorfak,
 emiatt $\im A$ izomorf $V/\ker A$ faktortérrel.
 A következő állítás ennek a gondolatnak a nem véges dimenziós esetre vonatkozó általánosítása,
 de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
@@ -10643,7 +10643,7 @@ amely
 	\end{pmatrix}
 \]
 módon van particionálva, ahol $A_{1,1}$ egy $n\times n$, $A_{2,2}$ egy $m\times m$ méretű négyzetes mátrix,
-továbbá $A_{2,1}$ egy $m\times n$ méretű és $A_{1,2}$ egy $n\times m$ méretű részmátrix,
+továbbá $A_{2,1}$ egy $m\times n$ méretű és $A_{1,2}$ egy $n\times m$ méretű részmátrix.
 Tegyük fel most is, hogy a bal alsó $A_{2,1}$ partíció minden eleme zérus.
 Legyen ezért $A\in L\left( \mathbb{F}^{n+m} \right)$ az a transzformáció,
 amelynek az $\left\{ e_1,\dots,e_n,e_{n+1},\dots,e_m \right\}$ bázisban felírt mátrixa $[A]$.
@@ -14702,4 +14702,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 19 Jul 2021 05:24:12 PM CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 02 Aug 2021 04:40:54 PM CEST CEST CEST CEST CEST CEST CEST CEST 
