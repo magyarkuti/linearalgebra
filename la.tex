@@ -3960,7 +3960,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 		      \]
 		      vektorrendszer is generátorrendszer.
 	\end{enumerate}
-	Ilyen $k$ biztosan van van, hiszen $k=0$ triviálisan jó.
+	Ilyen $k$ biztosan van, hiszen $k=0$ triviálisan jó.
 	Összesen azt kell meggondolnunk, hogy $k=n$.
 	Ha $k<n$ lenne,
 	\begin{itemize}
@@ -7933,32 +7933,32 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 \end{proof}
 \begin{proof}[Bizonyítás (3.)]
 	Először is gondoljuk meg, hogy invariáns alterek Minkowski--összege is invariáns altér marad.
-	Ha $V$ nem tartalmaz nem zérus vektort, akkor $\dim V=\left\{ 0 \right\}$.
+	Ha $V$ nem tartalmaz nem zérus vektort, akkor $\dim V= 0$.
 
 	Ha $v_1\in V$ egy nem zérus vektor,
 	akkor jelölje $V_1=\lin\left( v_1;A \right)$.
 	Ha $V=V_1$,
 	akkor $V$ egy $k$-dimenziós vektortér.
 
-	Ha $V\neq V_1$, akkor van van $v_2\in V\smallsetminus V_1$, $v_2\neq 0$ vektor.
+	Ha $V\neq V_1$, akkor van $v_2\in V\smallsetminus V_1$, $v_2\neq 0$ vektor.
 	Mivel $V_1$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_2=\lin\left( v_2;A \right)$
 	jelölést $V_2\cap V_1=\left\{ 0 \right\}$.
 	Értelmes tehát venni e két invariáns altér direkt összegét.
 	Ha $V=V_1\oplus V_2$, akkor $V$ előállt két $k$ dimenziós invariáns alterének direkt összegeként.
 
-	Ha $V\neq V_1\oplus V_2$, akkor van van $v_3\in V\smallsetminus (V_1\oplus V_2)$, $v_3\neq 0$ vektor.
+	Ha $V\neq V_1\oplus V_2$, akkor van $v_3\in V\smallsetminus (V_1\oplus V_2)$, $v_3\neq 0$ vektor.
 	Mivel $V_1\oplus V_2$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_3=\lin\left( v_3;A \right)$
 	jelölést $V_3\cap (V_1\oplus V_2)=\left\{ 0 \right\}$.
 	Értelmes tehát venni e három invariáns altér direkt összegét, hiszen
 	a $V_1,V_2,V_3$ alterek ebben a sorrendben véve olyanok,
 	hogy mind diszjunkt az előzőek összegétől.
-	Ha $V=V_1\oplus V_2\oplus V_2$,
+	Ha $V=V_1\oplus V_2\oplus V_3$,
 	akkor $V$ előállt három $k$ dimenziós invariáns alterének direkt összegeként.
 
 	Ha $V\neq V_1\oplus\dots\oplus V_t$, valamely $t\geq 2$ mellett,
-    akkor van van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$, $v_{t+1}\neq 0$ vektor.
+    akkor van $v_{t+1}\in V\smallsetminus (V_1\oplus\dots\oplus V_t)$, $v_{t+1}\neq 0$ vektor.
 	Mivel $V_1\oplus\dots\oplus V_t$ egy invariáns altér,
 	ezért a már igazolt állítás szerint bevezetve a $V_{t+1}=\lin\left( v_{t+1};A \right)$
 	jelölést $V_{t+1}\cap (V_1\oplus\dots\oplus V_t)=\left\{ 0 \right\}$.
@@ -7974,14 +7974,14 @@ A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fo
 Világos, hogy
 \(
 \left\{
-A^{k-1}v_1, A^{k-2}v_1,v_1,\dots,Av_1,v_1
+A^{k-1}v_1, A^{k-2}v_1,\dots,Av_1,v_1
 \right\}
 \)
 bázisa a $\lin\left\{ v_1;A \right\}$
 invariáns altérnek.
 Ha ebben a bázisban felírjuk a transzformáció mátrixát,
 akkor az első oszlopban vannak a minimálpolinom együtthatóinak ellentettjei,
-a diagonális feletti $1$-ek, vannak és minden más elem zérus:
+a diagonális felett $1$-ek vannak és minden más elem zérus:
 \[
 	\begin{pmatrix}
 		-\alpha_{k-1} & 1      & 0      & \dots  & 0      \\
@@ -8090,15 +8090,17 @@ Kiderült tehát, hogy nincs új a nap alatt, hiszen azt már korábban is tudtu
 
 Ha most a valós vektortér esetére szorítkozunk, akkor arra kell emlékeznünk, hogy
 egy a valós test feletti irreducibilis polinomom első- vagy másodfokú lehet csak.
-Ezért állításunk feltétel most azt jelenti, hogy a minimálpolinom előáll mint páronként relatív prím, első vagy másodfokú polinomok szorzata.
-Az konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
+Ezért állításunk feltétele most azt jelenti, 
+hogy a minimálpolinom előáll mint páronként relatív prím, első vagy másodfokú polinomok szorzata.
+A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
     az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
     Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direkt összege,
     ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonálisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
 \end{proposition}
-Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális felett és a diagonális alatt lehetnek nem zérus számok.
+%Emiatt csak a diagonálisban, a diagonális felett és a diagonális alatt lehetnek nem zérus számok.
+
 \subsubsection{Illusztráció}
 \textit{%
 	Bontsuk lehető legalacsonyabb invariáns alterek direkt összegére az alábbi $\mathbb{R}$
@@ -8266,8 +8268,8 @@ Persze ezt úgy is fogalmazhatjuk, hogy csak a diagonálisban, a diagonális fel
 	A mátrix, tehát két darab
 	\(
 	\begin{pmatrix}
-		-1,1 \\
-		-1,0
+		-1&1 \\
+		-1&0
 	\end{pmatrix}
 	\)
 	mátrix diagonális elrendezésű partíciója.
@@ -14704,4 +14706,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 02 Aug 2021 08:06:18 PM CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 02 Aug 2021 09:02:46 PM CEST CEST CEST CEST CEST CEST CEST CEST 
