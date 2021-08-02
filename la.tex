@@ -7704,7 +7704,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Tegyük fel, hogy $m$ előáll mint a páronként relatív prím
 	normált polinomok
 	\[
-		m=p_1p_2\dots p_n
+		m=p_1p_2\cdots p_n
 	\]
 	szorzata.
 	Jelölje minden $i=1,\dots,n$ mellett $V_i=\ker p_i\left( A \right)$
@@ -7724,7 +7724,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Most tegyük fel, hogy az állítás $n$-nél kevesebb polinom szorzatára igaz,
 	és lássuk be $n$-re.
 	Feltehető tehát, hogy $n\geq 3$.
-	Legyen $p=p_1,\dots,p_{n-1}$.
+	Legyen $p=p_1\cdots p_{n-1}$.
 	Világos, hogy $p$ és $p_n$ relatív prímek, hiszen ha $d$ irreducibilis osztója
 	$p$-nek és $p_n$-nek,
 	akkor $d$ prím tulajdonsága szerint $d|p_i$ valamely $i<n$-re,
@@ -7746,7 +7746,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Ott az $A_{|\ker p\left( A \right)}$ lineáris transzformáció $p$ minimálpolinomja
 	előáll mint $n-1$ páronként relatív prím polinom szorzata:
 	\[
-		p=p_1,\dots,p_{n-1}.
+		p=p_1\cdots p_{n-1}.
 	\]
 	Világos tehát, hogy
 	\begin{enumerate}
@@ -7804,9 +7804,9 @@ tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
 	amelynek gyöke $A$.
 	\footnote{
 		Egy másik érv: $t-\lambda_j$ a $\lambda_j$ sajátértékhez tartozó sajátvektor kis minimálpolinomja.
-		Mivel a sajátvektorok egy bazist alkotnak,
+		Mivel a sajátvektorok egy bázist alkotnak,
 		ezért ezen polinomok legkisebb közös többszöröse a minimálpolinom.
-		Persze $\dim V$ darab elsőfokú polinom normált polinom legkisebb közös többszöröse,
+		Persze $\dim V$ darab elsőfokú normált polinom legkisebb közös többszöröse,
 		ezek közül a különbözők szorzata.
 		\index{kis minimálpolinom}
 	}
@@ -7817,7 +7817,7 @@ tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
 	ezért az éppen igazolt \ref{pr:redukcio-primszorzat}.~állítás szerint
 	\begin{equation*}
 		V=
-		\ker p_1\left( A \right)\oplus\dots\oplus\ker p_j\left( A \right)
+		\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)
 		=
 		\ker\left( A-\lambda_1 I \right)\oplus\dots\oplus\ker\left( A-\lambda_s I \right)
 	\end{equation*}
@@ -7861,8 +7861,8 @@ teljesül valamely $\alpha\in\mathbb{C}$ komplex szám és $n\in\mathbb{N}$ egé
 Ilyen $A$ transzformációra, ha $B$ jelöli a $B=A-\alpha I$ lineáris transzformációt,
 akkor a $B$ olyan,
 hogy valamely egész kitevős hatványa a konstans zérus transzformáció.
-Ez vezet majd a \emph{nillpotens}\index{nillpotens transzformáció} fogalmához.
-Ha felírjuk valamely bázisban egy ilyen $B$ nillpotens transzformáció mátrixát,
+Ez vezet majd a \emph{nilpotens}\index{nilpotens transzformáció} fogalmához.
+Ha felírjuk valamely bázisban egy ilyen $B$ nilpotens transzformáció mátrixát,
 akkor $A$ mátrixa is könnyen adódik $B$ mátrixából.
 Ehhez csak az $\alpha [I]$ mátrixot kell $\left[ B \right]$-hez adni,
 ami praktikusan nem jelent többet,
@@ -8357,7 +8357,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		\right\}
 	\]
 	vektorrendszer is lineárisan független.
-	\label{le:nillp-fgtlen}
+	\label{le:nilp-fgtlen}
 \end{lemma}
 \begin{proof}
 	Tekintsük ezen vektorok egy
@@ -8392,12 +8392,12 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 \begin{proposition}
 	Legyen $B\in L\left( V \right)$ lineáris transzformációra $B^m=0$.
 	Ekkor $\dim V\geq m\rho\left( B^{m-1} \right)$.
-	\label{th:nilldim}
+	\label{th:nildim}
 \end{proposition}
 \begin{proof}
 	Létezik tehát olyan $\left\{ B^{m-1}v_1,B^{m-1}v_2,\dots,B^{m-1}v_r \right\}$
 	lineárisan független vektorrendszer, ahol $r=\rho(B^{m-1})$ a $B^{m-1}$ transzformáció képterének dimenziója.
-	\Aref{le:nillp-fgtlen}.~lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
+	\Aref{le:nilp-fgtlen}.~lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
 	ergo a tér legalább $mr=m\rho\left( B^{m-1} \right)$ dimenziós.
 \end{proof}
 \begin{proposition}
@@ -8455,7 +8455,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\[
 		\rho\left( B^{m-1}\right)\geq k.
 	\]
-	Alkalmazva $B$-re az imént igazolt \ref{th:nilldim} tételt kapjuk a kívánt
+	Alkalmazva $B$-re az imént igazolt \ref{th:nildim} tételt kapjuk a kívánt
 	\(
 	\dim V\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
 	\)
@@ -8508,18 +8508,18 @@ is mindig gyöke a transzformáció.
 Ez az úgynevezett Cayley--Hamilton-tétel.\index{Cayley--Hamilton}
 \chapter{Nilpotens transzformációk}
 \section{Hatvány függvény alakú minimálpolinom}
-\begin{definition}[nillpotens transzformáció]
+\begin{definition}[nilpotens transzformáció]
 	Egy $A\in L\left( V \right)$ lineáris transzformációt
-	\emph{nillpotensnek} mondjuk, ha
+	\emph{nilpotensnek} mondjuk, ha
 	létezik $k\in\mathbb{N}$, melyre $A^k=0$.
-	Ha $A$ egy nillpotens transzformáció, akkor azt a legkisebb $m$ számot, melyre $A^m=0$ a \emph{nillpotencia rendjének} nevezzük.
+	Ha $A$ egy nilpotens transzformáció, akkor azt a legkisebb $m$ számot, melyre $A^m=0$ a \emph{nilpotencia rendjének} nevezzük.
 \end{definition}
 
 Például egy 5 dimenziós téren könnyen definiálhatunk első-, másod-, harmad-, negyed, és ötöd-rendű nilpotens transzformációkat.
-De van-e mondjuk hatod-rendű nillpotens transzformáció ezen öt dimenziós vektortéren?
+De van-e mondjuk hatod-rendű nilpotens transzformáció ezen öt dimenziós vektortéren?
 Az első észrevétel adja a negatív választ.
 \begin{proposition}
-	Legyen $B$ egy $m$-ed rendben nillpotens operátor.
+	Legyen $B$ egy $m$-ed rendben nilpotens operátor.
 	Ekkor létezik $v\in V$ vektor,
 	melyre $B^{m-1}v\neq 0$.
 	Minden ilyen $v$ vektorra a
@@ -8528,24 +8528,24 @@ Az első észrevétel adja a negatív választ.
 	\]
 	$m$ elemű vektorrendszer lineárisan független.
 
-	Emiatt ha a $V$ vektortérnek van $m$-edrendben nillpotens lineáris transzformációja, akkor $\dim V\geq m$,
-	azaz a nillpotencia rendje legfeljebb a tér dimenziója.
+	Emiatt ha a $V$ vektortérnek van $m$-edrendben nilpotens lineáris transzformációja, akkor $\dim V\geq m$,
+	azaz a nilpotencia rendje legfeljebb a tér dimenziója.
 	\label{th:fgtlen}
 \end{proposition}
 \begin{proof}
 	Mivel $B^{m-1}\neq 0$, ezért valóban létezik $v\in V$ vektor,
 	melyre $B^{m-1}v\neq 0$.
 	Persze ekkor a $\left\{ B^{m-1}v \right\}$ egy elemet tartalmazó rendszer lineárisan független,
-	ezért \aref{le:nillp-fgtlen}.~lemma szerint a tételbéli rendszer is lineárisan független.
+	ezért \aref{le:nilp-fgtlen}.~lemma szerint a tételbéli rendszer is lineárisan független.
 \end{proof}
 \begin{proposition}
-	Egy lineáris transzformáció pontosan akkor nillpotens,
+	Egy lineáris transzformáció pontosan akkor nilpotens,
 	ha valamely $m\leq\dim V$ mellett a minimálpolinomja
 	$m\left( t \right)=t^m$ alakú.
 \end{proposition}
 \begin{proof}
 	Tegyük fel először, hogy $B$ lineáris transzformáció $m$-ed rendben
-	nillpotens.
+	nilpotens.
 	Legyen $p\left( t \right)=t^m$.
 	Ekkor $p\in J_A$, így a minimálpolinom $p$ osztója.
 	Másrészt \aref{th:fgtlen}.~állítás szerint van a térnek olyan vektora,
@@ -8554,7 +8554,7 @@ Az első észrevétel adja a negatív választ.
 
 	Megfordítva, ha $m\left( t \right)=t^m$ a minimálpolinomja $B$-nek,
 	akkor $B^m=0$ és ez $m$-nél kisebb kitevőre nem teljesülhet.
-	Ez éppen azt jelenti, hogy $B$ transzformáció $m$-ed rendben nillpotens.
+	Ez éppen azt jelenti, hogy $B$ transzformáció $m$-ed rendben nilpotens.
 	\index{kis minimálpolinom}
 \end{proof}
 
@@ -8577,7 +8577,7 @@ Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérn
 	$V_1+K=W$.
 \end{proof}
 A következő lemmának nagyon fontos szerepe lesz a fejezet leglényegesebb állításában
-a nillpotens operátorok redukcióját biztosító állításban.
+a nilpotens operátorok redukcióját biztosító állításban.
 \begin{lemma}\label{lem:felb}
 	Legyen a $W$ véges dimenziós vektortérnek $H,K_0,\bar{K}$ altere.
 	Tegyük fel, hogy
@@ -8625,8 +8625,8 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	\)
 	Ez éppen azt jelenti, hogy $K$ direkt kiegészítője $H$-nak.
 \end{proof}
-\begin{proposition}[nillpotens operátorok felbontása]
-	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nillpotens lineáris transzformáció.
+\begin{proposition}[nilpotens operátorok felbontása]
+	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nilpotens lineáris transzformáció.
 	Ekkor minden olyan $v\in V$ vektorhoz,
 	amelyre $B^{m-1}v\neq 0$, a $\lin\left\{ v;B \right\}$ invariáns altérnek van invariáns altér
 	direkt kiegészítője.
@@ -8638,16 +8638,16 @@ a nillpotens operátorok redukcióját biztosító állításban.
 	\label{pr:nilpfelb}
 \end{proposition}
 \begin{proof}
-	A nillpotens transzformáció rendje szerinti teljes indukció.
+	A nilpotens transzformáció rendje szerinti teljes indukció.
 	Ha $m=1$, akkor $B=0$, de a konstans zérus operátorra nézve minden altér invariáns,
 	így a tétel összesen annyit állít, hogy egy nem zérus $v$ vektor generálta egydimenziós altérnek van direkt kiegészítője.
 
-	Tegyük fel, hogy igaz az állítás minden vektortér legfeljebb $m-1$-ed rendben nillpotens transzformációjára.
-	Legyen tehát $m>1$ és $B$ egy a $W$ vektortéren értelmezett $m$-ed rendben nillpotens lineáris transzformáció.
+	Tegyük fel, hogy igaz az állítás minden vektortér legfeljebb $m-1$-ed rendben nilpotens transzformációjára.
+	Legyen tehát $m>1$ és $B$ egy a $W$ vektortéren értelmezett $m$-ed rendben nilpotens lineáris transzformáció.
 	Rögzítsünk egy $v\in W$ elemet, amelyre $B^{m-1}v\neq 0$.
 	Tekintsük az $\im B$ invariáns alteret.
 	Világos, hogy $B|_{\im B}$ egy lineáris transzformáció az $\im B$ vektortéren.
-	Az is világos, hogy $B|_{\im B}$ egy $m-1$-rendben nillpotens lineáris transzformáció, hiszen
+	Az is világos, hogy $B|_{\im B}$ egy $m-1$-rendben nilpotens lineáris transzformáció, hiszen
 	minden $u\in\im B$ mellett $B^{m-1}u=0$.
 	Azt is vegyük észre, hogy ezek szerint $v\notin\im B$.
 
@@ -8720,7 +8720,7 @@ kell rekurzívan alkalmaznunk.
 A $W$ vektortér véges dimenziós volta garantálja, hogy a rekurzió véget ér.
 
 Persze $B|_K$ a $K$ altér lineáris transzformációja,
-ami $m\geq n_2\geq 1$ rendben nillpotens.
+ami $m\geq n_2\geq 1$ rendben nilpotens.
 Ha alkalmazzuk a fenti tételt, akkor kapjuk,
 hogy létezik $v_2\in K, v_2\neq 0$ elem és létezik $K_2\subseteq K$ a $B$-re nézve invariáns altér,
 amelyre
@@ -8749,7 +8749,7 @@ Végül a vektortér előáll néhány, mondjuk $r$ darab $B$-re invariáns alt�
 	\lin\left\{ v_r;B \right\}
 	=W.
 \]
-\begin{proposition}[nillpotens transzformáció redukálása]
+\begin{proposition}[nilpotens transzformáció redukálása]
 	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nilpotens transzformáció.
 	Ekkor léteznek olyan $v_1,v_2\dots,v_r\in W$ vektorok és
 	léteznek olyan $m=n_1\geq n_2\geq \dots\geq n_r\geq 1$ pozitív egészek,
@@ -8780,7 +8780,7 @@ Végül a vektortér előáll néhány, mondjuk $r$ darab $B$-re invariáns alt�
 \section{Egyértelműség}
 Azt mutatjuk meg, hogy a normálalakban $r=\nu\left( B \right)$,
 és az $n_1,n_2,\dots,n_r$ számok is a $B$ nilpotens transzformáció altal egyertelműen meghatározottak.
-Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normálalakja van.
+Ez azt jelenti, hogy minden nilpotens transzformációnak csak egyetlen normálalakja van.
 \begin{lemma}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció, és $v\in V$ olyan vektor, amelyre
 	$A^mv=0$, de $A^{m-1}v\neq 0$.
@@ -8860,7 +8860,7 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	könnyen adódik.
 \end{proof}
 
-\begin{proposition}[A nillpotens felbontás egyértelműsége]
+\begin{proposition}[A nilpotens felbontás egyértelműsége]
 	Legyen $A\in L\left( V \right)$ egy lineáris transzformáció.
 	Tegyük fel, hogy valamely $\left\{ v_1,\dots,v_r \right\}$ vektorrendszerre és valamilyen
 	$m_1\geq m_2\geq \dots\geq m_r$ pozitív számokra
@@ -8877,8 +8877,8 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\]
 	Ekkor
 	\begin{enumerate}
-		\item $A$ nillpotens lineáris transzformációja $V$-nek;
-		\item Ha $m$ jelöli a nillpotencia rendjét, akkor
+		\item $A$ nilpotens lineáris transzformációja $V$-nek;
+		\item Ha $m$ jelöli a nilpotencia rendjét, akkor
 		      \(
 		      m_1=m=n_1
 		      \);
@@ -8934,8 +8934,8 @@ Ez azt jelenti, hogy minden nillpotens transzformációnak csak egyetlen normál
 	\]
 	ami ellentmond $m_t>n_t$ feltételnek.
 \end{proof}
-Az alábbiakban a nillpotens felbontási tételt annak egyértelműségével együtt foglaljuk össze.
-\begin{proposition}[nillpotens transzformáció normálakja]\label{pr:nillpnormal}
+Az alábbiakban a nilpotens felbontási tételt annak egyértelműségével együtt foglaljuk össze.
+\begin{proposition}[nilpotens transzformáció normálakja]\label{pr:nilpnormal}
 	Legyen $B\in L\left( W \right)$ egy $m$-ed rendben nilpotens transzformáció.
 	Jelölje $r=\nu\left( B \right)$ a $B$ defektusát.
 	Ekkor léteznek olyan $v_1,v_2\dots,v_r\in W$ vektorok és
@@ -8972,8 +8972,8 @@ Az alábbiakban a nillpotens felbontási tételt annak egyértelműségével egy
 	Minden ilyen blokkban csak a (felső) mellék diagonális elemei nem nullák.
 	A mellék diagonális elemei 1-esek.
 	Minden más elem zérus.
-	Ezt a mátrixot nevezzük a $B$ nillpotens transzformáció \emph{normálalakjának}.
-	\index{nillpotens transzformáció normálalakja}
+	Ezt a mátrixot nevezzük a $B$ nilpotens transzformáció \emph{normálalakjának}.
+	\index{nilpotens transzformáció}
 \end{proposition}
 Adott $1\leq j\leq r$ mellett tehát, $\mathbf{B}_j\in \mathbb{F}^{n_j\times n_j}$
 a fenti $j$-edik invariáns altérre leszorított $B$ leképezésnek a
@@ -9036,11 +9036,11 @@ a fenti tipusú mátrixok diagonális alakú elrendezésével adódik:
 	\end{pmatrix}.
 \end{displaymath}
 Hangsúlyozni szeretném, hogy az egyértelműség szerint a $\mathbf{B}_j$ blokkok száma, és azok mérete is csak
-a nillpotens transzformációtól függ.
-Több bázis is lehetséges, amelyben a nillpotens transzformáció normálalakú,
+a nilpotens transzformációtól függ.
+Több bázis is lehetséges, amelyben a nilpotens transzformáció normálalakú,
 de nem csak hogy minden normálalakban azonos számú blokk van ($B$ defektusa),
 de a blokkok mérete is azonos.
-A nillpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+A nilpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
 \section{Illusztrációk}
 \subsection{Egyetlen invariáns altér}
 Írjuk fel a $W$ vektortéren értelmezett lineáris transzformáció normál alakját,
@@ -9078,7 +9078,7 @@ Mivel az első négy oszlop lineárisan független,
 ezért az $u_1$-hez tartozó kis minimálpolinom $p_1=t^4.$
 Mivel tudjuk, hogy a minimálpolinom legfeljebb 4-ed fokú, és
 $p_1$ osztója, ezért csak $m\left( t \right)=t^4$ lehetséges,
-ezért $B$ transzformáció 4-ed rendben nillpotens.
+ezért $B$ transzformáció 4-ed rendben nilpotens.
 Éppen most számoltuk ki, hogy $B^3u_1\neq 0$, ezért
 az $u_1$-et tartalmazó legszűkebb $B$ invariáns altér az egész $W$,
 tehát
@@ -9210,8 +9210,8 @@ vektorok olyan bázisát adják a térnek, melyben $B$ mátrixa az alábbi alak�
 		0 & 0 & 0 & 0
 	\end{pmatrix}.
 \]
-\section{A nillpotens felbontási tétel nélkül?}
-Legyen $B\in L\left( V \right)$ egy $m$-edrendben nillpotens operátor.
+\section{A nilpotens felbontási tétel nélkül?}
+Legyen $B\in L\left( V \right)$ egy $m$-edrendben nilpotens operátor.
 Világos, hogy $\nu\left( B \right)\geq 1$,
 hiszen egyébként $B$ valamennyi hatványa is reguláris maradna.
 
@@ -9245,8 +9245,8 @@ majd föléjük a megfelelő csökkenő $B$ hatványokat.%
 		B^{m_1-1}v_1 & B^{m_2-1}v_2 & B^{m_3-1}v_3 & \dots  & B^{m_r-1}v_r
 	\end{matrix}
 \]
-Felmerül, hogy a fenti vektorrendszer bázis, evvel a nillpotens felbontási tételt megkerülve
-kapnánk a nillpotens normálalak igazolását.
+Felmerül, hogy a fenti vektorrendszer bázis, evvel a nilpotens felbontási tételt megkerülve
+kapnánk a nilpotens normálalak igazolását.
 
 Sajnos nem feltétlen bázis a fenti vektorrendszer.
 A lineárisan függetlenség a korábbi technikával igazolható -- tegyük ezt meg! --, de a rendszer nem mindig
@@ -9270,7 +9270,7 @@ amelynek egyik eleme sem esik $B$ képterébe, hiszen egyik elem sem az $e_1$ sk
 Ilyen módon a fent konstruált vektorrendszer csak három elemű lesz, ergo nem bázisa a négy
 dimenziós térnek.
 
-A nillpontens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olyan alkalmasan megválasztott bázisa, amelyre a fenti konstrukcióban kapott vektorrendszer a térnek generátorrendszere, ergo bázisa.
+A nilpontens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olyan alkalmasan megválasztott bázisa, amelyre a fenti konstrukcióban kapott vektorrendszer a térnek generátorrendszere, ergo bázisa.
 Persze amikor konkrétan a normálalakot konstruáljuk, akkor elegendő olyan bázisát keresni $\ker B$-nek,
 amelyből kiindulva a fenti vektorrendszer elemeinek száma a tér dimneziójával egyezik meg.
 Az így kapott rendszer persze bázis lesz.
@@ -9292,8 +9292,8 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 		\left( t-\lambda \right)^m
 	\]
 	alakú, valamely $\lambda\in\mathbb{F}$ és $m$ pozitív egész mellett.
-	Világos, hogy $B=A-\lambda I$ éppen $m$-edrendben nillpotens.
-	Alkalmazaható tehát $B$-re \aref{pr:nillpnormal}.~állítás.
+	Világos, hogy $B=A-\lambda I$ éppen $m$-edrendben nilpotens.
+	Alkalmazaható tehát $B$-re \aref{pr:nilpnormal}.~állítás.
 	Jelölje tehát $r=\nu\left( B \right)$ a $B$ defektusát.
 	Így léteznek olyan $v_1,v_2\dots,v_r\in W$ vektorok és
 	létezik pozitív egészek egyetlen olyan $m=n_1\geq n_2\geq \dots\geq n_r\geq 1$ véges sorozata,
@@ -11022,8 +11022,8 @@ ezért a következő tételt gondoltuk meg.
 		\left( t-\lambda_1 \right)^{k_1}\dots\left( t-\lambda_s \right)^{k_s}.\qedhere
 	\]
 \end{proposition}
-No persze az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nillpotens transzformáció,
-de tudjuk hogy a nillpotencia rendje legfeljebb a tér dimenziója,
+No persze az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nilpotens transzformáció,
+de tudjuk hogy a nilpotencia rendje legfeljebb a tér dimenziója,
 ergo
 $m_i\leq\dim\left( \ker\left( A-\lambda_iI \right)^{m_i} \right)
 	=
@@ -12769,7 +12769,7 @@ A komplex és a valós diagonalizálhatóság közös magja a következő állí
 	Láttuk, hogy bevezetve a $V_1=\ker p^k\left( N \right)$, és
 	$A_1=N|_{V_1}$ jelöléseket,
 	az $A_1$ minimálpolinomja $p^k$.
-	Tehát ha $B=p(N)$, akkor $B|_{V_1}$ transzformáció $k$-ad rendben nillpotens,
+	Tehát ha $B=p(N)$, akkor $B|_{V_1}$ transzformáció $k$-ad rendben nilpotens,
 	létezik tehát $v\in V_1$,
 	amelyre $B^{k-1}v\neq 0$,
 	de $B^kv=0$.
@@ -14704,4 +14704,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 02 Aug 2021 07:12:23 PM CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 02 Aug 2021 08:06:18 PM CEST CEST CEST CEST CEST CEST CEST CEST 
