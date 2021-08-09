@@ -9272,9 +9272,9 @@ amelynek egyik eleme sem esik $B$ képterébe, hiszen egyik elem sem az $e_1$ sk
 Ilyen módon a fent konstruált vektorrendszer csak három elemű lesz, ergo nem bázisa a négy
 dimenziós térnek.
 
-A nilpontens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olyan alkalmasan megválasztott bázisa, amelyre a fenti konstrukcióban kapott vektorrendszer a térnek generátorrendszere, ergo bázisa.
+A nilpotens felbontási tétel éppen azt mondja, hogy a $\ker B$-nek van olyan alkalmasan megválasztott bázisa, amelyre a fenti konstrukcióban kapott vektorrendszer a térnek generátorrendszere, ergo bázisa.
 Persze amikor konkrétan a normálalakot konstruáljuk, akkor elegendő olyan bázisát keresni $\ker B$-nek,
-amelyből kiindulva a fenti vektorrendszer elemeinek száma a tér dimneziójával egyezik meg.
+amelyből kiindulva a fenti vektorrendszer elemeinek száma a tér dimenziójával egyezik meg.
 Az így kapott rendszer persze bázis lesz.
 \chapter{A Jordan-normálalak}
 \scwords A legfontosabb gondolathoz érkeztünk,
@@ -14727,7 +14727,7 @@ hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
     Ha $v-w\in M$ fennáll, akkor $p_{v;M}=p_{w;M}$ is teljesül.
 \end{proposition}
 \begin{proof}
-    Mivel $M$ egy $A$-invariáns altér, ezért $p\left( A \right)\left( v-w \right)\in M$.
+    Mivel $M$ egy $A$-invariáns altér, ezért $p\left( A \right)\left( v-w \right)\in M$ minden $p$ polinom mellett.
     No de
     \[
         p\left( A \right)\left( v-w \right)=p\left( A \right)v-p\left( A \right)w,
@@ -14736,6 +14736,61 @@ hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
     Ez azt jelenti, hogy az $S\left( v,M \right)$ és az $S\left( w,M \right)$ főideálok azonosak,
     ergo a generáló polinom is ugyanaz.
 \end{proof}
+
+\begin{definition}[megengedhető altér]\index{megengedhető altér}
+    Legyen $M\subseteq V$ egy $A$-invariáns altér.
+    Azt mondjuk, hogy $M$ \emph{megengedhető altér},
+    ha minden $p\in\mathbb{F}\left[ t \right]$ polinomra és minden $v\in V$ vektorra,
+    a $p\left( A \right)v\in M$ tartalmazásból következik, 
+    hogy létezik olyan $w\in M$ vektor is, amelyre $p\left( A \right)v=p\left( A \right)w$.
+\end{definition}
+\begin{proposition}
+    Ha egy $M$ invariáns altérnek van invariáns direktkiegészítője, akkor $M$ megengedhető altér.
+\end{proposition}
+\begin{proof}
+    Legyen tehát $M\oplus N=V$ valamely $N$ invariáns altér mellett,
+    és tegyük fel, hogy valamely $u\in V$ esetén $p\left( A \right)u\in M$.
+    Az $u$ vektor előáll $u=v+w$ alakban, 
+    ahol $v\in M$ és $w\in M$.
+    Persze
+    \[
+        p\left( A \right)u-p\left( A \right)v=p\left( A \right)w.
+    \]
+    A bal oldal mindkét vektora $M$-beli, 
+    a jobb oldali vektor $N$-beli az $N$ direktkiegészítő invarianciája miatt.
+    Így $p\left( A \right)w=0$.
+    Találtunk tehát $v\in M$ vektort, amelyre $p\left( A \right)u=p\left( A \right)v$.
+\end{proof}
+Példaképpen nézzünk egy $m$-ed rendben nilpotens 
+$B\in L\left( V \right)$ lineáris transzformációt.
+Válasszunk egy $v\in V$ vektort, amelyre $B^{m-1}v\neq 0$.
+Ekkor $\lin\left( v;B \right)$ egy megengedhető altér.
+Legyen ugyanis valamely $x\in V$ vektorra $Bx\in\lin\left( v;B \right)$.
+Ekkor $Bx$ előáll
+\[
+    Bx
+    =
+    \alpha_0v+\alpha_1Bv+\ldots+\alpha_{m-1}B^{m-1}v
+\]
+alakban. 
+Na most $B^{m-1}v\neq 0$, és $m$ a nilpotencia rendje, ergo $v\notin \im B$. 
+No de, a fent kiemelt azonosságban a bal oldal,
+de az első tag kivételével a jobb oldal valamennyi tagja is az $\im B$ eltér egy-egy eleme,
+ezért $\alpha_0 v\in\im B$. 
+Ebből persze $\alpha_0=0$ következik, 
+ergo $Bx$ előáll mint egy $\lin\left( v;B \right)$-beli vektor képe:
+\[
+    Bx
+    =B
+    \left( 
+    \alpha_1v+\ldots+\alpha_{m-1}B^{m-2}v
+    \right).
+\]
+Ez azt jelenti, hogy $\lin\left(v;B  \right)$ valóban egy megengedhető altér.
+
+A nilpotens transzformációk felbontásáról szóló \ref{pr:nilpfelb}.~állítás általánosításaként meg fogjuk mutatni,
+hogy tetszőleges lineáris transzformáció mellett is igaz, 
+hogy egy megengedhető altérnek mindig van invariáns direktkiegészítője.
 
 %% a vége következik
 
@@ -14751,4 +14806,4 @@ hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 09 Aug 2021 02:24:16 pm CEST CEST CEST CEST CEST 
+Last Modified: Mon 09 Aug 2021 05:01:47 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
