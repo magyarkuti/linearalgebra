@@ -14792,6 +14792,61 @@ A nilpotens transzformációk felbontásáról szóló \ref{pr:nilpfelb}.~állí
 hogy tetszőleges lineáris transzformáció mellett is igaz, 
 hogy egy megengedhető altérnek mindig van invariáns direktkiegészítője.
 
+\begin{lemma}
+    Legyen $M$ egy megengedhető altér az $A\in L\left( V \right)$ lineáris transzformációra nézve és $v\notin M$ egy vektor.
+    Ekkor létezik olyan $w\in V$ vektor, amelyre 
+    \begin{enumerate}
+        \item
+            \(
+            p_w
+            =
+            p_{v,M}
+            \)
+        \item 
+            $\lin\left( w;A \right)\cap M=\left\{ 0 \right\}$;
+        \item
+            \(
+            M+\lin\left( w;M \right)
+            =
+            M+\lin\left( v;M \right).
+            \)
+            \qedhere
+    \end{enumerate}
+    \label{le:iranyito}
+\end{lemma}
+\begin{proof}
+    Jelölje $p_{v;M}$ a szóban forgó irányító polinomot.
+    Mivel $M$ megengedhető, ezért létezik $u\in M$, amelyre $p_{ v;M}\left( A \right)v=p_{v;M}\left( A \right)u$. 
+    Legyen $w=v-u$.
+    Ekkor $w-v\in M$, ezért $p_{w;M}=p_{v;M}$. 
+    Persze $p_{v;M}\left( A \right)w=0$,
+    ezért $p_{w,M}\left( A \right)w=0$ is fennáll,
+    amiből már következik, hogy $p_{w;M}=p_w$.
+
+    Most legyen $x\in M$, amelyre $x\in\lin\left( w;A \right)$. 
+    Ekkor létezik $f\in\mathbb{F}\left[ t \right]$ polinom, amelyre
+    \(
+        x=f\left( A \right)w.
+    \)
+    Az irányító polinom definíciója szerint $p_{w,M}|f$.
+    Már láttuk, hogy $p_{w;M}=p_w$, így $f$ voltaképpen a $p_w$ kis minimálpolinom többszöröse, 
+    ezért $f\left( A \right)w=0$.
+
+    A harmadik egyenlőséghez:
+    \begin{multline*}
+        M+\lin\left( w;A \right)
+        =
+        \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+        =
+        \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+        \subseteq
+        \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+        =
+        M+\lin\left( v;A \right).
+    \end{multline*}
+    Itt a tartalmazás azért áll fenn, mert $M$ egy invariáns altér, így $f\left( A \right)u\in M$.
+    Az ellenkező irányú tartalmazás a fentivel analóg.
+\end{proof}
 %% a vége következik
 
 \backmatter
@@ -14806,4 +14861,4 @@ hogy egy megengedhető altérnek mindig van invariáns direktkiegészítője.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 09 Aug 2021 05:01:47 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Mon 09 Aug 2021 09:11:31 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
