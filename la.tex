@@ -14694,6 +14694,49 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 
 \chapter{A Frobenius-normálalak}
 
+A kis minimál polinom fogalmát általánosítjuk.
+\begin{definition}[irányító polinom]\index{irányító polinom}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció,
+    $M\subseteq V$ egy az $A$-ra nézve invariáns altér, 
+    és $v\in V$ egy rögzített vektor.
+    Tekintsük az $\mathbb{F}\left[ t \right]$ polinomgyűrű következő részhalmazát.
+    \[
+        S\left( v;M \right)
+        =
+        \left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v\in M \right\}.
+    \]
+    Látható, hogy $S\left( v;M \right)$ egy ideálja $\mathbb{F}\left[ t \right]$-nek.
+    A fenti ideált generáló normált polinomot nevezzük az $A$ transzformáció $v$-t $M$-be vivő \emph{irányító polinomjának}
+    és $p_{v;M}$ módon jelöljük.
+\end{definition}
+Világos, hogy ha $M_1\subseteq M_2$ invariáns alterek, akkor $S\left( v;M_1 \right)\subseteq S\left( v;M_2 \right)$, 
+ezért $p_{v;M_2}|p_{v;M_1}$.
+Speciálisan, ha $M=\left\{ 0 \right\}$ triviális altér, akkor $p_{v;\left\{ 0 \right\}}$ egybeesik a $p_{v}$ kis minimálpolinommal.
+Meggondoltuk tehát, hogy minden $M$ invariáns altér mellett a $p_{v;M}$ irányító polinom osztója a $p_v$ kis minimálpolinomnak $p_{v;M}|p_v$, ergo az irányitó polinom is legfeljebb $\dim\left( V \right)$-ed fokú.
+Ebből az is nyilvánvaló, hogy ha egy irányító polinomra $p_{v;M}\left( A \right)v=0$ teljesül,
+akkor $p_{v}|p_{v;M}$ is fennáll, 
+tehát a $v$-hez tartozó irányító polinom egybeesik a $v$-hez tartozó kisminimálpolinommal.
+
+Látható az is, hogy $p_{v,M}\left( t \right)=1$ akkor és csak akkor teljesül, ha $v\in M$.
+
+Most elegendő feltételt adunk arra, 
+hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
+\begin{proposition}
+    Legyen $M\subseteq V$ egy $A$-invariáns altér, 
+    és $v,w\in M$ rögzített vektorok.
+    Ha $v-w\in M$ fennáll, akkor $p_{v;M}=p_{w;M}$ is teljesül.
+\end{proposition}
+\begin{proof}
+    Mivel $M$ egy $A$-invariáns altér, ezért $p\left( A \right)\left( v-w \right)\in M$.
+    No de
+    \[
+        p\left( A \right)\left( v-w \right)=p\left( A \right)v-p\left( A \right)w,
+    \]
+    így $p\left( A \right)v\in M$ pontosan akkor teljesül, ha $p\left( A \right)w\in M$ is fennáll.
+    Ez azt jelenti, hogy az $S\left( v,M \right)$ és az $S\left( w,M \right)$ főideálok azonosak,
+    ergo a generáló polinom is ugyanaz.
+\end{proof}
+
 %% a vége következik
 
 \backmatter
@@ -14708,4 +14751,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 09 Aug 2021 01:04:09 pm CEST 
+Last Modified: Mon 09 Aug 2021 02:24:16 pm CEST CEST CEST CEST CEST 
