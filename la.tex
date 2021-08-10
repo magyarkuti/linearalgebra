@@ -14694,7 +14694,7 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 
 \chapter{A Frobenius-normálalak}
 
-A kis minimál polinom fogalmát általánosítjuk.
+A kis minimálpolinom fogalmát általánosítjuk.
 \begin{definition}[irányító polinom]\index{irányító polinom}
     Legyen $A\in L\left( V \right)$ egy lineáris transzformáció,
     $M\subseteq V$ egy az $A$-ra nézve invariáns altér, 
@@ -14792,6 +14792,30 @@ A nilpotens transzformációk felbontásáról szóló \ref{pr:nilpfelb}.~állí
 hogy tetszőleges lineáris transzformáció mellett is igaz, 
 hogy egy megengedhető altérnek mindig van invariáns direktkiegészítője.
 
+A megengedhető altér definíciója kicsit élesíthető az irányító polinom használatával.
+\begin{proposition}
+    Legyen $M$ egy $A$-invariáns altér a $V$ vektortérben.
+    Az $M$ pontosan akkor megemgedhető, 
+    ha minden $v\in V$ vektorra a $p_{v;M}\left( A \right)v\in M$ tartalmazás esetén létezik olyan $w\in M$ vektor,
+    amelyre $p_{v,M}\left( A \right)w=p_{v,M}\left( A \right)v$.
+\end{proposition}
+\begin{proof}
+    Legyen $p$ tetszőleges olyan polinom, amelyre $p\left( v \right)\in M$.
+    Persze $p\in S\left( v;M \right)$.
+    Ennek az ideálnak a generáló eleme $p_{v;M}$, 
+    ergo létezik $h$ polinom, amelyre 
+    $p\left( t \right)=h\left( t \right)p_{v;M}\left( t \right)$.
+    Így 
+    \begin{displaymath}
+        p\left( A \right)v
+        =
+        h\left( A \right)\left( p_{v;M}\left( A \right)v \right)
+        =
+        h\left( A \right)\left( p_{v;M}\left( A \right)w \right)
+        =
+        p\left( A \right)w.\qedhere
+    \end{displaymath}
+\end{proof}
 \begin{lemma}
     Legyen $M$ egy megengedhető altér az $A\in L\left( V \right)$ lineáris transzformációra nézve és $v\notin M$ egy vektor.
     Ekkor létezik olyan $w\in V$ vektor, amelyre 
@@ -14861,4 +14885,4 @@ hogy egy megengedhető altérnek mindig van invariáns direktkiegészítője.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Mon 09 Aug 2021 09:11:31 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Tue 10 Aug 2021 11:18:55 AM CEST 
