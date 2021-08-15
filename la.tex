@@ -14800,7 +14800,7 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
     Legyen $M$ egy $A$-invariáns altér a $V$ vektortérben.
     Az $M$ pontosan akkor megengedhető, 
     ha minden $w\in V$ vektorhoz létezik $v\in M$,
-    amelyre $p_{v,M}\left( A \right)w=p_{v,M}\left( A \right)v$.
+    amelyre $p_{w,M}\left( A \right)w=p_{w,M}\left( A \right)v$.
 \end{proposition}
 \begin{proof}
     Legyen $p$ tetszőleges olyan polinom, amelyre $p\left( A \right)w\in M$, valamely $w\in M$ mellett.
@@ -14827,22 +14827,24 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
             \(
             p_w
             =
-            p_{v,M}
+            p_{w;M}
+            =
+            p_{v;M};
             \)
         \item 
             $\lin\left( w;A \right)\cap M=\left\{ 0 \right\}$;
         \item
             \(
-            M+\lin\left( w;M \right)
+            M+\lin\left( w;A \right)
             =
-            M+\lin\left( v;M \right).
+            M+\lin\left( v;A \right).
             \)
             \qedhere
     \end{enumerate}
     \label{le:iranyito}
 \end{lemma}
 \begin{proof}
-    Jelölje $p_{v;M}$ a szóban forgó irányító polinomot.
+    Jelölje $p_{v;M}$ a a $v$ vektort $M$-be vivő irányító polinomot.
     Mivel $M$ megengedhető, ezért létezik $u\in M$, amelyre $p_{ v;M}\left( A \right)v=p_{v;M}\left( A \right)u$. 
     Legyen $w=v-u$.
     Ekkor $w-v\in M$, ezért $p_{w;M}=p_{v;M}$. 
@@ -14875,61 +14877,61 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
     Az ellenkező irányú tartalmazás a fentivel analóg.
 \end{proof}
 \begin{lemma}
-    Legyen $M_0$ a $V$ vektortér egy valódi altere, 
+    Legyen $M$ a $V$ vektortér egy valódi altere, 
     amely az $A$ lineáris transzformációra nézve megengedhető.
-    Válasszuk meg a $v_1\in V$ vektort olyan módon, hogy $\deg p_{v_1;M_0}$ a lehető legnagyobb legyen,
+    Válasszuk meg a $v\in V$ vektort olyan módon, hogy $\deg p_{v;M}$ a lehető legnagyobb legyen,
     azaz minden $x\in V$ mellett
     \[
-        \deg p_{v_1;M_0}
+        \deg p_{v;M}
         \geq
-        \deg p_{x;M_0}.
+        \deg p_{x;M}.
     \]
     Jelölje 
     \[
-        M_1
+        \bar{M}
         =
-        M_0+\lin\left( v_1;A \right)
+        M+\lin\left( v;A \right)
     \]
     invariáns alteret.
     Tegyük fel, hogy egy $w\in V$ mellett 
     \[
-        p_{w;M_1}\left( A \right)w
+        p_{w;\bar{M}}\left( A \right)w
         =
-        v_0+g_1\left( A \right)v_1
+        m+g\left( A \right)v
         \tag{\dag}
     \]
-    valamely $v_0\in M$ vektor és valamely $g_1\in\mathbb{F}\left[ t \right]$ polinom mellett.
-    Ekkor alkalmas $v\in M_0$ mellett
+    valamely $m\in M$ vektor és valamely $g\in\mathbb{F}\left[ t \right]$ polinom mellett.
+    Ekkor alkalmas $m'\in M$ mellett
     \[
-        p_{w;M_1}|g_1 
+        p_{w;\bar{M}}|g 
         \quad\text{ és }\quad
-        p_{w;M_1}\left( A \right)v=v_0.
+        p_{w;\bar{M}}\left( A \right)m'=m.
         \qedhere
     \]
     \label{le:megengedhetolepes}
 \end{lemma}
 \begin{proof}
-    Először gondoljuk meg, hogy valóban megválasztható egy $v_1$ vektor úgy, hogy $\deg p_{v_1;M_0}$ maximális legyen.
-    Mivel $M_0\neq V$, ezért van $x\in V\smallsetminus M_0$.
+    Először gondoljuk meg, hogy valóban megválasztható egy $v$ vektor úgy, hogy $\deg p_{v;M}$ maximális legyen.
+    Mivel $M\neq V$, ezért van $x\in V\smallsetminus M$.
     Minden ilyen $x$ vektorra 
     \begin{math}
-        0<\deg p_{x;M_0}\leq \dim \left( V \right).
+        0<\deg p_{x;M}\leq \dim \left( V \right).
     \end{math}
-    Ezért bármely olyan $x$ meg is felel $v_1$-nek, amelynél $\deg p_{x;M_0}$ a lehető legnagyobb.
+    Ezért bármely olyan $x$ meg is felel $v$-nek, amelynél $\deg p_{x;M}$ a lehető legnagyobb.
 
-    Mivel invariáns alterek Minkowski-összege invariáns, ezért $M_1$ valóban egy az $M_0$ alteret szigorúan tartalmazó invariáns altér.
+    Mivel invariáns alterek Minkowski-összege invariáns, ezért $\bar{M}$ valóban egy az $M$ alteret szigorúan tartalmazó invariáns altér.
 
-    Az egyszerűbb jelölés kedvéért legyen $f=p_{w,M_1}$ a $w$-t $M_1$-be vivő irányító polinom.
+    Az egyszerűbb jelölés kedvéért legyen $f=p_{w,\bar{M}}$ a $w$-t $\bar{M}$-be vivő irányító polinom.
     A maradékos osztás tétele szerint léteznek olyan $h,r$ polinomok, amelyekre
     \[
-        g_1=h\cdot f  + r, 
+        g=h\cdot f  + r, 
         \quad\text{ ahol }\quad
         \deg r<\deg f.
     \]
-    Definiálja $u=w-h\left( A \right)v_1.$
-    Világos, hogy $u-w\in M_1$ hiszen $v_1\in M_1$, így 
+    Definiálja $u=w-h\left( A \right)v.$
+    Világos, hogy $u-w\in \bar{M}$ hiszen $v\in\bar{M}$, így 
     \[
-        p_{u;M_1}=p_{w;M_1}=f.
+        p_{u;\bar{M}}=p_{w;\bar{M}}=f.
     \]
     Az $f\left( A \right)$ transzformációt az $u$ definíciójára alkalmazva, 
     majd felhasználva a lemma (\dag) feltételét azt kapjuk, hogy
@@ -14937,91 +14939,92 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
         f\left( A \right)u
         =
         f\left( A \right)w
-        -f\left( A \right)h\left( A \right)v_1
+        -f\left( A \right)h\left( A \right)v
         =
-        v_0+g_1\left( A \right)v_1
-        -f\left( A \right)h\left( A \right)v_1
+        m+g\left( A \right)v
+        -f\left( A \right)h\left( A \right)v
         \\
         =
-        v_0+
-        \left( g_1\left( A \right)-f\left( A \right)h\left( A \right) \right)v_1
+        m+
+        \left( g\left( A \right)-f\left( A \right)h\left( A \right) \right)v
         =
-        v_0+
-        r\left( A \right)v_1.
+        m+
+        r\left( A \right)v.
         \tag{\ddag}
     \end{multline*}
         Innen azonnal látszik, hogy összesen azt kell megmutatnunk, hogy az $r$ a konstans zérus polinom.
-    Ekkor nyilván $f|g_1$, és $f\left( A \right)u=v_0$. 
-    Mivel $v_0\in M_0$ és $M_0$ egy megengedhető altér, ezért persze létezik $v\in M_0$, 
-    amelyre $f\left( A \right)v=v_0.$
+    Ekkor nyilván $f|g$, és $f\left( A \right)u=m$. 
+    Mivel $m\in M$ és $M$ egy megengedhető altér, ezért persze létezik $m'\in M$, 
+    amelyre $f\left( A \right)m'=m.$
 
-    Az $r\left( t \right)=0$ megmutatásához jelölje $p=p_{u;M_0}$ az irányító polinomot.
-    Mivel $M_0\subset M_1$, ezért $p_{u;M_1}|p_{u;M_0}$, tehát a bevezetett jelöléseinkkel $f|p$.
-    Létezik tehát valamely $g$ polinom, amelyre
+    Az $r\left( t \right)=0$ megmutatásához jelölje $p=p_{u;M}$ az $u$-t $M$-be vivő irányító polinomot.
+    Mivel $M\subset\bar{M}$, ezért $p_{u;\bar{M}}|p_{u;M}$, tehát a bevezetett jelöléseinkkel $f|p$.
+    Létezik tehát valamely $q$ polinom, amelyre
     \begin{math}
-        p=fg.
+        p=fq.
     \end{math}
-    Alkalmazzuk a $g\left( A \right)$ transzformációt (\ddag) azonosságra.
+    Alkalmazzuk a $q\left( A \right)$ transzformációt (\ddag) azonosságra.
     \[
         p\left( A \right)u
         =
-        g\left( A \right)f\left( A \right)u
+        q\left( A \right)f\left( A \right)u
         =
-        g\left( A \right)v_0+
-        g\left( A \right)r\left( A \right)v_1.
+        q\left( A \right)m+
+        q\left( A \right)r\left( A \right)v.
     \]
-    Itt $p\left( A \right)u\in M_0$ és $g\left( A \right)v_0\in M_0$, ergo $(g\cdot r)(A)v_1\in M_0$ is fennáll.
+    Itt $p\left( A \right)u\in M$ és $q\left( A \right)m\in M$, ergo $(q\cdot r)(A)v\in M$ is fennáll.
     Na most, ha $r$ nem a konstans zérus, 
-    akkor $g\cdot r$ többszöröse a $p_{v_1;M_0}$ irányító polinomnak, ami pedig $v_1$ konstrukciója szerint 
-    nem kisebb fokú, mint $p_{u;M_0}$.
+    akkor $q\cdot r$ többszöröse a $p_{v;M}$ irányító polinomnak, ami pedig $v$ konstrukciója szerint 
+    nem kisebb fokú, mint $p_{u;M}$.
     Így
     \[
-        \deg\left( g\cdot r \right)
+        \deg\left( q\cdot r \right)
         \geq
-        \deg p_{v_1;M_0}
+        \deg p_{v;M}
         \geq
-        \deg p_{u;M_0}.
+        \deg p_{u;M}.
     \]
     Innen persze 
     $
-    \deg g+\deg r
+    \deg q+\deg r
     \geq \deg p
     \geq 
-    \deg f+\deg g
+    \deg f+\deg q
     $ következik, ami képtelenség az $r$ konstrukciója szerint.
     Ezt kellett belátni. 
 \end{proof}
-Első alkalmazásként lássuk, hogy egy valódi megengedhető altér található invariáns altér, amelyet hozzáadva újra egy megengedhető altérret kapunk.
+Első alkalmazásként lássuk, hogy egy valódi megengedhető altérhez található olyan invariáns altér, 
+amelyet hozzáadva újra egy megengedhető alteret kapunk.
 Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
 \begin{proposition}
-    Legyen $M_0$ egy megengedhető altér az $A\in L\left( V \right)$ lineáris transzformációra nézve.
-    Válasszunk egy maximális fokszámú $M_0$-ba vivő vezető polinommal rendelkező $v_1\in V$ vektort.
-    Ekkor az $M_1=M_0+\lin\left( v_1;A \right)$ altér is megengedhető.
+    Legyen $M$ egy megengedhető altér az $A\in L\left( V \right)$ lineáris transzformációra nézve.
+    Válasszunk egy maximális fokszámú $M$-be vivő vezető polinommal rendelkező $v\in V$ vektort.
+    Ekkor az $\bar{M}=M+\lin\left( v;A \right)$ altér is megengedhető.
 \end{proposition}
 \begin{proof}
-    Legyen $w\in V\smallsetminus M_0$, és tekintsük a $p_{w;M_1}\left( A \right)w\in M_0+\lin\left( v_1;A \right)$ vektort.
-    Világos, hogy valamely $v_0\in M_0$ és valamely $g$ polinom mellett
+    Legyen $w\in V\smallsetminus M$, és tekintsük a $p_{w;\bar{M}}\left( A \right)w\in M+\lin\left( v;A \right)$ vektort.
+    Világos, hogy valamely $m\in M_0$ és valamely $g$ polinom mellett
     \[
-        p_{w;M_1}\left( A \right)w
+        p_{w;\bar{M}}\left( A \right)w
         =
-        v_0+g\left( A \right)v_1
+        m+g\left( A \right)v.
     \]
-    \Aref{le:megengedhetolepes}.~lemma szerint valamely $v_0'\in M_0$ mellett $p_{w;M_1}\left( A \right)v_0'$ és
-    van olyan $h$ polinom, amelyre $g=p_{w;M_1}\cdot h$.
+    \Aref{le:megengedhetolepes}.~lemma szerint valamely $m'\in M$ mellett $p_{w;\bar{M}}\left( A \right)m'=m$ és
+    van olyan $h$ polinom, amelyre $g=p_{w;\bar{M}}\cdot h$.
     Ezeket helyettesítve kapjuk, hogy 
     \[
-        p_{w;M_1}\left( A \right)w
+        p_{w;\bar{M}}\left( A \right)w
         =
-        p_{w;M_1}\left( A \right)v_0'+p_{w;M_1}\left( A \right)\left( h\left( A \right)v_1 \right)
+        p_{w;\bar{M}}\left( A \right)m'+p_{w;\bar{M}}\left( A \right)\left( h\left( A \right)v\right)
         =
-        p_{w;M_1}\left( A \right)\left( v_0'+h\left( A \right)v_1 \right).
+        p_{w;\bar{M}}\left( A \right)\left(m'+h\left( A \right)v \right).
     \]
-    Itt $v_0'\in M_0\subseteq M_1$ és $v_1\in M_1$ miatt az argumentumban szereplő
+    Itt $m'\in M\subseteq\bar{M}$ és $v\in \bar{M}$ miatt az argumentumban szereplő
     \begin{math}
-         v_0'+h\left( A \right)v_1
+         m'+h\left( A \right)v
     \end{math}
-    vektor $M_1$-ben van. 
-    \Aref{pr:megengedheto_v}.~állítás szerint éppen ez kellett belátni.
+    vektor $\bar{M}$-ban van. 
+    \Aref{pr:megengedheto_v}.~állítás szerint éppen ezt kellett belátni.
 \end{proof}
 \begin{proposition}[Ciklikus felbontás]
     Legyen $V$ egy véges dimenziós vektortér az $\mathbb{F}$ test felett, $A\in L\left( V \right)$ egy lineáris transzformáció.
@@ -15029,11 +15032,144 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
     Ekkor létezik $r$ pozitív egész, és léteznek $w_1,\dots,w_r\in V$ vektorok, amelyekre
     \begin{enumerate}
         \item A $w_1,\dots,w_r$ egyike sem zérus;
-        \item $V=M_0\oplus\lin\left( w_1;M \right)\oplus\dots\oplus\lin\left( w_r;M \right)$
-        \item Jelölje $p_k=p_{w_k}$ a $v_k$ vektorhoz tartozó kis minimmálpolinomot.
-            Ekkor minden $k=2,\dots,r$ mellett $p_k|p_{k-1}$.\qedhere
+        \item $V=M_0\oplus\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_r;A \right)$
+        \item A $w_1,\dots,w_k$ vektorok kis minimálpolinomjai olyanok, hogy mind osztója az előzőnek, 
+            azaz ha $p_k=p_{w_k}$ a $w_k$ vektorhoz tartozó kis minimálpolinom, 
+            akkor minden $k=2,\dots,r$ mellett $p_k|p_{k-1}$.\qedhere
     \end{enumerate}
 \end{proposition}
+\begin{proof}
+    Válasszunk egy $v_1\notin M_0$ vektort, amelyre minden $x\in V$ mellett
+    \[
+        \deg p_{v_1;M_0}\geq \deg p_{x;M_0}.
+    \]
+    Alkalmazzuk \aref{le:iranyito}.~lemmát az $M_0$ megengedhető altérre és a $v_1$ vektorra.
+    Azt kapjuk, hogy létezik $w_1\notin M_0$ vektor, amelyre
+    \begin{enumerate}
+        \item
+            \(
+            p_{w_1}
+            =
+            p_{w_1;M_0}
+            =
+            p_{v_1;M_0};
+            \)
+        \item 
+            $\lin\left( w_1;A \right)\cap M_0=\left\{ 0 \right\}$;
+        \item
+            \(
+            M_0+\lin\left( w_1;A \right)
+            =
+            M_0+\lin\left( v_1;A \right).
+            \)
+    \end{enumerate}
+    Azt is láttuk, hogy $v_1$ maximalitási konstrukciója szerint $M_0+\lin\left( v_1;A \right)$ is megengedhető altér.
+    Legyen $$M_1=M_0+\lin\left( v_1;A \right)=M_0\oplus\lin\left( w_1;A \right).$$
+    Ha $M_1=V$, akkor $r=1$ választással készen is vagyunk.
+
+    Ha $M_1\neq V$, akkor megismételjük a fenti eljárást az $M_1$ megengedhető altérrel:
+    Válasszunk tehát egy $v_2\notin M_1$ vektort, amelyre minden $x\in V$ mellett
+    \[
+        \deg p_{v_2;M_1}\geq \deg p_{x;M_1}.
+    \]
+    Alkalmazzuk \aref{le:iranyito}.~lemmát az $M_1$ megengedhető altérre és a $v_2$ vektorra.
+    Azt kapjuk, hogy létezik $w_2\notin M_1$ vektor, amelyre
+    \begin{enumerate}
+        \item
+            \(
+            p_{w_2}
+            =
+            p_{w_2;M_1}
+            =
+            p_{v_2;M_1};
+            \)
+        \item 
+            $\lin\left( w_2;A \right)\cap M_1=\left\{ 0 \right\}$;
+        \item
+            \(
+            M_1+\lin\left( w_2;A \right)
+            =
+            M_1+\lin\left( v_2;A \right).
+            \)
+    \end{enumerate}
+    Tudjuk azt is, hogy $v_2$ maximalitási konstrukciója szerint $M_1+\lin\left( v_2;A \right)$ is egy megengedhető altere $V$-nek.
+    Legyen $$M_2=M_1+\lin\left( v_2;A \right)=M_1\oplus\lin\left( w_2;A \right).$$
+    Most meg kell mutatnunk, hogy $p_{w_2}|p_{w_1}$. 
+    Ehhez először azt vegyük észre, hogy $v_1$ helyett $w_1$ vektorra is teljesül a
+    \[
+        \deg p_{w_1,M_1}
+        \geq
+        \deg p_{x,M_1}
+    \]
+    maximalitási feltétel minden $x\in V$ mellett.
+    Másodszor vegyük észre, hogy triviálisan teljesül az
+    \[
+        p_{w_2;M_1}\left( A \right)w_2=0+p_{w_1;M_0}\left( A \right)w_1
+    \]
+    egyenlőség, hiszen mindkét oldal zérus.
+    \Aref{le:megengedhetolepes}.~lemmát alkalmazzuk és kapjuk, hogy
+    $p_{v_2;M_1}|p_{v_1;M_0}$, ami a mi jelöléseinkkel azt jelenti, hogy $p_2|p_1$.
+    Ha $M_2=V$, akkor $r=2$ választással készen is vagyunk.
+
+    Ha $M_2\neq V$, akkor megismételjük a fenti eljárást $M_1$ helyett az $M_2$ megengedhető altérrel, stb.
+
+    Mivel minden egyes lépésben az $M_k$ altér dimenziója nő, ezért van olyan $r$ egész, amelyre $M_r=V$.
+    Így az $M_0;\lin\left( w_1;A \right),\dots,\lin\left( w_r;A \right)$ alterek olyanok, 
+    hogy mind diszjunkt az előzőek összegétől, ezért a direktösszeg értelmes és
+    \[
+        M_0\oplus\lin\left( w_1;A \right)\oplus,\ldots,\oplus\lin\left( w_r;A \right)=V_r=M
+    \]
+    és minden $k\geq 2$ mellett $p_{k}|p_{k-1}$.
+\end{proof}
+
+A ciklikus felbontási tételben az első $p_1$ polinom különösen nevezetes. 
+Amennyiben $M_0=\left\{ 0 \right\}$, akkor $p_1$ az $A$ minimálpolinomja.
+
+Általános esetben tekintsük az összes olyan polinomot, amelyre $p\left( A \right)v\in M_0$ minden $v\in V$ mellett:
+\[
+S\left( M_0 \right)=\left\{ p\in\mathbb{F}\left[ t \right]:p\left( A \right)v\in M_0,\text{ minden } v\in V \right\}.
+\]
+Világos, hogy az $M_0$ invarianciája szerint $S\left( M_0 \right)$ egy nemzérus ideál.
+Jelölje $s_{M_0}$ az $S\left( M_0 \right)$ normált generátor elemét.
+
+Világos, hogy ha visszatérünk az $M_0=\left\{ 0 \right\}$ esethez,
+akkor $s_{\left\{ 0 \right\}}$ éppen az az $A$ lineáris transzformáció minimálpolinomja.
+
+\begin{proposition}
+    Legyen $V$ egy véges dimenziós vektortér az $\mathbb{F}$ test felett, $A\in L\left( V \right)$ egy lineáris transzformáció.
+    Legyen $M_0\subset V$ megengedhető altér, 
+    és legyenek $w_1,\dots,w_r\in V$ vektorok, amelyekre és ezek $p_k$ a kis minimálpolinomjaira
+    fenállnak a következők.
+    \begin{enumerate}
+        \item A $w_1,\dots,w_r$ egyike sem zérus;
+        \item $V=M_0\oplus\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_r;A \right)$;
+        \item minden $k=2,\dots,r$ mellett $p_k|p_{k-1}$.
+    \end{enumerate}
+    Ekkor $p_1=s_{M_0}$, azaz $p_1$ a fenti $S\left( M_0 \right)$ ideál normált generáló eleme.
+    Speciálisan, ha $M_0=\left\{ 0 \right\}$, akkor $p_1$ az $A$ minimálpolinomja.
+\end{proposition}
+\begin{proof}
+    Először megmutatjuk, hogy minden $v\in V$ mellett $p_1\left( A \right)v\in M$.
+    Legyen tehát $v\in V$ rögzítve. 
+    Ekkor a 2. feltétel szerint
+    \[
+        v=m_0+\sum_{k=1}^rf_k\left( A \right)w_k
+    \]
+    valamely $f_k$ polinomokra, és $m_0\in M_0$ vektorra.
+    Alkalmazzuk mindkét oldalra a $p_1\left( A \right)$ transzformációt.
+    Így
+    \[
+        p_1\left( A \right)v=p_1\left( A \right)m_0+\sum_{k=1}^rp_1\left( A \right)f_k\left( A \right)w_k.
+    \]
+    No de minden $k$-ra $p_k|p_1$, és $p_k\left( A \right)w_k=0$, azért a szumma minden tagja zérus,
+    így $M_0$ invarianciáját használva kapjuk, hogy $p_1\left( A \right)v\in M=p_1\left( A \right)m_0\in M.$
+    Megmutattuk tehát, hogy $s_{M_0}|p_1$.
+
+    Világos, hogy $s_{M_0}\left( A \right)w_1\in M_0\cap\lin\left( w_1;A \right)=\left\{ 0 \right\}$,
+    hiszen $\lin\left( w_1;A \right)$ egy $A$-invariáns altér.
+    Így $s_{M_0}\left( A \right)w_1=0$, amiből már $p_1|s_{M_0}$ is következik.
+\end{proof}
+
 %% a vége következik
 
 \backmatter
@@ -15048,4 +15184,4 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 11 Aug 2021 12:03:53 pm CEST 
+Last Modified: Sun 15 Aug 2021 02:06:46 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
