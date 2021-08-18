@@ -6708,7 +6708,7 @@ $A$-nak.\index{sajátaltér}
 Mielőtt tovább lépünk érdemes visszagondolnunk arra,
 hogy egy test feletti polinomgyűrű egy főideálgyűrű.\index{főideál-gyűrű}\index{főideál}
 Láttuk ugyanis
--- \ref{pr:pgyurufoidealgyuru}. állítás --,
+-- \ref{pr:pgyurufoidealgyuru}.~állítás --,
 hogy minden nem csak a $\left\{ 0 \right\}$ elemet tartalmazó ideálnak
 van egyetlen legkisebb fokú és normált eleme,
 ami egyben az ideál generáló eleme is.
@@ -6772,7 +6772,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$-t.
 	Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
 	Ezt a polinomot nevezzük az $A$ transzformáció, 
-	\emph{kis minimálpolinomjának}\index{kis minimálpolinom}.
+    \emph{kis minimálpolinomjának}\index{kis minimálpolinom}.\label{def:kisminimal}
     a $v$ pontban.
 \end{definition}
 
@@ -15169,7 +15169,64 @@ akkor $s_{\left\{ 0 \right\}}$ éppen az $A$ lineáris transzformáció minimál
     hiszen $\lin\left( w_1;A \right)$ egy $A$-invariáns altér.
     Így $s_{M_0}\left( A \right)w_1=0$, amiből már $p_1|s_{M_0}$ is következik.
 \end{proof}
+A következő lemma invariáns altereknek egy polinom által képzett direkképéről szól.
+\begin{lemma}
+    Legyen az $A\in L\left( V \right)$ lineáris transzformáció és az $f\in\mathbb{F}\left[t  \right]$
+    polinom rögzítve.
+    Ekkor
+    \begin{enumerate}
+        \item Minden $v\in V$ mellett 
+            \begin{math}
+                f\left( A \right)\lin\left( v;A \right)
+                =
+                \lin\left( f\left( A \right)v;A \right);
+            \end{math}
+        \item Ha $V$ előáll mint invariáns alterek $V=V_1\oplus\ldots\oplus V_k$ direktösszegének alakjában, 
+            akkor ezek $f$ képére az
+            \begin{math}
+                f\left( A \right)V
+                =
+                f\left( A \right)V_1
+                \oplus\ldots\oplus
+                f\left( A \right)V_k
+            \end{math}
+            direktösszeg alakú előállítás is teljesül;
+        \item
+            Ha az $u$ és $v$ vekotorok kis minimálpolinomja azonos,
+            akkor az $f\left( A \right)u$ és $f\left( A \right)v$ vektoroknak is ugyanaz a kis minimálpolinomja.
+            \qedhere
+    \end{enumerate}
+    \label{le:cikl-egyert}
+\end{lemma}
+\begin{proof}
+    Az első állítás egyszerűen azért igaz,
+    mert a transzformáció polinomjai kommutálnak egymással.
 
+    A második állításhoz csak azt kell észrevenni, 
+    hogy ha invariáns alterek direktösszege értelmes,
+    akkor ezek $f\left( A \right)$ transzformációval képzett direktösszege is értelmes.
+
+    A harmadik állításhoz mint \ref{def:kisminimal}.~definícióban jelölje
+    \begin{math}
+        J_{A,v}
+    \end{math}
+    azon $p$ polinomok halmazát, amelyekre $p\left( A \right)v=0$ teljesül. 
+    A feltétel szerint 
+    \begin{math}
+        J_{A,u}=J_{A,v}.
+    \end{math}
+    Na most $p\in J_{A,f\left( A \right)v}$ pontosan akkor,
+    ha $p\cdot f\in J_{A,v}$,
+    ami persze ugyan az, mint 
+    $p\cdot f\in J_{A,u}$, ami már a $p\in J_{A,f\left( A \right)u}$ feltétellel ekvivalens.
+    Meggondoltuk tehát, hogy 
+    \begin{math}
+        J_{A,f\left( A \right)v}
+        =
+        J_{A,f\left( A \right)u}
+    \end{math}
+    is fennáll, ami éppen azt jelenti, hogy a fenti ideálok generáló elemei is azonosak.
+\end{proof}
 %% a vége következik
 
 \backmatter
@@ -15184,4 +15241,4 @@ akkor $s_{\left\{ 0 \right\}}$ éppen az $A$ lineáris transzformáció minimál
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sun 15 Aug 2021 02:47:12 pm CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Wed 18 Aug 2021 09:05:34 PM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
