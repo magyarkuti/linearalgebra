@@ -15227,6 +15227,37 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
     \end{math}
     is fennáll, ami éppen azt jelenti, hogy a fenti ideálok generáló elemei is azonosak.
 \end{proof}
+\begin{proposition}[Ciklikus felbontás egyértelműsége]
+    Legyen $M_0\subset V$ egy $A$-invariáns altér a $V$ vektortérben.
+    Tegyük fel, hogy adott az $r,s$ pozitív egész, adottak az 
+    $v_1,\dots,v_r\in V$, és a $w_1,\dots,w_s\in V$ vektorok
+    a hozzájuk tartozó $p_1,\dots,p_s$ és a $q_1,\dots,q_s$ kis minimálpolinomokkal.
+    Tegyük fel, hogy 
+    \begin{enumerate}
+        \item $v_1,\dots,v_r$ egyike sem zérus;
+        \item $V=M_0\oplus\lin\left( v_1;A \right)\oplus\ldots\oplus\lin\left( v_r;A \right)$;
+        \item $p_{k}|p_{k-1}$ minden $k=2,\ldots,r$ mellett.
+    \end{enumerate}
+    Hasonlóan a $w_1,\dots,w_s$ vektortokra is tegyük fel, hogy 
+    \begin{enumerate}
+        \item $w_1,\dots,w_s$ egyike sem zérus;
+        \item $V=M_0\oplus\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_s;A \right)$;
+        \item $g_{k}|g_{k-1}$ minden $k=2,\ldots,s$ mellett.
+    \end{enumerate}
+    Ekkor $r=s$, $p_k=g_k$ minden $k=1,\ldots,r$ mellett és minden $k$ indexre
+    $\lin\left( v_k;A \right)$ és $\lin\left( w_k;A \right)$ izomorf alterek.
+\end{proposition}
+\begin{proof}
+    Azt mutatjuk meg, hogy $r\leq s$ és minden $k=1,\ldots,r$ mellett $p_k|g_k$.
+    Ez elég is, hiszen a $v_1,\ldots,v_r$ és a $w_1,\ldots,w_s$ vektorrendszerre tett feltevések szimmetrikusak,
+    ergo $s\leq r$ és $g_k|p_k$ is következik.
+
+    Tudjuk, hogy $p_1=q_1$, hiszen a feltételekből következik, hogy $p_1$ és $q_1$ is az a legalacsonyabb fokszámú normált polinom, amely a tér minden elemét az $M_0$ altérbe viszi.
+
+    Mivel $\deg p_1=\dim\left( \lin\left( v_1;A \right) \right)$, 
+    ezért ha $r=1$, akkor $$V=M_0\oplus\lin\left( v_1;A \right)=M_0\oplus\lin\left( w_1;A \right)$$ következik,
+    ami azt jelenti, hogy 1-nél több $w$ vektor sincs, ergo $1=r=s$ és $p_1=q_1$ is fennáll.
+\end{proof}
 %% a vége következik
 
 \backmatter
@@ -15241,4 +15272,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 18 Aug 2021 09:05:34 PM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Thu 19 Aug 2021 08:44:42 AM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
