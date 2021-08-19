@@ -15248,15 +15248,62 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
     $\lin\left( v_k;A \right)$ és $\lin\left( w_k;A \right)$ izomorf alterek.
 \end{proposition}
 \begin{proof}
-    Azt mutatjuk meg, hogy $r\leq s$ és minden $k=1,\ldots,r$ mellett $p_k|g_k$.
+    Tudjuk, hogy $p_1=q_1$, hiszen a feltételekből következik, hogy $p_1$ és $q_1$ is az a legalacsonyabb fokszámú normált polinom, amely a tér minden elemét az $M_0$ altérbe viszi.
+
+    Ebből kiindulva azt mutatjuk meg, hogy $r\leq s$ és minden $k=1,\ldots,r$ mellett $p_k|g_k$.
     Ez elég is, hiszen a $v_1,\ldots,v_r$ és a $w_1,\ldots,w_s$ vektorrendszerre tett feltevések szimmetrikusak,
     ergo $s\leq r$ és $g_k|p_k$ is következik.
 
-    Tudjuk, hogy $p_1=q_1$, hiszen a feltételekből következik, hogy $p_1$ és $q_1$ is az a legalacsonyabb fokszámú normált polinom, amely a tér minden elemét az $M_0$ altérbe viszi.
 
-    Mivel $\deg p_1=\dim\left( \lin\left( v_1;A \right) \right)$, 
-    ezért ha $r=1$, akkor $$V=M_0\oplus\lin\left( v_1;A \right)=M_0\oplus\lin\left( w_1;A \right)$$ következik,
+    Ha $r=1$, akkor emlékezve, hogy $\deg p_1=\dim\left( \lin\left( v_1;A \right) \right)$, 
+    az $$V=M_0\oplus\lin\left( v_1;A \right)=M_0\oplus\lin\left( w_1;A \right)$$ következik,
     ami azt jelenti, hogy 1-nél több $w$ vektor sincs, ergo $1=r=s$ és $p_1=q_1$ is fennáll.
+
+    Ha $r=2$, akkor 
+    \begin{math}
+        \dim(M_0\oplus\lin\left( w_1;A \right))
+        =
+        \dim(M_0\oplus\lin\left( v_1;A \right))
+        <
+        \dim\left( V \right),
+    \end{math}
+    ezért $s\geq r$.
+    Az is világos, hogy alkalmazva az előző \ref{le:cikl-egyert}.~lemmát első két pontját
+    \begin{multline*}
+        p_2\left( M_0 \right)
+        \oplus
+        \lin\left( p_2\left( A \right)w_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( p_2\left( A \right)w_s;A \right)
+        =
+        p_2\left( V \right)
+        \\
+        =
+        p_2\left( M_0 \right)
+        \oplus
+        \lin\left( p_2\left( A \right)v_1;A \right)
+        \oplus
+        \lin\left( p_2\left( A \right)v_2;A \right)
+        =
+        p_2\left( M_0 \right)
+        \oplus
+        \lin\left( p_2\left( A \right)v_1;A \right),
+    \end{multline*}
+    hiszen $p_2\left( A \right)v_2$ már zérus.
+    A lemma harmadik pontja szerint a $p_2\left( A \right)v_1$ és a 
+    $p_2\left( A \right)w_1$ vektoroknak azonos a kis minimálpolinomjuk, így az 
+    $\lin\left( p_2\left( A \right)v_1 \right)$ és a 
+    $\lin\left( p_2\left( A \right)w_1 \right)$ alterek izomorfak.
+    Ez csak úgy lehetséges, ha
+    \[
+        \lin\left( p_2\left( A \right)w_2;A \right)
+        \oplus\ldots\oplus
+        \lin\left( p_2\left( A \right)w_s;A \right)
+        =
+        \left\{ 0 \right\}
+    \]
+    teljesül,
+    speciálisan $p_2\left( A \right)w_2=0$, ergo $g_2|p_2$.
 \end{proof}
 %% a vége következik
 
@@ -15272,4 +15319,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 19 Aug 2021 08:44:42 AM CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST CEST 
+Last Modified: Thu 19 Aug 2021 09:34:31 AM CEST 
