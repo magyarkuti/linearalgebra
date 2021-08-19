@@ -15231,7 +15231,7 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
     Legyen $M_0\subset V$ egy $A$-invariáns altér a $V$ vektortérben.
     Tegyük fel, hogy adott az $r,s$ pozitív egész, adottak az 
     $v_1,\dots,v_r\in V$, és a $w_1,\dots,w_s\in V$ vektorok
-    a hozzájuk tartozó $p_1,\dots,p_s$ és a $q_1,\dots,q_s$ kis minimálpolinomokkal.
+    a hozzájuk tartozó $p_1,\dots,p_r$ és a $q_1,\dots,q_s$ kis minimálpolinomokkal.
     Tegyük fel, hogy 
     \begin{enumerate}
         \item $v_1,\dots,v_r$ egyike sem zérus;
@@ -15249,61 +15249,132 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
 \end{proposition}
 \begin{proof}
     Tudjuk, hogy $p_1=q_1$, hiszen a feltételekből következik, hogy $p_1$ és $q_1$ is az a legalacsonyabb fokszámú normált polinom, amely a tér minden elemét az $M_0$ altérbe viszi.
+    Ebből kiindulva azt mutatjuk meg, 
+    hogy minden $k=1,\ldots,r$ mellett $k\leq s$ és $q_k=p_k$.
+    Nézzük ezt $k$ szerinti indukcióval.
 
-    Ebből kiindulva azt mutatjuk meg, hogy $r\leq s$ és minden $k=1,\ldots,r$ mellett $p_k|g_k$.
-    Ez elég is, hiszen a $v_1,\ldots,v_r$ és a $w_1,\ldots,w_s$ vektorrendszerre tett feltevések szimmetrikusak,
-    ergo $s\leq r$ és $g_k|p_k$ is következik.
+    Ha $k=1$, akkor persze $k\leq s$ automatikusan teljesül és éppen az imént láttuk, hogy $p_1=q_1$ is fennáll.
 
-
-    Ha $r=1$, akkor emlékezve, hogy $\deg p_1=\dim\left( \lin\left( v_1;A \right) \right)$, 
-    az $$V=M_0\oplus\lin\left( v_1;A \right)=M_0\oplus\lin\left( w_1;A \right)$$ következik,
-    ami azt jelenti, hogy 1-nél több $w$ vektor sincs, ergo $1=r=s$ és $p_1=q_1$ is fennáll.
-
-    Ha $r=2$, akkor 
-    \begin{math}
+    Most tegyük fel, hogy valamely $k<r$ mellett $k\leq s$ és $p_j=q_j$ minden $j=1,\ldots,k$.
+    Meg kell mutatnunk, hogy ebből $k+1\leq s$ és $p_{k+1}=q_{k+1}$ is következik.
+    Mivel $k<r$, és a $\lin\left( w_j;A \right)$ alterek izomorfak a $\lin\left( v_j;A \right)$ alterekkel,
+    ezért
+    \begin{displaymath}
         \dim(M_0\oplus\lin\left( w_1;A \right))
+        \oplus\ldots\oplus
+        \lin\left( w_k,A \right))
         =
-        \dim(M_0\oplus\lin\left( v_1;A \right))
+        \dim(M_0\oplus\lin\left( v_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( v_k,A \right))
         <
         \dim\left( V \right),
-    \end{math}
-    ezért $s\geq r$.
-    Az is világos, hogy alkalmazva az előző \ref{le:cikl-egyert}.~lemmát első két pontját
-    \begin{multline*}
-        p_2\left( M_0 \right)
+    \end{displaymath}
+    ezért $k<s$, ergo $k+1\leq s$ valóban fennáll.
+    Legyen most az egyszerűbb jelölés kedvéért $f=p_{k+1}$.
+    Ekkor alkalmazva az előző \ref{le:cikl-egyert}.~lemma első két pontját 
+    $f\left( A \right)\left( \lin\left( v_j;A \right) \right)
+    =
+    \lin\left( f\left( A \right)v_j;A \right)
+    $ és ez a 
+    $\left\{ 0 \right\}$ 
+    altér, ha $j\geq k+1$, hiszen az ilyen $j$ indexek mellett $p_j|f$.
+    Így az is világos, hogy
+    \begin{eqnarray*}
+        f\left( A \right)(V)
+        &=& 
+        f\left( M_0 \right)
         \oplus
-        \lin\left( p_2\left( A \right)w_1;A \right)
+        \lin\left( f\left( A \right)v_1;A \right)
         \oplus\ldots\oplus
-        \lin\left( p_2\left( A \right)w_s;A \right)
-        =
-        p_2\left( V \right)
+        \lin\left( f\left( A \right)v_k;A \right)
+        \text{ és }
         \\
-        =
-        p_2\left( M_0 \right)
+        f\left( A \right)(V)
+        &=& 
+        f\left( M_0 \right)
         \oplus
-        \lin\left( p_2\left( A \right)v_1;A \right)
+        \lin\left( f\left( A \right)w_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( f\left( A \right)w_k;A \right)
         \oplus
-        \lin\left( p_2\left( A \right)v_2;A \right)
-        =
-        p_2\left( M_0 \right)
-        \oplus
-        \lin\left( p_2\left( A \right)v_1;A \right),
-    \end{multline*}
-    hiszen $p_2\left( A \right)v_2$ már zérus.
-    A lemma harmadik pontja szerint a $p_2\left( A \right)v_1$ és a 
-    $p_2\left( A \right)w_1$ vektoroknak azonos a kis minimálpolinomjuk, így az 
-    $\lin\left( p_2\left( A \right)v_1 \right)$ és a 
-    $\lin\left( p_2\left( A \right)w_1 \right)$ alterek izomorfak.
+        \\
+        &&
+        \lin\left( f\left( A \right)w_{k+1};A \right)
+        \oplus\ldots\oplus
+        \lin\left( f\left( A \right)w_s;A \right).
+    \end{eqnarray*}
+    A lemma harmadik pontja és az indukciós feltevés szerint a $f\left( A \right)v_j$ és az
+    $f\left( A \right)w_j$ vektoroknak azonos a kis minimálpolinomjuk a $j=1,\ldots,k$ mellett,
+    így az 
+    $\lin\left( f\left( A \right)v_j;A \right)$ és a 
+    $\lin\left( f\left( A \right)w_j;A \right)$ alterek izomorfak.
     Ez csak úgy lehetséges, ha
     \[
-        \lin\left( p_2\left( A \right)w_2;A \right)
+        \lin\left( f\left( A \right)w_{k+1};A \right)
         \oplus\ldots\oplus
-        \lin\left( p_2\left( A \right)w_s;A \right)
+        \lin\left( f\left( A \right)w_s;A \right)
         =
         \left\{ 0 \right\}
     \]
     teljesül,
-    speciálisan $p_2\left( A \right)w_2=0$, ergo $g_2|p_2$.
+    speciálisan $f\left( A \right)w_{k+1}=0$, ergo $q_{k+1}|f$, ergo $q_{k+1}|p_{k+1}$.
+    Jelölje most $f=q_{k+1}$ és ismételjük meg a fenti gondolatot a $v$-vel és $w$-vel jelölt vektorok felcserélésével.
+    Így
+    \begin{eqnarray*}
+        f\left( A \right)(V)
+        &=& 
+        f\left( M_0 \right)
+        \oplus
+        \lin\left( f\left( A \right)w_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( f\left( A \right)w_k;A \right)
+        \text{ és }
+        \\
+        f\left( A \right)(V)
+        &=& 
+        f\left( M_0 \right)
+        \oplus
+        \lin\left( f\left( A \right)v_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( f\left( A \right)v_k;A \right)
+        \oplus
+        \\
+        &&
+        \lin\left( f\left( A \right)v_{k+1};A \right)
+        \oplus\ldots\oplus
+        \lin\left( f\left( A \right)v_r;A \right),
+    \end{eqnarray*}
+    ami fenti érveléssel párhuzamosan csak akkor lehetséges, 
+    ha
+    \[
+        \lin\left( f\left( A \right)v_{k+1};A \right)
+        \oplus\ldots\oplus
+        \lin\left( f\left( A \right)v_r;A \right)
+        =
+        \left\{ 0 \right\}
+    \]
+    is teljesül.
+    Speciálisan $f\left( A \right)v_{k+1}=0$, ergo $p_{k+1}|f$, ergo $p_{k+1}|q_{k+1}$ is fennáll.
+
+    Az indukció szerint tehát $k=r$ mellett is igaz az állításunk,
+    tehát azt mutattuk meg, hogy $r\leq s$ és minden $k=1,\ldots,r$ mellett $p_k=q_k$.
+    Az állítás feltételeinek szimmetriáját használva az egész eddigi érvelés megismételhetnénk, 
+    a $v$-vel és $w$-vel jelölt vektor rendszer felcserélésével.
+    Ekkor azt kapjuk, hogy $s\leq r$ is fennáll, tehát $r=s$ valóban teljesül, 
+    és persze minden $j=1,\ldots,r$ mellett $p_j=q_j$,
+    amiből 
+    $
+    \dim\left( \lin\left( v_j;A \right) \right)
+    =
+    \deg p_j
+    =
+    \deg q_j
+    =
+    \dim\left( \lin\left( w_j;A \right) \right)
+    $
+    is következik.
+    Ezt kellett belátni. 
 \end{proof}
 %% a vége következik
 
@@ -15319,4 +15390,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 19 Aug 2021 09:34:31 AM CEST 
+Last Modified: Thu 19 Aug 2021 10:28:23 PM CEST 
