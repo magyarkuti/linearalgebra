@@ -15260,7 +15260,7 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
     Mivel $k<r$, és a $\lin\left( w_j;A \right)$ alterek izomorfak a $\lin\left( v_j;A \right)$ alterekkel,
     ezért
     \begin{displaymath}
-        \dim(M_0\oplus\lin\left( w_1;A \right))
+        \dim(M_0\oplus\lin\left( w_1;A \right)
         \oplus\ldots\oplus
         \lin\left( w_k,A \right))
         =
@@ -15376,6 +15376,114 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
     is következik.
     Ezt kellett belátni. 
 \end{proof}
+\begin{proposition}[Cayley-Hamilton II.]
+    Legyen $A\in L\left( V \right)$ az $\mathbb{F}$ test feletti $V$ véges dimenziós vektortér
+    lineáris transzformációja.
+    Jelölje $m\left( t \right), k\left( t \right)\in\mathbb{F}\left[ t \right]$
+    a transzformáció minimálpolinomját és a karakterisztikus polinomját.
+    Ekkor
+    \begin{enumerate}
+        \item a minimálpolinom osztója a karakterisztikus polinomnak;
+        \item a minimálpolinom és a karakterisztikus polinom irreducibilis osztói azonosak;
+        \item ha a minimálpolinomnak és a karakterisztikus polinomnak a primtényezős előállítása
+            \[
+                m\left( t \right)
+                =
+                f_1^{\alpha_1}\left( t \right)
+                \cdot\ldots\cdot
+                f_r^{\alpha_r}\left( t \right)
+                \quad\text{ és }\quad
+                k\left( t \right)
+                =
+                f_1^{\beta_1}\left( t \right)
+                \cdot\ldots\cdot
+                f_r^{\beta_1}\left( t \right),
+            \]
+            akkor minden $j=1,\ldots,r$ mellett
+            \[
+                \beta_j
+                =
+                \frac{\ker\left( f_j^{\alpha_j}\left( A \right) \right)}{\deg f_j}.
+                \qedhere
+            \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    A ciklikus felbontási tétel értelmében a tér előáll
+    \[
+        V=
+        \lin\left( v_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( v_s;A \right)
+    \]
+    alakban ahol $p_j$ a $v_j$ vektorhoz tartozó kis minimálpolinom.
+    Tudjuk, hogy $p_1=m$ a minimálpolinom,
+    és minden $j=2,\ldots,s$ mellett $p_j|p_{j-1}$.
+    Az is világos, hogy ha megszorítjuk a transzformációt a 
+    $\lin\left( v_j;A \right)$ invariáns altérre, akkor ennek a megszorított transzformációnak
+    a minimálpolinomja egybeesik a karakterisztikus polinomjával, és pedig ez éppen a $p_j$
+    kis minimálpolinom.
+    A determináns definíciója miatt a karakterisztikus polinomja $A$-nak az egyes invariáns altereken vett karakterisztikus polinomok szorzata, azaz
+    \[
+        k\left( t \right)
+        =
+        m\left( t \right)\cdot
+        p_2\left( t \right)\cdot\ldots\cdot p_s\left( t \right).
+        \tag{\dag}
+    \]
+    Így persze a minimálpolinom valóban osztója a karakterisztikus polinomnak..
+    
+    Ebből azonnal nyilvánvaló, 
+    hogy a minimálpolinom minden osztója a karakterisztikus polinomnak is osztója.
+    Most tegyük fel, hogy $f\left( t \right)$ irreducibilis polinom osztója a karakterisztikus
+    polinomnak.
+    Mivel irreducibilis polinom prim tulajdonságú is, 
+    ezért (\dag) felírást alkalmazva $f\left( t \right)|p_j\left( t \right)$ valamely
+    $j$-re, 
+    no de a ciklikus felbontási tétel szerint bármelyik $j$ mellett is
+    $p_j\left( t \right)|m\left( t \right)$.
+
+    Meggondoltuk tehát, hogy $m\left( t \right)$ és $k\left( t \right)$
+    primtényezős felbontásában azonosak az irreducibilis polinomok,
+    ezek multipilicásában lehet csak különbség, persze $\alpha_j\leq\beta_j$.
+
+    A minimálpolinom faktorizációja szerint is szétesik a tér invariáns alterek direktösszegére.
+    Jelölje 
+    $
+    V_j=\ker f_j^{\alpha_j}\left( A \right)
+    $ minden $j=1,\ldots,r$ mellett,
+    így 
+    \begin{math}
+        V
+        =
+        V_1\oplus\ldots\oplus V_r,
+    \end{math}
+    és ha $A$ transzformációt visszaszorítjuk a $V_j$ invariáns altérre,
+    akkor ennek a megszorított transzformációnak $f_j^{\alpha_j}\left( t \right)$ 
+    lesz a minimálpolinomja.
+    A 2. állítást már igazoltuk, így $A|M_j$ transzformáció minimálpolinomja
+    és karakterisztikus polinomja is azonos irreducibilis polinomokat tartalmazhat, 
+    ezért a megszotrított transzformáció karakterisztkus polinomja
+    \[
+        f_j^{\gamma_j}\left( t \right),\text{ ahol }
+        \gamma_j\deg f_j
+        =
+        \dim\left( M_j \right)
+        =
+        \nu\left( f_j^{\alpha_j} \right).
+    \]
+    Újra alkalmazva, hogy a karakterisztikus polinom az egyes invaráns alterekre szorított transzformációk karakterisztikus polinomjainak szorzata azt kapjuk, hogy
+    \[
+        k\left( t \right)
+        =
+        f_1^{\gamma_1}\left( t \right)
+        \cdot\ldots\cdot
+        f_r^{\gamma_r}\left( t \right).
+    \]
+    Persze a primtényezős előállítás egyértelmű, ezért minden szóba jövő $j$ indexre
+    $\beta_j=\gamma_j$.
+    Ezt kellett belátni. 
+\end{proof}
 %% a vége következik
 
 \backmatter
@@ -15390,4 +15498,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 19 Aug 2021 10:28:23 PM CEST 
+Last Modified: Sun 22 Aug 2021 08:48:50 AM CEST 
