@@ -15169,7 +15169,7 @@ akkor $s_{\left\{ 0 \right\}}$ éppen az $A$ lineáris transzformáció minimál
     hiszen $\lin\left( w_1;A \right)$ egy $A$-invariáns altér.
     Így $s_{M_0}\left( A \right)w_1=0$, amiből már $p_1|s_{M_0}$ is következik.
 \end{proof}
-A következő lemma invariáns altereknek egy polinom által képzett direkképéről szól.
+A következő lemma invariáns altereknek egy polinom által képzett direktképéről szól.
 \begin{lemma}
     Legyen az $A\in L\left( V \right)$ lineáris transzformáció és az $f\in\mathbb{F}\left[t  \right]$
     polinom rögzítve.
@@ -15399,11 +15399,12 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
                 \cdot\ldots\cdot
                 f_r^{\beta_1}\left( t \right),
             \]
-            akkor minden $j=1,\ldots,r$ mellett
+            akkor minden $j=1,\ldots,r$ mellett az $\nu\left( f_j^{\alpha_j} \left( A \right)\right)$ defektusa
+            és az $f_j$ foka közötti összefüggés:
             \[
                 \beta_j
                 =
-                \frac{\ker\left( f_j^{\alpha_j}\left( A \right) \right)}{\deg f_j}.
+                \frac{\nu\left( f_j^{\alpha_j}\left( A \right) \right)}{\deg f_j}.
                 \qedhere
             \]
     \end{enumerate}
@@ -15463,14 +15464,15 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
     lesz a minimálpolinomja.
     A 2. állítást már igazoltuk, így $A|M_j$ transzformáció minimálpolinomja
     és karakterisztikus polinomja is azonos irreducibilis polinomokat tartalmazhat, 
-    ezért a megszotrított transzformáció karakterisztkus polinomja
+    ezért a megszorított transzformáció karakterisztikus polinomja
     \[
-        f_j^{\gamma_j}\left( t \right),\text{ ahol }
+        f_j^{\gamma_j}\left( t \right),
+        \quad\text{ ahol }\quad
         \gamma_j\deg f_j
         =
         \dim\left( M_j \right)
         =
-        \nu\left( f_j^{\alpha_j} \right).
+        \nu\left( f_j^{\alpha_j}\left( A \right) \right).
     \]
     Újra alkalmazva, hogy a karakterisztikus polinom az egyes invaráns alterekre szorított transzformációk karakterisztikus polinomjainak szorzata azt kapjuk, hogy
     \[
@@ -15498,4 +15500,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direkkép�
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sun 22 Aug 2021 08:48:50 AM CEST 
+Last Modified: Sun 22 Aug 2021 10:34:24 AM CEST 
