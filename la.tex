@@ -14754,7 +14754,7 @@ hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
     Legyen tehát $M\oplus N=V$ valamely $N$ invariáns altér mellett,
     és tegyük fel, hogy valamely $u\in V$ esetén $p\left( A \right)u\in M$.
     Az $u$ vektor előáll $u=v+w$ alakban, 
-    ahol $v\in M$ és $w\in M$.
+    ahol $v\in M$ és $w\in N$.
     Persze
     \[
         p\left( A \right)u-p\left( A \right)v=p\left( A \right)w.
@@ -14844,7 +14844,7 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
     \label{le:iranyito}
 \end{lemma}
 \begin{proof}
-    Jelölje $p_{v;M}$ a a $v$ vektort $M$-be vivő irányító polinomot.
+    Jelölje $p_{v;M}$ a $v$ vektort $M$-be vivő irányító polinomot.
     Mivel $M$ megengedhető, ezért létezik $u\in M$, amelyre $p_{ v;M}\left( A \right)v=p_{v;M}\left( A \right)u$. 
     Legyen $w=v-u$.
     Ekkor $w-v\in M$, ezért $p_{w;M}=p_{v;M}$. 
@@ -14874,7 +14874,19 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
         M+\lin\left( v;A \right).
     \end{multline*}
     Itt a tartalmazás azért áll fenn, mert $M$ egy invariáns altér, így $f\left( A \right)u\in M$.
-    Az ellenkező irányú tartalmazás a fentivel analóg.
+    Az ellenkező irányú tartalmazás a fentivel analóg:
+    \begin{multline*}
+        M+\lin\left( v;A \right)
+        =
+        \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+        =
+        \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+        \subseteq
+        \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+        =
+        M+\lin\left( w;A \right).
+    \end{multline*}
+    Ezt kellett belátni. 
 \end{proof}
 \begin{lemma}
     Legyen $M$ a $V$ vektortér egy valódi altere, 
@@ -15500,4 +15512,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sun 22 Aug 2021 10:34:24 AM CEST 
+Last Modified: Tue 07 Sep 2021 09:32:35 am CEST CEST 
