@@ -11036,7 +11036,7 @@ Ebből azonnal látjuk, hogy a minimálpolinom osztója a karakterisztikus polin
 Meggondoltuk tehát a Cayley\,--\,Hamilton-tételt abban a speciális esetben,
 mikor a test a kompex számtest.
 
-A Cayley--Hamilton-tétel nem függ az algebra alaptételétől, amint azt rögtön megmutatjuk.
+A Cayley\,--\,Hamilton-tétel nem függ az algebra alaptételétől, amint azt rögtön megmutatjuk.
 \begin{lemma}
 	Legyen $\mathbb{F}$ egy test, amelyben $1+1\neq 0$.
 	Tetszőlegesen választott $\alpha_0,\dots,\alpha_{n-1}\in\mathbb{F}$ számok mellett
@@ -14795,7 +14795,12 @@ A nilpotens transzformációk felbontásáról szóló \ref{pr:nilpfelb}.~állí
 hogy tetszőleges lineáris transzformáció mellett is igaz, 
 hogy egy megengedhető altérnek mindig van invariáns direktkiegészítője.
 
+A triviális -- de nagyon fontos -- példa megengedhető altérre az $M=\left\{ 0 \right\}$ altér, 
+persze tetszőleges lineáris transzformáció mellett.
+
 A megengedhető altér definíciója kicsit élesíthető az irányító polinom használatával.
+Ha minden irányító polinomra teljesül a megengedehető altér definíciójában előírt tulajdonság, 
+akkor már minden más polinomra is fennáll.
 \begin{proposition}\label{pr:megengedheto_v}
     Legyen $M$ egy $A$-invariáns altér a $V$ vektortérben.
     Az $M$ pontosan akkor megengedhető, 
@@ -14847,46 +14852,51 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
     Jelölje $p_{v;M}$ a $v$ vektort $M$-be vivő irányító polinomot.
     Mivel $M$ megengedhető, ezért létezik $u\in M$, amelyre $p_{ v;M}\left( A \right)v=p_{v;M}\left( A \right)u$. 
     Legyen $w=v-u$.
-    Ekkor $w-v\in M$, ezért $p_{w;M}=p_{v;M}$. 
-    Persze $p_{v;M}\left( A \right)w=0$,
-    ezért $p_{w,M}\left( A \right)w=0$ is fennáll,
-    amiből már következik, hogy $p_{w;M}=p_w$.
+    \begin{enumerate}
+        \item 
+        Ekkor $w-v\in M$, ezért $p_{w;M}=p_{v;M}$. 
+        Persze $p_{v;M}\left( A \right)w=0$,
+        ezért $p_{w,M}\left( A \right)w=0$ is fennáll,
+        amiből már következik, hogy $p_{w;M}=p_w$.
 
-    Most legyen $x\in M$, amelyre $x\in\lin\left( w;A \right)$. 
-    Ekkor létezik $f\in\mathbb{F}\left[ t \right]$ polinom, amelyre
-    \(
-        x=f\left( A \right)w.
-    \)
-    Az irányító polinom definíciója szerint $p_{w,M}|f$.
-    Már láttuk, hogy $p_{w;M}=p_w$, így $f$ voltaképpen a $p_w$ kis minimálpolinom többszöröse, 
-    ezért $f\left( A \right)w=0$.
+        \item
+        Most legyen $x\in M$, amelyre $x\in\lin\left( w;A \right)$. 
+        Ekkor létezik $f\in\mathbb{F}\left[ t \right]$ polinom, amelyre
+        \(
+            x=f\left( A \right)w.
+        \)
+        Az irányító polinom definíciója szerint $p_{w,M}|f$.
+        Már láttuk, hogy $p_{w;M}=p_w$, így $f$ voltaképpen a $p_w$ kis minimálpolinom többszöröse, 
+        ezért $f\left( A \right)w=0$, 
+        ergo $x=0$.
 
-    A harmadik egyenlőséghez:
-    \begin{multline*}
-        M+\lin\left( w;A \right)
-        =
-        \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
-        =
-        \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
-        \subseteq
-        \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
-        =
-        M+\lin\left( v;A \right).
-    \end{multline*}
-    Itt a tartalmazás azért áll fenn, mert $M$ egy invariáns altér, így $f\left( A \right)u\in M$.
-    Az ellenkező irányú tartalmazás a fentivel analóg:
-    \begin{multline*}
-        M+\lin\left( v;A \right)
-        =
-        \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
-        =
-        \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
-        \subseteq
-        \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
-        =
-        M+\lin\left( w;A \right).
-    \end{multline*}
-    Ezt kellett belátni. 
+        \item
+        A harmadik egyenlőséghez:
+        \begin{multline*}
+            M+\lin\left( w;A \right)
+            =
+            \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+            =
+            \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+            \subseteq
+            \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+            =
+            M+\lin\left( v;A \right).
+        \end{multline*}
+        Itt a tartalmazás azért áll fenn, mert $M$ egy invariáns altér, így $f\left( A \right)u\in M$.
+        Az ellenkező irányú tartalmazás a fentivel analóg:
+        \begin{multline*}
+            M+\lin\left( v;A \right)
+            =
+            \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+            =
+            \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+            \subseteq
+            \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
+            =
+            M+\lin\left( w;A \right).
+        \end{multline*}\qedhere
+    \end{enumerate}
 \end{proof}
 \begin{lemma}
     Legyen $M$ a $V$ vektortér egy valódi altere, 
@@ -14971,7 +14981,7 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
 
     Az $r\left( t \right)=0$ megmutatásához jelölje $p=p_{u;M}$ az $u$-t $M$-be vivő irányító polinomot.
     Mivel $M\subset\bar{M}$, ezért $p_{u;\bar{M}}|p_{u;M}$, tehát a bevezetett jelöléseinkkel $f|p$.
-    Létezik tehát valamely $q$ polinom, amelyre
+    Létezik tehát valamely $q$ nem zérus polinom, amelyre
     \begin{math}
         p=fq.
     \end{math}
@@ -15005,7 +15015,8 @@ A megengedhető altér definíciója kicsit élesíthető az irányító polinom
     $ következik, ami képtelenség az $r$ konstrukciója szerint.
     Ezt kellett belátni. 
 \end{proof}
-Első alkalmazásként lássuk, hogy egy valódi megengedhető altérhez található olyan invariáns altér, 
+Első alkalmazásként lássuk, 
+hogy egy megengedhető altérhez mindig található olyaninvariáns altér,
 amelyet hozzáadva újra egy megengedhető alteret kapunk.
 Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
 \begin{proposition}
@@ -15014,8 +15025,9 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
     Ekkor az $\bar{M}=M+\lin\left( v;A \right)$ altér is megengedhető.
 \end{proposition}
 \begin{proof}
-    Legyen $w\in V\smallsetminus M$, és tekintsük a $p_{w;\bar{M}}\left( A \right)w\in M+\lin\left( v;A \right)$ vektort.
-    Világos, hogy valamely $m\in M_0$ és valamely $g$ polinom mellett
+    Legyen $w\in V$, és a \ref{pr:megengedheto_v}.~állításnak megfelelően 
+    tekintsük a $p_{w;\bar{M}}\left( A \right)w\in M+\lin\left( v;A \right)$ vektort.
+    Világos, hogy valamely $m\in M$ és valamely $g$ polinom mellett
     \[
         p_{w;\bar{M}}\left( A \right)w
         =
@@ -15044,8 +15056,8 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
     Ekkor létezik $r$ pozitív egész, és léteznek $w_1,\dots,w_r\in V$ vektorok, amelyekre
     \begin{enumerate}
         \item A $w_1,\dots,w_r$ egyike sem zérus;
-        \item $V=M_0\oplus\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_r;A \right)$
-        \item A $w_1,\dots,w_k$ vektorok kis minimálpolinomjai olyanok, hogy mind osztója az előzőnek, 
+        \item $V=M_0\oplus\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_r;A \right)$;
+        \item A $w_1,\dots,w_r$ vektorok kis minimálpolinomjai olyanok, hogy mind osztója az előzőnek, 
             azaz ha $p_k=p_{w_k}$ a $w_k$ vektorhoz tartozó kis minimálpolinom, 
             akkor minden $k=2,\dots,r$ mellett $p_k|p_{k-1}$.\qedhere
     \end{enumerate}
@@ -15129,13 +15141,23 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
     Így az $M_0;\lin\left( w_1;A \right),\dots,\lin\left( w_r;A \right)$ alterek olyanok, 
     hogy mind diszjunkt az előzőek összegétől, ezért a direktösszeg értelmes és
     \[
-        M_0\oplus\lin\left( w_1;A \right)\oplus,\ldots,\oplus\lin\left( w_r;A \right)=V_r=M
+        M_0\oplus\lin\left( w_1;A \right)\oplus,\ldots,\oplus\lin\left( w_r;A \right)=M_r=V
     \]
     és minden $k\geq 2$ mellett $p_{k}|p_{k-1}$.
 \end{proof}
 
+Korábban már láttuk, hogy ha egy invariáns altérnek van invariáns direktkiegészítője, akkor az megengedhető is.
+A ciklikus felbontás szerint ha $M_0$ megengedhető, akkor annak van $\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_r;A \right)$ invariáns direktkiegészítője.
+Igazoltuk tehát a következő állítást:
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció,
+    és $M_0\subseteq V$ egy invariáns altér az $A$ transzformációra nézve.
+    Az $M$-nek pontosan akkor van invariáns direktkiegészítóje, ha $M$ egyben megengedhető is.
+\end{proposition}
+
 A ciklikus felbontási tételben az első $p_1$ polinom különösen nevezetes. 
-Amennyiben $M_0=\left\{ 0 \right\}$, akkor $p_1$ az $A$ minimálpolinomja.
+Amennyiben $M_0=\left\{ 0 \right\}$, akkor $p_1$ az $A$ minimálpolinomja,
+amint azt rögtön megértjük.
 
 Általános esetben tekintsük az összes olyan polinomot, amelyre $p\left( A \right)v\in M_0$ minden $v\in V$ mellett:
 \[
@@ -15181,7 +15203,22 @@ akkor $s_{\left\{ 0 \right\}}$ éppen az $A$ lineáris transzformáció minimál
     hiszen $\lin\left( w_1;A \right)$ egy $A$-invariáns altér.
     Így $s_{M_0}\left( A \right)w_1=0$, amiből már $p_1|s_{M_0}$ is következik.
 \end{proof}
-A következő lemma invariáns altereknek egy polinom által képzett direktképéről szól.
+Ezek szerint megmutattuk, hogy a minimálpolinom mindig valamely vektorhoz tartozó kis minimálpolinom.
+Mitöbb ez a vektor a maximális fokú kis minimálpolinomhoz tartozó vektor.
+Megmutattuk tehát a következőt.
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ egy lineáris transzformáció. 
+    Legyen $v\in V$ olyan vektor, amelyhez tartozó kis minimálpolinom lehető legnagyobb fokszámú,
+    azaz
+    \[
+        \deg p_v\geq \deg p_x
+    \]
+    minden $x\in V$ mellett.
+    Ekkor a $p_v$ kis minimálpolinom egyben a transzformáció minimálpolinomja is.
+\end{proposition}
+Persze ebből az állításból is látszik, hogy a transzformáció minimálpolinomjának fokszáma legfeljebb  a tér dimenziója.
+
+Az eddigiektől független következő lemma invariáns altereknek egy polinom által képzett direktképéről szól.
 \begin{lemma}
     Legyen az $A\in L\left( V \right)$ lineáris transzformáció és az $f\in\mathbb{F}\left[t  \right]$
     polinom rögzítve.
@@ -15218,7 +15255,7 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
     hogy ha invariáns alterek direktösszege értelmes,
     akkor ezek $f\left( A \right)$ transzformációval képzett direktösszege is értelmes.
 
-    A harmadik állításhoz mint \ref{def:kisminimal}.~definícióban jelölje
+    A harmadik állításhoz, mint \ref{def:kisminimal}.~definícióban jelölje
     \begin{math}
         J_{A,v}
     \end{math}
@@ -15388,7 +15425,7 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
     is következik.
     Ezt kellett belátni. 
 \end{proof}
-\begin{proposition}[Cayley-Hamilton II.]
+\begin{proposition}[Cayley\,--\,Hamilton II.]\index{Cayley\,--\,Hamilton}
     Legyen $A\in L\left( V \right)$ az $\mathbb{F}$ test feletti $V$ véges dimenziós vektortér
     lineáris transzformációja.
     Jelölje $m\left( t \right), k\left( t \right)\in\mathbb{F}\left[ t \right]$
@@ -15411,8 +15448,8 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
                 \cdot\ldots\cdot
                 f_r^{\beta_1}\left( t \right),
             \]
-            akkor minden $j=1,\ldots,r$ mellett az $\nu\left( f_j^{\alpha_j} \left( A \right)\right)$ defektusa
-            és az $f_j$ foka közötti összefüggés:
+            akkor minden $j=1,\ldots,r$ mellett a $\nu\left( f_j^{\alpha_j} \left( A \right)\right)$ defektus
+            és az $\deg f_j$ fok közötti összefüggés:
             \[
                 \beta_j
                 =
@@ -15432,6 +15469,8 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
     alakban ahol $p_j$ a $v_j$ vektorhoz tartozó kis minimálpolinom.
     Tudjuk, hogy $p_1=m$ a minimálpolinom,
     és minden $j=2,\ldots,s$ mellett $p_j|p_{j-1}$.
+    \begin{enumerate}
+        \item 
     Az is világos, hogy ha megszorítjuk a transzformációt a 
     $\lin\left( v_j;A \right)$ invariáns altérre, akkor ennek a megszorított transzformációnak
     a minimálpolinomja egybeesik a karakterisztikus polinomjával, és pedig ez éppen a $p_j$
@@ -15444,8 +15483,9 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
         p_2\left( t \right)\cdot\ldots\cdot p_s\left( t \right).
         \tag{\dag}
     \]
-    Így persze a minimálpolinom valóban osztója a karakterisztikus polinomnak..
+    Így persze a minimálpolinom valóban osztója a karakterisztikus polinomnak.
     
+        \item
     Ebből azonnal nyilvánvaló, 
     hogy a minimálpolinom minden osztója a karakterisztikus polinomnak is osztója.
     Most tegyük fel, hogy $f\left( t \right)$ irreducibilis polinom osztója a karakterisztikus
@@ -15458,8 +15498,9 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
 
     Meggondoltuk tehát, hogy $m\left( t \right)$ és $k\left( t \right)$
     primtényezős felbontásában azonosak az irreducibilis polinomok,
-    ezek multipilicásában lehet csak különbség, persze $\alpha_j\leq\beta_j$.
+    így ezek multipilicásában lehet csak különbség, és persze $\alpha_j\leq\beta_j$.
 
+        \item
     A minimálpolinom faktorizációja szerint is szétesik a tér invariáns alterek direktösszegére.
     Jelölje 
     $
@@ -15471,21 +15512,22 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
         =
         V_1\oplus\ldots\oplus V_r,
     \end{math}
-    és ha $A$ transzformációt visszaszorítjuk a $V_j$ invariáns altérre,
+    és ha az $A$ transzformációt visszaszorítjuk a $V_j$ invariáns altérre,
     akkor ennek a megszorított transzformációnak $f_j^{\alpha_j}\left( t \right)$ 
     lesz a minimálpolinomja.
-    A 2. állítást már igazoltuk, így $A|M_j$ transzformáció minimálpolinomja
-    és karakterisztikus polinomja is azonos irreducibilis polinomokat tartalmazhat, 
+    A 2. állítást már igazoltuk, így $A|V_j$ transzformáció minimálpolinomja
+    és karakterisztikus polinomja is csak azonos irreducibilis polinomokat tartalmazhat, 
     ezért a megszorított transzformáció karakterisztikus polinomja
     \[
         f_j^{\gamma_j}\left( t \right),
         \quad\text{ ahol }\quad
         \gamma_j\deg f_j
         =
-        \dim\left( M_j \right)
+        \dim\left( V_j \right)
         =
-        \nu\left( f_j^{\alpha_j}\left( A \right) \right).
+        \nu\left( f_j^{\alpha_j}\left( A \right) \right),
     \]
+    hiszen egy karakterisztikus polinom foka mindig a tér dimenziója.
     Újra alkalmazva, hogy a karakterisztikus polinom az egyes invaráns alterekre szorított transzformációk karakterisztikus polinomjainak szorzata azt kapjuk, hogy
     \[
         k\left( t \right)
@@ -15496,7 +15538,8 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
     \]
     Persze a primtényezős előállítás egyértelmű, ezért minden szóba jövő $j$ indexre
     $\beta_j=\gamma_j$.
-    Ezt kellett belátni. 
+    \qedhere
+    \end{enumerate}
 \end{proof}
 %% a vége következik
 
@@ -15512,4 +15555,4 @@ A következő lemma invariáns altereknek egy polinom által képzett direktkép
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 07 Sep 2021 09:32:35 am CEST CEST 
+Last Modified: Wed 08 Sep 2021 07:33:57 PM CEST CEST CEST 
