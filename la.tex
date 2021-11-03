@@ -36,7 +36,14 @@
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
-\usepackage[unicode]{hyperref}\hypersetup{final}\usepackage{memhfixc}
+\usepackage[unicode]{hyperref}
+\hypersetup{final=true,
+            pdftitle={Lineáris algebra},
+            pdfauthor={Magyarkuti, Gyula},
+            pdfsubject={linear algebra},
+            pdfcreator={LuaLaTeX},
+            pdfkeywords={algebra}
+           }\usepackage{memhfixc}
 \usepackage[inline]{enumitem}
 \usepackage[a4paper]{geometry}
 \usepackage[missing={GitHub: \today},dirty={Continuous integration},mark]{gitinfo2}
@@ -96,7 +103,7 @@
 %% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
 
-\renewcommand{\qedsymbol}{\square}
+\renewcommand{\qedsymbol}{□}
 \newcommand{\myqedsymbol}{$\lrcorner$}
 \theoremstyle{plain}
 
@@ -2463,12 +2470,12 @@ Minden valós együtthatós polinom előáll mint első vagy másodfokú polinom
 	\[
 		p\left( t \right)=
 		\left( t-x_1 \right)^{n_1}
-		\cdots
+		\cdot\ldots\cdot
 		\left( t-x_r \right)^{n_r}
 		\cdot
-		\left( \left( t-z_1 \right)\left( t-\bar{z_1} \right) \right)^{m_1}
-		\cdots
-		\left( \left( t-z_s \right)\left( t-\bar{z_s} \right) \right)^{m_s}.
+		\left( \left( t-z_1 \right)\cdot\left( t-\bar{z_1} \right) \right)^{m_1}
+		\cdot\ldots\cdot
+		\left( \left( t-z_s \right)\cdot\left( t-\bar{z_s} \right) \right)^{m_s}.
 	\]
 	Világos, hogy $r,s\geq 0$, de $r+s>0$, és $n_1+\dots+n_r+2\left( m_1+\dots+m_s \right)=\deg p$.
 	A komplex faktorokra végezzük el a szorzást,
@@ -14709,4 +14716,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 03 Nov 2021 10:05:47 AM CET CEST CEST CEST 
+Last Modified: Wed 03 Nov 2021 05:52:17 PM CET CEST CEST CEST 
