@@ -10,14 +10,17 @@
 %%%%%% lualatex %%%%%%%%%%%
 %\usepackage{polyglossia}\setdefaultlanguage{magyar}
 \usepackage[hungarian]{babel}[2015/11/24]
-\usepackage{fontspec,microtype}
-%\usepackage{unicode-math} %ooszeakad az amssymb csomaggal. Most nincs idom ra.
+\usepackage{fontspec,microtype,amssymb}
+\usepackage{unicode-math} %oszeakad az amssymb csomaggal, ha nem az amssymb van elol
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{TeX Gyre Pagella}
-%\setmathfont{TeX Gyre Pagella Math}
+%\setmainfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}
+\setmathfont{TeX Gyre Pagella Math}%unicode-math ?
 \newfontfamily\DejaSans{Dejavu Sans}
-\setsansfont{Kurier}[Scale=MatchLowercase]
-%\setsansfont{Dejavu Sans}[Scale=MatchLowercase]
+%\setsansfont{Kurier}[Scale=MatchLowercase]
+\setsansfont{TeX Gyre Adventor}[Scale=MatchLowercase]
+%\setsansfont{Dejavu Sans}[Scale=MatchLowercase] 
+%\setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
 \setmonofont{inconsolata}[Scale=MatchLowercase]
 %%%%%% lualatex %%%%%%%%%%%
 
@@ -46,20 +49,20 @@
 
 % Ez akkor kell, ha San seriff fontok a part, chapter, section stb heklyeken. 
 % Part és book hiányzik. 
-%\renewcommand{\chapnamefont}{\huge\sffamily\bfseries}
-%\renewcommand{\chapnumfont}{\huge\sffamily\bfseries}
-%\renewcommand{\chaptitlefont}{\Huge\sffamily\bfseries}
-%\setsecheadstyle{\Large\sffamily\bfseries\raggedright}
-%\setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
-%\setsubsubsecheadstyle{\normalsize\sffamily\bfseries\raggedright}
-%\setparaheadstyle{\normalsize\sffamily\bfseries\raggedright}
-%\setsubparaheadstyle{\normalsize\sffamily\raggedright}
+\renewcommand{\chapnamefont}{\huge\sffamily\bfseries}
+\renewcommand{\chapnumfont}{\huge\sffamily\bfseries}
+\renewcommand{\chaptitlefont}{\Huge\sffamily\bfseries}
+\setsecheadstyle{\Large\sffamily\bfseries\raggedright}
+\setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
+\setsubsubsecheadstyle{\normalsize\sffamily\bfseries\raggedright}
+\setparaheadstyle{\normalsize\sffamily\bfseries\raggedright}
+\setsubparaheadstyle{\normalsize\sffamily\raggedright}
 
 \nouppercaseheads
 %\makeoddhead{myheadings}{\footnotesize\selectfont\sffamily\leftmark}{}{\footnotesize\selectfont\sffamily\thepage}
 %\makeevenhead{myheadings}{\footnotesize\selectfont\sffamily\thepage}{}{\footnotesize\selectfont\sffamily\rightmark}
-\makeoddhead{myheadings}{\footnotesize\leftmark}{}{\footnotesize\thepage}
-\makeevenhead{myheadings}{\footnotesize\thepage}{\footnotesize\myBotmark}{\footnotesize\rightmark}
+\makeoddhead{myheadings}{\sffamily\footnotesize\leftmark}{}{\sffamily\footnotesize\thepage}
+\makeevenhead{myheadings}{\sffamily\footnotesize\thepage}{\sffamily\footnotesize\myBotmark}{\sffamily\footnotesize\rightmark}
 \makepsmarks{myheadings}{%
     \renewcommand\chaptermark[1]{%
     \markboth{%
@@ -198,7 +201,7 @@
 
 \vspace{\fill}
 \begin{center}
-	\HUGE{\textbf{Lineáris Algebra}}
+    {\HUGE\sffamily\bfseries\textsc{Lineáris Algebra}}
 \end{center}
 \newpage
 \thispagestyle{empty}
@@ -14706,4 +14709,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 03 Nov 2021 04:24:23 AM CET CEST CEST CEST 
+Last Modified: Wed 03 Nov 2021 06:55:51 AM CET CEST CEST CEST 
