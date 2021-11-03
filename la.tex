@@ -11,7 +11,7 @@
 %\usepackage{polyglossia}\setdefaultlanguage{magyar}
 \usepackage[hungarian]{babel}[2015/11/24]
 \usepackage{fontspec,microtype,amssymb}
-\usepackage{unicode-math} %oszeakad az amssymb csomaggal, ha nem az amssymb van elol
+\usepackage{unicode-math} %o math fontokhoz.Oszeakad az amssymb csomaggal, ha nem az amssymb van elobb.
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{TeX Gyre Pagella}
 %\setmainfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}
@@ -25,7 +25,7 @@
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
-\usepackage{csquotes,amsmath,amsthm,amssymb,systeme,fixme}
+\usepackage{csquotes,amsmath,amsthm,systeme,fixme}
 \usepackage[backend=biber,
             bibencoding=utf8,
             style=authoryear,
@@ -48,12 +48,11 @@
 }
 
 % Ez akkor kell, ha San seriff fontok a part, chapter, section stb helyeken. 
-% Part és book hiányzik.
 \renewcommand{\booktitlefont}{\normalfont\Huge\scshape}
-\renewcommand{\partnamefont}{\normalfont\huge\sffamily}
+\renewcommand{\partnamefont}{\normalfont\huge\sffamily\raggedleft}
 \renewcommand{\partnumfont}{\normalfont\huge\sffamily}
-\renewcommand{\parttitlefont}{\normalfont\huge\sffamily}
-\renewcommand{\chapnamefont}{\huge\sffamily\raggedright}
+\renewcommand{\parttitlefont}{\normalfont\huge\sffamily\raggedleft}
+\renewcommand{\chapnamefont}{\huge\sffamily\raggedleft}
 \renewcommand{\chapnumfont}{\huge\sffamily}
 \renewcommand{\chaptitlefont}{\Huge\sffamily\bfseries}
 \setsecheadstyle{\Large\sffamily\bfseries\raggedright}
@@ -97,7 +96,7 @@
 %% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 %\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
 
-\renewcommand{\qedsymbol}{$\centerdot$}
+\renewcommand{\qedsymbol}{\square}
 \newcommand{\myqedsymbol}{$\lrcorner$}
 \theoremstyle{plain}
 
@@ -133,7 +132,7 @@
         \typeout{>>> Patch specific for amsthm FAILED!}
     }
 
- %part
+%part
 \long\def\@part[#1]#2{%
   \M@gettitle{#1}%
   \def\f@rtoc{#1}%
@@ -162,7 +161,6 @@
   \@endpart}
 \makeatother
 
-%\renewcommand{\mathbf}{\mathbb}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\id}{id}
@@ -271,7 +269,7 @@ Magyarkuti Gyula
 \pagestyle{myheadings}
 \mainmatter*
 %\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
-\part{Ősszel}
+\part{Ősz}
 \chapter{Előzmények}
 \scwords A lineáris algebra tárgyalásához elengedhetetlenül szükséges általános algebrai ismereteket foglaljuk össze.
 \section{Algebrai struktúrák}
@@ -9398,8 +9396,8 @@ A felbontásban szereplő direkt összeadandó alterek páronként izomorfak egy
 	\]
 	alakú, ahol $\lambda_1,\dots,\lambda_s$ az $A$ különböző sajátértékei,
 	és $m_1,\dots,m_s$ pozitív egészek.
-	Vezessük be a $V_j=\ker\left( A-\lambda_j I \right)^{m_j}$,
-	és az $A_j=A|V_j$ jelöléseket $j=1,\dots,s$ mellett.
+	Jelölje $V_j=\ker\left( A-\lambda_j I \right)^{m_j}$,
+	és $A_j=A|V_j$ minden $j=1,\dots,s$ mellett.
 	\Aref{pr:redukcio-primfelbontas}.~állításban rögzítettük, hogy
 	\[
 		V=V_1\oplus\dots\oplus V_s
@@ -9990,22 +9988,23 @@ Az alábbiakban egy olyan mértéket készítünk, ami egészen biztosan nem a k
 	azaz $v$-nek az $\left\{ e_1,\dots,e_n \right\}$ bázisban felírt $j$-edik koordinátája $e_j^\ast v.$
 \end{proposition}
 \begin{proof}
-	Legyen $v=\sum_{j=1}^n\alpha_je_j$.
-	Ekkor tetszőlegesen rögzített $i$ mellett
-	\(
-	e_i^\ast(v)
+	Legyen $v=\sum_{i=1}^n\alpha_ie_i$.
+	Ekkor tetszőlegesen rögzített $j$ index mellett
+	\[
+	e_j^\ast(v)
 	=
-	e_i^\ast\left( \sum_{j=1}^n\alpha_je_j \right)
+	e_j^\ast\left( \sum_{i=1}^n\alpha_ie_i \right)
 	=
-	\sum_{j=1}^n\alpha_je_i^\ast\left( e_j \right)
+	\sum_{i=1}^n\alpha_ie_j^\ast\left( e_i \right)
 	=
-	\sum_{j=1}^n\alpha_j\delta_{i,j}
+	\sum_{i=1}^n\alpha_i\delta_{j,i}
 	=
-	\alpha_i.
-	\)
+	\alpha_j.
+    \qedhere
+    \]
 \end{proof}
-Úgy interpretálhatjuk tehát az $e_i^\ast$ lineáris funkcionált,
-hogy az minden $v$ vektorhoz hozzárendeli a vektor $i$-edik koordinátáját.
+Úgy interpretálhatjuk tehát az $e_j^\ast$ lineáris funkcionált,
+hogy az minden $v$ vektorhoz hozzárendeli a vektor $j$-edik koordinátáját.
 \begin{proposition}
 	Rögzítsünk az $n$-dimenziós $V$ vektortérben egy $\left\{ e_{1},\ldots e_{n}\right\} $ bázist.
 	Ekkor minden $v_1,\dots,v_n\in V$ vektor esetén
@@ -10013,6 +10012,7 @@ hogy az minden $v$ vektorhoz hozzárendeli a vektor $i$-edik koordinátáját.
 		\sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right)}
 		=
 		\sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{\pi \left( i\right)}^{\ast }v_{i}.
+	    \qedhere
 	\]
 \end{proposition}
 Képzeljük el, hogy egy $n\times n$ méretű sakktábla $j$-edik oszlopába írjuk a $v_j$ vektor koordinátáit,
@@ -11027,7 +11027,7 @@ ezért a következő tételt gondoltuk meg.
 		\left( t-\lambda_1 \right)^{k_1}\dots\left( t-\lambda_s \right)^{k_s}.\qedhere
 	\]
 \end{proposition}
-No persze az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nilpotens transzformáció,
+Az $A-\lambda_iI$ a $\ker\left( A-\lambda_iI \right)^{m_i}$ vektortér felett egy $m_i$-ed rendben nilpotens transzformáció,
 de tudjuk hogy a nilpotencia rendje legfeljebb a tér dimenziója,
 ergo
 $m_i\leq\dim\left( \ker\left( A-\lambda_iI \right)^{m_i} \right)
@@ -14709,4 +14709,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 03 Nov 2021 08:46:01 AM CET CEST CEST CEST 
+Last Modified: Wed 03 Nov 2021 10:05:47 AM CET CEST CEST CEST 
