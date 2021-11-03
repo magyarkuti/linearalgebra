@@ -47,10 +47,14 @@
     Date: \gitAuthorIsoDate
 }
 
-% Ez akkor kell, ha San seriff fontok a part, chapter, section stb heklyeken. 
-% Part és book hiányzik. 
-\renewcommand{\chapnamefont}{\huge\sffamily\bfseries}
-\renewcommand{\chapnumfont}{\huge\sffamily\bfseries}
+% Ez akkor kell, ha San seriff fontok a part, chapter, section stb helyeken. 
+% Part és book hiányzik.
+\renewcommand{\booktitlefont}{\normalfont\Huge\scshape}
+\renewcommand{\partnamefont}{\normalfont\huge\sffamily}
+\renewcommand{\partnumfont}{\normalfont\huge\sffamily}
+\renewcommand{\parttitlefont}{\normalfont\huge\sffamily}
+\renewcommand{\chapnamefont}{\huge\sffamily\raggedright}
+\renewcommand{\chapnumfont}{\huge\sffamily}
 \renewcommand{\chaptitlefont}{\Huge\sffamily\bfseries}
 \setsecheadstyle{\Large\sffamily\bfseries\raggedright}
 \setsubsecheadstyle{\large\sffamily\bfseries\raggedright}
@@ -59,8 +63,6 @@
 \setsubparaheadstyle{\normalsize\sffamily\raggedright}
 
 \nouppercaseheads
-%\makeoddhead{myheadings}{\footnotesize\selectfont\sffamily\leftmark}{}{\footnotesize\selectfont\sffamily\thepage}
-%\makeevenhead{myheadings}{\footnotesize\selectfont\sffamily\thepage}{}{\footnotesize\selectfont\sffamily\rightmark}
 \makeoddhead{myheadings}{\sffamily\footnotesize\leftmark}{}{\sffamily\footnotesize\thepage}
 \makeevenhead{myheadings}{\sffamily\footnotesize\thepage}{\sffamily\footnotesize\myBotmark}{\sffamily\footnotesize\rightmark}
 \makepsmarks{myheadings}{%
@@ -152,7 +154,6 @@
   {\centering
    \interlinepenalty \@M
    \parskip\z@
-   \normalfont
    \ifnum \c@secnumdepth >-2\relax
      \printpartnum.\ \printpartname \partnamenum%%MGy
      \midpartskip
@@ -195,20 +196,19 @@
      \typeout{ }
 \begin{document}
 \frontmatter*
+{\centering
 \thispagestyle{empty}
 \noindent
 \includegraphics[width=\linewidth]{Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG}
 
 \vspace{\fill}
-\begin{center}
-    {\HUGE\sffamily\bfseries\textsc{Lineáris Algebra}}
-\end{center}
+{\printbooktitle{Lineáris Algebra}}\par
+}
 \newpage
 \thispagestyle{empty}
 \phantom{Ez egy szándékosan üres lap}
 \newpage
 \thispagestyle{empty}
-%{\renewcommand\familydefault{\ttdefault}
 \section*{\texttt{Verzió információk}}
 %}
 {\ttfamily
@@ -271,7 +271,7 @@ Magyarkuti Gyula
 \pagestyle{myheadings}
 \mainmatter*
 %\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
-\part{Ősz}
+\part{Ősszel}
 \chapter{Előzmények}
 \scwords A lineáris algebra tárgyalásához elengedhetetlenül szükséges általános algebrai ismereteket foglaljuk össze.
 \section{Algebrai struktúrák}
@@ -14709,4 +14709,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 03 Nov 2021 06:55:51 AM CET CEST CEST CEST 
+Last Modified: Wed 03 Nov 2021 08:46:01 AM CET CEST CEST CEST 
