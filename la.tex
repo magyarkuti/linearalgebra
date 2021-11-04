@@ -1762,7 +1762,8 @@ ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
-Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, ehhez már szükség van a lineáris függetlenség fogalmára vagy a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra,
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, mert ehhez már szükség van a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra
+\footnote{Ha viszont tudjuk mi az a Gauss\,--\,Jordan-elimináció, akkor máris megérthetjük \aref{pr:ketoldal}. állítást. Ehhez ugorjunk \apageref{pr:ketoldal}. oldalra}, vagy a lineáris függetlenség fogalmára, 
 amiket majd később vezetünk be.\label{pg:kommutal}\index{kommutáló mátrixok}
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
@@ -2916,7 +2917,7 @@ eleme $1$-re változik.
 Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
 Ha ezt minden $k=1,\ldots,m$ mellet kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
-eliminációt hajtunk végre az $a_{i,j}$ pivot\footnote{sarok elem}\index{pivot elem} elem választásával.
+eliminációt hajtunk végre az $a_{i,j}$ pivot elem\footnote{Értsd: sarok elem.}\index{pivot elem} választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
 
@@ -2951,7 +2952,7 @@ a generátorrendszerbe annyi oszlopot cseréljünk be amennyit csak tudunk,
 de persze egy már korábban becserélt vektort nem cserélünk ki egy újabbra.
 Az algoritmus akkor áll meg, ha nem tudunk új oszlopot becserélni.
 Ez pontosan akkor fordul elő,
-ha a táblázat minden nem zérus sora egy már becserélt vektorhoz tartozik.
+ha a táblázat \emph{minden nem zérus sora egy már becserélt vektorhoz tartozik.}
 
 %Ennek két oka lehet.
 %Vagy minden oszlopot becseréltünk, vagy
@@ -2961,25 +2962,29 @@ ha a táblázat minden nem zérus sora egy már becserélt vektorhoz tartozik.
 %akkor véget ér az algoritmus.
 
 A lineáris egyenletrendszerek nyelvére átültetve ez azt jelenti,
-hogy az algoritmus célja a változók eliminálása,
-de persze egy sorban csak egy eliminált változó szerepelhet.
+hogy az algoritmus célja, a változók eliminálása, lehetőség szerint minnél többet.
+Egy sorban (és egy oszlopban\footnote{Ez magától teljesül, erre nem kell figyelnünk.}) csak egy eliminált változó szerepelhet.
 Az algoritmus akkor áll meg,
-ha a táblázatnak minden nem zérus sorában van eliminált változó.
+ha a táblázatnak minden nem zérus sorában már van eliminált változó.
 
 Az algoritmus utolsó táblájából a homogén lineáris egyenletrendszer általános megoldása könnyen leolvasható:
 Dobjuk el a zérus sorokat, és foglalkozzunk a maradék táblázattal.
-Minden sor egy és csak egy eliminált változót tartalmaz.
-A többi változó, ha ilyen van egyáltalán egy nem eliminált változóhoz tartozik.
-A nem eliminált változók tetszőleges értéket felvehetnek,
-majd minden sorban ebből már egyértelműen kifejezhető az eliminált változók értéke.
+Nevezzük az eliminált változókat \emph{kötöttnek}
+a többi változót \emph{szabadnak}.
+Minden sor egy és csak egy kötött, azaz eliminált, változót tartalmaz.
+A szabad változók, az az a többiek már ha vannak ilyenek egyáltalán, egy nem eliminált változóhoz tartoznak.
+Adjunk a szabad változóknak tetszőleges értéket,
+majd minden sorban ebből már egyértelműen kifejezhető a kötött változók értéke.
 
-Innen érthető,
-hogy a szokásos szóhasználat szerint, az eliminált változókat sokszor
+\paragraph{Összefoglalva}
+Az eliminált változókat
 \emph{kötött változónak}\index{kotott@kötött változó}
 nevezzük,
 és a többi változót
 \emph{szabad változónak}\index{szabad változó}
-mondjuk.
+mondjuk. 
+Persze az algoritmusban a kötött változók száma és a szabad valtozók száma mindig az együttható mátrix oszlopainak számával azonos.
+
 A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló a most tárgyalt algoritmus alapján.
 \begin{proposition}
 	Ha egy homogén lineáris egyenletrendszerben több ismeretlen van mint egyenlet,
@@ -3155,8 +3160,9 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 	      \]
 	      mátrix oszlopai generált altér.
 \end{enumerate}
+
 Egy homogén lineáris egyenletrendszernek a zérus vektor mindig megoldása,
-ezt nevezzük triviális megoldásnak.
+ezt nevezzük \emph{triviális megoldásnak}.\index{triviális megoldás}
 A Gauss\,--\,Jordan-eliminációs\index{Gauss\,--\,Jordan-elimináció}  algoritmusból világos a következő gondolat.
 A rendszernek pontosan akkor nincs nem triviális megoldása,
 ha nincs szabad változó, azaz minden változó kötött:
@@ -3350,7 +3356,9 @@ A Gauss\,--\,Jordan-algoritmus:\index{Gauss\,--\,Jordan-elimináció}
 		    & 0   & 0   & 0   & 0   & 0   & 0  \\
 	\end{array}
 \end{multline*}
-a rendszernek tehát van megoldása például $x_1=5$, $x_5=-1$, $x_2=0$, $x_3=0$, $x_4=0$.
+A rendszernek tehát van megoldása.
+A legegyszerűbb ha a szabad változókat zérusra állítjuk,
+ergo $x_1=5$, $x_5=-1$, $x_2=0$, $x_3=0$, $x_4=0$ egy partikuláris megoldás.
 Az általános megoldás tehát
 \[
 	\left\{
@@ -3373,12 +3381,46 @@ Az általános megoldás tehát
 	\right\}.
 \]
 \begin{proposition}
-	Az $Ax=b$ inhomogén lineáris egyenletrendszernek pontosan akkor van egyetlen
-	megoldása, ha $b$ az $A$ képteréhez tartozik és $A$ minden oszlopa a Gauss\,--\,Jordan-eliminációs algoritmussal\index{Gauss\,--\,Jordan-elimináció}  a generátorrendszerbe cserélhető.
+    Legyen $A\in\mathbb{F}^{m\times n}$ mátrix és $b\in\mathbb{F}^n$ egy előre megadott vektor.
+	Az $Ax=b$ inhomogén lineáris egyenletrendszernek pontosan akkor van egy és csak egy
+	megoldása, ha $b$ az $A$ képteréhez tartozik 
+    és $A$ minden oszlopa a Gauss\,--\,Jordan-eliminációs algoritmussal
+    \index{Gauss\,--\,Jordan-elimináció} 
+    a generátorrendszerbe cserélhető.
 \end{proposition}
 Ebben az esetben persze az algoritmusból adódó partikuláris megoldás az egyetlen megoldás.
 
-A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint sora van egy rendszernek, akkor megválasztható olyan jobboldali vektor, amellyel az inhomogén lineáris egyenletrendszernek nincs megoldása.
+Ha például a fenti harmadik eliminációs táblázatban a $b$ oszlopban a 2. elem nem zérus szám lenne,
+akkor a $0,1,0,0$ számokkal mint oszlopvektorral jelölt $b$ jobboldal mellett az $Ax=b$ rendszernek nem lenne megoldása. 
+Ez azért van, mert az utolsó táblázathoz tartozó homogén lineáris egyenletrendszer ekvivalens az első táblázat rendszerével, és a 
+\(
+\begin{pmatrix}0\\1\\0\\0\end{pmatrix}
+\)
+oszlopot helyettesítve az első táblázat $b$ oszlopába, az elimináció során a $b$ oszlop nem változik, hiszen a 2. sorban nem választottunk pivot elemet, ergo a segédsorban $b$ alatt minden lépésben zérus állna.
+
+Ezt végig gondolhatjuk tetszőleges méretű mátrixra is, így kapjuk a következő állítást.
+\begin{proposition}
+    Legyen $A\in\mathbb{F}^{m\times n}$ mátrix.
+    Hajtsunk végre Gauss\,--\,Jordan-eliminációt a mátrixon.
+    Az utolsó táblázatnak pontosan akkor nincs csupa zérus elemből álló sora,
+    ha minden $b\in\mathbb{F}^m$ vektorra az 
+    $Ax=b$ inhomogén lineáris egyenletrendszernek van megoldása.
+    \label{pr:nincsmo}
+\end{proposition}
+\begin{proof}
+    Ha az elimináció utolsó táblázatában nincs zérus sor, akkor minden sorban van egyetlen eliminált változó. 
+    Akármi is tehát a jobboldal, ha a szabad változókat zérusra állítjuk akkor kapunk egy megoldást.
+    Megfordítva, ha mondjuk a $k$-adik sor a csupa zérus elemből álló sor az utolsó táblázatban, 
+    akkor az a jobboldal, ahol egyedül a $k$-adik koordináta nem zérus,
+    egy nem megoldható $Ax=b$ rendszert definiál.
+\end{proof}
+	Tudjuk, hogy az $A$ mátrixra alkalmazott Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  akkor ér véget, amikor
+	minden sorra teljesül, hogy az vagy a csupa zérus sor, vagy az pontosan egy kötött ismeretlent tartalmaz.
+	Eszerint akkor és csak akkor nincs zérus sor, ha a kötött ismeretlenek száma azonos a sorok számával.
+
+Ebből már adódik, hogy ha kevesebb ismeretlene mint sora van egy rendszernek, 
+akkor mindig megválasztható olyan jobboldali vektor, 
+amellyel az inhomogén rendszer nem megoldható.
 \begin{proposition}
 	Legyen $A\in\mathbb{F}^{m\times r}$ olyan mátrix, ahol $r<m$.
 	Ekkor létezik $b\in\mathbb{F}^m$ vektor,
@@ -3386,14 +3428,35 @@ A következő állításban azt gondoljuk meg, hogy ha kevesebb ismeretlene mint
 \end{proposition}
 \begin{proof}
 	Tegyük fel tehát, hogy kevesebb ismeretlen van mint sor.
-	Mikor az $A$ mátrixra alkalmazott Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  véget ér,
-	akkor minden nem zérus sorban pontosan egy eliminált ismeretlen van.
-	Eszerint minden egyes sor vagy zéró sor,
-	vagy van benne eliminált ismeretlen.
-	Mivel kevesebb ismeretlen van mint sor,
-	ezért legalább egy zéró sornak lennie kell.
-	Ha a $k$-adik sor csak nullákat tartalmaz, akkor az a $b\in\mathbb{F}^m$ vektor,
-	amelynek a $k$-adik koordinátája nem zérus, de minden más koordináta zérus meg is felel.
+    Ekkor persze a kötött változók száma is kisebb mint a sorok száma,
+    ergo van zérus sor az utolsó eliminációs táblázatban.
+    Ekkor \aref{pr:nincsmo} állítás szerint, létezik olyan jobboldal, amivel képzett inhomogén rendszer már nem megoldható.
+\end{proof}
+
+A Gauss\,--\,Jordan-elimináció utolsó táblázatára vonatkozó \aref{pr:nincsmo}. állítás, gyönyörű
+következménye a négyzetes mátrixok kétoldalisági tulajdonsága.
+\begin{proposition}
+    Tegyük fel, hogy $A,B\in\mathbb{F}^{m\times m}$ négyzetes mátrixok szorzata az identitás mátrix,
+    azaz $AB=I$.
+    Ekkor $BA=I$ is fennáll.
+    \label{pr:ketoldal}
+\end{proposition}
+\begin{proof}
+    Ha $AB=I$, akkor nyilvánvalóan minden $b\in\mathbb{F}^m$ jobboldal mellett,
+    az $Ax=b$ inhomogén lineáris egyenletrendszerek van megoldása. 
+    Például $x=Bb$ egy megoldás.
+    \Aref{pr:nincsmo}. állítás szerint ez csak úgy lehet, ha az utolsó eliminációs táblázatban nincs csupa zérus sor.
+    Ezek szerint az utolsó táblázatban a sorok száma megegyezik az eliminált változók számával,
+    de négyzetes mátrixról beszélünk, tehát a oszlopok száma, azaz az $Ax=0$ homogén rendszerben
+    az összes változók száma is azonos a kötött változók számával.
+    Ekkor persze nincs szabad változó, tehát az $Ax=0$ homogén rendszernek csak a triviális megoldás a megoldása.
+    A mátrix szorzás definíciója szerint ez úgy is fogalmazható, hogy
+    tetszőleges $C\in\mathbb{F}^{m\times n}$ mátrixra, az $AC=0$ feltételből $C=0$ következik.
+    Na most
+    \[
+        A\left(BA-I  \right)=A\left( BA \right)-AI=\left( AB \right)A-AI=IA-AI=A-A=0.
+    \]
+    Meggondoltuk tehát, hogy $BA-I=0$, ergo $BA=I$ is fennáll.
 \end{proof}
 \subsection{Inverz mátrix}
 Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss\,--\,Jordan-algoritmust.\index{Gauss\,--\,Jordan-elimináció}
@@ -14717,4 +14780,4 @@ amely az $\mathbb{R}$ -ben szokásos összeadás és szorzás kiterjesztése.
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 04 Nov 2021 09:32:17 am CET CEST CEST CEST 
+Last Modified: Thu 04 Nov 2021 01:36:57 pm CET CET CET CET CEST CEST CEST 
