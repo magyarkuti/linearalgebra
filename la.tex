@@ -3221,37 +3221,91 @@ Ezt mátrixszorzásként interpretálva azt kapjuk, hogy
 		1 & 0 & 1 & -1 & 2  \\
 		0 & 1 & 1 & 2  & -1
 	\end{pmatrix}
+    \tag{\dag}\label{bazisfakt}
 \]
-hiszen minden oszlop az $a_1,a_2$ oszlopok lineáris kombinációja.
+hiszen a baloldali mátrix minden oszlopa az $a_1,a_2$ oszlopok lineáris kombinációja.
 
 \begin{definition}
 	Legyen $A\in\mathbb{F}^{m\times n}$ mátrix.
 	Az $A$ mátrix oszlop- (sor-) vektorterének nevezzük az $A$ oszlopai (sorai) generálta alterét az $\mathbb{F}^m$ ($\mathbb{F}^n$)
 	vektortérnek.
+    \index{oszlopvektortér}\index{sorvektortér}
 \end{definition}
 Az előző példa szerint az ottani $4\times 5$ méretű mátrix oszlopvektorterének az $\left\{ a_1,a_2 \right\}$ két elemű rendszer
-egy generátorrendszere.
+egy generátorrendszere, hiszen ha $W$ jelöli az oszlopok generálta alteret, azaz
+\(W=\lin\left\{ a_1,a_2,a_3,a_4,a_5 \right\}\), akkor 
+\[
+    \left\{ a_1,a_2,a_3,a_4,a_5 \right\}\subseteq
+    \lin{\left\{ a_1,a_2\right\}},
+\]
+amiből a lineáris burkot képezve
+\[
+    W
+    \subseteq
+    \lin{\left\{ a_1,a_2\right\}}
+    \subseteq
+    W
+\]
+következik, ergo $W=\lin\left\{ a_1,a_2 \right\}$ valóban fennáll.
+
+Nézzük újra \apageref{bazisfakt}. oldalon a (\dag) matrix faktorizációt.
+Látható, hogy nem csak az oszlop vektortérnek, de a sorvektortérnek is találtunk egy két elemű generátorrendszerét:
+Jelölje most $a_1,a_2,a_3,a_4$ a (\dag) baloldalán lévő mátrix sorait.
+E mátrix legyen $A$.
+A $B$ mátrix legyen a (\dag) jobboldalán az első mátrix és $C$ a második.
+Persze $A=B\cdot C$, ami szerint $A$ minden sora $C$ sorainak lineáris kombinációja.
+Itt konkrétan
+\begin{eqnarray*}
+    a_1&=& 1c_1+3c_2\\
+    a_2&=& (-2)c_1+1c_2\\
+    a_3&=& 2c_1+1c_2\\
+    a_4&=& 3c_1+(-1)c_2,
+\end{eqnarray*}
+ahol $c_1,c_2$ jelöli a $C$ mátrix sorait.
+Tehát, ha most $V$ jelöli az $A$ mátrix sorvektortetét, azaz
+\(V=\lin\left\{ a_1,a_2,a_3,a_4 \right\}\),
+akkor 
+\[
+    \left\{ a_1,a_2,a_3,a_4 \right\}
+    \subseteq
+    \lin\left\{ c_1,c_2 \right\},
+\]
+amiből a lineáris burkot képezve
+\[
+    V\subseteq\lin\left\{ c_1,c_2 \right\}\subseteq V
+\]
+fennáll. 
+Az utolsó tartalmazás most azért igaz, 
+mert $C$ mátrix az $A$ utolsó eliminációs táblázatának nem zérus soraiból áll, 
+de az elimináció minden egyes lépésében a sorok egy lináris kombinációját képezzük, 
+ergo a táblázat minden egyes sora az eredeti sorok alkotta vektortérben -- ami itt $V$ -- marad.
+
+Vegyük észre, hogy a fenti eljárással azt gondoltuk meg, 
+hogy tetszőleges $m\times n$ méretű mátrix
+sorvektorterének és oszlopvektorterének van azonos $r$ elemszámú generátorrendszere,
+ahol $1\leq r\leq\min\left\{ m,n \right\}$.
+
 Az alábbi állítás a mátrix szorzás definíciójának következménye.
 \begin{proposition}
 	Legyen $A\in\mathbb{F}^{m\times n}$ egy nem zérus mátrix.
 	\begin{enumerate}
 		\item
-		      Tegyük fel, hogy $A$ oszlopvektorterének létezik $r$-elemű generátorrendszere.
-		      Ekkor a generátorrendszer $r$ db vektorát a $B$ mátrix oszlopaiba rendezve egy $m\times r$ mátrixot kapunk.
+		      Tegyük fel, hogy $A$ oszlopvektorterének adott egy $r$-elemű generátorrendszere.
+		      Ekkor a generátorrendszer $r$ db.~vektorát a $B$ mátrix oszlopaiba rendezve egy $m\times r$ mátrixot kapunk.
 		      Ehhez a $B$ mátrixhoz létezik $C$ mátrix, amely $r\times n$ méretű és
 		      \(
 		      A=B\cdot C.
 		      \)
 		\item
-		      Most azt tegyük fel, hogy $A$ sorvektorterének létezik $r$-elemű generátorrendszere.
-		      Ekkor a generátorrendszer $r$ db sorát a $C$ mátrix soraiba rendezve egy $r\times n$ mátrixot kapunk.
+		      Most azt tegyük fel, hogy $A$ sorvektorterében adott egy $r$-elemű generátorrendszer.
+		      Ekkor a generátorrendszer $r$ db.~sorát a $C$ mátrix soraiba rendezve egy $r\times n$ mátrixot kapunk.
 		      Ehhez a $C$ mátrixhoz létezik $B$ mátrix, amely $m\times r$ méretű és
 		      \(
 		      A=B\cdot C.
-		      \)\qedhere
+		      \)
+              \qedhere
 	\end{enumerate}
 \end{proposition}
-
 
 \subsection{Inhomogén lineáris egyenletrendszer}
 Láttuk, hogy egy $m$ egyenletet és $n$ ismeretlent tartalmazó lineáris egyenletrendszer ekvivalens az
@@ -13421,8 +13475,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		\right)
 		=
 		\sum_{l=0}^m\sum_{j=1}^r\alpha_l\lambda_j^lP_j
-		\\
-		=
+        =
 		\sum_{j=1}^r\sum_{l=0}^m\alpha_l\lambda_j^lP_j
 		=
 		\sum_{j=1}^r
@@ -15283,7 +15336,7 @@ akkor $s_{\left\{ 0 \right\}}$ éppen az $A$ lineáris transzformáció minimál
     Megmutattuk tehát, hogy $s_{M_0}|p_1$.
 
     Világos, hogy $s_{M_0}\left( A \right)w_1\in M_0\cap\lin\left( w_1;A \right)=\left\{ 0 \right\}$,
-    hiszen $\lin\left( w_1;A \right)$ egy $A$-invariáns altér.
+    hiszen a $\lin\left( w_1;A \right)$ egy az $A$ transzformációra nézve invariáns altér.
     Így $s_{M_0}\left( A \right)w_1=0$, amiből már $p_1|s_{M_0}$ is következik.
 \end{proof}
 Ezek szerint megmutattuk, hogy a minimálpolinom mindig valamely vektorhoz tartozó kis minimálpolinom.
@@ -15638,4 +15691,4 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Fri 12 Nov 2021 05:44:34 AM CET CET CET CET 
+Last Modified: Tue 16 Nov 2021 05:33:39 am CET CET CET CET CET CET CET CET 
