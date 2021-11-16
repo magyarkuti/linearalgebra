@@ -3825,11 +3825,20 @@ lineárisan összefüggő, ha létezik $1\leq k\leq n$ index, amelyre
 \[
 	y_k\in\lin\left\{ y_1,\ldots,y_{k-1},y_{k+1},\ldots,y_n \right\}.
 \]
+
 Nyilvánvaló példa, hogy ha a vektorrendszer a $0$ vektort tartalmazza,
 akkor lineárisan összefüggő.
-Hasonlóan, ha ugyanaz a vektor többször szerepel a vektorrendszerben, a rendszer szintén összefüggő.
-Olyan vektorrendszerre, amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,
-de az $\left\{  \right\}$ üres rendszer is.
+
+Hasonlóan, ha ugyanaz a vektor többször is szerepel a vektorrendszerben, 
+akkor a rendszer szintén lineárisan összefüggő.
+
+Fontos emlékeznünk, hogy 0 db.~vektor lineáris kombinációja megegyezés szerint a vektortér zérus eleme.
+Így ha a vektorrendszer egyetlen elemű, például $\left\{ v \right\}$, akkor a $v$-n kívüli vektorok rendszere az üres rendszer, így a $v$-n kívüli elemek lineáris kombinációja egyedül a zérus vektor.
+Ezek szerint $\left\{ v \right\}$ pontosan akkor lineárisan összefüggő,
+ha $v=0$.
+Olyan vektorrendszerre tehát, 
+amelyre nem igaz a lineárisan összefüggőség definíciója példa egy egyedüli nem zérus vektor,
+de akár az $\left\{  \right\}$ üres rendszer is.
 
 \begin{proposition}
 	Legyen $\left\{ y_1,\ldots,y_n \right\}$ vektorrendszer rögzítve a $V$ vektortérben.
@@ -4030,6 +4039,7 @@ Bebizonyítottuk tehát az alábbi fontos állítást.
 		\item A vektorrendszer egyszerre lineárisan független és generátorrendszer.
 		\item A vektorrendszer minimális generátorrendszer.\qedhere
 	\end{enumerate}
+    \label{pr:maxmin}
 \end{proposition}
 \begin{lemma}[független rendszer csere]\label{le:fgtlncsere}
 	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszere valamely vektortérnek,
@@ -4154,7 +4164,7 @@ Ami evvel azonos: előfordulhat-e, hogy egy vektortérben van egy 2 elemű és e
 Az derül ki, hogy a lineárisan független, generátorrendszerek elemszáma egy az adott vektortérre jellemző szám,
 azaz bármely lineárisan független, generátorrendszernek ugyanannyi eleme van.
 
-Emiatt a félév legfajsúlyosabb állítása következik, az egyszerű bizonyítása ellenére.
+A félév legfajsúlyosabb állítása következik, az egyszerű bizonyítása ellenére.
 A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere}. lemmára.
 \begin{SL}\index{Steinitz-lemma}
 	Legyenek $n$ és $m$ nem negatív egészek.
@@ -4227,6 +4237,7 @@ A Rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
 	a maximális lineárisan független oszloprendszerek
 	és a max\-i\-má\-lis lineárisan független sorrendszerek azonos elemszámúak,
 	és ez a szám azonos a mátrix feszítőrangjával.
+    \label{pr:rang}
 \end{proposition}
 \begin{proof}
 	Jelölje $r$ az $A\in\mathbb{F}^{n\times m}$ mátrix feszítőrangját.
@@ -4321,7 +4332,7 @@ A következő gondolat szerint több is igaz.
 \section{Dimenzió}
 A Steinitz-lemma következményeképpen:\index{Steinitz-lemma}
 \begin{corollary}
-	Egy vektortérben bármely két véges egyszerre lineárisan független és egyszerre generátorrendszer elemszáma azonos.
+	Egy vektortérben bármely két véges, lineárisan független, generátorrendszer elemszáma azonos.
 	Konkrétabban, ha
 	\[
 		\left\{ x_1,\ldots,x_m \right\} \text{ és } \left\{ y_1,\ldots,y_n \right\}
@@ -4343,16 +4354,13 @@ Ezt rögzítjük a következőekben.
 \end{proposition}
 \begin{proof}
 	Tekintsünk egy véges generátorrendszert.
-	Ha minden elem kívül esik a többi elem lineáris burkában, akkor a rendszer lineárisan független, és készen is vagyunk.
-	Ha van olyan elem, amely a többi elem lineáris burkában van, akkor dobjuk el ezt az elemet, és tekintsük, a most már
-	eggyel kevesebb elemből álló vektorrendszert.
-	Világos, hogy ez is generátorrendszer marad.
+    Világos, hogy ennek van minimális generátorrendszere,
+    hiszen ha egyik eleme sem hagyható el, úgy hogy generátorrendszer maradjon, akkor minimális
+    generátorrendszerrel állunk szemben. 
+    Véges sok elemből indulunk ki, 
+    így véges sok elem esetleges eldobása után egy minimális generátorrendszert kapunk.
 
-	Folytassuk az eljárást.
-	Mivel véges sok vektor van az eredeti generátorrendszerben az algoritmus előbb-utóbb megáll,
-	ami azt jelenti, hogy olyan generátorrendszert kapunk,
-	ahol már minden elem a többi lineáris burkán kívül van,
-	ergo lineárisan független.
+    Láttuk korábban (\ref{pr:maxmin}. állítás), hogy egy generátorrendszer minimalitása éppen a rendszer lineárisan függetlenségét jelenti.
 \end{proof}
 A lineárisan független generátorrendszerek olyan sűrűn fordulnak elő a tárgyalásban,
 hogy rövidebb külön nevet adni nekik.
@@ -4367,13 +4375,15 @@ Ez utóbbi tény ad értelmet a következő definíciónak:
 	Egy végesen generált vektortérről azt mondjuk, hogy $n$ dimenziós, vagy $n$ a dimenzió száma,
 	ha a vektortérben van $n$ elemű bázis.
 \end{proposition}
+A tényt, hogy a $V$ vektortér $n$ dimenziós $\dim\left( V \right)=n$ módon jelöljük.
+
 Fontos látni, hogy éppen azt gondoltuk meg, hogy \emph{minden végesen generált vektortérben van bázis},
 \footnote{Ez nem végesen generált vektorterekre is igaz, de itt nem igazoljuk,
 	viszont később sem használjuk.}
 és \emph{bármely két bázis pontosan annyi vektorból áll mint a tér dimenziója.}
 A végesen generált vektortereket sokszor szinonimaként \emph{véges dimenziósnak} is mondjuk.\index{véges dimenziós}
 
-Az eddigiek összefoglalásaként is tekinthető a következő állítás.
+A következő állítás az eddigiek összefoglalása:
 \begin{proposition}
 	Tekintsünk egy $m$-dimenziós vektorteret, és abban egy $m$-elemű
 	$\left\{ x_1,\ldots,x_m \right\}$
@@ -4476,48 +4486,31 @@ együttes alkalmazásaként kapjuk a következő lemmát.
     Így ez egy $V$-beli generátorrendszer is, ezért 
     $M=\lin\left( \left\{ x_1,\ldots,x_n \right\}\right)=V. $
 \end{proof}
-\section{Rang és feszítőrang}
+\subsection{Rang és feszítőrang}
+\Aref{pr:rang}.~állítást, azaz a Rang-tételt a dimenzió fogalmának ismeretében úgy is fogalmazhatjuk, hogy \emph{tetszőleges nem zérus mátrixra az oszlopvektortér dimenziója egybeesik a feszítőranggal, és a sorvektortér dimenziója is azonos a feszítőranggal.}
 \begin{definition}[mátrix rangja]\index{rang}
     Egy mátrix \emph{rangja} az oszlopai által generált vektortér dimenziója.
 \end{definition}
-A két szélsőséges eset, mikor a lineárisan független oszlopok száma zérus,
-és mikor a lineárisan független oszlopok száma annyi mint az összes oszlopok száma.
-Ez utóbbi esetben a rang az oszlopok száma, hiszen egy független rendszer generálta altérben a független rendszer generátorrendszer is, ezért egy bázis is.
-Az első eset azt jelenti, hogy a zérus mátrixszal állunk szemben, tehát a rang a $\left\{ 0 \right\}$ vektortér dimenziója, azaz 0.
+A Rang-tétel tehát azt állítja, hogy nem zérus mátrixra a feszítőrang, a rang, azaz az oszlopvektortér dimenziószáma, és a sorvektortér dimenziószáma azonosak.
+
+A zérus mátrixra a feszítőrang fogalmát nem definiáltuk, de az nyilvánvaló, hogy ebben az esetben az oszlopvektortér és a sorvektortér is 0 dimenziós.
+
+Most felejtsük el egy pillanatra, hogy igazoltuk már a Rang-tételt.
+A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk át a Rang-tétel klasszikus alakját. 
 \begin{proposition}
-    Tetszőleges nem zérus mátrix rangja azonos feszítőrangjával.
+    Tetszőleges mátrixra az oszlopvektortér és a sorvektortér azonos dimenziós alterek.
 \end{proposition}
 \begin{proof}
-    Legyen az $A\in\mathbb{F}^{m\times n}$ mátrix rangja $\rho$;
-    a feszítőrangja $r$; 
-    és $r_c$ az $A$ maximális lineárisan független oszloprendszereinek elemeszáma.
-    Jól tudjuk, hogy $r_c=r$.
-    Jelölje $M$ az $A$ oszlopai generálta vektorteret, definíció szerint $\dim(M)=\rho$.
-    Legyen $A=BC$ egy olyan felbontás, ahol $B$ egy $m\times r$ méretű és $C$ egy $r\times n$ mátrix. 
-    Jelölje $W$ a $B$ mátrix oszlopai generálta vektorteret.
-    Világos, hogy
-    \[
-        M\subseteq W\subseteq \mathbb{F}^n,
-    \]
-    az $A=BC$ egyenlőség és a mátrix szorzás definíciója szerint.
-    Ezért 
-    \[
-        r_c\leq\dim(M)\leq\dim(W)\leq r=r_c.
-    \]
-    Ez azt jelenti, hogy $\rho=\dim(M)=\dim(W)=r$.
-\end{proof}
-A fenti bizonyításból az is leolvasható, hogy $M=W$, azaz az $A$ oszlopai generálta altér
-és a $B$ oszlopai generálta altér azonos alterek.
-Mivel ennek az altérnek dimenziója $r_c=r=\rho$, ezért 
-$A$ oszlopainak olyan lineárisan független rendszere, amely maximális az oszlopok közt,
-egy $r_c$ elemű lineárisan független rendszer az $r_c$ dimenziós $M$ vektortérben, tehát nem csak az oszlopok közt maximálisan lineárisan független rendszer, hanem az oszlopok generálta $M$ altérben is maximálisan lineárisan független rendszert ad.
-Ugyanígy $B$ oszlopainak rendszere egy $r$ elemű generátorrendszer az $r$ dimenziós $W$ vektortérben.
-Így $B$ oszlopai lineárisan független rendszert alkotnak.
-
-Analóg módon meggondolható, hogy egy mátrix sorai generálta altér dimenziója is azonos a fe\-szí\-tő\-rang\-gal.
-Másik gondolat az lehet, hogy észre vesszük, hogy egy mátrixnak és a transzponáltjának azonos a feszítőrangja, majd a fentieket elismételjük a mátrix transzponáltjára.
-Mivel a mátrix sorai éppen a transzponált oszlopai, ezért a mátrix sorai generálta vektortér dimenziója
-azonos a transzponált mátrix feszítőrangjával, ami azonos az eredeti mátrix feszítőrangjával.
+    A Gauss\,--\,Jordan-elimináció algoritmusának segítségével $A=B\cdot C$
+    a mátrix bázisfaktorizációja, ahol $A$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
+    és $C$ sorainak rendszere a sorvektortér egy bázisa.
+    Mivel itt $B$ oszlopainak száma azonos $C$ sorainak számával, ezért az oszlopvektortér és a sorvektortér azonos dimenziós vektorterek.
+\footnote{%
+Érdemes felfigyelni rá, hogy milyen döbbenetesen szimpla gondolat, de persze a mélyén a dimenzió fogalma, azaz a Steinitz-lemma rejlik.}
+\end{proof}% 
+Persze ebből az alakból is látszik, hogy az oszlopok közül bárhogyan is választok ki egy maximális lineárisan független rendszert e vektorrendszerek elemszáma azonos lesz.
+Más szavakkal: A Gauss\,--\,Jordan-elimináció során, akárhogyan is választok pivot elemeket,
+az utolsó táblázatban a nem csupa zérus sorok száma mindig azonos, mégpedig egyenlő a sorvektortér dimenziójának számával, azaz a mátrix rangjával.
 \chapter{Koordinátázás}
 \scwords A koordináta-tér fogalmát vezetjük be.
 Látni fogjuk, hogy véges dimenziós vektortérre ,,lényegében'' az egyetlen példa,
@@ -15785,4 +15778,4 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 16 Nov 2021 10:08:58 am CET CET CET CET CET CET CET CET CET CET 
+Last Modified: Tue 16 Nov 2021 12:51:02 pm CET CET CET CET CET CET CET CET CET CET CET CET CET CET 
