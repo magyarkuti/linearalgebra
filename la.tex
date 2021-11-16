@@ -77,6 +77,8 @@
 \renewcommand{\cftsectionpagefont}{\sffamily}
 \renewcommand{\cftsubsectionpagefont}{\sffamily}
 
+%\maxtocdepth{subsection}
+
 \nouppercaseheads
 \makeoddhead{myheadings}{\sffamily\footnotesize\leftmark}{}{\sffamily\footnotesize\thepage}
 \makeevenhead{myheadings}{\sffamily\footnotesize\thepage}{\sffamily\footnotesize\myBotmark}{\sffamily\footnotesize\rightmark}
@@ -3181,7 +3183,7 @@ ha nincs szabad változó, azaz minden változó kötött:
 	Egy $Ax=0$ homogén lineáris egyenletrendszernek pontosan akkor a triviális megoldás az egyetlen megoldása,
 	ha az eliminációs algoritmusban minden oszlop a generátorrendszerbe cserélhető.
 \end{proposition}
-\subsection{Mátrix faktorizáció}
+\subsection{Mátrixok bázisfaktorizációja 1.}
 Érdemes a Gauss\,--\,Jordan-eliminációt\index{Gauss\,--\,Jordan-elimináció}  az egyenletrendszerek megoldásától függetlenül is szemlélni.
 Ide másolom az előző feladat megoldásának táblázatát:
 \[
@@ -4058,9 +4060,101 @@ Bebizonyítottuk tehát az alábbi fontos állítást.
 	Ezt a nem $k$-adik együtthatókba visszahelyettesítve
 	már azt kapjuk, hogy $\eta_j=0$ minden $j\neq k$ mellett is.
 \end{proof}
+\subsection{Mátrixok bázisfaktorizációja 2.}
+A szakaszban bevezetett fogalmak illusztrációjaként érdemes visszatérni \apageref{bazisfakt}.~oldalra,
+ahol láttuk hogyan találunk generátorrendszert egy mátrix oszlopvektorterében és sorvektorterében.
+A kényelmes olvasás okán, ide másolom az eliminációt, annyi változtatással, hogy 
+most kiírjuk az eredeti generátorrendszer $e_1,e_2,e_3,e_4$ elemeit is.
+Persze itt $e_j\in\mathbb{R}^4$, melynek egyedül a $j$-edik koordinátája 1, a többi 0.
+\begin{multline*}
+    \begin{array}{r|rrrrr}
+         & a_1       & a_2 & a_3 & a_4 & a_5 \\
+        \hline
+      e_1   & \boxed{1} & 3   & 4   & 5   & -1  \\
+      e_2   & -2        & 1   & -1  & 4   & -5  \\
+      e_3   & 2         & 1   & 3   & 0   & 3   \\
+      e_4   & 3         & 1   & 4   & -1  & 5   \\
+        \hline
+         & \delta    & 3   & 4   & 5   & -1
+    \end{array}
+    \implies
+    \begin{array}{r|rrrrr}
+            & a_1 & a_2       & a_3 & a_4 & a_5 \\
+        \hline
+        a_1 & 1   & 3         & 4   & 5   & -1  \\
+        e_2 & 0   & \boxed{7} & 7   & 14  & -7  \\
+        e_3 & 0   & -5        & -5  & -10 & 5   \\
+        e_4 & 0   & -8        & -8  & -16 & 8   \\
+        \hline
+            & 0   & \delta    & 1   & 2   & -1
+    \end{array}
+    \implies
+    \\
+    \begin{array}{r|rrrrr}
+            & a_1 & a_2 & a_3 & a_4 & a_5 \\
+        \hline
+        a_1 & 1   & 0   & 1   & -1  & 2   \\
+        a_2 & 0   & 1   & 1   & 2   & -1  \\
+        e_3 & 0   & 0   & 0   & 0   & 0   \\
+        e_4 & 0   & 0   & 0   & 0   & 0
+    \end{array}
+\end{multline*}
+Világos, hogy a kezdő $\left\{ e_1,e_2,e_3,e_4 \right\}$
+generátorrendszer egyben lineárisan független rendszer is.
+Az első lépésben $a_1$ állt be $e_1$ helyére, 
+majd a második lépésben az $a_2$ vektort cseréltük be az $e_2$ helyére.
+A független rendszer cseréről szóló \ref{le:fgtlncsere}.~lemmát alkalmazva azt kapjuk, hogy az utolsó táblázat $\left\{ a_1,a_2,e_3,e_4 \right\}$ rendszere is lineárisan független.
+No de, lineárisan független rendszer részrendszere is az, 
+így az $\left\{ a_1,a_2 \right\}$ oszlopok az oszlopvektortér egy független rendszerét adják.
+
+Ahogy azt korábban is láttuk -- lásd \apageref{bazisfakt}.~oldalt -- $\left\{ a_1,a_2 \right\}$ egy generátorrendszere is az oszlopvektortérnek, így már látjuk is, hogy $\left\{ a_1,a_2 \right\}$
+az oszlopvektortér egy két elemű lineárisan független generátorrendszerét alkotja.
+
+Emlékezzünk, hogy az utolsó táblázat nem zérus sorai a sorvektortér egy generátorrendszerét szolgáltatja. 
+Ha az $a_j$ oszlopot az $i$-edik sorban cseréljük be, akkor a végső táblázat $j$-edik oszlopának $i$-edik sorában van 1-es egyébként a $j$-edik oszlop többi eleme zérus.
+Ebből látszik, hogy a végső táblázat nem zérus sorai a sorvektortér egy lineárisan független generátorrendszerét alkotják.
+
+Összefoglalásként az eliminációból leolvasható az
+\[
+	\begin{pmatrix}
+		1  & 3 & 4  & 5  & -1 \\
+		-2 & 1 & -1 & 3  & -5 \\
+		2  & 1 & 3  & 0  & 3  \\
+		3  & 1 & 4  & -1 & 5
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		1  & 3 \\
+		-2 & 1 \\
+		2  & 1 \\
+		3  & 1
+	\end{pmatrix}
+	\cdot
+	\begin{pmatrix}
+		1 & 0 & 1 & -1 & 2  \\
+		0 & 1 & 1 & 2  & -1
+	\end{pmatrix}
+\]
+bázisfaktorizáció, ahol a jobboldali első mátrix oszlopai a baloldali $A$ mátrix oszlopvektorterének lineárisan független generátorrendszerét alkotja, 
+és a jobboldali második mátrix sorai az $A$ mátrix sorvektorterének lineárisan független generátorrendszerét alkotja.
+
+A fenti bázisfaktorizáció tetszőleges mátrix mellett is végrehajtható, 
+így a Gauss\,--\,Jordan-eliminációnak és a két cserélési lemmának -- \ref{le:fgtlncsere} és \ref{le:gencsere} -- az alábbi szép következményét kapjuk:
+\begin{proposition}
+    Tetszőleges $m\times n$ méretű nem zérus mátrix sorvektorterének és oszlopvektorterének is van azonos elemszámú lineárisan független, generátorrendszere. Ha $r$ e két vektorrendszer közös elemszáma, akkor $1\leq r\leq\min\left\{ m,n \right\}$.
+\end{proposition}
+Ha az itt elemzett mátrixra gondolunk, akkor felvethető, hogy mi történik, ha az eliminációs algoritmus során a fentitől eltérő pivot elemeket választunk?
+Világos, hogy a pivot elemek más-más választása az eredeti mátrix más-más bázisfaktorizációjához vezet. 
+A bázisfaktorizáció tehát messze nem egyértelmű.
+A probléma, hogy ha adott néhány vektor, akkor mi a kapcsolat a belőlük kiválasztható maximális linárisan független rendszerek közt. 
+Igaz-e, hogy a vektorokból kiválasztható maximális lineárisan független rendszerek -- tehát a vektorok lineáris burkában mint altérben maximális lineárisan független rendszereknek -- az elemszáma mindig azonos? Vagy előfordulhat például, hogy egy vektortérnek van egy két elemű és egy három elemű maximális lineárisan független rendszere?
+Ami evvel azonos: előfordulhat-e, hogy egy vektortérben van egy 2 elemű és egy 3 elemű lineárisan független, generátorrendszer? 
 \chapter{A Steinitz-lemma}\index{Steinitz-lemma}
 \scwords Független- és generátorrendszerek elemszáma közti kapcsolat vezet a bázis és a dimenzió fogalmához.
-A félév legfajsúlyosabb állítása, az egyszerű bizonyítás ellenére.
+Az derül ki, hogy a lineárisan független, generátorrendszerek elemszáma egy az adott vektortérre jellemző szám,
+azaz bármely lineárisan független, generátorrendszernek ugyanannyi eleme van.
+
+Emiatt a félév legfajsúlyosabb állítása következik, az egyszerű bizonyítása ellenére.
 A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere}. lemmára.
 \begin{SL}\index{Steinitz-lemma}
 	Legyenek $n$ és $m$ nem negatív egészek.
@@ -4119,7 +4213,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 \section{Rang-tétel}
 \begin{definition}[mátrix feszítőrangja]\index{feszítőrang}
 	Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
-	Azt mondjuk, hogy feszítőrangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
+    Azt mondjuk, hogy \emph{feszítőrangja} $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
 	\[
 		A=BC
 	\]
@@ -15691,4 +15785,4 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 16 Nov 2021 05:33:39 am CET CET CET CET CET CET CET CET 
+Last Modified: Tue 16 Nov 2021 10:08:58 am CET CET CET CET CET CET CET CET CET CET 
