@@ -49,6 +49,7 @@
 \usepackage[missing={GitHub: \today},dirty={Continuous integration},mark]{gitinfo2}
 %\usepackage[mark,dirty={(Dirty)}]{gitinfo2}
 %\edef\gitBranch{\gitBranch}
+\renewcommand{\gitMarkFormat}{\normalfont\color{gray}\footnotesize\ttfamily}
 \renewcommand{\gitMark}{Branch: \gitBranch\,@\,\gitFirstTagDescribe{}
     \textbullet{}
     Date: \gitAuthorIsoDate
@@ -282,11 +283,12 @@ Stb.
 \bigskip\noindent
 Magyarkuti Gyula
 \hfill{Budapest, \ontoday}
+\thispagestyle{empty}
 
 
 \clearpage
-\tableofcontents*
 \pagestyle{myheadings}
+\tableofcontents*
 \mainmatter*
 %\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
 \part{Ősz}
@@ -15778,4 +15780,4 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 16 Nov 2021 12:51:02 pm CET CET CET CET CET CET CET CET CET CET CET CET CET CET 
+Last Modified: Fri 19 Nov 2021 09:53:45 pm CET CET CET 
