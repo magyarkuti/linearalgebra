@@ -15781,7 +15781,7 @@ A kvadratikus alaknak mondunk egy speciális többváltozós függvényt.
     \]
     Ekkor $Q_A$ az $A$ szimmetrikus mátrixhoz tartozó kvadratikus alak.
 \end{definition}
-Például $n=1$ és az $A$ mátrix egyetlem eleme az $a\mathbb{R}$ szám, akkor $Q(x_1)=ax_1^2$.
+Például $n=1$ és az $A$ mátrix egyetlem eleme az $a\in\mathbb{R}$ szám, akkor $Q(x_1)=ax_1^2$.
 Ha $n=2$ mellett $A\in\mathbb{R}^{2\times 2}$, akkor
 $$
 Q\left( x_1,x_2 \right)=a_{1,1}x_1^2+a_{1,2}x_1x_2+a_{2,1}x_2x_1+a_{2,2}x_2^2.
@@ -15835,8 +15835,8 @@ Be fogjuk bizonyítani, hogy
 \end{proposition}
 A bizonyítás úgy folyik, hogy konkrét algoritmust adunk a felbontásra.
 
-Az algoritmus első mozzanata, annak észrevétele, 
-hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád úgy,
+Az algoritmus első mozzanata annak észrevétele, 
+hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan módon,
 hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbett tartalmazzon:
 \begin{proposition}
     Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
@@ -15846,30 +15846,177 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
     \[
         R=A-a_{1,1}d\cdot d^T
    \]
-   egy szimmetrikus mnátrix, 
+   egy szimmetrikus mátrix, 
    ahol az első oszlop és első sor kizárólag zérus elemeket tartalmaz.
 \end{proposition}
-    \begin{proof}
-        The sum of symmetric matrices is a symmetric matrix.
-        If $\delta_k$ denotes the $k$-th coordinate of $d$, then
-        \(
-            r_{k,j}=
-            a_{k,j}-a_{1,1}\delta_{k}\delta_j.
-        \)
-        If $k=1$ we obtain $r_{1,j}=a_{1,j}-a_{1,1}\cdot 1\cdot\frac{a_{1,j}}{a_{1,1}}=0$.
-    \end{proof}
-    The $k,j$ term of the matrix of the remainder quadratic form is
+\begin{proof}
+    Az persze nyilvánvaló, hogy szimmetrikus mátrixok egy lináris kombinációja is szimmetrikus marad.
+    Jelölje $\delta_k=\frac{a_{k,1}}{a_{1,1}}=\frac{a_{1,k}}{a_{1,1}}$ a $d$ vektor $k$-adik koordinátáját.
+    Ekkor 
     \[
         r_{k,j}=
         a_{k,j}-a_{1,1}\delta_k\delta_j=
         a_{k,j}-a_{1,1}\frac{a_{k,1}}{a_{1,1}}\delta_j=
         a_{k,j}-a_{k,1}\delta_j.
+        \tag{\dag}
     \]
-    If $k>1$ and $j>1$, then the above formula just computes
-    the new coordinates of the $j$-th column after the first column has entered to the base at the first position.
-    Thus we proved the following proposition.
+    Ha $k=1$, akkor itt $r_{1,j}=a_{1,j}-a_{1,1}\cdot\delta_j=a_{1,j}-a_{1,1}\frac{a_{1,j}}{a_{1,1}}=0$.
+    Megmutattuk tehát, hogy az $R$ mátrix első oszlopa csupa zérust tartalmaz. 
+    No de, az $R$ egy szimmetrikus mátrix, ergo az első oszlopban is csak zérus elemek vannak.
+    \end{proof}
+    Illusztrációként nézzük a következő kvadratikus alakot:
+    \[
+        Q\left( z_1,z_2,z_3 \right)
+        =
+        2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3.
+    \]
+    Ezt a kvadratikus alakot az 
+    \(A=
+    \begin{pmatrix}
+        2&1&-2\\
+        1&0&1\\
+        -2&1&\frac{3}{2}
+    \end{pmatrix}
+    \)
+    szimmetrikus mátrix reprezentálja, 
+    legyen tehát 
+    \(d=
+    \begin{bmatrix}
+        1\\ \frac{1}{2}\\ -1
+    \end{bmatrix}.
+    \)
+    Így 
+    \[
+        R=A-2d\cdot d^T
+        =
+        \begin{pmatrix}
+        2&1&-2\\
+        1&0&1\\
+        -2&1&\frac{3}{2}
+        \end{pmatrix}
+        -2
+        \begin{bmatrix}
+        1\\ \frac{1}{2}\\ -1
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+        1& \frac{1}{2}& -1
+        \end{bmatrix}
+        =
+        \begin{pmatrix}
+            0&0&0\\
+            0&-\frac{1}{2}&2\\
+            0&2&-\frac{1}{2}
+        \end{pmatrix}
+    \]
+    No persze $A=2d\cdot d^T+R$.
+    Áttérve a kvadratikus alakokra
+    \(
+        Q\left( z_1,z_2,z_3 \right)=2\left( z_1+\frac{1}{2}z_2-z_3 \right)^2+Q_R\left( z_1,z_2,z_3 \right),
+    \)
+    ahol $Q_R$ már nem függ a $z_1$ változótól, 
+    hiszen $Q_R\left( z_1,z_2,z_3 \right)=-\frac{1}{2}z_2^2-\frac{1}{2}z_3^2+4z_2z_3$.
+    \\
+    Sikeresen megszabadultunk az első változótól, elegendő tehát a 
+    \(
+    \begin{pmatrix}
+        -\frac{1}{2}&2\\
+        2&-\frac{1}{2}
+    \end{pmatrix}
+    \)
+    mátrix reprezentálta kétváltozós kvadratikus alakkal foglalkozni, amelynek változóit most $z_2$ és $z_3$ jelöli.
+    Válasszunk le egy újabb szimmetrikus diádot:
+    \[
+        \begin{pmatrix}
+            -\frac{1}{2}&2\\
+            2&-\frac{1}{2}
+        \end{pmatrix}
+        -\left( -\frac{1}{2} \right)
+        \begin{bmatrix}
+            1\\-4
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            1&-4
+        \end{bmatrix}
+        =
+        \begin{pmatrix}
+            0&0\\
+            0&\frac{15}{2}
+        \end{pmatrix}.
+    \]
+    Lefordítva ezt a kvadratikus alakok nyelvére azt kaptuk,
+    hogy
+    \(
+        Q_R\left( z_1,z_2,z_3 \right)
+        =
+        -\frac{1}{2}\left( z_2-4z_3 \right)^2+\frac{15}{2}z_3^2.
+    \)
+    Összefoglalva tehát
+    \[
+        Q\left( z_1,z_2,z_3 \right)
+        =
+        2\left( z_1+\frac{1}{2}z_2-z_3 \right)^2
+        -\frac{1}{2}\left( z_2-4z_3 \right)^2
+        +\frac{15}{2}z_3^2.
+    \]
+    Az $A$ mátrix diádfelbontását is leolvashatjuk a fenti számolásból:
+    \[
+        A
+        =
+        2
+        \begin{bmatrix}
+        1\\ \frac{1}{2}\\ -1
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+        1& \frac{1}{2}& -1
+        \end{bmatrix}
+        -\frac{1}{2}
+        \begin{bmatrix}
+            0\\1\\-4
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0&1&-4
+        \end{bmatrix}
+        +
+        \frac{15}{2}
+        \begin{bmatrix}
+            0\\0\\1
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0&0&1
+        \end{bmatrix}.
+    \]
+
+Tulajdonképpen készen is lehetnénk, ez a módszer minden olyan esetben megadja a sziimetrikus diádokra való felbontást,
+mikor a maradék kvadratikus alak mátrixában a bal felső pivot elem nem zérus.
+Evvel a problémával most ne foglalkozzunk, később ki fog derülni, hogy könnyen megszabadulhatunk e kellemetlennek tűnő feltéteteltől.
+
+Ennél sokkal érdekesebb, hogy a maradék kvadratikus alak mátrixa, az  $R=A-a_{1,1}d\cdot d^T$ fentinél sokkal
+kényelmesebben számolható.
+Nézzük rá az állítás igazolásában kiemelt $(\dag)$ azonosságra, 
+de úgy hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra.
+    \[
+        r_{k,j}=
+        a_{k,j}-a_{k,1}\delta_j.
+        \tag{\dag}
+    \]
+Tudjuk, hogy az $R$ maradék mátrix első oszlopa és első sora zérus.
+A kérdés csak az, hogy ennek a mátrixnak a jobb alsó $n-1\times n-1$ méretű részmátrixának mik az elemei.
+A fenti formulát kell ehhez alkalmazni, mikor $k>1$ és $j>1$.
+Ismerjük fel, hogy ez éppen az eliminációs algoritmus számolási szabája, 
+abban az esetben, mikor a bal felső elem a pivot elem és a pivot elemet nem tartalmazó sor indexeket számoljuk.
+
+Bebizonyitottuk tehát a következő állítást.
     \begin{proposition}
-        Let $A\in\mathbb{R}^{n\times n}$ be a symmetric matrix and assume that $a_{1,1}\neq 0$.
+        Legyen 
+        Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
+        amelyre $a_{1,1}\neq 0$.
+        Az első diád leválasztása után maradó kvadratikus alak mátrixának
+        a jobb alsó 
         After separating the first complete square, as in the proposition above, the matrix of the remainder quadratic form
         is the bottom right $n-1\times n-1$ matrix of the transformation table, when $a_{1,1}$ is the pivot term.
     \end{proposition}
