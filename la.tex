@@ -15991,36 +15991,175 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
         \end{bmatrix}.
     \]
 
-Tulajdonképpen készen is lehetnénk, ez a módszer minden olyan esetben megadja a sziimetrikus diádokra való felbontást,
-mikor a maradék kvadratikus alak mátrixában a bal felső pivot elem nem zérus.
-Evvel a problémával most ne foglalkozzunk, később ki fog derülni, hogy könnyen megszabadulhatunk e kellemetlennek tűnő feltéteteltől.
+Voltaképpen készen is lennénk, mert
+ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
+mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának bal felső eleme nem zérus.%
+\footnote{
+Evvel a problémával most ne foglalkozzunk később ki fog derülni, 
+hogy könnyen megszabadulhatunk e kellemetlennek tűnő feltéteteltől.}
 
-Ennél sokkal érdekesebb, hogy a maradék kvadratikus alak mátrixa, az  $R=A-a_{1,1}d\cdot d^T$ fentinél sokkal
-kényelmesebben számolható.
-Nézzük rá az állítás igazolásában kiemelt $(\dag)$ azonosságra, 
-de úgy hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra.
+A maradék kvadratikus alak mátrixa, -- az $R=A-a_{1,1}d\cdot d^T$ -- a fentinél sokkal
+hatékonyabban számolható.
+Nézzük rá az állítás igazolásában kiemelt $(\dag)$ azonosságra de úgy,
+hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra:
     \[
         r_{k,j}=
         a_{k,j}-a_{k,1}\delta_j.
         \tag{\dag}
     \]
-Tudjuk, hogy az $R$ maradék mátrix első oszlopa és első sora zérus.
-A kérdés csak az, hogy ennek a mátrixnak a jobb alsó $n-1\times n-1$ méretű részmátrixának mik az elemei.
+Tudjuk, hogy az $R$ maradék első oszlopa és első sora zérus.
+Ezért a kérdés csak az, 
+hogy e mátrixnak a jobb alsó $n-1\times n-1$ méretű részének mik az elemei.
 A fenti formulát kell ehhez alkalmazni, mikor $k>1$ és $j>1$.
-Ismerjük fel, hogy ez éppen az eliminációs algoritmus számolási szabája, 
-abban az esetben, mikor a bal felső elem a pivot elem és a pivot elemet nem tartalmazó sor indexeket számoljuk.
-
-Bebizonyitottuk tehát a következő állítást.
-    \begin{proposition}
-        Legyen 
-        Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
-        amelyre $a_{1,1}\neq 0$.
-        Az első diád leválasztása után maradó kvadratikus alak mátrixának
-        a jobb alsó 
-        After separating the first complete square, as in the proposition above, the matrix of the remainder quadratic form
-        is the bottom right $n-1\times n-1$ matrix of the transformation table, when $a_{1,1}$ is the pivot term.
-    \end{proposition}
-
+Ismerjük fel, hogy (\dag)  éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
+amikor a bal felső elem a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
+Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet -- diád szorzás és mátrix kivonás helyett -- Gauss\,--\,Jordan-eliminációval is számolható.
+Bebizonyítottuk hát a következő állítást.
+\begin{proposition}
+   Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
+   amelyre $a_{1,1}\neq 0$.
+   Legyen $R$ az első diád leválasztása után maradó kvadratikus alak mátrixa,
+   azaz 
+   $$R=A-a_{1,1}d\cdot d^T,$$
+   ahol $d$ az $A$ mátrix első oszlopának az $a_{1,1}$ reciprokával vett szorzata.
+   Tudjuk, hogy $R$ első oszlopa és sora csak zérus elemeket tartalmaz, viszont e
+   mátrix a jobb alsó $\left(n-1\times n-1  \right)$ méretű része megkapható
+   az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
+   olyan módon hogy a bal felső $a_{1,1}$ elemet választjuk pivot elemnek, 
+   és az elimináció első sorát eldobjuk.
+\end{proposition}
+Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.
+\[
+    \begin{array}{c|ccc}
+         & z_1       & z_2 & z_3 \\
+         \hline
+         & \boxed{2} & 1   & -2  \\
+         & 1         & 0   & 1   \\
+         & -2        & 1   & 3/2 \\
+        \hline
+        & \delta    & \frac{1}{2}   & -1
+    \end{array}
+    \implies
+    \begin{array}{c|ccc}
+         & z_1       & z_2  & z_3 \\
+         \hline
+         & &                &       \\
+         & & \boxed{-1/2}   & 2     \\
+         & &            2   & -1/2  \\
+         \hline
+         & & \delta         & -4
+    \end{array}
+    \implies
+    \begin{array}{c|ccc}
+         & z_1       & z_2 & z_3 \\
+         \hline
+         & &   &     \\
+         & &   &     \\
+         & &   & \boxed{15/2}    \\
+        \hline
+        \phantom{\delta}
+    \end{array}
+\]
+Ezután csak értelmeznünk kell a fenti eliminációt.
+A második táblázat az elő diád leválasztása után maradt kvadratikus alak mátrixa.
+A leválasztott diád az első táblázat segédsorából olvasható le, 
+és a diád szorzója az első táblázatban választott pivot elem.
+Tehát
+\[
+    \begin{pmatrix}
+        2&1&-2\\
+        1&0&1\\
+        -2&1&\frac{3}{2}
+    \end{pmatrix}
+    =
+    2
+    \begin{bmatrix}
+        1\\1/2\\-1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        1&1/2&-1
+    \end{bmatrix}
+    +
+    \begin{pmatrix}
+        0&0&0\\
+        0&-1/2&2\\
+        0&2&-1/2
+    \end{pmatrix}.
+\]
+A harmadik táblázat az előző maradékból leválasztott kvadratikus alak mátrixa.
+A leválasztott diád a második táblázat segédsorából olvasható le, 
+és a szorzó a második táblázat pivot eleme.
+Tehát
+\[
+    \begin{pmatrix}
+        0&0&0\\
+        0&-1/2&2\\
+        0&2&-1/2
+    \end{pmatrix}
+    =
+    -\frac{1}{2}
+    \begin{bmatrix}
+        0\\1\\-4
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&1&-4
+    \end{bmatrix}
+    +
+    \begin{pmatrix}
+        0&0&0\\
+        0&0&0\\
+        0&0&15/2
+    \end{pmatrix}
+\]
+Világos, hogy az utolsó maradék $15/2$ szerese a 
+\(
+\begin{pmatrix}
+    0\\0\\1
+\end{pmatrix}
+\)
+vektor által meghatározott diádnak, tehát a diád felbontás a fenti eliminációs táblázatból azonnal leolvasható:
+\[
+    A
+    =
+    2
+    \begin{bmatrix}
+    1\\ \frac{1}{2}\\ -1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+    1& \frac{1}{2}& -1
+    \end{bmatrix}
+    -\frac{1}{2}
+    \begin{bmatrix}
+        0\\1\\-4
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&1&-4
+    \end{bmatrix}
+    +
+    \frac{15}{2}
+    \begin{bmatrix}
+        0\\0\\1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&0&1
+    \end{bmatrix}
+\]
+A diád felbontás a kvadratikus alakra nézve azt jelenti, 
+hogy előállítottuk azt olyan teljes négyzetek lineáris kombinációjaként,
+ahol a teljes négyzeteknek megfelelő diádokat generáló vektorok rendszere linárisan független rendszert ad.
+Konkrétan itt
+\[
+    2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3
+    =
+    2\left( z_1+\frac{1}{2}z_2-z_3 \right)^2
+    -\frac{1}{2}\left( z_2-4z_3 \right)^2
+    +\frac{15}{2}z_3^2.
+\]
 \backmatter
 \pagestyle{empty}
 %\bibliography{\jobname}
