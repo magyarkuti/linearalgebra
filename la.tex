@@ -1,4 +1,5 @@
 \documentclass[9pt, a4paper, showtrims]{memoir}
+\newcommand{\alert}{\relax}
 \let\Aref\relax
 \usepackage[x11names]{xcolor}
 %%%%%%% pdflatex %%%%%%%%%%
@@ -15768,6 +15769,110 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 \end{proof}
 %% a vége következik
 
+\chapter{Kvadratikus alakok definitségének egy naiv targyalása}
+A kvadratikus alaknak mondunk egy speciális többváltozós függvényt.
+\begin{definition}
+    Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
+    Amint az szokásos jelölje $a_{k,j}$ a mátrix $i,j$ pozicíojának elemét.
+    Definiálja a $Q_A:\mathbb{R}^n\to\mathbb{R}$ függvényt
+    \[
+    Q\left( x_{1},x_2,\cdots,x_n \right)=
+    \sum_{k=1}^n\sum_{j=1}^na_{k,j}x_kx_j.
+    \]
+    Ekkor $Q_A$ az $A$ szimmetrikus mátrixhoz tartozó kvadratikus alak.
+\end{definition}
+Például $n=1$ és az $A$ mátrix egyetlem eleme az $a\mathbb{R}$ szám, akkor $Q(x_1)=ax_1^2$.
+Ha $n=2$ mellett $A\in\mathbb{R}^{2\times 2}$, akkor
+$$
+Q\left( x_1,x_2 \right)=a_{1,1}x_1^2+a_{1,2}x_1x_2+a_{2,1}x_2x_1+a_{2,2}x_2^2.
+$$
+Gyakorlásképpen írjuk fel milyen három változós kvadratikus alakok lehetségesek.
+\begin{proposition}
+    Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
+    Ekkor az $A$ által meghatározott kvadratikus alakra
+    \[
+        Q(x)=\ip{x}{Ax}
+    \]
+    tetszőleges $x\in\mathbb{R}^n.$
+\end{proposition}
+Ebből az alakból már világos, hogy az $A+B$ összeghez tartozó kvadratikus alak azonos az $A$-hoz és a $B$-hez
+tartozó kvadratikus alakok összegével, 
+és hasonlóan az $\alpha A$ mátrixhoz tartozó kvadratikus alakot úgy is megkaphatjuk, hogy az $A$-hoz tartozó kvadratikus alakot mint $n$-változós függvényt szorozzuk az $\alpha$ számmal.
+Formálisabban:
+\begin{proposition}
+    Legyenek $A,B\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixok és $\alpha,\beta\in\mathbb{R}$.
+    Ekkor
+    \[
+    Q_{\alpha A+\beta B}=\alpha Q_A+\beta Q_B.
+    \qedhere
+    \]
+\end{proposition}
+\section{A szimmetrikus diádok szerepe}
+Emlékezzünk, hogy $n\times n$ méretű szimmetrikus diádnak nevezünk egy $\mathbb{R}^n$ beli vektornak
+oszlopalakú és soralakú mátrixszorzatát. 
+Kicsit formálisabban az $A=a\cdot a^T$ tetszőleges $a\in\mathbb{R}^{n\times 1}$ mellett.
+A diádok tehát speciális szimmetrikus mátrixok.
+Látható, hogy egy szimmetrikus mátrix pontosan akkor diád, 
+ha az 1 rangú szimmetrikus mátrix.
+
+A szimmetrikus diádok azért érdekesek számunkra, 
+mert éppen az ezekhez tartozó kvadratikus alakok a teljes négyzetek.
+\begin{proposition}
+   Egy kvadratikus alak pontosan akkor teljes négyzet, ha az őt reprezentáló szimetrikus mátrix egy diád.
+   Pontosabban:
+   Ha $A=a\cdot a^T$, ahol $a=\left( a_1,a_2,\ldots,a_n \right)$, akkor
+      \(
+         Q_A\left( x_1,x_2,\ldots,x_n \right)=
+         \left( a_1x_1+a_2x_2+\ldots+a_nx_n \right)^2.
+      \)
+\end{proposition}
+Be fogjuk bizonyítani, hogy 
+\begin{proposition}
+    Minden nem zérus szimmetrikus mátrix előáll mint szimmetrikus diádok lineáris kombinációja.
+    Sőt, ha egy szimmetrikus mátrix rangja $r$, 
+    akkor az előáll mint $r$ db.~szimmetrikus diád lineáris kombinációja, 
+    ahol a diádokat alkotó vektorok rendszere lineárisan független rendszert alkot.
+\end{proposition}
+A bizonyítás úgy folyik, hogy konkrét algoritmust adunk a felbontásra.
+
+Ennek első mozzanata, hogy úgy választunk le egy szimmetrikus diádot egy szimmetrikus mátrixból,
+hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak egy változóval kevesebbett tartalmazzon:
+\begin{proposition}
+    Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
+    Tegyük fel, hogy a bel felső elemre $a_{1,1}\neq 0$.
+    Jelölje $d=\frac{1}{a_{1,1}}a_1$, ahol $a_1$ a mátrix első oszlopa $A$.
+    Ekkor
+    \[
+        R=A-a_{1,1}d\cdot d^T
+   \]
+   egy szimmetrikus mnátrix, 
+   ahol az első oszlop és első sor kizárólag zérus elemeket tartalmaz.
+\end{proposition}
+    \begin{proof}
+        The sum of symmetric matrices is a symmetric matrix.
+        If $\delta_k$ denotes the $k$-th coordinate of $d$, then
+        \(
+            r_{k,j}=
+            a_{k,j}-a_{1,1}\delta_{k}\delta_j.
+        \)
+        If $k=1$ we obtain $r_{1,j}=a_{1,j}-a_{1,1}\cdot 1\cdot\frac{a_{1,j}}{a_{1,1}}=0$.
+    \end{proof}
+    The $k,j$ term of the matrix of the remainder quadratic form is
+    \[
+        r_{k,j}=
+        a_{k,j}-a_{1,1}\delta_k\delta_j=
+        a_{k,j}-a_{1,1}\frac{a_{k,1}}{a_{1,1}}\delta_j=
+        a_{k,j}-a_{k,1}\delta_j.
+    \]
+    If $k>1$ and $j>1$, then the above formula just computes
+    the new coordinates of the $j$-th column after the first column has entered to the base at the first position.
+    Thus we proved the following proposition.
+    \begin{proposition}
+        Let $A\in\mathbb{R}^{n\times n}$ be a symmetric matrix and assume that $a_{1,1}\neq 0$.
+        After separating the first complete square, as in the proposition above, the matrix of the remainder quadratic form
+        is the bottom right $n-1\times n-1$ matrix of the transformation table, when $a_{1,1}$ is the pivot term.
+    \end{proposition}
+
 \backmatter
 \pagestyle{empty}
 %\bibliography{\jobname}
@@ -15780,4 +15885,10 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Fri 19 Nov 2021 09:53:45 pm CET CET CET 
+Last Modified: Sat 20 Nov 2021 03:26:56 PM CET CET CET CET 
+
+    Completing the square, rewrite the following quadratic forms as a linear combination of perfect squares.\\
+    $Q\left( x_1,x_2 \right)=x_1^2+4x_1x_2-5x_2^2,$\\
+    $Q\left( x_1,x_2 \right)=4x_1^2+6x_1x_2+9x_2^2,$\\
+    $Q\left( x_1,x_2 \right)=5x_1^2-6x_1x_2+x_2^2,$\\
+    $Q\left( x_1,x_2,x_3 \right)=5x_1^2-6x_1x_2+x_1x_3,$\\
