@@ -11022,7 +11022,7 @@ amelyeket a fejezet bevezetőjében említettem.
 \begin{proof}
 	Világos, hogy a szóban forgó mátrix $k-1$ oszlopcsere, 
     majd $i-1$ sorcsere után olyan alakra hozható,
-	ahol a bal felső elem $1$, alatta az első oszlop minden eleme zérus,
+	ahol a balfelső elem $1$, alatta az első oszlop minden eleme zérus,
 	és a jobb alsó $n-1\times n-1$ méretű részmátrix az eredeti mátrix $\left( i,k \right)$-csonkoltja:
 	\[
 		\begin{pmatrix}
@@ -15807,7 +15807,22 @@ Formálisabban:
     \qedhere
     \]
 \end{proposition}
-\section{A szimmetrikus diádok szerepe}
+A nemzérus kvadratikus alakokat az értékkészletük alapján osztályozzuk.
+\begin{definition}
+    Legyen $Q:\mathbb{R}^n\to\mathbb{R}$ egy nemzérus kvadratikus alak.
+    Azt mondjuk, hogy ez
+    \begin{description}
+        \item[{\normalfont \emph{pozitív definit,}}] ha $Q\left( x \right)>0$ minden $x\in\mathbb{R}^n,x\neq 0$;
+        \item[{\normalfont\emph{pozitív szemidefinit,}}] ha $ Q\left( x \right)\geq 0$ minden $x\in\mathbb{R}^n$,
+            de létezik egy $z\in\mathbb{R}^n, z\neq 0$ vektor, amelyre $Q\left( z \right)=0$;
+        \item[{\normalfont\emph{negatív definit,}}] ha $ Q\left( x \right)<0$ minden $x\in\mathbb{R}^n,x\neq 0;$
+        \item[{\normalfont\emph{negatív szemidefinit,}}] ha $ Q\left( x \right)\leq 0$ minden $x\in\mathbb{R}^n$,
+            de létezik egy $z\in\mathbb{R}^n, z\neq 0$ vektor, amelyre $Q\left( z \right)=0$;
+        \item[{\normalfont\emph{indefinit,}}] ha vannak olyan $x,y\in\mathbb{R}^n$ vektorok, amnelyekre
+            $Q\left( x \right)>0$  és $Q\left( y \right)<0$.
+    \end{description}
+\end{definition}
+\subsection{A szimmetrikus diádok szerepe}
 Emlékezzünk, hogy $n\times n$ méretű szimmetrikus diádnak nevezünk egy $\mathbb{R}^n$ beli vektornak
 oszlopalakú és soralakú mátrixszorzatát. 
 Kicsit formálisabban az $A=a\cdot a^T$ tetszőleges $a\in\mathbb{R}^{n\times 1}$ mellett.
@@ -15826,6 +15841,8 @@ mert éppen az ezekhez tartozó kvadratikus alakok a teljes négyzetek.
          \left( a_1x_1+a_2x_2+\ldots+a_nx_n \right)^2.
       \)
 \end{proposition}
+
+\section{Szimmetrikus mátrix diád felbontása}
 Be fogjuk bizonyítani, hogy 
 \begin{proposition}
     Minden nem zérus szimmetrikus mátrix előáll mint szimmetrikus diádok lineáris kombinációja.
@@ -15840,13 +15857,13 @@ hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan m
 hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbett tartalmazzon:
 \begin{proposition}
     Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
-    Tegyük fel, hogy a bel felső elemre $a_{1,1}\neq 0$.
+    Tegyük fel, hogy a balfelső elemre $a_{1,1}\neq 0$.
     Jelölje $d=\frac{1}{a_{1,1}}a_1$, ahol $a_1$ a mátrix első oszlopa $A$.
     Ekkor
     \[
         R=A-a_{1,1}d\cdot d^T
    \]
-   egy szimmetrikus mátrix, 
+   egy olyan szimmetrikus mátrix, 
    ahol az első oszlop és első sor kizárólag zérus elemeket tartalmaz.
 \end{proposition}
 \begin{proof}
@@ -15860,9 +15877,9 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
         a_{k,j}-a_{k,1}\delta_j.
         \tag{\dag}
     \]
-    Ha $k=1$, akkor itt $r_{1,j}=a_{1,j}-a_{1,1}\cdot\delta_j=a_{1,j}-a_{1,1}\frac{a_{1,j}}{a_{1,1}}=0$.
-    Megmutattuk tehát, hogy az $R$ mátrix első oszlopa csupa zérust tartalmaz. 
-    No de, az $R$ egy szimmetrikus mátrix, ergo az első oszlopban is csak zérus elemek vannak.
+    Ha $j=1$, akkor itt $r_{k,1}=a_{k,1}-a_{k,1}\delta_1=0$.
+    Látjuk, hogy az $R$ mátrix első oszlopa csupa zérust tartalmaz. 
+    No de, az $R$ egy szimmetrikus mátrix, ergo az első sorban is csak zérus elemek vannak.
     \end{proof}
     Illusztrációként nézzük a következő kvadratikus alakot:
     \[
@@ -15993,12 +16010,12 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
 
 Voltaképpen készen is lennénk, mert
 ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
-mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának bal felső eleme nem zérus.%
+mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának balfelső eleme nem zérus.%
 \footnote{
 Evvel a problémával most ne foglalkozzunk később ki fog derülni, 
 hogy könnyen megszabadulhatunk e kellemetlennek tűnő feltéteteltől.}
 
-A maradék kvadratikus alak mátrixa, -- az $R=A-a_{1,1}d\cdot d^T$ -- a fentinél sokkal
+A maradék kvadratikus alak mátrixa, az $R=A-a_{1,1}d\cdot d^T$, a fentinél sokkal
 hatékonyabban számolható.
 Nézzük rá az állítás igazolásában kiemelt $(\dag)$ azonosságra de úgy,
 hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra:
@@ -16009,11 +16026,11 @@ hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra:
     \]
 Tudjuk, hogy az $R$ maradék első oszlopa és első sora zérus.
 Ezért a kérdés csak az, 
-hogy e mátrixnak a jobb alsó $n-1\times n-1$ méretű részének mik az elemei.
+hogy e mátrix jobb alsó $n-1\times n-1$ méretű részének mik az elemei.
 A fenti formulát kell ehhez alkalmazni, mikor $k>1$ és $j>1$.
 Ismerjük fel, hogy (\dag)  éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
-amikor a bal felső elem a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
-Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet -- diád szorzás és mátrix kivonás helyett -- Gauss\,--\,Jordan-eliminációval is számolható.
+amikor a balfelső elem a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
+Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval is számolható.
 Bebizonyítottuk hát a következő állítást.
 \begin{proposition}
    Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
@@ -16025,7 +16042,7 @@ Bebizonyítottuk hát a következő állítást.
    Tudjuk, hogy $R$ első oszlopa és sora csak zérus elemeket tartalmaz, viszont e
    mátrix a jobb alsó $\left(n-1\times n-1  \right)$ méretű része megkapható
    az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
-   olyan módon hogy a bal felső $a_{1,1}$ elemet választjuk pivot elemnek, 
+   olyan módon hogy a balfelső $a_{1,1}$ elemet választjuk pivot elemnek, 
    és az elimináció első sorát eldobjuk.
 \end{proposition}
 Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.
@@ -16223,8 +16240,8 @@ csak triviális megoldása van!
 
 \subsubsection{Zérus elem a bal felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
-A soron következő diád leválasztásához mindig a bal felső elemet kell választanunk.
-Persze kérdés mi történik, ha a bal felső elem zérus?
+A soron következő diád leválasztásához mindig a balfelső elemet kell választanunk.
+Persze kérdés mi történik, ha a balfelső elem zérus?
 Ennek illusztrációjaként nézzük az alábbi kvadratikus alakot.
 \[
     Q\left( x_1,x_2,x_3 \right)=
@@ -16232,7 +16249,7 @@ Ennek illusztrációjaként nézzük az alábbi kvadratikus alakot.
     2x_1x_2+2x_1x_3+
     6x_2x_3
 \]
-Persze el sem tudjuk kezdeni az algoritmust, hiszen a bal felső elem zérus.
+Persze el sem tudjuk kezdeni az algoritmust, hiszen a balfelső elem zérus.
 Azt vegyük észre, hogy át tudjuk címkézni a változókat úgy, 
 hogy a kapott kvadratikus alakban az első változónak legyen négyzete.
 Ehhez csak az $x_1$ és az $x_2$ változókat kell felcserélnünk.
@@ -16378,10 +16395,67 @@ A többi elem viszont nem változik.
 Az első rész az $i$ és $j$ indexű sorok felcserélését jelenti, míg a második rész az $i$ és $j$ indexű oszlopok kicseréléséből áll.
 A többi sort és oszlopot nem éri változás.
 
-Látjuk tehát, hogy ha a bal felső elem zérus, de a diagonálisnak van nem zérus eleme, 
+Látjuk tehát, hogy ha a balfelső elem zérus, de a diagonálisnak van nem zérus eleme, 
 akkor a most tanult felcseréléssel a nem zérus elem a balfelső pozícióba hozható, így az algoritmusunk továbbra is működik.
 
 \subsubsection{A diagonálisban minden elem zérus}
+Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
+
+Először is azt vegyük észre, hogy ha a feladat a kvadratikus alak definitségének meghatározása, 
+akkor készen is vagyunk mert indefinit kvadratikus alakkal állunk szemben.
+Ha ugyanis a $k,l$ pozíció tartalmaz nem zérus elemet, 
+akkor a kvadratikus alak összes többi változóját állítsuk zérusra és a $k$-adik és az $l$-edik változót vizsgáljuk.
+Így a kvadratikus alakunk az $2a_{k,l}x_kx_l$ kifejezésre egyszerűsödik, 
+amely persze indefinit, hiszen az értékkészlete negatív és pozitív elemet egyaránt tartalmaz.
+
+A teljesség kedvéért megmutatjuk, 
+hogy az algoritmusunk ebben az esetben is használható.
+Ha az $a_{k,l}\neq 0$, akkor vezessük be a 
+\[
+    z_l=x_l+x_k\qquad z_j=x_j, \text{ ha }j\neq l
+\]
+változókat.
+Ekkor $k\neq l$-et is figyelembe véve
+\begin{multline*}
+z_kz_l=x_k\left( x_l+x_k \right)=x_kx_l+x_k^2=z_k^2+x_kx_l,
+\text{ majd $j\neq k$, $j\neq l$ mellett: }\\
+z_jz_l=x_j\left( x_l+x_k \right)=x_jx_l+x_jx_k=x_jx_l+z_jz_k.
+\end{multline*}
+Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l-z_k^2)$-re kell cserélnünk,
+és minden további $x_jx_l$ alakú kifejezést a $(z_jz_l-z_jz_k)$ kifejezéssel kell kicserélnünk.
+A többi változó indexe nem változik.
+Így pontsan egy négyzetet kapunk, 
+tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
+Ahogyan azt az előzőekben már megértettük ezt az elemet kell a balfelső pozícióba csempészni, 
+és az algoritmusunk már működik is.
+
+\section{Definitség osztályozása a teljes négyzetek segítségével}
+Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
+a kvadratikus alak definitsége az alábbiak szerint osztályozható.
+Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
+Ha a diád felbontás
+\begin{itemize}
+    \item tartalmaz pozitív és negatív pivot elemet, 
+        akkor $Q$ \emph{indefinit}.
+\end{itemize}
+Most tegyük fel, hogy $Q$ felbontása pontosan $n$ teljes négyzetet tartalmaz.
+Ha
+\begin{itemize}
+    \item az összes pivot elem pozitív,
+        akkor $Q$ \emph{pozitív definit};
+    \item az összes pivot elem negatív,
+        akkor $Q$ \emph{negatív definit};
+\end{itemize}
+Ha $Q$ felbontása $n$-nél kevesebb teljes négyzetből áll,
+akkor nagyon hasonló karakterizációt kapunk, de a mátrix szingulátis, ezért csak szemidefinitség jöhet szóba.
+Tehát ha
+\begin{itemize}
+\item az összes pivot elem pozitív,
+    akkor $Q$ \emph{pozitív szemidefinit};
+\item az összes pivot elem negatív,
+    akkor $Q$ \emph{negatív szemidefinit};
+\end{itemize}
+
 \backmatter
 \pagestyle{empty}
 %\bibliography{\jobname}
@@ -16394,10 +16468,3 @@ akkor a most tanult felcseréléssel a nem zérus elem a balfelső pozícióba h
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 20 Nov 2021 03:26:56 PM CET CET CET CET 
-
-    Completing the square, rewrite the following quadratic forms as a linear combination of perfect squares.\\
-    $Q\left( x_1,x_2 \right)=x_1^2+4x_1x_2-5x_2^2,$\\
-    $Q\left( x_1,x_2 \right)=4x_1^2+6x_1x_2+9x_2^2,$\\
-    $Q\left( x_1,x_2 \right)=5x_1^2-6x_1x_2+x_2^2,$\\
-    $Q\left( x_1,x_2,x_3 \right)=5x_1^2-6x_1x_2+x_1x_3,$\\
