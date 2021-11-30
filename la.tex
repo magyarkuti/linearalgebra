@@ -5349,6 +5349,7 @@ sőt
 	\end{enumerate}
 	Ezt kellett belátni.
 \end{proof}
+\section{Izomorfia tételek}
 \begin{proposition}
 	Legyen $M$ a $V$ vektortér egy altere.
 	Definiálja $\varphi:V\to V/M$ az $x\mapsto M_x$ függvényt.
@@ -5416,83 +5417,6 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	$\codim M=k$ módon jelöljük.
 \end{definition}
 \begin{proposition}
-	Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
-	amelynek van véges dimenziós direkt kiegészítője.
-	Ekkor
-	\[
-		\codim M=\dim(V/M).\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Válasszunk $N$ véges dimenziós alterét $V$-nek,
-	amelyre $V=M\oplus N$.
-	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
-	emiatt $V/M$ is végesen generált, és
-	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
-\end{proof}
-\begin{proposition}
-	Legyenek $V,W$ vektorterek,
-	továbbá $A\in L\left( V,W \right)$ egy olyan lineáris operáció,
-	amelyre az $\im A\subseteq W$ végesen generált.
-	Ekkor a $\ker A$ altérnek van végesen generált direkt kiegészítője, és
-	\[
-		\codim\left( \ker A \right)=\dim\left( \im A \right).\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Legyen $\im A$ egy bázisa $\left\{ Ax_1,\ldots,Ax_r \right\}$.
-    Ha például $x_i$ előállna, mint a többi $x_j$ vektor lineáris kombinációja,
-    akkor az $A$ linearitása miatt $Ax_i$ is előállna ugyanazon együtthatókkal mint a többi $Ax_j$
-    lineáris kombinációja.
-    Ez azt jelenti, hogy $\left\{ x_1,\ldots,x_r \right\}$ is lineárisan független vektorrendszer.
-	Definiálja $N=\lin\left\{ x_1,\ldots,x_r \right\}$.
-    Persze $\left\{ x_1,\ldots,x_r \right\}$ egy bázisa $N$-nek,
-    ergo $\dim(N)=r$.
-
-	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
-	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
-	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
-	esetben lehetséges az $\left\{ Ax_1,\ldots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
-    Megmutattuk tehát, hogy $\ker A\cap N=\left\{ 0 \right\}$, ergo $\ker A$-nak és $N$-nek értelmes a direkt összege.
-
-	Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
-	$Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
-	Világos, hogy így $x-\sum_{j=1}^r\alpha_jx_j\in\ker A$,
-	ami igazolja, hogy $V=\ker A+N$.
-
-	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
-	Az is világos, hogy $\codim\left( \ker A \right)=\dim(N)=r=\dim\left( \im A \right)$.
-\end{proof}
-Magától értetődik a következő két észrevétel.
-\begin{proposition}
-	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
-	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
-\end{proposition}
-\begin{proposition}[Rang--defektus-tétel]\index{Rang--defektus-tétel}
-	Legyen $V$ egy véges dimenziós vektortér,
-	és $W$ egy tetszőleges vektortér,
-	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
-	Ekkor
-	$\im A$ is véges dimenziós, és
-	\[
-		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim(V).\qedhere
-	\]
-\end{proposition}
-
-Ha $V$ véges dimenziós és $A\in L\left( V,W \right)$ egy lineáris operáció,
-akkor láttuk, hogy
-\[
-	\dim\left( \im A \right)
-	=
-	\codim\left( \ker A \right)
-	=
-	\dim\left( V/\ker A \right).
-\]
-Tudjuk, hogy azonos dimenziójú vektorterek egymással izomorfak,
-emiatt $\im A$ izomorf $V/\ker A$ faktortérrel.
-A következő állítás ennek a gondolatnak a nem véges dimenziós esetre vonatkozó általánosítása,
-de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
-\begin{proposition}
 	Legyenek $V,W$ ugyanazon test feletti vektorterek,
 	és $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Ekkor a
@@ -5545,6 +5469,69 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 	Megmutattuk tehát, hogy $\ker \Omega=\left\{ 0 \right\}$,
 	ami éppen $\Omega$ injektivitása.
 \end{proof}
+\begin{proposition}
+	Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
+	amelynek van véges dimenziós direkt kiegészítője.
+	Ekkor a $V/M$ faktortér is végesen generált, és
+	\[
+		\codim M=\dim(V/M).\qedhere
+	\]
+\end{proposition}
+\begin{proof}
+	Válasszunk $N$ véges dimenziós alterét $V$-nek,
+	amelyre $V=M\oplus N$.
+	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
+	emiatt $V/M$ is végesen generált, és
+	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
+\end{proof}
+\begin{proposition}
+	Legyenek $V,W$ vektorterek,
+	továbbá $A\in L\left( V,W \right)$ egy olyan lineáris operáció,
+	amelyre az $\im A\subseteq W$ végesen generált.
+	Ekkor a $\ker A$ altérnek van $\im A$-val izomorf direkt kiegészítője, emiatt
+	\[
+		\codim\left( \ker A \right)=\dim\left( \im A \right).\qedhere
+	\]
+\end{proposition}
+\begin{proof}
+	Legyen $\im A$ egy bázisa $\left\{ Ax_1,\ldots,Ax_r \right\}$.
+    Ha például $x_i$ előállna, mint a többi $x_j$ vektor lineáris kombinációja,
+    akkor az $A$ linearitása miatt $Ax_i$ is előállna ugyanazon együtthatókkal mint a többi $Ax_j$
+    lineáris kombinációja.
+    Ez azt jelenti, hogy $\left\{ x_1,\ldots,x_r \right\}$ is lineárisan független vektorrendszer.
+	Definiálja $N=\lin\left\{ x_1,\ldots,x_r \right\}$.
+    Persze $\left\{ x_1,\ldots,x_r \right\}$ egy bázisa $N$-nek,
+    ergo $\dim(N)=r$.
+
+	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
+	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
+	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
+	esetben lehetséges az $\left\{ Ax_1,\ldots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
+    Megmutattuk tehát, hogy $\ker A\cap N=\left\{ 0 \right\}$, ergo $\ker A$-nak és $N$-nek értelmes a direkt összege.
+
+	Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
+	$Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
+	Világos, hogy így $x-\sum_{j=1}^r\alpha_jx_j\in\ker A$,
+	ami igazolja, hogy $V=\ker A+N$.
+
+	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
+	Az is világos, hogy $\codim\left( \ker A \right)=\dim(N)=r=\dim\left( \im A \right)$.
+\end{proof}
+Magától értetődik a következő két észrevétel.
+\begin{proposition}
+	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
+	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
+\end{proposition}
+\begin{proposition}[Rang--defektus-tétel]\index{Rang--defektus-tétel}
+	Legyen $V$ egy véges dimenziós vektortér,
+	és $W$ egy tetszőleges vektortér,
+	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
+	Ekkor
+	$\im A$ is véges dimenziós, és
+	\[
+		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim(V).\qedhere
+	\]
+\end{proposition}
 %\chapter*{Rang-tétel mégegszer}
 %
 %\begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
@@ -15778,4 +15765,4 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 23 Nov 2021 12:05:31 PM CET CET CET CET CET CET CET CET CET CET CET CET CET CET CET 
+Last Modified: Tue 30 Nov 2021 11:25:24 AM CET CET CET CET CET CET CET CET CET CET CET CET CET CET CET 
