@@ -21,7 +21,8 @@
 \setsansfont{TeX Gyre Adventor}[Scale=MatchLowercase]
 %\setsansfont{Dejavu Sans}[Scale=MatchLowercase] 
 %\setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
-\setmonofont{inconsolata}[Scale=MatchLowercase]
+%\setmonofont{inconsolata}[Scale=MatchLowercase]
+\setmonofont{TeX Gyre Cursor}
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
@@ -13506,13 +13507,14 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 	\end{math}
 	Ezt kellett belátni.
 \end{proof}
+
 \begin{proposition}\label{pr:normpol}
 	Tegyük fel, hogy olyan
 	$P_1,\ldots,P_r$ ortogonális projekciókra, amelyek összege az identikus transzformáció,
 	és a tetszőlegesen megválasztott
 	$\lambda_1,\ldots,\lambda_r\in\mathbb{K}$ számokra $N=\sum_{j=1}^r\lambda_jP_j$.
 	Ekkor minden $q\in\mathbb{K}[t]$ polinom mellett
-	$q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+	$q\left( N \right)=\sum_{j=1}^rq( \lambda_j )P_j$.
 \end{proposition}
 \begin{proof}
 	Először gondoljuk meg azt, hogy minden $l\geq 0$ mellett
@@ -13562,7 +13564,6 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 	\end{multline*}
 	Ezt kellett belátni.
 \end{proof}
-
 \subsection{Valós együtthatós lineáris kombináció}
 Most nézzük a valós együtthatós lineáris kombinációk esetét.
 \begin{proposition}\label{pr:normlinkombvalos}\index{ozz@önadjungált transzformáció}
@@ -15765,4 +15766,4 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 16 Dec 2021 07:28:10 PM CET CET CET CET CET CET CET CET CET CET CET CET CET CET CET 
+Last Modified: Thu 16 Dec 2021 08:31:43 PM CET CET CET CET CET CET CET CET CET CET CET CET CET CET CET 
