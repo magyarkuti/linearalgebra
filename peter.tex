@@ -1,0 +1,704 @@
+\documentclass[9pt, a4paper, showtrims]{memoir}
+\usepackage{polyglossia}\setdefaultlanguage{magyar}
+\usepackage[a4paper]{geometry}
+\usepackage{amssymb, amsmath, amsthm}
+\swapnumbers
+
+\theoremstyle{plain}
+\newtheorem{proposition}{állítás}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{definíció}
+\newtheorem{corollary}[proposition]{következmény}
+
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+
+\synctex=1
+\begin{document}
+\chapter{Kvadratikus alakok definitségének egy naiv tárgyalása}
+A kvadratikus alaknak mondunk egy speciális többváltozós függvényt.
+\begin{definition}
+    Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
+    Amint az szokásos jelölje $a_{k,j}$ a mátrix $i,j$ pozicíojának elemét.
+    Definiálja a $Q_A:\mathbb{R}^n\to\mathbb{R}$ függvényt
+    \[
+    Q\left( x_{1},x_2,\cdots,x_n \right)=
+    \sum_{k=1}^n\sum_{j=1}^na_{k,j}x_kx_j.
+    \]
+    Ekkor $Q_A$ az $A$ szimmetrikus mátrixhoz tartozó kvadratikus alak.
+\end{definition}
+Például $n=1$ és az $A$ mátrix egyetlem eleme az $a\in\mathbb{R}$ szám, akkor $Q(x_1)=ax_1^2$.
+Ha $n=2$ mellett $A\in\mathbb{R}^{2\times 2}$, akkor
+$$
+Q\left( x_1,x_2 \right)=a_{1,1}x_1^2+a_{1,2}x_1x_2+a_{2,1}x_2x_1+a_{2,2}x_2^2.
+$$
+Gyakorlásképpen írjuk fel milyen három változós kvadratikus alakok lehetségesek.
+\begin{proposition}
+    Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
+    Ekkor az $A$ által meghatározott kvadratikus alakra
+    \[
+        Q(x)=\ip{x}{Ax}
+    \]
+    tetszőleges $x\in\mathbb{R}^n.$
+\end{proposition}
+Ebből az alakból már világos, hogy az $A+B$ összeghez tartozó kvadratikus alak azonos az $A$-hoz és a $B$-hez
+tartozó kvadratikus alakok összegével, 
+és hasonlóan az $\alpha A$ mátrixhoz tartozó kvadratikus alakot úgy is megkaphatjuk, hogy az $A$-hoz tartozó kvadratikus alakot mint $n$-változós függvényt szorozzuk az $\alpha$ számmal.
+Formálisabban:
+\begin{proposition}
+    Legyenek $A,B\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixok és $\alpha,\beta\in\mathbb{R}$.
+    Ekkor
+    \[
+    Q_{\alpha A+\beta B}=\alpha Q_A+\beta Q_B.
+    \qedhere
+    \]
+\end{proposition}
+A nemzérus kvadratikus alakokat az értékkészletük alapján osztályozzuk.
+\begin{definition}
+    Legyen $Q:\mathbb{R}^n\to\mathbb{R}$ egy nemzérus kvadratikus alak.
+    Azt mondjuk, hogy ez
+    \begin{description}
+        \item[{\normalfont \emph{pozitív definit,}}] ha $Q\left( x \right)>0$ minden $x\in\mathbb{R}^n,x\neq 0$;
+        \item[{\normalfont\emph{pozitív szemidefinit,}}] ha $ Q\left( x \right)\geq 0$ minden $x\in\mathbb{R}^n$,
+            de létezik egy $z\in\mathbb{R}^n, z\neq 0$ vektor, amelyre $Q\left( z \right)=0$;
+        \item[{\normalfont\emph{negatív definit,}}] ha $ Q\left( x \right)<0$ minden $x\in\mathbb{R}^n,x\neq 0;$
+        \item[{\normalfont\emph{negatív szemidefinit,}}] ha $ Q\left( x \right)\leq 0$ minden $x\in\mathbb{R}^n$,
+            de létezik egy $z\in\mathbb{R}^n, z\neq 0$ vektor, amelyre $Q\left( z \right)=0$;
+        \item[{\normalfont\emph{indefinit,}}] ha vannak olyan $x,y\in\mathbb{R}^n$ vektorok, amnelyekre
+            $Q\left( x \right)>0$  és $Q\left( y \right)<0$.
+    \end{description}
+\end{definition}
+\subsection{A szimmetrikus diádok szerepe}
+Emlékezzünk, hogy $n\times n$ méretű szimmetrikus diádnak nevezünk egy $\mathbb{R}^n$ beli vektornak
+oszlopalakú és soralakú mátrixszorzatát. 
+Kicsit formálisabban az $A=a\cdot a^T$ tetszőleges $a\in\mathbb{R}^{n\times 1}$ mellett.
+A diádok tehát speciális szimmetrikus mátrixok.
+Látható, hogy egy szimmetrikus mátrix pontosan akkor diád, 
+ha az 1 rangú szimmetrikus mátrix.
+
+A szimmetrikus diádok azért érdekesek számunkra, 
+mert éppen az ezekhez tartozó kvadratikus alakok a teljes négyzetek.
+\begin{proposition}
+   Egy kvadratikus alak pontosan akkor teljes négyzet, ha az őt reprezentáló szimetrikus mátrix egy diád.
+   Pontosabban:
+   Ha $A=a\cdot a^T$, ahol $a=\left( a_1,a_2,\ldots,a_n \right)$, akkor
+      \(
+         Q_A\left( x_1,x_2,\ldots,x_n \right)=
+         \left( a_1x_1+a_2x_2+\ldots+a_nx_n \right)^2.
+      \)
+\end{proposition}
+
+\section{Szimmetrikus mátrix diád felbontása}
+Be fogjuk bizonyítani, hogy 
+\begin{proposition}
+    Minden nem zérus szimmetrikus mátrix előáll mint szimmetrikus diádok lineáris kombinációja.
+    Sőt, ha egy szimmetrikus mátrix rangja $r$, 
+    akkor az előáll mint $r$ db.~szimmetrikus diád lineáris kombinációja, 
+    ahol a diádokat alkotó vektorok rendszere lineárisan független rendszert alkot.
+\end{proposition}
+A bizonyítás úgy folyik, hogy konkrét algoritmust adunk a felbontásra.
+
+Az algoritmus első mozzanata annak észrevétele, 
+hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan módon,
+hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbett tartalmazzon:
+\begin{proposition}
+    Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
+    Tegyük fel, hogy a balfelső elemre $a_{1,1}\neq 0$.
+    Jelölje $d=\frac{1}{a_{1,1}}a_1$, ahol $a_1$ a mátrix első oszlopa $A$.
+    Ekkor
+    \[
+        R=A-a_{1,1}d\cdot d^T
+   \]
+   egy olyan szimmetrikus mátrix, 
+   ahol az első oszlop és első sor kizárólag zérus elemeket tartalmaz.
+\end{proposition}
+\begin{proof}
+    Az persze nyilvánvaló, hogy szimmetrikus mátrixok egy lináris kombinációja is szimmetrikus marad.
+    Jelölje $\delta_k=\frac{a_{k,1}}{a_{1,1}}=\frac{a_{1,k}}{a_{1,1}}$ a $d$ vektor $k$-adik koordinátáját.
+    Ekkor 
+    \[
+        r_{k,j}=
+        a_{k,j}-a_{1,1}\delta_k\delta_j=
+        a_{k,j}-a_{1,1}\frac{a_{k,1}}{a_{1,1}}\delta_j=
+        a_{k,j}-a_{k,1}\delta_j.
+        \tag{\dag}
+    \]
+    Ha $j=1$, akkor itt $r_{k,1}=a_{k,1}-a_{k,1}\delta_1=0$.
+    Látjuk, hogy az $R$ mátrix első oszlopa csupa zérust tartalmaz. 
+    No de, az $R$ egy szimmetrikus mátrix, ergo az első sorban is csak zérus elemek vannak.
+    \end{proof}
+    Illusztrációként nézzük a következő kvadratikus alakot:
+    \[
+        Q\left( z_1,z_2,z_3 \right)
+        =
+        2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3.
+    \]
+    Ezt a kvadratikus alakot az 
+    \(A=
+    \begin{pmatrix}
+        2&1&-2\\
+        1&0&1\\
+        -2&1&\frac{3}{2}
+    \end{pmatrix}
+    \)
+    szimmetrikus mátrix reprezentálja, 
+    legyen tehát 
+    \(d=
+    \begin{bmatrix}
+        1\\ \frac{1}{2}\\ -1
+    \end{bmatrix}.
+    \)
+    Így 
+    \[
+        R=A-2d\cdot d^T
+        =
+        \begin{pmatrix}
+        2&1&-2\\
+        1&0&1\\
+        -2&1&\frac{3}{2}
+        \end{pmatrix}
+        -2
+        \begin{bmatrix}
+        1\\ \frac{1}{2}\\ -1
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+        1& \frac{1}{2}& -1
+        \end{bmatrix}
+        =
+        \begin{pmatrix}
+            0&0&0\\
+            0&-\frac{1}{2}&2\\
+            0&2&-\frac{1}{2}
+        \end{pmatrix}
+    \]
+    No persze $A=2d\cdot d^T+R$.
+    Áttérve a kvadratikus alakokra
+    \(
+        Q\left( z_1,z_2,z_3 \right)=2\left( z_1+\frac{1}{2}z_2-z_3 \right)^2+Q_R\left( z_1,z_2,z_3 \right),
+    \)
+    ahol $Q_R$ már nem függ a $z_1$ változótól, 
+    hiszen $Q_R\left( z_1,z_2,z_3 \right)=-\frac{1}{2}z_2^2-\frac{1}{2}z_3^2+4z_2z_3$.
+    \\
+    Sikeresen megszabadultunk az első változótól, elegendő tehát a 
+    \(
+    \begin{pmatrix}
+        -\frac{1}{2}&2\\
+        2&-\frac{1}{2}
+    \end{pmatrix}
+    \)
+    mátrix reprezentálta kétváltozós kvadratikus alakkal foglalkozni, amelynek változóit most $z_2$ és $z_3$ jelöli.
+    Válasszunk le egy újabb szimmetrikus diádot:
+    \[
+        \begin{pmatrix}
+            -\frac{1}{2}&2\\
+            2&-\frac{1}{2}
+        \end{pmatrix}
+        -\left( -\frac{1}{2} \right)
+        \begin{bmatrix}
+            1\\-4
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            1&-4
+        \end{bmatrix}
+        =
+        \begin{pmatrix}
+            0&0\\
+            0&\frac{15}{2}
+        \end{pmatrix}.
+    \]
+    Lefordítva ezt a kvadratikus alakok nyelvére azt kaptuk,
+    hogy
+    \(
+        Q_R\left( z_1,z_2,z_3 \right)
+        =
+        -\frac{1}{2}\left( z_2-4z_3 \right)^2+\frac{15}{2}z_3^2.
+    \)
+    Összefoglalva tehát
+    \[
+        Q\left( z_1,z_2,z_3 \right)
+        =
+        2\left( z_1+\frac{1}{2}z_2-z_3 \right)^2
+        -\frac{1}{2}\left( z_2-4z_3 \right)^2
+        +\frac{15}{2}z_3^2.
+    \]
+    Az $A$ mátrix diádfelbontását is leolvashatjuk a fenti számolásból:
+    \[
+        A
+        =
+        2
+        \begin{bmatrix}
+        1\\ \frac{1}{2}\\ -1
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+        1& \frac{1}{2}& -1
+        \end{bmatrix}
+        -\frac{1}{2}
+        \begin{bmatrix}
+            0\\1\\-4
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0&1&-4
+        \end{bmatrix}
+        +
+        \frac{15}{2}
+        \begin{bmatrix}
+            0\\0\\1
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0&0&1
+        \end{bmatrix}.
+    \]
+
+Voltaképpen készen is lennénk, mert
+ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
+mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának balfelső eleme nem zérus.%
+\footnote{
+Evvel a problémával most ne foglalkozzunk később ki fog derülni, 
+hogy könnyen megszabadulhatunk e kellemetlennek tűnő feltéteteltől.}
+
+A maradék kvadratikus alak mátrixa, az $R=A-a_{1,1}d\cdot d^T$, a fentinél sokkal
+hatékonyabban számolható.
+Nézzük rá az állítás igazolásában kiemelt $(\dag)$ azonosságra de úgy,
+hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra:
+    \[
+        r_{k,j}=
+        a_{k,j}-a_{k,1}\delta_j.
+        \tag{\dag}
+    \]
+Tudjuk, hogy az $R$ maradék első oszlopa és első sora zérus.
+Ezért a kérdés csak az, 
+hogy e mátrix jobb alsó $n-1\times n-1$ méretű részének mik az elemei.
+A fenti formulát kell ehhez alkalmazni, mikor $k>1$ és $j>1$.
+Ismerjük fel, hogy (\dag)  éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
+amikor a balfelső elem a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
+Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval is számolható.
+Bebizonyítottuk hát a következő állítást.
+\begin{proposition}
+   Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
+   amelyre $a_{1,1}\neq 0$.
+   Legyen $R$ az első diád leválasztása után maradó kvadratikus alak mátrixa,
+   azaz 
+   $$R=A-a_{1,1}d\cdot d^T,$$
+   ahol $d$ az $A$ mátrix első oszlopának az $a_{1,1}$ reciprokával vett szorzata.
+   Tudjuk, hogy $R$ első oszlopa és sora csak zérus elemeket tartalmaz, viszont e
+   mátrix a jobb alsó $\left(n-1\times n-1  \right)$ méretű része megkapható
+   az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
+   olyan módon hogy a balfelső $a_{1,1}$ elemet választjuk pivot elemnek, 
+   és az elimináció első sorát eldobjuk.
+\end{proposition}
+Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.
+\[
+\begin{array}{c|ccc}
+     & z_1       & z_2 & z_3 \\
+     \hline
+     & \boxed{2} & 1   & -2  \\
+     & 1         & 0   & 1   \\
+     & -2        & 1   & 3/2 \\
+    \hline
+    & \delta    & \frac{1}{2}   & -1
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & z_1       & z_2  & z_3 \\
+     \hline
+     & &                &       \\
+     & & \boxed{-1/2}   & 2     \\
+     & &            2   & -1/2  \\
+     \hline
+     & & \delta         & -4
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & z_1       & z_2 & z_3 \\
+     \hline
+     & &   &     \\
+     & &   &     \\
+     & &   & \boxed{15/2}    \\
+    \hline
+    \phantom{\delta}
+\end{array}
+\]
+Ezután csak értelmeznünk kell a fenti eliminációt.
+A második táblázat az elő diád leválasztása után maradt kvadratikus alak mátrixa.
+A leválasztott diád az első táblázat segédsorából olvasható le, 
+és a diád szorzója az első táblázatban választott pivot elem.
+Tehát
+\[
+    \begin{pmatrix}
+        2&1&-2\\
+        1&0&1\\
+        -2&1&\frac{3}{2}
+    \end{pmatrix}
+    =
+    2
+    \begin{bmatrix}
+        1\\1/2\\-1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        1&1/2&-1
+    \end{bmatrix}
+    +
+    \begin{pmatrix}
+        0&0&0\\
+        0&-1/2&2\\
+        0&2&-1/2
+    \end{pmatrix}.
+\]
+A harmadik táblázat az előző maradékból leválasztott kvadratikus alak mátrixa.
+A leválasztott diád a második táblázat segédsorából olvasható le, 
+és a szorzó a második táblázat pivot eleme.
+Tehát
+\[
+    \begin{pmatrix}
+        0&0&0\\
+        0&-1/2&2\\
+        0&2&-1/2
+    \end{pmatrix}
+    =
+    -\frac{1}{2}
+    \begin{bmatrix}
+        0\\1\\-4
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&1&-4
+    \end{bmatrix}
+    +
+    \begin{pmatrix}
+        0&0&0\\
+        0&0&0\\
+        0&0&15/2
+    \end{pmatrix}
+\]
+Világos, hogy az utolsó maradék $15/2$ szerese a 
+\(
+\begin{pmatrix}
+    0\\0\\1
+\end{pmatrix}
+\)
+vektor által meghatározott diádnak, tehát a diád felbontás a fenti eliminációs táblázatból azonnal leolvasható:
+\[
+    A
+    =
+    2
+    \begin{bmatrix}
+    1\\ \frac{1}{2}\\ -1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+    1& \frac{1}{2}& -1
+    \end{bmatrix}
+    -\frac{1}{2}
+    \begin{bmatrix}
+        0\\1\\-4
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&1&-4
+    \end{bmatrix}
+    +
+    \frac{15}{2}
+    \begin{bmatrix}
+        0\\0\\1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&0&1
+    \end{bmatrix}
+\]
+A diád felbontás a kvadratikus alakra nézve azt jelenti, 
+hogy előállítottuk azt olyan teljes négyzetek lineáris kombinációjaként,
+ahol a teljes négyzeteknek megfelelő diádokat generáló vektorok rendszere linárisan független rendszert ad.
+Konkrétan itt
+\[
+    2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3
+    =
+    2\left( z_1+\frac{1}{2}z_2-z_3 \right)^2
+    -\frac{1}{2}\left( z_2-4z_3 \right)^2
+    +\frac{15}{2}z_3^2.
+\]
+
+\paragraph{Gyakorlat.}
+Írjuk fel a 
+\(
+Q\left( x_1,x_2,x_3 \right)=
+x_1^2+3x_2^2+6x_3^2+
+2x_1x_2+2x_1x_3+
+6x_2x_3
+\)
+kvadratikus alakot teljesnégyzetek lineáris kombinációjaként.
+Az elimináció lépései:
+\[
+\begin{array}{c|ccc}
+     & x_1       & x_2 & x_3 \\
+     \hline
+     & \boxed{1} & 1   & 1   \\
+     & 1         & 3   & 3   \\
+     & 1         & 3   & 6   \\
+    \hline
+    & \delta     & 1   & 1
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & x_1& x_2  & x_3 \\
+     \hline
+     & &                &     \\
+     & & \boxed{2}      & 2   \\
+     & & 2              & 5   \\
+     \hline
+     & & \delta         & 1
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & x_1 & x_2 & x_3      \\
+     \hline
+     &     &     &          \\
+     &     &     &          \\
+     &     &     & \boxed{3}\\
+    \hline
+    \phantom{\delta}
+\end{array}
+\]
+Ez azt jelenti, hogy 
+\(
+Q\left( x_1,x_2,x_3 \right)
+=
+\left( x_1+x_2+x_3 \right)^2
++2\left( x_2+x_3 \right)^2
++3x_3^2.
+\)
+Az is világos, hogy a három pivot elem pozitivitása szerint a kvadratikus alak pozitív definit,
+hiszen az
+\begin{eqnarray*}
+    x_1+x_2+x_3&=& 0\\
+    x_2+x_3&=& 0\\
+    x_3&=& 0
+\end{eqnarray*}
+homogén lineáris egyenletrendszernek, 
+az együttható mátrix oszlopainak lináris függetlensége miatt,
+csak triviális megoldása van!
+
+\subsubsection{Zérus elem a bal felső sarokban}
+Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
+A soron következő diád leválasztásához mindig a balfelső elemet kell választanunk.
+Persze kérdés mi történik, ha a balfelső elem zérus?
+Ennek illusztrációjaként nézzük az alábbi kvadratikus alakot.
+\[
+    Q\left( x_1,x_2,x_3 \right)=
+    3x_2^2+
+    2x_1x_2+2x_1x_3+
+    6x_2x_3
+\]
+Persze el sem tudjuk kezdeni az algoritmust, hiszen a balfelső elem zérus.
+Azt vegyük észre, hogy át tudjuk címkézni a változókat úgy, 
+hogy a kapott kvadratikus alakban az első változónak legyen négyzete.
+Ehhez csak az $x_1$ és az $x_2$ változókat kell felcserélnünk.
+Vezessük be tehát a $z_1=x_2$, $z_2=x_1$ és $z_3=x_3$ jelöléseket.
+Ezek szerint 
+\[
+    3x_2^2+
+    2x_1x_2+2x_1x_3+
+    6x_2x_3
+    =
+    3z_1^2+
+    2z_2z_1+2z_2z_3+
+    6z_1z_3
+\]
+Így viszont már indulhat is az elimináció:
+\[
+\begin{array}{c|ccc}
+     & z_1       & z_2 & z_3 \\
+     \hline
+     & \boxed{3} & 1   & 3   \\
+     & 1         & 0   & 1   \\
+     & 3         & 1   & 0   \\
+    \hline
+    & \delta     & 1/3   & 1 
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & z_1& z_2  & z_3 \\
+     \hline
+     & &                &     \\
+     & & \boxed{-1/3}      & 0   \\
+     & & 0              & -3   \\
+     \hline
+     & & \delta         & 0
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & z_1 & z_2 & z_3      \\
+     \hline
+     &     &     &          \\
+     &     &     &          \\
+     &     &     & \boxed{-3}\\
+    \hline
+    \phantom{\delta}
+\end{array}
+\]
+A teljes négyzetek lineáris kombinációját leolvasva:
+\[
+    3z_1^2+
+    2z_2z_1+2z_2z_3+
+    6z_1z_3
+    =
+    3\left( z_1+\frac{1}{3}z_2+z_3 \right)^2-\frac{1}{3}z_2^2-3z_3^2
+    =
+    3\left( \frac{1}{3}x_1+x_2+x_3 \right)^2-\frac{1}{3}x_1^2-3x_3^2,
+\]
+ami a diádfelbontásra nézve azt jelenti, hogy
+\[
+    \begin{pmatrix}
+        0&1&1\\
+        1&3&3\\
+        1&3&0
+    \end{pmatrix}
+    =
+    3
+    \begin{bmatrix}
+        1/3\\1\\1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        1/3&1&1
+    \end{bmatrix}
+    -\frac{1}{3}
+    \begin{bmatrix}
+        1\\0\\0
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        1&0&0
+    \end{bmatrix}
+    -3
+    \begin{bmatrix}
+        0\\0\\1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0&0&1
+    \end{bmatrix}.
+\]
+Ha ezt az átcímkézési trükköt megértettük, akkor még egyszerűbb jelöléseket is alkalmazhatunk.
+Végül is csak az volt a lényeg, hogy az első két változót felcseréltük. 
+Jelezhetjük ezt a táblázatban a változók indexével is. 
+Ugyanez mégegyszer:
+\[
+\begin{array}{c|ccc}
+     & x_1       & x_2 & x_3 \\
+     \hline
+     \phantom{\boxed{3}} & 0 & 1   & 1   \\
+     & 1 & 3   & 3   \\
+     & 0 & 3   & 0   \\
+    \hline
+    & \phantom{\delta}     &\phantom{1/3}    &\phantom{1}
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & x_2       & x_1 & x_3 \\
+     \hline
+     & \boxed{3} & 1   & 3   \\
+     & 1         & 0   & 1   \\
+     & 3         & 1   & 0   \\
+    \hline
+    & \delta     & 1/3   & 1 
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & x_2& x_1  & x_3 \\
+     \hline
+     & &                &     \\
+     & & \boxed{-1/3}      & 0   \\
+     & & 0              & -3   \\
+     \hline
+     & & \delta         & 0
+\end{array}
+\implies
+\begin{array}{c|ccc}
+     & x_2 & x_1 & x_3      \\
+     \hline
+     &     &     &          \\
+     &     &     &          \\
+     &     &     & \boxed{-3}\\
+    \hline
+    \phantom{\delta}
+\end{array}
+\]
+A változók indexére ügyelve kell leolvasnunk a teljesnégyzeteket, és a legegszerűbb, ha a teljesnégyzetekből olvassuk le a diád felbontást.
+
+Már csak azt kell meggondolnunk, hogyan kaptuk az első táblázatból a másodikat?
+Azt kell látnunk, hogy az $i$-edik és a $j$-edik változó felcserélése avval jár, 
+hogy a mátrixban felcseréljük az $i$-edik sort a $j$-edik sorral és az $i$-edik oszlopot a $j$-edik oszloppal.
+Persze, hiszen a mátrixban minden az $i,k$ és a $j,k$ pozícióban álló szám helyet cserél, 
+és hasonlóan minden a $k,i$ és a $k,j$ pozícióban álló szám is helyet cserél minden $k$ mellett.
+A többi elem viszont nem változik.
+Az első rész az $i$ és $j$ indexű sorok felcserélését jelenti, míg a második rész az $i$ és $j$ indexű oszlopok kicseréléséből áll.
+A többi sort és oszlopot nem éri változás.
+
+Látjuk tehát, hogy ha a balfelső elem zérus, de a diagonálisnak van nem zérus eleme, 
+akkor a most tanult felcseréléssel a nem zérus elem a balfelső pozícióba hozható, így az algoritmusunk továbbra is működik.
+
+\subsubsection{A diagonálisban minden elem zérus}
+Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
+
+Először is azt vegyük észre, hogy ha a feladat a kvadratikus alak definitségének meghatározása, 
+akkor készen is vagyunk mert indefinit kvadratikus alakkal állunk szemben.
+Ha ugyanis a $k,l$ pozíció tartalmaz nem zérus elemet, 
+akkor a kvadratikus alak összes többi változóját állítsuk zérusra és a $k$-adik és az $l$-edik változót vizsgáljuk.
+Így a kvadratikus alakunk az $2a_{k,l}x_kx_l$ kifejezésre egyszerűsödik, 
+amely persze indefinit, hiszen az értékkészlete negatív és pozitív elemet egyaránt tartalmaz.
+
+A teljesség kedvéért megmutatjuk, 
+hogy az algoritmusunk ebben az esetben is használható.
+Ha az $a_{k,l}\neq 0$, akkor vezessük be a 
+\[
+    z_l=x_l+x_k\qquad z_j=x_j, \text{ ha }j\neq l
+\]
+változókat.
+Ekkor $k\neq l$-et is figyelembe véve
+\begin{multline*}
+z_kz_l=x_k\left( x_l+x_k \right)=x_kx_l+x_k^2=z_k^2+x_kx_l,
+\text{ majd $j\neq k$, $j\neq l$ mellett: }\\
+z_jz_l=x_j\left( x_l+x_k \right)=x_jx_l+x_jx_k=x_jx_l+z_jz_k.
+\end{multline*}
+Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l-z_k^2)$-re kell cserélnünk,
+és minden további $x_jx_l$ alakú kifejezést a $(z_jz_l-z_jz_k)$ kifejezéssel kell kicserélnünk.
+A többi változó indexe nem változik.
+Így pontsan egy négyzetet kapunk, 
+tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
+Ahogyan azt az előzőekben már megértettük ezt az elemet kell a balfelső pozícióba csempészni, 
+és az algoritmusunk már működik is.
+
+\section{Definitség osztályozása a teljes négyzetek segítségével}
+Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
+a kvadratikus alak definitsége az alábbiak szerint osztályozható.
+Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
+Ha a diád felbontás
+\begin{itemize}
+    \item tartalmaz pozitív és negatív pivot elemet, 
+        akkor $Q$ \emph{indefinit}.
+\end{itemize}
+Most tegyük fel, hogy $Q$ felbontása pontosan $n$ teljes négyzetet tartalmaz.
+Ha
+\begin{itemize}
+    \item az összes pivot elem pozitív,
+        akkor $Q$ \emph{pozitív definit};
+    \item az összes pivot elem negatív,
+        akkor $Q$ \emph{negatív definit};
+\end{itemize}
+Ha $Q$ felbontása $n$-nél kevesebb teljes négyzetből áll,
+akkor nagyon hasonló karakterizációt kapunk, de a mátrix szingulátis, ezért csak szemidefinitség jöhet szóba.
+Tehát ha
+\begin{itemize}
+\item az összes pivot elem pozitív,
+    akkor $Q$ \emph{pozitív szemidefinit};
+\item az összes pivot elem negatív,
+    akkor $Q$ \emph{negatív szemidefinit};
+\end{itemize}
+
+\end{document}
