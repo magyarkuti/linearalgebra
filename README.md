@@ -13,3 +13,5 @@ Lásd <https://magyarkuti.github.io/algebra-1/> és <https://magyarkuti.github.i
 ### LaTeX installáció nélkül, de installált Docker környezet mellett
  1. docker build -t mylatex .
  2. ./compile
+
+![image](/assets/images/2021118.jpg)
