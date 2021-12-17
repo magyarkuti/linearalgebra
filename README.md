@@ -14,4 +14,4 @@ Lásd <https://magyarkuti.github.io/algebra-1/> és <https://magyarkuti.github.i
  1. docker build -t mylatex .
  2. ./compile
 
-![image](/assets/images/2021118.jpg)
+![image](/assets/images/20211118.jpg)
