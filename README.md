@@ -1,5 +1,5 @@
 A cél, hogy olyan lineáris algebra jegyzet szülessen, ami azt és csak azt tartalmazza, amit a Budapesti Corvinus Egyetemen tartott két szemeszteres lineáris algebra kurzusomat lefedi.
-Lásd [Algebra 1.]<https://magyarkuti.github.io/algebra-1/> és [Algebra 2.]<https://magyarkuti.github.io/algebra-2/>.
+Lásd [Algebra 1.](<https://magyarkuti.github.io/algebra-1/>) és [Algebra 2.](<https://magyarkuti.github.io/algebra-2/>)
 
 ## Az aktuális állapotot: ![Build LaTeX document](https://github.com/magyarkuti/linearalgebra/workflows/Build%20LaTeX%20document/badge.svg)
 <https://github.com/magyarkuti/linearalgebra/raw/gh-pages/la.pdf>
