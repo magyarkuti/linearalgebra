@@ -1,9 +1,9 @@
-# Az aktuális állapotot: ![Build LaTeX document](https://github.com/magyarkuti/linearalgebra/workflows/Build%20LaTeX%20document/badge.svg)
-<https://github.com/magyarkuti/linearalgebra/raw/gh-pages/la.pdf>
-
 # Lineáris Algebra
 A cél, hogy olyan lineáris algebra jegyzet szülessen, ami azt és csak azt tartalmazza, amit a Budapesti Corvinus Egyetemen tartott két szemeszteres lineáris algebra kurzusomat lefedi.
-Lásd <http://146.110.110.35/mediawiki/index.php/Algebra-I> és <http://146.110.110.35/mediawiki/index.php/Algebra-II>.
+Lásd <https://magyarkuti.github.io/algebra-1/> és <https://magyarkuti.github.io/algebra-2/>.
+
+# Az aktuális állapotot: ![Build LaTeX document](https://github.com/magyarkuti/linearalgebra/workflows/Build%20LaTeX%20document/badge.svg)
+<https://github.com/magyarkuti/linearalgebra/raw/gh-pages/la.pdf>
 
 ## LaTeX beállítások
 1. Gitinfo2 globálisan. Lásd: <https://mimischi.github.io/blog/latex-with-git-revisions/>.
@@ -14,4 +14,3 @@ Lásd <http://146.110.110.35/mediawiki/index.php/Algebra-I> és <http://146.110.
 ## LaTeX installáció nélkül, de installált Docker környezet mellett
  1. docker build -t mylatex .
  2. ./compile
-
