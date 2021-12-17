@@ -1,4 +1,3 @@
-# Lineáris Algebra
 A cél, hogy olyan lineáris algebra jegyzet szülessen, ami azt és csak azt tartalmazza, amit a Budapesti Corvinus Egyetemen tartott két szemeszteres lineáris algebra kurzusomat lefedi.
 Lásd <https://magyarkuti.github.io/algebra-1/> és <https://magyarkuti.github.io/algebra-2/>.
 
