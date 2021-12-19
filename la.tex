@@ -22,7 +22,8 @@
 \setsansfont{TeX Gyre Adventor}[Scale=MatchLowercase]
 %\setsansfont{Dejavu Sans}[Scale=MatchLowercase] 
 %\setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
-\setmonofont{inconsolata}[Scale=MatchLowercase]
+%\setmonofont{inconsolata}[Scale=MatchLowercase]
+\setmonofont{TeX Gyre Cursor}
 %%%%%% lualatex %%%%%%%%%%%
 
 \frenchspacing
@@ -622,8 +623,8 @@ vagy egy konkrét $t$-re kiértékelt testbeli elemet.
 \begin{definition}[polinom foka]\index{polinom foka}
 	Legyen $p\left( t \right)\in\mathbb{F}\left[ t \right]$ egy polinom.
 	Azt mondjuk, hogy az $n$ nem negatív egész szám e \emph{polinom fokszáma},
-	ha $n$ a legnagyobb nemzérus együttható indexe.
-	A legnagyobb nemzérus együtthatót \emph{főegyütthatónak}\index{főegyüttható} nevezzük.
+	ha $n$ a legnagyobb indexű nem zérus együttható.
+	A legnagyobb indexű nem zérus együtthatót \emph{főegyütthatónak}\index{főegyüttható} nevezzük.
 	Azt mondjuk, hogy egy nemzérus polinom \emph{normált}\index{normált polinom}, ha $1$ a főegyütthatója.
 
 	A $p\left( t \right)=0$ konstans zérus polinom foka megállapodás szerint legyen $-\infty$.
@@ -4721,7 +4722,6 @@ ha a bázisban egy elemet megváltoztatunk.
 
 
 %%%\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
-\part{Tavasz}
 \chapter{Alterek Minkowski-összege és direkt összege}\index{Minkowski-összeg}
 \scwords Az alterek struktúráját vizsgáljuk a fejezetben.
 \section{Minkowski-összeg}
@@ -5075,7 +5075,7 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
 	és lássuk be $s$-re. $s>2.$
 	Legyen $M=\sum_{j=1}^{s-1}M_j.$
 	Világos, hogy $M=M_1\oplus\dots\oplus M_{s-1}$ és $M\oplus M_s=N$.
-	A már igazolt $s=2$ eset és az indirekt feltevés szerint
+	A már igazolt $s=2$ eset és az indukciós feltevés szerint
 	\[
 		\dim(N)
 		=
@@ -5352,6 +5352,7 @@ sőt
 	\end{enumerate}
 	Ezt kellett belátni.
 \end{proof}
+\section{Izomorfia tételek}
 \begin{proposition}
 	Legyen $M$ a $V$ vektortér egy altere.
 	Definiálja $\varphi:V\to V/M$ az $x\mapsto M_x$ függvényt.
@@ -5419,83 +5420,6 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	$\codim M=k$ módon jelöljük.
 \end{definition}
 \begin{proposition}
-	Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
-	amelynek van véges dimenziós direkt kiegészítője.
-	Ekkor
-	\[
-		\codim M=\dim(V/M).\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Válasszunk $N$ véges dimenziós alterét $V$-nek,
-	amelyre $V=M\oplus N$.
-	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
-	emiatt $V/M$ is végesen generált, és
-	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
-\end{proof}
-\begin{proposition}
-	Legyenek $V,W$ vektorterek,
-	továbbá $A\in L\left( V,W \right)$ egy olyan lineáris operáció,
-	amelyre az $\im A\subseteq W$ végesen generált.
-	Ekkor a $\ker A$ altérnek van végesen generált direkt kiegészítője, és
-	\[
-		\codim\left( \ker A \right)=\dim\left( \im A \right).\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Legyen $\im A$ egy bázisa $\left\{ Ax_1,\ldots,Ax_r \right\}$.
-    Ha például $x_i$ előállna, mint a többi $x_j$ vektor lineáris kombinációja,
-    akkor az $A$ linearitása miatt $Ax_i$ is előállna ugyanazon együtthatókkal mint a többi $Ax_j$
-    lineáris kombinációja.
-    Ez azt jelenti, hogy $\left\{ x_1,\ldots,x_r \right\}$ is lineárisan független vektorrendszer.
-	Definiálja $N=\lin\left\{ x_1,\ldots,x_r \right\}$.
-    Persze $\left\{ x_1,\ldots,x_r \right\}$ egy bázisa $N$-nek,
-    ergo $\dim(N)=r$.
-
-	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
-	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
-	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
-	esetben lehetséges az $\left\{ Ax_1,\ldots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
-    Megmutattuk tehát, hogy $\ker A\cap N=\left\{ 0 \right\}$, ergo $\ker A$-nak és $N$-nek értelmes a direkt összege.
-
-	Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
-	$Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
-	Világos, hogy így $x-\sum_{j=1}^r\alpha_jx_j\in\ker A$,
-	ami igazolja, hogy $V=\ker A+N$.
-
-	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
-	Az is világos, hogy $\codim\left( \ker A \right)=\dim(N)=r=\dim\left( \im A \right)$.
-\end{proof}
-Magától értetődik a következő két észrevétel.
-\begin{proposition}
-	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
-	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
-\end{proposition}
-\begin{proposition}[Rang--defektus-tétel]\index{Rang--defektus-tétel}
-	Legyen $V$ egy véges dimenziós vektortér,
-	és $W$ egy tetszőleges vektortér,
-	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
-	Ekkor
-	$\im A$ is véges dimenziós, és
-	\[
-		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim(V).\qedhere
-	\]
-\end{proposition}
-
-Ha $V$ véges dimenziós és $A\in L\left( V,W \right)$ egy lineáris operáció,
-akkor láttuk, hogy
-\[
-	\dim\left( \im A \right)
-	=
-	\codim\left( \ker A \right)
-	=
-	\dim\left( V/\ker A \right).
-\]
-Tudjuk, hogy azonos dimenziójú vektorterek egymással izomorfak,
-emiatt $\im A$ izomorf $V/\ker A$ faktortérrel.
-A következő állítás ennek a gondolatnak a nem véges dimenziós esetre vonatkozó általánosítása,
-de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
-\begin{proposition}
 	Legyenek $V,W$ ugyanazon test feletti vektorterek,
 	és $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Ekkor a
@@ -5548,6 +5472,69 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 	Megmutattuk tehát, hogy $\ker \Omega=\left\{ 0 \right\}$,
 	ami éppen $\Omega$ injektivitása.
 \end{proof}
+\begin{proposition}
+	Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
+	amelynek van véges dimenziós direkt kiegészítője.
+	Ekkor a $V/M$ faktortér is végesen generált, és
+	\[
+		\codim M=\dim(V/M).\qedhere
+	\]
+\end{proposition}
+\begin{proof}
+	Válasszunk $N$ véges dimenziós alterét $V$-nek,
+	amelyre $V=M\oplus N$.
+	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
+	emiatt $V/M$ is végesen generált, és
+	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
+\end{proof}
+\begin{proposition}
+	Legyenek $V,W$ vektorterek,
+	továbbá $A\in L\left( V,W \right)$ egy olyan lineáris operáció,
+	amelyre az $\im A\subseteq W$ végesen generált.
+	Ekkor a $\ker A$ altérnek van $\im A$-val izomorf direkt kiegészítője, emiatt
+	\[
+		\codim\left( \ker A \right)=\dim\left( \im A \right).\qedhere
+	\]
+\end{proposition}
+\begin{proof}
+	Legyen $\im A$ egy bázisa $\left\{ Ax_1,\ldots,Ax_r \right\}$.
+    Ha például $x_i$ előállna, mint a többi $x_j$ vektor lineáris kombinációja,
+    akkor az $A$ linearitása miatt $Ax_i$ is előállna ugyanazon együtthatókkal mint a többi $Ax_j$
+    lineáris kombinációja.
+    Ez azt jelenti, hogy $\left\{ x_1,\ldots,x_r \right\}$ is lineárisan független vektorrendszer.
+	Definiálja $N=\lin\left\{ x_1,\ldots,x_r \right\}$.
+    Persze $\left\{ x_1,\ldots,x_r \right\}$ egy bázisa $N$-nek,
+    ergo $\dim(N)=r$.
+
+	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
+	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
+	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
+	esetben lehetséges az $\left\{ Ax_1,\ldots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
+    Megmutattuk tehát, hogy $\ker A\cap N=\left\{ 0 \right\}$, ergo $\ker A$-nak és $N$-nek értelmes a direkt összege.
+
+	Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
+	$Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
+	Világos, hogy így $x-\sum_{j=1}^r\alpha_jx_j\in\ker A$,
+	ami igazolja, hogy $V=\ker A+N$.
+
+	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
+	Az is világos, hogy $\codim\left( \ker A \right)=\dim(N)=r=\dim\left( \im A \right)$.
+\end{proof}
+Magától értetődik a következő két észrevétel.
+\begin{proposition}
+	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
+	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
+\end{proposition}
+\begin{proposition}[Rang--defektus-tétel]\index{Rang--defektus-tétel}
+	Legyen $V$ egy véges dimenziós vektortér,
+	és $W$ egy tetszőleges vektortér,
+	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
+	Ekkor
+	$\im A$ is véges dimenziós, és
+	\[
+		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim(V).\qedhere
+	\]
+\end{proposition}
 %\chapter*{Rang-tétel mégegszer}
 %
 %\begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
@@ -5876,6 +5863,7 @@ de véges dimenzióban is érdekes, hiszen konkrét izomorfiát mutatunk.
 %    Beláttuk tehát, hogy $A$ oszlopai lineárisan összefüggőek, azaz az eredeti egyenletrendszernek van nem triviális megoldása.
 %\end{proof}
 %
+\part{Tavasz}
 \chapter{Mátrixok és lineáris operációk}
 \scwords Mátrixok és lineáris operációk kapcsolatát vizsgáljuk.
 Azt már a mátrixok bevezetésekor is láttuk, hogy egy $n\times m$ méretű mátrix egyben tekinthető valamely
@@ -13522,13 +13510,14 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 	\end{math}
 	Ezt kellett belátni.
 \end{proof}
+
 \begin{proposition}\label{pr:normpol}
 	Tegyük fel, hogy olyan
 	$P_1,\ldots,P_r$ ortogonális projekciókra, amelyek összege az identikus transzformáció,
 	és a tetszőlegesen megválasztott
 	$\lambda_1,\ldots,\lambda_r\in\mathbb{K}$ számokra $N=\sum_{j=1}^r\lambda_jP_j$.
 	Ekkor minden $q\in\mathbb{K}[t]$ polinom mellett
-	$q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+	$q\left( N \right)=\sum_{j=1}^rq( \lambda_j )P_j$.
 \end{proposition}
 \begin{proof}
 	Először gondoljuk meg azt, hogy minden $l\geq 0$ mellett
@@ -13544,7 +13533,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		=
 		N^lN
 		=
-		(\sum_{j=1}^r\lambda_j^lP_j)\left( \sum_{h=1}^r\lambda_hP_h \right)
+		\left( \sum_{j=1}^r\lambda_j^lP_j \right)\left( \sum_{h=1}^r\lambda_hP_h \right)
 		=
 		\sum_{j=1}^r\sum_{h=1}^r\lambda_j^l\lambda_hP_jP_h
 		=
@@ -13578,7 +13567,6 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 	\end{multline*}
 	Ezt kellett belátni.
 \end{proof}
-
 \subsection{Valós együtthatós lineáris kombináció}
 Most nézzük a valós együtthatós lineáris kombinációk esetét.
 \begin{proposition}\label{pr:normlinkombvalos}\index{ozz@önadjungált transzformáció}
@@ -13601,7 +13589,7 @@ Most nézzük a valós együtthatós lineáris kombinációk esetét.
 	amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\ldots,\lambda_r \right\}$.
 \end{proposition}
 \begin{proof}
-	Mivel az itt szerpelő $\lambda_j$ számok valósak,
+	Mivel az itt szereplő $\lambda_j$ számok valósak,
 	ezért azonosak a konjugáltjukkal.
 	Így
 	\begin{displaymath}
@@ -16468,3 +16456,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
+Last Modified: Thu 16 Dec 2021 09:06:42 PM CET 
