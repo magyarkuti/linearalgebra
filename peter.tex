@@ -8,10 +8,17 @@
 \newtheorem{proposition}{állítás}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}[proposition]{definíció}
+\newtheorem{defprop}[proposition]{definíciós-állítás}
 \newtheorem{corollary}[proposition]{következmény}
+\newtheorem{note}[proposition]{megjegyzés}
+\newcommand{\parencite}{\cite}
 
 \newcommand{\ip}[2]{\langle#1,#2\rangle}
-
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\crank}{crank}
+\DeclareMathOperator{\rrank}{rrank}
+\DeclareMathOperator{\srank}{srank}
+\DeclareMathOperator{\lin}{lin}
 \synctex=1
 \begin{document}
 \chapter{Kvadratikus alakok definitségének egy naiv tárgyalása}
@@ -701,331 +708,331 @@ Tehát ha
     akkor $Q$ \emph{negatív szemidefinit};
 \end{itemize}
 
-%\chapter{Rang-tétel mégegszer}
-%
-%\begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
-%    Egy véges vektorrendszer \emph{rangján} a vektorrendszer generálta altér dimenzióját értjük.
-%    Egy mátrix \emph{oszloprangján} a mátrix oszlopai mint vektorrendszer rangját értjük.
-%    Egy mátrix \emph{sorrangján} a mátrix sorai mint vektorrendszer rangját értjük.
-%    Ha $A\in\mathbb{F}^{n\times m}$ nemzérus mátrix,
-%    akkor legkisebb olyan $r$ számot, amelyre
-%    létezik $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$ mátrix úgy, hogy 
-%    $A=BC$ szorzatfelbontás teljesül,
-%    az $A$ mátrix \emph{feszítőrangjának} nevezzük.
-%
-%    Jelölések: Ha $\left\{ x_1,\ldots,x_m \right\}$ a szóban forgó vektorrendszer, akkor
-%    \[
-%        \rank\left\{ x_1,\ldots,x_m \right\}=\dim\lin\left\{ x_1,\ldots,x_m \right\}
-%    \]
-%    Ha $A\in\mathbb{F}^{n\times m}$ egy mátrix,
-%    akkor 
-%    \[
-%        \crank{A}=\rank\left\{ [A]^{j}:j=1,\ldots,m \right\},
-%        \quad
-%        \rrank{A}=\rank\left\{ [A]_k:k=1,\ldots,n\right\},
-%    \]
-%    továbbá $\srank{A}$ jelöli a feszítőrangját $A$-nak.
-%\end{definition}
-%\begin{proposition}(Rang-tétel)\label{pr:rang}
-%    Tetszőleges test feletti tetszőleges mátrix mellett, a fent bevezetett három rang-koncepció azonos.
-%
-%    Formálisabban: Minden $A\in\mathbb{F}^{n\times m}$ mellett
-%    \[
-%        \crank{A}=\srank{A}=\rrank{A}\qedhere
-%    \]
-%\end{proposition}
-%\begin{proof}
-%    Induljunk ki a feszítőrang fogalmából.
-%    Legyen $r=\srank{A}$, és 
-%    \[
-%        A=BC,\tag{\dag}
-%    \]
-%    ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
-%    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátorrendszere $A$ oszlop-vektorterének
-%    és $C$ sorrendszere minimális generátorrendszere $A$ sor-vektorterének.
-%
-%    Vegyük észre, hogy $\srank{A}\leq \crank{A}$.
-%    Ugyanis ha az $A$ mátrix oszlop-vektorterének veszünk egy tetszőleges választott
-%    $b_1,\ldots,b_k$ generátorrendszerét, 
-%    akkor van $B\in\mathbb{F}^{n\times k}$ és $C\in\mathbb{F}^{k\times m}$ mátrix, hogy $A=BC$.
-%    Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\crank{A}$.
-%    \\
-%    Most tekintsük a (\dag)-ben rögzített szorzatot.
-%    Jelölje $W$ a $B$ mátrix és $V$ az $A$ mátrix oszlopvektorterét.
-%    Mivel $BC$ oszlopai $B$ oszlopainak lineáris kombinációja, 
-%    ezért $A$ minden oszlopa beleesik $W$-be, 
-%    így az $A$ oszlopainak lineáris burka is részhalmaza $W$-nek,
-%    azaz 
-%    \[
-%        V\subseteq W.
-%    \]
-%    A $B$ mátrixnak $r$ darab oszlopa van, 
-%    tehát $\dim W\leq r$.
-%    Látjuk tehát, hogy 
-%    \[\dim W\leq r\leq\crank{A}=\dim V,
-%    \]
-%    ami csak úgy lehetséges, 
-%    hogy $V=W$.
-%    A $B$ oszlopai tehát $V$-nek is generátorrendszerét alkotják,
-%    és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
-%    elvesztése nélkül.
-%
-%    A sorokra vonatkozó indoklás analóg.
-%    Először is $\srank{A}\leq \rrank{A}$.
-%    Ugyanis ha az $A$ mátrix sorvektorterének veszünk egy tetszőleges választott
-%    $c_1,\ldots,c_k$ generátorrendszerét, 
-%    akkor van $B\in\mathbb{F}^{n\times k}$ és $C\in\mathbb{F}^{k\times m}$ mátrix, hogy $A=BC$.
-%    Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\rrank{A}$.
-%    \\
-%    Most tekintsük a (\dag)-ben rögzített szorzatot.
-%    Jelölje $W$ a $C$ mátrix és $V$ az $A$ mátrix sorvektorterét.
-%    Mivel $BC$ sorai $C$ sorainak lineáris kombinációja, 
-%    ezért $A$ minden sora $W$-be esik,
-%    így az $A$ sorainak lineáris burka is részhalmaza $W$-nek,
-%    azaz 
-%    \[
-%        V\subseteq W.
-%    \]
-%    A $C$ mátrixnak $r$ sora van, 
-%    tehát $\dim W\leq r$.
-%    Látjuk tehát, hogy 
-%    \[\dim W\leq r\leq\crank{A}=\dim V,
-%    \]
-%    ami csak úgy lehetséges, 
-%    hogy $V=W$.
-%    A $C$ oszlopai tehát $V$-nek is generátorrendszerét alkotják,
-%    és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
-%    elvesztése nélkül.
-%
-%    Ezt kellett belátni. 
-%\end{proof}
-%\begin{definition}[mátrix rangja]\index{matrix@mátrix rangja}
-%    Mivel a sorrang, az oszloprang, a feszítőrang minden mátrix mellett azonos,
-%    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \parencite{Wardlaw2005}}
-%\end{definition}
-%\begin{note}
-%    Érdemes a Rang-tétel következő összegzését megjegyezni.
-%    Legyen $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek $r$ a rangja.
-%    Ekkor létezik $A=BC$ felbontása, ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
-%    Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlop-vektorterének nagyon sok bázisa van.
-%    Viszont minden ilyen felbontásban $B$ oszloprendszere az $A$ oszlop-vektorterének, 
-%    míg $C$ sorrendszere az $A$ sorvektorterének minimális generátorrendszerét, ergo bázisát alkotja.
-%\end{note}
-%Következményképpen érdemes meggondolni a mátrix és inverzének felcserélhetőségére vezető állítást.
-%\begin{proposition}
-%    Legyenek $A,B\in\mathbb{F}^{n\times n}$ négyzetes mátrixok, amelyekre AB=I.
-%    Ekkor BA=I is teljesül.
-%\end{proposition}
-%\begin{proof}
-%    Az identitás mátrix rangja nyilván $n$.
-%    E mátrix feszítőrangjának definíciójára gondolva, 
-%    az előző megjegyzés szerint $A$ oszlopai $\mathbb{F}^n$ lineárisan független rendszerét alkotják.
-%    Vegyük észre, hogy a mátrix szorzás asszociativitását is kihasználva
-%    \[
-%        A\left( BA-I \right)=A\left( BA \right)-AI=\left( AB \right)A-AI=IA-AI=A-A=0.
-%    \]
-%    Na most, 
-%    ha $BA\neq I$ lenne, 
-%    akkor a $BA-I$ mátrixnak lenne egy olyan nem zérus oszlopa, 
-%    melynek elemeivel mint együtthatókkal képzett lineáris kombinációja az $A$ oszlopainak 
-%    a zéró vektort eredményezi.
-%    Ez persze ellentmond az $A$ oszloprendszer lineáris függetlenségének,
-%    tehát $BA=I$ valóban fennáll.%
-%    \footnote{%
-%        A feszítőrang fogalmának ismerete nélküli -- talán még elemibb -- bizonyítás: \parencite{doi:10.4169/college.math.j.48.5.366}%
-%    }%
-%\end{proof}
-%\begin{defprop}[invertálható mátrix]
-%    Legyen $A\in\mathbb{F}^{n\times n}$ egy négyzetes mátrix.
-%    Az alábbi feltételek egymással ekvivalensek.
-%    \begin{enumerate}
-%        \item Van egyetlen olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
-%            amelyre $AB=I$,
-%        \item Van olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
-%            amelyre $AB=I$,
-%        \item Van egyetlen olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
-%            amelyre $BA=I$,
-%        \item Van olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
-%            amelyre $BA=I$,
-%        \item $\rank A=n$,
-%        \item $A$ oszlopai lineárisan független rendszer alkotnak,
-%        \item $A$ sorai lineárisan független rendszert alkotnak.
-%    \end{enumerate}
-%    Ha a fenti feltételek egyike (ergo mindegyike) fennáll, 
-%    akkor azt mondjuk, hogy $A$ mátrix \emph{invertálható}\index{invertálható mátrix}.
-%    Szinonimaként használjuk még a \emph{nemszinguláris}\index{nemszinguláris mátrix}, 
-%    vagy az \emph{reguláris}\index{reguláris mátrix} szavakat.
-%    Ha egy mátrix nem invertálható, akkor \emph{szingulárisnak}\index{szinguláris mátrix} nevezzük.
-%
-%    Egy invertálható négyzetes mátrix esetén azt az egyetlen $B$ mátrixot, amelyre
-%    \(
-%    AB=I
-%    \)
-%    fennáll az $A$ inverzének mondjuk, és $A^{-1}=B$-vel jelöljük.
-%    Világos, hogy
-%    \[
-%        AA^{-1}=I=A^{-1}A,\quad (A^{-1})^{-1}=A.\qedhere
-%    \]
-%\end{defprop}
-%\begin{proof}
-%    A 2., 4., 5., 6., 7. állítások ekvivalenciája nyilvánvaló az előzőek szerint.
-%    Ha $AB=I=AC$, akkor $A\left( B-C \right)=0$ így $A$ oszloprendszere lineáris függetlensége 
-%    miatt $B=C$. 
-%    Ezzel $2.\Rightarrow 1.$ implikációt is beláttuk.
-%    Az 1. és 3. feltevések ekvivalenciája az előző állítás miatt teljesül.
-%\end{proof}
-%\chapter*{Elemi fogalmak mégegyszer}
-%Tegyük fel, hogy, hogy ismerjük az alábbi fogalmakat:
-%\begin{enumerate}
-%    \item Vektorrendszer lineáris függetlensége;
-%    \item Altér, lineáris burok, generátorrendszer;
-%    \item Mátrix szorzás,
-%    \item Gauss\,--\,Jordan-elimináció.\index{Gauss\,--\,Jordan-elimináció}  Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
-%        lineárisan függetlenek, akkor az elemi sor műveletekkel az identikus mátrixszá transzformálható.
-%        Mivel az elemi sorműveletek, bal-szorzások alkalmas mátrixszal, 
-%        azt kapjuk, hogy létezik $P$ mátrix, amelyre $PQ=I$.
-%\end{enumerate}
-%Amit határozottan kerülünk, és azt tesszük fel, hogy nem ismerjük,
-%\begin{enumerate}
-%    \item Bázisok fogalma,
-%    \item Különböző bázisok azonos számossága,
-%    \item determináns.
-%\end{enumerate}
-%Külön probléma a mátrix rangjának definíciója.
-%Nem definiálhatom, 
-%mint az oszlop vagy sorvektortér dimenzióját, hiszen a felépítés jelen szintjén még nincs bázis.
-%Természetesen azt sem tudjuk még, hogy a maximális lineárisan független sor- vagy oszloprendszer választástól függetlenül mindig azonos elemszámú.
-%A mátrix feszítőrangja viszont definiálható.
-%\begin{definition}[mátrix feszítőrangja]
-%    Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
-%    Azt mondjuk, hogy feszítőrangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
-%    \[
-%        A=BC
-%    \]
-%    alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times n}$.
-%\end{definition}
-%Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
-%A Rang-tételnek a szokásosnál egy kicsit erősebb formáját lehet megfogalmazni a dimenzió fogalmának bevezetése nélkül,
-%ami a lenti 3. állítás.
-%
-%\begin{proposition}
-%    Az alábbi állítások egymás következményei:
-%    \begin{enumerate}
-%        \item Homogén lineáris egyenletrendszernek, amelynek több ismeretlene van, mint egyenlete
-%            mindig létezik nem triviális megoldása.
-%        \item Lineárisan független vektorrendszer elemszáma nem nagyobb mint egy generátorrendszer elemszáma.
-%        \item Minden nemzérus mátrixban 
-%            a maximális lineárisan független oszloprendszerek 
-%            és maximális lineárisan független sorrendszerek azonos elemszámúak, 
-%            és ez a szám egybeesik a mátrix feszítőrangjával.
-%        \item
-%            Legyen $A,B\in\mathbb{F}^{n\times n}$ négyzetes mátrixok.
-%            Ekkor $AB=I$ esetén $BA=I$ is fennáll.\qedhere
-%    \end{enumerate}
-%\end{proposition}
-%\begin{proof}[1. \Rightarrow 2.]
-%    Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy generátorrendszer,
-%    és $\left\{ x_1,\ldots,x_m \right\}$ olyan vektorrendszer a vektortérben, ahol $m>n$.
-%    Meg kell mutatnunk, hogy ez utóbbi egy lineárisan összefüggő.
-%    Világos, hogy minden $1\leq k\leq m$ mellett
-%    \[
-%        x_k=\sum_{j=1}^n\alpha_{j,k}y_j.
-%    \]
-%    Egyelőre tetszőleges $\xi_1,\ldots,\xi_m$ együtthatók mellett
-%    \begin{eqnarray}
-%        \sum_{k=1}^m\xi_kx_k=
-%        \sum_{k=1}^m\sum_{j=1}^n\xi_k\alpha_{j,k}y_j=
-%        \sum_{j=1}^n\left( \sum_{k=1}^m\alpha_{j,k}\xi_k \right)y_j
-%        \label{eq:sys}
-%    \end{eqnarray}
-%    Tekintsük az $\left( \alpha_{j,k} \right)$ együtthatók generálta
-%    homogén lineáris egyenletrendszert. 
-%    Itt $j=1,\ldots,n$ és $k=1,\ldots,m$.
-%    Mivel $m>n$, ezért az ismeretlenek száma több mint az egyenletek száma.
-%    Létezik tehát nem triviális megoldás\index{triviális megoldás}, azaz léteznek nem mind nulla
-%    $\xi_1,\ldots,\xi_m$ számok, amelyekre minden $j=1,\ldots,n$ esetén
-%    \[
-%        \sum_{k=1}^m\alpha_{j,k}\xi_k=0.
-%    \]
-%    Találtunk tehát az $\left\{ x_1,\ldots,x_m \right\}$ vektorrendszernek egy
-%    nem triviális, 
-%    de a zéró vektort eredményező,
-%    lineáris kombinációját (\ref{eq:sys}).
-%\end{proof}
-%\begin{proof}[2.\Rightarrow 3.]
-%    Jelölje $r$ az $A\in\mathbb{F}^{n\times m}$ mátrix feszítőrangját.
-%    Legyen $r_c$ a mátrix egyik rögzített maximális lineárisan független oszloprendszerének elemszáma.
-%    \begin{itemize}
-%        \item 
-%            Ezen oszlopokat egy $B\in\mathbb{F}^{n\times r_c}$ mátrixba téve 
-%            -- a maximalitás miatt -- létezik olyan $C\in\mathbb{F}^{r_c\times m}$ mátrix, 
-%            amelyre $A=BC$, azaz $r\leq r_c$.
-%        \item
-%            Most tekintsünk egy tetszőleges olyan
-%            \(
-%            A=BC
-%            \)
-%            felbontást, 
-%            ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
-%            Jelölje $W$ a $B$ mátrix oszlopai lineáris burkát. 
-%            Az $A$ mátrix fent rögzített maximális lineárisan független oszloprendszere egy lineárisan független rendszer a 
-%            $W$ vektortérben,
-%            és $B$ oszlopai pedig egy generátorrendszer ugyanebben a vektortérben.
-%            A 2. állitás szerint $r_c\leq r$.
-%    \end{itemize}
-%    Evvel megmutattuk, hogy bármely két maximális lineárisan független oszloprendszer azonos elemszámú, és számuk megegyezik a mátrix feszítőrangjával.
-%
-%
-%    Legyen $r_w$ az $A$ mátrix egyik rögzített maximális lineárisan független sorrendszerének elemszáma.
-%    \begin{itemize}
-%        \item 
-%            Ezen sorokat egy $C\in\mathbb{F}^{r_w\times m}$ mátrixba téve 
-%            -- a maximalitás miatt -- létezik olyan $B\in\mathbb{F}^{n\times r_w}$ mátrix, 
-%            amelyre $A=BC$, azaz $r\leq r_w$.
-%        \item
-%            Most tekintsünk egy tetszőleges olyan
-%            \(
-%            A=BC
-%            \)
-%            felbontást, 
-%            ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
-%            Jelölje most $V$ a $C$ mátrix sorai lineáris burkát. 
-%            Az $A$ mátrix fent rögzített maximális lineárisan független sorrendszere egy lineárisan független rendszer e
-%            $V$ vektortérben,
-%            és $C$ sorai pedig egy generátorrendszert alkotnak ugyanebben a $V$ vektortérben.
-%            A 2. állitás szerint $r_w\leq r$.
-%    \end{itemize}
-%    Evvel azt is megmutattuk, 
-%    hogy bármely két maximális lineárisan független sorrendszer azonos elemszámú, 
-%    és számuk megegyezik a mátrix feszítőrangjával.
-%\end{proof}
-%\begin{proof}[3.\Rightarrow 4.]
-%    Tegyük fel, hogy $AB=I$.
-%    Az identitás mátrix rangja nyilván $n$.
-%    A 3. állitás miatt a feszítőrang is $n$.
-%    Ha $A$ oszlopai nem lennének lineárisan függetlenek,
-%    akkor lenne $A=CD$ felbontás, ahol $C\in\mathbb{F}^{n \times r}$ és $D\in\mathbb{F}^{r\times n}$ valamely $r<n$ mellett.
-%    Ekkor persze $I=AB=\left( CD \right)B=C\left( DB \right)$ is teljesülne, 
-%    ahol $DB\in\mathbb{F}^{r\times n}$ ellentmondva az identitás mátrix feszítőrangja definíciójának.
-%    Világos, hogy
-%    \[
-%        A\left( BA-I \right)=
-%        A\left( BA \right)-AI=
-%        \left( AB \right)A-AI=IA-AI=0.
-%    \]
-%    Figyelembe véve, hogy $A$ oszlopai lineáris függetlenek, ez csak úgy lehetséges, ha $BA-I$ a zéró mátrix, ergo $BA=I$.
-%\end{proof}
-%\begin{proof}[4.\Rightarrow 1.]
-%    Legyen $A\in\mathbb{F}^{n\times m}$ a homogén lineáris egyenletrendszer együttható mátrixa,
-%    ahol $n$ az egyenletek száma, $m$ az ismeretlenek száma.
-%    Azt kell megmutatnunk, hogy az oszloprendszer lineárisan összefüggő.
-%    Ha független lenne, akkor
-%    egészítsük ki e mátrixot alulról $m-n$ darab csupa nullákat tartalmazó sorral.
-%    Mivel $m>n$ ezért a kiegészített $Q\in\mathbb{F}^{m\times m}$ mátrix legalsó sora csak nullát tartalmaz.
-%    Mivel $A$ oszlopai lineárisan függetlenek, ezért $Q$ oszlopai is azok.
-%    Emiatt létezik $P\in\mathbb{F}^{m\times m}$ mátrix, amelyre $PQ=I$.
-%    A 3. állitás szerint $I=QP$ is teljesül, 
-%    ami azt jelenti, hogy $I$ utolsó sora a csupa nullákat tartalmaz, ami ellentmondás.
-%    Beláttuk tehát, hogy $A$ oszlopai lineárisan összefüggőek, azaz az eredeti egyenletrendszernek van nem triviális megoldása.
-%\end{proof}
+\chapter{Rang-tétel mégegszer}
+
+\begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
+    Egy véges vektorrendszer \emph{rangján} a vektorrendszer generálta altér dimenzióját értjük.
+    Egy mátrix \emph{oszloprangján} a mátrix oszlopai mint vektorrendszer rangját értjük.
+    Egy mátrix \emph{sorrangján} a mátrix sorai mint vektorrendszer rangját értjük.
+    Ha $A\in\mathbb{F}^{n\times m}$ nemzérus mátrix,
+    akkor legkisebb olyan $r$ számot, amelyre
+    létezik $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$ mátrix úgy, hogy 
+    $A=BC$ szorzatfelbontás teljesül,
+    az $A$ mátrix \emph{feszítőrangjának} nevezzük.
+
+    Jelölések: Ha $\left\{ x_1,\ldots,x_m \right\}$ a szóban forgó vektorrendszer, akkor
+    \[
+        \rank\left\{ x_1,\ldots,x_m \right\}=\dim\lin\left\{ x_1,\ldots,x_m \right\}
+    \]
+    Ha $A\in\mathbb{F}^{n\times m}$ egy mátrix,
+    akkor 
+    \[
+        \crank{A}=\rank\left\{ [A]^{j}:j=1,\ldots,m \right\},
+        \quad
+        \rrank{A}=\rank\left\{ [A]_k:k=1,\ldots,n\right\},
+    \]
+    továbbá $\srank{A}$ jelöli a feszítőrangját $A$-nak.
+\end{definition}
+\begin{proposition}(Rang-tétel)\label{pr:rang}
+    Tetszőleges test feletti tetszőleges mátrix mellett, a fent bevezetett három rang-koncepció azonos.
+
+    Formálisabban: Minden $A\in\mathbb{F}^{n\times m}$ mellett
+    \[
+        \crank{A}=\srank{A}=\rrank{A}\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Induljunk ki a feszítőrang fogalmából.
+    Legyen $r=\srank{A}$, és 
+    \[
+        A=BC,\tag{\dag}
+    \]
+    ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
+    Azt mutatjuk meg, hogy ekkor $B$ oszloprendszere minimális generátorrendszere $A$ oszlop-vektorterének
+    és $C$ sorrendszere minimális generátorrendszere $A$ sor-vektorterének.
+
+    Vegyük észre, hogy $\srank{A}\leq \crank{A}$.
+    Ugyanis ha az $A$ mátrix oszlop-vektorterének veszünk egy tetszőleges választott
+    $b_1,\ldots,b_k$ generátorrendszerét, 
+    akkor van $B\in\mathbb{F}^{n\times k}$ és $C\in\mathbb{F}^{k\times m}$ mátrix, hogy $A=BC$.
+    Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\crank{A}$.
+    \\
+    Most tekintsük a (\dag)-ben rögzített szorzatot.
+    Jelölje $W$ a $B$ mátrix és $V$ az $A$ mátrix oszlopvektorterét.
+    Mivel $BC$ oszlopai $B$ oszlopainak lineáris kombinációja, 
+    ezért $A$ minden oszlopa beleesik $W$-be, 
+    így az $A$ oszlopainak lineáris burka is részhalmaza $W$-nek,
+    azaz 
+    \[
+        V\subseteq W.
+    \]
+    A $B$ mátrixnak $r$ darab oszlopa van, 
+    tehát $\dim W\leq r$.
+    Látjuk tehát, hogy 
+    \[\dim W\leq r\leq\crank{A}=\dim V,
+    \]
+    ami csak úgy lehetséges, 
+    hogy $V=W$.
+    A $B$ oszlopai tehát $V$-nek is generátorrendszerét alkotják,
+    és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
+    elvesztése nélkül.
+
+    A sorokra vonatkozó indoklás analóg.
+    Először is $\srank{A}\leq \rrank{A}$.
+    Ugyanis ha az $A$ mátrix sorvektorterének veszünk egy tetszőleges választott
+    $c_1,\ldots,c_k$ generátorrendszerét, 
+    akkor van $B\in\mathbb{F}^{n\times k}$ és $C\in\mathbb{F}^{k\times m}$ mátrix, hogy $A=BC$.
+    Az $r=\srank{A}$ szám az ilyen $k$ számok legkisebbike, tehát valóban $r\leq\rrank{A}$.
+    \\
+    Most tekintsük a (\dag)-ben rögzített szorzatot.
+    Jelölje $W$ a $C$ mátrix és $V$ az $A$ mátrix sorvektorterét.
+    Mivel $BC$ sorai $C$ sorainak lineáris kombinációja, 
+    ezért $A$ minden sora $W$-be esik,
+    így az $A$ sorainak lineáris burka is részhalmaza $W$-nek,
+    azaz 
+    \[
+        V\subseteq W.
+    \]
+    A $C$ mátrixnak $r$ sora van, 
+    tehát $\dim W\leq r$.
+    Látjuk tehát, hogy 
+    \[\dim W\leq r\leq\crank{A}=\dim V,
+    \]
+    ami csak úgy lehetséges, 
+    hogy $V=W$.
+    A $C$ oszlopai tehát $V$-nek is generátorrendszerét alkotják,
+    és $r$ minimalitása szerint egy elem sem elhagyható a generátorrendszer tulajdonság
+    elvesztése nélkül.
+
+    Ezt kellett belátni. 
+\end{proof}
+\begin{definition}[mátrix rangja]\index{matrix@mátrix rangja}
+    Mivel a sorrang, az oszloprang, a feszítőrang minden mátrix mellett azonos,
+    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \parencite{Wardlaw2005}}
+\end{definition}
+\begin{note}
+    Érdemes a Rang-tétel következő összegzését megjegyezni.
+    Legyen $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek $r$ a rangja.
+    Ekkor létezik $A=BC$ felbontása, ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
+    Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlop-vektorterének nagyon sok bázisa van.
+    Viszont minden ilyen felbontásban $B$ oszloprendszere az $A$ oszlop-vektorterének, 
+    míg $C$ sorrendszere az $A$ sorvektorterének minimális generátorrendszerét, ergo bázisát alkotja.
+\end{note}
+Következményképpen érdemes meggondolni a mátrix és inverzének felcserélhetőségére vezető állítást.
+\begin{proposition}
+    Legyenek $A,B\in\mathbb{F}^{n\times n}$ négyzetes mátrixok, amelyekre AB=I.
+    Ekkor BA=I is teljesül.
+\end{proposition}
+\begin{proof}
+    Az identitás mátrix rangja nyilván $n$.
+    E mátrix feszítőrangjának definíciójára gondolva, 
+    az előző megjegyzés szerint $A$ oszlopai $\mathbb{F}^n$ lineárisan független rendszerét alkotják.
+    Vegyük észre, hogy a mátrix szorzás asszociativitását is kihasználva
+    \[
+        A\left( BA-I \right)=A\left( BA \right)-AI=\left( AB \right)A-AI=IA-AI=A-A=0.
+    \]
+    Na most, 
+    ha $BA\neq I$ lenne, 
+    akkor a $BA-I$ mátrixnak lenne egy olyan nem zérus oszlopa, 
+    melynek elemeivel mint együtthatókkal képzett lineáris kombinációja az $A$ oszlopainak 
+    a zéró vektort eredményezi.
+    Ez persze ellentmond az $A$ oszloprendszer lineáris függetlenségének,
+    tehát $BA=I$ valóban fennáll.%
+    \footnote{%
+        A feszítőrang fogalmának ismerete nélküli -- talán még elemibb -- bizonyítás: \parencite{doi:10.4169/college.math.j.48.5.366}%
+    }%
+\end{proof}
+\begin{defprop}[invertálható mátrix]
+    Legyen $A\in\mathbb{F}^{n\times n}$ egy négyzetes mátrix.
+    Az alábbi feltételek egymással ekvivalensek.
+    \begin{enumerate}
+        \item Van egyetlen olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
+            amelyre $AB=I$,
+        \item Van olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
+            amelyre $AB=I$,
+        \item Van egyetlen olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
+            amelyre $BA=I$,
+        \item Van olyan $B\in\mathbb{F}^{n\times n}$ mátrix,
+            amelyre $BA=I$,
+        \item $\rank A=n$,
+        \item $A$ oszlopai lineárisan független rendszer alkotnak,
+        \item $A$ sorai lineárisan független rendszert alkotnak.
+    \end{enumerate}
+    Ha a fenti feltételek egyike (ergo mindegyike) fennáll, 
+    akkor azt mondjuk, hogy $A$ mátrix \emph{invertálható}\index{invertálható mátrix}.
+    Szinonimaként használjuk még a \emph{nemszinguláris}\index{nemszinguláris mátrix}, 
+    vagy az \emph{reguláris}\index{reguláris mátrix} szavakat.
+    Ha egy mátrix nem invertálható, akkor \emph{szingulárisnak}\index{szinguláris mátrix} nevezzük.
+
+    Egy invertálható négyzetes mátrix esetén azt az egyetlen $B$ mátrixot, amelyre
+    \(
+    AB=I
+    \)
+    fennáll az $A$ inverzének mondjuk, és $A^{-1}=B$-vel jelöljük.
+    Világos, hogy
+    \[
+        AA^{-1}=I=A^{-1}A,\quad (A^{-1})^{-1}=A.\qedhere
+    \]
+\end{defprop}
+\begin{proof}
+    A 2., 4., 5., 6., 7. állítások ekvivalenciája nyilvánvaló az előzőek szerint.
+    Ha $AB=I=AC$, akkor $A\left( B-C \right)=0$ így $A$ oszloprendszere lineáris függetlensége 
+    miatt $B=C$. 
+    Ezzel $2.\Rightarrow 1.$ implikációt is beláttuk.
+    Az 1. és 3. feltevések ekvivalenciája az előző állítás miatt teljesül.
+\end{proof}
+\chapter*{Elemi fogalmak mégegyszer}
+Tegyük fel, hogy, hogy ismerjük az alábbi fogalmakat:
+\begin{enumerate}
+    \item Vektorrendszer lineáris függetlensége;
+    \item Altér, lineáris burok, generátorrendszer;
+    \item Mátrix szorzás,
+    \item Gauss\,--\,Jordan-elimináció.\index{Gauss\,--\,Jordan-elimináció}  Pontosan azt tesszük fel, hogy ha $Q$ egy négyzetes mátrix, melynek oszlopai
+        lineárisan függetlenek, akkor az elemi sor műveletekkel az identikus mátrixszá transzformálható.
+        Mivel az elemi sorműveletek, bal-szorzások alkalmas mátrixszal, 
+        azt kapjuk, hogy létezik $P$ mátrix, amelyre $PQ=I$.
+\end{enumerate}
+Amit határozottan kerülünk, és azt tesszük fel, hogy nem ismerjük,
+\begin{enumerate}
+    \item Bázisok fogalma,
+    \item Különböző bázisok azonos számossága,
+    \item determináns.
+\end{enumerate}
+Külön probléma a mátrix rangjának definíciója.
+Nem definiálhatom, 
+mint az oszlop vagy sorvektortér dimenzióját, hiszen a felépítés jelen szintjén még nincs bázis.
+Természetesen azt sem tudjuk még, hogy a maximális lineárisan független sor- vagy oszloprendszer választástól függetlenül mindig azonos elemszámú.
+A mátrix feszítőrangja viszont definiálható.
+\begin{definition}[mátrix feszítőrangja]
+    Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
+    Azt mondjuk, hogy feszítőrangja $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
+    \[
+        A=BC
+    \]
+    alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times n}$.
+\end{definition}
+Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
+A Rang-tételnek a szokásosnál egy kicsit erősebb formáját lehet megfogalmazni a dimenzió fogalmának bevezetése nélkül,
+ami a lenti 3. állítás.
+
+\begin{proposition}
+    Az alábbi állítások egymás következményei:
+    \begin{enumerate}
+        \item Homogén lineáris egyenletrendszernek, amelynek több ismeretlene van, mint egyenlete
+            mindig létezik nem triviális megoldása.
+        \item Lineárisan független vektorrendszer elemszáma nem nagyobb mint egy generátorrendszer elemszáma.
+        \item Minden nemzérus mátrixban 
+            a maximális lineárisan független oszloprendszerek 
+            és maximális lineárisan független sorrendszerek azonos elemszámúak, 
+            és ez a szám egybeesik a mátrix feszítőrangjával.
+        \item
+            Legyen $A,B\in\mathbb{F}^{n\times n}$ négyzetes mátrixok.
+            Ekkor $AB=I$ esetén $BA=I$ is fennáll.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}[1. \Rightarrow 2.]
+    Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy generátorrendszer,
+    és $\left\{ x_1,\ldots,x_m \right\}$ olyan vektorrendszer a vektortérben, ahol $m>n$.
+    Meg kell mutatnunk, hogy ez utóbbi egy lineárisan összefüggő.
+    Világos, hogy minden $1\leq k\leq m$ mellett
+    \[
+        x_k=\sum_{j=1}^n\alpha_{j,k}y_j.
+    \]
+    Egyelőre tetszőleges $\xi_1,\ldots,\xi_m$ együtthatók mellett
+    \begin{eqnarray}
+        \sum_{k=1}^m\xi_kx_k=
+        \sum_{k=1}^m\sum_{j=1}^n\xi_k\alpha_{j,k}y_j=
+        \sum_{j=1}^n\left( \sum_{k=1}^m\alpha_{j,k}\xi_k \right)y_j
+        \label{eq:sys}
+    \end{eqnarray}
+    Tekintsük az $\left( \alpha_{j,k} \right)$ együtthatók generálta
+    homogén lineáris egyenletrendszert. 
+    Itt $j=1,\ldots,n$ és $k=1,\ldots,m$.
+    Mivel $m>n$, ezért az ismeretlenek száma több mint az egyenletek száma.
+    Létezik tehát nem triviális megoldás\index{triviális megoldás}, azaz léteznek nem mind nulla
+    $\xi_1,\ldots,\xi_m$ számok, amelyekre minden $j=1,\ldots,n$ esetén
+    \[
+        \sum_{k=1}^m\alpha_{j,k}\xi_k=0.
+    \]
+    Találtunk tehát az $\left\{ x_1,\ldots,x_m \right\}$ vektorrendszernek egy
+    nem triviális, 
+    de a zéró vektort eredményező,
+    lineáris kombinációját (\ref{eq:sys}).
+\end{proof}
+\begin{proof}[2.\Rightarrow 3.]
+    Jelölje $r$ az $A\in\mathbb{F}^{n\times m}$ mátrix feszítőrangját.
+    Legyen $r_c$ a mátrix egyik rögzített maximális lineárisan független oszloprendszerének elemszáma.
+    \begin{itemize}
+        \item 
+            Ezen oszlopokat egy $B\in\mathbb{F}^{n\times r_c}$ mátrixba téve 
+            -- a maximalitás miatt -- létezik olyan $C\in\mathbb{F}^{r_c\times m}$ mátrix, 
+            amelyre $A=BC$, azaz $r\leq r_c$.
+        \item
+            Most tekintsünk egy tetszőleges olyan
+            \(
+            A=BC
+            \)
+            felbontást, 
+            ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
+            Jelölje $W$ a $B$ mátrix oszlopai lineáris burkát. 
+            Az $A$ mátrix fent rögzített maximális lineárisan független oszloprendszere egy lineárisan független rendszer a 
+            $W$ vektortérben,
+            és $B$ oszlopai pedig egy generátorrendszer ugyanebben a vektortérben.
+            A 2. állitás szerint $r_c\leq r$.
+    \end{itemize}
+    Evvel megmutattuk, hogy bármely két maximális lineárisan független oszloprendszer azonos elemszámú, és számuk megegyezik a mátrix feszítőrangjával.
+
+
+    Legyen $r_w$ az $A$ mátrix egyik rögzített maximális lineárisan független sorrendszerének elemszáma.
+    \begin{itemize}
+        \item 
+            Ezen sorokat egy $C\in\mathbb{F}^{r_w\times m}$ mátrixba téve 
+            -- a maximalitás miatt -- létezik olyan $B\in\mathbb{F}^{n\times r_w}$ mátrix, 
+            amelyre $A=BC$, azaz $r\leq r_w$.
+        \item
+            Most tekintsünk egy tetszőleges olyan
+            \(
+            A=BC
+            \)
+            felbontást, 
+            ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
+            Jelölje most $V$ a $C$ mátrix sorai lineáris burkát. 
+            Az $A$ mátrix fent rögzített maximális lineárisan független sorrendszere egy lineárisan független rendszer e
+            $V$ vektortérben,
+            és $C$ sorai pedig egy generátorrendszert alkotnak ugyanebben a $V$ vektortérben.
+            A 2. állitás szerint $r_w\leq r$.
+    \end{itemize}
+    Evvel azt is megmutattuk, 
+    hogy bármely két maximális lineárisan független sorrendszer azonos elemszámú, 
+    és számuk megegyezik a mátrix feszítőrangjával.
+\end{proof}
+\begin{proof}[3.\Rightarrow 4.]
+    Tegyük fel, hogy $AB=I$.
+    Az identitás mátrix rangja nyilván $n$.
+    A 3. állitás miatt a feszítőrang is $n$.
+    Ha $A$ oszlopai nem lennének lineárisan függetlenek,
+    akkor lenne $A=CD$ felbontás, ahol $C\in\mathbb{F}^{n \times r}$ és $D\in\mathbb{F}^{r\times n}$ valamely $r<n$ mellett.
+    Ekkor persze $I=AB=\left( CD \right)B=C\left( DB \right)$ is teljesülne, 
+    ahol $DB\in\mathbb{F}^{r\times n}$ ellentmondva az identitás mátrix feszítőrangja definíciójának.
+    Világos, hogy
+    \[
+        A\left( BA-I \right)=
+        A\left( BA \right)-AI=
+        \left( AB \right)A-AI=IA-AI=0.
+    \]
+    Figyelembe véve, hogy $A$ oszlopai lineáris függetlenek, ez csak úgy lehetséges, ha $BA-I$ a zéró mátrix, ergo $BA=I$.
+\end{proof}
+\begin{proof}[4.\Rightarrow 1.]
+    Legyen $A\in\mathbb{F}^{n\times m}$ a homogén lineáris egyenletrendszer együttható mátrixa,
+    ahol $n$ az egyenletek száma, $m$ az ismeretlenek száma.
+    Azt kell megmutatnunk, hogy az oszloprendszer lineárisan összefüggő.
+    Ha független lenne, akkor
+    egészítsük ki e mátrixot alulról $m-n$ darab csupa nullákat tartalmazó sorral.
+    Mivel $m>n$ ezért a kiegészített $Q\in\mathbb{F}^{m\times m}$ mátrix legalsó sora csak nullát tartalmaz.
+    Mivel $A$ oszlopai lineárisan függetlenek, ezért $Q$ oszlopai is azok.
+    Emiatt létezik $P\in\mathbb{F}^{m\times m}$ mátrix, amelyre $PQ=I$.
+    A 3. állitás szerint $I=QP$ is teljesül, 
+    ami azt jelenti, hogy $I$ utolsó sora a csupa nullákat tartalmaz, ami ellentmondás.
+    Beláttuk tehát, hogy $A$ oszlopai lineárisan összefüggőek, azaz az eredeti egyenletrendszernek van nem triviális megoldása.
+\end{proof}
 \end{document}
