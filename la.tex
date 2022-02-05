@@ -321,7 +321,7 @@ Magyarkuti Gyula
 Lefordítva ez azt jelenti, hogy
 \begin{enumerate}
 	\item minden $a,b\in S$ mellett $a\ast b\in S$, és
-	\item minden $a,b,c\in S$ esetén $a\ast\left( b\ast c \right)=a\ast\left( b\ast c \right)$
+	\item minden $a,b,c\in S$ esetén $\left( a\ast b \right)\ast c=a\ast\left( b\ast c \right)$
 \end{enumerate}
 \begin{definition}[neutrális elem]\index{neutrális elem}\index{neutrális elemes félcsoport}
 	Az $\left( S,\ast \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
@@ -1089,7 +1089,7 @@ Ezt $n=3,4,\ldots$ számokra alkalmazva azt kapjuk,
 hogy ha módszerünk van két polinom legnagyobb közös osztójának meghatározására,
 akkor evvel már akárhány -- persze véges sok -- polinom legnagyobb közös osztója is meghatározható.
 Analóg módon ugyanez igaz a legkisebb közös többszörösre is.
-Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös többszörösét és legkisebb közös osztóját,
+Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös osztóját és legkisebb közös többszörösét,
 akkor ugyanezt már meg tudnánk tenni több polinom esetén is.
 
 Az Euklideszi-algoritmus két polinom legnagyobb közös osztójának meghatározására szolgál.
@@ -2933,7 +2933,7 @@ ha az $i$-edik sort osztjuk az $a_{i,j}\neq 0$ számmal, akkor e sor $j$-edik
 eleme $1$-re változik.
 Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
-Ha ezt minden $k=1,\ldots,m$ mellet kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
+Ha ezt minden $k=1,\ldots,m$ mellett kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot elem\footnote{Értsd: sarok elem.}\index{pivot elem} választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
@@ -3981,7 +3981,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
 	Itt már $\alpha_k\neq 0$, tehát $y_k$ kifejezhető az előző vektorok segítségével:
 	\[
 		y_k=
-		\frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k-1}}\alpha_{k-1}y_{k-1}.\qedhere
+		\frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k}}\alpha_{k-1}y_{k-1}.\qedhere
 	\]
 \end{proof}
 
@@ -4052,7 +4052,7 @@ Bebizonyítottuk tehát az alábbi fontos állítást.
 		x=\sum_{j=1}^n\xi_jy_j,
 	\]
 	ahol $\xi_k\neq 0$ az egyik $1\leq k\leq n$ mellett.
-	Ekkor $y$ becserélhető a $k$-adik helyen a független rendszerbe
+	Ekkor $x$ becserélhető a $k$-adik helyen a független rendszerbe
 	úgy, hogy az független maradjon, azaz az
 	\[
 		\left\{ y_1,\ldots,y_{k-1},x,y_{k+1},\ldots,y_n \right\}
@@ -4437,7 +4437,7 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
 		\left\{ x_1,\ldots,x_m \right\}
 	\]
 	$m$ elemű lineárisan független generátorrendszere.
-	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független.
+	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer.
 	A Steinitz-lemma szerint ez a rendszer kiterjeszthető egy
 	\[
 		\left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
@@ -4506,7 +4506,7 @@ A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk 
 \end{proposition}
 \begin{proof}
     A Gauss\,--\,Jordan-elimináció algoritmusának segítségével $A=B\cdot C$
-    a mátrix bázisfaktorizációja, ahol $A$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
+    a mátrix bázisfaktorizációja, ahol $B$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
     és $C$ sorainak rendszere a sorvektortér egy bázisa.
     Mivel itt $B$ oszlopainak száma azonos $C$ sorainak számával, ezért az oszlopvektortér és a sorvektortér azonos dimenziós vektorterek.
 \footnote{%
@@ -4661,7 +4661,7 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 \end{proof}
 Fontos látni, hogy a vektor koordináta-vektora függ a bázis megválasztásától.
 Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
-már akkor is változik a vektort koordináta-vektora.
+már akkor is változik a vektor koordináta-vektora.
 \Aref{le:gencsere}., \aref{le:fgtlncsere}.  és \aref{le:baziscsere}. lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái,
 ha a bázisban egy elemet megváltoztatunk.
@@ -4835,7 +4835,7 @@ akkor többet is állíthatunk:
 \end{proof}
 
 A következő állítás szerint,
-ha előre adott két altér, akkor ezek összegének dimenziója mindig azonos
+ha előre adott két altér, akkor ezek dimenzióinak összege mindig azonos
 a két alteret tartalmazó legszűkebb altér dimenziójának,
 és a két altér által tartalmazott legbővebb altér  dimenziójának összegével.
 \begin{proposition}\label{pr:drosszeg2}
