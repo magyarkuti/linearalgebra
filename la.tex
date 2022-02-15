@@ -2401,7 +2401,7 @@ ha a gyökök számát multiplicitással számoljuk.
 Az állítást egy kicsit egyszerűbben úgy is fogalmazhatjuk,
 hogy
 \emph{
-	minden nem konstans komplex polinom előáll mint első fokú komplex polinomok szorzata.
+	minden nem konstans komplex polinom előáll mint elsőfokú komplex polinomok szorzata.
 }
 Az iménti mondat nyilván nem igaz a ,,komplex'' szót a ,,valós'' szóra cserélve,
 ugyanis minden negatív diszkriminánsú másodfokú valós polinom jó is ellenpéldának.
@@ -2478,7 +2478,7 @@ Minden valós együtthatós polinom előáll mint első vagy másodfokú polinom
 \begin{proof}
 	Tekintsük a $p$ polinomot mint a komplex számtest feletti polinomgyűrű egy elemét,
 	és alkalmazzuk a komplex polinom faktorizációról szóló tételt.
-	A $p$ így előáll mint első fokú, esetleg komplex polinomok szorzata.
+	A $p$ így előáll mint elsőfokú, esetleg komplex polinomok szorzata.
 	A gyököket osszuk két része.
 	Legyenek $x_1,\ldots,x_r$ a különböző valós gyökök, amelyek multiplicitása rendre
 	$n_1,\ldots,n_r$.
@@ -6774,7 +6774,7 @@ ebben a bázisban:\label{ar:elsomegjelenes}
 \]
 \section{Transzformációk sajátértéke}
 A célunk, hogy a lehető legalacsonyabb dimenziós invariáns altereket találjunk.
-Így persze az 1 dimenziós invariáns alterek a legérdekesebbek.
+Így persze az egydimenziós invariáns alterek a legérdekesebbek.
 Ez vezet a sajátérték fogalmához.
 \begin{definition}[sajátérték, sajátvektor, spektrum]
 	Legyen $A\in L\left( V \right)$.
@@ -6912,7 +6912,7 @@ Polinomok segítségével sok-sok új invariáns alteret kapunk.
 Speciálisan ez igaz az $t-\lambda$ polinomra is,
 amikor $\lambda$
 egy sajátértéke $A$-nak. Tehát a $\lambda$ sajátértékhez tartozó
-$\ker \left( A-\lambda I \right)$ sajátaltér egy legalább 1 dimenziós invariáns altere
+$\ker \left( A-\lambda I \right)$ sajátaltér egy legalább egydimenziós invariáns altere
 $A$-nak.\index{sajátaltér}
 \begin{definition}
 	Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
@@ -7014,11 +7014,11 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább elsőfokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
 	akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
-	ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
-	Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+	ezért $p=nh$ alakú lenne, ahol $h$ is legalább elsőfokú.
+	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
 
 A következő állítás módszert ad a kis minimálpolinom meghatározására,
@@ -7267,7 +7267,7 @@ Ha $V\neq\left\{ 0 \right\}$, ergo $\dim(V)\geq 1$,
 akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja,
 hiszen $p(t)=c, (c\neq 0)$ mellett
 $p\left( A \right)=cI\neq 0$,
-tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább első fokú.
+tehát legalább egydimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább elsőfokú.
 \begin{proposition}
 	Az  $m\in\mathbb{F}\left[ t \right]$ polinom pontosan akkor
 	az $A\in L\left( V \right)$ transzformáció minimálpolinomja,
@@ -7292,17 +7292,17 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 	Ezt kellett belátni.
 \end{proof}
 \begin{proposition}
-	Legyen $V$ legalább 1 dimenziós,
+	Legyen $V$ legalább egydimenziós,
 	és tegyük fel, hogy $p\left( A \right)=0$ valamely normált,
 	irreducibilis $p$ polinomra.
 	Ekkor $p$ az $A$ minimálpolinomja.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább elsőfokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimálpolinommal,
 	akkor $\deg m<\deg p$ lenne, és mivel $m$ generálja a $J_{A}$ ideált,
-	ezért $p=mh$ alakú lenne, ahol $h$ is legalább első fokú.
-	Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+	ezért $p=mh$ alakú lenne, ahol $h$ is legalább elsőfokú.
+	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
 
 A következő állítás módszert ad a minimálpolinom meghatározására.
@@ -8295,7 +8295,7 @@ tehát az előző, \aref{pr:minpolelsofokufelbontas}.~állítás feltétele most
 	m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
 \]
 alakú, ahol $\lambda_1,\ldots,\lambda_s$ az $m$ különböző gyökei.
-Az állítás implikációja, hogy ekkor a vektortér előáll mint egy dimenziós $A$-invariáns
+Az állítás implikációja, hogy ekkor a vektortér előáll mint egydimenziós $A$-invariáns
 altereinek direkt összege, ergo az $A$ transzformáció diagonalizálható.
 Kiderült tehát, hogy nincs új a nap alatt, hiszen azt már korábban is tudtuk, -- lásd:\ref{pr:diagonalizalhatosag} -- hogy $A$ pontosan akkor diagonalizálható, ha a minimálpolinomja a fenti kiemelt alakú.%
 \footnote{
@@ -8309,7 +8309,7 @@ hogy a minimálpolinom előáll mint páronként relatív prím, első vagy más
 A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
-    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
+    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak elsőfokú hatványával szerepel.
     Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direkt összege,
     ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonálisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
 \end{proposition}
@@ -9341,7 +9341,7 @@ elemeiből mint oszlopokból alkotott mátrix, ami azt jelenti, hogy
 		0 & 0 & 0 & 0
 	\end{pmatrix}.
 \]
-\subsection{Két invariáns altér (3- és 1 dimenziós)}
+\subsection{Két invariáns altér (3- és 1-dimenziós)}
 Most a játék kedvéért, keressük meg a fenti  felbontást és bázist, egy konkrét esetben.
 Legyen $W$ egy négy dimenziós vektortér az $\left\{ u_1,u_2,u_3,u_4 \right\}$ rögzült bázissal.
 A $B\in L\left( W \right)$ lineáris transzformáció definíciója a báziselemek segítségével:
@@ -10346,7 +10346,7 @@ a fenti eljárás mindkét esetben ugyanazt a számot eredményezi.
 \end{proof}
 
 Meggondoltuk tehát,
-hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egy dimenziós,
+hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egydimenziós,
 hiszen van e vektortérnek a zérustól különböző eleme.
 Azt mutattuk meg, hogy
 adott $\left\{ e_1,\ldots,e_n \right\}$ bázis rögzítése mellett,
@@ -10666,7 +10666,7 @@ Foglaljuk össze az előző két állítást:
 \end{proposition}
 
 \begin{proposition}
-	Tetszőleges (legalább egy dimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
+	Tetszőleges (legalább egydimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
 \end{proposition}
 \begin{proof}
 	Rögzítsük a tér egy $\{e_{1},\ldots ,e_{n}\}$ bázisát.
@@ -13008,7 +13008,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 \end{proposition}
 \begin{proof}
 	Az algebra alaptétele szerint irreducibilis $\mathbb{C}$ feletti polinom
-	csak első fokú polinom lehet.
+	csak elsőfokú polinom lehet.
 	Így a minimálpolinom, a normalitást kihasználva a fenti (\ref{pr:normalis-mult1}.) gondolat alapján,
 	\[
 		m\left( t \right)=\left( t-\lambda_1 \right)\dots\left( t-\lambda_s \right).
@@ -13041,7 +13041,7 @@ Rögtön kiderül, hogy mindig van sajátértéke.
 Ha $\dim(V)=1$, akkor minden $A:V\to V$ transzformációra igaz, hogy ha $v\neq 0$ vektor, 
 akkor van olyan $\lambda\in\mathbb{R}$,
 hogy $Av=\lambda v$. 
-Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
+Azt kaptuk tehát, hogy egydimenziós téren értelmezett minden lineáris transzformációnak
 van sajátértéke, és minden zérustól különböző vektor sajátvektor is.
 
 Most nézzük csak 2 dimenzióban.
@@ -14470,7 +14470,7 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
 \begin{proof}
 	A $k$ szerinti indukció.
 	A $k=0$ esetben az előző állítás szerint van sajátvektor is,
-	tehát első fokú faktora is van a minimálpolinomnak.
+	tehát elsőfokú faktora is van a minimálpolinomnak.
 	Tegyük fel, hogy igaz az állítás minden $k$-nál kisebb szám mellett.
 	E feltétel azt jelenti, hogy minden olyan vektortérre igaz az állítás,
 	-- így az algebra alaptétele --
@@ -16456,4 +16456,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 08 Feb 2022 04:00:17 PM CET 
+Last Modified: Tue 15 Feb 2022 03:32:08 PM CET 
