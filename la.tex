@@ -321,7 +321,7 @@ Magyarkuti Gyula
 Lefordítva ez azt jelenti, hogy
 \begin{enumerate}
 	\item minden $a,b\in S$ mellett $a\ast b\in S$, és
-	\item minden $a,b,c\in S$ esetén $a\ast\left( b\ast c \right)=a\ast\left( b\ast c \right)$
+	\item minden $a,b,c\in S$ esetén $\left( a\ast b \right)\ast c=a\ast\left( b\ast c \right)$
 \end{enumerate}
 \begin{definition}[neutrális elem]\index{neutrális elem}\index{neutrális elemes félcsoport}
 	Az $\left( S,\ast \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
@@ -1089,7 +1089,7 @@ Ezt $n=3,4,\ldots$ számokra alkalmazva azt kapjuk,
 hogy ha módszerünk van két polinom legnagyobb közös osztójának meghatározására,
 akkor evvel már akárhány -- persze véges sok -- polinom legnagyobb közös osztója is meghatározható.
 Analóg módon ugyanez igaz a legkisebb közös többszörösre is.
-Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös többszörösét és legkisebb közös osztóját,
+Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös osztóját és legkisebb közös többszörösét,
 akkor ugyanezt már meg tudnánk tenni több polinom esetén is.
 
 Az Euklideszi-algoritmus két polinom legnagyobb közös osztójának meghatározására szolgál.
@@ -2401,7 +2401,7 @@ ha a gyökök számát multiplicitással számoljuk.
 Az állítást egy kicsit egyszerűbben úgy is fogalmazhatjuk,
 hogy
 \emph{
-	minden nem konstans komplex polinom előáll mint első fokú komplex polinomok szorzata.
+	minden nem konstans komplex polinom előáll mint elsőfokú komplex polinomok szorzata.
 }
 Az iménti mondat nyilván nem igaz a ,,komplex'' szót a ,,valós'' szóra cserélve,
 ugyanis minden negatív diszkriminánsú másodfokú valós polinom jó is ellenpéldának.
@@ -2478,7 +2478,7 @@ Minden valós együtthatós polinom előáll mint első vagy másodfokú polinom
 \begin{proof}
 	Tekintsük a $p$ polinomot mint a komplex számtest feletti polinomgyűrű egy elemét,
 	és alkalmazzuk a komplex polinom faktorizációról szóló tételt.
-	A $p$ így előáll mint első fokú, esetleg komplex polinomok szorzata.
+	A $p$ így előáll mint elsőfokú, esetleg komplex polinomok szorzata.
 	A gyököket osszuk két része.
 	Legyenek $x_1,\ldots,x_r$ a különböző valós gyökök, amelyek multiplicitása rendre
 	$n_1,\ldots,n_r$.
@@ -2933,7 +2933,7 @@ ha az $i$-edik sort osztjuk az $a_{i,j}\neq 0$ számmal, akkor e sor $j$-edik
 eleme $1$-re változik.
 Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
-Ha ezt minden $k=1,\ldots,m$ mellet kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
+Ha ezt minden $k=1,\ldots,m$ mellett kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot elem\footnote{Értsd: sarok elem.}\index{pivot elem} választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
@@ -3981,7 +3981,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
 	Itt már $\alpha_k\neq 0$, tehát $y_k$ kifejezhető az előző vektorok segítségével:
 	\[
 		y_k=
-		\frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k-1}}\alpha_{k-1}y_{k-1}.\qedhere
+		\frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k}}\alpha_{k-1}y_{k-1}.\qedhere
 	\]
 \end{proof}
 
@@ -4052,7 +4052,7 @@ Bebizonyítottuk tehát az alábbi fontos állítást.
 		x=\sum_{j=1}^n\xi_jy_j,
 	\]
 	ahol $\xi_k\neq 0$ az egyik $1\leq k\leq n$ mellett.
-	Ekkor $y$ becserélhető a $k$-adik helyen a független rendszerbe
+	Ekkor $x$ becserélhető a $k$-adik helyen a független rendszerbe
 	úgy, hogy az független maradjon, azaz az
 	\[
 		\left\{ y_1,\ldots,y_{k-1},x,y_{k+1},\ldots,y_n \right\}
@@ -4437,7 +4437,7 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
 		\left\{ x_1,\ldots,x_m \right\}
 	\]
 	$m$ elemű lineárisan független generátorrendszere.
-	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független.
+	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer.
 	A Steinitz-lemma szerint ez a rendszer kiterjeszthető egy
 	\[
 		\left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
@@ -4506,7 +4506,7 @@ A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk 
 \end{proposition}
 \begin{proof}
     A Gauss\,--\,Jordan-elimináció algoritmusának segítségével $A=B\cdot C$
-    a mátrix bázisfaktorizációja, ahol $A$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
+    a mátrix bázisfaktorizációja, ahol $B$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
     és $C$ sorainak rendszere a sorvektortér egy bázisa.
     Mivel itt $B$ oszlopainak száma azonos $C$ sorainak számával, ezért az oszlopvektortér és a sorvektortér azonos dimenziós vektorterek.
 \footnote{%
@@ -4661,7 +4661,7 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 \end{proof}
 Fontos látni, hogy a vektor koordináta-vektora függ a bázis megválasztásától.
 Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
-már akkor is változik a vektort koordináta-vektora.
+már akkor is változik a vektor koordináta-vektora.
 \Aref{le:gencsere}., \aref{le:fgtlncsere}.  és \aref{le:baziscsere}. lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái,
 ha a bázisban egy elemet megváltoztatunk.
@@ -4835,7 +4835,7 @@ akkor többet is állíthatunk:
 \end{proof}
 
 A következő állítás szerint,
-ha előre adott két altér, akkor ezek összegének dimenziója mindig azonos
+ha előre adott két altér, akkor ezek dimenzióinak összege mindig azonos
 a két alteret tartalmazó legszűkebb altér dimenziójának,
 és a két altér által tartalmazott legbővebb altér  dimenziójának összegével.
 \begin{proposition}\label{pr:drosszeg2}
@@ -6412,7 +6412,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 A (\ref{eq:vt}) és a (\ref{eq:gyuru}) azonosságok szerint 
 egy lineáris operátorhoz hozzárendelni annak valamely bázisban
 felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
-Az $L\left( V \right)$ és a $F^{\dim(V)\times \dim(V)}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
+Az $L\left( V \right)$ és a $\mathbb{F}^{\dim(V)\times \dim(V)}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
 amelyek közt van a gyűrű műveleteket tartó bijekció (gyűrű-izomorfizmus)\index{gyűrű-izomorfizmus}.
 
 \chapter{Általános bázistranszformáció}
@@ -6431,8 +6431,8 @@ A kérdések a következők:
 	      akkor hogyan számítható ugyanennek a vektornak az új bázisban felírt koordináta-vektora?
 	\item Ha ismerjük egy $A\in L\left( V \right)$ lineáris transzformációnak a régi bázisban felírt mátrixát,
 	      akkor hogyan számolható ki az $A$-nak valamely új bázisban felírt mátrixa?
-	\item Ha ismerjük egy $A\in L\left( V, W \right)$ lineáris operációnak a régi bázis páron felírt mátrixát,
-	      akkor hogyan számítható $A$-nak az valamely új bázis páron felírt mátrixa?
+	\item Ha ismerjük egy $A\in L\left( V, W \right)$ lineáris operációnak a régi bázispáron felírt mátrixát,
+	      akkor hogyan számítható $A$-nak az valamely új bázispáron felírt mátrixa?
 \end{enumerate}
 \begin{definition}
 	Legyenek az
@@ -6456,7 +6456,7 @@ $\left[ B \right]^{-1}$ inverze.
 \begin{proposition}
 	Legyen az $\left\{ e_1,\ldots,e_n \right\}$ a régi bázis,
 	és $\left\{ f_1,\ldots,f_n \right\}$ az új bázis.
-	Jelölje $B$ a régi bázisról az új bázisra való áttérést
+	Jelölje $B$ a régi bázisról az új bázisra való áttérést.
 	Ekkor tetszőleges $x\in V$ vektor mellett
 	\[
 		\left[ x \right]_\uj
@@ -6488,7 +6488,7 @@ $\left[ B \right]^{-1}$ inverze.
 	ha balról szorozzuk mindkét oldalt $\left[ B \right]^{-1}_\rgi$ inverz mátrixszal.
 \end{proof}
 
-\section{Lineáris operátorok mátrixa új bázis párban}
+\section{Lineáris operátorok mátrixa új bázispárban}
 \begin{proposition}
 	Legyen $A\in L\left( V,W \right)$ lineáris operáció
 	és tegyük fel, hogy ismerjük $A$ mátrixát az
@@ -6774,7 +6774,7 @@ ebben a bázisban:\label{ar:elsomegjelenes}
 \]
 \section{Transzformációk sajátértéke}
 A célunk, hogy a lehető legalacsonyabb dimenziós invariáns altereket találjunk.
-Így persze az 1 dimenziós invariáns alterek a legérdekesebbek.
+Így persze az egydimenziós invariáns alterek a legérdekesebbek.
 Ez vezet a sajátérték fogalmához.
 \begin{definition}[sajátérték, sajátvektor, spektrum]
 	Legyen $A\in L\left( V \right)$.
@@ -6912,7 +6912,7 @@ Polinomok segítségével sok-sok új invariáns alteret kapunk.
 Speciálisan ez igaz az $t-\lambda$ polinomra is,
 amikor $\lambda$
 egy sajátértéke $A$-nak. Tehát a $\lambda$ sajátértékhez tartozó
-$\ker \left( A-\lambda I \right)$ sajátaltér egy legalább 1 dimenziós invariáns altere
+$\ker \left( A-\lambda I \right)$ sajátaltér egy legalább egydimenziós invariáns altere
 $A$-nak.\index{sajátaltér}
 \begin{definition}
 	Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
@@ -7014,11 +7014,11 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább elsőfokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
 	akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
-	ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
-	Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+	ezért $p=nh$ alakú lenne, ahol $h$ is legalább elsőfokú.
+	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
 
 A következő állítás módszert ad a kis minimálpolinom meghatározására,
@@ -7267,7 +7267,7 @@ Ha $V\neq\left\{ 0 \right\}$, ergo $\dim(V)\geq 1$,
 akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja,
 hiszen $p(t)=c, (c\neq 0)$ mellett
 $p\left( A \right)=cI\neq 0$,
-tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább első fokú.
+tehát legalább egydimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább elsőfokú.
 \begin{proposition}
 	Az  $m\in\mathbb{F}\left[ t \right]$ polinom pontosan akkor
 	az $A\in L\left( V \right)$ transzformáció minimálpolinomja,
@@ -7292,24 +7292,24 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 	Ezt kellett belátni.
 \end{proof}
 \begin{proposition}
-	Legyen $V$ legalább 1 dimenziós,
+	Legyen $V$ legalább egydimenziós,
 	és tegyük fel, hogy $p\left( A \right)=0$ valamely normált,
 	irreducibilis $p$ polinomra.
 	Ekkor $p$ az $A$ minimálpolinomja.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább elsőfokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimálpolinommal,
 	akkor $\deg m<\deg p$ lenne, és mivel $m$ generálja a $J_{A}$ ideált,
-	ezért $p=mh$ alakú lenne, ahol $h$ is legalább első fokú.
-	Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+	ezért $p=mh$ alakú lenne, ahol $h$ is legalább elsőfokú.
+	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
 
 A következő állítás módszert ad a minimálpolinom meghatározására.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$, ahol $\dim(V)\geq 1$.
-	Mivel $\dim(L)\left( V \right)=\left( \dim(V) \right)^2$ egy véges dimenziós vektortér,
-	ezért létezik $1\leq k \leq (\dim(V))^2$,
+	Mivel $\dim L\left( V \right)=\dim(V)^2$ egy véges dimenziós vektortér,
+	ezért létezik $1\leq k \leq \dim(V)^2$,
 	hogy
 	$\left\{ I,A,\ldots,A^{k-1} \right\}$ lineárisan független,
 	de $\left\{ I,A,\ldots,A^{k-1},A^{k} \right\}$ lineárisan összefüggő.
@@ -8295,7 +8295,7 @@ tehát az előző, \aref{pr:minpolelsofokufelbontas}.~állítás feltétele most
 	m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
 \]
 alakú, ahol $\lambda_1,\ldots,\lambda_s$ az $m$ különböző gyökei.
-Az állítás implikációja, hogy ekkor a vektortér előáll mint egy dimenziós $A$-invariáns
+Az állítás implikációja, hogy ekkor a vektortér előáll mint egydimenziós $A$-invariáns
 altereinek direkt összege, ergo az $A$ transzformáció diagonalizálható.
 Kiderült tehát, hogy nincs új a nap alatt, hiszen azt már korábban is tudtuk, -- lásd:\ref{pr:diagonalizalhatosag} -- hogy $A$ pontosan akkor diagonalizálható, ha a minimálpolinomja a fenti kiemelt alakú.%
 \footnote{
@@ -8309,7 +8309,7 @@ hogy a minimálpolinom előáll mint páronként relatív prím, első vagy más
 A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
-    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
+    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak elsőfokú hatványával szerepel.
     Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direkt összege,
     ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonálisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
 \end{proposition}
@@ -9341,7 +9341,7 @@ elemeiből mint oszlopokból alkotott mátrix, ami azt jelenti, hogy
 		0 & 0 & 0 & 0
 	\end{pmatrix}.
 \]
-\subsection{Két invariáns altér (3- és 1 dimenziós)}
+\subsection{Két invariáns altér (3- és 1-dimenziós)}
 Most a játék kedvéért, keressük meg a fenti  felbontást és bázist, egy konkrét esetben.
 Legyen $W$ egy négy dimenziós vektortér az $\left\{ u_1,u_2,u_3,u_4 \right\}$ rögzült bázissal.
 A $B\in L\left( W \right)$ lineáris transzformáció definíciója a báziselemek segítségével:
@@ -10346,7 +10346,7 @@ a fenti eljárás mindkét esetben ugyanazt a számot eredményezi.
 \end{proof}
 
 Meggondoltuk tehát,
-hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egy dimenziós,
+hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egydimenziós,
 hiszen van e vektortérnek a zérustól különböző eleme.
 Azt mutattuk meg, hogy
 adott $\left\{ e_1,\ldots,e_n \right\}$ bázis rögzítése mellett,
@@ -10666,7 +10666,7 @@ Foglaljuk össze az előző két állítást:
 \end{proposition}
 
 \begin{proposition}
-	Tetszőleges (legalább egy dimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
+	Tetszőleges (legalább egydimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
 \end{proposition}
 \begin{proof}
 	Rögzítsük a tér egy $\{e_{1},\ldots ,e_{n}\}$ bázisát.
@@ -13008,7 +13008,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 \end{proposition}
 \begin{proof}
 	Az algebra alaptétele szerint irreducibilis $\mathbb{C}$ feletti polinom
-	csak első fokú polinom lehet.
+	csak elsőfokú polinom lehet.
 	Így a minimálpolinom, a normalitást kihasználva a fenti (\ref{pr:normalis-mult1}.) gondolat alapján,
 	\[
 		m\left( t \right)=\left( t-\lambda_1 \right)\dots\left( t-\lambda_s \right).
@@ -13041,7 +13041,7 @@ Rögtön kiderül, hogy mindig van sajátértéke.
 Ha $\dim(V)=1$, akkor minden $A:V\to V$ transzformációra igaz, hogy ha $v\neq 0$ vektor, 
 akkor van olyan $\lambda\in\mathbb{R}$,
 hogy $Av=\lambda v$. 
-Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
+Azt kaptuk tehát, hogy egydimenziós téren értelmezett minden lineáris transzformációnak
 van sajátértéke, és minden zérustól különböző vektor sajátvektor is.
 
 Most nézzük csak 2 dimenzióban.
@@ -14470,7 +14470,7 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
 \begin{proof}
 	A $k$ szerinti indukció.
 	A $k=0$ esetben az előző állítás szerint van sajátvektor is,
-	tehát első fokú faktora is van a minimálpolinomnak.
+	tehát elsőfokú faktora is van a minimálpolinomnak.
 	Tegyük fel, hogy igaz az állítás minden $k$-nál kisebb szám mellett.
 	E feltétel azt jelenti, hogy minden olyan vektortérre igaz az állítás,
 	-- így az algebra alaptétele --
@@ -16456,4 +16456,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 26 Feb 2022 10:42:08 AM CET Europe Standard Time 
+Last Modified: Sat 26 Feb 2022 10:43:05 AM CET Europe Standard Time 
