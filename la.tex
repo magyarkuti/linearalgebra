@@ -8240,7 +8240,7 @@ ezért alkalmazhatjuk a fent igazolt \ref{pr:irred_redukcio}.~állítást
 a $V_1$ altérre és az $A_1$ transzformációra.
 \begin{proposition}\label{pr:csaba}
 	Legyen $V$ egy véges dimenziós vektortér, $A\in L\left( V \right)$ egy lineáris transzformáció,
-	és $p\in\mathbb{F}\left[ t \right]$ egy irreducibilis polinom.
+	és $p\in\mathbb{F}\left[ t \right]$ egy $k$-adfokú irreducibilis polinom.
 	Ekkor:
 	\begin{enumerate}
 		\item Minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
@@ -8250,16 +8250,29 @@ a $V_1$ altérre és az $A_1$ transzformációra.
 		\item A $\ker p\left( A \right)$ altér nulla dimenziós,
 		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direkt összege.
 		      Pontosabban fogalmazva
-		      ha $\nu\left( A \right)>0$, akkor létezik $r\geq 1$ szám,
+		      ha $\nu\left(p(A) \right)>0$, akkor létezik $r\geq 1$ szám,
 		      és léteznek $v_1,\ldots,v_r$ vektorok, amelyekre
 		      \[
-			      \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)
+			      \lin\left( v_1;A \right)\oplus\ldots\oplus \lin\left( v_r;A \right)
 			      =
 			      \ker p\left( A \right).
 			      \qedhere
 		      \]
 	\end{enumerate}
 \end{proposition}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció, és $p(t)\in\mathbb{F}[t]$ egy $k$-ad fokú 
+    irredecubilis polinom,
+    amelyre $p\left( A \right)^m=0$.
+    Ekkor az $\im p\left( A \right)^{m-1}$ altér nulla dimenziós, 
+    vagy $k$ dimenziós, vagy $k$ dimenziós alterek direktösszege.
+\end{proposition}
+\begin{proof}
+    Az egyszerűbb jelölések kedvéért legyen $B=\ker p\left( A \right)$.
+    Mivel $B^m=0$, ezért $\im B^{m-1}\subseteq\ker B $.
+    Persze $B^{m-1}$ is $A$-nak polinomja, 
+    ergo $B^{m-1}$ képtere is $A$-ra nézve invariáns altere $\ker B=\ker p\left( A \right)$-nak.
+\end{proof}
 Összefoglalhatjuk azt az esetet,
 mikor a minimálpolinom különböző irreducibilis polinomok szorzata.
 Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
@@ -16456,4 +16469,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 26 Feb 2022 10:43:05 AM CET Europe Standard Time 
+Last Modified: Fri 04 Mar 2022 04:08:13 pm CET Europe Standard Time 
