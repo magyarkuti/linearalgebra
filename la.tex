@@ -11510,16 +11510,22 @@ Figyeljünk a folytonosság szerepére!
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszorzatos-tér.
 	\begin{enumerate}
 		\item
-		      Ha az $x,y\in V$ két pontjára $\ip{x}{y}=0$,
-		      akkor azt mondjuk hogy a két vektor \emph{merőleges}\index{merőleges} egymásra.
-		      Jelölés: $x\perp y$.
+		    Ha az $x,y\in V$ két pontjára $\ip{x}{y}=0$,
+		    akkor azt mondjuk hogy a két vektor \emph{merőleges}\index{merőleges} egymásra.
+		    Jelölés: $x\perp y$.
 		\item
-		      Legyen most, $H\subseteq V$ egy részhalmaz.
-		      Definiálja
-		      \(
-		      H^{\perp}=\left\{ x\in V:x\perp a \text{ minden } a\in H \right\}
-		      \)
-		      a \emph{$H$ halmaz merőlegesét}, vagy \emph{ortokomplemeterét}\index{ortokomplementer}.\qedhere
+		    Legyen most, $H\subseteq V$ egy részhalmaz.
+		    Definiálja
+		    \(
+		    H^{\perp}=\left\{ x\in V:x\perp a \text{ minden } a\in H \right\}
+		    \)
+		    a \emph{$H$ halmaz merőlegesét}, vagy \emph{ortokomplemeterét}\index{ortokomplementer}.
+        \item
+            Tekintsük a $H_1,H_2\subseteq V$ halmazokat.
+            Azt mondjuk, hogy ezek merőlegesek egymásra, ha 
+            minden $u\in H_1$ és minden $v\in H_2$ esetén $u\perp v$.
+            Jelölés: $H_1\perp H_2$.
+            \qedhere
 	\end{enumerate}
 \end{definition}
 A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, hiszen ekkor sajátmagára is merőleges,
@@ -11589,7 +11595,8 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	Ekkor
 	\begin{enumerate}
 		\item $H\cap H^{\perp}\subseteq\left\{ 0 \right\},$
-		\item $H\subseteq H_1\implies H_1^\perp\subseteq H^\perp,$
+		\item $H\subseteq H_1$ esetén $H_1^\perp\subseteq H^\perp,$
+        \item $H_1\perp H$ akkor és csak akkor, ha $H_1\subseteq H^\perp,$
 		\item $H\subseteq \left( H^\perp \right)^\perp,$
 		\item $H^{\perp}=\left( \lin H \right)^\perp,$
 		\item $H^\perp$ altér.\qedhere
@@ -11612,7 +11619,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	hiszen $v\perp u_j$.
 	Meggondoltuk tehát, hogy $v$ merőleges a $H$-beli elemekből képzett tetszőleges lineáris kombinációra,
 	ergo $H^\perp\subseteq\left( \lin H \right)^\perp.$
-	Vilagos, hogy $0\in H^\perp$, ha $v_1,v_2\in H^\perp$, akkor $\alpha_1v_1+\alpha_2v_2\in H^\perp$, azaz
+	Világos, hogy $0\in H^\perp$, ha $v_1,v_2\in H^\perp$, akkor $\alpha_1v_1+\alpha_2v_2\in H^\perp$, azaz
 	$H^\perp$ minden $H$ részhalmaz mellett egy altér.
 \end{proof}
 
@@ -16474,4 +16481,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Wed 11 May 2022 08:48:44 AM CEST CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Fri 13 May 2022 02:28:50 PM CEST CEST CEST CEST CEST CET Europe Standard Time 
