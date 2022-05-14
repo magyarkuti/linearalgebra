@@ -11522,17 +11522,18 @@ Figyeljünk a folytonosság szerepére!
 		    a \emph{$H$ halmaz merőlegesét}, vagy \emph{ortokomplemeterét}\index{ortokomplementer}.
         \item
             Tekintsük a $H_1,H_2\subseteq V$ halmazokat.
-            Azt mondjuk, hogy ezek merőlegesek egymásra, ha 
+            Azt mondjuk, hogy ezek merőlegesek egymásra ha 
             minden $u\in H_1$ és minden $v\in H_2$ esetén $u\perp v$.
             Jelölés: $H_1\perp H_2$.
             \qedhere
 	\end{enumerate}
 \end{definition}
-A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, hiszen ekkor sajátmagára is merőleges,
-de saját magára merőleges vektor csak a zérus vektor van.
+A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, 
+hiszen ekkor sajátmagára is merőleges, de saját magára merőleges vektor csak a zérus vektor van.
 Pont ezt jelenti az axiómák közt az utolsó.
 A $H^\perp$ az a részhalmaza $V$-nek, amely az összes $H$-ra merőleges vektorokból áll.
 Tehát $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
+Persze $H\perp H^\perp$ csak tautologia.
 
 \begin{definition}
 	Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
@@ -11604,10 +11605,16 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \end{proposition}\
 \begin{proof}
 	Ha $v\in H\cap H^\perp$, akkor $v\perp v$, ergo $v=0$, ami az 1. pontot igazolja.
-	Ha $H\subseteq H_1$ és a $v$ vektor a $H_1$ minden pontjára merőleges, akkor persze ez a $v$ a $H$ minden pontjára is merőleges,
-	azaz 2. pontot is meggondoltuk.
-	Ha $v\in H$ rögzített és $a\in H^\perp$ egy vektor, akkor $v\perp a$, ami azt jelenti, hogy $H\subseteq \left( H^\perp \right)^\perp$.
-	A $(\lin H)^\perp\subseteq H^\perp$ tartalmazás nyilvánvaló a már meggondolt 2. tulajdonság szerint.
+\\
+	Ha $H\subseteq H_1$ és egy $v$ vektor a $H_1$ minden pontjára merőleges, 
+    akkor persze ez $H$ minden pontjára is merőleges, azaz $H_1^\perp\subseteq H$.
+\\
+    A 3. pont nyilvánvaló.
+\\
+    A meggondolt 3. pont szerint a mindig fennálló $H\perp H^\perp$ éppen $H\subseteq H^{\perp\perp}$
+    tartalmazást jelenti.
+\\
+    Mivel $H\subseteq \lin H$, ezért a 2. pont szerint $(\lin H)^\perp\subseteq H^\perp$.
 	Ha viszont $v\in H^\perp$ és $u_1,\ldots,u_n\in H$, akkor ezek tetszőleges lineáris kombinációjára
 	\begin{math}
 		\ip{v}{\sum_{j=1}^n\alpha_ju_j}
@@ -11619,6 +11626,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	hiszen $v\perp u_j$.
 	Meggondoltuk tehát, hogy $v$ merőleges a $H$-beli elemekből képzett tetszőleges lineáris kombinációra,
 	ergo $H^\perp\subseteq\left( \lin H \right)^\perp.$
+    \\
 	Világos, hogy $0\in H^\perp$, ha $v_1,v_2\in H^\perp$, akkor $\alpha_1v_1+\alpha_2v_2\in H^\perp$, azaz
 	$H^\perp$ minden $H$ részhalmaz mellett egy altér.
 \end{proof}
@@ -12188,6 +12196,18 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 		\qedhere
 	\]
 \end{proof}
+\begin{proposition}
+    Legyen most már $V$ egy véges dimenziós skalárisszorzatos-tér.
+    Tegyük fel, hogy $M,N\subseteq V$ olyan alterek, amelyekre $M+N=V$ és $M\perp N$.
+    Ekkor $N=M^\perp$.
+\end{proposition}
+\begin{proof}
+    Világos, hogy $M$ és $N$ diszjunkt alterek is, ezért $M\oplus N=V=M\oplus M^\perp$
+    a projekciós tétel szerint.
+    ekkor persze $N$ és $M^\perp$ izomorf alterek, amelyekre $N\subseteq M^\perp$ tartalmazás is teljesül.
+    Ez csak $N=M^\perp$ módon teljesülhet.
+\end{proof}
+
 \section{Ortonormált rendszer teljessége}
 \begin{definition}[T.O.N.R.]
 	Legyen $\left\{ e_1,\ldots,e_k \right\}$ egy ortonormált rendszer a $V$ skalárisszorzatos-térben.
@@ -12944,16 +12964,24 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 			      \ker (N-\lambda I)=\ker (N^\ast-\bar{\lambda}I);
 		      \end{math}
 		\item
-		      Különböző sajátértékekhez tartozó sajátalterek merőlegesek egymásra, azaz
+              Legyen $\lambda\neq \mu\in\mathbb{K}$. Ekkor 
 		      \begin{math}
-			      \ker \left( N-\lambda I \right)\perp\ker\left( N-\mu I \right),
+			      \ker \left( N-\lambda I \right)\perp\ker\left( N-\mu I \right).
 		      \end{math}
-		      ahol $\lambda\neq \mu$ és $\lambda,\nu\in\sigma\left( N \right)$.
-		\item Ha $N=N^\ast$, azaz $N$ önadjungált transzformáció, akkor
+              Ha tehát $\lambda$ és $\mu$ az $N$ transzformáció különböző sajátértékei, 
+              akkor az ezekhez tartozó sajátalterek egymásra merőlegesek.
+		\item Speciálisan, ha $N=N^\ast$, azaz $N$ önadjungált transzformáció, akkor
 		      \begin{math}
 			      \sigma\left( N \right)\subseteq \mathbb{R},
 		      \end{math}
 		      azaz önadjungált transzformációnak valósak a sajátértékei.
+        \item Speciálisan, ha $N$ reguláris és $N^{-1}=N^\ast$, azaz $N$ unitér transzformáció, akkor
+              minden 
+		      \begin{math}
+			      \lambda\in\sigma\left( N \right)\subseteq \mathbb{R},
+		      \end{math}
+              esetén $|\lambda|=1$, 
+		      azaz unitér transzformációnak a sajátértékei $1$ abszolútértékűek.
 		      \qedhere
 	\end{enumerate}
 \end{proposition}
@@ -12999,6 +13027,17 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 		=Nu-N^\ast u=Nu-Nu=0.
 	\]
 	No de, az $u\neq 0$ feltétel miatt $\lambda-\bar{\lambda}=0$, tehát $\lambda\in\mathbb{R}.$
+
+
+	Legyen most $N$ unitér, és $\lambda\in\sigma\left( N \right)$ egy sajátérték.
+	Van tehát olyan $u\neq 0$ vektor, amelyre $Nu=\lambda u$ és $N^\ast u=\bar{\lambda}u$.
+    Persze $N^{-1}Nu=N^{-1}\left( \lambda u \right)=\lambda N^{-1}u$,
+	ezért
+	\[
+        \left( \frac{1}{\lambda}-\bar{\lambda} \right)u
+        =N^{-1}u-N^\ast u=Nu-Nu=0.
+	\]
+    No de, az $u\neq 0$ feltétel miatt $\frac{1}{\lambda}-\bar{\lambda}=0$, tehát $\lambda\bar{\lambda}=|\lambda|^2=1$.
 \end{proof}
 Eddig minden gondolat $\mathbb{K}$ feletti skalárisszorzatos-téren volt.
 A komplex és a valós diagonalizálhatóság közös magja a következő állítás.
@@ -16481,4 +16520,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Fri 13 May 2022 02:28:50 PM CEST CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Sat 14 May 2022 09:00:10 AM CEST CEST CEST CEST CEST CET Europe Standard Time 
