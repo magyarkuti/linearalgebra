@@ -13491,18 +13491,18 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		NN^\ast.
 	\]
 
-	Most megmutatjuk, hogy
-	$\left\{ \lambda_1,\ldots,\lambda_r \right\}\subseteq \sigma(N)$.
-	Legyen $u_j\in\im P_j$ egy nem zérus vektor, azaz $u_j\neq 0$.
-	Ilyen vektor létezik, hiszen $P_{j}\neq 0$.
-	Világos, hogy minden $k$ mellett
+	Most megmutatjuk, hogy 
+    $\im P_j\subseteq\ker\left( N-\lambda_jI \right)$.
+	Legyen $u_j\in\im P_j$.
+	Világos, hogy minden $k\neq j$ mellett
 	\begin{math}
 		P_k\left( u_j \right)
 		=
 		P_k\left( P_j\left( u_j \right) \right)
 		=
 		P_kP_j\left( u_j \right)
-		=\delta_{k,j}u_j.
+        =
+        0.
 	\end{math}
 	Így
 	\[
@@ -13510,69 +13510,83 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		=
 		\left( \sum_{k=1}^r\lambda_kP_k \right)u_j
 		=
-		\sum_{k=1}^r\lambda_k\delta_{k,j}u_j
+        \lambda_{j}P_ju_j
 		=
-		\lambda_ju_j,
+		\lambda_ju_j.
 	\]
-	ami pont azt jelenti, hogy $\lambda_j$ az $N$ transzformáció egy sajátértéke.
 
-	Most azt mutatjuk meg, hogy
-	$\sigma(N)\subseteq \left\{ \lambda_1,\ldots,\lambda_r \right\}$.
-	Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
-	Jelölje $s_j=P_js\in\im P_j$, minden $j=1,\ldots,r$ mellett.
-	Itt
-	\[
-		s=Is
-		=
-		\left( \sum_{j=1}^rP_j \right)s
-		=
-		\left( \sum_{j=1}^rP_js \right)
-		=
-		\sum_{j=1}^rs_j.
-	\]
-	Ezért
-	\[
-		\sum_{j=1}^r\mu s_j
-		=
-		\mu\sum_{j=1}^rs_j
-		=
-		\mu s
-		=
-		Ns
-		=
-		\left( \sum_{j=1}^r\lambda_jP_j \right)s
-		=
-		\sum_{j=1}^r\lambda_jP_js
-		=
-		\sum_{j=1}^r\lambda_js_j.
-	\]
-	Azt kaptuk tehát, hogy
-	\[
-		\sum_{\substack{j=1\\s_j\neq 0}}^r\left(\lambda_j-\mu \right)s_j=0.\tag{\dag}
-	\]
-	Itt a baloldali szummának van legalább egy tagja, hiszen
-	\(
-	0 \neq s=\sum_{j=1}^rs_j.
-	\)
-	Az
-	$\left\{ s_j:j=1,\ldots,r \right\}$
-	egy ortogonális rendszer,
-	hiszen a $P_j$ projekciók egymásra merőlegesek, ami ekvivalens avval, hogy
-	$\im P_k\perp \im P_j$ minden $k\neq j$ mellett.
-	Így az
-	$\left\{ s_j:j=1,\ldots,r, s_j\neq 0 \right\}$ vektorrendszer,
-	zérus elemet nem tartalmazó ortogonális rendszerként lineárisan független rendszer.
-	Ez azt jelenti, hogy a $(\dag)$ lineáris kombináció együtthatói a test nullelemei, ergo
-	\begin{math}
-		\lambda_j-\mu=0
-	\end{math}
-	minden szóba jövő $j$-re,
-	azaz minden olyan $j$ mellett, amelyre $s_j\neq 0$.
-	A már igazoltak szerint
-	\begin{math}
-		\mu=\lambda_j\in\sigma(N).
-	\end{math}
-	Ezt kellett belátni.
+    A $P_j\neq 0$ feltétetel szerint $\ker\left( N-\lambda_jI \right)\supseteq\im P_j\neq\left\{ 0 \right\}$,
+    ezért $N-\lambda_jI$ szinguláris.
+    Mivel ez minden $j=1,\ldots,r$ mellett fennáll, ezért minden $j$ mellett a $\lambda_j$ egy sajátértéke $N$-nek. 
+
+	Most azt gondoljuk meg, hogy nincs más sajátérték, azaz ha $\sigma\neq \lambda_j$ minden $j=1,\dots,r$ mellett,
+    akkor $\sigma$ nem sajátérték.
+    Megmutatjuk tehát, hogy $\ker\left( N-\sigma I \right)=\left\{ 0 \right\}$.
+    Ehhez vegyük észre, hogy $\sum_{j=1}^rP_j=I$ szerint $\sum_{j=1}^r\im P_j=V$ komplexus azonosság teljesül,
+    és mivel $N$ normális, ezért $\ker\left( N-\lambda_jI \right)\perp\ker\left( N-\sigma I \right)$ is teljesül
+    minden $j=1,\dots,r$ mellett.
+    Így
+    \[
+        V=\sum_{j=1}^r\im P_j\subseteq\sum_{j=1}^r\ker\left( N-\lambda_jI \right)\subseteq\left( \ker\left( N-\sigma I \right) \right)^\perp.
+    \]
+    Ha tehát $v\in\ker\left( N-\sigma I \right)$, akkor $v$ merőleges saját magára, ergo $v=0$.
+    Ezt kellett belátni. 
+%	$\sigma(N)\subseteq \left\{ \lambda_1,\ldots,\lambda_r \right\}$.
+%	Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
+%	Jelölje $s_j=P_js\in\im P_j$, minden $j=1,\ldots,r$ mellett.
+%	Itt
+%	\[
+%		s=Is
+%		=
+%		\left( \sum_{j=1}^rP_j \right)s
+%		=
+%		\left( \sum_{j=1}^rP_js \right)
+%		=
+%		\sum_{j=1}^rs_j.
+%	\]
+%	Ezért
+%	\[
+%		\sum_{j=1}^r\mu s_j
+%		=
+%		\mu\sum_{j=1}^rs_j
+%		=
+%		\mu s
+%		=
+%		Ns
+%		=
+%		\left( \sum_{j=1}^r\lambda_jP_j \right)s
+%		=
+%		\sum_{j=1}^r\lambda_jP_js
+%		=
+%		\sum_{j=1}^r\lambda_js_j.
+%	\]
+%	Azt kaptuk tehát, hogy
+%	\[
+%		\sum_{\substack{j=1\\s_j\neq 0}}^r\left(\lambda_j-\mu \right)s_j=0.\tag{\dag}
+%	\]
+%	Itt a baloldali szummának van legalább egy tagja, hiszen
+%	\(
+%	0 \neq s=\sum_{j=1}^rs_j.
+%	\)
+%	Az
+%	$\left\{ s_j:j=1,\ldots,r \right\}$
+%	egy ortogonális rendszer,
+%	hiszen a $P_j$ projekciók egymásra merőlegesek, ami ekvivalens avval, hogy
+%	$\im P_k\perp \im P_j$ minden $k\neq j$ mellett.
+%	Így az
+%	$\left\{ s_j:j=1,\ldots,r, s_j\neq 0 \right\}$ vektorrendszer,
+%	zérus elemet nem tartalmazó ortogonális rendszerként lineárisan független rendszer.
+%	Ez azt jelenti, hogy a $(\dag)$ lineáris kombináció együtthatói a test nullelemei, ergo
+%	\begin{math}
+%		\lambda_j-\mu=0
+%	\end{math}
+%	minden szóba jövő $j$-re,
+%	azaz minden olyan $j$ mellett, amelyre $s_j\neq 0$.
+%	A már igazoltak szerint
+%	\begin{math}
+%		\mu=\lambda_j\in\sigma(N).
+%	\end{math}
+%	Ezt kellett belátni.
 \end{proof}
 
 \begin{proposition}\label{pr:normpol}
@@ -13695,13 +13709,13 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 \end{proof}
 
 \chapter{Spektrális felbontások}
-\scwords A közös mag az identikus operáció alábbi felbontása.
+\scwords Az identitkus transzformáció felbontása a közös magja a spektrális felbontásoknak:
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér,
 	és tegyük fel, hogy az $M_1,\ldots,M_r$ alterekre
 	\[
-		V=M_1\oplus\dots\oplus M_r,
-		\qquad\text{ahol }M_j\perp M_k\text{ minden }j\neq k.
+		V=M_1+\ldots+M_r,
+		\quad\text{ahol }M_j\perp M_k\text{ minden }j\neq k.
 	\]
 	Jelölje $P_j$ az $M_j$ altérre való merőleges vetítést.
 	Ekkor
@@ -13711,10 +13725,11 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 	és persze $P_j\perp P_k$ minden $j\neq k$ mellett.
 \end{proposition}
 \begin{proof}
-	Minden $s\in V$ vektor egyértelműen előáll
+	Minden $s\in V$ vektor előáll
 	$s=\sum_{j=1}^rs_j$
 	alakban, ahol $s_j\in M_j$.
-	Felhasználva, hogy $P_j|M_j=\id$ és $\sum_{\substack{k=1\\k\neq j}}^rM_k\subseteq M_j^\perp=\ker P_j$ minden $k\neq j$ mellett
+    Felhasználva, hogy $P_j|_{M_j}=\id_{M_j}$ és 
+    $\sum_{\substack{k=1\\k\neq j}}^rM_k\subseteq M_j^\perp=\ker P_j$ minden $k\neq j$ mellett
 	\[
 		\left(
 		\sum_{j=1}^rP_j
@@ -13726,6 +13741,8 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 		=
 		\sum_{j=1}^r\left( P_js_j+P_j\left( \sum_{\substack{k=1\\k\neq j}}^rs_k \right) \right)
 		=
+        \sum_{j=1}^rP_js_j
+        =
 		\sum_{j=1}^rs_j
 		=
 		Is.
@@ -13733,7 +13750,7 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 	\]
 \end{proof}
 Emlékezzünk arra, hogy ha $\left\{ \lambda_1,\ldots,\lambda_r \right\}$ az $N$ normális transzformáció
-sajátértékei,
+különböző sajátértékei,
 akkor bevezetve az $M_i=\ker\left( N-\lambda_i I \right)$ jelölést
 \[
 	M_1\oplus\dots\oplus M_r\subseteq V
@@ -13742,7 +13759,9 @@ akkor bevezetve az $M_i=\ker\left( N-\lambda_i I \right)$ jelölést
 Még azt is láttuk, hogy $\mathbb{K}=\mathbb{C}$ esetben itt egyenlőség is van,
 de azt is tudjuk, hogy az egyenlőség még a $\mathbb{K}=\mathbb{R}$ és $N^\ast=N$ esetben is fennáll.
 \section{Komplex eset}
-
+A spektrális felbontási téteteleket fogalmazzuk meg abban az esetben, mikor az alaptestre $\mathbb{K}=\mathbb{C}$.
+A legáltalánosabb eset a normális transtformációkra vonatkozik, 
+majd felírjuk az önadjungált és az unitér transzformációk speciális esetét.
 \subsection{Normális transzformáció}
 \begin{proposition}[spektrális felbontás]
 	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $N\in L\left( V \right)$
@@ -16520,4 +16539,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 14 May 2022 09:00:10 AM CEST CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Sun 15 May 2022 09:52:35 AM CEST CEST CEST CEST CEST CET Europe Standard Time 
