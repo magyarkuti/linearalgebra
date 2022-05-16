@@ -13939,7 +13939,7 @@ a normális transzformációk spektrális felbontásának speciális esete.
 	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
 	egy unitér lineáris transzformáció.
 	Jelölje $\sigma\left( A \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
-	Láttuk, hogy $k\geq 1$, $|\lambda_j|=1$ minden $j=1,\ldots,r$ mellett
+	Láttuk, hogy $k\geq 1$, $|\lambda_j|=1$ minden $j=1,\ldots,r$ mellett.
 	Jelölje $P_j$ a $\ker\left\{ A-\lambda_jI \right\}$ altérre való merőleges vetítést.
 	Ekkor
 	\begin{enumerate}
@@ -14103,7 +14103,7 @@ akkor
 $r\left( A \right)=\lambda_{max}.$
 
 \begin{proposition}
-	Lgyen $V,W$ ugyanazon $\mathbb{K}$ test feletti skalárisszorzatos-terek.
+	Legyenek $V,W$ ugyanazon $\mathbb{K}$ test feletti skalárisszorzatos-terek.
 	Legyen $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Ekkor az $A^\ast A$ egy önadjungált transzformáció,
 	így $\sigma\left( A^\ast A \right)\neq \emptyset$,
@@ -14114,7 +14114,7 @@ $r\left( A \right)=\lambda_{max}.$
 \begin{proof}
 	Világos, hogy $(A^\ast A)^\ast=A^\ast (A^\ast)^\ast=A^\ast A$,
 	ergo $A^\ast A$ valóban egy önadjungált lineáris transzformációja a $V$ vektortérnek.
-	Láttuk, hogy $A$ még diagonalizálható is, tehát spektruma nem üres.
+	Láttuk, hogy $A^\ast A$ még diagonalizálható is, tehát spektruma nem üres.
 	Azt is láttuk, hogy önadjungált transzformáció minden sajátértéke valós.
 	No de, ha $\lambda\in\sigma\left( A^\ast A \right)$ és $x\in V$ egy nem zérus vektor,
 	amelyre $A^\ast Ax=\lambda x$, akkor
@@ -14243,9 +14243,9 @@ akkor még egyszerűbb állítást kapunk.
 \end{proposition}
 \begin{proof}
 	Mivel $A$ önadjungált,
-	ezért $A$-nak van spektrálfelbontása, és ha ez $A=\sum_{j=1}^r\lambda_jPj$,
+	ezért $A$-nak van spektrálfelbontása, és ha ez $A=\sum_{j=1}^r\lambda_jP_j$,
 	akkor az $A^2$ spektrálfelbontása $A^2=\sum_{j=1}^r\lambda_j^2P_j$,
-	ahol $\lambda_1,\ldots,\lambda_r$ valós számok.
+	ahol a $\lambda_1,\ldots,\lambda_r$ valós számok az $A$ spektrumának elemei.
 	Ez azt jelenti, hogy $A^2$ minden sajátértéke négyzete $A$ valamelyik sajátértékének.
 	Így
 	\[
@@ -14259,7 +14259,7 @@ akkor még egyszerűbb állítást kapunk.
 		=
 		r\left( A \right)^2.
 	\]
-	No de, újra használva $A^\ast=A$ feltevést
+	No de, újra használva az $A^\ast=A$ feltevést
 	\[
 		\|A\|^2
 		=
@@ -14305,10 +14305,10 @@ akkor még egyszerűbb állítást kapunk.
 	\begin{math}
 		\|A\|^2
 		\leq
-		\|A^\ast\|\|A\|,
+		\|A^\ast\|\cdot\|A\|,
 	\end{math}
 	amiből $\|A\|\leq\|A^\ast\|$ következik.
-	No de, ez minden lineáris operácációra igaz,
+	No de, ez minden lineáris operációra igaz,
 	speciálisan az $A^\ast$ adjungáltra is.
 	Emiatt az
 	\begin{math}
@@ -14319,7 +14319,7 @@ akkor még egyszerűbb állítást kapunk.
 		\|A\|
 	\end{math}
 	egyenlőtlenség is teljesül igazolva,
-	hogy egy lineáris operácációnak és adjungáltjának azonos a normája.
+	hogy egy lineáris operációnak és adjungáltjának azonos a normája.
 
 	Alkalmazva az eddig igazoltatakat
 	\[
@@ -16539,4 +16539,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sun 15 May 2022 09:52:35 AM CEST CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Mon 16 May 2022 09:36:23 AM CEST CEST CEST CEST CEST CET Europe Standard Time 
