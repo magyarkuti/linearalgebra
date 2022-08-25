@@ -55,10 +55,42 @@
     \textbullet{}
     Date: \gitAuthorIsoDate
 }
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% magyar tipográfia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%1111111111111111111111111111111111111111111111111111
+% tartalomjegyzék magyar specialitás
+%1111111111111111111111111111111111111111111111111111
+% A tartalomjegyzékben pont a counter után. Például 1. Előzmények
+\renewcommand{\cftsectionaftersnum}{.}
+\renewcommand{\cftchapteraftersnum}{.}
+\renewcommand{\cftpartaftersnum}{.}
+%2222222222222222222222222222222222222222222222222222
+%% section magyar specialitás
+%2222222222222222222222222222222222222222222222222222
+% Magyarul  1.13. szakasz, persze 1. fejezet, de ezt a polyglossia intézi
+\sectiondot{subsection}
+%3333333333333333333333333333333333333333333333333333
+%% theorem-like környezetek magyar specialitás
+%3333333333333333333333333333333333333333333333333333
+% amsthm.cls -ben \swappnumbers nem tesz pontot a szám után.
+% Például ,,1.32 tétel.''
+% Magyarul helyesen ,,1.32. tétel.''
+% Emiatt kell felülírnom a \swappedhead makrót!
+% Ha babel-t használunk nem kell pont, mert  a babel a pontot is kiteszi.
+\makeatletter
+\def\thmhead#1#2#3{%
+    \thmnumber{\@upn{#2}\@ifnotempty{#1}{.~}}%
+    \thmname{#1}%
+    \thmnote{ {\the\thm@notefont(#3)}}%
+}%
+\let\swappedhead\thmhead
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% magyar tipográfia vége
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % caption fontok beállítása
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ez csak akkor kell, ha San seriff fontokat akarunk a part, chapter, section stb helyeken. 
 \renewcommand{\booktitlefont}{\normalfont\Huge\scshape}
 \renewcommand{\partnamefont}{\normalfont\huge\sffamily\raggedleft}
@@ -80,44 +112,39 @@
 \renewcommand{\cftchapterpagefont}{\sffamily\bfseries}
 \renewcommand{\cftsectionpagefont}{\sffamily}
 \renewcommand{\cftsubsectionpagefont}{\sffamily}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% tartalomjegyzék magyaritás
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% A tartalomjegyzékben pont a counter után. Például 1. Előzmények
-\renewcommand{\cftsectionaftersnum}{.}
-\renewcommand{\cftchapteraftersnum}{.}
-\renewcommand{\cftpartaftersnum}{.}
 %
 %\maxtocdepth{subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section magyaritás
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Magyarul  1.13. szakasz, persze 1. fejezet, de ezt a polyglossia intézi
-\sectiondot{subsection}
 %
-\nouppercaseheads
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A fejlécben a theorem counter elem generálása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
+% \myBotmark feltöltése a lapon lévő utolsó tétel környezettel
+\newcommand{\myBotmark}{\relax}
+\makeatletter
+    \@ifdefinable\@my@claim@mark{\newmarks\@my@claim@mark}
+    \newcommand*\myMark[1]{\marks\@my@claim@mark{#1}}
+    \renewcommand*\myBotmark{\botmarks\@my@claim@mark}
+    \patchcmd{\@begintheorem}{% search for:
+        \thm@swap\swappedhead\thmhead % more specific than before
+    }{% replace with:
+%        \myMark{#2.\@ifnotempty{#1}{\ #1}\@ifnotempty{#3}{\ (#3)}}%
+        \myMark{#2.\@ifnotempty{#1}{\ #1.}}% nem kell az megjegyzése
+        \thm@swap\swappedhead\thmhead
+    }{
+        \typeout{>>> Made patch specific for amsthm.}
+   }{
+        \typeout{>>> Patch specific for amsthm FAILED!}
+    }
+\makeatother
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% futó fejléc beállítása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeoddhead{myheadings}{\sffamily\footnotesize\leftmark}{}{\sffamily\footnotesize\thepage}
-\makeevenhead{myheadings}{\sffamily\footnotesize\thepage}{\sffamily\footnotesize\myBotmark}{\sffamily\footnotesize\rightmark}
-\makepsmarks{myheadings}{%
-    \renewcommand\chaptermark[1]{%
-    \markboth{%
-    \ifnum\c@secnumdepth > \m@ne
-        \if@mainmatter
-%           \@chapapp\ \thechapter. \ %
-             \thechapter.\ \@chapapp.\ %
-        \fi
-    \fi
-    ##1}{}}%
-    \renewcommand\sectionmark[1]{%
-    \markright{%
-    \ifnum\c@secnumdepth > \z@
-        \thesection. \ %
-    \fi
-    ##1}}
-}
+\copypagestyle{labook}{Ruled}
+\makeoddhead{labook}{\scshape\rightmark}{}{\scshape\myBotmark}
+\nouppercaseheads
+\pagestyle{labook}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% theorem like környezeteknek is qed a vége
@@ -140,25 +167,8 @@
 \newcommand{\myqedsymbol}{$\lrcorner$}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% theorem-like környeztek magyarítása
+%% theorem-like környezetek definíciója
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% amsthm.cls -ben \swappnumbers nem tesz pontot a szám után.
-% Például ,,1.32 tétel.''
-% Magyarul helyesen ,,1.32. tétel.''
-% Emiatt kell felülírnom a \swappedhead makrót!
-% Ha babel-t használunk nem kell pont, mert  a babel a pontot is kiteszi.
-\makeatletter
-\def\thmhead#1#2#3{%
-    \thmnumber{\@upn{#2}\@ifnotempty{#1}{.~}}%
-    \thmname{#1}%
-    \thmnote{ {\the\thm@notefont(#3)}}%
-}%
-\let\swappedhead\thmhead
-\makeatother
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% theorem-like környezetek definíciója
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \swapnumbers %% a babel megfordítja. A polyglossia nem. De a babel pontot is tesz a számcimke után
 \theoremstyle{plain}
 \newtheorem{proposition}{állítás}[chapter]
@@ -172,31 +182,10 @@
 \newtheorem{corollary}[proposition]{következmény}
 \newtheorem{defprop}[proposition]{definíció-állítás}
 \addQEDstyle{definition}{\myqedsymbol}\addQEDstyle{proposition}{\myqedsymbol}\addQEDstyle{lemma}{\myqedsymbol}\addQEDstyle{note}{\myqedsymbol}\addQEDstyle{corollary}{\myqedsymbol}\addQEDstyle{SL}{\myqedsymbol}\addQEDstyle{defprop}{\myqedsymbol}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% A fejlécben a középső elem generálása
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
-% \myBotmark feltöltése a lapon lévő utolsó tétel környezettel
-\makeatletter
-    \@ifdefinable\@my@claim@mark{\newmarks\@my@claim@mark}
-    \newcommand*\myMark[1]{\marks\@my@claim@mark{#1}}
-    \newcommand*\myBotmark{\botmarks\@my@claim@mark}
-    \patchcmd{\@begintheorem}{% search for:
-        \thm@swap\swappedhead\thmhead % more specific than before
-    }{% replace with:
-        \myMark{#2.\@ifnotempty{#1}{\ #1}\@ifnotempty{#3}{\ (#3)}}%
-        \thm@swap\swappedhead\thmhead
-    }{
-        \typeout{>>> Made patch specific for amsthm.}
-   }{
-        \typeout{>>> Patch specific for amsthm FAILED!}
-    }
-\makeatother
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Az bölcsesség generálása
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx, datatool}
 \DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
      \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
@@ -207,16 +196,15 @@
      \typeout{\Number:\Quote -- \Author}
      \typeout{ }
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lustaságok
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lustaságok
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\lin}{lin}
 \DeclareMathOperator{\gen}{gen}
-\DeclareMathOperator{\crank}{crank}
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
 \DeclareMathOperator{\rank}{rank}
@@ -229,17 +217,17 @@
 \newcommand{\CStar}{\Star{\ensuremath{\mathrm{C}}}}
 %
 %\citeindextrue
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Az index bekapcsolása
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeindex
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Az forward and back bekapcsolása
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Az forward-backward search bekapcsolása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \synctex=1
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter*
 {\centering
@@ -314,7 +302,6 @@ Magyarkuti Gyula
 
 
 \clearpage
-\pagestyle{myheadings}
 \tableofcontents*
 \mainmatter*
 %\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
@@ -4747,7 +4734,7 @@ ha a bázisban egy elemet megváltoztatunk.
 
 
 %%%\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
-\chapter{Alterek Minkowski-összege és direkt összege}\index{Minkowski-összeg}
+\chapter[Alterek összege]{Alterek Minkowski-összege és direkt összege}\index{Minkowski-összeg}
 \scwords Az alterek struktúráját vizsgáljuk a fejezetben.
 \section{Minkowski-összeg}
 \begin{definition}\index{Minkowski-összeg}
@@ -16564,4 +16551,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 25 Aug 2022 08:51:04 AM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Thu 25 Aug 2022 01:03:00 PM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
