@@ -24,7 +24,7 @@
 \setmonofont{TeX Gyre Cursor}
 %%%%%% lualatex %%%%%%%%%%%
 
-\usepackage{csquotes,amsmath,amsthm,systeme,fixme,polyglossia,nevelok}
+\usepackage{csquotes,amsmath,amsthm,systeme,fixme,secdot,polyglossia,nevelok}
 \setdefaultlanguage{magyar}
 \usepackage[backend=biber,
             bibencoding=utf8,
@@ -84,16 +84,16 @@
 % tartalomjegyzék magyaritás
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A tartalomjegyzékben pont a counter után. Például 1. Előzmények
+\renewcommand{\cftsectionaftersnum}{.}
 \renewcommand{\cftchapteraftersnum}{.}
 \renewcommand{\cftpartaftersnum}{.}
 %
 %\maxtocdepth{subsection}
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section magyaritás
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Magyarul  1.13. szakasz, persze 1. fejezet, de ezt a polyglossia intézi
-\renewcommand{\thesection}{\thechapter.\arabic{section}.}
+\sectiondot{subsection}
 %
 \nouppercaseheads
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,7 +114,7 @@
     \renewcommand\sectionmark[1]{%
     \markright{%
     \ifnum\c@secnumdepth > \z@
-        \thesection \ %
+        \thesection. \ %
     \fi
     ##1}}
 }
@@ -16564,4 +16564,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Tue 23 Aug 2022 06:17:56 PM Central Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Thu 25 Aug 2022 08:51:04 AM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
