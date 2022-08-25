@@ -27,7 +27,7 @@
     \PackageWarning{nevelok}{Reference not (yet) defined!}%
     a(z) ??%
   \else%
-    \z@aaz{#1}{a}{az}{}{}%
+    \z@aaz{\getrefnumber{#1}}{a}{az}{}{}{\ref{#1}}%
   \fi%
 }%
 %%
@@ -37,7 +37,7 @@
     \PackageWarning{nevelok}{Reference not (yet) defined!}%
     a(z) ??%
   \else%
-    \z@aaz{#1}{A}{Az}{}{}%
+    \z@aaz{\getrefnumber{#1}}{A}{Az}{}{}{\ref{#1}}%
   \fi%
 }%
 %%
@@ -47,7 +47,7 @@
     \PackageWarning{nevelok}{Reference not (yet) defined!}%
     a(z) ??%
   \else%
-    \z@aaz{#1}{a}{az}{#2}{#3}%
+    \z@aaz{\getrefnumber{#1}}{a}{az}{#2}{#3}{\ref{#1}}%
   \fi%
 }%
 %%
@@ -57,18 +57,18 @@
     \PackageWarning{nevelok}{Reference not (yet) defined!}%
     a(z) ??%
   \else%
-    \z@aaz{#1}{A}{Az}{#2}{#3}%
+    \z@aaz{\getrefnumber{#1}}{A}{Az}{#2}{#3}{\ref{#1}}%
   \fi%
 }%
 %%
 %%
 \DeclareRobustCommand{\aazt}[1]{%
-  \z@aazt{#1}{a}{az}{}{}%
+  \z@aaz{#1}{a}{az}{}{}{#1}%
 }%
 %%
 %%
 \DeclareRobustCommand{\Aazt}[1]{%
-  \z@aazt{#1}{A}{Az}{}{}%
+  \z@aaz{#1}{A}{Az}{}{}{#1}%
 }%
 %%
 %%
@@ -76,8 +76,8 @@
 \newcount\nev@vege%
 \newcount\nev@eppme%
 \newcount\nev@az%
-%
-\newcommand{\z@aazt}[5]{%
+%%
+\newcommand{\z@aaz}[6]{%
   \begingroup%
   \IfBeginWith{#1}{1}{% if the reference starts with 1,
                       % special care is required
@@ -133,67 +133,7 @@
       #2%
     \fi%
   }%
-  \ #4#1#5%
-  \endgroup%
-}%
-%
-\newcommand{\z@aaz}[5]{%
-  \begingroup%
-  \IfBeginWith{\getrefnumber{#1}}{1}{% if the reference starts with 1,
-                      % special care is required
-    \StrLen{\getrefnumber{#1}}[\nev@hossz]%
-    \nev@ind=\nev@hossz%
-    \nev@vege=0%
-    \loop% loops while it does not find a digit at the end
-         % (in \ref-s, strangely, an \hbox {} appears at the end;
-         % this loop was actually written to remove these)
-      \StrChar{\getrefnumber{#1}}{\nev@ind}[\nev@kar]%
-      \IfSubStr{1234567890}{\nev@kar}{\nev@vege=1}{}\relax%
-      \ifnum\nev@vege=0%
-        \advance\nev@ind by -1%
-    \repeat%
-    \StrLeft{\getrefnumber{#1}}{\nev@ind}[\nev@paramuj]% \paramuj will contain the
-                                        % ``cleaned'' parameter
-    \StrPosition[1]{\nev@paramuj}{.}[\nev@elsopontpozicioja]%
-    \StrLen{\nev@paramuj}[\nev@hossz]%
-    \nev@eppme=\nev@elsopontpozicioja%
-    \advance\nev@eppme by -1%
-    \ifnum\nev@elsopontpozicioja=0%
-      \StrLeft{\nev@paramuj}{\nev@hossz}[\nev@prefix]%
-    \else%
-      \StrLeft{\nev@paramuj}{\nev@eppme}[\nev@prefix]%
-    \fi%
-    \StrLen{\nev@prefix}[\nev@elsohossz]%
-    \ifnum\nev@elsohossz=1\relax% 1
-      #3%
-    \else\ifnum\nev@elsohossz=2\relax% 10
-      #2%
-    \else\ifnum\nev@elsohossz=3\relax% 100
-      #2%
-    \else\ifnum\nev@elsohossz=4\relax% 1000
-      #3%
-    \fi\fi\fi\fi%
-  }{%
-    \StrChar{\getrefnumber{#1}}{1}[\nev@kar]%
-    \nev@az=0%
-    \IfSubStr{2346789}{\nev@kar}{% digits that require ``a'';
-                                 % this is redundant, but was kept for some reasons
-      \nev@az=0\relax%
-    }{%
-      \IfSubStr{5AEIOUaeiouÁÉÍÓÖŐÚÜŰáéíóöőúüű}{\nev@kar}{% digits and letters
-                                                   % that require ``az''
-        \nev@az=1\relax%
-      }{%
-        \nev@az=0\relax%
-      }%
-    }%
-    \ifnum\nev@az=1\relax%
-      #3%
-    \else%
-      #2%
-    \fi%
-  }%
-  \ #4\ref{#1}#5%
+  \ #4#6#5%
   \endgroup%
 }%
 %%
