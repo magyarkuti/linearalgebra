@@ -1,4 +1,4 @@
-\documentclass[9pt, a4paper, showtrims]{memoir}
+\documentclass[a4paper, showtrims]{memoir}
 %\newcommand{\alert}{\relax}
 %\let\Aref\relax
 %%%%%%% pdflatex %%%%%%%%%%
@@ -15,6 +15,7 @@
 \setmainfont{TeX Gyre Pagella}
 %\setmainfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}
 \setmathfont{TeX Gyre Pagella Math}%unicode-math ?
+%\setmathfont{Asana Math}
 \newfontfamily\DejaSans{Dejavu Sans}
 %\setsansfont{Kurier}[Scale=MatchLowercase]
 \setsansfont{TeX Gyre Adventor}[Scale=MatchLowercase]
@@ -22,6 +23,8 @@
 %\setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
 %\setmonofont{inconsolata}[Scale=MatchLowercase]
 \setmonofont{TeX Gyre Cursor}
+\linespread{1.1}
+\setlength{\headheight}{12.49pt}
 %%%%%% lualatex %%%%%%%%%%%
 
 \usepackage{csquotes,amsmath,amsthm,systeme,fixme,polyglossia,nevelok}
@@ -1532,14 +1535,13 @@ A bevezetett összeadás és szorzás műveletekre teljesül a disztributivitás
 		\sum_{s=1}^k[A]_{i,s}\left[ B+C \right]_{s,j}
 		=
 		\sum_{s=1}^k[A]_{i,s}\left([B]_{s,j}+[C]_{s,j} \right)
-		=
+		=\\
 		\sum_{s=1}^k\left( [A]_{i,s}[B]_{s,j}\right)+\left([A]_{i,s}[C]_{s,j} \right)
 		=
-		\\
 		\sum_{s=1}^k[A]_{i,s}[B]_{s,j}
 		+
 		\sum_{s=1}^k[A]_{i,s}[C]_{s,j}
-		=
+		=\\
 		\left[ AB \right]_{i,j}+\left[ AC \right]_{i,j}
 		=
 		[AB+AC]_{i,j}.
@@ -1789,8 +1791,9 @@ ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
-Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, mert ehhez már szükség van a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra
-\footnote{Ha viszont tudjuk mi az a Gauss\,--\,Jordan-elimináció, akkor máris megérthetjük \aaz{pr:ketoldal}. állítást. Ehhez ugorjunk \aaz{pr:ketoldal}. oldalra}, vagy a lineáris függetlenség fogalmára, 
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, mert ehhez már szükség van a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra%
+\footnote{Ha viszont tudjuk mi az a Gauss\,--\,Jordan-elimináció, akkor máris megérthetjük \aaz{pr:ketoldal}. állítást. Ehhez ugorjunk \aazt{\pageref{pr:ketoldal}} oldalra.}
+, vagy a lineáris függetlenség fogalmára, 
 amiket majd később vezetünk be.\label{pg:kommutal}\index{kommutáló mátrixok}
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
@@ -2144,10 +2147,10 @@ A konjugált definíciója alapján, egyszerű számolgatással kapjuk az alább
 \begin{proposition}
 	Minden $z\in\mathbb{C}$ komplex szám mellett fennállnak a konjugálás következő szabályai:
 	\[
-		\overline{\left( \bar{z} \right)}=z,\quad
-		z+\bar{z}=2\Re z,\quad
-		z-\bar{z}=2i\Im z,\quad
-		z\in\mathbb{R}\text{ akkor és csak akkor, ha } z=\bar{z},\quad
+        \overline{\left( \bar{z} \right)}=z,\hspace{0.5em}
+		z+\bar{z}=2\Re z,\hspace{0.5em}
+		z-\bar{z}=2i\Im z,\hspace{0.5em}
+		z\in\mathbb{R}\text{ akkor és csak akkor, ha } z=\bar{z},\hspace{0.5em}
 		z\bar{z}=(\Re z)^2+(\Im z)^2\geq 0.
 	\]
 	Az összeadás és szorzás művelet is felcserélhető a konjugálással,
@@ -3039,57 +3042,59 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 Érdemes itt konkrét példákkal szemléltetni a homogén lineáris egyenletrendszer általános megoldásának felírását:
 \begin{enumerate}
 	\item
-	      Oldjuk meg a
-	      \[
-		      \systeme{ x+4y+7z=0,
-			      2x+5y+8z=0,
-			      3x+6y+8z=0
-		      }
-	      \]
-	      homogén  lineáris egyenletrendszert.
-	      A Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
-	      \[
-		      \begin{array}{|rrr}
-			      a         & b & c \\
-			      \hline
-			      \boxed{1} & 4 & 7 \\
-			      2         & 5 & 8 \\
-			      3         & 6 & 8 \\
-			      \hline
-			      \delta    & 4 & 7
-		      \end{array}
-		      \implies
-		      \begin{array}{r|rrr}
-			        & a & b          & c   \\
-			      \hline
-			      a & 1 & 4          & 7   \\
-			        & 0 & \boxed{-3} & -6  \\
-			        & 0 & -6         & -13 \\
-			      \hline
-			        & 0 & \delta     & 2
-		      \end{array}
-		      \implies
-		      \begin{array}{r|rrr}
-			        & a & b & c          \\
-			      \hline
-			      a & 1 & 0 & -1         \\
-			      b & 0 & 1 & 2          \\
-			        & 0 & 0 & \boxed{-1} \\
-			      \hline
-			        & 0 & 0 & \delta
-		      \end{array}
-		      \implies
-		      \begin{array}{r|rrr}
-			        & a & b & c \\
-			      \hline
-			      a & 1 & 0 & 0 \\
-			      b & 0 & 1 & 0 \\
-			      c & 0 & 0 & 1
-		      \end{array}
-	      \]
-	      Ez azt jelenti, hogy az eredeti feladat ekvivalens az
-	      \[\systeme{x=0,y=0,z=0}\]
-	      feladattal, amelynek nyilvánvalóan csak a zéró vektor a megoldása.
+    Oldjuk meg a
+    \begin{eqnarray*}
+      x+4y+7z&=& 0\\
+	  2x+5y+8z&=& 0\\
+	  3x+6y+8z&=& 0
+    \end{eqnarray*}
+    homogén  lineáris egyenletrendszert.
+    A Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
+     \[
+     \begin{array}{|rrr}
+     a         & b & c \\
+      \hline
+      \boxed{1} & 4 & 7 \\
+      2         & 5 & 8 \\
+      3         & 6 & 8 \\
+      \hline
+      \delta    & 4 & 7
+      \end{array}
+      \implies
+      \begin{array}{r|rrr}
+        & a & b          & c   \\
+      \hline
+      a & 1 & 4          & 7   \\
+        & 0 & \boxed{-3} & -6  \\
+        & 0 & -6         & -13 \\
+      \hline
+        & 0 & \delta     & 2
+      \end{array}
+      \implies
+      \begin{array}{r|rrr}
+        & a & b & c          \\
+      \hline
+      a & 1 & 0 & -1         \\
+      b & 0 & 1 & 2          \\
+        & 0 & 0 & \boxed{-1} \\
+      \hline
+        & 0 & 0 & \delta
+      \end{array}
+      \implies
+      \begin{array}{r|rrr}
+        & a & b & c \\
+      \hline
+      a & 1 & 0 & 0 \\
+      b & 0 & 1 & 0 \\
+      c & 0 & 0 & 1
+      \end{array}
+      \]
+      Ez azt jelenti, hogy az eredeti feladat ekvivalens az
+%      \begin{eqnarray*}
+%          x&=& 0\\y&=& 0\\z&=& 0
+%      \end{eqnarray*}
+      \[x=0,y=0,z=0\]
+	  feladattal, amelynek nyilvánvalóan csak a zéró vektor a megoldása.
 	\item
 	      Tekintsük a következő feladatot:
 	      \[
@@ -3264,7 +3269,7 @@ amiből a lineáris burkot képezve
 \]
 következik, ergo $W=\lin\left\{ a_1,a_2 \right\}$ valóban fennáll.
 
-Nézzük újra \aaz{bazisfakt}. oldalon a (\dag) matrix faktorizációt.
+Nézzük újra \aazt{\pageref{bazisfakt}}. oldalon a (\dag) matrix faktorizációt.
 Látható, hogy nem csak az oszlop vektortérnek, de a sorvektortérnek is találtunk egy két elemű generátorrendszerét:
 Jelölje most $a_1,a_2,a_3,a_4$ a (\dag) baloldalán lévő mátrix sorait.
 E mátrix legyen $A$.
@@ -3678,21 +3683,21 @@ amiből már következik, hogy
 		      ami ellentmondás, hiszen $A_1$ mátrixnak kevesebb oszlopa van mint sora.
 		\item[$3.\Rightarrow 1.$] Éppen ezt igazoltuk a szakasz elején.
 	\end{description}
-	Ha a feltevések fennállnak, akkor
-	\[
-		A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.\qedhere
-	\]
+	Ha a feltevések egyike -- így mindegyike --fennáll, akkor
+	\(
+		A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.%\qedhere
+	\)
 \end{proof}
 Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
 akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért
 $BA=A^{-1}A=I$ is fennáll.
-Ahogyan azt a mátrixok bevezetésekor \aaz{pg:kommutal}. oldalon megígértük,
+Ahogyan azt a mátrixok bevezetésekor \aazt{\pageref{pg:kommutal}}. oldalon megígértük,
 most megmutattuk azt, hogy a négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
 egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}\index{kommutál}
 
 Egy konkrét példa megoldásával ismételjük át a szakasz elején megértett algoritmust.
 A feladat, hogy keressük meg az
-\(
+\[
 A=
 \begin{pmatrix}
 	1 & 1 & 1 & 0 \\
@@ -3700,9 +3705,9 @@ A=
 	2 & 3 & 1 & 0 \\
 	1 & 0 & 2 & 1
 \end{pmatrix}
-\)
+\]
 mátrix inverzét!
-Az inverz létezésének szükséges és elegendő feltétele, hogy 4 lépést tudjunk végrehajtani az eliminációs algoritmusban.
+Az inverz létezésének szükséges és elegendő feltétele, hogy négy lépést tudjunk végrehajtani az eliminációs algoritmusban.
 Egy lehetséges megoldás a következő:
 \begin{multline*}
 	\begin{array}{cccc|cccc}
@@ -3750,10 +3755,10 @@ Egy lehetséges megoldás a következő:
 		0 & 1 & 0 & 0 & 1  & \frac{1}{4}  & -\frac{1}{4} & -\frac{1}{2} \\
 		0 & 0 & 1 & 0 & 3  & \frac{1}{4}  & -\frac{5}{4} & -\frac{1}{2} \\
 		0 & 0 & 0 & 1 & -3 & 0            & 1            & 1
-	\end{array}
+	\end{array}.
 \end{multline*}
 Kaptuk hát, hogy az $A$ mátrix inverze az
-\begin{math}
+\begin{displaymath}
 	A^{-1}=\frac{1}{4}
 	\begin{pmatrix}
 		-12 & -2 & 6  & 4  \\
@@ -3761,13 +3766,14 @@ Kaptuk hát, hogy az $A$ mátrix inverze az
 		12  & 1  & -5 & -2 \\
 		-12 & 0  & 4  & 4
 	\end{pmatrix}
-\end{math}
+\end{displaymath}
 mátrix.
 
-Picit kevesebb helyet foglal az algoritmus, ha lusták vagyunk a generátorrendszerbe már becserélt
-oszlopok kiírására.
-Ekkor érdemes kiírni a sorok és oszlopok címkéjét, nehogy eltévedjünk.
-Az előző feladat így alakul:
+Innen már csak egy lépés az általunk preferált módszer.
+Azt vegyük észre, hogy picit kevesebb helyet foglal az algoritmus, 
+ha lusták vagyunk a generátorrendszerbe már becserélt oszlopok kiírására.
+Ekkor persze érdemes kiírni a sorok és oszlopok címkéjét, nehogy eltévedjünk.
+Az előző feladat tehát így alakul:
 \begin{multline*}
 	\begin{array}{r|cccc|cccc}
 		    & a_1       & a_2 & a_3 & a_4 & e_1 & e_2 & e_3 & e_4 \\
@@ -6132,7 +6138,7 @@ Láttuk, hogy $\dim \left( L\left( V,W \right) \right)=\dim(V)\cdot\dim(W)$.
 De mi lesz $L\left( V,W \right)$ koordináta-tere?
 A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 \begin{definition}[lineáris operátor mátrixa]
-    \Aazx{eq:aij}{(}{)}) azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
+    \Aazx{eq:aij}{(}{)} azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
 	\[
 		\{
 		\underbrace{A_{1,1},A_{2,1},\ldots,A_{n,1}}_{j=1},
@@ -6148,7 +6154,10 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 		\sum_{j=1}^m\sum_{i=1}^n\alpha_{i,j}A_{i,j}.
 	\]
 	Ez azt jelenti, hogy az $A\in L\left( V,W \right)$ függvénynek a fenti bázisban felírt koordináta-vektora
-	az $\alpha_{i,j}$ elemekből a fenti sorrendben képzett oszlopvektor, azaz
+	az $\alpha_{i,j}$ elemekből a fenti sorrendben képzett oszlopvektor, 
+    amint azt \aaz{fig:elomatrix} ábrán láthatjuk.
+    \begin{figure}
+        \label{fig:elomatrix}
 	\[
 		\left[ A \right]=
 		\begin{pmatrix}
@@ -6159,6 +6168,8 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 			\alpha_{1,m} \\ \alpha_{2,m}\\ \vdots \\ \alpha_{n,m}
 		\end{pmatrix}\tag{\dag}
 	\]
+    \caption{Egy függvény mint vektor}
+    \end{figure}
 	Mint minden vektortér így az $L\left( V,W \right)$ is izomorf a koordináta-terével, ergo $L\left( V,W \right)$ izomorf
 	az $\mathbb{F}^{n\cdot m}$ vektortérrel.
 
@@ -6185,24 +6196,14 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 Meggondoltuk tehát, hogy a kapcsolat lineáris operáció és mátrixa között azonos avval a kapcsolattal,
 ami általában egy vektor és koordinátái közt van.
 
-Nagyon fontos, hogy bármilyen lineáris operáció mátrixát fel tudjuk írni, 
-emiatt foglaljuk össze az eddigieket.
+Nagyon fontos, hogy tetszőleges, az utunkba eső, lineáris operáció mátrixát fel tudjuk írni.
+Emiatt összefoglaljuk az eddigieket.
 \begin{proposition}
 	Tegyük fel, hogy $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Rögzítsük a $V$ és a $W$ vektortér egy-egy bázisát.
 	Legyen tehát $\{e_1,\ldots,e_m\}\subseteq V$ egy bázis és
 	$\left\{ f_1,\ldots,f_n \right\}\subseteq W$ egy bázis.
-	Az $A$ operációnak a fenti rögzített bázisokban felírt mátrixa az az
-	$n\times m$ méretű
-	$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
-	mátrix,
-	\footnote{Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
-		$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
-		jelölés helyett csak $[A]$-t írunk.
-		Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
-	}
-	amelynek $j$-edik oszlopa az $Ae_j$ vektor $\left\{ y_1,\ldots,y_n \right\}$ bázisban felírt koordinátája.
-	Formálisabban:
+    Ekkor:
 	\[
 		[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}^j
 		=
@@ -6210,6 +6211,23 @@ emiatt foglaljuk össze az eddigieket.
 		\qedhere
 	\]
 \end{proposition}
+Szavakkal ezt úgy tudjuk kifejezni, hogy 
+	az $A$ operációnak a fenti rögzített bázisokban felírt mátrixa az az
+	$n\times m$ méretű
+	$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
+	mátrix,
+%	\footnote{Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
+%		$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
+%		jelölés helyett csak $[A]$-t írunk.
+%		Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
+%	}
+	amelynek $j$-edik oszlopa az $Ae_j$ vektornak az $\left\{ y_1,\ldots,y_n \right\}$ bázisban felírt koordináta vektora.
+    
+	Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
+		$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
+		jelölés helyett csak $[A]$-t írunk.
+		Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
+
 Speciálisan, ha $V=W$, akkor $A:V\to V$ lineáris transzformációról beszélünk.
 Amikor egy lineáris transzformáció mátrixáról van szó,
 akkor az mindig úgy értendő, hogy a $V$ vektortérnek mint az értelmezési tartománynak és a
@@ -6230,8 +6248,10 @@ mátrixára:
 	\left[ Ae_j \right]_{\left\{ e_1,\ldots,e_m \right\}}.
 \]
 
-Meggondoltuk tehát, hogy az $L\left( V,W \right)$ lineáris operátorok vektortere izomorf az
-$\mathbb{F}^{\dim(W)\times \dim(V)}$ mátrixok vektorterével.
+Meggondoltuk tehát, hogy az $L\left( V,W \right)$ lineáris operátorok vektortere 
+és az
+$\mathbb{F}^{\dim(W)\times \dim(V)}$ mátrixok vektortere
+izomorf egymással.
 Az izomorfizmus tehát az a leképezés,
 amely egy lineáris transzformációhoz hozzárendeli annak
 -- valamely előre megadott bázisokban felírt --
@@ -6501,11 +6521,11 @@ $\left[ B \right]^{-1}$ inverze.
 \section{Lineáris operátorok mátrixa új bázispárban}
 \begin{proposition}
 	Legyen $A\in L\left( V,W \right)$ lineáris operáció
-	és tegyük fel, hogy ismerjük $A$ mátrixát az
+	és tegyük fel, hogy ismerjük az $A$ mátrixát az
 	$\left\{ e_1,\ldots,e_m \right\}\subseteq V$ és az
 	$\left\{ f_1,\ldots,f_n \right\}\subseteq W$ régi bázisokban.
-	Legyenek az $\left\{ v_1,\ldots,v_m \right\}\subseteq V$
-	és a $\left\{ w_1,\ldots,w_n \right\}\subseteq W$ az új bázisok.
+	Legyen az egy-egy új bázis a $\left\{ v_1,\ldots,v_m \right\}\subseteq V$
+	és a $\left\{ w_1,\ldots,w_n \right\}\subseteq W$.
 	Definiálja $B\in L\left( V \right)$ a $V$ tér áttérés lineáris transzformációját
 	és $D\in L\left( W \right)$ a $W$ tér áttérés transzformációját.
 	Ekkor
@@ -6638,8 +6658,8 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 \end{proposition}
 \begin{proof}
 	Mivel $\lin\left( v;A \right)$ egy $v$-t tartalmazó $A$-invariáns altér,
-	ezért $\left\{ v,Av,\ldots,A^kv,\dots \right\}\subseteq \lin\left( v;A \right)$,
-	amiatt
+	így $\left\{ v,Av,\ldots,A^kv,\dots \right\}\subseteq \lin\left( v;A \right)$,
+	és ezért
 	\[
 		\lin\left\{ v,Av,A^2v,\dots \right\}
 		\subseteq
@@ -7066,7 +7086,7 @@ amely mindig használható.
     \end{enumerate}
 \end{proposition}
 \begin{proof}
-	Láttuk, hogy $\left\{ v,Av,\ldots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
+	Láttuk, hogy $\left\{ v,Av,\ldots,A^{k-1}v \right\}$ bázisa a $\lin\left( v;A \right)$ altérnek.
 	Világos, hogy $A^kv\in\lin\left( v;A \right)$, emiatt a kívánt előállítás valóban létezik.
 	Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
 	No de, $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
@@ -8284,7 +8304,7 @@ a $V_1$ altérre és az $A_1$ transzformációra.
 \end{proposition}
 \begin{proof}
     Az egyszerűbb jelölések kedvéért legyen $B=\ker p\left( A \right)$.
-    Mivel $B^m=0$, ezért $\im B^{m-1}\subseteq\ker B $.
+    Persze $B^m=0$, így $\im B^{m-1}\subseteq\ker B $.
     Persze $B^{m-1}$ is $A$-nak polinomja, 
     ergo $B^{m-1}$ képtere is $A$-ra nézve invariáns altere $\ker B=\ker p\left( A \right)$-nak.
 \end{proof}
@@ -8354,7 +8374,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 		\right\}
 	$
 	bázis felett a következő:
-	\[
+    \begin{multline*}
 		A
 		\left(
 		\alpha u_1
@@ -8365,7 +8385,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 		+
 		\delta u_4
 		\right)
-		=
+		=\\
 		\left( -2\alpha + 3\gamma \right)u_1
 		+
 		\left( -2\alpha-\beta+3\gamma+\delta \right)u_2
@@ -8373,7 +8393,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 		\left( -\alpha+\gamma \right)u_3
 		+
 		\left( -\alpha-\beta+3\gamma \right)u_4.
-	\]
+    \end{multline*}
 }
 \begin{proof}[Megoldás]
 	Írjuk fel az operátor mátrixát:
@@ -9239,6 +9259,7 @@ bázison felírt mátrixa:
 		0      & 0      & \dots  & \dots  & 0      & 0      & 0
 	\end{pmatrix}.
 \]
+
 Így az egész $V$ vektortéren értelmezett $B$ lineáris transzformáció normálakja
 --
 azaz a $B$-nek (\dag) bázisban felírt mátrixa
@@ -9280,12 +9301,17 @@ a fenti tipusú mátrixok diagonális alakú elrendezésével adódik:
 		\end{matrix}
 	\end{pmatrix}.
 \end{displaymath}
+
 Hangsúlyozni szeretném, hogy az egyértelműség szerint a $\mathbf{B}_j$ blokkok száma, és azok mérete is csak
 a nilpotens transzformációtól függ.
+
 Több bázis is lehetséges, amelyben a nilpotens transzformáció normálalakú,
 de nem csak hogy minden normálalakban azonos számú blokk van ($B$ defektusa),
-de a blokkok mérete is azonos.
-A nilpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+de a blokkok mérete is azonos, hiszen
+a nilpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+
+Érdemes még megjegyeznünk, hogy a blokkok száma a $B$ defektusa,
+azaz az $B-0I$ transzformáció defektusa, ami nem más mint a $0$ sajátérték geometriai multiplicitása.
 \section{Illusztrációk}
 \subsection{Egyetlen invariáns altér}
 Írjuk fel a $W$ vektortéren értelmezett lineáris transzformáció normál alakját,
@@ -9526,8 +9552,10 @@ Először azt az esetet vizsgáljuk, mikor egy transzformáció minimálpolinomj
 egyetlen elsőfokú polinom valamilyen hatványa,
 majd ezt felhasználva kapjuk az úgynevezett kanonikus alakot abban az esetben is,
 mikor a minimálpolinom különböző elsőfokú polinomok hatványainak szorzataiként áll elő.
-Mivel egy komplex együtthatós polinom mindig ilyen alakú,
+
+Mivel az algebra alaptétel szerint egy komplex együtthatós polinom mindig ilyen alakú,
 ezért az eredményeinket komplex test feletti vektorterek lineáris transzformációira alkalmazhatjuk.
+Ez az oka annak, hogy a Jordan-normálalakról szóló állításban fel kell tennünk, hogy a komplex test feletti lineáris transzformációkat viszgáljuk.
 
 \section{Egy gyöktényezős minimálpolinom}
 \begin{definition}[Jordan-normálalak]
@@ -9558,16 +9586,19 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 	A $B$ transzformációnak ebben a bázisban felírt mátrixa olyan, hogy
 	a szuper diagonálisán kívül minden elem zérus,
 	a szuper diagonálisban $n_1-1$ db $1$-es, aztán egy zérus, majd $n_2-1$ db $1$-es aztán egy zérus, stb.
+
 	Adjuk a $B=A-\lambda I$ mátrixához a $\lambda I$ diagonális mátrixot!
 	Ekkor kapjuk az $A$-nak a $(\dag)$ bázisban felírt mátrixát.
 	Ezt a mátrixot nevezzük az $A$ transzformáció \emph{Jordan-normálalakjának}\index{Jordan-normálalak}.
 \end{definition}
+Most próbáljuk elképzelni, hogyan is néz ki a Jordan-alak!
+
 Adott $1\leq j\leq r$ mellett,
-a $j$-edik invariáns altérre leszorított $A$ leképezésnek a
+az $A$ leképezés $j$-edik invariáns altérre való leszorítottjának a
 \begin{math}
 	\left\{ B^{n_j-1}v_j,\ldots,Bv_j,v_j \right\}
 \end{math}
-bázison felírt mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
+bázisra vonatkozó mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
 \[
 	\begin{pmatrix}
 		\lambda & 1       & 0      & \dots   & 0       & 0       & 0       \\
@@ -9579,6 +9610,7 @@ bázison felírt mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
 		0       & 0       & \dots  & \dots   & 0       & 0       & \lambda
 	\end{pmatrix}.
 \]
+
 Így az egész $V$ vektortéren értelmezett $A$ lineáris transzformáció normálakja
 --
 azaz a $A$-nak (\dag) bázisban felírt mátrixa
@@ -9620,14 +9652,19 @@ a fenti tipusú Jordan-blokkok, diagonális alakú elrendezésével adódik:
 		\end{matrix}
 	\end{pmatrix}
 \end{displaymath}
-Hangsúlyozni szeretném, hogy az egyértelműség szerint a Jordan blokkok száma, és azok mérete is csak
+
+Most is hangsúlyozni szeretném, 
+hogy az egyértelműség szerint a Jordan blokkok száma, és azok mérete is csak
 az $A$ transzformációtól függ.
-Több bázis is lehetséges, amelyben a transzformáció Jordan-normálalakú,
+
+Ugyan több bázis is lehetséges, amelyben a transzformáció Jordan-normálalakú,
 de nem csak hogy minden normálalakban azonos számú Jordan-blokk van,
-\footnote{A Jordan-blokkok száma a $B=A-\lambda I$ defektusa, azaz a $\lambda$ sajátérték
-	geometriai dimenziója.\index{sajátérték geometriai dimenziója}}
-de a blokkok mérete is azonos.
-A felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+de a blokkok mérete is azonos, hiszen 
+a felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+
+Nagyon fontos emlékeznünk arra, hogy 
+a Jordan-blokkok száma a $B=A-\lambda I$ defektusa, 
+azaz a $\lambda$ sajátérték geometriai dimenziója.\index{sajátérték geometriai dimenziója}
 \section{Jordan-normálalak: az általános eset}
 \begin{definition}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció valamely $\mathbb{F}$ test
@@ -9765,7 +9802,7 @@ hogy a minimálpolinom mindig legfeljebb $\dim(V)$-ed fokú.
 
 Szokás azt mondani, hogy a $\lambda\in\sigma\left( A \right)$ sajátérték
 \emph{algebrai multiplicitása}\index{sajátérték algebrai multiplicitása} $k$,
-ha a Jordan-normálalakban $\lambda_j$ éppen $k$-szor szerepel.
+ha a Jordan-normál\-a\-lak\-ban $\lambda_j$ éppen $k$-szor szerepel.
 Világos, hogy ez azonos avval, hogy a transzformáció karakterisztikus polinomjának
 $\lambda$ egy $k$-szoros multiplicitású gyöke.
 Mivel minden egyes Jordan-blokk legalább $1\times 1$ méretű,
@@ -11059,7 +11096,7 @@ amelyeket a fejezet bevezetőjében említettem.
 		\end{pmatrix}
 	\]
 	A fenti mátrix determinánsa a particionált mátrix determinánsára kapott formula,
-    \aaz{par:particionalt}. oldal,
+    \aazt{\pageref{par:particionalt}}. oldal,
 	szerint $1\cdot|A_{i,k}|$.
 	Meggondoltuk tehát, hogy ha az állításban felülírt mátrix determinánsát $\delta$-val jelöljük,
 	akkor  $\delta\left( -1 \right)^{k-1+i-1}=1\cdot|A_{i,k}|$-t kapjuk.
@@ -11165,7 +11202,7 @@ A determináns kifejtésével az mátrix inverzére kapunk explicit formulát:
 	\]
 \end{proposition}
 \begin{proof}
-	Kezdjük a $B_k$ mátrixnak a $k$-adik oszlopa szerinti kifejtésével.
+	A $B_k$ mátrix $k$-adik oszlopa szerinti kifejtése:
 	\(
 	|B_k|
 	=
@@ -11517,7 +11554,7 @@ Könnyen látható, hogy a fenti függvény kielégíti a skaláris szorzat defi
 Figyeljünk a folytonosság szerepére!
 
 \begin{definition}[merőlegesség, halmaz ortokomplementere]
-	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszorzatos-tér.
+	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszor\-zatos-tér.
 	\begin{enumerate}
 		\item
 		    Ha az $x,y\in V$ két pontjára $\ip{x}{y}=0$,
@@ -11820,7 +11857,7 @@ Ehhez először a jól ismert Pythagoras-tételt kell megfogalmaznunk.
 \end{proof}
 
 \begin{proposition}[legközelebbi pont]\index{legközelebbi pont}\label{pr:legkozelebb}
-	Legyen $\left\{ x_1,\ldots,x_k \right\}$ ortonormált rendszer és
+	Legyen $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer és
 	jelölje $M=\lin\left\{ x_1,\ldots,x_k \right\}$.
 	Ekkor minden $u\in V$ vektorhoz létezik egyetlen $u^\ast\in M$
 	vektor, amelyre
@@ -11887,7 +11924,8 @@ számot nevezzük, az \emph{$u$ vektor és az $M$ altér távolságának.}
 	\]
 	és az $u^\ast=\sum_{j=1}^k\ip{u}{x_j}x_j $ az egyetlen olyan $M$-beli pont, amelyre
 	az
-	$\|u-u^\ast\|=\min\left\{ \|u-w\|:w\in M  \right\}$ egyenlőség fennáll.
+	$$\|u-u^\ast\|=\min\left\{ \|u-w\|:w\in M  \right\}
+    $$ egyenlőség fennáll.
 	Ezt kellett belátni.
 \end{proof}
 
@@ -11907,7 +11945,7 @@ Viszont tudjuk, hogy a fenti vektor az $u$-hoz legközelebb eső vektora $M$-nek
 emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált bázisának megválasztásától.
 \begin{definition}[merőleges vetület, merőleges vetítés]
 	Legyen $M=\lin\left\{ x_1,\ldots,x_k \right\}$,
-	ahol $\left\{ x_1,\ldots,x_k \right\}$ ortonormált rendszer.
+	ahol az $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer.
 
 	Láttuk, hogy a
 	$\sum_{i=j}^k\ip{u}{x_j}\in M$ vektor független
@@ -13091,7 +13129,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 	\[
 		V=\ker\left( N-\lambda_1I \right)\oplus\dots\oplus\ker\left( N-\lambda_sI \right).
 	\]
-	Most végezzünk Gram\,--\,Schmidt-ortogonalizációt\index{Gram\,--\,Schmidt-ortogonalizáció}
+	Most végezzünk Gram\,--\,Schmidt-ortogonalizációt
 	minden egyes sajátaltérben külön-külön,
 	majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
 	Így $N$ sajátvektoraiból álló ortonormált bázist kapunk.
@@ -13634,6 +13672,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 	\begin{multline*}
 		q\left( N \right)
 		=
+        \\
 		\sum_{l=0}^m\alpha_lN^l
 		=
 		\sum_{l=0}^m\alpha_l
@@ -13650,6 +13689,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		\sum_{l=0}^m\alpha_l\lambda_j^l
 		\right)P_j
 		=
+        \\
 		\sum_{j=1}^r
 		q\left(\lambda_j \right)P_j.
 	\end{multline*}
@@ -13826,7 +13866,7 @@ majd felírjuk az önadjungált és az unitér transzformációk speciális eset
 Az eddigiek összefoglalásaként (\ref{pr:normlinkombkomplex} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
 hogy egy komplex mátrix ortonormált bázisban diagonalizálható.
 \begin{proposition}[Normalitás karakterizációja a spektrális felbontással]
-	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér és $N\in L\left( V \right)$ egy lineáris transzformáció.
+	Legyen $V$ egy $\mathbb{C}$ feletti skaláris\-szor\-zatos-tér és $N\in L\left( V \right)$ egy lineáris transzformáció.
 	Az $N$ transzformáció pontosan akkor normális,
 	ha létezik $r\geq 1$ egész, léteznek $P_1,\ldots,P_r$ ortogonális projekciók és
 	léteznek $\lambda_1,\ldots,\lambda_r\in\mathbb{C}$ komplex számok,
@@ -14389,7 +14429,9 @@ Ebből azonnal következik, hogy
 	\item
 	      $\left\{ e_1, Ae_1,A^2e_1,\ldots,A^{n-1}e_1,A^ne_1\right\}$ rendszer már lineárisan összefüggő,
 	      hiszen
-	      $A^ne_1=AA^{n-1}e_1=Ae_n=-\sum_{j=0}^{n-1}\alpha_j A^je_1$.
+	      \[
+              A^ne_1=AA^{n-1}e_1=Ae_n=-\sum_{j=0}^{n-1}\alpha_j A^je_1.
+          \]
 \end{enumerate}
 Látjuk tehát, hogy $m$ a legalacsonyabb fokú normált polinom, melyre
 $m\left( A \right)e_1=0$,
@@ -15066,8 +15108,8 @@ hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
     \[
         p\left( A \right)u-p\left( A \right)v=p\left( A \right)w.
     \]
-    A bal oldal mindkét vektora $M$-beli, 
-    a jobb oldali vektor $N$-beli az $N$ direktkiegészítő invarianciája miatt.
+    A baloldal mindkét vektora $M$-beli, 
+    a jobboldali vektor $N$-beli az $N$ direktkiegészítő invarianciája miatt.
     Így $p\left( A \right)w=0$.
     Találtunk tehát $v\in M$ vektort, amelyre $p\left( A \right)u=p\left( A \right)v$.
 \end{proof}
@@ -15084,8 +15126,8 @@ Ekkor $Bx$ előáll
 \]
 alakban. 
 Na most $B^{m-1}v\neq 0$, és $m$ a nilpotencia rendje, ergo $v\notin \im B$. 
-No de, a fent kiemelt azonosságban a bal oldal,
-de az első tag kivételével a jobb oldal valamennyi tagja is az $\im B$ eltér egy-egy eleme,
+No de, a fent kiemelt azonosságban a baloldal,
+de az első tag kivételével a jobboldal valamennyi tagja is az $\im B$ eltér egy-egy eleme,
 ezért $\alpha_0 v\in\im B$. 
 Ebből persze $\alpha_0=0$ következik, 
 ergo $Bx$ előáll mint egy $\lin\left( v;B \right)$-beli vektor képe:
@@ -15184,10 +15226,12 @@ akkor már minden más polinomra is fennáll.
             =
             \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
-            \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+            \\
+            \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             \subseteq
             \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
+            \\
             M+\lin\left( v;A \right).
         \end{multline*}
         Itt a tartalmazás azért áll fenn, mert $M$ egy invariáns altér, így $f\left( A \right)u\in M$.
@@ -15197,12 +15241,15 @@ akkor már minden más polinomra is fennáll.
             =
             \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
-            \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+            \\
+            \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             \subseteq
             \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
+            \\
             M+\lin\left( w;A \right).
-        \end{multline*}\qedhere
+        \end{multline*}
+        \qedhere
     \end{enumerate}
 \end{proof}
 \begin{lemma}
@@ -16549,4 +16596,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Fri 26 Aug 2022 07:11:39 PM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Sat 27 Aug 2022 12:20:31 AM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
