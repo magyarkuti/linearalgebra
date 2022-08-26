@@ -330,5 +330,49 @@
    \nohungarian@capsformat%
    \let\ontoday\@undefined%
 }
-
-\endinput
+%MGy
+% Force punctuation after section number
+\def\xpg@save@autodot{}
+\ifdef{\KOMAScript}{%
+    \providecommand*\autodot{}%
+    \let\xpg@save@autodot\autodot%
+}
+%
+\def\hungarian@secdotformat{%
+   \ifdef{\KOMAScript}{%
+      \renewcommand*\autodot{.}%
+   }{%
+      % The following is based on some ideas from ruscor.sty
+      \def\@seccntformat##1{\csname pre##1\endcsname%
+         \csname the##1\endcsname%
+         \csname post##1\endcsname}%
+       \def\@aftersepkern{\hspace{0.5em}}%
+       \def\postsection{.\@aftersepkern}%
+       \def\postsubsection{.\@aftersepkern}%
+       \def\postsubsubsection{.\@aftersepkern}%
+       \def\postparagraph{.\@aftersepkern}%
+       \def\postsubparagraph{.\@aftersepkern}%
+       \def\presection{}%
+       \def\presubsection{}%
+       \def\presubsubsection{}%
+       \def\preparagraph{}%
+       \def\presubparagraph{}%
+    }%
+}%
+%
+\def\nohungarian@secdotformat{%
+    \ifdef{\KOMAScript}{%
+       \let\autodot\xpg@save@autodot%
+    }{%
+       \def\@seccntformat##1{\csname the##1\endcsname\quad}% = LaTeX kernel
+    }%
+}
+\def\forcehungariansectioningpunctuation{%
+    \hungarian@secdotformat%
+}%
+\def\nohungariansectioningpunctuation{%
+    \nohungarian@secdotformat%
+}%
+\forcehungariansectioningpunctuation%
+%
+\endinput%
