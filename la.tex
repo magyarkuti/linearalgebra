@@ -24,7 +24,7 @@
 \setmonofont{TeX Gyre Cursor}
 %%%%%% lualatex %%%%%%%%%%%
 
-\usepackage{csquotes,amsmath,amsthm,systeme,fixme,secdot,polyglossia,nevelok}
+\usepackage{csquotes,amsmath,amsthm,systeme,fixme,polyglossia,nevelok}
 \setdefaultlanguage{magyar}
 \usepackage[backend=biber,
             bibencoding=utf8,
@@ -62,17 +62,13 @@
 % tartalomjegyzék magyar specialitás
 %1111111111111111111111111111111111111111111111111111
 % A tartalomjegyzékben pont a counter után. Például 1. Előzmények
+\renewcommand{\cftsubsectionaftersnum}{.}
 \renewcommand{\cftsectionaftersnum}{.}
 \renewcommand{\cftchapteraftersnum}{.}
 \renewcommand{\cftpartaftersnum}{.}
 %2222222222222222222222222222222222222222222222222222
-%% section magyar specialitás
-%2222222222222222222222222222222222222222222222222222
-% Magyarul  1.13. szakasz, persze 1. fejezet, de ezt a polyglossia intézi
-\sectiondot{subsection}
-%3333333333333333333333333333333333333333333333333333
 %% theorem-like környezetek magyar specialitás
-%3333333333333333333333333333333333333333333333333333
+%2222222222222222222222222222222222222222222222222222
 % amsthm.cls -ben \swappnumbers nem tesz pontot a szám után.
 % Például ,,1.32 tétel.''
 % Magyarul helyesen ,,1.32. tétel.''
@@ -114,6 +110,7 @@
 \renewcommand{\cftsubsectionpagefont}{\sffamily}
 %
 %\maxtocdepth{subsection}
+%\setsecdepth{2} %% Ez a default. Esetleg 3?
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% A fejlécben a theorem counter elem generálása
@@ -207,6 +204,7 @@
 \DeclareMathOperator{\gen}{gen}
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
+%\DeclareMathOperator{\srank}{crank}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\im}{Im}
@@ -3005,7 +3003,7 @@ A szabad változók, az az a többiek már ha vannak ilyenek egyáltalán, egy n
 Adjunk a szabad változóknak tetszőleges értéket,
 majd minden sorban ebből már egyértelműen kifejezhető a kötött változók értéke.
 
-\paragraph{Összefoglalva}
+\paragraph{Összefoglalva:}\hspace{-1.em}
 Az eliminált változókat
 \emph{kötött változónak}\index{kotott@kötött változó}
 nevezzük,
@@ -16551,4 +16549,4 @@ Tehát ha
 % arara: --> }
 
 Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Thu 25 Aug 2022 01:03:00 PM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
+Last Modified: Fri 26 Aug 2022 07:11:39 PM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
