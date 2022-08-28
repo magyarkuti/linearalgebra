@@ -1,22 +1,21 @@
-\documentclass[9pt, a4paper, showtrims]{memoir}
-\newcommand{\alert}{\relax}
-\let\Aref\relax
-\usepackage[x11names]{xcolor}
+\documentclass[a4paper, showtrims]{memoir}
+%\newcommand{\alert}{\relax}
+%\let\Aref\relax
 %%%%%%% pdflatex %%%%%%%%%%
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
-%\usepackage[hungarian]{babel}[2015/11/24]
+%\usepackage[hungarian]{babel}[2015/11/24]\frenchspacing
 %%%%%%% pdflatex %%%%%%%%%%
 
 %%%%%% lualatex %%%%%%%%%%%
-%\usepackage{polyglossia}\setdefaultlanguage{magyar}
-\usepackage[hungarian]{babel}[2015/11/24]
+%\usepackage[hungarian]{babel}[2015/11/24]\frenchspacing
 \usepackage{fontspec,microtype,amssymb}
 \usepackage{unicode-math} %o math fontokhoz.Oszeakad az amssymb csomaggal, ha nem az amssymb van elobb.
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{TeX Gyre Pagella}
 %\setmainfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}
 \setmathfont{TeX Gyre Pagella Math}%unicode-math ?
+%\setmathfont{Asana Math}
 \newfontfamily\DejaSans{Dejavu Sans}
 %\setsansfont{Kurier}[Scale=MatchLowercase]
 \setsansfont{TeX Gyre Adventor}[Scale=MatchLowercase]
@@ -24,10 +23,12 @@
 %\setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
 %\setmonofont{inconsolata}[Scale=MatchLowercase]
 \setmonofont{TeX Gyre Cursor}
+\linespread{1.1}
+\setlength{\headheight}{12.49pt}
 %%%%%% lualatex %%%%%%%%%%%
 
-\frenchspacing
-\usepackage{csquotes,amsmath,amsthm,systeme,fixme}
+\usepackage{csquotes,amsmath,amsthm,fixme,polyglossia,nevelok}
+\setdefaultlanguage{magyar}
 \usepackage[backend=biber,
             bibencoding=utf8,
             style=authoryear,
@@ -35,10 +36,11 @@
             backref=true]{biblatex}
 \addbibresource{\jobname.bib}
 \BiblatexHungarianWarningOff
+\usepackage[x11names]{xcolor}
 \fxsetup{status=draft, theme=color, layout={inline}}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
 
-\usepackage[unicode]{hyperref}
+\usepackage[unicode,hungarian]{hyperref}
 \hypersetup{final=true,
             pdftitle={Lineáris algebra},
             pdfauthor={Magyarkuti, Gyula},
@@ -56,8 +58,39 @@
     \textbullet{}
     Date: \gitAuthorIsoDate
 }
-
-% Ez akkor kell, ha San seriff fontok a part, chapter, section stb helyeken. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% magyar tipográfia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%1111111111111111111111111111111111111111111111111111
+% tartalomjegyzék magyar specialitás
+%1111111111111111111111111111111111111111111111111111
+% A tartalomjegyzékben pont a counter után. Például 1. Előzmények
+\renewcommand{\cftsubsectionaftersnum}{.}
+\renewcommand{\cftsectionaftersnum}{.}
+\renewcommand{\cftchapteraftersnum}{.}
+\renewcommand{\cftpartaftersnum}{.}
+%2222222222222222222222222222222222222222222222222222
+%% theorem-like környezetek magyar specialitás
+%2222222222222222222222222222222222222222222222222222
+% amsthm.cls -ben \swappnumbers nem tesz pontot a szám után.
+% Például ,,1.32 tétel.''
+% Magyarul helyesen ,,1.32. tétel.''
+% Emiatt kell felülírnom a \swappedhead makrót!
+% Ha babel-t használunk nem kell pont, mert  a babel a pontot is kiteszi.
+\makeatletter
+\def\thmhead#1#2#3{%
+    \thmnumber{\@upn{#2}\@ifnotempty{#1}{.~}}%
+    \thmname{#1}%
+    \thmnote{ {\the\thm@notefont(#3)}}%
+}%
+\let\swappedhead\thmhead
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% magyar tipográfia vége
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% caption fontok beállítása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ez csak akkor kell, ha San seriff fontokat akarunk a part, chapter, section stb helyeken. 
 \renewcommand{\booktitlefont}{\normalfont\Huge\scshape}
 \renewcommand{\partnamefont}{\normalfont\huge\sffamily\raggedleft}
 \renewcommand{\partnumfont}{\normalfont\huge\sffamily}
@@ -70,8 +103,7 @@
 \setsubsubsecheadstyle{\normalsize\sffamily\bfseries\raggedright}
 \setparaheadstyle{\normalsize\sffamily\bfseries\raggedright}
 \setsubparaheadstyle{\normalsize\sffamily\raggedright}
-% Tartalomjegyzék is a San seriff
-\renewcommand{\cftpartfont}{\sffamily\bfseries}
+\renewcommand{\cftpartfont}{\sffamily\bfseries}% Tartalomjegyzék is a San seriff
 \renewcommand{\cftchapterfont}{\sffamily\bfseries\scshape}
 \renewcommand{\cftsectionfont}{\sffamily}
 \renewcommand{\cftsubsectionfont}{\sffamily}
@@ -79,29 +111,48 @@
 \renewcommand{\cftchapterpagefont}{\sffamily\bfseries}
 \renewcommand{\cftsectionpagefont}{\sffamily}
 \renewcommand{\cftsubsectionpagefont}{\sffamily}
-
+%
 %\maxtocdepth{subsection}
-
-\nouppercaseheads
-\makeoddhead{myheadings}{\sffamily\footnotesize\leftmark}{}{\sffamily\footnotesize\thepage}
-\makeevenhead{myheadings}{\sffamily\footnotesize\thepage}{\sffamily\footnotesize\myBotmark}{\sffamily\footnotesize\rightmark}
-\makepsmarks{myheadings}{%
-    \renewcommand\chaptermark[1]{%
-    \markboth{%
-%      \ifnum \value{secnumdepth} > 1
-%      \if@mainmatter %
-            \thechapter.~\chaptername:~%
-%      \fi
-%      \fi
-        ##1}{\thepart.~\partname}}%
+%\setsecdepth{2} %% Ez a default. Esetleg 3?
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A fejlécben a theorem counter elem generálása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
+% \myBotmark feltöltése a lapon lévő utolsó tétel környezettel
+\newcommand{\myBotmark}{\relax}
+\makeatletter
+    \@ifdefinable\@my@claim@mark{\newmarks\@my@claim@mark}
+    \newcommand*\myMark[1]{\marks\@my@claim@mark{#1}}
+    \renewcommand*\myBotmark{\botmarks\@my@claim@mark}
+    \patchcmd{\@begintheorem}{% search for:
+        \thm@swap\swappedhead\thmhead % more specific than before
+    }{% replace with:
+%        \myMark{#2.\@ifnotempty{#1}{\ #1}\@ifnotempty{#3}{\ (#3)}}%
+        \myMark{#2.\@ifnotempty{#1}{\ #1.}}% nem kell az megjegyzése
+        \thm@swap\swappedhead\thmhead
+    }{
+        \typeout{>>> Made patch specific for amsthm.}
+   }{
+        \typeout{>>> Patch specific for amsthm FAILED!}
     }
+\makeatother
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% futó fejléc beállítása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\copypagestyle{labook}{Ruled}
+\makeoddhead{labook}{\scshape\rightmark}{}{\scshape\myBotmark}
+\nouppercaseheads
+\pagestyle{labook}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% theorem like környezeteknek is qed a vége
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
 \makeatletter
 \let\ps@plain\ps@empty
 \newcommand\arraybslash{\let\\\@arraycr}
-\patchcmd{\@makechapterhead}
-    {\printchaptername \chapternamenum \printchapternum}
-    {\printchapternum.\@\chapternamenum \printchaptername}
-    {}{}
 \renewenvironment{proof}[1][\proofname]
     {\par\pushQED{\qed}%
     \normalfont \topsep6\p@\@plus6\p@\relax
@@ -111,99 +162,30 @@
     #1\@addpunct{:}]\ignorespaces}
     {\popQED\endtrivlist\@endpefalse}
 \makeatother
-
 \newcommand{\addQEDstyle}[2]{\AtBeginEnvironment{#1}{\pushQED{\qed}\renewcommand{\qedsymbol}{#2}}\AtEndEnvironment{#1}{\popQED}}
-%% qed trükkök:
-%% https://tex.stackexchange.com/questions/16453/denoting-the-end-of-example-remark
-%\swapnumbers %% a magyar.ldf megfordítja. A polyglossia nem. De a magyar ldf pontot is tesz a számcimke után
-
 \renewcommand{\qedsymbol}{□}
 \newcommand{\myqedsymbol}{$\lrcorner$}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% theorem-like környezetek definíciója
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\swapnumbers %% a babel megfordítja. A polyglossia nem. De a babel pontot is tesz a számcimke után
 \theoremstyle{plain}
-
 \newtheorem{proposition}{állítás}[chapter]
 \newtheorem{lemma}[proposition]{lemma}
 \newtheorem*{SL}{Steinitz-lemma}
 \newtheorem*{FA}{Az algebra alaptétele}
-%
 \theoremstyle{remark}
 \newtheorem{note}[proposition]{megjegyzés}
-
 \theoremstyle{definition}
 \newtheorem{definition}[proposition]{definíció}
 \newtheorem{corollary}[proposition]{következmény}
 \newtheorem{defprop}[proposition]{definíció-állítás}
 \addQEDstyle{definition}{\myqedsymbol}\addQEDstyle{proposition}{\myqedsymbol}\addQEDstyle{lemma}{\myqedsymbol}\addQEDstyle{note}{\myqedsymbol}\addQEDstyle{corollary}{\myqedsymbol}\addQEDstyle{SL}{\myqedsymbol}\addQEDstyle{defprop}{\myqedsymbol}
-
-
-%%% https://tex.stackexchange.com/questions/319474/put-current-theorem-like-items-name-number-in-header
-% \myBotmark feltöltése a lapon lévő utolsó tétel környezettel
-\makeatletter
-    \@ifdefinable\@my@claim@mark{\newmarks\@my@claim@mark}
-    \newcommand*\myMark[1]{\marks\@my@claim@mark{#1}}
-    \newcommand*\myBotmark{\botmarks\@my@claim@mark}
-    \patchcmd{\@begintheorem}{% search for:
-        \thm@swap\swappedhead\thmhead % more specific than before
-    }{% replace with:
-        \myMark{#2.\@ifnotempty{#1}{\ #1}\@ifnotempty{#3}{\ (#3)}}%
-        \thm@swap\swappedhead\thmhead
-    }{
-        \typeout{>>> Made patch specific for amsthm.}
-    }{
-        \typeout{>>> Patch specific for amsthm FAILED!}
-    }
-
-%part
-\long\def\@part[#1]#2{%
-  \M@gettitle{#1}%
-  \def\f@rtoc{#1}%
-  \@nameuse{part@f@rtoc@before@write@hook}%
-  \phantomsection
-  \mempreaddparttotochook
-  \ifnum \c@secnumdepth >-2\relax
-    \refstepcounter{part}%
-    \addcontentsline{toc}{part}%
-      {\protect\partnumberline{\thepart}\f@rtoc}%
-    \mempartinfo{\thepart}{\f@rtoc}{#2}%
-  \else
-    \addcontentsline{toc}{part}{\f@rtoc}%
-    \mempartinfo{}{\f@rtoc}{#2}%
-  \fi
-  \mempostaddparttotochook
-  \partmark{#1}%
-  {\centering
-   \interlinepenalty \@M
-   \parskip\z@
-   \ifnum \c@secnumdepth >-2\relax
-     \printpartnum.\ \printpartname \partnamenum%%MGy
-     \midpartskip
-   \fi
-   \printparttitle{#2}\par}%
-  \@endpart}
-\makeatother
-
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\lin}{lin}
-\DeclareMathOperator{\gen}{gen}
-\DeclareMathOperator{\crank}{crank}
-\DeclareMathOperator{\rrank}{rrank}
-\DeclareMathOperator{\srank}{srank}
-\DeclareMathOperator{\rank}{rank}
-\DeclareMathOperator{\codim}{codim}
-\DeclareMathOperator{\im}{Im}
-%\DeclareMathOperator{\arg}{arg}
-
-\def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
-\newcommand{\uj}{\text{új}}
-\newcommand{\rgi}{\text{régi}}
-\newcommand{\ip}[2]{\langle#1,#2\rangle}
-\newcommand{\Star}[1]{#1\ensuremath{^*}\kern-\scriptspace}
-\newcommand{\CStar}{\Star{\ensuremath{\mathrm{C}}}}
-%\citeindextrue
-\makeindex
-\synctex=1
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Az bölcsesség generálása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx, datatool}
 \DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
      \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
@@ -213,8 +195,40 @@
      \typeout{A bölcsesség:}
      \typeout{\Number:\Quote -- \Author}
      \typeout{ }
-
-%\usepackage{comment}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lustaságok
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\scwords #1 #2 #3 {\textsc{#1} \textsc{#2} \textsc{#3} }
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\lin}{lin}
+\DeclareMathOperator{\gen}{gen}
+\DeclareMathOperator{\rrank}{rrank}
+\DeclareMathOperator{\srank}{srank}
+%\DeclareMathOperator{\srank}{crank}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\uj}{\text{új}}
+\newcommand{\rgi}{\text{régi}}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\Star}[1]{#1\ensuremath{^*}\kern-\scriptspace}
+\newcommand{\CStar}{\Star{\ensuremath{\mathrm{C}}}}
+%
+%\citeindextrue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Az index bekapcsolása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeindex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Az forward-backward search bekapcsolása
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\synctex=1
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter*
 {\centering
@@ -251,8 +265,9 @@
 		\end{tabular}
 	\end{center}
 }
-\chapter*{Előszó}
+\chapter{Előszó}
 \epigraphhead[70]{\epigraph{\Quote}{\textit{\Author}}}
+%\epigraphhead[70]{\epigraph{Fő a derűs életvitel.}{\textit{Pisti}}}
 \scwords%
 A legfontosabb forrás \parencite{DancsPuskas2001}.
 
@@ -285,11 +300,9 @@ Stb.
 \bigskip\noindent
 Magyarkuti Gyula
 \hfill{Budapest, \ontoday}
-\thispagestyle{empty}
 
 
 \clearpage
-\pagestyle{myheadings}
 \tableofcontents*
 \mainmatter*
 %\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
@@ -321,7 +334,7 @@ Magyarkuti Gyula
 Lefordítva ez azt jelenti, hogy
 \begin{enumerate}
 	\item minden $a,b\in S$ mellett $a\ast b\in S$, és
-	\item minden $a,b,c\in S$ esetén $a\ast\left( b\ast c \right)=a\ast\left( b\ast c \right)$
+	\item minden $a,b,c\in S$ esetén $\left( a\ast b \right)\ast c=a\ast\left( b\ast c \right)$
 \end{enumerate}
 \begin{definition}[neutrális elem]\index{neutrális elem}\index{neutrális elemes félcsoport}
 	Az $\left( S,\ast \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
@@ -603,9 +616,9 @@ együtthatók.%
 	hogy ha két polinom minden helyettesítési értéke azonos,
 	akkor igaz-e,
 	hogy mint formális polinomok is azonosak,
-	tehát a két polinom együtthatói is rendre azonosak-e?
-	A pozitív választ később látjuk nem véges számtest, például a valós vagy a komplex test, feletti polinomok esetén.
-	Lásd \aref{pr:polinomfv}. állítás utáni megjegyzést \apageref{pr:polinomfv}. oldalon.%
+	azaz a két polinom együtthatói is rendre azonosak-e?
+	A~pozitív választ később látjuk nem véges számtest -- például a valós vagy a komplex test -- feletti polinomok esetén.
+    Lásd \aaz{pr:polinomfv}.~állítás utáni megjegyzést \aazt{\pageref{pr:polinomfv}}. oldalon.%
 }
 A jelölések megértése is fontos.
 $p\left( t \right)\in\mathbb{F}\left[ t \right]$ semmi mást nem jelent,
@@ -1089,7 +1102,7 @@ Ezt $n=3,4,\ldots$ számokra alkalmazva azt kapjuk,
 hogy ha módszerünk van két polinom legnagyobb közös osztójának meghatározására,
 akkor evvel már akárhány -- persze véges sok -- polinom legnagyobb közös osztója is meghatározható.
 Analóg módon ugyanez igaz a legkisebb közös többszörösre is.
-Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös többszörösét és legkisebb közös osztóját,
+Azt gondoltuk meg tehát, hogy ha meg tudnánk határozni két polinom legnagyobb közös osztóját és legkisebb közös többszörösét,
 akkor ugyanezt már meg tudnánk tenni több polinom esetén is.
 
 Az Euklideszi-algoritmus két polinom legnagyobb közös osztójának meghatározására szolgál.
@@ -1334,7 +1347,7 @@ akkor csak $d=p$ lehetséges, ergo $p|f$.
 	akkor az indukciós feltevés szerint készen is lennénk.
 	Ha $p$ nem osztója a szorzatnak,
 	akkor $p$ irreducibilis volta miatt relatív prímek.
-	Ekkor \aref{pr:rprim}. állítás szerint $p|f_n$.
+    Ekkor \aaz{pr:rprim}. állítás  szerint $p|f_n$.
 \end{proof}
 Az is igaz, hogy ha egy polinom reducibilis, akkor az nem prím, de ezt a gyakorlatokra hagyjuk.
 Összeségében látjuk tehát,
@@ -1354,7 +1367,7 @@ legalább elsőfokú, normált, irreducibilis polinomok szorzataként,
 akkor $s=r$ és a $p_1,\ldots,p_s$ polinomok alkalmas átindexelése után $p_j=q_j$,
 minden $j=1,\ldots,s$ mellett.
 \begin{proof}
-	\Aref{pr:polfact}. állítás
+    \Aaz{pr:polfact}. állítás
 	szerint $p$ előáll, mint normált, irreducibilis polinomok szorzata.
 	Itt legalább egy polinom legalább elsőfokú, hiszen $p$ legalább elsőfokú.
 	Ha van a szorzat tagjai közt nulladfokú, akkor az csak 1 lehet a normáltság szerint,
@@ -1522,14 +1535,13 @@ A bevezetett összeadás és szorzás műveletekre teljesül a disztributivitás
 		\sum_{s=1}^k[A]_{i,s}\left[ B+C \right]_{s,j}
 		=
 		\sum_{s=1}^k[A]_{i,s}\left([B]_{s,j}+[C]_{s,j} \right)
-		=
+		=\\
 		\sum_{s=1}^k\left( [A]_{i,s}[B]_{s,j}\right)+\left([A]_{i,s}[C]_{s,j} \right)
 		=
-		\\
 		\sum_{s=1}^k[A]_{i,s}[B]_{s,j}
 		+
 		\sum_{s=1}^k[A]_{i,s}[C]_{s,j}
-		=
+		=\\
 		\left[ AB \right]_{i,j}+\left[ AC \right]_{i,j}
 		=
 		[AB+AC]_{i,j}.
@@ -1779,8 +1791,9 @@ ha minden nem zérus eleme a fődiagonálisában van.
 Az is világos, hogy a diagonális mátrixok egymással kommutálnak.
 Fontos része az első féléves anyagnak, hogy ha két négyzetes mátrix szorzata az identitás mátrix,
 akkor e két mátrix egymással kommutál.
-Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, mert ehhez már szükség van a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra
-\footnote{Ha viszont tudjuk mi az a Gauss\,--\,Jordan-elimináció, akkor máris megérthetjük \aref{pr:ketoldal}. állítást. Ehhez ugorjunk \apageref{pr:ketoldal}. oldalra}, vagy a lineáris függetlenség fogalmára, 
+Ez az eredmény távolról sem nyilvánvaló, és most nem is tudjuk belátni, mert ehhez már szükség van a Gauss\,--\,Jordan\index{Gauss\,--\,Jordan-elimináció} eliminációs algoritmusra%
+\footnote{Ha viszont tudjuk mi az a Gauss\,--\,Jordan-elimináció, akkor máris megérthetjük \aaz{pr:ketoldal}. állítást. Ehhez ugorjunk \aazt{\pageref{pr:ketoldal}} oldalra.}
+, vagy a lineáris függetlenség fogalmára, 
 amiket majd később vezetünk be.\label{pg:kommutal}\index{kommutáló mátrixok}
 
 Nagyon is triviális mégis érdemes észrevenni, hogy a fentiek $n=1$ esetben nem jelentenek problémát.
@@ -2134,10 +2147,10 @@ A konjugált definíciója alapján, egyszerű számolgatással kapjuk az alább
 \begin{proposition}
 	Minden $z\in\mathbb{C}$ komplex szám mellett fennállnak a konjugálás következő szabályai:
 	\[
-		\overline{\left( \bar{z} \right)}=z,\quad
-		z+\bar{z}=2\Re z,\quad
-		z-\bar{z}=2i\Im z,\quad
-		z\in\mathbb{R}\text{ akkor és csak akkor, ha } z=\bar{z},\quad
+        \overline{\left( \bar{z} \right)}=z,\hspace{0.5em}
+		z+\bar{z}=2\Re z,\hspace{0.5em}
+		z-\bar{z}=2i\Im z,\hspace{0.5em}
+		z\in\mathbb{R}\text{ akkor és csak akkor, ha } z=\bar{z},\hspace{0.5em}
 		z\bar{z}=(\Re z)^2+(\Im z)^2\geq 0.
 	\]
 	Az összeadás és szorzás művelet is felcserélhető a konjugálással,
@@ -2401,7 +2414,7 @@ ha a gyökök számát multiplicitással számoljuk.
 Az állítást egy kicsit egyszerűbben úgy is fogalmazhatjuk,
 hogy
 \emph{
-	minden nem konstans komplex polinom előáll mint első fokú komplex polinomok szorzata.
+	minden nem konstans komplex polinom előáll mint elsőfokú komplex polinomok szorzata.
 }
 Az iménti mondat nyilván nem igaz a ,,komplex'' szót a ,,valós'' szóra cserélve,
 ugyanis minden negatív diszkriminánsú másodfokú valós polinom jó is ellenpéldának.
@@ -2478,7 +2491,7 @@ Minden valós együtthatós polinom előáll mint első vagy másodfokú polinom
 \begin{proof}
 	Tekintsük a $p$ polinomot mint a komplex számtest feletti polinomgyűrű egy elemét,
 	és alkalmazzuk a komplex polinom faktorizációról szóló tételt.
-	A $p$ így előáll mint első fokú, esetleg komplex polinomok szorzata.
+	A $p$ így előáll mint elsőfokú, esetleg komplex polinomok szorzata.
 	A gyököket osszuk két része.
 	Legyenek $x_1,\ldots,x_r$ a különböző valós gyökök, amelyek multiplicitása rendre
 	$n_1,\ldots,n_r$.
@@ -2933,7 +2946,7 @@ ha az $i$-edik sort osztjuk az $a_{i,j}\neq 0$ számmal, akkor e sor $j$-edik
 eleme $1$-re változik.
 Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
-Ha ezt minden $k=1,\ldots,m$ mellet kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
+Ha ezt minden $k=1,\ldots,m$ mellett kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot elem\footnote{Értsd: sarok elem.}\index{pivot elem} választásával.
 Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
@@ -2993,7 +3006,7 @@ A szabad változók, az az a többiek már ha vannak ilyenek egyáltalán, egy n
 Adjunk a szabad változóknak tetszőleges értéket,
 majd minden sorban ebből már egyértelműen kifejezhető a kötött változók értéke.
 
-\paragraph{Összefoglalva}
+\paragraph{Összefoglalva:}\hspace{-1.em}
 Az eliminált változókat
 \emph{kötött változónak}\index{kotott@kötött változó}
 nevezzük,
@@ -3029,57 +3042,59 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 Érdemes itt konkrét példákkal szemléltetni a homogén lineáris egyenletrendszer általános megoldásának felírását:
 \begin{enumerate}
 	\item
-	      Oldjuk meg a
-	      \[
-		      \systeme{ x+4y+7z=0,
-			      2x+5y+8z=0,
-			      3x+6y+8z=0
-		      }
-	      \]
-	      homogén  lineáris egyenletrendszert.
-	      A Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
-	      \[
-		      \begin{array}{|rrr}
-			      a         & b & c \\
-			      \hline
-			      \boxed{1} & 4 & 7 \\
-			      2         & 5 & 8 \\
-			      3         & 6 & 8 \\
-			      \hline
-			      \delta    & 4 & 7
-		      \end{array}
-		      \implies
-		      \begin{array}{r|rrr}
-			        & a & b          & c   \\
-			      \hline
-			      a & 1 & 4          & 7   \\
-			        & 0 & \boxed{-3} & -6  \\
-			        & 0 & -6         & -13 \\
-			      \hline
-			        & 0 & \delta     & 2
-		      \end{array}
-		      \implies
-		      \begin{array}{r|rrr}
-			        & a & b & c          \\
-			      \hline
-			      a & 1 & 0 & -1         \\
-			      b & 0 & 1 & 2          \\
-			        & 0 & 0 & \boxed{-1} \\
-			      \hline
-			        & 0 & 0 & \delta
-		      \end{array}
-		      \implies
-		      \begin{array}{r|rrr}
-			        & a & b & c \\
-			      \hline
-			      a & 1 & 0 & 0 \\
-			      b & 0 & 1 & 0 \\
-			      c & 0 & 0 & 1
-		      \end{array}
-	      \]
-	      Ez azt jelenti, hogy az eredeti feladat ekvivalens az
-	      \[\systeme{x=0,y=0,z=0}\]
-	      feladattal, amelynek nyilvánvalóan csak a zéró vektor a megoldása.
+    Oldjuk meg a
+    \begin{eqnarray*}
+      x+4y+7z&=& 0\\
+	  2x+5y+8z&=& 0\\
+	  3x+6y+8z&=& 0
+    \end{eqnarray*}
+    homogén  lineáris egyenletrendszert.
+    A Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
+     \[
+     \begin{array}{|rrr}
+     a         & b & c \\
+      \hline
+      \boxed{1} & 4 & 7 \\
+      2         & 5 & 8 \\
+      3         & 6 & 8 \\
+      \hline
+      \delta    & 4 & 7
+      \end{array}
+      \implies
+      \begin{array}{r|rrr}
+        & a & b          & c   \\
+      \hline
+      a & 1 & 4          & 7   \\
+        & 0 & \boxed{-3} & -6  \\
+        & 0 & -6         & -13 \\
+      \hline
+        & 0 & \delta     & 2
+      \end{array}
+      \implies
+      \begin{array}{r|rrr}
+        & a & b & c          \\
+      \hline
+      a & 1 & 0 & -1         \\
+      b & 0 & 1 & 2          \\
+        & 0 & 0 & \boxed{-1} \\
+      \hline
+        & 0 & 0 & \delta
+      \end{array}
+      \implies
+      \begin{array}{r|rrr}
+        & a & b & c \\
+      \hline
+      a & 1 & 0 & 0 \\
+      b & 0 & 1 & 0 \\
+      c & 0 & 0 & 1
+      \end{array}
+      \]
+      Ez azt jelenti, hogy az eredeti feladat ekvivalens az
+%      \begin{eqnarray*}
+%          x&=& 0\\y&=& 0\\z&=& 0
+%      \end{eqnarray*}
+      \[x=0,y=0,z=0\]
+	  feladattal, amelynek nyilvánvalóan csak a zéró vektor a megoldása.
 	\item
 	      Tekintsük a következő feladatot:
 	      \[
@@ -3254,7 +3269,7 @@ amiből a lineáris burkot képezve
 \]
 következik, ergo $W=\lin\left\{ a_1,a_2 \right\}$ valóban fennáll.
 
-Nézzük újra \apageref{bazisfakt}. oldalon a (\dag) matrix faktorizációt.
+Nézzük újra \aazt{\pageref{bazisfakt}}. oldalon a (\dag) matrix faktorizációt.
 Látható, hogy nem csak az oszlop vektortérnek, de a sorvektortérnek is találtunk egy két elemű generátorrendszerét:
 Jelölje most $a_1,a_2,a_3,a_4$ a (\dag) baloldalán lévő mátrix sorait.
 E mátrix legyen $A$.
@@ -3501,10 +3516,10 @@ amellyel az inhomogén rendszer nem megoldható.
 	Tegyük fel tehát, hogy kevesebb ismeretlen van mint sor.
     Ekkor persze a kötött változók száma is kisebb mint a sorok száma,
     ergo van zérus sor az utolsó eliminációs táblázatban.
-    Ekkor \aref{pr:nincsmo} állítás szerint, létezik olyan jobboldal, amivel képzett inhomogén rendszer már nem megoldható.
+    Ekkor \aaz{pr:nincsmo}. állítás szerint, létezik olyan jobboldal, amivel képzett inhomogén rendszer már nem megoldható.
 \end{proof}
 
-A Gauss\,--\,Jordan-elimináció utolsó táblázatára vonatkozó \aref{pr:nincsmo}. állítás, gyönyörű
+A Gauss\,--\,Jordan-elimináció utolsó táblázatára vonatkozó \aaz{pr:nincsmo}. állítás, gyönyörű
 következménye a négyzetes mátrixok kétoldalisági tulajdonsága.
 \begin{proposition}
     Tegyük fel, hogy $A,B\in\mathbb{F}^{m\times m}$ négyzetes mátrixok szorzata az identitás mátrix,
@@ -3516,7 +3531,7 @@ következménye a négyzetes mátrixok kétoldalisági tulajdonsága.
     Ha $AB=I$, akkor nyilvánvalóan minden $b\in\mathbb{F}^m$ jobboldal mellett,
     az $Ax=b$ inhomogén lineáris egyenletrendszerek van megoldása. 
     Például $x=Bb$ egy megoldás.
-    \Aref{pr:nincsmo}. állítás szerint ez csak úgy lehet, ha az utolsó eliminációs táblázatban nincs csupa zérus sor.
+    \Aaz{pr:nincsmo}. állítás szerint ez csak úgy lehet, ha az utolsó eliminációs táblázatban nincs csupa zérus sor.
     Ezek szerint az utolsó táblázatban a sorok száma megegyezik az eliminált változók számával,
     de négyzetes mátrixról beszélünk, tehát a oszlopok száma, azaz az $Ax=0$ homogén rendszerben
     az összes változók száma is azonos a kötött változók számával.
@@ -3668,21 +3683,21 @@ amiből már következik, hogy
 		      ami ellentmondás, hiszen $A_1$ mátrixnak kevesebb oszlopa van mint sora.
 		\item[$3.\Rightarrow 1.$] Éppen ezt igazoltuk a szakasz elején.
 	\end{description}
-	Ha a feltevések fennállnak, akkor
-	\[
-		A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.\qedhere
-	\]
+	Ha a feltevések egyike -- így mindegyike --fennáll, akkor
+	\(
+		A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.%\qedhere
+	\)
 \end{proof}
 Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
 akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért
 $BA=A^{-1}A=I$ is fennáll.
-Ahogyan azt a mátrixok bevezetésekor \apageref{pg:kommutal}. oldalon megígértük,
+Ahogyan azt a mátrixok bevezetésekor \aazt{\pageref{pg:kommutal}}. oldalon megígértük,
 most megmutattuk azt, hogy a négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
 egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}\index{kommutál}
 
 Egy konkrét példa megoldásával ismételjük át a szakasz elején megértett algoritmust.
 A feladat, hogy keressük meg az
-\(
+\[
 A=
 \begin{pmatrix}
 	1 & 1 & 1 & 0 \\
@@ -3690,9 +3705,9 @@ A=
 	2 & 3 & 1 & 0 \\
 	1 & 0 & 2 & 1
 \end{pmatrix}
-\)
+\]
 mátrix inverzét!
-Az inverz létezésének szükséges és elegendő feltétele, hogy 4 lépést tudjunk végrehajtani az eliminációs algoritmusban.
+Az inverz létezésének szükséges és elegendő feltétele, hogy négy lépést tudjunk végrehajtani az eliminációs algoritmusban.
 Egy lehetséges megoldás a következő:
 \begin{multline*}
 	\begin{array}{cccc|cccc}
@@ -3740,10 +3755,10 @@ Egy lehetséges megoldás a következő:
 		0 & 1 & 0 & 0 & 1  & \frac{1}{4}  & -\frac{1}{4} & -\frac{1}{2} \\
 		0 & 0 & 1 & 0 & 3  & \frac{1}{4}  & -\frac{5}{4} & -\frac{1}{2} \\
 		0 & 0 & 0 & 1 & -3 & 0            & 1            & 1
-	\end{array}
+	\end{array}.
 \end{multline*}
 Kaptuk hát, hogy az $A$ mátrix inverze az
-\begin{math}
+\begin{displaymath}
 	A^{-1}=\frac{1}{4}
 	\begin{pmatrix}
 		-12 & -2 & 6  & 4  \\
@@ -3751,13 +3766,14 @@ Kaptuk hát, hogy az $A$ mátrix inverze az
 		12  & 1  & -5 & -2 \\
 		-12 & 0  & 4  & 4
 	\end{pmatrix}
-\end{math}
+\end{displaymath}
 mátrix.
 
-Picit kevesebb helyet foglal az algoritmus, ha lusták vagyunk a generátorrendszerbe már becserélt
-oszlopok kiírására.
-Ekkor érdemes kiírni a sorok és oszlopok címkéjét, nehogy eltévedjünk.
-Az előző feladat így alakul:
+Innen már csak egy lépés az általunk preferált módszer.
+Azt vegyük észre, hogy picit kevesebb helyet foglal az algoritmus, 
+ha lusták vagyunk a generátorrendszerbe már becserélt oszlopok kiírására.
+Ekkor persze érdemes kiírni a sorok és oszlopok címkéjét, nehogy eltévedjünk.
+Az előző feladat tehát így alakul:
 \begin{multline*}
 	\begin{array}{r|cccc|cccc}
 		    & a_1       & a_2 & a_3 & a_4 & e_1 & e_2 & e_3 & e_4 \\
@@ -3981,7 +3997,7 @@ A következő állítás sokszor teszi kényelmessé a gondolatmenetünket.
 	Itt már $\alpha_k\neq 0$, tehát $y_k$ kifejezhető az előző vektorok segítségével:
 	\[
 		y_k=
-		\frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k-1}}\alpha_{k-1}y_{k-1}.\qedhere
+		\frac{-1}{\alpha_k}\alpha_1y_1+\dots+\frac{-1}{\alpha_{k}}\alpha_{k-1}y_{k-1}.\qedhere
 	\]
 \end{proof}
 
@@ -4052,7 +4068,7 @@ Bebizonyítottuk tehát az alábbi fontos állítást.
 		x=\sum_{j=1}^n\xi_jy_j,
 	\]
 	ahol $\xi_k\neq 0$ az egyik $1\leq k\leq n$ mellett.
-	Ekkor $y$ becserélhető a $k$-adik helyen a független rendszerbe
+	Ekkor $x$ becserélhető a $k$-adik helyen a független rendszerbe
 	úgy, hogy az független maradjon, azaz az
 	\[
 		\left\{ y_1,\ldots,y_{k-1},x,y_{k+1},\ldots,y_n \right\}
@@ -4075,7 +4091,7 @@ Bebizonyítottuk tehát az alábbi fontos állítást.
 	már azt kapjuk, hogy $\eta_j=0$ minden $j\neq k$ mellett is.
 \end{proof}
 \subsection{Mátrixok bázisfaktorizációja 2.}
-A szakaszban bevezetett fogalmak illusztrációjaként érdemes visszatérni \apageref{bazisfakt}.~oldalra,
+A szakaszban bevezetett fogalmak illusztrációjaként érdemes visszatérni \aazt{\pageref{bazisfakt}}. oldalra,
 ahol láttuk hogyan találunk generátorrendszert egy mátrix oszlopvektorterében és sorvektorterében.
 A kényelmes olvasás okán, ide másolom az eliminációt, annyi változtatással, hogy 
 most kiírjuk az eredeti generátorrendszer $e_1,e_2,e_3,e_4$ elemeit is.
@@ -4121,7 +4137,7 @@ A független rendszer cseréről szóló \ref{le:fgtlncsere}.~lemmát alkalmazva
 No de, lineárisan független rendszer részrendszere is az, 
 így az $\left\{ a_1,a_2 \right\}$ oszlopok az oszlopvektortér egy független rendszerét adják.
 
-Ahogy azt korábban is láttuk -- lásd \apageref{bazisfakt}.~oldalt -- $\left\{ a_1,a_2 \right\}$ egy generátorrendszere is az oszlopvektortérnek, így már látjuk is, hogy $\left\{ a_1,a_2 \right\}$
+Ahogy azt korábban is láttuk -- lásd \aazt{\ref{bazisfakt}}. oldalt -- $\left\{ a_1,a_2 \right\}$ egy generátorrendszere is az oszlopvektortérnek, így már látjuk is, hogy $\left\{ a_1,a_2 \right\}$
 az oszlopvektortér egy két elemű lineárisan független generátorrendszerét alkotja.
 
 Emlékezzünk, hogy az utolsó táblázat nem zérus sorai a sorvektortér egy generátorrendszerét szolgáltatja. 
@@ -4169,7 +4185,7 @@ Az derül ki, hogy a lineárisan független, generátorrendszerek elemszáma egy
 azaz bármely lineárisan független, generátorrendszernek ugyanannyi eleme van.
 
 A félév legfajsúlyosabb állítása következik, az egyszerű bizonyítása ellenére.
-A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aref{le:gencsere}. lemmára.
+A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aaz{le:gencsere}. lemmára.
 \begin{SL}\index{Steinitz-lemma}
 	Legyenek $n$ és $m$ nem negatív egészek.
 	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
@@ -4214,7 +4230,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 		      ami (\dag) generátorrendszer volta miatt csak úgy lehetséges,
 		      hogy $k\neq m$, azaz $k<m$, ergo $k+1\leq m$.
 		\item
-		      \Aref{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor
+            \Aaz{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor
 		      avval az $x$-el
 		      --- a generátorrendszer tulajdonság megtartásával is ---
 		      kicserélhető,
@@ -4371,8 +4387,8 @@ hogy rövidebb külön nevet adni nekik.
 \begin{definition}[bázis]\index{baa@bázis}
 	Egy vektorrendszert \emph{bázisnak} nevezünk, ha ez egyszerre lineárisan független és generátorrendszer.
 \end{definition}
-\Aref{pr:bazisletezik}. állítást tehát úgy fogalmazhatjuk, hogy végesen generált vektortérnek van bázisa,
-és hasonlóan \aref{co:baziselemszam}. következmény pedig azt jelenti,
+\Aaz{pr:bazisletezik}. állítást tehát úgy fogalmazhatjuk, hogy végesen generált vektortérnek van bázisa,
+és hasonlóan \aaz{co:baziselemszam}. következmény pedig azt jelenti,
 hogy egy vektortérben bármely két bázis azonos elemszámú.
 Ez utóbbi tény ad értelmet a következő definíciónak:
 \begin{proposition}
@@ -4437,7 +4453,7 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
 		\left\{ x_1,\ldots,x_m \right\}
 	\]
 	$m$ elemű lineárisan független generátorrendszere.
-	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független.
+	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer.
 	A Steinitz-lemma szerint ez a rendszer kiterjeszthető egy
 	\[
 		\left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
@@ -4491,7 +4507,7 @@ együttes alkalmazásaként kapjuk a következő lemmát.
     $M=\lin\left( \left\{ x_1,\ldots,x_n \right\}\right)=V. $
 \end{proof}
 \subsection{Rang és feszítőrang}
-\Aref{pr:rang}.~állítást, azaz a Rang-tételt a dimenzió fogalmának ismeretében úgy is fogalmazhatjuk, hogy \emph{tetszőleges nem zérus mátrixra az oszlopvektortér dimenziója egybeesik a feszítőranggal, és a sorvektortér dimenziója is azonos a feszítőranggal.}
+\Aaz{pr:rang}. állítást, azaz a Rang-tételt a dimenzió fogalmának ismeretében úgy is fogalmazhatjuk, hogy \emph{tetszőleges nem zérus mátrixra az oszlopvektortér dimenziója egybeesik a feszítőranggal, és a sorvektortér dimenziója is azonos a feszítőranggal.}
 \begin{definition}[mátrix rangja]\index{rang}
     Egy mátrix \emph{rangja} az oszlopai által generált vektortér dimenziója.
 \end{definition}
@@ -4506,7 +4522,7 @@ A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk 
 \end{proposition}
 \begin{proof}
     A Gauss\,--\,Jordan-elimináció algoritmusának segítségével $A=B\cdot C$
-    a mátrix bázisfaktorizációja, ahol $A$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
+    a mátrix bázisfaktorizációja, ahol $B$ oszlopainak rendszere a mátrix oszlopvektorterének egy bázisa,
     és $C$ sorainak rendszere a sorvektortér egy bázisa.
     Mivel itt $B$ oszlopainak száma azonos $C$ sorainak számával, ezért az oszlopvektortér és a sorvektortér azonos dimenziós vektorterek.
 \footnote{%
@@ -4661,8 +4677,8 @@ Az eddigiek összefoglalásaként kapjuk az alábbi állítást.
 \end{proof}
 Fontos látni, hogy a vektor koordináta-vektora függ a bázis megválasztásától.
 Akár ha csak a bázisban az elemek sorrendjét megváltoztatjuk,
-már akkor is változik a vektort koordináta-vektora.
-\Aref{le:gencsere}., \aref{le:fgtlncsere}.  és \aref{le:baziscsere}. lemmák összefoglalásaként kapjuk,
+már akkor is változik a vektor koordináta-vektora.
+\Aaz{le:gencsere}., \aaz{le:fgtlncsere}.  és \aaz{le:baziscsere}. lemmák összefoglalásaként kapjuk,
 hogy milyen módon változnak egy rögzített vektor koordinátái,
 ha a bázisban egy elemet megváltoztatunk.
 \begin{lemma}[bázistranszformáció]\label{le:bazistrafo}
@@ -4722,7 +4738,7 @@ ha a bázisban egy elemet megváltoztatunk.
 
 
 %%%\part{E-dúr hegedűverseny No. 1, Op. 8, RV 269, ,,La primavera''}
-\chapter{Alterek Minkowski-összege és direkt összege}\index{Minkowski-összeg}
+\chapter[Alterek összege]{Alterek Minkowski-összege és direkt összege}\index{Minkowski-összeg}
 \scwords Az alterek struktúráját vizsgáljuk a fejezetben.
 \section{Minkowski-összeg}
 \begin{definition}\index{Minkowski-összeg}
@@ -4835,7 +4851,7 @@ akkor többet is állíthatunk:
 \end{proof}
 
 A következő állítás szerint,
-ha előre adott két altér, akkor ezek összegének dimenziója mindig azonos
+ha előre adott két altér, akkor ezek dimenzióinak összege mindig azonos
 a két alteret tartalmazó legszűkebb altér dimenziójának,
 és a két altér által tartalmazott legbővebb altér  dimenziójának összegével.
 \begin{proposition}\label{pr:drosszeg2}
@@ -4995,7 +5011,7 @@ Külön érdemes figyelni az $s=2$, tehát csak két altér direkt összegének 
 Ilyenkor a fenti definíció azt jelenti,
 hogy az $M_1$ és $M_2$ diszjunkt alterekre $N=M_1+M_2$.
 
-\Aref{pr:direktosszegsorrend}. állításban 3. feltétel előnye, hogy ennek alapján teljesen világos, hogy az
+\Aaz{pr:direktosszegsorrend}. állításban 3. feltétel előnye, hogy ennek alapján teljesen világos, hogy az
 $M_1\oplus\dots\oplus M_s$ direkt összeg nem függ az alterek sorrendjétől.
 Az evvel ekivalens 1. feltevés előnye pedig,
 hogy ha képeznünk kell az $M_1,\ldots,M_s$ alterek direkt összegét,
@@ -5069,7 +5085,7 @@ de csak egyféleképpen egy $M_1$ és egy $M_2$-beli vektor összegeként.
 	\)
 \end{proposition}
 \begin{proof}
-	Az $s=2$ eset éppen \aref{pr:drosszeg2}. állítás,
+    Az $s=2$ eset éppen \aaz{pr:drosszeg2}. állítás,
 	hiszen a $\left\{ 0 \right\}$ triviális altér nulla dimenziós.
 	Most tegyük fel, hogy $s$-nél kisebb számokra igaz az állítás,
 	és lássuk be $s$-re. $s>2.$
@@ -5090,7 +5106,7 @@ Az állításból azonnal adódik,
 hogy ha az $M_1, M_2, \dots,M_s$ alterek bázisait, egy közös vektorrendszerbe tesszük,
 akkor az így kapott vektorrendszer az $N$ tér egy bázisává válik.
 Világos ugyanis, hogy az egyesített rendszer $N$-nek generátorrendszere,
-és az elemeinek száma \aref{pr:drosszeg}.~állítás szerint éppen $\dim(N)$.
+és az elemeinek száma \aaz{pr:drosszeg}. állítás szerint éppen $\dim(N)$.
 Azt kaptuk tehát, hogy ez egy minimális generátorrendszere $N$-nek,
 ergo egy bázis.
 
@@ -5785,7 +5801,7 @@ sss
 %    Találtunk tehát az $\left\{ x_1,\ldots,x_m \right\}$ vektorrendszernek egy
 %    nem triviális, 
 %    de a zéró vektort eredményező,
-%    lineáris kombinációját (\ref{eq:sys}).
+%    lineáris kombinációját \aazx{eq:sys}).
 %\end{proof}
 %\begin{proof}[2.\Rightarrow 3.]
 %    Jelölje $r$ az $A\in\mathbb{F}^{n\times m}$ mátrix feszítőrangját.
@@ -6019,7 +6035,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 	\]
 \end{proposition}
 \begin{proof}
-	Azt kell először is látni, hogy (\ref{eq:aij}.) azonosságok összesen az előző \ref{pr:bazisonegyertelmu}.~állítás
+    Azt kell először is látni, hogy \aazx{eq:aij}{(}{)} azonosságok összesen az előző \ref{pr:bazisonegyertelmu}.~állítás
 	alkalmazását írják elő rögzített $i,j$ mellett az
 	\begin{math}
 		\left\{ e_1,\ldots,e_j,\ldots,e_m \right\}
@@ -6032,7 +6048,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 	Ezt úgy is fogalmazhatjuk, hogy az $A_{i,j}$ az a lineáris operáció,
 	amely a bázis minden nem $j$-edik elemét zérusra viszi, és a $j$-edik bázis elemet
 	pedig $f_i$-re.
-	\Aref{pr:bazisonegyertelmu}. állítás szerint vannak ilyen $A_{i,j}$ lineáris transzformációk,
+    \Aaz{pr:bazisonegyertelmu}. állítás szerint vannak ilyen $A_{i,j}$ lineáris transzformációk,
 	és minden $i,j$ pár mellett csak egyetlen egy van.
 
 	Most megmutatjuk, hogy az $\left\{ A_{i,j}:i=1,\ldots,n;j=1,\dots m \right\}$ lineárisan független
@@ -6123,7 +6139,7 @@ Láttuk, hogy $\dim \left( L\left( V,W \right) \right)=\dim(V)\cdot\dim(W)$.
 De mi lesz $L\left( V,W \right)$ koordináta-tere?
 A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 \begin{definition}[lineáris operátor mátrixa]
-	(\Aref{eq:aij}.) azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
+    \Aazx{eq:aij}{(}{)} azonosságokkal definiált $A_{i,j}$ lineáris operátorokat állítsuk a következő sorrendbe:
 	\[
 		\{
 		\underbrace{A_{1,1},A_{2,1},\ldots,A_{n,1}}_{j=1},
@@ -6139,7 +6155,10 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 		\sum_{j=1}^m\sum_{i=1}^n\alpha_{i,j}A_{i,j}.
 	\]
 	Ez azt jelenti, hogy az $A\in L\left( V,W \right)$ függvénynek a fenti bázisban felírt koordináta-vektora
-	az $\alpha_{i,j}$ elemekből a fenti sorrendben képzett oszlopvektor, azaz
+	az $\alpha_{i,j}$ elemekből a fenti sorrendben képzett oszlopvektor, 
+    amint azt \aaz{fig:elomatrix} ábrán láthatjuk.
+    \begin{figure}
+        \label{fig:elomatrix}
 	\[
 		\left[ A \right]=
 		\begin{pmatrix}
@@ -6150,6 +6169,8 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 			\alpha_{1,m} \\ \alpha_{2,m}\\ \vdots \\ \alpha_{n,m}
 		\end{pmatrix}\tag{\dag}
 	\]
+    \caption{Egy függvény mint vektor}
+    \end{figure}
 	Mint minden vektortér így az $L\left( V,W \right)$ is izomorf a koordináta-terével, ergo $L\left( V,W \right)$ izomorf
 	az $\mathbb{F}^{n\cdot m}$ vektortérrel.
 
@@ -6176,24 +6197,14 @@ A válaszhoz rögzítenünk kell a bázis elemek egy sorrendjét.
 Meggondoltuk tehát, hogy a kapcsolat lineáris operáció és mátrixa között azonos avval a kapcsolattal,
 ami általában egy vektor és koordinátái közt van.
 
-Nagyon fontos, hogy bármilyen lineáris operáció mátrixát fel tudjuk írni, 
-emiatt foglaljuk össze az eddigieket.
+Nagyon fontos, hogy tetszőleges, az utunkba eső, lineáris operáció mátrixát fel tudjuk írni.
+Emiatt összefoglaljuk az eddigieket.
 \begin{proposition}
 	Tegyük fel, hogy $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Rögzítsük a $V$ és a $W$ vektortér egy-egy bázisát.
 	Legyen tehát $\{e_1,\ldots,e_m\}\subseteq V$ egy bázis és
 	$\left\{ f_1,\ldots,f_n \right\}\subseteq W$ egy bázis.
-	Az $A$ operációnak a fenti rögzített bázisokban felírt mátrixa az az
-	$n\times m$ méretű
-	$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
-	mátrix,
-	\footnote{Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
-		$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
-		jelölés helyett csak $[A]$-t írunk.
-		Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
-	}
-	amelynek $j$-edik oszlopa az $Ae_j$ vektor $\left\{ y_1,\ldots,y_n \right\}$ bázisban felírt koordinátája.
-	Formálisabban:
+    Ekkor:
 	\[
 		[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}^j
 		=
@@ -6201,6 +6212,23 @@ emiatt foglaljuk össze az eddigieket.
 		\qedhere
 	\]
 \end{proposition}
+Szavakkal ezt úgy tudjuk kifejezni, hogy 
+	az $A$ operációnak a fenti rögzített bázisokban felírt mátrixa az az
+	$n\times m$ méretű
+	$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
+	mátrix,
+%	\footnote{Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
+%		$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
+%		jelölés helyett csak $[A]$-t írunk.
+%		Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
+%	}
+	amelynek $j$-edik oszlopa az $Ae_j$ vektornak az $\left\{ y_1,\ldots,y_n \right\}$ bázisban felírt koordináta vektora.
+    
+	Ha világos, hogy mely bázisokat rögzítjük akkor a nehézkes
+		$[A]_{\substack{\left\{ e_1,\ldots,e_m \right\}\\ \left\{ f_1,\ldots,f_n \right\}}}$
+		jelölés helyett csak $[A]$-t írunk.
+		Persze mindig tudnunk kell, hogy az $A$ lineáris operátor mely bázisokban felírt mátrixáról van szó.
+
 Speciálisan, ha $V=W$, akkor $A:V\to V$ lineáris transzformációról beszélünk.
 Amikor egy lineáris transzformáció mátrixáról van szó,
 akkor az mindig úgy értendő, hogy a $V$ vektortérnek mint az értelmezési tartománynak és a
@@ -6221,8 +6249,10 @@ mátrixára:
 	\left[ Ae_j \right]_{\left\{ e_1,\ldots,e_m \right\}}.
 \]
 
-Meggondoltuk tehát, hogy az $L\left( V,W \right)$ lineáris operátorok vektortere izomorf az
-$\mathbb{F}^{\dim(W)\times \dim(V)}$ mátrixok vektorterével.
+Meggondoltuk tehát, hogy az $L\left( V,W \right)$ lineáris operátorok vektortere 
+és az
+$\mathbb{F}^{\dim(W)\times \dim(V)}$ mátrixok vektortere
+izomorf egymással.
 Az izomorfizmus tehát az a leképezés,
 amely egy lineáris transzformációhoz hozzárendeli annak
 -- valamely előre megadott bázisokban felírt --
@@ -6400,7 +6430,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	\end{math}
 \end{proposition}
 \begin{proof}
-	A (\ref{eq:gyuru}) azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
+	A \aazx{eq:gyuru}{(}{)} azonosságot alkalmazva $B=A$ mellett nyilvánvaló indukcióval kapjuk az
 	$\left[ A^n \right]=\left[ A \right]^n$
 	azonosságot.
 
@@ -6410,7 +6440,7 @@ mégpedig az identitás mátrix (ahol minden elem zérus, kivétel a diagonális
 	$[A]$ mátrix invertálhatóságának.
 	Ekkor $[A]^{-1}=[B]=\left[ A^{-1} \right]$.
 \end{proof}
-A (\ref{eq:vt}) és a (\ref{eq:gyuru}) azonosságok szerint 
+A \aazx{eq:vt}{(}{)} és a \aazx{eq:gyuru}{(}{)} azonosságok szerint 
 egy lineáris operátorhoz hozzárendelni annak valamely bázisban
 felírt mátrixát egy olyan bijekció, ami tartja a gyűrű műveleteket.
 Az $L\left( V \right)$ és a $\mathbb{F}^{\dim(V)\times \dim(V)}$ tehát olyan egységelemes (nem kommutatív) gyűrűk,
@@ -6492,11 +6522,11 @@ $\left[ B \right]^{-1}$ inverze.
 \section{Lineáris operátorok mátrixa új bázispárban}
 \begin{proposition}
 	Legyen $A\in L\left( V,W \right)$ lineáris operáció
-	és tegyük fel, hogy ismerjük $A$ mátrixát az
+	és tegyük fel, hogy ismerjük az $A$ mátrixát az
 	$\left\{ e_1,\ldots,e_m \right\}\subseteq V$ és az
 	$\left\{ f_1,\ldots,f_n \right\}\subseteq W$ régi bázisokban.
-	Legyenek az $\left\{ v_1,\ldots,v_m \right\}\subseteq V$
-	és a $\left\{ w_1,\ldots,w_n \right\}\subseteq W$ az új bázisok.
+	Legyen az egy-egy új bázis a $\left\{ v_1,\ldots,v_m \right\}\subseteq V$
+	és a $\left\{ w_1,\ldots,w_n \right\}\subseteq W$.
 	Definiálja $B\in L\left( V \right)$ a $V$ tér áttérés lineáris transzformációját
 	és $D\in L\left( W \right)$ a $W$ tér áttérés transzformációját.
 	Ekkor
@@ -6629,8 +6659,8 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 \end{proposition}
 \begin{proof}
 	Mivel $\lin\left( v;A \right)$ egy $v$-t tartalmazó $A$-invariáns altér,
-	ezért $\left\{ v,Av,\ldots,A^kv,\dots \right\}\subseteq \lin\left( v;A \right)$,
-	amiatt
+	így $\left\{ v,Av,\ldots,A^kv,\dots \right\}\subseteq \lin\left( v;A \right)$,
+	és ezért
 	\[
 		\lin\left\{ v,Av,A^2v,\dots \right\}
 		\subseteq
@@ -6775,7 +6805,7 @@ ebben a bázisban:\label{ar:elsomegjelenes}
 \]
 \section{Transzformációk sajátértéke}
 A célunk, hogy a lehető legalacsonyabb dimenziós invariáns altereket találjunk.
-Így persze az 1 dimenziós invariáns alterek a legérdekesebbek.
+Így persze az egydimenziós invariáns alterek a legérdekesebbek.
 Ez vezet a sajátérték fogalmához.
 \begin{definition}[sajátérték, sajátvektor, spektrum]
 	Legyen $A\in L\left( V \right)$.
@@ -6866,7 +6896,7 @@ ha az $A-\lambda I$ transzformáció szinguláris.
 		=
 		\left( \sum_{k=0}^j\alpha_k\beta_{j-k} \right)A^j.
 	\end{displaymath}
-	Vegyük észre, hogy \aref{def:polmuveletek}. definíció szerint az
+    Vegyük észre, hogy \aaz{def:polmuveletek}. definíció szerint az
 	$r$ szorzat polinomban is a fenti zárójelben lévő szám a
 	$t^j$ tag együtthatója.
 \end{proof}
@@ -6913,7 +6943,7 @@ Polinomok segítségével sok-sok új invariáns alteret kapunk.
 Speciálisan ez igaz az $t-\lambda$ polinomra is,
 amikor $\lambda$
 egy sajátértéke $A$-nak. Tehát a $\lambda$ sajátértékhez tartozó
-$\ker \left( A-\lambda I \right)$ sajátaltér egy legalább 1 dimenziós invariáns altere
+$\ker \left( A-\lambda I \right)$ sajátaltér egy legalább egydimenziós invariáns altere
 $A$-nak.\index{sajátaltér}
 \begin{definition}
 	Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
@@ -7015,11 +7045,11 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább elsőfokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
 	akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
-	ezért $p=nh$ alakú lenne, ahol $h$ is legalább első fokú.
-	Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+	ezért $p=nh$ alakú lenne, ahol $h$ is legalább elsőfokú.
+	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
 
 A következő állítás módszert ad a kis minimálpolinom meghatározására,
@@ -7057,7 +7087,7 @@ amely mindig használható.
     \end{enumerate}
 \end{proposition}
 \begin{proof}
-	Láttuk, hogy $\left\{ v,Av,\ldots,A^{k-1}v \right\}$ bázisa $\lin\left( v;A \right)$ altérnek.
+	Láttuk, hogy $\left\{ v,Av,\ldots,A^{k-1}v \right\}$ bázisa a $\lin\left( v;A \right)$ altérnek.
 	Világos, hogy $A^kv\in\lin\left( v;A \right)$, emiatt a kívánt előállítás valóban létezik.
 	Ezt átrendezve kapjuk, hogy $n$ valóban olyan normált polinom, amelyre $n\left( A \right)v=0$ fennáll.
 	No de, $k$-nál alacsonyabb fokú ilyen polinom csak a konstans zérus polinom lehet,
@@ -7146,7 +7176,7 @@ amivel a feladatot meg is oldottuk.
 Mivel $\lin\left( u_3;A \right)$ egy 3 dimenziós altere a $V$ három dimenziós vektortérnek,
 ezért $\lin\left( u_3;A \right)=V$, így $A^{3}-3A-2I=0$ nem csak $u_3$ vektort, de $V$ minden vektorát zérusra viszi,
 azaz $n\left( A \right)=A^3-3A-2I=0$.
-Alkalmazhatjuk \apageref{ar:elsomegjelenes}.~lapon felírt mátrixot erre a transzformációra.
+Alkalmazhatjuk \aazt{\pageref{ar:elsomegjelenes}}. lapon felírt mátrixot erre a transzformációra.
 Így azt kapjuk, hogy $A$-nak az $\left\{A^2u_3,Au_3,u_3\right\}$ bázisban felírt mátrixa a következő.
 \[
     \begin{pmatrix}
@@ -7268,7 +7298,7 @@ Ha $V\neq\left\{ 0 \right\}$, ergo $\dim(V)\geq 1$,
 akkor a $J_{A}$ ideálnak nincs nulladfokú polinomja,
 hiszen $p(t)=c, (c\neq 0)$ mellett
 $p\left( A \right)=cI\neq 0$,
-tehát legalább egy dimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább első fokú.
+tehát legalább egydimenziós tér egy lineáris transzformációjának a minimálpolinomja legalább elsőfokú.
 \begin{proposition}
 	Az  $m\in\mathbb{F}\left[ t \right]$ polinom pontosan akkor
 	az $A\in L\left( V \right)$ transzformáció minimálpolinomja,
@@ -7279,8 +7309,7 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 		\item ha $p\in\mathbb{F}\left[ t \right], p\neq 0$, amelyre
 		      $p\left( A \right)=0$, akkor $m|p$.
 	\end{enumerate}
-	A minimálpolinom fokszámára:%
-	\footnote{Kisvártatva kiderül, hogy $\deg m\leq \dim(V)$ is igaz.}%
+	A minimálpolinom fokszámára:
 	$\deg m\leq\dim(V)^2$.
 \end{proposition}
 \begin{proof}
@@ -7293,24 +7322,30 @@ tehát legalább egy dimenziós tér egy lineáris transzformációjának a mini
 	Ezt kellett belátni.
 \end{proof}
 \begin{proposition}
-	Legyen $V$ legalább 1 dimenziós,
+	Legyen $V$ legalább egydimenziós,
 	és tegyük fel, hogy $p\left( A \right)=0$ valamely normált,
 	irreducibilis $p$ polinomra.
 	Ekkor $p$ az $A$ minimálpolinomja.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább első fokú.
+	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább elsőfokú.
 	Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimálpolinommal,
 	akkor $\deg m<\deg p$ lenne, és mivel $m$ generálja a $J_{A}$ ideált,
-	ezért $p=mh$ alakú lenne, ahol $h$ is legalább első fokú.
-	Így $p$ két legalább első fokú polinom szorzata, azaz reducibilis lenne.
+	ezért $p=mh$ alakú lenne, ahol $h$ is legalább elsőfokú.
+	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
 \end{proof}
+Ha összevetjük a fenti állítást az irreducibilis kis minimálpolinomra vonatkozó hasonló állítással,
+akkor azt kapjuk, hogy olyan normált, irreducibilis $p$ polinomra, 
+amelyre $p\left( A \right)=0$, tetszőleges $v\neq 0$ vektorhoz tartozó $p_v$ kis minimál polinomok azonosak
+és ez a polinom egyben a transzformáció minimálpolinomja is.
 
+Ezek szerint, ha a minimálpolinom irreducibilis, akkor fokszáma legfeljebb a tér dimenziója. 
+Látni fogjuk később, hogy ez minden minimálpolinomra is igaz.
 A következő állítás módszert ad a minimálpolinom meghatározására.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$, ahol $\dim(V)\geq 1$.
-	Mivel $\dim(L)\left( V \right)=\left( \dim(V) \right)^2$ egy véges dimenziós vektortér,
-	ezért létezik $1\leq k \leq (\dim(V))^2$,
+	Mivel $\dim L\left( V \right)=\dim(V)^2$ egy véges dimenziós vektortér,
+	ezért létezik $1\leq k \leq \dim(V)^2$,
 	hogy
 	$\left\{ I,A,\ldots,A^{k-1} \right\}$ lineárisan független,
 	de $\left\{ I,A,\ldots,A^{k-1},A^{k} \right\}$ lineárisan összefüggő.
@@ -7378,13 +7413,13 @@ A minimálpolinom algoritmikus meghatározásához a kis minimálpolinomok is ha
 		J(m).
 	\]
 	No de, a baloldali ideál is főideál, aminek a normált generáló eleme
-	-- \aref{pr:lkkt}. állítás szerint --
+    -- \aaz{pr:lkkt}. állítás szerint --
 	a $p_1,\ldots,p_n$ polinomok legkisebb közös többszöröse.
 	Mivel egy főidálnak csak egy normált generáló eleme van,
 	ezért a legkisebb közös többszörös azonos az $m$ minimálpolinommal.
 \end{proof}
 \subsubsection{Illusztráció}\label{se:minimalillusztracio}
-Újra vegyük elő \apageref{se:kisminimalillusztracio}.~oldalon vett mátrixot.
+Újra vegyük elő \aazt{\pageref{se:kisminimalillusztracio}}. oldalon vett mátrixot.
 \[
     A=
     \begin{pmatrix}
@@ -7402,7 +7437,7 @@ azaz $m\left( t \right)=t^{3}-3t-2$ az $A$ minimálpolinomja.
 
 Persze itt a szerencsénk, hogy $u_3$ tartalmazó legszűkebb invariáns altér az egész vektortér.
 Ha ezt nem használjuk, 
-akkor \aref{pr:lkkt-minimalpolinom}.~állítás eliminációs algoritmusát alkalmazhatjuk a bázis elemekhez tartozó kis minimálpolinomok felírására, 
+akkor \aaz{pr:lkkt-minimalpolinom}. állítás eliminációs algoritmusát alkalmazhatjuk a bázis elemekhez tartozó kis minimálpolinomok felírására, 
 majd ezek legkisebb közös többszöröseként kapjuk a transzformáció minimálpolinomját.
 \[
 		\begin{array}{r|cc}
@@ -7478,7 +7513,7 @@ hogy az $m(t)$ minimálpolinom a $p_1(t)=\left( t+1 \right)^2$,
 a $p_2\left( t \right)=(t+1)(t-2)$ és a $p_3(t)=t^3-3t-2=\left( t+1 \right)^2\left( t-2 \right)$ polinomok legkisebb közös többszöröse, ami most nyilvánvaló módon teljesül.
 
 Hasonlóan mint a kis minimálpolinom esetében, most is igaz, hogy minden normált polinom egy minimálpolinom.
-Ez \aref{pr:polinom-kis-minimalpolinom}.~állítás kiterjesztése. 
+Ez \aaz{pr:polinom-kis-minimalpolinom}. állítás kiterjesztése. 
 Csak azt kell még észrevennünk $A|_{\lin\left( v;A \right)}$ transzformáció minimálpolinomja éppen a $v$-hez tartozó
 kis minimálpolinom.
 \begin{proposition}\label{pr:polinom-minimalpolinom}
@@ -7772,7 +7807,7 @@ ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója
 	No de, egy $v_j\in M_j$ vektor ha nem zérus, akkor egy sajátvektor.
 	Tehát ha a vektorrendszerben lenne nem zérus elem,
 	akkor találnánk különböző sajátértékekhez tartozó sajátvektorok egy lineárisan összefüggő rendszerét,
-	ami \aref{pr:svlinfgtlen}.~állítás szerint nem lehetséges.
+    ami \aaz{pr:svlinfgtlen}. állítás szerint nem lehetséges.
 \end{proof}
 Meggondoltuk tehát,
 hogy ha páronként különböző $\left\{ \lambda_1,\ldots,\lambda_s \right\}\subseteq\sigma\left( A \right)$ sajátértékekből indulunk ki,
@@ -7972,11 +8007,11 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Teljesül tehát a $V_1,\ldots,V_{n-1},V_n$ alterekre,
 	hogy mind diszjunkt -- az itt adott sorrendben -- az előzőek összegétől,
 	és a Minkowski-összegük az egész $V$ vektortér.\index{Minkowski-összeg}
-	\Aref{pr:direktosszegsorrend}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
+    \Aaz{pr:direktosszegsorrend}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
 \end{proof}
 \section{Minimálpolinom és diagonalizálhatóság}
 Alkalom nyílik,
-hogy a lineáris transzformáció diagonalizálhatóságát karakterizáló \aref{pr:diagkar}.~állítást
+hogy a lineáris transzformáció diagonalizálhatóságát karakterizáló \aaz{pr:diagkar}. állítást
 tovább bővítsük, a minimálpolinom szerepének hangsúlyozásával.
 \begin{proposition}[diagonalizálhatóság]\label{pr:diagonalizalhatosag}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
@@ -8082,7 +8117,7 @@ akkor $A$ mátrixa is könnyen adódik $B$ mátrixából.
 Ehhez csak az $\alpha [I]$ mátrixot kell $\left[ B \right]$-hez adni,
 ami praktikusan nem jelent többet,
 mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex számmal megemelni.
-A fenti gondaloton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma.
+A fenti gondolaton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma.
 
 \chapter{Redukálás irreducibilis minimálpolinom esetén}
 \scwords A legegyszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
@@ -8213,7 +8248,7 @@ Meggondoltuk tehát, hogy ha a transzformáció $m$ minimálpolinomja irreducibi
 alakú, akkor a térnek van olyan bázisa, amelyben a transzformáció mátrixa a fenti mátrix
 diagonális elrendezésű $r$ darab másolatából áll, ahol $rk=\dim(V)$.
 
-Korábban -- lásd \aref{pr:polinom-minimalpolinom}.~állítást -- láttuk, 
+Korábban -- lásd \aaz{pr:polinom-minimalpolinom}. állítást -- láttuk, 
 hogy ha $m\left( t \right)$ egy előre adott $k$-adfokú normált polinom,
 akkor például a fenti mátrix által reprezentált,
 $k$-dimenziós téren értelmezett lineáris transzformációnak $m\left( t \right)$
@@ -8241,7 +8276,7 @@ ezért alkalmazhatjuk a fent igazolt \ref{pr:irred_redukcio}.~állítást
 a $V_1$ altérre és az $A_1$ transzformációra.
 \begin{proposition}\label{pr:csaba}
 	Legyen $V$ egy véges dimenziós vektortér, $A\in L\left( V \right)$ egy lineáris transzformáció,
-	és $p\in\mathbb{F}\left[ t \right]$ egy irreducibilis polinom.
+	és $p\in\mathbb{F}\left[ t \right]$ egy $k$-adfokú irreducibilis polinom.
 	Ekkor:
 	\begin{enumerate}
 		\item Minden $v\neq 0$, $v\in\ker p\left( A \right)$ mellett
@@ -8251,19 +8286,32 @@ a $V_1$ altérre és az $A_1$ transzformációra.
 		\item A $\ker p\left( A \right)$ altér nulla dimenziós,
 		      vagy $k$ dimenziós, vagy $k$ dimenziós invariáns alterek direkt összege.
 		      Pontosabban fogalmazva
-		      ha $\nu\left( A \right)>0$, akkor létezik $r\geq 1$ szám,
+		      ha $\nu\left(p(A) \right)>0$, akkor létezik $r\geq 1$ szám,
 		      és léteznek $v_1,\ldots,v_r$ vektorok, amelyekre
 		      \[
-			      \lin\left( v_1;A \right)\oplus\dots\oplus \lin\left( v_r;A \right)
+			      \lin\left( v_1;A \right)\oplus\ldots\oplus \lin\left( v_r;A \right)
 			      =
 			      \ker p\left( A \right).
 			      \qedhere
 		      \]
 	\end{enumerate}
 \end{proposition}
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ lineáris transzformáció, és $p(t)\in\mathbb{F}[t]$ egy $k$-ad fokú 
+    irredecubilis polinom,
+    amelyre $p\left( A \right)^m=0$.
+    Ekkor az $\im p\left( A \right)^{m-1}$ altér nulla dimenziós, 
+    vagy $k$ dimenziós, vagy $k$ dimenziós alterek direktösszege.
+\end{proposition}
+\begin{proof}
+    Az egyszerűbb jelölések kedvéért legyen $B=\ker p\left( A \right)$.
+    Persze $B^m=0$, így $\im B^{m-1}\subseteq\ker B $.
+    Persze $B^{m-1}$ is $A$-nak polinomja, 
+    ergo $B^{m-1}$ képtere is $A$-ra nézve invariáns altere $\ker B=\ker p\left( A \right)$-nak.
+\end{proof}
 Összefoglalhatjuk azt az esetet,
 mikor a minimálpolinom különböző irreducibilis polinomok szorzata.
-Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
+Ez éppen \aaz{pr:redukcio-primszorzat}. állítás esete.
 \begin{proposition}\label{pr:minpolelsofokufelbontas}
 	Tekintsünk egy $A\in L\left( V \right)$ lineáris transzformációt,
 	amelynek minimálpolinomja $m\in\mathbb{F}\left[ t \right]$.
@@ -8277,7 +8325,7 @@ Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
 	$\deg p_1,\deg p_2,\ldots,\deg p_s$ dimenziós minimális invariáns alterének direkt összege.
 \end{proposition}
 \begin{proof}
-	\Aref{pr:redukcio-primfelbontas}.~állításban láttuk,
+    \Aaz{pr:redukcio-primfelbontas}. állításban láttuk,
 	hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
 	Minden egyes $p_j$ a minimálpolinom legalább elsőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
 	Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
@@ -8285,18 +8333,18 @@ Ez éppen \aref{pr:redukcio-primszorzat}.~állítás esete.
 	Mivel ez minden $j$ mellett igaz, ezért $\ker p_j\left( A \right)$ felbontását a $V$ felbontásába helyettesítve készen is vagyunk.
 \end{proof}
 \subsection{A komplex és a valós eset}
-Nézzük meg mit jelent \aref{pr:minpolelsofokufelbontas}.~állítás abban a speciális esetben,
+Nézzük meg mit jelent \aaz{pr:minpolelsofokufelbontas}. állítás abban a speciális esetben,
 mikor az $\mathbb{F}$ test a komplex számok, vagy a valós számok teste.
 
 Elsőként tegyük fel, hogy a $V$ vektortér a $\mathbb{C}$ komplex számtest feletti vektortér.
 Ekkor az $A\in L\left( V \right)$ lineáris transzformáció minimálpolinomja egy komplex együtthatós polinom.
 Az algebra alaptétele szerint irreducibilis normált polinom csak elsőfokú, azaz $t-\lambda$ alakú lehet,
-tehát az előző, \aref{pr:minpolelsofokufelbontas}.~állítás feltétele most abba megy át, hogy $A$ minimálpolinomja
+tehát az előző, \aaz{pr:minpolelsofokufelbontas}. állítás feltétele most abba megy át, hogy $A$ minimálpolinomja
 \[
 	m\left( t \right)=\left( t-\lambda_1 \right)\left( t-\lambda_2 \right)\dots\left( t-\lambda_s \right)
 \]
 alakú, ahol $\lambda_1,\ldots,\lambda_s$ az $m$ különböző gyökei.
-Az állítás implikációja, hogy ekkor a vektortér előáll mint egy dimenziós $A$-invariáns
+Az állítás implikációja, hogy ekkor a vektortér előáll mint egydimenziós $A$-invariáns
 altereinek direkt összege, ergo az $A$ transzformáció diagonalizálható.
 Kiderült tehát, hogy nincs új a nap alatt, hiszen azt már korábban is tudtuk, -- lásd:\ref{pr:diagonalizalhatosag} -- hogy $A$ pontosan akkor diagonalizálható, ha a minimálpolinomja a fenti kiemelt alakú.%
 \footnote{
@@ -8310,7 +8358,7 @@ hogy a minimálpolinom előáll mint páronként relatív prím, első vagy más
 A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dimenziós invariáns altereinek direkt összege. Bebizonyítottuk tehát a következő állítást.
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{R}$ feletti vektortér és $A\in L\left( V \right)$,
-    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak első fokú hatványával szerepel.
+    az $A$ minimálpolinomjának irreducibilis polinomokra felbontásában minden polinom annak elsőfokú hatványával szerepel.
     Ekkor a tér előáll mint egy vagy két dimenziós invariáns altereinek direkt összege,
     ergo van a térnek olyan bázisa, amelyben felírt mátrix diagonálisában csak 1-szer 1-es vagy 2-szer 2-es blokkok szerepelnek, mindenütt másutt a mátrixban zérus szerepel.
 \end{proposition}
@@ -8327,7 +8375,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 		\right\}
 	$
 	bázis felett a következő:
-	\[
+    \begin{multline*}
 		A
 		\left(
 		\alpha u_1
@@ -8338,7 +8386,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 		+
 		\delta u_4
 		\right)
-		=
+		=\\
 		\left( -2\alpha + 3\gamma \right)u_1
 		+
 		\left( -2\alpha-\beta+3\gamma+\delta \right)u_2
@@ -8346,7 +8394,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 		\left( -\alpha+\gamma \right)u_3
 		+
 		\left( -\alpha-\beta+3\gamma \right)u_4.
-	\]
+    \end{multline*}
 }
 \begin{proof}[Megoldás]
 	Írjuk fel az operátor mátrixát:
@@ -8498,7 +8546,7 @@ A konklúzió szerint ekkor a $V$ vektortér is előáll mint egy vagy két dime
 	$
 		\left\{ Av,v \right\}$
 	rendszer egy invariáns direktkiegészítőt definiál.
-	Pont erről szól \aref{pr:irred_redukcio}.~állítás.
+    Pont erről szól \aaz{pr:irred_redukcio}. állítás.
 	Ilyen módon például az
 	\(
 	\left\{
@@ -8614,7 +8662,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 \begin{proof}
 	Létezik tehát olyan $\left\{ B^{m-1}v_1,B^{m-1}v_2,\ldots,B^{m-1}v_r \right\}$
 	lineárisan független vektorrendszer, ahol $r=\rho(B^{m-1})$ a $B^{m-1}$ transzformáció képterének dimenziója.
-	\Aref{le:nilp-fgtlen}.~lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
+    \Aaz{le:nilp-fgtlen}. lemma szerint a térben van egy $m\cdot r$ elemű lineárisan független vektorrendszer,
 	ergo a tér legalább $mr=m\rho\left( B^{m-1} \right)$ dimenziós.
 \end{proof}
 \begin{proposition}
@@ -8753,7 +8801,7 @@ Az első észrevétel adja a negatív választ.
 	Mivel $B^{m-1}\neq 0$, ezért valóban létezik $v\in V$ vektor,
 	melyre $B^{m-1}v\neq 0$.
 	Persze ekkor a $\left\{ B^{m-1}v \right\}$ egy elemet tartalmazó rendszer lineárisan független,
-	ezért \aref{le:nilp-fgtlen}.~lemma szerint a tételbéli rendszer is lineárisan független.
+    ezért \aaz{le:nilp-fgtlen}. lemma szerint a tételbéli rendszer is lineárisan független.
 \end{proof}
 \begin{proposition}
 	Egy lineáris transzformáció pontosan akkor nilpotens,
@@ -8765,7 +8813,7 @@ Az első észrevétel adja a negatív választ.
 	nilpotens.
 	Legyen $p\left( t \right)=t^m$.
 	Ekkor $p\in J_A$, így a minimálpolinom $p$ osztója.
-	Másrészt \aref{th:fgtlen}.~állítás szerint van a térnek olyan vektora,
+    Másrészt \aaz{th:fgtlen}. állítás szerint van a térnek olyan vektora,
 	amelyhez tartalmazó kis minimálpolinom is $p$.
 	Így $p$ osztója a minimálpolinomnak, ergo azonos vele.
 
@@ -8926,7 +8974,7 @@ a nilpotens operátorok redukcióját biztosító állításban.
 	Előállítottuk tehát az $u$ vektort egy $\lin(v;B)$-beli és egy
 	$\bar{K}$-beli vektor összegeként.
 
-	Alkalmazhatjuk tehát \aref{lem:felb}.~lemmát.
+    Alkalmazhatjuk tehát \aaz{lem:felb}. lemmát.
 	Így létezik $K_0\subseteq K\subseteq\bar{K}$ altér, melyre $\lin(v;B)\oplus K=W.$
 	Persze ha $u\in K\subseteq\bar{K}$, akkor $Bu\in K_0\subseteq K$, ergo $K$ egy $B$-invariáns direkt kiegészítője a
 	$v$-t tartalmazó legszűkebb $B$ invariáns altérnek.
@@ -9212,6 +9260,7 @@ bázison felírt mátrixa:
 		0      & 0      & \dots  & \dots  & 0      & 0      & 0
 	\end{pmatrix}.
 \]
+
 Így az egész $V$ vektortéren értelmezett $B$ lineáris transzformáció normálakja
 --
 azaz a $B$-nek (\dag) bázisban felírt mátrixa
@@ -9253,12 +9302,17 @@ a fenti tipusú mátrixok diagonális alakú elrendezésével adódik:
 		\end{matrix}
 	\end{pmatrix}.
 \end{displaymath}
+
 Hangsúlyozni szeretném, hogy az egyértelműség szerint a $\mathbf{B}_j$ blokkok száma, és azok mérete is csak
 a nilpotens transzformációtól függ.
+
 Több bázis is lehetséges, amelyben a nilpotens transzformáció normálalakú,
 de nem csak hogy minden normálalakban azonos számú blokk van ($B$ defektusa),
-de a blokkok mérete is azonos.
-A nilpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+de a blokkok mérete is azonos, hiszen
+a nilpotens felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+
+Érdemes még megjegyeznünk, hogy a blokkok száma a $B$ defektusa,
+azaz az $B-0I$ transzformáció defektusa, ami nem más mint a $0$ sajátérték geometriai multiplicitása.
 \section{Illusztrációk}
 \subsection{Egyetlen invariáns altér}
 Írjuk fel a $W$ vektortéren értelmezett lineáris transzformáció normál alakját,
@@ -9342,7 +9396,7 @@ elemeiből mint oszlopokból alkotott mátrix, ami azt jelenti, hogy
 		0 & 0 & 0 & 0
 	\end{pmatrix}.
 \]
-\subsection{Két invariáns altér (3- és 1 dimenziós)}
+\subsection{Két invariáns altér (3- és 1-dimenziós)}
 Most a játék kedvéért, keressük meg a fenti  felbontást és bázist, egy konkrét esetben.
 Legyen $W$ egy négy dimenziós vektortér az $\left\{ u_1,u_2,u_3,u_4 \right\}$ rögzült bázissal.
 A $B\in L\left( W \right)$ lineáris transzformáció definíciója a báziselemek segítségével:
@@ -9499,8 +9553,10 @@ Először azt az esetet vizsgáljuk, mikor egy transzformáció minimálpolinomj
 egyetlen elsőfokú polinom valamilyen hatványa,
 majd ezt felhasználva kapjuk az úgynevezett kanonikus alakot abban az esetben is,
 mikor a minimálpolinom különböző elsőfokú polinomok hatványainak szorzataiként áll elő.
-Mivel egy komplex együtthatós polinom mindig ilyen alakú,
+
+Mivel az algebra alaptétel szerint egy komplex együtthatós polinom mindig ilyen alakú,
 ezért az eredményeinket komplex test feletti vektorterek lineáris transzformációira alkalmazhatjuk.
+Ez az oka annak, hogy a Jordan-normálalakról szóló állításban fel kell tennünk, hogy a komplex test feletti lineáris transzformációkat viszgáljuk.
 
 \section{Egy gyöktényezős minimálpolinom}
 \begin{definition}[Jordan-normálalak]
@@ -9511,7 +9567,7 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 	\]
 	alakú, valamely $\lambda\in\mathbb{F}$ és $m$ pozitív egész mellett.
 	Világos, hogy $B=A-\lambda I$ éppen $m$-edrendben nilpotens.
-	Alkalmazaható tehát $B$-re \aref{pr:nilpnormal}.~állítás.
+    Alkalmazaható tehát $B$-re \aaz{pr:nilpnormal}. állítás.
 	Jelölje tehát $r=\nu\left( B \right)$ a $B$ defektusát.
 	Így léteznek olyan $v_1,v_2\dots,v_r\in V$ vektorok és
 	létezik pozitív egészek egyetlen olyan $m=n_1\geq n_2\geq \dots\geq n_r\geq 1$ véges sorozata,
@@ -9531,16 +9587,19 @@ ezért az eredményeinket komplex test feletti vektorterek lineáris transzform�
 	A $B$ transzformációnak ebben a bázisban felírt mátrixa olyan, hogy
 	a szuper diagonálisán kívül minden elem zérus,
 	a szuper diagonálisban $n_1-1$ db $1$-es, aztán egy zérus, majd $n_2-1$ db $1$-es aztán egy zérus, stb.
+
 	Adjuk a $B=A-\lambda I$ mátrixához a $\lambda I$ diagonális mátrixot!
 	Ekkor kapjuk az $A$-nak a $(\dag)$ bázisban felírt mátrixát.
 	Ezt a mátrixot nevezzük az $A$ transzformáció \emph{Jordan-normálalakjának}\index{Jordan-normálalak}.
 \end{definition}
+Most próbáljuk elképzelni, hogyan is néz ki a Jordan-alak!
+
 Adott $1\leq j\leq r$ mellett,
-a $j$-edik invariáns altérre leszorított $A$ leképezésnek a
+az $A$ leképezés $j$-edik invariáns altérre való leszorítottjának a
 \begin{math}
 	\left\{ B^{n_j-1}v_j,\ldots,Bv_j,v_j \right\}
 \end{math}
-bázison felírt mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
+bázisra vonatkozó mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
 \[
 	\begin{pmatrix}
 		\lambda & 1       & 0      & \dots   & 0       & 0       & 0       \\
@@ -9552,6 +9611,7 @@ bázison felírt mátrixát \emph{Jordan-blokknak}\index{Jordan-blokk} mondjuk.
 		0       & 0       & \dots  & \dots   & 0       & 0       & \lambda
 	\end{pmatrix}.
 \]
+
 Így az egész $V$ vektortéren értelmezett $A$ lineáris transzformáció normálakja
 --
 azaz a $A$-nak (\dag) bázisban felírt mátrixa
@@ -9593,14 +9653,19 @@ a fenti tipusú Jordan-blokkok, diagonális alakú elrendezésével adódik:
 		\end{matrix}
 	\end{pmatrix}
 \end{displaymath}
-Hangsúlyozni szeretném, hogy az egyértelműség szerint a Jordan blokkok száma, és azok mérete is csak
+
+Most is hangsúlyozni szeretném, 
+hogy az egyértelműség szerint a Jordan blokkok száma, és azok mérete is csak
 az $A$ transzformációtól függ.
-Több bázis is lehetséges, amelyben a transzformáció Jordan-normálalakú,
+
+Ugyan több bázis is lehetséges, amelyben a transzformáció Jordan-normálalakú,
 de nem csak hogy minden normálalakban azonos számú Jordan-blokk van,
-\footnote{A Jordan-blokkok száma a $B=A-\lambda I$ defektusa, azaz a $\lambda$ sajátérték
-	geometriai dimenziója.\index{sajátérték geometriai dimenziója}}
-de a blokkok mérete is azonos.
-A felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+de a blokkok mérete is azonos, hiszen 
+a felbontásban szereplő direkt összeadandó alterek páronként izomorfak egymással.
+
+Nagyon fontos emlékeznünk arra, hogy 
+a Jordan-blokkok száma a $B=A-\lambda I$ defektusa, 
+azaz a $\lambda$ sajátérték geometriai dimenziója.\index{sajátérték geometriai dimenziója}
 \section{Jordan-normálalak: az általános eset}
 \begin{definition}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció valamely $\mathbb{F}$ test
@@ -9613,7 +9678,7 @@ A felbontásban szereplő direkt összeadandó alterek páronként izomorfak egy
 	és $m_1,\ldots,m_s$ pozitív egészek.
 	Jelölje $V_j=\ker\left( A-\lambda_j I \right)^{m_j}$,
 	és $A_j=A|V_j$ minden $j=1,\ldots,s$ mellett.
-	\Aref{pr:redukcio-primfelbontas}.~állításban rögzítettük, hogy
+    \Aaz{pr:redukcio-primfelbontas}. állításban rögzítettük, hogy
 	\[
 		V=V_1\oplus\dots\oplus V_s
 	\]
@@ -9738,7 +9803,7 @@ hogy a minimálpolinom mindig legfeljebb $\dim(V)$-ed fokú.
 
 Szokás azt mondani, hogy a $\lambda\in\sigma\left( A \right)$ sajátérték
 \emph{algebrai multiplicitása}\index{sajátérték algebrai multiplicitása} $k$,
-ha a Jordan-normálalakban $\lambda_j$ éppen $k$-szor szerepel.
+ha a Jordan-normál\-a\-lak\-ban $\lambda_j$ éppen $k$-szor szerepel.
 Világos, hogy ez azonos avval, hogy a transzformáció karakterisztikus polinomjának
 $\lambda$ egy $k$-szoros multiplicitású gyöke.
 Mivel minden egyes Jordan-blokk legalább $1\times 1$ méretű,
@@ -9755,7 +9820,7 @@ hogy egy komplex számtest feletti vektortér esetén az alábbi feltételek ekv
 	\item[\textendash] $A$ minden sajátértékének a geometriai és algebrai multiplicitása azonos.
 \end{itemize}
 \chapter{Determináns}
-\scwords Súlyos önbizalom hiányhoz vezet tapasztalataim szerint a determináns fogalmának mellőzése
+\scwords Súlyos önbizalomhiányhoz vezet tapasztalataim szerint a determináns fogalmának mellőzése
 a lineáris algebra körében.
 E jelenség okait inkább a megszokások, a régi beidegződések közt kell keresnünk,
 mintsem a logikai szükségszerűségek közt.
@@ -10347,7 +10412,7 @@ a fenti eljárás mindkét esetben ugyanazt a számot eredményezi.
 \end{proof}
 
 Meggondoltuk tehát,
-hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egy dimenziós,
+hogy egy $n$ dimenziós vektortér feletti mértékek vektortere legalább egydimenziós,
 hiszen van e vektortérnek a zérustól különböző eleme.
 Azt mutattuk meg, hogy
 adott $\left\{ e_1,\ldots,e_n \right\}$ bázis rögzítése mellett,
@@ -10667,7 +10732,7 @@ Foglaljuk össze az előző két állítást:
 \end{proposition}
 
 \begin{proposition}
-	Tetszőleges (legalább egy dimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
+	Tetszőleges (legalább egydimenziós) vektortér feletti mértékek vektortere egydimenziós vektortér.
 \end{proposition}
 \begin{proof}
 	Rögzítsük a tér egy $\{e_{1},\ldots ,e_{n}\}$ bázisát.
@@ -10679,7 +10744,7 @@ Foglaljuk össze az előző két állítást:
 	\]
 	függvény nem triviális mértéket definiál.
 	Elegendő tehát megmutatnunk,
-	hogy amennyiben $D\neq 0$ egy másik mérték $V$ felett,
+	hogy amennyiben $D$ egy másik mérték $V$ felett,
 	úgy található
 	$\delta\in \mathbb{F}$,
 	amelyre
@@ -10938,7 +11003,7 @@ Kapjuk tehát, hogy
     \end{pmatrix}
     \right|.\tag{\ddag}
 \]
-A fent kiemelt (\dag) és (\ddag) alakokból a (\ref{par:particionalt}) állítás is könnyen adódik.
+A fent kiemelt (\dag) és (\ddag) alakokból \aaz{par:particionalt}. állítás is könnyen adódik.
 Csak arra kell még emlékeznünk, hogy a mátrixnak és a transzponáltjának azonos a determinánsa.
 Ugyanis:
 \begin{multline*}
@@ -11032,7 +11097,7 @@ amelyeket a fejezet bevezetőjében említettem.
 		\end{pmatrix}
 	\]
 	A fenti mátrix determinánsa a particionált mátrix determinánsára kapott formula,
-	\apageref{par:particionalt}. oldal,
+    \aazt{\pageref{par:particionalt}}. oldal,
 	szerint $1\cdot|A_{i,k}|$.
 	Meggondoltuk tehát, hogy ha az állításban felülírt mátrix determinánsát $\delta$-val jelöljük,
 	akkor  $\delta\left( -1 \right)^{k-1+i-1}=1\cdot|A_{i,k}|$-t kapjuk.
@@ -11138,7 +11203,7 @@ A determináns kifejtésével az mátrix inverzére kapunk explicit formulát:
 	\]
 \end{proposition}
 \begin{proof}
-	Kezdjük a $B_k$ mátrixnak a $k$-adik oszlopa szerinti kifejtésével.
+	A $B_k$ mátrix $k$-adik oszlopa szerinti kifejtése:
 	\(
 	|B_k|
 	=
@@ -11490,26 +11555,33 @@ Könnyen látható, hogy a fenti függvény kielégíti a skaláris szorzat defi
 Figyeljünk a folytonosság szerepére!
 
 \begin{definition}[merőlegesség, halmaz ortokomplementere]
-	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszorzatos-tér.
+	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ egy skalárisszor\-zatos-tér.
 	\begin{enumerate}
 		\item
-		      Ha az $x,y\in V$ két pontjára $\ip{x}{y}=0$,
-		      akkor azt mondjuk hogy a két vektor \emph{merőleges}\index{merőleges} egymásra.
-		      Jelölés: $x\perp y$.
+		    Ha az $x,y\in V$ két pontjára $\ip{x}{y}=0$,
+		    akkor azt mondjuk hogy a két vektor \emph{merőleges}\index{merőleges} egymásra.
+		    Jelölés: $x\perp y$.
 		\item
-		      Legyen most, $H\subseteq V$ egy részhalmaz.
-		      Definiálja
-		      \(
-		      H^{\perp}=\left\{ x\in V:x\perp a \text{ minden } a\in H \right\}
-		      \)
-		      a \emph{$H$ halmaz merőlegesét}, vagy \emph{ortokomplemeterét}\index{ortokomplementer}.\qedhere
+		    Legyen most, $H\subseteq V$ egy részhalmaz.
+		    Definiálja
+		    \(
+		    H^{\perp}=\left\{ x\in V:x\perp a \text{ minden } a\in H \right\}
+		    \)
+		    a \emph{$H$ halmaz merőlegesét}, vagy \emph{ortokomplemeterét}\index{ortokomplementer}.
+        \item
+            Tekintsük a $H_1,H_2\subseteq V$ halmazokat.
+            Azt mondjuk, hogy ezek merőlegesek egymásra ha 
+            minden $u\in H_1$ és minden $v\in H_2$ esetén $u\perp v$.
+            Jelölés: $H_1\perp H_2$.
+            \qedhere
 	\end{enumerate}
 \end{definition}
-A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, hiszen ekkor sajátmagára is merőleges,
-de saját magára merőleges vektor csak a zérus vektor van.
+A zérus vektor minden vektorra merőleges, sőt a zérus vektor az egyedüli ilyenvektor, 
+hiszen ekkor sajátmagára is merőleges, de saját magára merőleges vektor csak a zérus vektor van.
 Pont ezt jelenti az axiómák közt az utolsó.
 A $H^\perp$ az a részhalmaza $V$-nek, amely az összes $H$-ra merőleges vektorokból áll.
 Tehát $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
+Persze $H\perp H^\perp$ csak tautologia.
 
 \begin{definition}
 	Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
@@ -11565,14 +11637,15 @@ Később látni fogjuk,
 hogy $n$ elemű ortonormált rendszer viszont mindig konstruálható egy $n$-dimenziós vektortérben,
 de erre itt még várnunk kell.
 
-Az alábbiakban a merőlegesség legnyilvánvalóbb tualjdonságait foglaljuk össze.
+Az alábbiakban a merőlegesség legnyilvánvalóbb tulajdonságait foglaljuk össze.
 Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \begin{proposition}[Merőlegesség tulajdonságai]
 	Legyen most is $V$ egy skalárisszorzatos-tér, $H,H_1\subseteq V$.
 	Ekkor
 	\begin{enumerate}
 		\item $H\cap H^{\perp}\subseteq\left\{ 0 \right\},$
-		\item $H\subseteq H_1\implies H_1^\perp\subseteq H^\perp,$
+		\item $H\subseteq H_1$ esetén $H_1^\perp\subseteq H^\perp,$
+        \item $H_1\perp H$ akkor és csak akkor, ha $H_1\subseteq H^\perp,$
 		\item $H\subseteq \left( H^\perp \right)^\perp,$
 		\item $H^{\perp}=\left( \lin H \right)^\perp,$
 		\item $H^\perp$ altér.\qedhere
@@ -11580,10 +11653,16 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \end{proposition}\
 \begin{proof}
 	Ha $v\in H\cap H^\perp$, akkor $v\perp v$, ergo $v=0$, ami az 1. pontot igazolja.
-	Ha $H\subseteq H_1$ és a $v$ vektor a $H_1$ minden pontjára merőleges, akkor persze ez a $v$ a $H$ minden pontjára is merőleges,
-	azaz 2. pontot is meggondoltuk.
-	Ha $v\in H$ rögzített és $a\in H^\perp$ egy vektor, akkor $v\perp a$, ami azt jelenti, hogy $H\subseteq \left( H^\perp \right)^\perp$.
-	A $(\lin H)^\perp\subseteq H^\perp$ tartalmazás nyilvánvaló a már meggondolt 2. tulajdonság szerint.
+\\
+	Ha $H\subseteq H_1$ és egy $v$ vektor a $H_1$ minden pontjára merőleges, 
+    akkor persze ez $H$ minden pontjára is merőleges, azaz $H_1^\perp\subseteq H$.
+\\
+    A 3. pont nyilvánvaló.
+\\
+    A meggondolt 3. pont szerint a mindig fennálló $H\perp H^\perp$ éppen $H\subseteq H^{\perp\perp}$
+    tartalmazást jelenti.
+\\
+    Mivel $H\subseteq \lin H$, ezért a 2. pont szerint $(\lin H)^\perp\subseteq H^\perp$.
 	Ha viszont $v\in H^\perp$ és $u_1,\ldots,u_n\in H$, akkor ezek tetszőleges lineáris kombinációjára
 	\begin{math}
 		\ip{v}{\sum_{j=1}^n\alpha_ju_j}
@@ -11595,14 +11674,15 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	hiszen $v\perp u_j$.
 	Meggondoltuk tehát, hogy $v$ merőleges a $H$-beli elemekből képzett tetszőleges lineáris kombinációra,
 	ergo $H^\perp\subseteq\left( \lin H \right)^\perp.$
-	Vilagos, hogy $0\in H^\perp$, ha $v_1,v_2\in H^\perp$, akkor $\alpha_1v_1+\alpha_2v_2\in H^\perp$, azaz
+    \\
+	Világos, hogy $0\in H^\perp$, ha $v_1,v_2\in H^\perp$, akkor $\alpha_1v_1+\alpha_2v_2\in H^\perp$, azaz
 	$H^\perp$ minden $H$ részhalmaz mellett egy altér.
 \end{proof}
 
 \section{Egyenlőtlenségek}
 \begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel}
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
-	Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer.
+	Tegyük fel, hogy $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer.
 	Ekkor minden $u\in V$ vektorra:
 	\begin{enumerate}
 		\item
@@ -11614,12 +11694,12 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		      \hat{u}=u-\sum_{i=1}^k\ip{u}{x_i}x_i
 		      \)
 		      vektorra $\hat{u}\perp x_j$
-		      ($j=1,\cdots,k$), azaz
+		      ($j=1,\ldots,k$), azaz
 		      \(
 		      \hat{u}\in
 		      \left\{ x_1,\ldots,x_k \right\}^\perp
 		      %=
-		      %\left(\lin\left\{ x_1,\cdots,x_k \right\} \right)^\perp
+		      %\left(\lin\left\{ x_1,\ldots,x_k \right\} \right)^\perp
 		      .
 		      \)
 		      \qedhere
@@ -11742,7 +11822,7 @@ Ehhez először a jól ismert Pythagoras-tételt kell megfogalmaznunk.
 
 \begin{proposition}[Pythagoras]\index{Pythagoras-tétel}
 	Ha $u\perp v$, akkor $\|u+v\|^2=\|u\|^2+\|v\|^2$.
-	Hasonlóan, ha $\left\{ u_1,\cdots,u_k \right\}$ ortogonális rendszer, akkor
+	Hasonlóan, ha $\left\{ u_1,\ldots,u_k \right\}$ ortogonális rendszer, akkor
 	$\|\sum_{i=1}^ku_i\|^2=\sum_{i=1}^k\|u_i\|^2$.
 \end{proposition}
 \begin{proof}
@@ -11778,8 +11858,8 @@ Ehhez először a jól ismert Pythagoras-tételt kell megfogalmaznunk.
 \end{proof}
 
 \begin{proposition}[legközelebbi pont]\index{legközelebbi pont}\label{pr:legkozelebb}
-	Legyen $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer és
-	jelölje $M=\lin\left\{ x_1,\cdots,x_k \right\}$.
+	Legyen $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer és
+	jelölje $M=\lin\left\{ x_1,\ldots,x_k \right\}$.
 	Ekkor minden $u\in V$ vektorhoz létezik egyetlen $u^\ast\in M$
 	vektor, amelyre
 	\[
@@ -11845,7 +11925,8 @@ számot nevezzük, az \emph{$u$ vektor és az $M$ altér távolságának.}
 	\]
 	és az $u^\ast=\sum_{j=1}^k\ip{u}{x_j}x_j $ az egyetlen olyan $M$-beli pont, amelyre
 	az
-	$\|u-u^\ast\|=\min\left\{ \|u-w\|:w\in M  \right\}$ egyenlőség fennáll.
+	$$\|u-u^\ast\|=\min\left\{ \|u-w\|:w\in M  \right\}
+    $$ egyenlőség fennáll.
 	Ezt kellett belátni.
 \end{proof}
 
@@ -11864,12 +11945,12 @@ ugyanis a fent kiemelt képletben szerepelnek a bázis elemei.
 Viszont tudjuk, hogy a fenti vektor az $u$-hoz legközelebb eső vektora $M$-nek, amiből persze csak egy van,
 emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált bázisának megválasztásától.
 \begin{definition}[merőleges vetület, merőleges vetítés]
-	Legyen $M=\lin\left\{ x_1,\cdots,x_k \right\}$,
-	ahol $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer.
+	Legyen $M=\lin\left\{ x_1,\ldots,x_k \right\}$,
+	ahol az $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer.
 
 	Láttuk, hogy a
 	$\sum_{i=j}^k\ip{u}{x_j}\in M$ vektor független
-	az $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer megválasztásától,
+	az $\left\{ x_1,\ldots,x_k \right\}$ ortonormált rendszer megválasztásától,
 	hiszen ez vektor az $u$ vektorhoz legközelebb eső vektora az $M$ altérnek.
 	Definiálja $p_M:V\to V$ az alábbi függvényt
 	\[
@@ -11895,8 +11976,8 @@ a bevezetett merőleges vetítés és hosszúság fogalom felhasználásával.
 Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az állítás feltevése.
 \begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel2}
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
-	Tegyük fel, hogy $\left\{ x_1,\cdots,x_k \right\}$ egy ortonormált rendszer,
-	$M=\lin\left\{ x_1,\cdots,x_k \right\}$
+	Tegyük fel, hogy $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer,
+	$M=\lin\left\{ x_1,\ldots,x_k \right\}$
 	és $p_M\in L\left( V \right)$ a merőleges vetítés az $M$ altérre.
 	Ekkor minden $u\in V$ mellett
 	\begin{enumerate}
@@ -11936,10 +12017,10 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 \end{proof}
 
 \begin{proposition}[Gram\,--\,Schmidt-ortogonalizáció]\index{Gram\,--\,Schmidt-ortogonalizáció}\label{pr:GS}
-	Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\cdots,y_k \right\}$ egy lineárisan független
+	Legyen a $V$ skalárisszorzatos-térben $\left\{ y_1,\ldots,y_k \right\}$ egy lineárisan független
 	vektorrendszer.
-	Ehhez létezik olyan $\left\{ x_1,\cdots,x_k \right\}$ ortonormált rendszer,
-	amelyre minden $i=1,\cdots,k$ mellett $x_i\in\lin\left\{ y_1,\cdots,y_i \right\}$.
+	Ehhez létezik olyan $\left\{ x_1,\ldots,x_k \right\}$ ortonormált rendszer,
+	amelyre minden $i=1,\ldots,k$ mellett $x_i\in\lin\left\{ y_1,\ldots,y_i \right\}$.
 \end{proposition}
 \begin{proof}
 	Teljes indukció, a lineárisan független rendszer elemszáma szerint.
@@ -12094,10 +12175,10 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 \begin{proof}
 	Mivel $M$ a $V$ skalárisszorzatos tér egy véges dimenziós altere,
 	ezért az $M$ altérnek van
-	ortonormált bázisa, amint azt \aref{pr:onb}.~állításban Gram\,--\,Schmidt-ortogonalizációnál láttuk.
+    ortonormált bázisa, amint azt \aaz{pr:onb}. állításban Gram\,--\,Schmidt-ortogonalizációnál láttuk.
 	Legyen ez $\left\{ x_1,\ldots,x_k \right\}$.
-	Írjuk fel evvel az ortonormált rendszerrel \aref{pr:legkozelebb}. legközelebbi pontról szóló,
-	és \aref{pr:Bessel2}. Bessel-egyen\-lőt\-lenség\-ről szóló állításokat.
+    Írjuk fel evvel az ortonormált rendszerrel \aaz{pr:legkozelebb}. legközelebbi pontról szóló,
+    és \aaz{pr:Bessel2}. Bessel-egyen\-lőt\-lenség\-ről szóló állításokat.
 \end{proof}
 
 \begin{proposition}[projekciós-tétel]\index{projekciós-tétel}\label{pr:projekcios}
@@ -12116,7 +12197,7 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 	\]
 	nyilvánvaló egyenlőség.
 	Itt az első vektorra $p_M\left( u \right)\in M$, és a második vektorra $u-p_M\left( u \right)\in M^\perp$
-	\aref{pr:Bessel3}.~állítás szerint.
+    \aaz{pr:Bessel3}. állítás szerint.
 	Ez azt jelenti, hogy $M+M^\perp=V$ azonosság is teljesül,
 	ahol $M+M^\perp$ az $M$ és az $M^\perp$ ortokomplementerének a Minkowski-összege.
 \end{proof}
@@ -12164,17 +12245,29 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 		\qedhere
 	\]
 \end{proof}
+\begin{proposition}
+    Legyen most már $V$ egy véges dimenziós skalárisszorzatos-tér.
+    Tegyük fel, hogy $M,N\subseteq V$ olyan alterek, amelyekre $M+N=V$ és $M\perp N$.
+    Ekkor $N=M^\perp$.
+\end{proposition}
+\begin{proof}
+    Világos, hogy $M$ és $N$ diszjunkt alterek is, ezért $M\oplus N=V=M\oplus M^\perp$
+    a projekciós tétel szerint.
+    ekkor persze $N$ és $M^\perp$ izomorf alterek, amelyekre $N\subseteq M^\perp$ tartalmazás is teljesül.
+    Ez csak $N=M^\perp$ módon teljesülhet.
+\end{proof}
+
 \section{Ortonormált rendszer teljessége}
 \begin{definition}[T.O.N.R.]
-	Legyen $\left\{ e_1,\cdots,e_k \right\}$ egy ortonormált rendszer a $V$ skalárisszorzatos-térben.
+	Legyen $\left\{ e_1,\ldots,e_k \right\}$ egy ortonormált rendszer a $V$ skalárisszorzatos-térben.
 	Azt mondjuk, hogy ez egy \emph{teljes ortonormált rendszer}, ha
 	\[
-		\ip{u}{e_j}=0\quad\forall j=1,\cdots,k \implies u=0
+		\ip{u}{e_j}=0\quad\forall j=1,\ldots,k \implies u=0
 	\]
 	implikáció teljesül.
 \end{definition}
 Először is vegyük észre, hogy a fenti implikáció ekvivalens az
-$\left\{ e_1,\cdots,e_k \right\}^\perp =\left\{ 0 \right\}$
+$\left\{ e_1,\ldots,e_k \right\}^\perp =\left\{ 0 \right\}$
 feltétellel.
 
 \begin{proposition}
@@ -12231,7 +12324,7 @@ feltétellel.
 		      Ez azt jelenti, hogy a $H$ vektorrendszer egy lineárisan független generátorrendszer, ergo bázis.
 
 		\item[$2.\Rightarrow 3.$]
-		      Már beláttuk \aref{pr:onb}.~állítás második felében.
+            Már beláttuk \aaz{pr:onb}. állítás második felében.
 
 		\item[$3.\Rightarrow 4.$]
 		      Jelölje $x\in V$ mellett $\xi_j=\ip{x}{e_j}$ és $y\in V$ mellett
@@ -12320,7 +12413,7 @@ Ezt az egyetlen $z_\varphi$ vektort nevezzük a $\varphi$ lineáris funkcionált
 	ergo $z_1=z_2$.
 
 	Az egzisztencia igazolásához legyen $\left\{ v_1,\ldots,v_n \right\}$ egy ortonormált bázisa a $V$ skalárisszorzatos-térnek.
-	Tudjuk -- lásd \aref{pr:onb}.~állítást --, hogy minden $x\in V$ vektor
+    Tudjuk -- lásd \aaz{pr:onb}. állítást --, hogy minden $x\in V$ vektor
 	\begin{math}
 		x=
 		\sum_{j=1}^n\ip{x}{v_j}v_j
@@ -12433,7 +12526,7 @@ akkor
 \end{proof}
 Látni fogjuk, hogy a (\dag) adjungált azonosság szinte fontosabb mint a definíció.
 A definíció arra való, hogy megmutassuk: adott $A\in L\left( V,W \right)$ lineáris transzformációhoz van olyan
-$A^\ast:W\to V$ függvény, amelyre minden $u\in W$ és minden $w\in W$ mellett fennáll az adjungált azonosság:
+$A^\ast:W\to V$ függvény, amelyre minden $v\in V$ és minden $w\in W$ mellett fennáll az adjungált azonosság:
 \[
 	\ip{Av}{w}
 	=
@@ -12442,7 +12535,7 @@ $A^\ast:W\to V$ függvény, amelyre minden $u\in W$ és minden $w\in W$ mellett 
 \]
 Az adjungált unicitása, és összes fontos tulajdonsága az adjungált azonosságon alapul.
 \paragraph{Az adjungált függvény linearitása.}
-\Aref{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk,
+\Aaz{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk,
 hogy ha tetszőlegesen adott egy
 $\left\{ v_1,\ldots,v_n \right\}\subseteq V$
 ortonormált bázis, akkor
@@ -12512,7 +12605,7 @@ azonosság is teljesül.
 			[A^\ast]
 		}_{j,i}
 	\end{math},
-	\aref{pr:onb}.~állítás, a (\dag) adjungált azonosság, és a skalárisszorzás tulajdonságai szerint.
+    \aaz{pr:onb}. állítás, a (\dag) adjungált azonosság, és a skalárisszorzás tulajdonságai szerint.
 \end{proof}
 
 Most összefoglaljuk az adjungálás operáció legfontosabb tulajdonságait,
@@ -12693,7 +12786,7 @@ hogy a transzformáció önadjungált vagy sem.
 Persze a fenti tulajdonság, ha egy ortonormált bázis mellett teljesül,
 akkor $A$ önadjungált, ezért minden más ortonormált bázisban is igaz marad.
 
-A skalárisszorzatos-terek rangtétele, -- tehát \aref{pr:skrang}.~állítás -- önadjungált transzformációk mellett azt jelenti,
+A skalárisszorzatos-terek rangtétele, -- tehát \aaz{pr:skrang}. állítás -- önadjungált transzformációk mellett azt jelenti,
 hogy
 a $\ker A$ és az $\im A$ egymásra merőleges alterek,
 amelyek direkt összege az egész tér.
@@ -12920,16 +13013,24 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 			      \ker (N-\lambda I)=\ker (N^\ast-\bar{\lambda}I);
 		      \end{math}
 		\item
-		      Különböző sajátértékekhez tartozó sajátalterek merőlegesek egymásra, azaz
+              Legyen $\lambda\neq \mu\in\mathbb{K}$. Ekkor 
 		      \begin{math}
-			      \ker \left( N-\lambda I \right)\perp\ker\left( N-\mu I \right),
+			      \ker \left( N-\lambda I \right)\perp\ker\left( N-\mu I \right).
 		      \end{math}
-		      ahol $\lambda\neq \mu$ és $\lambda,\nu\in\sigma\left( N \right)$.
-		\item Ha $N=N^\ast$, azaz $N$ önadjungált transzformáció, akkor
+              Ha tehát $\lambda$ és $\mu$ az $N$ transzformáció különböző sajátértékei, 
+              akkor az ezekhez tartozó sajátalterek egymásra merőlegesek.
+		\item Speciálisan, ha $N=N^\ast$, azaz $N$ önadjungált transzformáció, akkor
 		      \begin{math}
 			      \sigma\left( N \right)\subseteq \mathbb{R},
 		      \end{math}
 		      azaz önadjungált transzformációnak valósak a sajátértékei.
+        \item Speciálisan, ha $N$ reguláris és $N^{-1}=N^\ast$, azaz $N$ unitér transzformáció, akkor
+              minden 
+		      \begin{math}
+			      \lambda\in\sigma\left( N \right)\subseteq \mathbb{R},
+		      \end{math}
+              esetén $|\lambda|=1$, 
+		      azaz unitér transzformációnak a sajátértékei $1$ abszolútértékűek.
 		      \qedhere
 	\end{enumerate}
 \end{proposition}
@@ -12975,6 +13076,17 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 		=Nu-N^\ast u=Nu-Nu=0.
 	\]
 	No de, az $u\neq 0$ feltétel miatt $\lambda-\bar{\lambda}=0$, tehát $\lambda\in\mathbb{R}.$
+
+
+	Legyen most $N$ unitér, és $\lambda\in\sigma\left( N \right)$ egy sajátérték.
+	Van tehát olyan $u\neq 0$ vektor, amelyre $Nu=\lambda u$ és $N^\ast u=\bar{\lambda}u$.
+    Persze $N^{-1}Nu=N^{-1}\left( \lambda u \right)=\lambda N^{-1}u$,
+	ezért
+	\[
+        \left( \frac{1}{\lambda}-\bar{\lambda} \right)u
+        =N^{-1}u-N^\ast u=Nu-Nu=0.
+	\]
+    No de, az $u\neq 0$ feltétel miatt $\frac{1}{\lambda}-\bar{\lambda}=0$, tehát $\lambda\bar{\lambda}=|\lambda|^2=1$.
 \end{proof}
 Eddig minden gondolat $\mathbb{K}$ feletti skalárisszorzatos-téren volt.
 A komplex és a valós diagonalizálhatóság közös magja a következő állítás.
@@ -13009,7 +13121,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 \end{proposition}
 \begin{proof}
 	Az algebra alaptétele szerint irreducibilis $\mathbb{C}$ feletti polinom
-	csak első fokú polinom lehet.
+	csak elsőfokú polinom lehet.
 	Így a minimálpolinom, a normalitást kihasználva a fenti (\ref{pr:normalis-mult1}.) gondolat alapján,
 	\[
 		m\left( t \right)=\left( t-\lambda_1 \right)\dots\left( t-\lambda_s \right).
@@ -13018,7 +13130,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 	\[
 		V=\ker\left( N-\lambda_1I \right)\oplus\dots\oplus\ker\left( N-\lambda_sI \right).
 	\]
-	Most végezzünk Gram\,--\,Schmidt-ortogonalizációt\index{Gram\,--\,Schmidt-ortogonalizáció}
+	Most végezzünk Gram\,--\,Schmidt-ortogonalizációt
 	minden egyes sajátaltérben külön-külön,
 	majd egyesítsük a kapott ortogonális rendszereket az egész $V$ skalárisszorzatos-tér ortogonális bázisává.
 	Így $N$ sajátvektoraiból álló ortonormált bázist kapunk.
@@ -13042,7 +13154,7 @@ Rögtön kiderül, hogy mindig van sajátértéke.
 Ha $\dim(V)=1$, akkor minden $A:V\to V$ transzformációra igaz, hogy ha $v\neq 0$ vektor, 
 akkor van olyan $\lambda\in\mathbb{R}$,
 hogy $Av=\lambda v$. 
-Azt kaptuk tehát, hogy 1 dimenziós téren értelmezett minden lineáris transzformációnak
+Azt kaptuk tehát, hogy egydimenziós téren értelmezett minden lineáris transzformációnak
 van sajátértéke, és minden zérustól különböző vektor sajátvektor is.
 
 Most nézzük csak 2 dimenzióban.
@@ -13428,18 +13540,18 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		NN^\ast.
 	\]
 
-	Most megmutatjuk, hogy
-	$\left\{ \lambda_1,\ldots,\lambda_r \right\}\subseteq \sigma(N)$.
-	Legyen $u_j\in\im P_j$ egy nem zérus vektor, azaz $u_j\neq 0$.
-	Ilyen vektor létezik, hiszen $P_{j}\neq 0$.
-	Világos, hogy minden $k$ mellett
+	Most megmutatjuk, hogy 
+    $\im P_j\subseteq\ker\left( N-\lambda_jI \right)$.
+	Legyen $u_j\in\im P_j$.
+	Világos, hogy minden $k\neq j$ mellett
 	\begin{math}
 		P_k\left( u_j \right)
 		=
 		P_k\left( P_j\left( u_j \right) \right)
 		=
 		P_kP_j\left( u_j \right)
-		=\delta_{k,j}u_j.
+        =
+        0.
 	\end{math}
 	Így
 	\[
@@ -13447,69 +13559,83 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		=
 		\left( \sum_{k=1}^r\lambda_kP_k \right)u_j
 		=
-		\sum_{k=1}^r\lambda_k\delta_{k,j}u_j
+        \lambda_{j}P_ju_j
 		=
-		\lambda_ju_j,
+		\lambda_ju_j.
 	\]
-	ami pont azt jelenti, hogy $\lambda_j$ az $N$ transzformáció egy sajátértéke.
 
-	Most azt mutatjuk meg, hogy
-	$\sigma(N)\subseteq \left\{ \lambda_1,\ldots,\lambda_r \right\}$.
-	Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
-	Jelölje $s_j=P_js\in\im P_j$, minden $j=1,\ldots,r$ mellett.
-	Itt
-	\[
-		s=Is
-		=
-		\left( \sum_{j=1}^rP_j \right)s
-		=
-		\left( \sum_{j=1}^rP_js \right)
-		=
-		\sum_{j=1}^rs_j.
-	\]
-	Ezért
-	\[
-		\sum_{j=1}^r\mu s_j
-		=
-		\mu\sum_{j=1}^rs_j
-		=
-		\mu s
-		=
-		Ns
-		=
-		\left( \sum_{j=1}^r\lambda_jP_j \right)s
-		=
-		\sum_{j=1}^r\lambda_jP_js
-		=
-		\sum_{j=1}^r\lambda_js_j.
-	\]
-	Azt kaptuk tehát, hogy
-	\[
-		\sum_{\substack{j=1\\s_j\neq 0}}^r\left(\lambda_j-\mu \right)s_j=0.\tag{\dag}
-	\]
-	Itt a baloldali szummának van legalább egy tagja, hiszen
-	\(
-	0 \neq s=\sum_{j=1}^rs_j.
-	\)
-	Az
-	$\left\{ s_j:j=1,\ldots,r \right\}$
-	egy ortogonális rendszer,
-	hiszen a $P_j$ projekciók egymásra merőlegesek, ami ekvivalens avval, hogy
-	$\im P_k\perp \im P_j$ minden $k\neq j$ mellett.
-	Így az
-	$\left\{ s_j:j=1,\ldots,r, s_j\neq 0 \right\}$ vektorrendszer,
-	zérus elemet nem tartalmazó ortogonális rendszerként lineárisan független rendszer.
-	Ez azt jelenti, hogy a $(\dag)$ lineáris kombináció együtthatói a test nullelemei, ergo
-	\begin{math}
-		\lambda_j-\mu=0
-	\end{math}
-	minden szóba jövő $j$-re,
-	azaz minden olyan $j$ mellett, amelyre $s_j\neq 0$.
-	A már igazoltak szerint
-	\begin{math}
-		\mu=\lambda_j\in\sigma(N).
-	\end{math}
-	Ezt kellett belátni.
+    A $P_j\neq 0$ feltétetel szerint $\ker\left( N-\lambda_jI \right)\supseteq\im P_j\neq\left\{ 0 \right\}$,
+    ezért $N-\lambda_jI$ szinguláris.
+    Mivel ez minden $j=1,\ldots,r$ mellett fennáll, ezért minden $j$ mellett a $\lambda_j$ egy sajátértéke $N$-nek. 
+
+	Most azt gondoljuk meg, hogy nincs más sajátérték, azaz ha $\sigma\neq \lambda_j$ minden $j=1,\dots,r$ mellett,
+    akkor $\sigma$ nem sajátérték.
+    Megmutatjuk tehát, hogy $\ker\left( N-\sigma I \right)=\left\{ 0 \right\}$.
+    Ehhez vegyük észre, hogy $\sum_{j=1}^rP_j=I$ szerint $\sum_{j=1}^r\im P_j=V$ komplexus azonosság teljesül,
+    és mivel $N$ normális, ezért $\ker\left( N-\lambda_jI \right)\perp\ker\left( N-\sigma I \right)$ is teljesül
+    minden $j=1,\dots,r$ mellett.
+    Így
+    \[
+        V=\sum_{j=1}^r\im P_j\subseteq\sum_{j=1}^r\ker\left( N-\lambda_jI \right)\subseteq\left( \ker\left( N-\sigma I \right) \right)^\perp.
+    \]
+    Ha tehát $v\in\ker\left( N-\sigma I \right)$, akkor $v$ merőleges saját magára, ergo $v=0$.
+    Ezt kellett belátni. 
+%	$\sigma(N)\subseteq \left\{ \lambda_1,\ldots,\lambda_r \right\}$.
+%	Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
+%	Jelölje $s_j=P_js\in\im P_j$, minden $j=1,\ldots,r$ mellett.
+%	Itt
+%	\[
+%		s=Is
+%		=
+%		\left( \sum_{j=1}^rP_j \right)s
+%		=
+%		\left( \sum_{j=1}^rP_js \right)
+%		=
+%		\sum_{j=1}^rs_j.
+%	\]
+%	Ezért
+%	\[
+%		\sum_{j=1}^r\mu s_j
+%		=
+%		\mu\sum_{j=1}^rs_j
+%		=
+%		\mu s
+%		=
+%		Ns
+%		=
+%		\left( \sum_{j=1}^r\lambda_jP_j \right)s
+%		=
+%		\sum_{j=1}^r\lambda_jP_js
+%		=
+%		\sum_{j=1}^r\lambda_js_j.
+%	\]
+%	Azt kaptuk tehát, hogy
+%	\[
+%		\sum_{\substack{j=1\\s_j\neq 0}}^r\left(\lambda_j-\mu \right)s_j=0.\tag{\dag}
+%	\]
+%	Itt a baloldali szummának van legalább egy tagja, hiszen
+%	\(
+%	0 \neq s=\sum_{j=1}^rs_j.
+%	\)
+%	Az
+%	$\left\{ s_j:j=1,\ldots,r \right\}$
+%	egy ortogonális rendszer,
+%	hiszen a $P_j$ projekciók egymásra merőlegesek, ami ekvivalens avval, hogy
+%	$\im P_k\perp \im P_j$ minden $k\neq j$ mellett.
+%	Így az
+%	$\left\{ s_j:j=1,\ldots,r, s_j\neq 0 \right\}$ vektorrendszer,
+%	zérus elemet nem tartalmazó ortogonális rendszerként lineárisan független rendszer.
+%	Ez azt jelenti, hogy a $(\dag)$ lineáris kombináció együtthatói a test nullelemei, ergo
+%	\begin{math}
+%		\lambda_j-\mu=0
+%	\end{math}
+%	minden szóba jövő $j$-re,
+%	azaz minden olyan $j$ mellett, amelyre $s_j\neq 0$.
+%	A már igazoltak szerint
+%	\begin{math}
+%		\mu=\lambda_j\in\sigma(N).
+%	\end{math}
+%	Ezt kellett belátni.
 \end{proof}
 
 \begin{proposition}\label{pr:normpol}
@@ -13547,6 +13673,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 	\begin{multline*}
 		q\left( N \right)
 		=
+        \\
 		\sum_{l=0}^m\alpha_lN^l
 		=
 		\sum_{l=0}^m\alpha_l
@@ -13563,6 +13690,7 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
 		\sum_{l=0}^m\alpha_l\lambda_j^l
 		\right)P_j
 		=
+        \\
 		\sum_{j=1}^r
 		q\left(\lambda_j \right)P_j.
 	\end{multline*}
@@ -13632,13 +13760,13 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 \end{proof}
 
 \chapter{Spektrális felbontások}
-\scwords A közös mag az identikus operáció alábbi felbontása.
+\scwords Az identitkus transzformáció felbontása a közös magja a spektrális felbontásoknak:
 \begin{proposition}
 	Tegyük fel, hogy $V$ egy $\mathbb{K}$ feletti skalárisszorzatos-tér,
 	és tegyük fel, hogy az $M_1,\ldots,M_r$ alterekre
 	\[
-		V=M_1\oplus\dots\oplus M_r,
-		\qquad\text{ahol }M_j\perp M_k\text{ minden }j\neq k.
+		V=M_1+\ldots+M_r,
+		\quad\text{ahol }M_j\perp M_k\text{ minden }j\neq k.
 	\]
 	Jelölje $P_j$ az $M_j$ altérre való merőleges vetítést.
 	Ekkor
@@ -13648,10 +13776,11 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 	és persze $P_j\perp P_k$ minden $j\neq k$ mellett.
 \end{proposition}
 \begin{proof}
-	Minden $s\in V$ vektor egyértelműen előáll
+	Minden $s\in V$ vektor előáll
 	$s=\sum_{j=1}^rs_j$
 	alakban, ahol $s_j\in M_j$.
-	Felhasználva, hogy $P_j|M_j=\id$ és $\sum_{\substack{k=1\\k\neq j}}^rM_k\subseteq M_j^\perp=\ker P_j$ minden $k\neq j$ mellett
+    Felhasználva, hogy $P_j|_{M_j}=\id_{M_j}$ és 
+    $\sum_{\substack{k=1\\k\neq j}}^rM_k\subseteq M_j^\perp=\ker P_j$ minden $k\neq j$ mellett
 	\[
 		\left(
 		\sum_{j=1}^rP_j
@@ -13663,6 +13792,8 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 		=
 		\sum_{j=1}^r\left( P_js_j+P_j\left( \sum_{\substack{k=1\\k\neq j}}^rs_k \right) \right)
 		=
+        \sum_{j=1}^rP_js_j
+        =
 		\sum_{j=1}^rs_j
 		=
 		Is.
@@ -13670,7 +13801,7 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 	\]
 \end{proof}
 Emlékezzünk arra, hogy ha $\left\{ \lambda_1,\ldots,\lambda_r \right\}$ az $N$ normális transzformáció
-sajátértékei,
+különböző sajátértékei,
 akkor bevezetve az $M_i=\ker\left( N-\lambda_i I \right)$ jelölést
 \[
 	M_1\oplus\dots\oplus M_r\subseteq V
@@ -13679,7 +13810,9 @@ akkor bevezetve az $M_i=\ker\left( N-\lambda_i I \right)$ jelölést
 Még azt is láttuk, hogy $\mathbb{K}=\mathbb{C}$ esetben itt egyenlőség is van,
 de azt is tudjuk, hogy az egyenlőség még a $\mathbb{K}=\mathbb{R}$ és $N^\ast=N$ esetben is fennáll.
 \section{Komplex eset}
-
+A spektrális felbontási téteteleket fogalmazzuk meg abban az esetben, mikor az alaptestre $\mathbb{K}=\mathbb{C}$.
+A legáltalánosabb eset a normális transtformációkra vonatkozik, 
+majd felírjuk az önadjungált és az unitér transzformációk speciális esetét.
 \subsection{Normális transzformáció}
 \begin{proposition}[spektrális felbontás]
 	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $N\in L\left( V \right)$
@@ -13734,7 +13867,7 @@ de azt is tudjuk, hogy az egyenlőség még a $\mathbb{K}=\mathbb{R}$ és $N^\as
 Az eddigiek összefoglalásaként (\ref{pr:normlinkombkomplex} és \ref{pr:normpol}) kapjuk az alábbi szükséges és elegendő feltételét annak,
 hogy egy komplex mátrix ortonormált bázisban diagonalizálható.
 \begin{proposition}[Normalitás karakterizációja a spektrális felbontással]
-	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér és $N\in L\left( V \right)$ egy lineáris transzformáció.
+	Legyen $V$ egy $\mathbb{C}$ feletti skaláris\-szor\-zatos-tér és $N\in L\left( V \right)$ egy lineáris transzformáció.
 	Az $N$ transzformáció pontosan akkor normális,
 	ha létezik $r\geq 1$ egész, léteznek $P_1,\ldots,P_r$ ortogonális projekciók és
 	léteznek $\lambda_1,\ldots,\lambda_r\in\mathbb{C}$ komplex számok,
@@ -13783,9 +13916,9 @@ a normális transzformációk spektrális felbontásának speciális esete.
 \begin{proposition}[spektrális felbontás]
 	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
 	egy önadjungált lineáris transzformáció.
-	Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
+	Jelölje $\sigma\left( A \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
 	Láttuk, hogy $k\geq 1$, és $\sigma\left( A \right)\subseteq \mathbb{R}$.
-	Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+	Jelölje $P_j$ a $\ker\left\{ A-\lambda_jI \right\}$ altérre való merőleges vetítést.
 	Ekkor
 	\begin{enumerate}
 		\item Minden $j=1,\ldots,r$ mellett $P_j\neq 0$;
@@ -13810,9 +13943,9 @@ hogy egy komplex mátrix ortonormált bázisban diagonalizálható, és a diagon
 	Ha $A$ önadjungált,
 	akkor $\sigma\left( A \right)=\left\{ \lambda_1,\ldots,\lambda_r \right\}$,
 	és tetszőleges $q\in\mathbb{R}[t]$ valós együtthatós polinom mellett
-	$q\left( N \right)$ is önadjungált,
+	$q\left( A \right)$ is önadjungált,
 	továbbá
-	$q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+	$q\left( A \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
 \end{proposition}
 
 \subsubsection{Unitér transzformáció}
@@ -13856,9 +13989,9 @@ a normális transzformációk spektrális felbontásának speciális esete.
 \begin{proposition}[spektrális felbontás]
 	Legyen $V$ egy $\mathbb{C}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
 	egy unitér lineáris transzformáció.
-	Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
-	Láttuk, hogy $k\geq 1$, $|\lambda_j|=1$ minden $j=1,\ldots,r$ mellett
-	Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+	Jelölje $\sigma\left( A \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}$ az $A$ különböző sajátértékeit.
+	Láttuk, hogy $k\geq 1$, $|\lambda_j|=1$ minden $j=1,\ldots,r$ mellett.
+	Jelölje $P_j$ a $\ker\left\{ A-\lambda_jI \right\}$ altérre való merőleges vetítést.
 	Ekkor
 	\begin{enumerate}
 		\item Minden $j=1,\ldots,r$ mellett $P_j\neq 0$;
@@ -13899,9 +14032,9 @@ ezért a komplex önadjungált esettel analóg állítás igaz valós vektortér
 \begin{proposition}[spektrális felbontás]
 	Legyen $V$ egy $\mathbb{R}$ feletti skalárisszorzatos-tér, és $A\in L\left( V \right)$
 	egy szimmetrikus lineáris transzformáció.
-	Jelölje $\sigma\left( N \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}\subseteq\mathbb{R}$ az $A$ különböző sajátértékeit.
+	Jelölje $\sigma\left( A \right)=\left\{\lambda_1,\ldots,\lambda_k  \right\}\subseteq\mathbb{R}$ az $A$ különböző sajátértékeit.
 	Láttuk, hogy $k\geq 1$.
-	Jelölje $P_j$ a $\ker\left\{ N-\lambda_jI \right\}$ altérre való merőleges vetítést.
+	Jelölje $P_j$ a $\ker\left\{ A-\lambda_jI \right\}$ altérre való merőleges vetítést.
 	Ekkor
 	\begin{enumerate}
 		\item Minden $j=1,\ldots,r$ mellett $P_j\neq 0$;
@@ -13964,9 +14097,9 @@ hogy egy valós szimmetrikus mátrix ortonormált bázisban diagonalizálható.
 	Ha $A$ szimmetrikus,
 	akkor $\sigma\left( A \right)=\left\{ \lambda_1,\ldots,\lambda_r \right\}$,
 	és tetszőleges $q\in\mathbb{R}[t]$ valós együtthatós polinom mellett
-	$q\left( N \right)$ is szimmetrikus,
+	$q\left( A \right)$ is szimmetrikus,
 	továbbá
-	$q\left( N \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
+	$q\left( A \right)=\sum_{j=1}^rq\left( \lambda_j \right)P_j$.
 \end{proposition}
 
 %\subsection{Ortogonális transzformáció}
@@ -14021,7 +14154,7 @@ akkor
 $r\left( A \right)=\lambda_{max}.$
 
 \begin{proposition}
-	Lgyen $V,W$ ugyanazon $\mathbb{K}$ test feletti skalárisszorzatos-terek.
+	Legyenek $V,W$ ugyanazon $\mathbb{K}$ test feletti skalárisszorzatos-terek.
 	Legyen $A\in L\left( V,W \right)$ egy lineáris operáció.
 	Ekkor az $A^\ast A$ egy önadjungált transzformáció,
 	így $\sigma\left( A^\ast A \right)\neq \emptyset$,
@@ -14032,7 +14165,7 @@ $r\left( A \right)=\lambda_{max}.$
 \begin{proof}
 	Világos, hogy $(A^\ast A)^\ast=A^\ast (A^\ast)^\ast=A^\ast A$,
 	ergo $A^\ast A$ valóban egy önadjungált lineáris transzformációja a $V$ vektortérnek.
-	Láttuk, hogy $A$ még diagonalizálható is, tehát spektruma nem üres.
+	Láttuk, hogy $A^\ast A$ még diagonalizálható is, tehát spektruma nem üres.
 	Azt is láttuk, hogy önadjungált transzformáció minden sajátértéke valós.
 	No de, ha $\lambda\in\sigma\left( A^\ast A \right)$ és $x\in V$ egy nem zérus vektor,
 	amelyre $A^\ast Ax=\lambda x$, akkor
@@ -14161,9 +14294,9 @@ akkor még egyszerűbb állítást kapunk.
 \end{proposition}
 \begin{proof}
 	Mivel $A$ önadjungált,
-	ezért $A$-nak van spektrálfelbontása, és ha ez $A=\sum_{j=1}^r\lambda_jPj$,
+	ezért $A$-nak van spektrálfelbontása, és ha ez $A=\sum_{j=1}^r\lambda_jP_j$,
 	akkor az $A^2$ spektrálfelbontása $A^2=\sum_{j=1}^r\lambda_j^2P_j$,
-	ahol $\lambda_1,\ldots,\lambda_r$ valós számok.
+	ahol a $\lambda_1,\ldots,\lambda_r$ valós számok az $A$ spektrumának elemei.
 	Ez azt jelenti, hogy $A^2$ minden sajátértéke négyzete $A$ valamelyik sajátértékének.
 	Így
 	\[
@@ -14177,7 +14310,7 @@ akkor még egyszerűbb állítást kapunk.
 		=
 		r\left( A \right)^2.
 	\]
-	No de, újra használva $A^\ast=A$ feltevést
+	No de, újra használva az $A^\ast=A$ feltevést
 	\[
 		\|A\|^2
 		=
@@ -14223,10 +14356,10 @@ akkor még egyszerűbb állítást kapunk.
 	\begin{math}
 		\|A\|^2
 		\leq
-		\|A^\ast\|\|A\|,
+		\|A^\ast\|\cdot\|A\|,
 	\end{math}
 	amiből $\|A\|\leq\|A^\ast\|$ következik.
-	No de, ez minden lineáris operácációra igaz,
+	No de, ez minden lineáris operációra igaz,
 	speciálisan az $A^\ast$ adjungáltra is.
 	Emiatt az
 	\begin{math}
@@ -14237,7 +14370,7 @@ akkor még egyszerűbb állítást kapunk.
 		\|A\|
 	\end{math}
 	egyenlőtlenség is teljesül igazolva,
-	hogy egy lineáris operácációnak és adjungáltjának azonos a normája.
+	hogy egy lineáris operációnak és adjungáltjának azonos a normája.
 
 	Alkalmazva az eddig igazoltatakat
 	\[
@@ -14297,7 +14430,9 @@ Ebből azonnal következik, hogy
 	\item
 	      $\left\{ e_1, Ae_1,A^2e_1,\ldots,A^{n-1}e_1,A^ne_1\right\}$ rendszer már lineárisan összefüggő,
 	      hiszen
-	      $A^ne_1=AA^{n-1}e_1=Ae_n=-\sum_{j=0}^{n-1}\alpha_j A^je_1$.
+	      \[
+              A^ne_1=AA^{n-1}e_1=Ae_n=-\sum_{j=0}^{n-1}\alpha_j A^je_1.
+          \]
 \end{enumerate}
 Látjuk tehát, hogy $m$ a legalacsonyabb fokú normált polinom, melyre
 $m\left( A \right)e_1=0$,
@@ -14471,7 +14606,7 @@ A következő állítás tehát az algebra alaptételének egy ekvivalens megfog
 \begin{proof}
 	A $k$ szerinti indukció.
 	A $k=0$ esetben az előző állítás szerint van sajátvektor is,
-	tehát első fokú faktora is van a minimálpolinomnak.
+	tehát elsőfokú faktora is van a minimálpolinomnak.
 	Tegyük fel, hogy igaz az állítás minden $k$-nál kisebb szám mellett.
 	E feltétel azt jelenti, hogy minden olyan vektortérre igaz az állítás,
 	-- így az algebra alaptétele --
@@ -14974,8 +15109,8 @@ hogy két különböző vektorhoz tartozó irányitó polinom azonos legyen.
     \[
         p\left( A \right)u-p\left( A \right)v=p\left( A \right)w.
     \]
-    A bal oldal mindkét vektora $M$-beli, 
-    a jobb oldali vektor $N$-beli az $N$ direktkiegészítő invarianciája miatt.
+    A baloldal mindkét vektora $M$-beli, 
+    a jobboldali vektor $N$-beli az $N$ direktkiegészítő invarianciája miatt.
     Így $p\left( A \right)w=0$.
     Találtunk tehát $v\in M$ vektort, amelyre $p\left( A \right)u=p\left( A \right)v$.
 \end{proof}
@@ -14992,8 +15127,8 @@ Ekkor $Bx$ előáll
 \]
 alakban. 
 Na most $B^{m-1}v\neq 0$, és $m$ a nilpotencia rendje, ergo $v\notin \im B$. 
-No de, a fent kiemelt azonosságban a bal oldal,
-de az első tag kivételével a jobb oldal valamennyi tagja is az $\im B$ eltér egy-egy eleme,
+No de, a fent kiemelt azonosságban a baloldal,
+de az első tag kivételével a jobboldal valamennyi tagja is az $\im B$ eltér egy-egy eleme,
 ezért $\alpha_0 v\in\im B$. 
 Ebből persze $\alpha_0=0$ következik, 
 ergo $Bx$ előáll mint egy $\lin\left( v;B \right)$-beli vektor képe:
@@ -15092,10 +15227,12 @@ akkor már minden más polinomra is fennáll.
             =
             \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
-            \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+            \\
+            \left\{ \left( m-f\left( A \right)u \right)+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             \subseteq
             \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
+            \\
             M+\lin\left( v;A \right).
         \end{multline*}
         Itt a tartalmazás azért áll fenn, mert $M$ egy invariáns altér, így $f\left( A \right)u\in M$.
@@ -15105,12 +15242,15 @@ akkor már minden más polinomra is fennáll.
             =
             \left\{ m+f\left( A \right)v:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
-            \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}\\
+            \\
+            \left\{ \left( m+f\left( A \right)u \right)+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             \subseteq
             \left\{ m+f\left( A \right)w:m\in M, f\in\mathbb{F}\left[ t \right] \right\}
             =
+            \\
             M+\lin\left( w;A \right).
-        \end{multline*}\qedhere
+        \end{multline*}
+        \qedhere
     \end{enumerate}
 \end{proof}
 \begin{lemma}
@@ -15248,7 +15388,7 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
         =
         m+g\left( A \right)v.
     \]
-    \Aref{le:megengedhetolepes}.~lemma szerint valamely $m'\in M$ mellett $p_{w;\bar{M}}\left( A \right)m'=m$ és
+    \Aaz{le:megengedhetolepes}. lemma szerint valamely $m'\in M$ mellett $p_{w;\bar{M}}\left( A \right)m'=m$ és
     van olyan $h$ polinom, amelyre $g=p_{w;\bar{M}}\cdot h$.
     Ezeket helyettesítve kapjuk, hogy 
     \[
@@ -15263,7 +15403,7 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
          m'+h\left( A \right)v
     \end{math}
     vektor $\bar{M}$-ban van. 
-    \Aref{pr:megengedheto_v}.~állítás szerint éppen ezt kellett belátni.
+    \Aaz{pr:megengedheto_v}. állítás szerint éppen ezt kellett belátni.
 \end{proof}
 \begin{proposition}[Ciklikus felbontás]
     Legyen $V$ egy véges dimenziós vektortér az $\mathbb{F}$ test felett, $A\in L\left( V \right)$ egy lineáris transzformáció.
@@ -15282,7 +15422,7 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
     \[
         \deg p_{v_1;M_0}\geq \deg p_{x;M_0}.
     \]
-    Alkalmazzuk \aref{le:iranyito}.~lemmát az $M_0$ megengedhető altérre és a $v_1$ vektorra.
+    Alkalmazzuk \aaz{le:iranyito}. lemmát az $M_0$ megengedhető altérre és a $v_1$ vektorra.
     Azt kapjuk, hogy létezik $w_1\notin M_0$ vektor, amelyre
     \begin{enumerate}
         \item
@@ -15311,7 +15451,7 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
     \[
         \deg p_{v_2;M_1}\geq \deg p_{x;M_1}.
     \]
-    Alkalmazzuk \aref{le:iranyito}.~lemmát az $M_1$ megengedhető altérre és a $v_2$ vektorra.
+    Alkalmazzuk \aaz{le:iranyito}. lemmát az $M_1$ megengedhető altérre és a $v_2$ vektorra.
     Azt kapjuk, hogy létezik $w_2\notin M_1$ vektor, amelyre
     \begin{enumerate}
         \item
@@ -15346,7 +15486,7 @@ Ez szolgál a ciklikus felbontási tétel rekurziójának alapjaként.
         p_{w_2;M_1}\left( A \right)w_2=0+p_{w_1;M_0}\left( A \right)w_1
     \]
     egyenlőség, hiszen mindkét oldal zérus.
-    \Aref{le:megengedhetolepes}.~lemmát alkalmazzuk és kapjuk, hogy
+    \Aaz{le:megengedhetolepes}. lemmát alkalmazzuk és kapjuk, hogy
     $p_{v_2;M_1}|p_{v_1;M_0}$, ami a mi jelöléseinkkel azt jelenti, hogy $p_2|p_1$.
     Ha $M_2=V$, akkor $r=2$ választással készen is vagyunk.
 
@@ -16456,5 +16596,3 @@ Tehát ha
 % arara: --> options: [ '-pvc' ]
 % arara: --> }
 
-Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 26 Feb 2022 09:58:52 AM CET 
