@@ -1,33 +1,39 @@
+% arara: latexmk: { 
+% arara: --> engine: lualatex,
+% arara: --> options: [ '' ]
+% arara: --> }
+% arara: texindy: {
+% arara: --> markup: xelatex,
+% arara: --> language: hungarian,
+% arara: --> codepage: utf8
+% arara: --> }
+% arara: latexmk: { 
+% arara: --> engine: lualatex,
+% arara: --> options: [ '' ]
+% arara: --> }
 \documentclass[a4paper, showtrims]{memoir}
-%\newcommand{\alert}{\relax}
-%\let\Aref\relax
-%%%%%%% pdflatex %%%%%%%%%%
-%\usepackage[T1]{fontenc}
-%\usepackage[utf8]{inputenc}
-%\usepackage[hungarian]{babel}[2015/11/24]\frenchspacing
-%%%%%%% pdflatex %%%%%%%%%%
-
-%%%%%% lualatex %%%%%%%%%%%
-%\usepackage[hungarian]{babel}[2015/11/24]\frenchspacing
 \usepackage{fontspec,microtype,amssymb}
-\usepackage{unicode-math} %o math fontokhoz.Oszeakad az amssymb csomaggal, ha nem az amssymb van elobb.
+\usepackage{unicode-math} %a math fontokhoz. Oszeakad az amssymb csomaggal, ha nem az amssymb van elobb.
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{TeX Gyre Pagella}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font definíciók
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmainfont{TeX Gyre Pagella}\linespread{1.1}
 %\setmainfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}
-\setmathfont{TeX Gyre Pagella Math}%unicode-math ?
+\setmathfont{TeX Gyre Pagella Math}
 %\setmathfont{Asana Math}
-\newfontfamily\DejaSans{Dejavu Sans}
 %\setsansfont{Kurier}[Scale=MatchLowercase]
 \setsansfont{TeX Gyre Adventor}[Scale=MatchLowercase]
+%\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]
 %\setsansfont{Dejavu Sans}[Scale=MatchLowercase] 
 %\setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
 %\setmonofont{inconsolata}[Scale=MatchLowercase]
 \setmonofont{TeX Gyre Cursor}
-\linespread{1.1}
 \setlength{\headheight}{12.49pt}
-%%%%%% lualatex %%%%%%%%%%%
-
-\usepackage{csquotes,amsmath,amsthm,fixme,polyglossia,nevelok}
+%
+\newfontfamily\DejaSans{Dejavu Sans}
+%
+\usepackage{csquotes, amsmath, amsthm, fixme, graphicx, datatool, polyglossia, nevelok}
 \setdefaultlanguage{magyar}
 \usepackage[backend=biber,
             bibencoding=utf8,
@@ -36,20 +42,12 @@
             backref=true]{biblatex}
 \addbibresource{\jobname.bib}
 \BiblatexHungarianWarningOff
+%
 \usepackage[x11names]{xcolor}
-\fxsetup{status=draft, theme=color, layout={inline}}
+%\fxsetup{status=draft, theme=color, layout={inline}}
+\fxsetup{status=draft, theme=color}
 \renewcommand{\fixmelogo}{\textcolor{black}{\colorbox{Firebrick1}{\textsf{\textbf{FIX}}}}}
-
-\usepackage[unicode,hungarian]{hyperref}
-\hypersetup{final=true,
-            pdftitle={Lineáris algebra},
-            pdfauthor={Magyarkuti, Gyula},
-            pdfsubject={linear algebra},
-            pdfcreator={LuaLaTeX},
-            pdfkeywords={algebra}
-           }\usepackage{memhfixc}
-\usepackage[inline]{enumitem}
-\usepackage[a4paper]{geometry}
+%
 \usepackage[missing={GitHub: \today},dirty={Continuous integration},mark]{gitinfo2}
 %\usepackage[mark,dirty={(Dirty)}]{gitinfo2}
 %\edef\gitBranch{\gitBranch}
@@ -58,6 +56,18 @@
     \textbullet{}
     Date: \gitAuthorIsoDate
 }
+%
+\usepackage[inline]{enumitem}
+\usepackage[a4paper]{geometry}
+%
+\usepackage[unicode,hungarian]{hyperref}% hyperref az utoljára load-olt csomag!
+\hypersetup{final=true,
+            pdftitle={Lineáris algebra},
+            pdfauthor={Magyarkuti, Gyula},
+            pdfsubject={linear algebra},
+            pdfcreator={LuaLaTeX},
+            pdfkeywords={algebra}
+           }\usepackage{memhfixc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% magyar tipográfia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,6 +97,8 @@
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% magyar tipográfia vége
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % caption fontok beállítása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,9 +196,8 @@
 \addQEDstyle{definition}{\myqedsymbol}\addQEDstyle{proposition}{\myqedsymbol}\addQEDstyle{lemma}{\myqedsymbol}\addQEDstyle{note}{\myqedsymbol}\addQEDstyle{corollary}{\myqedsymbol}\addQEDstyle{SL}{\myqedsymbol}\addQEDstyle{defprop}{\myqedsymbol}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Az bölcsesség generálása
+%% A bölcsesség generálása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{graphicx, datatool}
 \DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
      \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
      \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
@@ -271,7 +282,7 @@
 \scwords%
 A legfontosabb forrás \parencite{DancsPuskas2001}.
 
-\ldots
+\ldots\fxnote{Újra gondolni! Estleg Platon?}
 
 Igyekszem strukturáltan írni.
 Kicsi, atomszerű építőkövek egymás utáni megértése visz az anyagban előre,
@@ -304,6 +315,7 @@ Magyarkuti Gyula
 
 \clearpage
 \tableofcontents*
+%
 \mainmatter*
 %\part{F-dúr hegedűverseny No. 3, Op. 8, RV 293, ,,L'autunno''}
 \part{Ősz}
@@ -16590,10 +16602,4 @@ Tehát ha
 \printbibliography
 \printindex
 \end{document}
-% arara: latexmk: { 
-% arara: --> engine: lualatex,
-% arara: --> options: [ '-pvc' ]
-% arara: --> }
 
-Created: Sat 20 Jul 2019 05:02:12 AM CEST
-Last Modified: Sat 27 Aug 2022 12:29:06 AM CEST Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time Europe Summer Time CEST CEST CEST CEST CET Europe Standard Time 
