@@ -327,19 +327,8 @@
      }{}% (end \ifdefined\chaptermark)
   }% (end \ifdefined\chapterformat)
 }
-
-\def\blockextras@hungarian{%
-   \hungarian@capsformat%
-   \hungarian@sectsformat%
-}
-
-\def\noextras@hungarian{%
-   \nohungarian@capsformat%
-   \nohungarian@sectsformat%
-   \let\ontoday\@undefined%
-}
-
-% Hungarian typography needs 1) trailing dots in chapter headings; 2) trailing dot follows a section counter
+% Hungarian needs 1) trailing dots in chapter headings; 2) trailing dot in section, subsection, etc, counters
+\def\@hungarian@forced@dot{}
 \def\xpg@save@autodot{}
 \ifdef{\KOMAScript}{%
     \providecommand*\autodot{}%
@@ -371,7 +360,7 @@
    \def\@hungarian@forced@dot{.}
   \fi%
 }
-
+%
 \def\nohungarian@sectsformat{%
   \ifhungarian@forceheadingpunctuation%
     \ifdef{\KOMAScript}{%
@@ -382,4 +371,16 @@
   \fi%
   \def\@hungarian@forced@dot{}
 }
+%
+\def\blockextras@hungarian{%
+   \hungarian@capsformat%
+   \hungarian@sectsformat%
+}
+%
+\def\noextras@hungarian{%
+   \nohungarian@capsformat%
+   \nohungarian@sectsformat%
+   \let\ontoday\@undefined%
+}
+%
 \endinput
