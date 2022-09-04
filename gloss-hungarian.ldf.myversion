@@ -55,13 +55,8 @@
    \xpg@info{Option: Hungarian, swapstrings=\xpg@val}%
 }{\xpg@warning{Unknown Hungarian swapstrings value `#1'}}
 
-% Force punctuation after heading number
-\define@boolkey{hungarian}[hungarian@]{forceheadingpunctuation}[true]{}
-
 % Register default options
-\xpg@initialize@gloss@options{hungarian}{swapstrings=all,
-                                         forceheadingpunctuation=false
-                                        }
+\xpg@initialize@gloss@options{hungarian}{swapstrings=all}
 
 \def\hungarian@language{%
    \polyglossia@setup@language@patterns{hungarian}%
@@ -235,7 +230,7 @@
       % With KOMA
       \let\xpg@save@chaptermark@format\chaptermarkformat%
       \renewcommand*\chaptermarkformat{%
-         \thechapter\autodot\ \IfChapterUsesPrefixLine{\chapapp\@hungarian@forced@dot\enskip}{}}
+         \thechapter\autodot\ \IfChapterUsesPrefixLine{\chapapp.\enskip}{}}
     }{% (not \ifdefined\chapterformat)
       \ifcsdef{@memptsize}{%
         % With memoir
@@ -244,7 +239,7 @@
           \markboth{\memUChead{%
             \ifnum \c@secnumdepth >\m@ne
               \ifbool{@mainmatter}{%
-                \thechapter.\ \@chapapp\@hungarian@forced@dot\ %
+                \thechapter.\ \@chapapp.\ %
               }{}%
             \fi
             ##1}}{}}%
@@ -256,7 +251,7 @@
                {\let\xpg@save@chaptermark@format\chaptermark%
                 \patchcmd{\chaptermark}%
                     {\@chapapp\ \thechapter.}%
-                    {\thechapter.\ \@chapapp\@hungarian@forced@dot}%
+                    {\thechapter.\ \@chapapp.}%
                     {}%
                     {\xpg@warning{Failed to patch chaptermark for Hungarian}}}%
                {}%
@@ -329,24 +324,21 @@
 
 \def\blockextras@hungarian{%
    \hungarian@capsformat%
-   \hungarian@sectsformat%
 }
 
 \def\noextras@hungarian{%
    \nohungarian@capsformat%
-   \nohungarian@sectsformat%
    \let\ontoday\@undefined%
 }
-
-% Hungarian needs trailing dots in chapter headings
+%MGy
+% Force punctuation after section number
 \def\xpg@save@autodot{}
 \ifdef{\KOMAScript}{%
     \providecommand*\autodot{}%
     \let\xpg@save@autodot\autodot%
 }
-
-\def\hungarian@sectsformat{%
-  \ifhungarian@forceheadingpunctuation%
+%
+\def\hungarian@secdotformat{%
    \ifdef{\KOMAScript}{%
       \renewcommand*\autodot{.}%
    }{%
@@ -355,31 +347,32 @@
          \csname the##1\endcsname%
          \csname post##1\endcsname}%
        \def\@aftersepkern{\hspace{0.5em}}%
-       \def\postchapter{.\@aftersepkern}%
        \def\postsection{.\@aftersepkern}%
        \def\postsubsection{.\@aftersepkern}%
        \def\postsubsubsection{.\@aftersepkern}%
        \def\postparagraph{.\@aftersepkern}%
        \def\postsubparagraph{.\@aftersepkern}%
-       \def\prechapter{}%
        \def\presection{}%
        \def\presubsection{}%
        \def\presubsubsection{}%
        \def\preparagraph{}%
        \def\presubparagraph{}%
     }%
-   \def\@hungarian@forced@dot{.}
-  \fi%
-}
-
-\def\nohungarian@sectsformat{%
-  \ifhungarian@forceheadingpunctuation%
+}%
+%
+\def\nohungarian@secdotformat{%
     \ifdef{\KOMAScript}{%
        \let\autodot\xpg@save@autodot%
     }{%
        \def\@seccntformat##1{\csname the##1\endcsname\quad}% = LaTeX kernel
     }%
-  \fi%
-  \def\@hungarian@forced@dot{}
 }
-\endinput
+\def\forcehungariansectioningpunctuation{%
+    \hungarian@secdotformat%
+}%
+\def\nohungariansectioningpunctuation{%
+    \nohungarian@secdotformat%
+}%
+\forcehungariansectioningpunctuation%
+%
+\endinput%
