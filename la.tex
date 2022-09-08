@@ -348,8 +348,9 @@ Lefordítva ez azt jelenti, hogy
 	\item minden $a,b\in S$ mellett $a\ast b\in S$, és
 	\item minden $a,b,c\in S$ esetén $\left( a\ast b \right)\ast c=a\ast\left( b\ast c \right)$
 \end{enumerate}
-\begin{definition}[neutrális elem]\index{neutrális elem}\index{neutrális elemes félcsoport}
+\begin{definition}[neutrális elemes félcsoport]\index{neutrális elem}\index{neutrális elemes félcsoport}
 	Az $\left( S,\ast \right)$ félcsoportban az $s\in S$ elem \emph{balról (jobbról) neutrális},
+    \index{balról neutrális elem}\index{jobbról neutrális elem}
 	ha $s\ast t=t$ ($t\ast s=t$) minden $t\in S$ mellett.
 	Ha $s\in S$ balról is és jobbról is neutrális, akkor $s$-et egy \emph{neutrális elemnek}
 	mondjuk.
@@ -361,7 +362,7 @@ Lefordítva ez azt jelenti, hogy
 	Emiatt egy neutrális elemes félcsoportban neutrális elem csak egy van.
 \end{proposition}
 \begin{proof}
-	Legyen $s_1$ balról-- és $s_2$ jobbról neutrális elem.
+	Legyen $s_1$ balról és $s_2$ jobbról neutrális elem.
 	Ekkor
 	\(
 	s_2=s_1\ast s_2=s_1.
@@ -369,16 +370,30 @@ Lefordítva ez azt jelenti, hogy
 \end{proof}
 A félcsoport additív írásmódja esetén természetes a neutrális elemet \emph{zérusnak},
 míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
-\begin{definition}[csoport]\index{csoport}
-	Egy $\left( G,\ast \right)$ algebrai struktúrát \emph{csoportnak} nevezünk,
-	ha neutrális elemes félcsoport, amelyben minden $g\in G$-hez létezik $g'\in G$, hogy
+\begin{definition}[csoport]\index{inverz}\index{bal inverz}\index{jobb inverz}
+    Egy $\left( S,\ast \right)$ egységelemes félcsoportnak rögzítsük egy $s\in S$ elemét.
+    Azt mondjuk, hogy az $s$ elemnek az $s'\in S$ elem a \emph{bal (jobb) inverze},
+    ha $s'\ast s=e$ ($s\ast s'=e$) teljesül,
+    ahol $e\in S$ a félcsoport neutrális eleme.
+    Ha $s'$ bal és jobb inverze is $s$-nek, akkor ezt mondjuk, hogy $s'$ az $s$ \emph{inverze}.
+    
+    Egy algebrai struktúrát \emph{csoportnak}\index{csoport} nevezünk,
+    ha olyan neutrális elemes félcsoport, amelyben minden elemnek van inverze.
+\end{definition}
+Formálisabban: ha $e\in G$ jelöli a $G$ félcsoport neutrális elemét,
+    akkor azt követeljük meg újabb axiómaként, 
+    hogy miden $g\in G$-hez létezzen $g'\in G$, amelyre
 	\[
 		g\ast g'=e=g'\ast g.\tag{\dag}
 	\]
-	Itt $e\in G$ jelöli a $G$ csoport neutrális elemét.
-\end{definition}
-\begin{defprop}[inverz elem]\index{inverz}
-	Legyen $\left( G,\ast \right)$ egy csoport.
+    Ha ez fennáll, akkor a $(G,\ast)$ egységelems félcsoportot csoportnak mondjuk.
+\begin{proposition}
+    Egy neutrális elemes félcsoportban, 
+    ha egy elemnek van egy bal és egy jobb inverze,
+    akkor ezek megegyeznek.
+    Emiatt egy csoportban minden elemnek csak egy inverze van.
+\end{proposition}
+\begin{defprop}[inverz elem]	Legyen $\left( G,\ast \right)$ egy csoport.
 	Ekkor minden $g\in G$-hez, csak egyetlen $g'\in G$ létezik,
 	amelyre a fenti ($\dag$) azonosság fennáll.
 	Adott $g$-hez ezt ez egyetlen $g'\in G$ elemet,
@@ -386,8 +401,10 @@ míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
 \end{defprop}
 \begin{proof}
 	Jelölje $e$ a csoport neutrális elemét,
-	és tegyük fel, hogy $g',g''$ inverz elemei $g$-nek.
-	Azt mutatjuk meg, hogy $g'\ast g=e$ és $g\ast g''=e$ esetén a két inverz megegyezik.
+	és tegyük fel, hogy $g'$ bal inverze és $g''$ jobb inverze $g$-nek.
+	Ez azt jelenti, 
+    hogy $g'\ast g=e$ és $g\ast g''=e$.
+    No de
 	\[
 		g'=g'\ast e=
 		g'\ast\left( g\ast g'' \right)=
@@ -400,9 +417,9 @@ neutrális elemes félcsoportot,
 és az összes $H\to H$ kölcsönösen egyértelmű függvények halmaza a kompozíció művelettel csoportot alkotnak.
 Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}.
 \begin{proposition}[egyszerűsítési szabály]\index{egyszerűsítési szabály}
-	Csoportban igaz az egyszerűsítési szabály, azaz
+	Csoportban igaz az egyszerűsítési szabály, azaz ha
 	\[
-		a\ast c=b\ast c\implies a=b.\qedhere
+        a\ast c=b\ast c\text{ akkor } a=b.\qedhere
 	\]
 \end{proposition}
 \begin{proof}
@@ -440,11 +457,21 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
 \end{definition}
 \begin{definition}[test]
 	Egy $\left( \mathbb{F},+,\cdot \right)$ kétműveletes algebrai struktúrát \emph{testnek}
-	nevezünk,
-	ha olyan kommutatív egységelemes gyűrű,
-	amelyben minden nemzérus\footnote{Értsd: minden elemnek, amely a $+$ műveletre nézve neutrális elemtől különbözik.}
-	elemnek van inverze\footnote{Értsd: a $\cdot$ szorzás neutrális elemére mint egységelemre nézve.},
-	és $0\neq 1$\footnote{Értsd: az összeadásra nézve és a szorzásra nézve képzett neutrális elemek nem azonosak.}.
+	nevezünk, ha olyan 
+    \begin{enumerate}
+        \item 
+            kommutatív egységelemes gyűrű;
+        \item
+            amelyben minden nemzérus%
+            \footnote{Értsd: minden olyan elemnek, 
+            amely a $+$ műveletre nézve neutrális elemtől különbözik.}
+            elemnek van inverze%
+            \footnote{Értsd: a $\cdot$ szorzás neutrális elemére mint egységelemre nézve.};
+        \item
+            és $0\neq 1$%
+            \footnote{Értsd: az összeadásra nézve és a szorzásra nézve képzett neutrális elemek 
+            nem azonosak.}.\qedhere
+    \end{enumerate}
 \end{definition}
 A test az algebrai struktúra, ahol az összeadás és szorzás műveletekkel úgy számolhatunk, mint amit a valós számok során megszoktuk.
 Példaként néhány tulajdonság.
@@ -12096,7 +12123,7 @@ majd
 \]
 
 A Gram\,--\,Schmidt-ortogonalizációról szóló állítás azonnali következménye az ortonormált bázisok egzisztenciáját biztosító állítás:
-\begin{proposition}[o.n.b]\index{o.n.b}\label{pr:onb}
+\begin{proposition}[\textsc{o.n.b.}]\index{\textsc{o.n.b.}}\label{pr:onb}
 	Egy véges dimenziós skalárisszorzatos-térnek mindig van ortonormált bázisa, azaz olyan $\left\{ x_1,\ldots,x_n \right\}$ ortonormált
 	rendszere, amely generátorrendszer is.
 

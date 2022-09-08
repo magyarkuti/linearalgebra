@@ -1,0 +1,282 @@
+\indexentry{művelet|hyperpage}{11}
+\indexentry{algebrai struktúra|hyperpage}{11}
+\indexentry{félcsoport|hyperpage}{11}
+\indexentry{asszociatív|hyperpage}{11}
+\indexentry{neutrális elem|hyperpage}{11}
+\indexentry{neutrális elemes félcsoport|hyperpage}{11}
+\indexentry{balról neutrális elem|hyperpage}{11}
+\indexentry{jobbról neutrális elem|hyperpage}{11}
+\indexentry{inverz|hyperpage}{12}
+\indexentry{bal inverz|hyperpage}{12}
+\indexentry{jobb inverz|hyperpage}{12}
+\indexentry{csoport|hyperpage}{12}
+\indexentry{permutációk|hyperpage}{12}
+\indexentry{egyszerűsítési szabály|hyperpage}{12}
+\indexentry{Abel-csoport|hyperpage}{12}
+\indexentry{kommutatív|hyperpage}{12}
+\indexentry{gyűrű|hyperpage}{12}
+\indexentry{disztributív|hyperpage}{12}
+\indexentry{ideál|hyperpage}{13}
+\indexentry{főideál|hyperpage}{13}
+\indexentry{főideál-gyűrű|hyperpage}{13}
+\indexentry{főideál|hyperpage}{14}
+\indexentry{főideál-gyűrű|hyperpage}{14}
+\indexentry{generált ideál|hyperpage}{14}
+\indexentry{polinom|hyperpage}{14}
+\indexentry{formális algebrai kifejezés|hyperpage}{14}
+\indexentry{polinom foka|hyperpage}{15}
+\indexentry{főegyüttható|hyperpage}{15}
+\indexentry{normált polinom|hyperpage}{15}
+\indexentry{polinom osztója|hyperpage}{16}
+\indexentry{polinom többszöröse|hyperpage}{16}
+\indexentry{legnagyobb közös osztó|hyperpage}{18}
+\indexentry{relatív prím polinomok|hyperpage}{18}
+\indexentry{legkisebb közös többszörös|hyperpage}{18}
+\indexentry{Bezout-azonosság|hyperpage}{19}
+\indexentry{gyökök multiplicitása|hyperpage}{20}
+\indexentry{Euklideszi-algoritmus|hyperpage}{21}
+\indexentry{Bezout-azonosság|hyperpage}{22}
+\indexentry{reducibilis polinom|hyperpage}{23}
+\indexentry{irreducibilis polinom|hyperpage}{23}
+\indexentry{prím polinom|hyperpage}{23}
+\indexentry{matrix@mátrixok összege|hyperpage}{25}
+\indexentry{szám és mátrix szorzata|hyperpage}{25}
+\indexentry{vektortér|hyperpage}{26}
+\indexentry{lineáris kombináció|hyperpage}{26}
+\indexentry{sorvektor|hyperpage}{26}
+\indexentry{oszlopvektor|hyperpage}{26}
+\indexentry{matrix@mátrixok szorzata|hyperpage}{26}
+\indexentry{diad@diád|hyperpage}{27}
+\indexentry{diad@diád|hyperpage}{27}
+\indexentry{szimmetrikus diád|hyperpage}{27}
+\indexentry{Kronceker-delta|hyperpage}{27}
+\indexentry{identitás mátrix|hyperpage}{27}
+\indexentry{kommutáló mátrixok|hyperpage}{29}
+\indexentry{fődiagonális|hyperpage}{29}
+\indexentry{diagonális mátrix|hyperpage}{29}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{29}
+\indexentry{kommutáló mátrixok|hyperpage}{29}
+\indexentry{izomorfizmus|hyperpage}{30}
+\indexentry{komplex számok|hyperpage}{30}
+\indexentry{komplex számok mátrix reprezentációja|hyperpage}{30}
+\indexentry{i komplex szám@$i$ komplex szám|hyperpage}{31}
+\indexentry{komplex szám normálalakja|hyperpage}{32}
+\indexentry{komplex szám valós része|hyperpage}{32}
+\indexentry{komplex szám képzetes része|hyperpage}{32}
+\indexentry{komplex szám konjugáltja|hyperpage}{32}
+\indexentry{abszolútérték|hyperpage}{33}
+\indexentry{Schwartz-egyenlőtlenség|hyperpage}{33}
+\indexentry{háromszög-egyenlőtlenség|hyperpage}{34}
+\indexentry{komplex szám trigonometrikus alakja|hyperpage}{34}
+\indexentry{komplex szám argumentuma|hyperpage}{34}
+\indexentry{Ccsillag@\ensuremath  {\mathrm {C}}\ensuremath  {^*}\kern -\scriptspace -azonosság|hyperpage}{34}
+\indexentry{Moivre-formula|hyperpage}{35}
+\indexentry{komplex $n$-edik egységgyökök|hyperpage}{35}
+\indexentry{vektortér|hyperpage}{39}
+\indexentry{vektortér altere|hyperpage}{40}
+\indexentry{altér|hyperpage}{40}
+\indexentry{triviális altér|hyperpage}{40}
+\indexentry{generált altér|hyperpage}{40}
+\indexentry{lineáris kombináció|hyperpage}{41}
+\indexentry{lineáris burok|hyperpage}{41}
+\indexentry{generátorrendszer|hyperpage}{41}
+\indexentry{végesen generált vektortér|hyperpage}{41}
+\indexentry{Steinitz-lemma|hyperpage}{42}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{44}
+\indexentry{homogén lineáris egyenletrendszer|hyperpage}{44}
+\indexentry{inhomogén lineáris egyenletrendszer|hyperpage}{44}
+\indexentry{együttható-mátrix|hyperpage}{44}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{44}
+\indexentry{pivot elem|hyperpage}{44}
+\indexentry{kotott@kötött változó|hyperpage}{45}
+\indexentry{szabad változó|hyperpage}{45}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{45}
+\indexentry{pivot elem|hyperpage}{46}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{46}
+\indexentry{triviális megoldás|hyperpage}{47}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{47}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{47}
+\indexentry{oszlopvektortér|hyperpage}{48}
+\indexentry{sorvektortér|hyperpage}{48}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{49}
+\indexentry{pivot elem|hyperpage}{49}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{50}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{51}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{51}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{52}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{52}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{52}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{53}
+\indexentry{elemi mátrix|hyperpage}{53}
+\indexentry{invertálható mátrix|hyperpage}{53}
+\indexentry{Gauss\,--\,Jordan-elimináció|hyperpage}{53}
+\indexentry{kommutáló mátrixok|hyperpage}{54}
+\indexentry{kommutál|hyperpage}{54}
+\indexentry{lineárisan összefüggő rendszer|hyperpage}{55}
+\indexentry{lineárisan független rendszer|hyperpage}{57}
+\indexentry{triviális lineáris kombináció|hyperpage}{57}
+\indexentry{maximális lineárisan független rendszer|hyperpage}{58}
+\indexentry{minimális generátorrendszer|hyperpage}{58}
+\indexentry{Steinitz-lemma|hyperpage}{63}
+\indexentry{Steinitz-lemma|hyperpage}{63}
+\indexentry{feszítőrang|hyperpage}{64}
+\indexentry{Steinitz-lemma|hyperpage}{64}
+\indexentry{diad@diád|hyperpage}{65}
+\indexentry{Steinitz-lemma|hyperpage}{65}
+\indexentry{végesen generált vektortér|hyperpage}{65}
+\indexentry{baa@bázis|hyperpage}{66}
+\indexentry{véges dimenziós|hyperpage}{66}
+\indexentry{Steinitz-lemma|hyperpage}{67}
+\indexentry{Steinitz-lemma|hyperpage}{67}
+\indexentry{rang|hyperpage}{68}
+\indexentry{lineáris operáció|hyperpage}{69}
+\indexentry{lineáris transzformáció|hyperpage}{69}
+\indexentry{lineáris funkcionál|hyperpage}{69}
+\indexentry{izomorf vektorterek|hyperpage}{70}
+\indexentry{izomorfizmus|hyperpage}{70}
+\indexentry{izomorfizmus|hyperpage}{70}
+\indexentry{koordináta|hyperpage}{70}
+\indexentry{Minkowski-összeg|hyperpage}{73}
+\indexentry{Minkowski-összeg|hyperpage}{73}
+\indexentry{affin halmaz|hyperpage}{73}
+\indexentry{affin kombináció|hyperpage}{73}
+\indexentry{Minkowski-összeg|hyperpage}{74}
+\indexentry{diszjunkt alterek|hyperpage}{75}
+\indexentry{direkt összeg|hyperpage}{76}
+\indexentry{direkt kiegészítő|hyperpage}{77}
+\indexentry{affin halmaz|hyperpage}{79}
+\indexentry{Minkowski-összeg|hyperpage}{80}
+\indexentry{faktortér|hyperpage}{80}
+\indexentry{direkt kiegészítő|hyperpage}{81}
+\indexentry{direkt kiegészítő|hyperpage}{82}
+\indexentry{co-dimenzió|hyperpage}{82}
+\indexentry{Rang--defektus-tétel|hyperpage}{83}
+\indexentry{lineáris operáció mátrixa|hyperpage}{91}
+\indexentry{rang|hyperpage}{92}
+\indexentry{defektus|hyperpage}{92}
+\indexentry{lineáris transzformációk szorzata|hyperpage}{93}
+\indexentry{reguláris mátrix|hyperpage}{94}
+\indexentry{gyűrű-izomorfizmus|hyperpage}{94}
+\indexentry{az@áttérés transzformáció|hyperpage}{95}
+\indexentry{invariáns altér|hyperpage}{97}
+\indexentry{legszűkebb invariáns altér|hyperpage}{97}
+\indexentry{Steinitz-lemma|hyperpage}{99}
+\indexentry{sajátérték|hyperpage}{99}
+\indexentry{sajátvektor|hyperpage}{99}
+\indexentry{spektrum|hyperpage}{99}
+\indexentry{sajátaltér|hyperpage}{100}
+\indexentry{kommutál|hyperpage}{101}
+\indexentry{kommutáló transzformációk|hyperpage}{102}
+\indexentry{kommutál|hyperpage}{102}
+\indexentry{sajátaltér|hyperpage}{102}
+\indexentry{főideál-gyűrű|hyperpage}{102}
+\indexentry{főideál|hyperpage}{102}
+\indexentry{Steinitz-lemma|hyperpage}{102}
+\indexentry{főideál|hyperpage}{103}
+\indexentry{főideál-gyűrű|hyperpage}{103}
+\indexentry{kis minimálpolinom|hyperpage}{103}
+\indexentry{Steinitz-lemma|hyperpage}{106}
+\indexentry{minimálpolinom|hyperpage}{106}
+\indexentry{főideál|hyperpage}{106}
+\indexentry{főideál-gyűrű|hyperpage}{106}
+\indexentry{főideál|hyperpage}{107}
+\indexentry{kis minimálpolinom|hyperpage}{107}
+\indexentry{legkisebb közös többszörös|hyperpage}{107}
+\indexentry{főideál|hyperpage}{107}
+\indexentry{sajátvektor|hyperpage}{109}
+\indexentry{diagonalizálhatóság|hyperpage}{109}
+\indexentry{szinguláris|hyperpage}{109}
+\indexentry{sajátérték|hyperpage}{109}
+\indexentry{kis minimálpolinom|hyperpage}{109}
+\indexentry{diagonalizálhatóság|hyperpage}{109}
+\indexentry{diagonális alakú mátrix|hyperpage}{109}
+\indexentry{geometriai multiplicitás|hyperpage}{111}
+\indexentry{Minkowski-összeg|hyperpage}{114}
+\indexentry{kis minimálpolinom|hyperpage}{115}
+\indexentry{komplex számtest feletti vektortér|hyperpage}{116}
+\indexentry{nilpotens transzformáció|hyperpage}{116}
+\indexentry{Jordan-normálalak|hyperpage}{116}
+\indexentry{kis minimálpolinom|hyperpage}{117}
+\indexentry{Cayley\,--\,Hamilton|hyperpage}{124}
+\indexentry{kis minimálpolinom|hyperpage}{125}
+\indexentry{nilpotens transzformáció|hyperpage}{129}
+\indexentry{Jordan-normálalak|hyperpage}{135}
+\indexentry{Jordan-blokk|hyperpage}{136}
+\indexentry{sajátérték geometriai dimenziója|hyperpage}{136}
+\indexentry{Jordan-bázis|hyperpage}{137}
+\indexentry{karakterisztikus polinom|hyperpage}{138}
+\indexentry{Cayley\,--\,Hamilton|hyperpage}{138}
+\indexentry{sajátérték algebrai multiplicitása|hyperpage}{138}
+\indexentry{permutáció csoport|hyperpage}{139}
+\indexentry{baa@bástyafelrakás|hyperpage}{140}
+\indexentry{permutáció mátrix|hyperpage}{140}
+\indexentry{inverzió|hyperpage}{141}
+\indexentry{paa@páros permutáció|hyperpage}{142}
+\indexentry{paa@páratlan permutáció|hyperpage}{142}
+\indexentry{permutáció előjele|hyperpage}{142}
+\indexentry{2 karakterisztikájú test|hyperpage}{143}
+\indexentry{n-lineáris operátor|hyperpage}{143}
+\indexentry{anti-szimmetrikus operátor|hyperpage}{143}
+\indexentry{alternáló operátor|hyperpage}{143}
+\indexentry{mérték|hyperpage}{144}
+\indexentry{duális bázis|hyperpage}{144}
+\indexentry{mátrix determinánsa|hyperpage}{146}
+\indexentry{determináns|hyperpage}{146}
+\indexentry{pivot elem|hyperpage}{148}
+\indexentry{mérték|hyperpage}{149}
+\indexentry{lineáris transzformáció determinánsa|hyperpage}{150}
+\indexentry{determináns|hyperpage}{150}
+\indexentry{szorzattétel|hyperpage}{151}
+\indexentry{determinánsok szorzattétele|hyperpage}{151}
+\indexentry{minor|hyperpage}{153}
+\indexentry{kofaktor|hyperpage}{153}
+\indexentry{kofaktormátrix|hyperpage}{153}
+\indexentry{Cramer-szabály|hyperpage}{154}
+\indexentry{karakterisztikus polinom|hyperpage}{155}
+\indexentry{sajátérték algebrai multiplicitása|hyperpage}{155}
+\indexentry{Jordan-normálalak|hyperpage}{155}
+\indexentry{kis minimálpolinom|hyperpage}{156}
+\indexentry{skaláris szorzat|hyperpage}{159}
+\indexentry{skalárisszorzatos-tér|hyperpage}{159}
+\indexentry{konjugáltan lineáris|hyperpage}{159}
+\indexentry{belső szorzat|hyperpage}{159}
+\indexentry{merőleges|hyperpage}{160}
+\indexentry{ortokomplementer|hyperpage}{160}
+\indexentry{Bessel-egyenlőtlenség|hyperpage}{162}
+\indexentry{Bessel-egyenlőtlenség|hyperpage}{162}
+\indexentry{Pythagoras-tétel|hyperpage}{163}
+\indexentry{legközelebbi pont|hyperpage}{163}
+\indexentry{Bessel-egyenlőtlenség|hyperpage}{165}
+\indexentry{Gram\,--\,Schmidt-ortogonalizáció|hyperpage}{165}
+\indexentry{\textsc{o.n.b.}|hyperpage}{166}
+\indexentry{duális bázis|hyperpage}{166}
+\indexentry{Bessel-egyenlőtlenség|hyperpage}{167}
+\indexentry{projekciós-tétel|hyperpage}{167}
+\indexentry{Riesz-reprezentáció|hyperpage}{171}
+\indexentry{Riesz-reprezentáció|hyperpage}{171}
+\indexentry{adjungált|hyperpage}{172}
+\indexentry{adjungált azonosság|hyperpage}{172}
+\indexentry{Riesz-reprezentáció|hyperpage}{172}
+\indexentry{rang--defektus--tétel|hyperpage}{174}
+\indexentry{ozz@önadjungált transzformáció|hyperpage}{175}
+\indexentry{unitér transzformáció|hyperpage}{175}
+\indexentry{normális transzformáció|hyperpage}{177}
+\indexentry{unitér|hyperpage}{177}
+\indexentry{Gram\,--\,Schmidt-ortogonalizáció|hyperpage}{181}
+\indexentry{projekció|hyperpage}{183}
+\indexentry{ortogonális projekció|hyperpage}{184}
+\indexentry{Bessel-egyenlőtlenség|hyperpage}{185}
+\indexentry{normális transzformáció|hyperpage}{186}
+\indexentry{ozz@önadjungált transzformáció|hyperpage}{187}
+\indexentry{unitér transzformáció|hyperpage}{187}
+\indexentry{operátornorma|hyperpage}{194}
+\indexentry{spektrálsugár|hyperpage}{194}
+\indexentry{Ccsillag@\CStar-azonosság|hyperpage}{195}
+\indexentry{kis minimálpolinom|hyperpage}{199}
+\indexentry{kommutál|hyperpage}{199}
+\indexentry{kommutál|hyperpage}{199}
+\indexentry{kommutál|hyperpage}{200}
+\indexentry{kommutál|hyperpage}{201}
+\indexentry{irányító polinom|hyperpage}{207}
+\indexentry{megengedhető altér|hyperpage}{207}
+\indexentry{Cayley\,--\,Hamilton|hyperpage}{215}
