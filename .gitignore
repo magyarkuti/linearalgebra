@@ -131,7 +131,7 @@ acs-*.bib
 *.lol
 
 # makeidx
-#*.idx
+*.idx
 *.ilg
 *.ind
 *.ist
