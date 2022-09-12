@@ -376,7 +376,7 @@ míg multiplikatív írásmód esetén \emph{egységnek} nevezni.
     Azt mondjuk, hogy az $s$ elemnek az $s'\in S$ elem a \emph{bal (jobb) inverze},
     ha $s'\ast s=e$ ($s\ast s'=e$) teljesül,
     ahol $e\in S$ a félcsoport neutrális eleme.
-    Ha $s'$ bal és jobb inverze is $s$-nek, akkor ezt mondjuk, hogy $s'$ az $s$ \emph{inverze}.
+    Ha $s'$ bal és jobb inverze is $s$-nek, akkor azt mondjuk, hogy $s'$ az $s$ \emph{inverze}.
     
     Egy algebrai struktúrát \emph{csoportnak}\index{csoport} nevezünk,
     ha olyan neutrális elemes félcsoport, amelyben minden elemnek van inverze.
@@ -387,19 +387,13 @@ Formálisabban: ha $e\in G$ jelöli a $G$ félcsoport neutrális elemét,
 	\[
 		g\ast g'=e=g'\ast g.\tag{\dag}
 	\]
-    Ha ez fennáll, akkor a $(G,\ast)$ egységelems félcsoportot csoportnak mondjuk.
+    Ha ez fennáll, akkor a $(G,\ast)$ egységelemes félcsoportot csoportnak mondjuk.
 \begin{proposition}
     Egy neutrális elemes félcsoportban, 
     ha egy elemnek van egy bal és egy jobb inverze,
     akkor ezek megegyeznek.
     Emiatt egy csoportban minden elemnek csak egy inverze van.
 \end{proposition}
-\begin{defprop}[inverz elem]	Legyen $\left( G,\ast \right)$ egy csoport.
-	Ekkor minden $g\in G$-hez, csak egyetlen $g'\in G$ létezik,
-	amelyre a fenti ($\dag$) azonosság fennáll.
-	Adott $g$-hez ezt ez egyetlen $g'\in G$ elemet,
-	amelyre ($\dag$) teljesül a $g$ elem \emph{inverzének} mondjuk.
-\end{defprop}
 \begin{proof}
 	Jelölje $e$ a csoport neutrális elemét,
 	és tegyük fel, hogy $g'$ bal inverze és $g''$ jobb inverze $g$-nek.
@@ -634,7 +628,7 @@ akkor a behelyettesítés után kapott elemet mondjuk a $p$ polinom helyettesít
 A \emph{formális algebrai kifejezés}\index{formális algebrai kifejezés} arra utal,
 hogy egy polinomot az együtthatói határozzák meg,
 azaz két polinom akkor és csak akkor azonos,
-ha az megfelelő együtthatói azonosak.
+ha a megfelelő együtthatói azonosak.
 Ez szemben áll avval, hogy ha a polinomokra mint függvényekre tekintenénk,
 akkor a helyettesítési értékek egyenlősége jelentené a két polinom azonos voltát.
 A formális szó tehát azt jelenti, hogy nem mint függvényre gondolunk,
@@ -750,6 +744,18 @@ csak egyetlen $k$ mellett értelmezettek közösen, mikor $k=n$.
 	Így ebben az esetben a formálisan végtelen összeg definíciója
 	egyszerűen a véges sok nem zérus elem összege.
 }
+
+Fontos azt értenünk, hogy a $p$ és a $q$ polinom összegét és szorzatát úgy definiáltuk, hogy minden $s\in\mathbb{F}$ elemre a
+\[
+    \left( p+q \right)\left( s \right)
+    =
+    p\left( s \right)+q\left( s \right)
+    \text{ valamint a }
+    \left( p\cdot q \right)\left( s \right)
+    =
+    p\left( s \right)\cdot q\left( s \right)
+\]
+kiértékelések fennálljanak.
 \begin{proposition}
 	Legyenek $p,q\in\mathbb{F}[t]$ polinomok az $\mathbb{F}$ test felett.
 	Ekkor
