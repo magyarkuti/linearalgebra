@@ -1164,8 +1164,23 @@ hogy ha $p,q\in\mathbb{F}\left[ t \right]$ valamely polinomok, akkor
 J\left( p,q \right)=\left\{ fp+gq:f,g\in\mathbb{F}\left[ t \right] \right\}
 \)
 jelöli a $p$ és a $q$ polinomokat tartalmazó legszűkebb ideált.
-Világos, hogy ha $r_1,r_2\in J\left( p,q \right)$, akkor
-$J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
+
+Az algoritmus lényege, hogy a $J\left( p,q \right)$ ideál két generátor elemét egyre alacsonyabb fokú
+polinomokkal helyettesítjük, amíg megtaláljuk az ideál legalacsonyabb fokú polinomját.
+\begin{lemma}
+    Tegyük fel, hogy a $p,q,h,r\in\mathbb{F}[t]$ polinomokra
+    \(
+    p=hq+r
+    \).
+    Ekkor a $p,q$ generálta $J\left( p,q \right)$ ideál egybeesik a $q,r$ generálta $J\left( q,r \right)$ ideállal, azaz $J\left( p,q \right)=J\left( q,r \right)$.
+\end{lemma}
+\begin{proof}
+    Az $r=p+(-h)q$ azonosság szerint a $q,r\in J\left( p,q \right)$, 
+    ezért $J\left( q,r \right)\subseteq J\left( p,q \right)$.
+    Hasonlóan a $p=hq+r$ szerint $p,q\in J\left( q,r \right)$ ezért a 
+    $J\left( p,q \right)\subseteq J\left( q,r \right)$
+    tartalmazás is fennáll.
+\end{proof}
 \begin{proposition}[Euklidesz]\index{Euklideszi-algoritmus}
 	Legyen $p,q\in\mathbb{F}\left[ t \right]$ nem zérus polinomok.
 	Definiálja $p_{-1}=p,p_{0}=q$.
@@ -1191,32 +1206,14 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
 	és $\deg p_{s+1}=-\infty$,
 	azaz $p_{s+1}=0$.
 
-	A (\dag) azonosság szerint,
-	minden $i=0,1,\ldots,s$ mellett
-	\begin{math}
-		p_{i-1}\in J\left( p_i,p_{i+1} \right)
-	\end{math},
-	amiből a
-	\begin{math}
-		J\left( p_{i-1},p_i \right)\subseteq J\left( p_i,p_{i+1} \right)
-	\end{math}
-	tartalmazás adódik.
-	Másrészt a (\dag) azonosságot értelmezhetjük úgy is, hogy
+	A (\dag) azonosság, és az iménti lemma szerint
 	\(
-	p_{i+1}\in J\left( p_{i-1},p_i \right)
-	\),
-	amiből persze
-	\begin{math}
-		J\left( p_i,p_{i+1} \right)\subseteq J\left( p_{i-1},p_i \right)
-	\end{math}
-	következik.
-	Így minden $i=0,\ldots,s$-re végül is
-	\[
 		J\left( p_{i-1},p_i \right)
 		=
-		J\left( p_i,p_{i+1} \right).
-	\]
-	Alkalmazva ezt minden $i=0,\ldots,s$ mellett
+		J\left( p_i,p_{i+1} \right)
+	\)
+	minden $i=0,1,\ldots,s$ mellett.
+	Ezt alkalmazva kapjuk, hogy
 	\[
 		J\left( p,q \right)
 		=
@@ -1227,6 +1224,7 @@ $J\left( r_1,r_2 \right)\subseteq J\left( p,q \right)$.
 		J\left( p_1,p_2 \right)
 		=\ldots=
 		J\left( p_s,p_{s+1} \right)
+		=J\left( p_s, 0\right)
 		=J\left( p_s \right).\qedhere
 	\]
 \end{proof}
