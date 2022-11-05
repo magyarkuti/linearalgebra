@@ -15,3 +15,6 @@ $clean_ext = "bbl";
 sub makenomenclature {
    system("makeindex $_[0].glo -s nomencl.ist -o $_[0].gls"); }
 @generated_exts = (@generated_exts, 'glo');
+# gitinfo2-latexmk
+%GI2TM_OPTIONS=(RELEASE_MATCHER=>"v[0-9]*.*");
+do './gitinfo2.pm';
