@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.11.1)  5 NOV 2022 20:36
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.11.1)  5 NOV 2022 21:07
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1396,10 +1396,10 @@ braces):
 >  {hungarian/DefineCommandsCmd}  =>  {xpg_define_language_commands:e}.
 Module polyglossia Info: Language data for hungarian
 (polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            lefthyphenmin	2
 (polyglossia)            synonyms	
 (polyglossia)            hyphenation	
 (polyglossia)            righthyphenmin	2
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            patterns	hyph-hu.pat.txt on input line 12
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 12
@@ -1857,7 +1857,8 @@ Package hyperref Info: Option `final' set `true' on input line 71.
 \dtlrows@quotes=\count533
 \dtlcols@quotes=\count534
 A bölcsesség:
-104:If you're going through hell, keep going.-- Winston Churchill
+76:Life is 10\% what happens to us and 90\% how we react to it.-- Dennis P Kimb
+ro
  
 \la@idxfile=\write6
 
@@ -4551,7 +4552,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:4,2:1228,3:447,4:136,5:961,6:285,7:9550,8:232,9:1714,10:26,11:
 1196
  57120 multiletter control sequences out of 65536+600000
- 217 fonts using 66883215 bytes
+ 217 fonts using 66884127 bytes
  91i,17n,121p,1146b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4568,7 +4569,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (229 pages, 9331423 bytes).
+Output written on la.pdf (229 pages, 9331567 bytes).
 
 PDF statistics: 2924 PDF objects out of 2984 (max. 8388607)
  2626 compressed objects within 27 object streams
