@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.11.1)  5 NOV 2022 21:07
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.11.1)  5 NOV 2022 21:29
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1395,12 +1395,12 @@ braces):
 >  {hungarian/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {hungarian/DefineCommandsCmd}  =>  {xpg_define_language_commands:e}.
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            loader	loadhyph-hu.tex
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            synonyms	
-(polyglossia)            hyphenation	
 (polyglossia)            righthyphenmin	2
-(polyglossia)            patterns	hyph-hu.pat.txt on input line 12
+(polyglossia)            patterns	hyph-hu.pat.txt
+(polyglossia)            synonyms	
+(polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            hyphenation	 on input line 12
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 12
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1857,8 +1857,8 @@ Package hyperref Info: Option `final' set `true' on input line 71.
 \dtlrows@quotes=\count533
 \dtlcols@quotes=\count534
 A bölcsesség:
-76:Life is 10\% what happens to us and 90\% how we react to it.-- Dennis P Kimb
-ro
+37:If you want to test your memory, try to recall what you were worrying about 
+one year ago today.-- E Joseph Cossman
  
 \la@idxfile=\write6
 
@@ -4549,10 +4549,10 @@ Here is how much of LuaTeX's memory you used:
  5172 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 3 disc, 55 glue, 5 kern, 27 glyph, 840 attribute, 2
 00 glue_spec, 840 attribute_list, 3 write, 1 pdf_action nodes
-   avail lists: 1:4,2:1228,3:447,4:136,5:961,6:285,7:9550,8:232,9:1714,10:26,11:
+   avail lists: 1:4,2:1228,3:447,4:136,5:961,6:285,7:9516,8:232,9:1714,10:26,11:
 1196
  57120 multiletter control sequences out of 65536+600000
- 217 fonts using 66884127 bytes
+ 217 fonts using 66883519 bytes
  91i,17n,121p,1146b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4569,7 +4569,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (229 pages, 9331567 bytes).
+Output written on la.pdf (229 pages, 9325952 bytes).
 
 PDF statistics: 2924 PDF objects out of 2984 (max. 8388607)
  2626 compressed objects within 27 object streams
