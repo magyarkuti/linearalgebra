@@ -15,7 +15,8 @@ jobs:
           root_file: la.tex
           latexmk_use_lualatex: true
           args:  --file-line-error --interaction=nonstopmode
-          pre_compile: "tlmgr update --self && tlmgr update polyglossia"
+          # pre_compile: "tlmgr update --self && tlmgr update polyglossia"
+          pre_compile: "sh ./myhook"
       - name: Upload to workflows
         uses: actions/upload-artifact@v1
         with:
