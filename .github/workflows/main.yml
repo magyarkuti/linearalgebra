@@ -13,8 +13,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: la.tex
-          args:  -lualatex --file-line-error --interaction=nonstopmode
-          precompile: "tlmgr update --self && tlmgr update polyglossia"
+          latexmk_use_lualatex: true
+          args:  --file-line-error --interaction=nonstopmode
+          pre_compile: "tlmgr update --self && tlmgr update polyglossia"
       - name: Upload to workflows
         uses: actions/upload-artifact@v1
         with:
