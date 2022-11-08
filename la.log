@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.11.1)  5 NOV 2022 21:29
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.11.1)  8 NOV 2022 10:44
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1395,12 +1395,12 @@ braces):
 >  {hungarian/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {hungarian/DefineCommandsCmd}  =>  {xpg_define_language_commands:e}.
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            righthyphenmin	2
-(polyglossia)            patterns	hyph-hu.pat.txt
-(polyglossia)            synonyms	
 (polyglossia)            loader	loadhyph-hu.tex
-(polyglossia)            hyphenation	 on input line 12
+(polyglossia)            righthyphenmin	2
+(polyglossia)            synonyms	
+(polyglossia)            hyphenation	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            patterns	hyph-hu.pat.txt on input line 12
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 12
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1857,8 +1857,7 @@ Package hyperref Info: Option `final' set `true' on input line 71.
 \dtlrows@quotes=\count533
 \dtlcols@quotes=\count534
 A bölcsesség:
-37:If you want to test your memory, try to recall what you were worrying about 
-one year ago today.-- E Joseph Cossman
+15:Whether you think you can or think you can't, you're right.-- Henry Ford
  
 \la@idxfile=\write6
 
@@ -4537,7 +4536,7 @@ uage hun
 \l@magyar = a dialect from \language\l@hungarian 
 )
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: 480FA1E71419954926218F8D1FE464A0;17748.
+(rerunfilecheck)             Checksum: E1EF36FB6CAD4B4E83FC74E725FBB860;17751.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
@@ -4552,7 +4551,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:4,2:1228,3:447,4:136,5:961,6:285,7:9516,8:232,9:1714,10:26,11:
 1196
  57120 multiletter control sequences out of 65536+600000
- 217 fonts using 66883519 bytes
+ 217 fonts using 66883823 bytes
  91i,17n,121p,1146b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4569,10 +4568,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (229 pages, 9325952 bytes).
+Output written on la.pdf (229 pages, 9325256 bytes).
 
-PDF statistics: 2924 PDF objects out of 2984 (max. 8388607)
- 2626 compressed objects within 27 object streams
+PDF statistics: 2922 PDF objects out of 2984 (max. 8388607)
+ 2624 compressed objects within 27 object streams
  1122 named destinations out of 1200 (max. 131072)
  753 words of extra memory for PDF output out of 10000 (max. 100000000)
 
