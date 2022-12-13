@@ -4284,7 +4284,7 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 	Ez ellentmondás, hiszen $k$ a legnagyobb olyan szám,
 	amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
-\section{Rang-tétel}
+\section{Rangtétel}
 \begin{definition}[mátrix feszítőrangja]\index{feszítőrang}
 	Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
     Azt mondjuk, hogy \emph{feszítőrangja} $r$, ha $r$ a legkisebb olyan pozitív egész, amelyre $A$ előáll
@@ -4294,9 +4294,9 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 	alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times m}$.
 \end{definition}
 Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
-A Rang-tételnek a szokásosnál egy kicsit erősebb formája következik.
+A Rangtételnek a szokásosnál egy kicsit erősebb formája következik.
 
-\begin{proposition}[Rang-tétel]
+\begin{proposition}[Rangtétel]
 	Minden nemzérus mátrixban
 	a maximális lineárisan független oszloprendszerek
 	és a max\-i\-má\-lis lineárisan független sorrendszerek azonos elemszámúak,
@@ -4551,16 +4551,16 @@ együttes alkalmazásaként kapjuk a következő lemmát.
     $M=\lin\left( \left\{ x_1,\ldots,x_n \right\}\right)=V. $
 \end{proof}
 \subsection{Rang és feszítőrang}
-\Aaz{pr:rang}. állítást, azaz a Rang-tételt a dimenzió fogalmának ismeretében úgy is fogalmazhatjuk, hogy \emph{tetszőleges nem zérus mátrixra az oszlopvektortér dimenziója egybeesik a feszítőranggal, és a sorvektortér dimenziója is azonos a feszítőranggal.}
+\Aaz{pr:rang}. állítást, azaz a Rangtételt a dimenzió fogalmának ismeretében úgy is fogalmazhatjuk, hogy \emph{tetszőleges nem zérus mátrixra az oszlopvektortér dimenziója egybeesik a feszítőranggal, és a sorvektortér dimenziója is azonos a feszítőranggal.}
 \begin{definition}[mátrix rangja]\index{rang}
     Egy mátrix \emph{rangja} az oszlopai által generált vektortér dimenziója.
 \end{definition}
-A Rang-tétel tehát azt állítja, hogy nem zérus mátrixra a feszítőrang, a rang, azaz az oszlopvektortér dimenziószáma, és a sorvektortér dimenziószáma azonosak.
+A Rangtétel tehát azt állítja, hogy nem zérus mátrixra a feszítőrang, a rang, azaz az oszlopvektortér dimenziószáma, és a sorvektortér dimenziószáma azonosak.
 
 A zérus mátrixra a feszítőrang fogalmát nem definiáltuk, de az nyilvánvaló, hogy ebben az esetben az oszlopvektortér és a sorvektortér is 0 dimenziós.
 
-Most felejtsük el egy pillanatra, hogy igazoltuk már a Rang-tételt.
-A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk át a Rang-tétel klasszikus alakját. 
+Most felejtsük el egy pillanatra, hogy igazoltuk már a Rangtételt.
+A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk át a Rangtétel klasszikus alakját. 
 \begin{proposition}
     Tetszőleges mátrixra az oszlopvektortér és a sorvektortér azonos dimenziós alterek.
 \end{proposition}
@@ -4617,7 +4617,7 @@ szorzás egy $\mathbb{F}^m\to\mathbb{F}^n$ lineáris operációt jelent.
 	Azon pontok halmaza,
 	amelyeket $A$ operátor a $W$ tér zérus elemébe képez egy alteret alkotnak,
 	amelyet $\ker A$ módon jelölünk.
-
+\\
 	Az $L\left( V,W \right)$ lineáris operációk halmaza a szokásos függvény műveletekkel vektorteret alkot.
 \end{defprop}
 A jelölések tehát:
@@ -5413,6 +5413,9 @@ sőt
 	Ezt kellett belátni.
 \end{proof}
 \section{Izomorfia tételek}
+Két fontos izomorfiatételt kell megértenünk.
+Az első, hogy ha $M\oplus N=V$, akkor a $V/M$ és az $N$ egymással izomorf vektorterek.
+A második, hogy ha $A\in L\left( V,W \right)$, akkor $V/\ker A$ és $\im A$ is izomorfak egymással.
 \begin{proposition}
 	Legyen $M$ a $V$ vektortér egy altere.
 	Definiálja $\varphi:V\to V/M$ az $x\mapsto M_x$ függvényt.
@@ -5462,11 +5465,14 @@ sőt
 	Megmutattuk tehát, hogy $\ker\Phi=\left\{ 0 \right\}$,
 	ami $\Phi$ injektivitását jelenti.
 \end{proof}
+Az állítás második pontját úgy is fogalmazhatjuk,
+hogy az $M$ altér bármely direkt kiegészítője\index{direkt kiegészítő} izomorf a $V/M$ faktortérrel.
+Ezt nevezzük az 1. izomorfiatételnek.
+
 Az állítás legelső következménye,
-hogy az $M$ altér bármely direkt kiegészítője\index{direkt kiegészítő} izomorf a $V/M$ faktortérrel,
-emiatt bármely direkt kiegészítő izomorf bármely direkt kiegészítővel is.
-Feltéve, hogy
-létezik direkt kiegészítő, izomorfiától eltekintve csak egyetlen egy létezik.
+hogy bármely direkt kiegészítő izomorf bármely direkt kiegészítővel is.
+Feltéve tehát, hogy létezik direkt kiegészítő,
+izomorfiától eltekintve csak egyetlen egy létezik.
 De van-e, mindig direkt kiegészítő?
 Véges dimenziós esetben már láttuk az igenlő választ.
 Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
@@ -5479,6 +5485,31 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	hogy $M$ altérnek létezik $k$-dimenziós direkt kiegészítője
 	$\codim M=k$ módon jelöljük.
 \end{definition}
+\begin{proposition}
+	Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
+	amelynek van véges dimenziós direkt kiegészítője.
+	Ekkor a $V/M$ faktortér is végesen generált, és
+	\[
+		\dim(V/M)
+        =
+		\codim M.
+        \qedhere
+	\]
+\end{proposition}
+\begin{proof}
+	Válasszunk $N$ véges dimenziós alterét $V$-nek,
+	amelyre $V=M\oplus N$.
+	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
+	emiatt $V/M$ is végesen generált, és
+	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
+\end{proof}
+Világos, hogy az előző állítás feltétele teljesül, amennyiben $V$ maga is végesen generált.
+Ekkor tehát azt tudjuk, hogy
+\[
+    \dim (V/M)=\dim V-\dim M.
+\]
+
+Most nézzük a 2. izomorfiatételt.
 \begin{proposition}
 	Legyenek $V,W$ ugyanazon test feletti vektorterek,
 	és $A\in L\left( V,W \right)$ egy lineáris operáció.
@@ -5533,59 +5564,51 @@ Nem véges dimenziós vektorterekre is igaz az állítás, de itt nem igazoljuk.
 	ami éppen $\Omega$ injektivitása.
 \end{proof}
 \begin{proposition}
-	Tegyük fel, hogy $M$ a $V$ vektortér olyan altere,
-	amelynek van véges dimenziós direkt kiegészítője.
-	Ekkor a $V/M$ faktortér is végesen generált, és
-	\[
-		\codim M=\dim(V/M).\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Válasszunk $N$ véges dimenziós alterét $V$-nek,
-	amelyre $V=M\oplus N$.
-	Láttuk, hogy $V/M$ és $N$ izomorf vektorterek,
-	emiatt $V/M$ is végesen generált, és
-	$\dim \left( V/M \right)=\dim(N)=\codim(M)$.
-\end{proof}
-\begin{proposition}
 	Legyenek $V,W$ vektorterek,
 	továbbá $A\in L\left( V,W \right)$ egy olyan lineáris operáció,
 	amelyre az $\im A\subseteq W$ végesen generált.
-	Ekkor a $\ker A$ altérnek van $\im A$-val izomorf direkt kiegészítője, emiatt
-	\[
-		\codim\left( \ker A \right)=\dim\left( \im A \right).\qedhere
-	\]
+	Ekkor a $\ker A$ altérnek van végesen generált direkt kiegészítője.
 \end{proposition}
 \begin{proof}
 	Legyen $\im A$ egy bázisa $\left\{ Ax_1,\ldots,Ax_r \right\}$.
-    Ha például $x_i$ előállna, mint a többi $x_j$ vektor lineáris kombinációja,
-    akkor az $A$ linearitása miatt $Ax_i$ is előállna ugyanazon együtthatókkal mint a többi $Ax_j$
-    lineáris kombinációja.
-    Ez azt jelenti, hogy $\left\{ x_1,\ldots,x_r \right\}$ is lineárisan független vektorrendszer.
 	Definiálja $N=\lin\left\{ x_1,\ldots,x_r \right\}$.
-    Persze $\left\{ x_1,\ldots,x_r \right\}$ egy bázisa $N$-nek,
-    ergo $\dim(N)=r$.
 
 	Ha $x\in\ker A\cap N$, akkor valamely $\alpha_j$ skalárokkal
 	$x=\sum_{j=1}^r\alpha_jx_j$ és $Ax=0$.
-	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\dots=\alpha_r=0$
+	Így $0=\sum_{j=1}^r\alpha_jAx_j$, ami csak $\alpha_1=\ldots=\alpha_r=0$
 	esetben lehetséges az $\left\{ Ax_1,\ldots,Ax_r \right\}$ rendszer lineárisan függetlensége szerint.
     Megmutattuk tehát, hogy $\ker A\cap N=\left\{ 0 \right\}$, ergo $\ker A$-nak és $N$-nek értelmes a direkt összege.
 
-	Ha $x\in V$ tetszőleges vektor, akkor $Ax\in\im A$, emiatt
-	$Ax$ valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakú.
+	Ha $x\in V$ tetszőleges vektor, akkor persze $Ax\in\im A$, emiatt
+	az $Ax$ vektor valamely skalárokkal $Ax=\sum_{j=1}^r\alpha_jAx_j$ alakban írható.
 	Világos, hogy így $x-\sum_{j=1}^r\alpha_jx_j\in\ker A$,
 	ami igazolja, hogy $V=\ker A+N$.
 
-	Láttuk tehát, hogy $V=\ker A\oplus N$, azaz $\ker A$-nak valóban találtunk véges dimenziós direkt kiegészítőjét.
-	Az is világos, hogy $\codim\left( \ker A \right)=\dim(N)=r=\dim\left( \im A \right)$.
+	Láttuk tehát, 
+    hogy $V=\ker A\oplus N$, 
+    azaz $\ker A$-hoz valóban találtunk egy végesen generált kiegészítőt.
 \end{proof}
-Magától értetődik a következő két észrevétel.
-\begin{proposition}
-	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
-	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
-\end{proposition}
-\begin{proposition}[Rang--defektus-tétel]\index{Rang--defektus-tétel}
+Mivel $V/\ker{A}$ izomorf a $\ker A$ altér bármely más direkt kiegészítőjével is,
+ezért minden más direkt kiegészítő is izomorf egymással, ezért azonos dimenziósak.
+Azt is láttuk, hogy $V/\ker{A}$ az $\im A$ vektortérrel is izomorf, 
+emiatt a $\ker A$ bármely direkt kiegészítő altere és $\im A$ egymással izomorf vektorterek.
+
+Meggondoltuk tehát, hogy ha $\im A$ végesen generált, akkor
+\[
+    \dim(\im A)
+    =
+    \codim(\ker A).
+\]
+
+Ennek két fontos speciális esetét érdemes megfigyelni.
+Az első mikor $\im A$ azért végesen generált, mert $V$ az;
+a második amikor $\im A$ azért végesen generált, mert $W$ az.
+Az első esetben arra kell hivatkoznunk, hogy egy generátorrendszer szürjektív lineáris képe generátorrendszer marad, a második eset pedig azért igaz, mert egy végesen generált vektortér altere is végesen 
+generált marad.
+
+Tehát az első speciális eset, ha $V$ végesen generált:
+Ez az úgynevezett Rangdefektustétel:
+\begin{proposition}[Rangdefektustétel]\index{Rangdefektustétel}
 	Legyen $V$ egy véges dimenziós vektortér,
 	és $W$ egy tetszőleges vektortér,
 	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
@@ -5595,7 +5618,14 @@ Magától értetődik a következő két észrevétel.
 		\dim\left( \ker A \right)+\dim\left( \im A \right)=\dim(V).\qedhere
 	\]
 \end{proposition}
-%\chapter*{Rang-tétel mégegszer}
+
+A második speciális eset egy fontos speciális esete, 
+mikor a $W$ vektortér egydimenziós, ergo egy lineáris funkcionálról van szó.
+\begin{proposition}
+	Ha $A\in L\left( V,\mathbb{F} \right)$ egy nem zérus lineáris funkcionál a $V$ vektortéren,
+	akkor $\ker A$ egy 1 co-dimenziós altere $V$-nek.
+\end{proposition}
+%\chapter*{Rangtétel mégegszer}
 %
 %\begin{definition}[rang, oszloprang, sorrang, feszítőrang]\index{vektorrendszer rangja}\index{oszloprang}\index{sorrang}\index{feszítőrang}
 %    Egy véges vektorrendszer \emph{rangján} a vektorrendszer generálta altér dimenzióját értjük.
@@ -5620,7 +5650,7 @@ Magától értetődik a következő két észrevétel.
 %    \]
 %    továbbá $\srank{A}$ jelöli a feszítőrangját $A$-nak.
 %\end{definition}
-%\begin{proposition}(Rang-tétel)\label{pr:rang}
+%\begin{proposition}(Rangtétel)\label{pr:rang}
 %    Tetszőleges test feletti tetszőleges mátrix mellett, a fent bevezetett három rang-koncepció azonos.
 %
 %    Formálisabban: Minden $A\in\mathbb{F}^{n\times m}$ mellett
@@ -5698,7 +5728,7 @@ Magától értetődik a következő két észrevétel.
 %    ezért a továbbiakban a közös értékre a \emph{rang} szót is használjuk.\footnote{Lásd: \parencite{Wardlaw2005}}
 %\end{definition}
 %\begin{note}
-%    Érdemes a Rang-tétel következő összegzését megjegyezni.
+%    Érdemes a Rangtétel következő összegzését megjegyezni.
 %    Legyen $A\in\mathbb{F}^{n\times m}$ mátrix, amelynek $r$ a rangja.
 %    Ekkor létezik $A=BC$ felbontása, ahol $B\in\mathbb{F}^{n\times r},C\in\mathbb{F}^{r\times m}$.
 %    Ez a felbontás persze nem egyértelmű, hiszen $A$ oszlop-vektorterének nagyon sok bázisa van.
@@ -5799,7 +5829,7 @@ Magától értetődik a következő két észrevétel.
 %    alakban, ahol $B\in\mathbb{F}^{n\times r}$ és $C\in\mathbb{F}^{r\times n}$.
 %\end{definition}
 %Világos, hogy tetszőleges nemzérus négyzetes mátrixra ez jól definiált és $1\leq r \leq \min\{n,m\}$.
-%A Rang-tételnek a szokásosnál egy kicsit erősebb formáját lehet megfogalmazni a dimenzió fogalmának bevezetése nélkül,
+%A Rangtételnek a szokásosnál egy kicsit erősebb formáját lehet megfogalmazni a dimenzió fogalmának bevezetése nélkül,
 %ami a lenti 3. állítás.
 %
 %\begin{proposition}
@@ -5932,7 +5962,7 @@ hogy az egy $x\in\mathbb{F}^m$ oszlopvektorhoz a mátrix szorzás definíciójá
 az $A\cdot x\in\mathbb{F}^n$ oszlopvektort rendeli.
 Ebben a fejezetben a mátrixok ezen interpretációját erősítjük tovább.
 
-\section{Rang--defektus-tétel következménye}
+\section{Rangdefektustétel következménye}
 Láttuk, hogy tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
 \[
 	\nu\left( A \right)+\rho\left( A \right)=\dim(V),
@@ -12738,7 +12768,7 @@ amelyeket későbbi számolásaink során külön hivatkozás nélkül használu
 Felépítésünk sarokköve a skalárisszorzatos terek rangtétele.
 Legfontosabb következménye, hogy zérus vektoron kívül nincs olyan vektor,
 amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
-\begin{proposition}[skalárisszorzatos Rang-tétel]\label{pr:skrang}
+\begin{proposition}[skalárisszorzatos Rangtétel]\label{pr:skrang}
 	Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
 	Ekkor
 	$(\im A)^\perp=\ker A^\ast$ és
@@ -12791,7 +12821,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 		\ker A\oplus\im A^\ast.
 	\end{math}
 
-	A direkt összegek dimenziójára vonatkozó állítás és a Rang--defektus\index{rang--defektus--tétel}-tételnek az adjungált operációra vonatkozó alakja szerint
+	A direkt összegek dimenziójára vonatkozó állítás és a Rangdefektustételnek\index{Rangdefektustétel} az adjungált operációra vonatkozó alakja szerint
 	\begin{math}
 		\rho\left( A \right)=\dim(W)-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
 	\end{math}
@@ -13405,7 +13435,7 @@ mint valamely $M$ altérre eső merőleges vetítés.
 	No de, minden ortogonális projekció $P_M$ alakú,
 	valamely $M$ altér megválasztása mellett, ezért $A$-ra is igaz, hogy önadjungált és idempotens.
 
-	Megfordítva, ha $A$ önadjungált, akkor a skalárisszorzatos rang tétel szerint $(\ker A)^\perp=\im A^\ast=\im A$,
+	Megfordítva, ha $A$ önadjungált, akkor a skalárisszorzatos rangtétel szerint $(\ker A)^\perp=\im A^\ast=\im A$,
 	amiből persze $\ker A\perp\im A$ már könnyen következik.
 \end{proof}
 Mivel minden $P$ ortogonális projekció $P=P_M$ alakú,
