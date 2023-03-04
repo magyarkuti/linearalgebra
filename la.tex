@@ -1600,7 +1600,7 @@ hogy a szorzat mátrixra,
 mint elemei összeségére,
 mint oszlopai összeségére,
 vagy mint sorainak összeségére gondolunk.
-\begin{proposition}
+\begin{proposition}\label{pr:matrixmul}
 	Legyen $A\in\mathbb{F}^{m\times k}$ és $B\in\mathbb{F}^{k\times n}$ mátrix.
 	Jelölje $C=AB$ ezek szorzatát ebben a sorrendben.
 	Ekkor
@@ -3058,31 +3058,36 @@ nevezzük,
 és a többi változót
 \emph{szabad változónak}\index{szabad változó}
 mondjuk. 
-Persze az algoritmusban a kötött változók száma és a szabad valtozók száma mindig az együttható mátrix oszlopainak számával azonos.
+Az algoritmusban a kötött változók száma és a szabad valtozók száma az együttható mátrix oszlopainak számával azonos.
+A megoldást úgy kapjuk, 
+hogy az utolsó táblázathoz tartozó egyenletrendszerben tetszőleges értéket adunk a szabad változóknak,
+majd a kötött változókat kifejezzük a szabad változók segítségével.
 
-A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló a most tárgyalt algoritmus alapján.
-\begin{proposition}
-	Ha egy homogén lineáris egyenletrendszerben több ismeretlen van mint egyenlet,
-	akkor a rendszernek van nem zéró megoldása.
-\end{proposition}
-\begin{proof}
-	Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  legutolsó táblázatában
-	a kötött változó száma legfeljebb a sorok száma az pedig szigorúan kisebb mint az összes ismeretlenek száma.
-	Van tehát szabad változó, amelynek értéke tetszőleges lehet.
-\end{proof}
 Mivel a változók vagy kötöttek vagy szabadok,
-ezért a kötött változók számának és a szabad változók számának az összege a változók száma.
+ezért az egy teljes nyilvánvalóság, 
+hogy az algoritmus egy fajta megállásakor a kötött változók számának és a szabad változók számának az összege a változók száma.
 Ebben a pillanatban még nem látszik,
 de később ki fog derülni,
-hogy a kötött így a szabad változók száma is független az algoritmus során választott pivot elemektől.\index{pivot elem}
-Érdemes a rendszer egy megoldásra úgy gondolni, mint egy $x\in\mathbb{F}^n$ oszlopvektorra,
+hogy a kötött -- így a szabad változók száma is -- független az algoritmus konkrét lefutása során választott pivot elemektől.\index{pivot elem}
+Akárhogyan is választjuk az algoritmus egyes lépéseinél a pivot-elemeket,
+amikor megáll az algoritmus, akkor a nem csupa zérus sorok száma azonos.
+\footnote{A továbbiakban nagyon figyeljünk arra, hogy ezt a tényt mikor értjük meg!}
+
+Gondoljunk úgy a rendszer egy megoldás vektorára, 
+mint egy $x\in\mathbb{F}^n$ oszlopvektorra,
 amelynek $i$-edik koordinátája az $x_i$ változó aktuális értéke.
-Ilyen módon az $x_1,\ldots,x_n$ pontosan akkor elégíti ki a lineáris egyenletrendszert,
-ha
+Ilyen módon az $x_1,\ldots,x_n$ számok pontosan akkor elégíti ki a lineáris egyenletrendszert,
+ha a belőlük képzett $x\in\mathbb{F}^n$ vektorra az
 \[
-	Ax=b
+	A\cdot x=b
 \]
-mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edik koordinátája $b_i$.
+mátrixegyenlet teljesül, 
+ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edik koordinátája $b_i$.
+Ezen a ponton találkozik a mátrixszorzás fogalma a lineáris egyenletek fogalmával.
+
+Persze, hiszen azt értettük meg korábban, hogy $A$-nak egy $x$ oszlopvektorral való szorzása
+nem más mint $A$ oszlopainak az $x_1,\ldots,x_n$ számokkal vett lineáris kombinációja,
+ami éppen az $A$ együttható mátrixszú inhomogén lineáris egyenletrendszer megoldását jelenti.
 
 Érdemes itt konkrét példákkal szemléltetni a homogén lineáris egyenletrendszer általános megoldásának felírását:
 \begin{enumerate}
@@ -3094,7 +3099,7 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 	  3x+6y+8z&=& 0
     \end{eqnarray*}
     homogén  lineáris egyenletrendszert.
-    A Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
+    Egy Gauss\,--\,Jordan-algoritmus\index{Gauss\,--\,Jordan-elimináció}  lehet például a következő:
      \[
      \begin{array}{|rrr}
      a         & b & c \\
@@ -3240,13 +3245,33 @@ mátrixegyenlet teljesül, ahol a $b\in\mathbb{F}^n$ az a vektor melynek $i$-edi
 
 Egy homogén lineáris egyenletrendszernek a zérus vektor mindig megoldása,
 ezt nevezzük \emph{triviális megoldásnak}.\index{triviális megoldás}
-A Gauss\,--\,Jordan-eliminációs\index{Gauss\,--\,Jordan-elimináció}  algoritmusból világos a következő gondolat.
-A rendszernek pontosan akkor nincs nem triviális megoldása,
-ha nincs szabad változó, azaz minden változó kötött:
-\begin{proposition}
+
+A következő tétel rendkívül fontos, még akkor is ha teljesen nyilvánvaló a most tárgyalt algoritmus alapján.
+\begin{proposition}\label{pr:hom-inj}
 	Egy $Ax=0$ homogén lineáris egyenletrendszernek pontosan akkor a triviális megoldás az egyetlen megoldása,
 	ha az eliminációs algoritmusban minden oszlop a generátorrendszerbe cserélhető.
 \end{proposition}
+\begin{proof}
+    Láttuk, hogy a szabad változók tetszőleges beállításával különböző megoldásokat kapunk.
+    Mivel a triviális megoldás mindig egy lehetőség, 
+    ezért pontosan akkor van több mint egy megoldás, ha van az utolsó táblában szabad változó,
+    tehát ha nem minden változó kötött, ergo ha van olyan oszlop, amit nem cseréltünk a generátorrendszerbe.
+\end{proof}
+Az alábbi állítás a lineáris egyenletrendszerek megoldhatóságának egy nagyon fontos tétele,
+amit még sok más aspektusban is fogunk szemlélni. 
+Itt azt szeretném rögzíteni, hogy ez mennyire magától érthetődik,
+ha az eliminációs algoritmusra gondolunk.
+\begin{proposition}
+	Ha egy homogén lineáris egyenletrendszerben több ismeretlen van mint egyenlet,
+	akkor a rendszernek van nem zéró megoldása.
+\end{proposition}
+\begin{proof}
+    Mivel több oszlop mint sor van, 
+    ezért a Gauss\,--\,Jordan-algoritmussal\index{Gauss\,--\,Jordan-elimináció} nem lehet minden oszlopot
+    a sorok közé cserélni, 
+    így \aaz{pr:hom-inj}. állítás szerint több megoldás van, 
+    ergo nem csak a triviális megoldás a megoldás.
+\end{proof}
 \subsection{Mátrixok bázisfaktorizációja 1.}
 Érdemes a Gauss\,--\,Jordan-eliminációt\index{Gauss\,--\,Jordan-elimináció}  az egyenletrendszerek megoldásától függetlenül is szemlélni.
 Ide másolom az előző feladat megoldásának táblázatát:
@@ -3346,7 +3371,7 @@ de az elimináció minden egyes lépésében a sorok egy lináris kombinációj�
 ergo a táblázat minden egyes sora az eredeti sorok alkotta vektortérben -- ami itt $V$ -- marad.
 
 Vegyük észre, hogy a fenti eljárással azt gondoltuk meg, 
-hogy tetszőleges $m\times n$ méretű mátrix
+hogy tetszőleges $m\times n$ méretű nemzérus mátrix
 sorvektorterének és oszlopvektorterének van azonos $r$ elemszámú generátorrendszere,
 ahol $1\leq r\leq\min\left\{ m,n \right\}$.
 
@@ -3371,6 +3396,20 @@ Az alábbi állítás a mátrix szorzás definíciójának következménye.
               \qedhere
 	\end{enumerate}
 \end{proposition}
+Egy mátrix fenti felbontását nevezzük \emph{bázisfaktorizációnak}\index{bázisfaktorizáció}.
+
+Visszagondolva a mátrixszorzás-művelet diádinterpretációjára (lásd \aaz{pr:matrixmul}. állítást) úgy tudjuk összefoglalni 
+a mátrixok bázisfaktorizációját, hogy ha egy mátrix sor- vagy oszlopterének van egy $r$ elemű generátorrendszere,
+akkor e mátrix előáll mint $r$ darab diád összege.
+
+Azt is meggondoltuk, hogy milyen módon találhatunk azonos elemszámú generátorrendszert a sor- és az oszlopvektortérben:
+A Gauss\,--\,Jordan-elimináció utolsó táblázata ezt is elárulja.
+Ha egy $A$ nem zérus mátrixból indulunk ki, akkor a $B$ oszlopaiba kell rendezni az $A$ azon eredeti oszlopait,
+amelyekben választottunk pivot elemeket, majd a $C$ mátrix az utolsó táblázat nem zérus soraiból áll.
+Ha a választott pivot elemek számát $r$ jelöli, 
+akkor $B$ oszlopai ($r$ darab) generálják az $A$ oszlopvektorterét;
+$C$ sorai ($r$ darab) generálják az $A$ sorvektorterét;
+az $A=BC$, emiatt $A$ előáll mint $r$ darab diád összege.
 
 \subsection{Inhomogén lineáris egyenletrendszer}
 Láttuk, hogy egy $m$ egyenletet és $n$ ismeretlent tartalmazó lineáris egyenletrendszer ekvivalens az
@@ -3415,11 +3454,16 @@ Máshogyan fogalmazva: mikor van egyáltalán megoldása egy inhomogén rendszer
 	ha $b$ előáll mint $A$ oszlopainak valamilyen lineáris kombinációja,
 	azaz a $b$ vektor az $A$ mátrix oszlopvektorteréhez tartozik.
 \end{proposition}
+\begin{proof}
+    Az $x$ vektor pontosan akkor megoldás,
+    ha $x$ komponenseivel mint együtthatókkal képzett lineáris kombinációja az $A$ oszlopainak $b$ vektort
+    eredményezi. Ez éppen azt jelenti, hogy $b$ az $A$ oszlopvektorterének egy eleme.
+\end{proof}
 Konkrétan adott $A$ és $b$ mellett Gauss\,--\,Jordan-algoritmussal\index{Gauss\,--\,Jordan-elimináció}  el tudjuk dönteni, hogy
 $b$ vektor eleme-e az $A$ mátrix oszlopvektorterének.
 Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
 Most hajtsuk végre a Gauss\,--\,Jordan-eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
-csak az első n oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
+csak az első $n$ oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
 Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
 Az algoritmus úgy ér véget,
 hogy az $A$ mátrixnak megfelelő részben minden nem zérus sor tartalmaz eliminált változót.
@@ -3576,9 +3620,7 @@ következménye a négyzetes mátrixok kétoldalisági tulajdonsága.
     az $Ax=b$ inhomogén lineáris egyenletrendszerek van megoldása. 
     Például $x=Bb$ egy megoldás.
     \Aaz{pr:nincsmo}. állítás szerint ez csak úgy lehet, ha az utolsó eliminációs táblázatban nincs csupa zérus sor.
-    Ezek szerint az utolsó táblázatban a sorok száma megegyezik az eliminált változók számával,
-    de négyzetes mátrixról beszélünk, tehát a oszlopok száma, azaz az $Ax=0$ homogén rendszerben
-    az összes változók száma is azonos a kötött változók számával.
+    Ezek szerint az eliminált változók száma azonos az sorok számával, ami azonos az oszlopok számával, ami azonos a változók számával.
     Ekkor persze nincs szabad változó, tehát az $Ax=0$ homogén rendszernek csak a triviális megoldás a megoldása.
     A mátrix szorzás definíciója szerint ez úgy is fogalmazható, hogy
     tetszőleges $C\in\mathbb{F}^{m\times n}$ mátrixra, az $AC=0$ feltételből $C=0$ következik.
@@ -7274,9 +7316,9 @@ Első alkalmazásként megmutatjuk, hogy minden normált polinom lehet kis minim
     \(
     p\left( t \right)=t^k+\alpha_{k-1}t^{k-1}+\dots+\alpha_1t+\alpha_0,
     \)
-    $v_1=v.$ 
-    A $v_1\neq 0$ vektor mint egy elemű vektorrendszer lineárisan független, ezért kiegészíthető a tér
-    $\left\{ v_k,\ldots,v_2,v_1 \right\}$ bázisává.
+    $v_0=v.$ 
+    A $v_0\neq 0$ vektor mint egy elemű vektorrendszer lineárisan független, ezért kiegészíthető a tér
+    $\left\{ v_{k-1},\ldots,v_1,v_0 \right\}$ bázisává.
     Legyen $A\in L\left( V \right)$ az a lineáris transzformáció, 
     amelynek ebben a bázisban felírt mátrixa\footnote{Az első oszlopban sorban lefelé $p\left( t \right)$ együtthatóinak ellentetje, a szuper diagonálisban 1, mindenütt másutt zérus.}
     \[
@@ -7288,24 +7330,24 @@ Első alkalmazásként megmutatjuk, hogy minden normált polinom lehet kis minim
             -\alpha_0    &0&0&\dots&0
         \end{pmatrix}.
     \]
-    Ez persze azonos avval, mintha $A$-t a $\left\{ v_k,\ldots,v_1 \right\}$
+    Ez persze azonos avval, mintha $A$-t a $\left\{ v_{k-1},\ldots,v_0 \right\}$
     bázison definiálnánk az alábbi módon:
     \[
-        A\left( v_j \right)=v_{j+1}, j=1,\ldots,k-1\mbox{ esetén, és } 
-        A\left( v_k \right)=\sum_{j=0}^{k-1}-\alpha_jv_{j+1}.
+        A\left( v_j \right)=v_{j+1}, j=0,\ldots,k-2\mbox{ esetén, és } 
+        A\left( v_{k-1} \right)=\sum_{j=0}^{k-1}-\alpha_jv_j.
     \]
-    Ekkor minden $j=0,\ldots,k-1$ mellett $v_{j+1}=A^jv_1$, 
-    ezért $\left\{ v_1,Av_1,\ldots,A^{k-1}v_1 \right\}=\left\{ v_1,v_2,\ldots,v_{k} \right\}$ lineárisan független rendszer.
+    Ekkor minden $j=0,\ldots,k-1$ mellett $v_j=A^jv_0$, 
+    ezért $\left\{ v_0,Av_0,\ldots,A^{k-1}v_0 \right\}=\left\{ v_0,v_1,\ldots,v_{k-1} \right\}$ lineárisan független rendszer.
     A mátrix első oszlopa szerint 
     \[
-        A^kv_1=
-        A\left( A^{k-1}v_1 \right)=
-        A\left( v_k \right)=
-        \sum_{j=0}^{k-1}-\alpha_jv_{j+1}=
-        \sum_{j=0}^{k-1}-\alpha_jA^jv_1,
+        A^kv_0=
+        A\left( A^{k-1}v_0 \right)=
+        A\left( v_{k-1} \right)=
+        \sum_{j=0}^{k-1}-\alpha_jv_{j}=
+        \sum_{j=0}^{k-1}-\alpha_jA^jv_0,
     \]
-    ami pont azt jelenti, hogy $p(A)v_1=0$, 
-    ezért valóban $p\left( t \right)$ a $v_1$-hez tartozó kis minimálpolinom.
+    ami pont azt jelenti, hogy $p(A)v_0=0$, 
+    ezért valóban $p\left( t \right)$ a $v$-hez tartozó kis minimálpolinom.
 \end{proof}
 Vegyük észre, hogy a fenti bizonyításban
 $V$ éppen $k$ dimenziós, így csak $\lin\left( v_1;A \right)=V$ lehetséges.
