@@ -10072,6 +10072,215 @@ hogy amennyiben egy permutáció páros (páratlan) sok transzpozíció szorzata
 akkor minden más előállításában is páros (páratlan) sok transzpozíció szerepel.
 Kisvártatva látjuk majd, hogy ez miért van így.
 
+
+\section{A Vandermonde-polinom}
+    
+\begin{definition}
+    Definiálja tetszőleges $x_1,\ldots,x_n\in\mathbb{R}$ elem mellett
+    \[
+       V\left( x_1,\ldots,x_n \right)=
+       \prod_{1\leq i<j\leq n}x_j-x_i.
+    \]
+    A fenti $n$ változós $V$ polinomot nevezzük \emph{Vandermonde-polinomnak}\index{Vandermonde-polinom}.
+\end{definition}
+
+Világos, hogy $V:\mathbb{R}^n\to\mathbb{R}$ függvény, amelynek értéke akkor és csak akkor zérus,
+ha két argumentuma azonos.
+
+A determináns felépítésének sarokköve a következő gondolat.
+
+\begin{proposition}
+    A Vandermonde-polinom két változójának felcserélésével előjelet vált!
+\end{proposition}
+\begin{proof}
+    Legyen $i<j$ rögzítve és a Vandermonde-polinom argumentum listájában cseréljük fel az $i$-edik és a $j$-edik változót.
+    Azt kell megmutatnunk, hogy $V\left( \cdots,x_j,\cdots,x_i,\cdots \right)=-V\left( \cdots,x_i,\cdots,x_j,\cdots \right)$, ahol a ki nem írt változók a helyükön maradnak.
+    A definíció szerint a $V\left( \cdots,x_j,\cdots,x_i,\cdots \right)$ felírásához tekintenünk kell az összes 
+    $\left( k,l \right)$ párt, ahol $1\leq k<l\leq n$, és az 
+    \[\cdots,x_j,\cdots,x_i,\cdots
+    \]
+    argumentumlista
+    $l$-edik helyén szereplő változóból ki kell vonnunk a $k$-adik helyen szereplő változót, 
+    majd az összes ilyen tagot össze kell szoroznunk.
+    A következő esetek lehetségesek:
+    \begin{enumerate}
+        \item A $k$ és $l$ indexek egyike sem egyezik $i$-vel vagy $j$-vel.
+            Magyarul $i\neq k$, $i\neq l$, $j\neq k$, $j\neq l$. 
+            Ekkor a felcserélt argumunentumú Vandermonde-polinom megfelelő tagjai:
+            \[
+                \prod_{\substack{k<l\\i\neq k,i\neq l\\ j\neq k,j\neq l}}x_l-x_k,
+            \]
+            hiszen csak olyan indexeket vettünk most figyelembe, ahol nem történt csere.
+        \item A $k$ és $l$ indexek közül pontosan az egyik azonos az $i$ vagy a $j$ egyikével.
+        \item A $k=i$ és $l=j$.
+            Egyetlen ilyen tag van. 
+            Az $l$-edik, azaz a $j$-edik, helyen az $x_i$ változó van.
+            Hasonlóan a $k$-adik, azaz az $i$-edik, pozíción az $x_j$ változó szerepel. 
+            Ergo 
+            \[
+                \left( x_i-x_j \right)
+            \]
+            tag szerepel a felcserélt listájú Vandermonde-polinom definíciójában.
+    \end{enumerate}
+    A 2. esetet bontsük szét négy részre. 
+    Az első két esetben a $k$ index rögzül és az $l$ fut,
+    majd az $l$ rögzül és a $k$ fut.
+    Arra kell figyelnünk, hogy a felcserélt argumentum lista $i$-edik helyén $x_j$ van és a $j$-edik helyen $x_i$.
+    \begin{itemize}
+        \item[2.a)]
+            $k=i, l\neq j$. Az ide tartozó tagok szorzata:
+            \[
+                \prod_{\substack{l\\i<l<j}}x_l-x_j\cdot\prod_{\substack{l\\j<l}}x_l-x_j;
+            \]
+        \item[2.b)]
+            $k=j$ (ekkor persze $k<l$ miatt $l\neq i$ automatikusan teljesül.)
+            Az idetartozó rész:
+            \[
+                \prod_{\substack{l\\j<l}}x_l-x_i;
+            \]
+        \item[2.c)]
+            $l=j, k\neq i$. Az ide tartozó tagok szorzata:
+            \[
+                \prod_{\substack{k\\i<k<j}}x_i-x_k\cdot\prod_{\substack{k\\k<i}}x_i-x_k;
+            \]
+        \item[2.d)]
+            $l=i$ (ekkor persze $k<l$ miatt $k\neq j$ automatikusan teljesül.)
+            Az idetartozó rész:
+            \[
+                \prod_{\substack{k\\k<i}}x_j-x_k.
+            \]
+    \end{itemize}
+    Ilyen módon minden $k<l$ párt beszámítottunk, és mindegyiket csak egyszer vettük figyelembe.
+    Így a felcserélt argumentumokkal rendelkező Vandermonde-polinomra kapjuk, hogy
+    \begin{multline*}
+        V\left( \ldots,x_j,\ldots,x_i,\ldots \right)=\\
+                \prod_{\substack{k<l\\i\neq k,i\neq l\\ j\neq k,j\neq l}}x_l-x_k
+                \cdot
+                \prod_{\substack{l\\i<l<j}}x_l-x_j\cdot\prod_{\substack{l\\j<l}}x_l-x_j
+                \cdot
+                \prod_{\substack{l\\j<l}}x_l-x_i
+                \cdot
+                \prod_{\substack{k\\i<k<j}}x_i-x_k\cdot\prod_{\substack{k\\k<i}}x_i-x_k
+                \cdot
+                \prod_{\substack{k\\k<i}}x_j-x_k
+                \cdot
+                \left( x_i-x_j \right)
+                =
+                \\
+                (-1)^{j-i-1}\left( -1 \right)^{j-i-1}\left( -1 \right)V(\ldots,x_i,\ldots,x_j,\ldots)
+                =-V(x_1,x_2,\ldots,x_n).
+    \end{multline*}
+    Azt kell ugyanis észrevennünk, hogy a produktumokat tartalmazó hosszú sorban a második, az ötödik, és az utolsó szorzat tartalmaz olyan tagokat, ahol a kisebb indexű változóból vonjuk ki a nagyobb indexűt.
+    Ezekből $(-1)$-et kiemelve kapjuk, hogy minden szorzó tényező már nagyobb index minusz kisebb index alakú,
+    ami a $V\left( x_1,x_2,\cdots,x_n \right)$ definíciója.
+\end{proof}
+\begin{proposition}
+    Rögzítsünk egy $\sigma\in S_n$ permutációt. 
+    Ekkor az $x_1,\cdots,x_n$ változók tetszőleges páronként különböző értéke mellett a
+    \[
+        \frac{V\left( x_{\sigma(1)},x_{\sigma(2)},\ldots,x_{\sigma(n)} \right)}{V(x_1,x_2,\ldots,x_n)}
+    \]
+    kifejezés értéke $-1$ vagy $1$, és ez az érték nem függ az 
+    $x_1,x_2,\ldots,x_n$ változók értékeinek konkrét megválasztásától.
+
+    Ezt a számot nevezzük a $\sigma$ permutáció \emph{előjelének}, és $\sgn(\sigma)$ módon jelöljük.
+\end{proposition}
+    \begin{proof}
+        A nevezőben minden tag $\left( x_l-x_k \right)$ alakú, ahol $k<l$. 
+        Egy adott $k<l$-re
+        a számlálóban szereplő tag $\left( x_l-x_k \right)$ vagy $\left( x_k-x_l \right)$, 
+        attól függően, hogy az $\sigma(i)=k$ és a $\sigma(j)=l$ 
+        egyenlőségek $i<j$ vagy $j<i$ mellett teljesülnek.
+        Ezekkel a tagokkal egyszerűsíthetünk, így az változók konkrét értékétől függetlenül
+        a tört értéke $n\choose 2$ darab $1$ vagy $-1$ szorzata.
+    \end{proof}
+    A fenti bozonyításból az is leolvasható\ldots
+    Mivel a Vandermonde-polinom két argumentumának felcserélésével előjelet vált,
+    ezért a transzpozíciók előjele $-1$.
+    \begin{proposition}[A permutációk szorzattétele]
+        Legyenek $\sigma,\tau\in S_n$ permutációk. 
+        Ekkor 
+        \[\sgn\left( \sigma\circ\tau \right)=\sgn\left( \sigma \right)\sgn\left( \tau \right).\]
+    \end{proposition}
+    Mivel a transzpozíciók előjele $-1$ és minden permutáció előáll mint néhány transzpozíció szorzata,
+    ezért tetszőleges $\sigma\in S_n$ permutáció mellett
+    \[
+        \sgn\left( \sigma \right)=\left( -1 \right)^s
+    \]
+    ahol $\sigma$ előáll mint $s$ darab transzpozíció szorzata.
+
+    Ezek szerint igazoltuk, hogy $\sigma$ vagy csak páros sok, vagy csak páratlan sok transzpozíció szorzataként áll elő. Szokásos szóhasználat, hogy egy permutációt \emph{párosnak} (\emph{páratlannak}) mondunk,
+    ha elője $1$ ($-1$).
+
+    Meggondoltuk tehát, hogy egy permutációnak
+    a transzpozíciók szorzatakénti előállítása ugyan nem egyértelmű,
+    de az előállításban szereplő transzpozíciók számának paritása mindig azonos.
+    Ez alternatív algoritmust eredményez egy permutáció paritásának meghatározására:
+
+    \emph{%
+    	Tudjuk, hogy minden bástyafelrakás átrendezhető a diagonális felrakásba pusztán a sorok felcserélésével.
+    	Ha a $\pi$ permutáció esetén $k$ darab sorcserére van ehhez szükség,
+    	akkor $\sgn \pi=\left( -1 \right)^k$.
+    }
+Egy kényelmes jelölést vezetünk be egy permutációnak és egy előre adott transzpozíciónak a szorzatára.
+\begin{definition}
+	Legyenek $1\leq i,j\leq n$ különböző egészek,
+	és $\pi \in S_{n}$ egy permutáció.
+	Definiálja $\pi ^{\ast }\in S_{n}$ a $\pi$ permutációnak és az $\left( i,j \right)$ párt felcserélő transzpozíciónak a szorzatát,
+	azaz
+	\[
+		\pi ^{\ast }\left( k\right) \doteq \left\{
+		\begin{array}{ll}
+			\pi \left( k\right) &
+			\text{, ha }k\neq i\text{ és }k\neq j; \\
+			\pi \left( j\right) & \text{, ha }k=i; \\
+			\pi \left( i\right) & \text{, ha }k=j.
+		\end{array}
+		\right.
+	\]
+\end{definition}
+Látható,
+hogy a $\pi$-t reprezentáló bástyafelrakásból az $i$ és $j$ sorok felcserélésével kapjuk a $\pi^{\ast}$ bástyafelrakását.
+
+Az identitás permutációban $0$ darab sorcserével lehet az identitásba konvertálni,
+tehát $\sgn(\id)=+1$.
+
+Az eddigiek szerint egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjére vált, és 
+egy permutáció az inverzével azonos paritású:
+\begin{proposition}
+    \begin{enumerate}
+        \item 
+    	    Jelölje $\pi^\ast$ a $\pi\in S_n$ permutációnak és egy adott transzpozíciónak a szorzatát.
+        	Ekkor
+           	\(\sgn \pi=-\sgn\pi^\ast.\qedhere
+        	\)
+        \item
+            Jelölje $\pi^{-1}$ a $\pi\in S_n$ permutáció inverzét.
+            Ekkor
+            \(
+            	\sgn\left( \pi \right)=\sgn\left( \pi^{-1} \right).
+            \)
+    \end{enumerate}
+\end{proposition}
+Az is világos, 
+hogy rögzített $\left( i,j \right)$ transzpozíció mellett 
+a $\pi\mapsto\pi^\ast$ egy $S_n\to S_n$ bijekció.
+Hasonlóan 
+a $\pi\mapsto\pi^{-1}$ is egy $S_n\to S_n$ bijekció.
+
+Így újra elmondható, a fejezet eleji megjegyzés,
+tehát ha $\varphi:S_n\to\mathbb{F}$ egy tetszőleges függvény, akkor
+\[
+	\sum_{\pi\in S_n}\varphi\left( \pi \right)
+	=
+	\sum_{\pi\in S_n}\varphi\left( \pi^\ast \right)
+    \text{ és }
+	\sum_{\pi\in S_n}\varphi\left( \pi \right)
+	=
+    \sum_{\pi\in S_n}\varphi\left( \pi^{-1} \right).
+\]
+
+Nyilvánvaló tehát, hogy az $S_n$ csoportnak $n!/2$ számú páros és ugyanennyi páratlan eleme van.
 \subsection{A permutáció paritása}
 Egy kényelmes jelölést vezetünk be egy permutációnak és egy előre adott transzpozíciónak a szorzatára.
 \begin{definition}
