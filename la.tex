@@ -10191,17 +10191,56 @@ A determináns felépítésének sarokköve a következő gondolat.
         a számlálóban szereplő tag $\left( x_l-x_k \right)$ vagy $\left( x_k-x_l \right)$, 
         attól függően, hogy az $\sigma(i)=k$ és a $\sigma(j)=l$ 
         egyenlőségek $i<j$ vagy $j<i$ mellett teljesülnek.
-        Ezekkel a tagokkal egyszerűsíthetünk, így az változók konkrét értékétől függetlenül
-        a tört értéke $n\choose 2$ darab $1$ vagy $-1$ szorzata.
+        Ezekkel a tagokkal egyszerűsíthetünk, 
+        így az $x_1,\dots,x_n$ változók konkrét értékétől függetlenül a tört értéke $n\choose 2$ darab $1$ vagy $-1$ szorzata.
     \end{proof}
-    A fenti bozonyításból az is leolvasható\ldots
+    A fenti bizonyításból az is leolvasható, 
+    hogy ha $\sigma\in S_n$ permutáció előjele $\left( -1 \right)^s$,
+    ha $s$ darab olyan $\left( j,i \right)$ indexpár található,
+    amelyre $j<i$ és $\sigma(i)<\sigma(j)$.
+    Szokásos szóhasználat, 
+    hogy egy ilyen $\left( j,i \right)$ párt \emph{inverzióban}\index{inverzió} álló párnak mondunk a $\sigma$ permutációra nézve.
+    A fogalom előnye, hogy az adott permutáció bástyafelrakásából az inverzióban álló párok száma könnyedén leszámolható:
+\emph{
+	Hasonlítsuk össze az összes különböző -- tehát $\binom{n}{2}$ darab --
+	bástyapárnak az oszlopszámait a sorszámaival.
+	Ha a nagyobb sorindexű bástya oszlopszáma a kisebb, akkor ők inverzióban vannak.
+}
+
     Mivel a Vandermonde-polinom két argumentumának felcserélésével előjelet vált,
     ezért a transzpozíciók előjele $-1$.
     \begin{proposition}[A permutációk szorzattétele]
         Legyenek $\sigma,\tau\in S_n$ permutációk. 
         Ekkor 
-        \[\sgn\left( \sigma\circ\tau \right)=\sgn\left( \sigma \right)\sgn\left( \tau \right).\]
+        \[
+            \sgn\left( \sigma\circ\tau \right)=\sgn\left( \sigma \right)\sgn\left( \tau \right).\qedhere
+        \]
     \end{proposition}
+    \begin{proof}
+        Ha $x_1,\dots,x_n$ különböző számok, akkor
+        \[
+            \sgn\left( \sigma\circ\tau \right)
+            =
+            \frac{V\left( x_{\sigma\left( \tau\left( 1 \right) \right)},
+                          x_{\sigma\left( \tau\left( 2 \right) \right)},\ldots,
+                          x_{\sigma\left( \tau\left( n \right) \right)}
+                    \right)}{%
+                  V\left( x_{\tau\left( 1 \right)},
+                          x_{\tau\left( 2 \right)},\ldots,
+                          x_{\tau\left( n \right)}
+                    \right)
+                    }
+            \cdot
+            \frac{
+                  V\left( x_{\tau\left( 1 \right)},
+                          x_{\tau\left( 2 \right)},\ldots,
+                          x_{\tau\left( n \right)}
+                    \right)
+            }{V\left( x_1,x_2,\dots,x_n \right)}
+            =
+            \sgn\left( \sigma \right)\sgn\left( \tau \right).\qedhere
+        \]
+    \end{proof}
     Mivel a transzpozíciók előjele $-1$ és minden permutáció előáll mint néhány transzpozíció szorzata,
     ezért tetszőleges $\sigma\in S_n$ permutáció mellett
     \[
@@ -10211,11 +10250,12 @@ A determináns felépítésének sarokköve a következő gondolat.
 
     Ezek szerint igazoltuk, hogy $\sigma$ vagy csak páros sok, vagy csak páratlan sok transzpozíció szorzataként áll elő. Szokásos szóhasználat, hogy egy permutációt \emph{párosnak} (\emph{páratlannak}) mondunk,
     ha elője $1$ ($-1$).
+	\index{paa@páros permutáció}\index{paa@páratlan permutáció}
 
     Meggondoltuk tehát, hogy egy permutációnak
     a transzpozíciók szorzatakénti előállítása ugyan nem egyértelmű,
     de az előállításban szereplő transzpozíciók számának paritása mindig azonos.
-    Ez alternatív algoritmust eredményez egy permutáció paritásának meghatározására:
+    Ez újab  alternatív algoritmust eredményez egy permutáció paritásának meghatározására:
 
     \emph{%
     	Tudjuk, hogy minden bástyafelrakás átrendezhető a diagonális felrakásba pusztán a sorok felcserélésével.
@@ -10248,20 +10288,25 @@ tehát $\sgn(\id)=+1$.
 Az eddigiek szerint egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjére vált, és 
 egy permutáció az inverzével azonos paritású:
 \begin{proposition}
-    \begin{enumerate}
-        \item 
-    	    Jelölje $\pi^\ast$ a $\pi\in S_n$ permutációnak és egy adott transzpozíciónak a szorzatát.
+        Jelölje $\pi^\ast$ a $\pi\in S_n$ permutációnak és egy adott transzpozíciónak a szorzatát,
+        valamint $\pi^{-1}$ a $\pi\in S_n$ permutáció inverzét.
         	Ekkor
-           	\(\sgn \pi=-\sgn\pi^\ast.\qedhere
+            \(\sgn \pi=-\sgn\pi^\ast
         	\)
-        \item
-            Jelölje $\pi^{-1}$ a $\pi\in S_n$ permutáció inverzét.
-            Ekkor
+            és
             \(
             	\sgn\left( \pi \right)=\sgn\left( \pi^{-1} \right).
             \)
-    \end{enumerate}
 \end{proposition}
+\begin{proof}
+    A $\pi^{\ast}$ egy darabbbal több transzpozíció szorzataként áll elő mint $\pi$.
+    Ezek szerint $\pi$ és $\pi^\star$ különböző paritásúak.
+    A második állításhoz azt vegyük észre, hogy a szorzattétel miatt
+    \[
+        1=\sgn\left( \pi \right)\cdot\sgn\left( \pi^{-1} \right),
+    \]
+    ami éppen azt jelenti, hogy $\pi$ és $\pi^{-1}$ azonos paritású permutációk.
+\end{proof}
 Az is világos, 
 hogy rögzített $\left( i,j \right)$ transzpozíció mellett 
 a $\pi\mapsto\pi^\ast$ egy $S_n\to S_n$ bijekció.
@@ -10281,200 +10326,6 @@ tehát ha $\varphi:S_n\to\mathbb{F}$ egy tetszőleges függvény, akkor
 \]
 
 Nyilvánvaló tehát, hogy az $S_n$ csoportnak $n!/2$ számú páros és ugyanennyi páratlan eleme van.
-\subsection{A permutáció paritása}
-Egy kényelmes jelölést vezetünk be egy permutációnak és egy előre adott transzpozíciónak a szorzatára.
-\begin{definition}
-	Legyenek $1\leq i,j\leq n$ különböző egészek,
-	és $\pi \in S_{n}$ egy permutáció.
-	Definiálja $\pi ^{\ast }\in S_{n}$ a $\pi$ permutációnak és az $\left( i,j \right)$ párt felcserélő transzpozíciónak a szorzatát,
-	azaz
-	\[
-		\pi ^{\ast }\left( k\right) \doteq \left\{
-		\begin{array}{ll}
-			\pi \left( k\right) &
-			\text{, ha }k\neq i\text{ és }k\neq j; \\
-			\pi \left( j\right) & \text{, ha }k=i; \\
-			\pi \left( i\right) & \text{, ha }k=j.
-		\end{array}
-		\right.
-	\]
-	Látható,
-	hogy a $\pi$-t reprezentáló bástyafelrakásból az $i$ és $j$ sorok felcserélésével kapjuk a $\pi^{\ast}$ bástyafelrakását.
-\end{definition}
-Az is világos, hogy rögzített $\left( i,j \right)$ transzpozíció mellett a $\pi\mapsto\pi^\ast$ egy $S_n\to S_n$ bijekció,
-emiatt újra elmondható, a fejezet eleji megjegyzés,
-tehát ha $\varphi:S_n\to\mathbb{F}$ egy tetszőleges függvény, akkor
-\[
-	\sum_{\pi\in S_n}\varphi\left( \pi \right)
-	=
-	\sum_{\pi\in S_n}\varphi\left( \pi^\ast \right).
-\]
-
-\begin{definition}[Inverzió]\index{inverzió}
-	Legyenek újra $1\leq i,j\leq n$ különböző egészek,
-	és $\pi \in S_{n}$ egy permutáció.
-	Azt mondjuk,
-	hogy az $i$-edik és a $j$-edik sorban álló \emph{bástyák inverzióban vannak},
-	ha
-	\[
-		\left( \pi \left( j\right) -\pi \left( i\right) \right) \left( j-i\right) <0.\qedhere
-	\]
-\end{definition}
-A fenti jelölések mellett az $i$ és $j$-edik sor bástyái pontosan akkor vannak inverzióban,
-ha $j>i$ esetén
-$\pi \left( j\right)<\pi \left( i\right)$.
-Gondoljuk meg, hogy az identitás permutáció az egyetlen olyan a permutációk közt,
-melynél nincs inverzióban álló bástyapár.
-\begin{proposition}
-	Minden $\pi\in S_n$ permutációra,
-	a $\pi$-nél és $\pi^{-1}$-nél inverzióban álló bástyapárok száma azonos.
-\end{proposition}
-\begin{proof}
-	Világos, hogy
-	\[
-		\left( \pi\left( j \right)-\pi\left( i \right) \right)\left( j-i \right)
-		=
-		\left( j-i \right)\left( \pi\left( j \right)-\pi\left( i \right) \right)
-		=
-		\left( \pi^{-1}(\pi(j))-\pi^{-1}(\pi(i)) \right)\left( \pi\left( j \right)-\pi\left( i \right) \right).
-	\]
-	Ez azt jelenti, hogy az $i$ és $j$ sorokat foglaló bástyapár pontosan akkor van inverzióban $\pi$-szerint,
-	ha a $\pi\left( i \right)$ és a $\pi\left( j \right)$ sorokat foglaló bástyapár inverzióban van $\pi^{-1}$ szerint.
-	%    Tehát ha a diagonálisra való tükrözéssel áttérünk $\pi$ bástyafelrakásából a $\pi^{-1}$ bástyafelrakásába,     akkor ugyanazok a bástyapárok lesznek inverzióban a tükrözés előtt mint után.
-	Mivel az $\left( i,j \right)\mapsto \left( \pi(i),\pi(j) \right)$ leképezés az $\left\{ \left( i,j \right):i\neq j:1\leq i,j\leq n \right\}$
-	halmaznak önmagára képező bijekciója,
-	ezért kölcsönösen egyértelmű leképezést találtunk a $\pi$ és a  $\pi^\ast$ inverzióban álló bástyapárjai közt.
-\end{proof}
-
-\begin{definition}[Páros, páratlan permutáció]
-	\index{paa@páros permutáció}\index{paa@páratlan permutáció}
-	Egy $\pi \in S_{n}$ permutációt \emph{párosnak (páratlannak)} nevezünk,
-	ha $\pi $-nél inverzióban lévő párok száma páros (páratlan).
-	A permutáció \emph{előjele:}\index{permutáció előjele}
-	\[\operatorname{sgn}\pi \doteq
-		\left\{
-		\begin{tabular}{ll}$+1$ & , ha $\pi $ páros; \\ $-1$ & , ha $\pi $ páratlan.
-		\end{tabular}
-		\right. \qedhere
-	\]
-\end{definition}
-Egy permutáció előjelét meghatározó algoritmus a definíció szerint a következő:
-\emph{
-	Tekintsük a $\pi$ permutáció bástyafelrakását.
-	Hasonlítsuk össze az összes különböző -- tehát $\binom{n}{2}$ darab --
-	bástyapárnak az oszlopszámait a sorszámaival.
-	Ha a nagyobb sorindexű bástya oszlopszáma a kisebb, akkor ők inverzióban vannak.
-	Ha $k$ jelöli az inverzióban álló bástyapárok számát,
-	akkor $\sgn(\pi)=\left( -1 \right)^{k}$.
-}
-
-Az identitás permutációban zérus az inverziók száma,
-tehát $\sgn(\id)=+1$.
-Mivel egy permutációnak és az inverzének azonos számú inverziója van,
-ezért az előjelük is azonosak:
-\[
-	\sgn\left( \pi \right)=\sgn\left( \pi^{-1} \right).
-\]
-
-A következő állítás szerint,
-egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjére vált.
-\begin{proposition}
-	Jelölje $\pi^\ast$ a $\pi$ permutációnak és egy adott transzpozíciónak a szorzatát.
-	Ekkor
-	\[\sgn \pi=-\sgn\pi^\ast.\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Tegyük fel,
-	hogy $\pi^\ast$ a $\pi$-ből az $i$ és $j$-edik sorok felcserélésével keletkezik,
-	ahol  $i<j$.
-	Leszámoljuk,
-	hogy hány az $u,v$ sorokat foglaló bástyapár van inverzióban $\pi$ és $\pi^\ast$ mellett.
-	Az esetek szétválasztása folyamán végig páros számban tér el egymástól  a $\pi ^{\ast }$ és $\pi $ -melletti
-	inverziók száma,
-	míg az utolsó esetben pontosan egy a különbség.
-	Ily módon a $\pi ^{\ast }$ és $\pi$ -melletti inverziók összességében páratlan számban különböznek,
-	ami igazolja az állítást.
-	Az eset szétválasztás aszerint történik, hogy az egyes esetekben számolandó $u$ és $v$ sorbeli bástyák
-	milyen kapcsolatban vannak,
-	a felcserélendő $i$ és $j$ sorokkal.
-	Lássuk tehát a különböző eseteket:
-
-	\begin{description}
-		\item[$1.$]  Az $u$ és $v$ egyike sem egyezik $i$ és $j$ egyikével sem.\\
-		      Világos, hogy ebben az esetben a $\pi $ melletti és a $\pi ^{\ast }$ melletti
-		      inverziók száma azonos, hiszen egyik itt vizsgált bástyapár sem mozdul a $\pi$-ről $\pi^\ast$-ra
-		      való áttérés során.
-
-		\item[$2.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v>j.$\\
-		      Tekintsünk egy $u,v$ sorbeli bástyapárt.
-		      Az $i$-edik és a $j$-edik sor felcseréléséve az $u$-adik sorban álló bástya megmozdul,
-		      de az oszlop koordinátáját megtartja, és sor koordinátája is $v$-nél kisebb marad.
-		      Ez azt jelenti,
-		      hogy ugyanazok bástyapárok lesznek inverzióban a $\pi$-nél, mint $\pi^\ast$-nál, ergo a
-		      $\pi$-nél és $\pi^\ast$-nál inverzióban álló párok száma azonos.
-
-		\item[$3.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $i<v<j.$\\
-		      Különböztessünk meg ezen belül is három esetet.
-		      \begin{description}
-			      \item[$i.$]  Ha $\pi \left( v\right) >
-				            \max \left( \pi \left( j\right) ,\pi\left( i\right) \right)$.\\
-			            Ekkor a $v$-edik sor bástyája az $i$-sorbeli bástyával nincs inverzióban,
-			            de a $j$-sorbeli bástyával inverzióban van.
-			            A $\pi$-nél tehát az inverziók száma 2.
-			            Ugyanez a helyzet $\pi^\ast$-nál is,
-			            ergo a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma azonos.
-
-			      \item[$ii.$]  Ha $\pi \left( v\right) <
-				            \min \left( \pi \left( j\right) ,\pi \left( i\right) \right) .$\\
-			            Analóg [i]-vel.
-
-			      \item[$iii.$]  Ha $\min \left( \pi \left( j\right) ,\pi \left( i\right)\right)
-				            <
-				            \pi \left( v\right)
-				            <
-				            \max \left( \pi \left( j\right) ,\pi \left(i\right) \right) .$\\
-			            Ha $\pi\left( j \right)<\pi\left( i \right)$, akkor az inverziók száma $\pi$-nél 2,
-			            $\pi^\ast$-nál zérus.
-			            Ha viszont $\pi\left( j \right)>\pi\left( i \right)$, akkor az inverziók száma $\pi$-nél 0,
-			            de $\pi^\ast$-nál 2.
-			            Mindkét esetben tehát 2 a különbség,
-			            ezért bárhogy is van,
-			            de a $\pi $ melletti és a $\pi ^{\ast }$ melletti inverziók száma páros számban különbözik.
-		      \end{description}
-
-		\item[$4.$]  Az $u$ megegyezik az $i$ és $j$ közül az egyikkel, de $v<i.$\\
-		      Analóg a második esettel.
-
-		\item[$5.$]  Az $u$ is és a $v$ is megegyezik az $i$ és $j$ egyikével.\\
-		      Ekkor ha az $u$ és $v$ sorbeli bástyák inverzióban vannak $\pi$-nél,
-		      akkor nem lesznek inverzióban $\pi^\ast$-nál,
-		      és hasonlóan, ha nincsenek inverzióban $\pi$-nél,
-		      akkor inverzióban lesznek $\pi^\ast$ mellett.
-		      Bárhogyan is van, de a $\pi$-nél és $\pi^\ast$-nál inverzióban lévő elemek száma 1-el változik.
-	\end{description}
-	Világos, hogy minden $u,v$ pár a fenti esetek közül pontosan az egyikbe tartozik.
-	Összességében a $\pi$-ről $\pi^\ast$-ra való áttéréssel a transzpozíciók száma páratlan számmal változik,
-	tehát párosból páratlanná válik, vagy páratlanból párossá.
-\end{proof}
-
-Nyilvánvaló tehát, hogy az $S_n$ csoportnak $n!/2$ számú páros és ugyanennyi páratlan eleme van.
-
-Mivel egy transzpozícióval való szorzás a permutáció előjelét ellentettjére állítja,
-ezért ha egy permutáció $k$ darab transzpozíció szorzataként áll elő az identikus permutációból,
-akkor annak előjele $\left( -1 \right)^k$.
-Ebből azonnal következik, hogy egy páros (páratlan) permutáció nem áll elő mint páratlan (páros) sok transzpozíció szorzata.
-
-Meggondoltuk tehát, hogy egy permutációnak
-a transzpozíciók szorzatakénti előállítása ugyan nem egyértelmű,
-de az előállításban szereplő transzpozíciók számának paritása mindig azonos.
-Ez egyben egy alternatív algoritmust eredményez egy permutáció előjelének meghatározására:
-\emph{
-	Tudjuk, hogy minden bástyafelrakás átrendezhető a diagonális felrakásba pusztán a sorok felcserélésével.
-	Ha a $\pi$ permutáció esetén $k$ darab sorcserére van ehhez szükség,
-	akkor $\sgn \pi=\left( -1 \right)^k$.
-}
-
 \section{Mértékek}
 A determinánsról szóló minden további gondolatban feltesszük,
 hogy az $\mathbb{F}$ testben $1+1=0$ nem teljesül.
