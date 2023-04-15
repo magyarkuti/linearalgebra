@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.4.1)  14 APR 2023 08:01
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.4.1)  15 APR 2023 08:24
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1390,12 +1390,12 @@ braces):
 >  {hungarian/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {hungarian/DefineCommandsCmd}  =>  {xpg_define_language_commands:e}.
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            righthyphenmin	2
-(polyglossia)            hyphenation	
 (polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            synonyms	
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            loader	loadhyph-hu.tex on input line 12
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            righthyphenmin	2
+(polyglossia)            lefthyphenmin	2 on input line 12
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 12
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1851,7 +1851,7 @@ Package hyperref Info: Option `final' set `true' on input line 71.
 \dtlrows@quotes=\count533
 \dtlcols@quotes=\count534
 A bölcsesség:
-46:Act or accept.-- Anonymous
+108:There is no education like adversity.-- Disraeli
  
 \la@idxfile=\write6
 
@@ -4453,56 +4453,54 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                 on input line 10195.
 
 [142]
-Overfull \hbox (4.13428pt too wide) in paragraph at lines 10245--10247
+Overfull \hbox (4.13428pt too wide) in paragraph at lines 10285--10287
 []\TU/TeXGyrePagella(0)/m/n/10 Az iden-ti-tás per-mu-tá-ci-ó-ban $\TU/TeXGyr
 ePagellaMath(1)/m/n/10 0$ \TU/TeXGyrePagella(0)/m/n/10 da-rab sor-cse-ré-vel le
 -het az iden-ti-tás-ba kon-ver-tál-ni, te-hát $[]\TU/TeXGyrePagellaMath(1)/m
 /n/10 ([]) =
  []
 
-
-Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 10255.
-
 [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154]
-[155] [156] [157] [158] [159] [160] [161
+[155] [156] [157] [158] [159
 
-] [162] [163] [164] [165] [166]
-[167] [168] [169] [170] [171] [172
+] [160] [161] [162] [163] [164] [165] [166]
+[167] [168] [169] [170
 
-] [173] [174] [175] [176] [177] [178]
-[179
+] [171] [172] [173] [174] [175] [176] [177
 
-] [180] [181] [182] [183] [184
+] [178]
+[179] [180] [181] [182
 
-] [185] [186] [187] [188] [189] [190
+] [183] [184] [185] [186] [187] [188
+
+] [189] [190]
+[191] [192] [193] [194] [195] [196] [197
+
+] [198] [199
+
+] [200] [201] [202]
+[203] [204] [205] [206] [207
+
+] [208] [209] [210] [211] [212] [213] [214]
+[215] [216] [217
+
+] [218] [219] [220] [221] [222] [223] [224
+
+] (./la.ind [225
 
 ]
-[191] [192] [193] [194] [195] [196] [197] [198] [199
-
-] [200] [201
-
-] [202]
-[203] [204] [205] [206] [207] [208] [209
-
-] [210] [211] [212] [213] [214]
-[215] [216] [217] [218] [219
-
-] [220] [221] [222] [223] [224] [225] [226
-
-]
-(./la.ind [227
-
-] [228
+[226
 
 ]
 Overfull \hbox (6.06749pt too wide) in paragraph at lines 81--83
 []\TU/TeXGyrePagella(0)/m/n/10 Gauss--Jordan-elimináció, []29[], []44[], []46[]--[]48[], []50[]--[]54[] 
  []
 
-[229
+[227
 
-] [230] [231])
+] [228] [229
+
+])
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -4563,23 +4561,23 @@ uage hun
 \l@magyar = a dialect from \language\l@hungarian 
 )
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: BEF8B86C110B85A97340D2527A7A831E;17890.
+(rerunfilecheck)             Checksum: E5029D8D7625CB9BDB39C92FBE0D872A;17890.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 38405 strings out of 478278
+ 38396 strings out of 478278
  125096,1977958 words of node,token memory allocated
- 5280 words of node memory still in use:
+ 5256 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 58 glue, 5 kern, 1 penalty, 29
- glyph, 855 attribute, 199 glue_spec, 855 attribute_list, 3 write, 1 pdf_action 
+ glyph, 849 attribute, 199 glue_spec, 849 attribute_list, 3 write, 1 pdf_action 
 nodes
-   avail lists: 1:4,2:1341,3:445,4:136,5:965,6:285,7:9554,8:115,9:2255,10:26,11:
+   avail lists: 1:4,2:1353,3:445,4:136,5:962,6:285,7:9554,8:136,9:2255,10:26,11:
 1196
  56338 multiletter control sequences out of 65536+600000
- 217 fonts using 66883367 bytes
+ 217 fonts using 66883671 bytes
  91i,17n,121p,1146b,2236s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4596,10 +4594,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (231 pages, 9343371 bytes).
+Output written on la.pdf (229 pages, 9333762 bytes).
 
-PDF statistics: 2954 PDF objects out of 2984 (max. 8388607)
- 2654 compressed objects within 27 object streams
- 1136 named destinations out of 1200 (max. 131072)
+PDF statistics: 2937 PDF objects out of 2984 (max. 8388607)
+ 2639 compressed objects within 27 object streams
+ 1127 named destinations out of 1200 (max. 131072)
  761 words of extra memory for PDF output out of 10000 (max. 100000000)
 
