@@ -2794,8 +2794,9 @@ hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendsze
 	\(\displaystyle
 	a=\sum_{j=1}^m\alpha_jx_j
 	\)
-	alakú, akkor $x_k$ helyére betéve, a fent kifejezett formulát és bevezetve a
-	$\delta=\frac{\alpha_k}{\eta_k}$ jelölést, azt kapjuk hogy:
+	alakú, akkor az iménti formulát $x_k$ helyére téve, majd
+    bevezetve a
+	$\delta=\frac{\alpha_k}{\eta_k}$ jelölést azt kapjuk, hogy:
 	\begin{multline*}
 		a=\alpha_kx_k+\sum_{\substack{j=1\\j\neq k}}^m\alpha_jx_j=
 		\\
@@ -4127,7 +4128,7 @@ Ennél sokkal érdekesebb és fontosabb a lineárisan független rendszerek köz
             Ha $H\smallsetminus\left\{ y \right\}$ generátorrendszer, akkor minden vektor így az $y$ is eleme a $\lin\left( H\smallsetminus\left\{ y \right\} \right)$ altérnek.
         \item[$2.\Leftarrow$]
             Ha $y\in\lin\left( H\smallsetminus\left\{ y \right\} \right)$, akkor $H\subseteq\lin\left( H\smallsetminus\left\{ y \right\} \right)$.
-            Emiatt $\lin H\subseteq\lin\left( \lin\left( H\smallsetminus\left\{ y \right\} \right) \right)\subseteq\lin\left( H\smallsetminus\left\{ y \right\} \right)$.
+            Emiatt $\lin H\subseteq\lin\left( H\smallsetminus\left\{ y \right\} \right)$.
             Ebből persze $\lin\left( H\smallsetminus\left\{ y \right\} \right)=\lin H$ következik.
             No de, $H$ generátorrendszer, ergo $H\smallsetminus\left\{ y \right\}$ is az.
             \qedhere
@@ -4277,55 +4278,67 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
 	és az
 	$\left\{ x_1,\ldots,x_m \right\}$ egy generátorrendszer.
-	Ekkor
-	\begin{enumerate}
-		\item $n\leq m$ és;
-		\item az $x_1,\ldots,x_m$ vektorok alkalmas átindexelésével kapott
-		      \(
-		      \left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
-		      \)
-		      vektorrendszer is generátorrendszer.%
-		      \footnote{Úgy kell a jelöléseket érteni, hogy az $n=0$, de az $n=m$ eset is lehetséges.
-		      Az $n=0$ esetben az $y$-okkal jelölt vektorok egyike sem,
-		      míg az $n=m$ esetben az $x$-el jelölt vektorok egyike sem szerepel az
-		      \(
-		      \left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
-		      \)
-		      vektorrendszer elemei közt.}%
-		      \qedhere
-	\end{enumerate}
-	\label{le:Steinitz}
+	Ekkor $n\leq m$. \label{le:Steinitz}
 \end{SL}
 \begin{proof}
-	Legyen $k$ a legnagyobb a $\left\{ 0,\ldots,n \right\}$ egészek közül, amelyre
+    Tekintsük a $0,\ldots,n$ egészek közül azon $j$ számokat,
+    amelyekre egyrészt teljesül, hogy $j\leq m$; 
+    másrészt teljesül, 
+    hogy az $x_1,\dots,x_m$ vektorok közül kiválasztható olyan $m-j$ darab vektor,
+    amelyekkel az $\left\{y_1,\ldots,y_j \right\}$ rendszert kiegészítve egy 
+    -- persze $m$ vektort tartalmazó --
+    generátorrendszert kapunk.
+	Ilyen szám biztosan van, hiszen $j=0$ triviálisan jó. Persze ilyen szám csak véges sok van.
+	Legyen $k$ ezen számok legnaggyobbika.
+
+    Tehát a konstrukció szerint $k$ a $0,\ldots,n$ számok közül a legnagyobb olyan szám, amelyre
 	\begin{enumerate}
 		\item $k\leq m$, és
-		\item az $x_1,\ldots,x_m$ vektorok alkalmas átindexelésével az
+		\item az $x_1,\ldots,x_m$ vektorok alkalmas átindexelésével elérhető, hogy a
 		      \[
 			      \left\{ y_1,\ldots,y_k,x_{k+1},\ldots,x_m \right\}\tag{\dag}
 		      \]
-		      vektorrendszer is generátorrendszer.
+		      vektorrendszer is egy $m$ elemet tartalmazó generátorrendszer legyen.
 	\end{enumerate}
-	Ilyen $k$ biztosan van, hiszen $k=0$ triviálisan jó.
-	Összesen azt kell meggondolnunk, hogy $k=n$.
-	Ha $k<n$ lenne,
+	Azt mutatjuk meg, hogy $k=n$. 
+	Indirekt: ha $k<n$ lenne, akkor $k+1\leq n$ is fennállna, és így
 	\begin{itemize}
 		\item
-		      akkor létezne $y_{k+1}$ vektor.
-		      No de, ez az $y_{k+1}$ nem szerepel az $\left\{ y_1,\ldots,y_k \right\}$ lineáris burkában,
-		      ami (\dag) generátorrendszer volta miatt csak úgy lehetséges,
-		      hogy $k\neq m$, azaz $k<m$, ergo $k+1\leq m$.
+		      létezne $y_{k+1}$ vektor.
+		      Az $y_{k+1}$ nem szerepel az $\left\{ y_1,\ldots,y_k \right\}$ lineáris burkában, 
+              ergo ez utóbbi rendszer nem generátorrendszer.
+		      Viszont (\dag) generátorrendszer, tehát e két rendszer nem lehet azonos, ezért (\dag)
+              legalább egy $x$-el jelölt vektort biztosan tartalmaz, 
+              így $k<m$, emiatt $k+1\leq m$.
 		\item
             \Aaz{le:gencsere}. lemma szerint a (\dag) vektorrendszerben az $y_{k+1}$ vektor
 		      avval az $x$-el
-		      --- a generátorrendszer tulajdonság megtartásával is ---
+		      -- a generátorrendszer tulajdonság megtartásával is --
 		      kicserélhető,
 		      amely $x$ szerepel az $y_{k+1}$ vektornak a (\dag)-beli
 		      vektorokkal képzett lineáris kombinációjában.
+              Így már az $\left\{ y_1,\ldots,y_k,y_{k+1} \right\}$ rendszer is kiegészíthető egy $m$ elemű generátorrendszerré az $\{x_1,\ldots,x_m\}$ rendszer néhány vektorának hozzávételével.
 	\end{itemize}
-	Ez ellentmondás, hiszen $k$ a legnagyobb olyan szám,
-	amelyre a bizonyítás elején szereplő 1. és 2. feltételek egyszerre állnak fenn.
+	Ez ellentmondás, hiszen $k$ a $0,\ldots,n$ számok közül a legnagyobb olyan szám,
+	amelyre az 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
+Az állításnál picit többet igazoltunk. 
+A célunk az volt, hogy lássuk egy független rendszer elemeszáma nem haladja meg egy generátorrendszer elemszámát, de ezen felül még azt is megmutattuk,
+hogy a független rendszer elemei egyenként be-becserélhetőek a generátorrendszer 
+egy-egy alkalmas elemének elhagyásával a generátorrendszer elemi közé olyan módon, 
+hogy a csere után kapott rendszer is generátorrendszer maradjon.
+Ezt szokás kicserélési tételnek is nevezni.\index{Kicserélési tétel}
+\begin{proposition}[Kicserélési tétel]\label{pr:kicserelesi}
+	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
+	és az
+	$\left\{ x_1,\ldots,x_m \right\}$ egy generátorrendszer.
+    Tudjuk, hogy a Steinitz-lemma szerint $n\leq m$, és
+    az $x_1,\ldots,x_m$ vektorok alkalmas átindexelésével elérhető, hogy az
+    \(
+        \left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
+    \)
+    vektorrendszer is egy $m$ elemet tartalmazó generátorrendszer legyen.
+\end{proposition}
 \section{Rangtétel}
 \begin{definition}[mátrix feszítőrangja]\index{feszítőrang}
 	Legyen $A\in\mathbb{F}^{n\times m}$ egy tetszőleges nem zérus mátrix.
@@ -4527,10 +4540,10 @@ A Steinitz-lemma kulcs szerepet játszott dimenzió fogalmának megértésében,
 hiszen a bázis elemszáma nem lehetne a tér dimenziója, anélkül hogy tudnánk a tényt:
 bármely két bázis azonos elemszámú!
 Márpedig egy vektortérben nagyon sok bázis van.
-A Steinitz-lemma 2. pontja segít ennek megértéséhez.
+A (\ref{pr:kicserelesi}.) kicserélési tétel segít ennek megértéséhez.
 
 \begin{proposition}
-	Egy végesen generált vektortér bármely lineárisan független rendszere kiegészíthető bázissá.
+	Egy végesen generált vektortér lineárisan független rendszere bázissá egészíthető ki.
 	\label{pr:lfgtenbazissa}
 \end{proposition}
 \begin{proof}
@@ -4540,7 +4553,7 @@ A Steinitz-lemma 2. pontja segít ennek megértéséhez.
 	\]
 	$m$ elemű lineárisan független generátorrendszere.
 	Legyen $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer.
-	A Steinitz-lemma szerint ez a rendszer kiterjeszthető egy
+	A kicserélési tétel szerint ez a rendszer kiterjeszthető egy
 	\[
 		\left\{ y_1,\ldots,y_n,x_{n+1},\ldots,x_m \right\}
 	\]
@@ -10093,7 +10106,8 @@ A determináns felépítésének sarokköve a következő gondolat.
     A Vandermonde-polinom két változójának felcserélésével előjelet vált!
 \end{proposition}
 \begin{proof}
-    Legyen $i<j$ rögzítve és a Vandermonde-polinom argumentum listájában cseréljük fel az $i$-edik és a $j$-edik változót.
+    Legyen az $i,j$ indexekre $i<j$.
+    A Vandermonde-polinom argumentum listájában cseréljük fel az $i$-edik és a $j$-edik változót.
     Azt kell megmutatnunk, hogy $V\left( \cdots,x_j,\cdots,x_i,\cdots \right)=-V\left( \cdots,x_i,\cdots,x_j,\cdots \right)$, ahol a ki nem írt változók a helyükön maradnak.
     A definíció szerint a $V\left( \cdots,x_j,\cdots,x_i,\cdots \right)$ felírásához tekintenünk kell az összes 
     $\left( k,l \right)$ párt, ahol $1\leq k<l\leq n$, és az 
@@ -10282,7 +10296,7 @@ Egy kényelmes jelölést vezetünk be egy permutációnak és egy előre adott 
 Látható,
 hogy a $\pi$-t reprezentáló bástyafelrakásból az $i$ és $j$ sorok felcserélésével kapjuk a $\pi^{\ast}$ bástyafelrakását.
 
-Az identitás permutációban $0$ darab sorcserével lehet az identitásba konvertálni,
+Az identitás permutációt $0$ darab sorcserével lehet az identitásba konvertálni,
 tehát $\sgn(\id)=+1$.
 
 Az eddigiek szerint egy bástyafelrakás előjele két sorának felcserélésével az ellenkezőjére vált, és 
