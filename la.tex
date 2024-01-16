@@ -239,7 +239,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Az index bekapcsolása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeindex
+%\makeindex\xindyindex
+\xindyindex
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Az forward-backward search bekapcsolása
@@ -4278,7 +4279,7 @@ Az derül ki, hogy a lineárisan független, generátorrendszerek elemszáma egy
 azaz bármely lineárisan független, generátorrendszernek ugyanannyi eleme van.
 
 A félév legfajsúlyosabb állítása következik, az egyszerű bizonyítása ellenére.
-A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \aaz{le:gencsere}. lemmára.
+A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vonatkozó \ref{le:gencsere}. lemmára.
 \begin{SL}\index{Steinitz-lemma}
 	Legyenek $n$ és $m$ nem negatív egészek.
 	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
@@ -4286,6 +4287,64 @@ A pontos megfogalmazás előtt emlékezzünk a generátorrendszer cseréjére vo
 	$\left\{ x_1,\ldots,x_m \right\}$ egy generátorrendszer.
 	Ekkor $n\leq m$. \label{le:Steinitz}
 \end{SL}
+Két indoklást is adunk.
+\begin{proof}
+    Feltehető, hogy a lineárisan független rendszer elemei és a generátorrendszer elemei is mind különbözőek,
+    hiszen egy független rendszer nem tartalmaz két azonos vektort, és ha egy generátorrendszer tartalmaz azonos vektorokat,
+    akkor azokból csak egyet megtartva is generátorrendszert kapunk.
+
+    Úgy látjuk be a kívánt $n\leq m$ egyenlőtlenséget, hogy konstruálunk egy pontosan $m$ elemből álló
+    vektorrendszert, amelynek az $\left\{ y_1,\ldots,y_n \right\}$ egy részhalmaza.
+    A konstrukcióhoz azt mutatjuk meg, 
+    hogy minden $1\leq k\leq n$ mellett található 
+    $\left\{ z_{k+1},\ldots,z_m \right\}\subseteq \left\{ x_1,\ldots,x_m \right\}$
+    részhalmaz avval a tulajdonsággal, hogy az 
+    \[
+        \left\{ y_1,\dots,y_k,z_{k+1},\ldots, z_m \right\}\tag{\ddag}
+    \]
+    vektorrendszer egy pontosan $m$ elemet tartalmazó generátorrendszer.
+
+    Legyen $k=1$.
+    Világos, hogy $y_1\neq 0$ és $y_1$ előáll a generátorrendszer elemeinek lineárisan kombinációjaként.
+    Ebben a lineáris kombinációban van legalább egy nem zérus együttható. Jelölje az egyik ilyen indexét $i_1$,
+    Jelölje $z_2,\ldots, z_m$ a generátorrendszer összes többi tagját tetszőleges sorrendben indexelve.
+    \Aaz{le:gencsere}. generátorrendszercsere-lemma szerint az így kapott 
+    \[
+        \left\{ y_1,z_2,\ldots z_m \right\}
+    \]
+    rendszer is egy generátorrendszer, tehát a fenti $(\ddag)$ elvárásnak $k=1$ valóban megfelel. 
+    Így persze $k=1\leq m$.
+
+    Legyen $k<n$, és tegyük fel, hogy az első $k$ darab $\left\{ y_1,\ldots,y_k \right\}$ vektorokhoz létezik az eredeti generátorrendszernek
+    $\{z_{k+1},\ldots,z_m\}$ részhalmaza a $(\ddag)$ elvárásnak megfelelve. 
+    Tudjuk tehát, hogy $k\leq m$.
+    Tekintsük az $y_{k+1}$ vektort. 
+    Ilyen vektor $k<n$ szerint biztosan létezik.
+    Mivel $(\ddag)$ egy generátorrendszer, ezért $y_{k+1}$ kifejezhető, mint $(\ddag)$ vektorainak lineáris kombinációja.
+    Ebben a lineáris kombinációban van olyan $z$-vel jelölt vektor, amelynek együtthatója nem zérus,
+    hiszen egyébként $y_{k+1}$ előállna mint a $(\ddag)$-beli $y$-al jelölt elemek valamely lineáris kombinációja,
+    ami ellentmondana az eredeti $\left\{ y_1,\ldots,y_m \right\}$ rendszer függetlenségének.
+    Így $k+1\leq m$.
+    Ha $k+1=m$, a generátorrendszercsere-lemma szerint $z_{k+1}$ kicserélhető $y_{k+1}$-el,
+    és készen is vagyunk, hiszen az eredeti generátorrendszernek az üres részhalmazával együtt
+    \[
+        \left\{ y_1,\dots,y_k,y_{k+1} \right\}
+    \]
+    egy $m$ elemű generátorrendszer.
+
+    Ha $k+1<m$, akkor
+    jelölje $i_{k+1}$ az $y_{k+1}$ fenti előállításában a $z$-vel jelölt vektorok közül az egyik nem zérus együtthatóhoz tartozó indexet.
+    A $(\ddag)$ összes többi $z$-vel jelölt elemét jelölje alkalmas átindexelés után $z_{k+2},\ldots,z_{m}$.
+    Ilyen módon a generátorrendszerecsere-lemmát -- \ref{le:gencsere}. -- alkalmazva azt kapjuk, hogy a
+    \[
+        \left\{ y_1,\dots,y_k,y_{k+1},z_{k+2}\ldots, z_m \right\}
+    \]
+    is egy pontosan $m$ vektor felsorolásából álló generátorrendszer, 
+    amellyel a $(\ddag)$ elvárásnak a $k+1$-adik lépésben is megfeleltünk, így persze $k+1 \leq m$
+    
+    Végül is találtunk egy $m$ elemű vektorrendszert, amelynek
+    mind az $n$ darab $y$-al jelölt vektor eleme, ezért $n\leq m$.
+\end{proof}
 \begin{proof}
     Tekintsük a $0,\ldots,n$ egészek közül azon $j$ számokat,
     amelyekre egyrészt teljesül, hogy $j\leq m$; 
