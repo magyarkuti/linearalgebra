@@ -6870,13 +6870,37 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 		\lin\left\{ v,Av,A^2v,\dots \right\}.\qedhere
 	\]
 \end{proof}
+\section{Véges dimenziós vektortér egy elemet tartalmazó legszűkebb invariáns altere}
+Persze számunkra a végesen generált vektorterek az érdekesek.
+Ebben az esetben a térnek nincs akármilyen nagy elemszámú lineárisan független vektorrendszere,
+emiatt ha lépésenként bővítjük a 
+$\left\{ v \right\}$,
+$\left\{ v, Av \right\}$,
+$\left\{ v, Av, A^2v \right\}$,
+$\left\{ v, Av, A^2v, A^3v \right\}$
+stb.~rendszert, az előbb vagy utóbb lineárisan összefüggővé válik.
+Feltéve, hogy $v\neq 0$ -- azaz a kezdő $\left\{ v \right\}$ lineárisan független --
+létezik egy $k\geq 1$ egész, amikor 
+	\(
+		\left\{ v,Av,\ldots,A^{k-1}v \right\} 
+	\)
+még lineárisan független
+de
+	\(
+		\left\{ v,Av,\ldots,A^{k-1}v, A^kv \right\} 
+	\)
+már lineárisan összefüggő.
 \begin{lemma}
 	Tegyük fel, hogy egy $A\in L\left( V \right)$ lineáris transzformációra és egy
 	$v\in V$ vektorra a
 	\[
-		\left\{ v,Av,\ldots,A^kv \right\}
+        \left\{ v,Av,\ldots,A^{k-1}v \right\} \text{ lineárisan független}\tag{\dag}
 	\]
-	lineárisan összefüggő ($k\geq 1$).
+	de
+	\[
+        \left\{ v,Av,\ldots,A^{k-1}v, A^kv \right\} \text{ lineárisan összefüggő,}\tag{\ddag}
+	\]
+    ahol $k\geq 1$ egész.
 	Ekkor minden $n\geq k$ mellett
 	\[
 		A^nv\in\lin\left\{ v,Av,\ldots,A^{k-1}v \right\}.\qedhere
@@ -6884,90 +6908,61 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 	\label{le:of}
 \end{lemma}
 \begin{proof}
-	Ha $v=0$ akkor az állítás nyilvánvaló.
-	Ha $v\neq 0$, akkor a $\left\{ v \right\}$ rendszer lineárisan független.
-	Legyen $t$ a legkisebb olyan szám, hogy a rendszerhez $A^tv$-t hozzávéve az lineárisan összefüggővé válik.
-	Ilyen módon tehát
-	\[
-		\left\{ v,Av,\ldots,A^{t-1}v \right\} \text{ lineárisan független}\tag{\dag}
-	\]
-	de
-	\[
-		\left\{ v,Av,\ldots,A^{t-1}v, A^tv \right\} \text{ lineárisan összefüggő.}\tag{\ddag}
-	\]
-	Világos, hogy $1\leq t\leq k$.
-	Jelölje $N=\lin\left\{ v, Av,\ldots,A^{t-1}v \right\}$.
+    Az $n$ hatvány szerinti indukció.
+    A kezdő lépés az $n=k$ eset.
+    Mivel $k\geq 1$, ezért $v\neq 0$.
+    Így $(\ddag)$ rendszerben az egyik elem az azt megelőző elemek egy lineáris kombinációja.
+    No de $\left( \dag \right)$ függetlensége miatt ez az elem csak az utolsó lehet, ami pont 
+    a meggondolandó állítás.
 
-	Most indukcióval megmutatjuk, hogy minden $m\geq 0$ számra
-	\[
-		A^{t+m}v\in N.
-	\]
-
-	Ha $m=0$, akkor $A^tv\in N$, hiszen a fenti (\ddag) lineárisan összefüggő rendszerre,
-	az egyik elem előáll mint az előző elemek lineáris kombinációja.
-	No de, ez elem csak az utolsó lehet,
-	hiszen az utolsó elem nélküli (\dag) rendszer még lineárisan független.
-
-	Most tegyük fel, hogy $A^{t+m}v\in N$ és lássuk be, hogy $A^{t+m+1}v\in N$ is teljesül.
+    Jelölje $N$ a $\left( \dag \right)$ rendszer lineáris burkát.
+    Tegyük fel, hogy $A^nv\in N$ teljesül valamely $n\geq k$ mellett és lássuk be, hogy ez $n+1$-re
+    is fennáll.
 	Ezek szerint
 	\begin{math}
-		A^{t+m}v=\sum_{j=0}^{t-1}\alpha_jA^jv
+		A^{n}v=\sum_{j=0}^{k-1}\alpha_jA^jv
 	\end{math}
 	alakú. Erre $A$-t alkalmazva
 	\begin{displaymath}
-		A^{t+m+1}v
+		A^{n+1}v
 		=
-		\sum_{j=0}^{t-1}\alpha_jA^{j+1}v
+		\sum_{j=0}^{k-1}\alpha_jA^{j+1}v
 		=
-		\sum_{j=1}^{t}\alpha_{j-1}A^{j}v
+		\sum_{j=1}^{k}\alpha_{j-1}A^{j}v
 		=
-		\left( \sum_{j=1}^{t-1}\alpha_{ j-1}A^{j}v \right)+\alpha_{t-1}A^tv\in N+N=N.\qedhere
+		\left( \sum_{j=1}^{k-1}\alpha_{j-1}A^{j}v \right)+\alpha_{k-1}A^kv\in N+N=N.\qedhere
 	\end{displaymath}
 \end{proof}
 \begin{proposition}
 	Legyen $V$ egy véges dimenziós vektortér.
 	$A\in L\left( V \right)$ lineáris transzformáció,
-	és $v\in V$ egy $v\neq 0$ vektor.
-	Ekkor létezik egyetlen $1\leq k\leq \dim(V)$ szám,
-	amelyre
-	\[
-		\left\{ v,Av,\ldots,A^{k-1}v \right\} \text{ lineárisan független}\tag{\dag}
-	\]
-	de
-	\[
-		\left\{ v,Av,\ldots,A^{k-1}v, A^kv \right\} \text{ lineárisan összefüggő.}\tag{\ddag}
-	\]
-	A fenti (\dag) rendszer bázisa $\lin\left( v;A \right)$-nak.
+	és $v\in V$ egy a zérustól különböző vektor.
+    Ekkor 
+    \begin{enumerate}
+        \item 
+	    Létezik egyetlen olyan $1\leq k\leq \dim(V)$ szám,
+    	amelyre
+	    \[
+            \text{még }\left\{ v,Av,\ldots,A^{k-1}v \right\} \text{ lineárisan független}\tag{\dag}
+	    \]
+    	de
+	    \[
+            \text{már }\left\{ v,Av,\ldots,A^{k-1}v, A^kv \right\} \text{ lineárisan összefüggő.}\tag{\ddag}
+    	\]
+        \item
+            $\lin\left( v;A \right)=
+            \lin\left\{ v,Av,\ldots,A^{k-1}v \right\}$, azaz a 
+	        $\lin\left( v;A \right)$ altérnek a fenti (\dag) rendszer egy bázisa.
+        \qedhere
+    \end{enumerate}
 \end{proposition}
 \begin{proof}
-	Először a $k$ szám konstrukciója:
-	Mivel $v\neq 0$, ezért $\left\{ v \right\}$ lineárisan független.
-	Ha $\left\{ v,Av \right\}$ lineárisan összefüggő,
-	akkor $k=1$ és készen vagyunk.
-	Egyébként tekintsük a $\left\{ v,Av,A^2v \right\}$ rendszert.
-	Ha ez lineárisan összefüggő, akkor $k=2$-vel készen vagyunk.
-	Ha ez lineárisan független, akkor tekintsük a
-	$\left\{ v,Av,A^2v,A^3v \right\}$ vektorrendszert.
-	Ha lineárisan összefüggő, akkor $k=3$ és készen vagyunk,
-	ha lineárisan független, akkor folytatjuk egy újabb elem hozzá vételével.
-	Az eljárás előbb-utóbb megáll a vektorrendszer összefüggővé válásával,
-	hiszen a Steinitz-lemma \index{Steinitz-lemma} szerint egy véges dimenziós vektortérben legfeljebb
-	$\dim(V)$ elemszámú lineárisan független vektorrendszer van.
+    Már meggondoltuk, hogy a 
+    a Steinitz-lemma \index{Steinitz-lemma} következtében,
+    a tér nem tartalmaz akármilyen nagy elemszámú lineárisan független rendszert,
+    ezért létezik a kívánt $k$ szám. Mivel $v\neq 0$, ezért $k\geq 1$.
 
-	Mivel $\lin\left( v;A \right)$ egy $v$-t tartalmazó $A$-invariáns altér,
-	ezért
-	\[
-		\left\{ v,Av,\ldots,A^{k-1}v \right\}
-		\subseteq
-		\lin\left( v;A \right).
-	\]
 	Az előző lemma szerint
-	\[
-		\left\{ v,Av,A^2v,\dots \right\}
-		\subseteq
-		\lin\left\{ v,Av,\ldots,A^{k-1}v \right\}
-	\]
-	ezért
 	\[
 		\lin\left( v;A \right)
 		=
@@ -6978,7 +6973,8 @@ $\lin\left( \left\{ v \right\};A \right)$ helyett egyszerűbben $\lin\left( v;A 
 		\lin\left( v;A \right).
 	\]
 	Ez azt jelenti, hogy a (\dag) vektorrendszer egy lineárisan független generátorrendszere
-	a $\lin\left( v;A \right)$ térnek, tehát valóban bázisa is.
+	a $\lin\left( v;A \right)$ térnek.
+    Ezt kellett belátni. 
 \end{proof}
 A $\lin\left( v;A \right)$ tehát a fenti $k$-ra egy $k$-dimenziós altér,
 amelynek bázisa $\left\{A^{k-1}v,\ldots,Av,v \right\}$.
@@ -7238,11 +7234,11 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Ekkor $p$ a $v$ vektorhoz tartozó kis minimálpolinom.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen nem zérus vektornak kis minimálpolinomja legalább elsőfokú.
-	Ha $\deg p>1$ és $p$ nem egyezne az $n$ kis minimálpolinommal,
-	akkor $\deg n<\deg p$ lenne, és mivel $n$ generálja a $J_{A,v}$ ideált,
-	ezért $p=nh$ alakú lenne, ahol $h$ is legalább elsőfokú.
-	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
+    Legyen $n$ a szóban forgó kis minimálpolinom.
+    Tudjuk, hogy $n|p$, ergo létezik $h$ polinom, amelyre $p=nh$.
+    No de, $p$ iredducibilis és $\deg n\geq 1$, ezért $h$ csak konstans lehet.
+    Mivel $p$ is $n$ is normált, ezért e konstans csak 1 lehet.
+    Ezt kellett belátni. 
 \end{proof}
 
 A következő állítás módszert ad a kis minimálpolinom meghatározására,
@@ -7521,11 +7517,12 @@ tehát legalább egydimenziós tér egy lineáris transzformációjának a minim
 	Ekkor $p$ az $A$ minimálpolinomja.
 \end{proposition}
 \begin{proof}
-	Ha maga $\deg p=1$, akkor készen vagyunk, hiszen a minimálpolinom legalább elsőfokú.
-	Ha $\deg p>1$ és $p$ nem egyezne az $m$ minimálpolinommal,
-	akkor $\deg m<\deg p$ lenne, és mivel $m$ generálja a $J_{A}$ ideált,
-	ezért $p=mh$ alakú lenne, ahol $h$ is legalább elsőfokú.
-	Így $p$ két legalább elsőfokú polinom szorzata, azaz reducibilis lenne.
+    Mivel a térben van nem zérus vektor, ezért ha $m$ jelöli a szóban forgó 
+    minimálpolinomot, akkor $m$ nem lehet konstans polinom.
+    Tudjuk, hogy $m|p$, ergo létezik $h$ polinom, amelyre $p=mh$.
+    No de, $p$ iredducibilis és $\deg m\geq 1$, ezért $h$ csak konstans lehet.
+    Mivel $p$ is $m$ is normált, ezért e konstans csak 1 lehet.
+    Így $p=m$.
 \end{proof}
 Ha összevetjük a fenti állítást az irreducibilis kis minimálpolinomra vonatkozó hasonló állítással,
 akkor azt kapjuk, hogy olyan normált, irreducibilis $p$ polinomra, 
