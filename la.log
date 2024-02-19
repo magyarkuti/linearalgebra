@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.2.1)  12 FEB 2024 12:01
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.2.1)  19 FEB 2024 07:43
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1282,12 +1282,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            hyphenation	
+(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            synonyms	
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            righthyphenmin	2
-(polyglossia)            hyphenation	 on input line 15
+(polyglossia)            righthyphenmin	2 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1719,7 +1719,8 @@ Package hyperref Info: Option `final' set `true' on input line 77.
 \dtlrows@quotes=\count534
 \dtlcols@quotes=\count535
 A bölcsesség:
-111:\dots Evezz a mélyre, \dots -- Lk 5,4
+47:Many great ideas go unexecuted, and many great executioners are without idea
+s. One without the other is worthless.-- Tim Blixseth
  
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
@@ -1928,7 +1929,7 @@ LaTeX Info: Redefining \ttfamily on input line 251.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 \l@magyar = a dialect from \language\l@hungarian 
-<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=381,
+<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=385,
  436.63126pt x 542.9886pt>
 File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
@@ -3081,12 +3082,6 @@ luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
@@ -3095,80 +3090,6 @@ luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
@@ -3235,6 +3156,86 @@ luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
@@ -3275,6 +3276,8 @@ luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -3283,6 +3286,12 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [7]
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
@@ -6500,12 +6509,16 @@ guage hun [99
 ]
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
-luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+luaotfload | aux : font no 117 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -6546,7 +6559,9 @@ uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
-guage hun [102]
+guage hun [102
+
+]
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 163 (nil) defines no feature for script latn with lan
@@ -6578,9 +6593,7 @@ guage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
-guage hun [103
-
-]
+guage hun [103]
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -7831,7 +7844,7 @@ uage hun
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 10274.
+(amsmath)                 on input line 10271.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9626,24 +9639,24 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: 2AB2800722B16E11AE09D7B5F18B6FA4;17777.
+(rerunfilecheck)             Checksum: 34F9ECF28555868DA8177EA3BFFF1F2A;18249.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 37938 strings out of 476553
+ 37942 strings out of 476553
  125002,2373549 words of node,token memory allocated
- 5253 words of node memory still in use:
+ 5237 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 57 glue, 5 kern, 1 penalty, 29
- glyph, 852 attribute, 198 glue_spec, 852 attribute_list, 2 write, 1 pdf_action 
+ glyph, 848 attribute, 198 glue_spec, 848 attribute_list, 2 write, 1 pdf_action 
 nodes
-   avail lists: 1:11,2:1347,3:444,4:123,5:967,6:141,7:9555,8:136,9:2255,10:26,11
+   avail lists: 1:13,2:1355,3:444,4:123,5:969,6:139,7:9555,8:136,9:2255,10:26,11
 :1196
- 58179 multiletter control sequences out of 65536+600000
- 217 fonts using 66879271 bytes
- 91i,17n,121p,1146b,2244s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 58180 multiletter control sequences out of 65536+600000
+ 217 fonts using 66878663 bytes
+ 91i,17n,121p,1146b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
 tf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyrepa
@@ -9659,10 +9672,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (227 pages, 9307457 bytes).
+Output written on la.pdf (227 pages, 9306668 bytes).
 
-PDF statistics: 2659 PDF objects out of 2984 (max. 8388607)
- 2366 compressed objects within 24 object streams
- 1123 named destinations out of 1200 (max. 131072)
- 753 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2666 PDF objects out of 2984 (max. 8388607)
+ 2373 compressed objects within 24 object streams
+ 1126 named destinations out of 1200 (max. 131072)
+ 761 words of extra memory for PDF output out of 10000 (max. 100000000)
 
