@@ -1,21 +1,21 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.2.1)  19 FEB 2024 07:43
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.3.15)  28 MAR 2024 13:46
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
 (./la.tex
 LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-22>
-Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
+L3 programming layer <2024-03-14>
+Lua module: luaotfload 2024-02-14 3.28 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
 ollection.
 luaotfload | conf : Root cache directory is "/opt/texlive/texdir/texmf-var/luate
 x-cache/generic/names".
-luaotfload | init : Loading fontloader "fontloader-2023-08-19.lua" from kpse-res
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
 olved path "/opt/texlive/texdir/texmf-dist/tex/luatex/luaotfload/fontloader-2023
--08-19.lua".
+-12-28.lua".
 Lua-only attribute luaotfload@noligature = 1
-luaotfload | init : Context OpenType loader version 3.133
+luaotfload | init : Context OpenType loader version 3.134
 Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
@@ -46,28 +46,28 @@ Document Class: memoir 2024/01/26 v3.8.2 configurable book, report, article doc
 ument class
 (/opt/texlive/texdir/texmf-dist/tex/latex/xpatch/xpatch.sty
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-01-22 L3 programming layer (loader) 
+Package: expl3 2024-03-14 L3 programming layer (loader) 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
-File: l3backend-luatex.def 2024-01-04 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count185
+File: l3backend-luatex.def 2024-03-14 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count186
 Inserting `l3color' in `luaotfload.parse_color'.
 \l__pdf_internal_box=\box51
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2023-10-10 L3 Experimental document command parser
+Package: xparse 2024-03-14 L3 Experimental document command parser
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count186
+\etb@tempcnta=\count187
 ))
 \onelineskip=\skip48
 \lxvchars=\skip49
 \xlvchars=\skip50
-\@memcnta=\count187
-\c@@memmarkcntra=\count188
+\@memcnta=\count188
+\c@@memmarkcntra=\count189
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
@@ -89,20 +89,20 @@ luatex-cache/generic/names/luaotfload-names.luc.gz)
 \mem@maxheadheight=\skip60
 \mem@maxfootheight=\skip61
 \headwidth=\skip62
-\c@storedpagenumber=\count189
+\c@storedpagenumber=\count190
 \memPD=\dimen139
 \m@mabparskip=\skip63
 \thanksmarkwidth=\skip64
 \thanksmarksep=\skip65
 \droptitle=\skip66
-\c@book=\count190
-\c@part=\count191
-\c@chapter=\count192
-\c@section=\count193
-\c@subsection=\count194
-\c@subsubsection=\count195
-\c@paragraph=\count196
-\c@subparagraph=\count197
+\c@book=\count191
+\c@part=\count192
+\c@chapter=\count193
+\c@section=\count194
+\c@subsection=\count195
+\c@subsubsection=\count196
+\c@paragraph=\count197
+\c@subparagraph=\count198
 \beforechapskip=\skip67
 \midchapskip=\skip68
 \afterchapskip=\skip69
@@ -124,8 +124,8 @@ luatex-cache/generic/names/luaotfload-names.luc.gz)
 \beforesubparaskip=\skip85
 \aftersubparaskip=\skip86
 \pfbreakskip=\skip87
-\c@@ppsavesec=\count198
-\c@@ppsaveapp=\count199
+\c@@ppsavesec=\count199
+\c@@ppsaveapp=\count266
 \ragrparindent=\dimen140
 \everylistparindent=\dimen141
 \parsepi=\skip88
@@ -147,10 +147,10 @@ luatex-cache/generic/names/luaotfload-names.luc.gz)
 \absrightindent=\skip102
 \absparindent=\skip103
 \absparsep=\skip104
-\c@vslineno=\count266
-\c@poemline=\count267
-\c@modulo@vs=\count268
-\c@memfvsline=\count269
+\c@vslineno=\count267
+\c@poemline=\count268
+\c@modulo@vs=\count269
+\c@memfvsline=\count270
 \vleftskip=\skip105
 \vrightskip=\skip106
 \stanzaskip=\skip107
@@ -158,11 +158,11 @@ luatex-cache/generic/names/luaotfload-names.luc.gz)
 \vgap=\skip109
 \vindent=\skip110
 \vleftmargin=\dimen143
-\c@verse=\count270
-\c@chrsinstr=\count271
+\c@verse=\count271
+\c@chrsinstr=\count272
 \beforepoemtitleskip=\skip111
 \afterpoemtitleskip=\skip112
-\c@poem=\count272
+\c@poem=\count273
 \beforePoemTitleskip=\skip113
 \midPoemTitleskip=\skip114
 \afterPoemTitleskip=\skip115
@@ -190,7 +190,7 @@ Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 \TX@old@col=\dimen148
 \TX@target=\dimen149
 \TX@delta=\dimen150
-\TX@cols=\count273
+\TX@cols=\count274
 \TX@ftn=\toks19
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/booktabs/booktabs.sty
@@ -205,23 +205,23 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen158
 \cmidrulekern=\dimen159
 \defaultaddspace=\dimen160
-\@cmidla=\count274
-\@cmidlb=\count275
+\@cmidla=\count275
+\@cmidlb=\count276
 \@aboverulesep=\dimen161
 \@belowrulesep=\dimen162
-\@thisruleclass=\count276
-\@lastruleclass=\count277
+\@thisruleclass=\count277
+\@lastruleclass=\count278
 \@thisrulewidth=\dimen163
 )
 \ctableftskip=\skip118
 \ctabrightskip=\skip119
-\abovecolumnspenalty=\count278
-\@linestogo=\count279
-\@cellstogo=\count280
-\@cellsincolumn=\count281
+\abovecolumnspenalty=\count279
+\@linestogo=\count280
+\@cellstogo=\count281
+\@cellsincolumn=\count282
 \crtok=\toks20
 \@mincolumnwidth=\dimen164
-\c@newflo@tctr=\count282
+\c@newflo@tctr=\count283
 \mem@margin@floatbox=\box54
 \@contcwidth=\skip120
 \@contindw=\skip121
@@ -233,7 +233,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \subfloatbottomskip=\skip127
 \subfloatlabelskip=\skip128
 \subfloatcapmargin=\dimen165
-\c@@contsubnum=\count283
+\c@@contsubnum=\count284
 \m@mscap@capbox=\box55
 \m@mscap@fbox=\box56
 \sidecapsep=\dimen166
@@ -275,7 +275,7 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 (/opt/texlive/texdir/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )))
-\c@section@level=\count284
+\c@section@level=\count285
 )
 \tocentryskip=\skip133
 \tocbaseline=\skip134
@@ -305,7 +305,7 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 \cftsubparagraphindent=\skip156
 \cftsubparagraphnumwidth=\skip157
 \prechapterprecisshift=\dimen175
-\c@maxsecnumdepth=\count285
+\c@maxsecnumdepth=\count286
 \bibindent=\dimen176
 \bibitemsep=\skip158
 \indexcolsep=\skip159
@@ -328,7 +328,7 @@ LaTeX Info: Redefining \flushbottom on input line 7939.
 \footinsdim=\skip169
 \footinsv@r=\insert250
 \@mpfootinsv@r=\insert249
-\m@m@k=\count286
+\m@m@k=\count287
 \m@m@h=\dimen179
 \m@mipn@skip=\skip170
 \sidefootins=\insert248
@@ -338,12 +338,12 @@ LaTeX Info: Redefining \flushbottom on input line 7939.
 \sidefootvsep=\skip174
 \sidefootwidth=\skip175
 \m@mdownsf=\skip176
-\c@sidefootnote=\count287
+\c@sidefootnote=\count288
 \sidefootmarkwidth=\skip177
 \sidefootmarksep=\skip178
 \sidefootparindent=\skip179
-\c@pagenote=\count288
-\c@pagenoteshadow=\count289
+\c@pagenote=\count289
+\c@pagenoteshadow=\count290
 \mem@pn@lastkern=\skip180
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/tools/verbatim.sty
@@ -360,40 +360,40 @@ Package: shortvrb 2022/11/13 v3.0m Standard LaTeX documentation package V3 (FMi
 )
 )
 \bvboxsep=\skip182
-\c@memfbvline=\count290
-\c@bvlinectr=\count291
+\c@memfbvline=\count291
+\c@bvlinectr=\count292
 \bvnumlength=\skip183
 \fb@frw=\dimen180
 \fb@frh=\dimen181
 \FrameRule=\dimen182
 \FrameSep=\dimen183
-\c@cp@cntr=\count292
-\c@ism@mctr=\count293
-\c@xsm@mctr=\count294
-\c@csm@mctr=\count295
-\c@ksm@mctr=\count296
-\c@xksm@mctr=\count297
-\c@cksm@mctr=\count298
-\c@msm@mctr=\count299
-\c@xmsm@mctr=\count300
-\c@cmsm@mctr=\count301
-\c@bsm@mctr=\count302
-\c@workm@mctr=\count303
-\c@sheetsequence=\count304
-\c@lastsheet=\count305
-\c@lastpage=\count306
+\c@cp@cntr=\count293
+\c@ism@mctr=\count294
+\c@xsm@mctr=\count295
+\c@csm@mctr=\count296
+\c@ksm@mctr=\count297
+\c@xksm@mctr=\count298
+\c@cksm@mctr=\count299
+\c@msm@mctr=\count300
+\c@xmsm@mctr=\count301
+\c@cmsm@mctr=\count302
+\c@bsm@mctr=\count303
+\c@workm@mctr=\count304
+\c@sheetsequence=\count305
+\c@lastsheet=\count306
+\c@lastpage=\count307
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2023/07/27 v1.04 Text only upper/lower case changing (DPC)
 Package textcase Info: Defining Legacy names on input line 20.
 )
-\c@figure=\count307
-\c@lofdepth=\count308
+\c@figure=\count308
+\c@lofdepth=\count309
 \cftbeforefigureskip=\skip184
 \cftfigureindent=\skip185
 \cftfigurenumwidth=\skip186
-\c@table=\count309
-\c@lotdepth=\count310
+\c@table=\count310
+\c@lotdepth=\count311
 \cftbeforetableskip=\skip187
 \cfttableindent=\skip188
 \cfttablenumwidth=\skip189
@@ -428,22 +428,22 @@ Package verbatim [2008/07/23] emulated by memoir.
 Package verse [2008/07/23] emulated by memoir.
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2022/01/15 2.8a Font selection for XeLaTeX and LuaLaTeX
+Package: fontspec 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2024/02/13 2.9a Font selection for XeLaTeX and LuaLaTeX
 (/opt/texlive/texdir/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaT
+Package: fontspec-luatex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count311
-\l__fontspec_language_int=\count312
-\l__fontspec_strnum_int=\count313
-\l__fontspec_tmp_int=\count314
-\l__fontspec_tmpa_int=\count315
-\l__fontspec_tmpb_int=\count316
-\l__fontspec_tmpc_int=\count317
-\l__fontspec_em_int=\count318
-\l__fontspec_emdef_int=\count319
-\l__fontspec_strong_int=\count320
-\l__fontspec_strongdef_int=\count321
+\l__fontspec_script_int=\count312
+\l__fontspec_language_int=\count313
+\l__fontspec_strnum_int=\count314
+\l__fontspec_tmp_int=\count315
+\l__fontspec_tmpa_int=\count316
+\l__fontspec_tmpb_int=\count317
+\l__fontspec_tmpc_int=\count318
+\l__fontspec_em_int=\count319
+\l__fontspec_emdef_int=\count320
+\l__fontspec_strong_int=\count321
+\l__fontspec_strongdef_int=\count322
 \l__fontspec_tmpa_dim=\dimen184
 \l__fontspec_tmpb_dim=\dimen185
 \l__fontspec_tmpc_dim=\dimen186
@@ -456,7 +456,7 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
 \MT@toks=\toks25
 \MT@tempbox=\box57
-\MT@count=\count322
+\MT@count=\count323
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
 \MT@prot@toks=\toks26
@@ -464,7 +464,7 @@ LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
 \MT@outer@kern=\dimen187
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
-\MT@listname@count=\count323
+\MT@listname@count=\count324
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/microtype/microtype-luatex.def
 File: microtype-luatex.def 2023/03/13 v3.1a Definitions specific to luatex (RS)
@@ -500,7 +500,7 @@ Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaL
 aTeX
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2024-03-14 LaTeX2e option processing using LaTeX3 keys
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
@@ -529,14 +529,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count324
+\inf@bad=\count325
 LaTeX Info: Redefining \frac on input line 236.
-\uproot@=\count325
-\leftroot@=\count326
+\uproot@=\count326
+\leftroot@=\count327
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count327
-\DOTSCASE@=\count328
+\classnum@=\count328
+\DOTSCASE@=\count329
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -549,20 +549,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen190
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count329
+\macc@depth=\count330
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count330
+\c@MaxMatrixCols=\count331
 \dotsspace@=\muskip16
-\c@parentequation=\count331
-\dspbrk@lvl=\count332
+\c@parentequation=\count332
+\dspbrk@lvl=\count333
 \tag@help=\toks29
-\row@=\count333
-\column@=\count334
-\maxfields@=\count335
+\row@=\count334
+\column@=\count335
+\maxfields@=\count336
 \andhelp@=\toks30
 \eqnshift@=\dimen191
 \alignsep@=\dimen192
@@ -582,9 +582,9 @@ Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting wit
 h LuaLaTeX
 Lua module: lualatex-math 2013/08/03 1.3 Patches for mathematics typesetting wit
 h LuaLaTeX)
-\g__um_fam_int=\count336
-\g__um_fonts_used_int=\count337
-\l__um_primecount_int=\count338
+\g__um_fam_int=\count337
+\g__um_fonts_used_int=\count338
+\l__um_primecount_int=\count339
 \g__um_primekern_muskip=\muskip17
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
@@ -599,29 +599,29 @@ Package fontspec Info: Font family 'TeXGyrePagella(0)' created for font 'TeX
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella:mode=node;script=latn;language=dflt;+
-tlig;"
+(fontspec)             <->"name:TeXGyrePagella:mode=node;script=latn;language=d
+flt;+tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella:mode=node;script=latn;language=dflt;+
-tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella:mode=node;script=latn;language=d
+flt;+tlig;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/B:mode=node;script=latn;language=dflt
-;+tlig;"
+(fontspec)             <->"name:TeXGyrePagella/B:mode=node;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/B:mode=node;script=latn;language=dflt
-;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella/B:mode=node;script=latn;language
+=dflt;+tlig;+smcp;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/I:mode=node;script=latn;language=dflt
-;+tlig;"
+(fontspec)             <->"name:TeXGyrePagella/I:mode=node;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/I:mode=node;script=latn;language=dflt
-;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella/I:mode=node;script=latn;language
+=dflt;+tlig;+smcp;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/BI:mode=node;script=latn;language=dfl
-t;+tlig;"
+(fontspec)             <->"name:TeXGyrePagella/BI:mode=node;script=latn;languag
+e=dflt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/BI:mode=node;script=latn;language=dfl
-t;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella/BI:mode=node;script=latn;languag
+e=dflt;+tlig;+smcp;"
 
 
 Package fontspec Info: Font family 'TeXGyrePagella(1)' created for font 'TeX
@@ -632,29 +632,29 @@ Package fontspec Info: Font family 'TeXGyrePagella(1)' created for font 'TeX
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella:mode=base;script=latn;language=dflt;+
-tlig;"
+(fontspec)             <->"name:TeXGyrePagella:mode=base;script=latn;language=d
+flt;+tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella:mode=base;script=latn;language=dflt;+
-tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella:mode=base;script=latn;language=d
+flt;+tlig;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/B:mode=base;script=latn;language=dflt
-;+tlig;"
+(fontspec)             <->"name:TeXGyrePagella/B:mode=base;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/B:mode=base;script=latn;language=dflt
-;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella/B:mode=base;script=latn;language
+=dflt;+tlig;+smcp;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/I:mode=base;script=latn;language=dflt
-;+tlig;"
+(fontspec)             <->"name:TeXGyrePagella/I:mode=base;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/I:mode=base;script=latn;language=dflt
-;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella/I:mode=base;script=latn;language
+=dflt;+tlig;+smcp;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/BI:mode=base;script=latn;language=dfl
-t;+tlig;"
+(fontspec)             <->"name:TeXGyrePagella/BI:mode=base;script=latn;languag
+e=dflt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagella/BI:mode=base;script=latn;language=dfl
-t;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyrePagella/BI:mode=base;script=latn;languag
+e=dflt;+tlig;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/TeXGyrePagella(1)/m/n on input line 
@@ -679,8 +679,8 @@ nt={},SmallCapsFont={},Script=Math,RawFeature={mathfontdimen=xetex}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"TeXGyrePagellaMath:mode=base;script=math;language=df
-lt;+tlig;mathfontdimen=xetex;"
+(fontspec)             <->"name:TeXGyrePagellaMath:mode=base;script=math;langua
+ge=dflt;+tlig;mathfontdimen=xetex;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
@@ -703,10 +703,11 @@ xetex}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <8.7->"TeXGyrePagellaMath:mode=base;script=math;language
-=dflt;+tlig;mathfontdimen=xetex;"<6.45-8.7>"TeXGyrePagellaMath:mode=base;script
-=math;language=dflt;+tlig;mathfontdimen=xetex;+ssty=0;"<-6.45>"TeXGyrePagellaMa
-th:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex;+ssty=1;"
+(fontspec)             <8.7->"name:TeXGyrePagellaMath:mode=base;script=math;lan
+guage=dflt;+tlig;mathfontdimen=xetex;"<6.45-8.7>"name:TeXGyrePagellaMath:mode=b
+ase;script=math;language=dflt;+tlig;mathfontdimen=xetex;+ssty=0;"<-6.45>"name:T
+eXGyrePagellaMath:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex
+;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
@@ -739,11 +740,11 @@ xetex},RawFeature={mathfontdimen=tex2}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <8.7->"TeXGyrePagellaMath:mode=base;script=math;language
-=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex2;"<6.45-8.7>"TeXGyrePagellaMa
-th:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=
-tex2;+ssty=0;"<-6.45>"TeXGyrePagellaMath:mode=base;script=math;language=dflt;+t
-lig;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
+(fontspec)             <8.7->"name:TeXGyrePagellaMath:mode=base;script=math;lan
+guage=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex2;"<6.45-8.7>"name:TeXGyr
+ePagellaMath:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex;math
+fontdimen=tex2;+ssty=0;"<-6.45>"name:TeXGyrePagellaMath:mode=base;script=math;l
+anguage=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
@@ -776,11 +777,11 @@ xetex},RawFeature={mathfontdimen=tex3}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <8.7->"TeXGyrePagellaMath:mode=base;script=math;language
-=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex3;"<6.45-8.7>"TeXGyrePagellaMa
-th:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=
-tex3;+ssty=0;"<-6.45>"TeXGyrePagellaMath:mode=base;script=math;language=dflt;+t
-lig;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
+(fontspec)             <8.7->"name:TeXGyrePagellaMath:mode=base;script=math;lan
+guage=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex3;"<6.45-8.7>"name:TeXGyr
+ePagellaMath:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex;math
+fontdimen=tex3;+ssty=0;"<-6.45>"name:TeXGyrePagellaMath:mode=base;script=math;l
+anguage=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
@@ -842,29 +843,29 @@ Package fontspec Info: Font family 'TeXGyreAdventor(0)' created for font 'TeX
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor:mode=node;scri
-pt=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor:mode=node
+;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor:mode=node;scri
-pt=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor:mode=node
+;script=latn;language=dflt;+tlig;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/B:mode=node;sc
-ript=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/B:mode=no
+de;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/B:mode=node;sc
-ript=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/B:mode=no
+de;script=latn;language=dflt;+tlig;+smcp;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor/I:mode=node;sc
-ript=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor/I:mode=no
+de;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor/I:mode=node;sc
-ript=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor/I:mode=no
+de;script=latn;language=dflt;+tlig;+smcp;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/BI:mode=node;s
-cript=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/BI:mode=n
+ode;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/BI:mode=node;s
-cript=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/BI:mode=n
+ode;script=latn;language=dflt;+tlig;+smcp;"
 
 
 Package fontspec Info: TeXGyreAdventor scale = 0.8574018851661026.
@@ -902,29 +903,29 @@ Package fontspec Info: Font family 'TeXGyreAdventor(1)' created for font 'TeX
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor:mode=base;scri
-pt=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor:mode=base
+;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor:mode=base;scri
-pt=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor:mode=base
+;script=latn;language=dflt;+tlig;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/B:mode=base;sc
-ript=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/B:mode=ba
+se;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/B:mode=base;sc
-ript=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/B:mode=ba
+se;script=latn;language=dflt;+tlig;+smcp;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor/I:mode=base;sc
-ript=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor/I:mode=ba
+se;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[0.8574018851661026]"TeXGyreAdventor/I:mode=base;sc
-ript=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8574018851661026]"name:TeXGyreAdventor/I:mode=ba
+se;script=latn;language=dflt;+tlig;+smcp;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/BI:mode=base;s
-cript=latn;language=dflt;+tlig;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/BI:mode=b
+ase;script=latn;language=dflt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[0.8465672003547515]"TeXGyreAdventor/BI:mode=base;s
-cript=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             <->s*[0.8465672003547515]"name:TeXGyreAdventor/BI:mode=b
+ase;script=latn;language=dflt;+tlig;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/TeXGyreAdventor(1)/m/n on input lin
@@ -942,44 +943,44 @@ tionSpace=WordSpace].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor:mode=node;script=latn;language=dflt;+t
-lig;"
+(fontspec)             <->"name:TeXGyreCursor:mode=node;script=latn;language=df
+lt;+tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor:mode=node;script=latn;language=dflt;+t
-lig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor:mode=node;script=latn;language=df
+lt;+tlig;+smcp;"
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
 (fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
 (fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/B:mode=node;script=latn;language=dflt;
-+tlig;"
+(fontspec)             <->"name:TeXGyreCursor/B:mode=node;script=latn;language=
+dflt;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/B:mode=node;script=latn;language=dflt;
-+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor/B:mode=node;script=latn;language=
+dflt;+tlig;+smcp;"
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
 (fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
 (fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/I:mode=node;script=latn;language=dflt;
-+tlig;"
+(fontspec)             <->"name:TeXGyreCursor/I:mode=node;script=latn;language=
+dflt;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/I:mode=node;script=latn;language=dflt;
-+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor/I:mode=node;script=latn;language=
+dflt;+tlig;+smcp;"
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
 (fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
 (fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/BI:mode=node;script=latn;language=dflt
-;+tlig;"
+(fontspec)             <->"name:TeXGyreCursor/BI:mode=node;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/BI:mode=node;script=latn;language=dflt
-;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor/BI:mode=node;script=latn;language
+=dflt;+tlig;+smcp;"
 (fontspec)             and font adjustment code:
 (fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
 (fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
@@ -995,29 +996,29 @@ Package fontspec Info: Font family 'TeXGyreCursor(1)' created for font 'TeX
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor:mode=base;script=latn;language=dflt;+t
-lig;"
+(fontspec)             <->"name:TeXGyreCursor:mode=base;script=latn;language=df
+lt;+tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor:mode=base;script=latn;language=dflt;+t
-lig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor:mode=base;script=latn;language=df
+lt;+tlig;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/B:mode=base;script=latn;language=dflt;
-+tlig;"
+(fontspec)             <->"name:TeXGyreCursor/B:mode=base;script=latn;language=
+dflt;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/B:mode=base;script=latn;language=dflt;
-+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor/B:mode=base;script=latn;language=
+dflt;+tlig;+smcp;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/I:mode=base;script=latn;language=dflt;
-+tlig;"
+(fontspec)             <->"name:TeXGyreCursor/I:mode=base;script=latn;language=
+dflt;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/I:mode=base;script=latn;language=dflt;
-+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor/I:mode=base;script=latn;language=
+dflt;+tlig;+smcp;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/BI:mode=base;script=latn;language=dflt
-;+tlig;"
+(fontspec)             <->"name:TeXGyreCursor/BI:mode=base;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"TeXGyreCursor/BI:mode=base;script=latn;language=dflt
-;+tlig;+smcp;"
+(fontspec)             <->"name:TeXGyreCursor/BI:mode=base;script=latn;language
+=dflt;+tlig;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/TeXGyreCursor(1)/m/n on input line 
@@ -1041,31 +1042,31 @@ Package fontspec Info: Font family 'DejavuSans(0)' created for font 'Dejavu
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"DejavuSans:mode=node;script=latn;language=dflt;+tlig
-;"
+(fontspec)             <->"name:DejavuSans:mode=node;script=latn;language=dflt;
++tlig;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"DejavuSans/B:mode=node;script=latn;language=dflt;+tl
-ig;"
+(fontspec)             <->"name:DejavuSans/B:mode=node;script=latn;language=dfl
+t;+tlig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"DejavuSans/I:mode=node;script=latn;language=dflt;+tl
-ig;"
+(fontspec)             <->"name:DejavuSans/I:mode=node;script=latn;language=dfl
+t;+tlig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"DejavuSans/BI:mode=node;script=latn;language=dflt;+t
-lig;"
+(fontspec)             <->"name:DejavuSans/BI:mode=node;script=latn;language=df
+lt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count339
-\csq@gtype=\count340
-\csq@glevel=\count341
-\csq@qlevel=\count342
-\csq@maxlvl=\count343
-\csq@tshold=\count344
+\csq@reset=\count340
+\csq@gtype=\count341
+\csq@glevel=\count342
+\csq@qlevel=\count343
+\csq@maxlvl=\count344
+\csq@tshold=\count345
 \csq@ltx@everypar=\toks33
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -1103,15 +1104,15 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks40
 \XKV@tempa@toks=\toks41
 )
-\XKV@depth=\count345
+\XKV@depth=\count346
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 \lox@file=\read3
-\c@fixmecount=\count346
-\c@fxnotecount=\count347
-\c@fxwarningcount=\count348
-\c@fxerrorcount=\count349
-\c@fxfatalcount=\count350
+\c@fixmecount=\count347
+\c@fxnotecount=\count348
+\c@fxwarningcount=\count349
+\c@fxerrorcount=\count350
+\c@fxfatalcount=\count351
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1141,7 +1142,7 @@ Package: xfor 2009/02/05 v1.05 (NLCT)
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count351
+\c@su@anzahl=\count352
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2019/09/27 v2.32 (NLCT)
@@ -1155,19 +1156,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/opt/texlive/texdir/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count352
+\actioncount=\count353
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count353
-\FP@xia=\count354
-\FP@xib=\count355
-\FP@xfa=\count356
-\FP@xfb=\count357
-\FP@rega=\count358
-\FP@regb=\count359
-\FP@regs=\count360
-\FP@times=\count361
+\FP@xs=\count354
+\FP@xia=\count355
+\FP@xib=\count356
+\FP@xfa=\count357
+\FP@xfb=\count358
+\FP@rega=\count359
+\FP@regb=\count360
+\FP@regs=\count361
+\FP@times=\count362
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -1186,7 +1187,7 @@ Package: fp-pas 1994/08/29
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count362
+\FPseed=\count363
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -1198,31 +1199,31 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks42
-\@dtl@tmpcount=\count363
+\@dtl@tmpcount=\count364
 \dtl@tmplength=\skip197
-\dtl@sortresult=\count364
-\@dtl@numgrpsepcount=\count365
-\@dtl@datatype=\count366
-\dtl@codeA=\count367
-\dtl@codeB=\count368
-\@dtl@foreach@level=\count369
+\dtl@sortresult=\count365
+\@dtl@numgrpsepcount=\count366
+\@dtl@datatype=\count367
+\dtl@codeA=\count368
+\dtl@codeB=\count369
+\@dtl@foreach@level=\count370
 )
-\dtlcolumnnum=\count370
-\dtlrownum=\count371
+\dtlcolumnnum=\count371
+\dtlrownum=\count372
 \@dtl@before=\toks43
 \@dtl@after=\toks44
 \@dtl@colhead=\toks45
 \dtlcurrentrow=\toks46
 \dtlbeforerow=\toks47
 \dtlafterrow=\toks48
-\dtlforeachlevel=\count372
-\c@DTLrowi=\count373
-\c@DTLrowii=\count374
-\c@DTLrowiii=\count375
-\c@DTLrow=\count376
-\dtl@rowi=\count377
-\dtl@rowii=\count378
-\dtl@rowiii=\count379
+\dtlforeachlevel=\count373
+\c@DTLrowi=\count374
+\c@DTLrowii=\count375
+\c@DTLrowiii=\count376
+\c@DTLrow=\count377
+\dtl@rowi=\count378
+\dtl@rowii=\count379
+\dtl@rowiii=\count380
 \@dtl@curi=\toks49
 \@dtl@previ=\toks50
 \@dtl@nexti=\toks51
@@ -1232,7 +1233,7 @@ Package: fp-eval 1995/04/03
 \@dtl@curiii=\toks55
 \@dtl@previii=\toks56
 \@dtl@nextiii=\toks57
-\@dtl@elements=\count380
+\@dtl@elements=\count381
 \@dtl@list=\toks58
 \@dtl@rowa=\toks59
 \@dtl@rowb=\toks60
@@ -1240,41 +1241,41 @@ Package: fp-eval 1995/04/03
 \@dtl@toksB=\toks62
 \@dtl@write=\write4
 \@dtl@read=\read4
-\dtl@entrycr=\count381
-\dtl@omitlines=\count382
+\dtl@entrycr=\count382
+\dtl@omitlines=\count383
 ) (./nevelok.sty
 Package: nevelok 2015/12/05 v1.03 LaTeX package for automatic definite articles
  for Hungarian
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/xstring/xstring.sty
 (/opt/texlive/texdir/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count383
-\xs_countb=\count384
+\xs_counta=\count384
+\xs_countb=\count385
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
-\nev@ind=\count385
-\nev@vege=\count386
-\nev@eppme=\count387
-\nev@az=\count388
+\nev@ind=\count386
+\nev@vege=\count387
+\nev@eppme=\count388
+\nev@az=\count389
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2023/12/11 v1.66 Modern multilingual typesetting with XeLa
-TeX and LuaLaTeX
+Package: polyglossia 2024/03/07 v2.1 Modern multilingual typesetting with XeLaT
+eX and LuaLaTeX
 
 (/opt/texlive/texdir/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
 Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
 
 (/opt/texlive/texdir/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
 Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count389
+\@catcodetablestackcnt=\count390
 )
 \CatcodeTableOther=\catcodetable14
 \CatcodeTableExpl=\catcodetable15
 )
 Lua module: polyglossia 2013/05/11 1.3 Polyglossia
-(/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-latex.lde
-Package: gloss-latex 2023/12/11 v1.66 polyglossia: module for default language
+(/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
+File: gloss-latex.ldf polyglossia: module for default language
 )
 Package polyglossia Info: Default language is latex.
 Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
@@ -1282,11 +1283,11 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            loader	loadhyph-hu.tex
-(polyglossia)            hyphenation	
-(polyglossia)            patterns	hyph-hu.pat.txt
-(polyglossia)            synonyms	
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            synonyms	
+(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            righthyphenmin	2 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
@@ -1307,7 +1308,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count390
+\lrq@indent=\count391
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -1316,49 +1317,49 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count391
-\c@listtotal=\count392
-\c@listcount=\count393
-\c@liststart=\count394
-\c@liststop=\count395
-\c@citecount=\count396
-\c@citetotal=\count397
-\c@multicitecount=\count398
-\c@multicitetotal=\count399
-\c@instcount=\count400
-\c@maxnames=\count401
-\c@minnames=\count402
-\c@maxitems=\count403
-\c@minitems=\count404
-\c@citecounter=\count405
-\c@maxcitecounter=\count406
-\c@savedcitecounter=\count407
-\c@uniquelist=\count408
-\c@uniquename=\count409
-\c@refsection=\count410
-\c@refsegment=\count411
-\c@maxextratitle=\count412
-\c@maxextratitleyear=\count413
-\c@maxextraname=\count414
-\c@maxextradate=\count415
-\c@maxextraalpha=\count416
-\c@abbrvpenalty=\count417
-\c@highnamepenalty=\count418
-\c@lownamepenalty=\count419
-\c@maxparens=\count420
-\c@parenlevel=\count421
-\blx@tempcnta=\count422
-\blx@tempcntb=\count423
-\blx@tempcntc=\count424
-\c@blx@maxsection=\count425
-\blx@maxsegment@0=\count426
-\blx@notetype=\count427
-\blx@parenlevel@text=\count428
-\blx@parenlevel@foot=\count429
-\blx@sectionciteorder@0=\count430
-\blx@sectionciteorderinternal@0=\count431
-\blx@entrysetcounter=\count432
-\blx@biblioinstance=\count433
+\c@tabx@nest=\count392
+\c@listtotal=\count393
+\c@listcount=\count394
+\c@liststart=\count395
+\c@liststop=\count396
+\c@citecount=\count397
+\c@citetotal=\count398
+\c@multicitecount=\count399
+\c@multicitetotal=\count400
+\c@instcount=\count401
+\c@maxnames=\count402
+\c@minnames=\count403
+\c@maxitems=\count404
+\c@minitems=\count405
+\c@citecounter=\count406
+\c@maxcitecounter=\count407
+\c@savedcitecounter=\count408
+\c@uniquelist=\count409
+\c@uniquename=\count410
+\c@refsection=\count411
+\c@refsegment=\count412
+\c@maxextratitle=\count413
+\c@maxextratitleyear=\count414
+\c@maxextraname=\count415
+\c@maxextradate=\count416
+\c@maxextraalpha=\count417
+\c@abbrvpenalty=\count418
+\c@highnamepenalty=\count419
+\c@lownamepenalty=\count420
+\c@maxparens=\count421
+\c@parenlevel=\count422
+\blx@tempcnta=\count423
+\blx@tempcntb=\count424
+\blx@tempcntc=\count425
+\c@blx@maxsection=\count426
+\blx@maxsegment@0=\count427
+\blx@notetype=\count428
+\blx@parenlevel@text=\count429
+\blx@parenlevel@foot=\count430
+\blx@sectionciteorder@0=\count431
+\blx@sectionciteorderinternal@0=\count432
+\blx@entrysetcounter=\count433
+\blx@biblioinstance=\count434
 \labelnumberwidth=\skip198
 \labelalphawidth=\skip199
 \biblabelsep=\skip256
@@ -1369,9 +1370,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read5
 \blx@bcfout=\write5
 \blx@langwohyphens=\language3
-\c@mincomprange=\count434
-\c@maxcomprange=\count435
-\c@mincompwidth=\count436
+\c@mincomprange=\count435
+\c@maxcomprange=\count436
+\c@mincompwidth=\count437
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1382,74 +1383,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count437
-\c@savedafterword=\count438
-\c@annotator=\count439
-\c@savedannotator=\count440
-\c@author=\count441
-\c@savedauthor=\count442
-\c@bookauthor=\count443
-\c@savedbookauthor=\count444
-\c@commentator=\count445
-\c@savedcommentator=\count446
-\c@editor=\count447
-\c@savededitor=\count448
-\c@editora=\count449
-\c@savededitora=\count450
-\c@editorb=\count451
-\c@savededitorb=\count452
-\c@editorc=\count453
-\c@savededitorc=\count454
-\c@foreword=\count455
-\c@savedforeword=\count456
-\c@holder=\count457
-\c@savedholder=\count458
-\c@introduction=\count459
-\c@savedintroduction=\count460
-\c@namea=\count461
-\c@savednamea=\count462
-\c@nameb=\count463
-\c@savednameb=\count464
-\c@namec=\count465
-\c@savednamec=\count466
-\c@translator=\count467
-\c@savedtranslator=\count468
-\c@shortauthor=\count469
-\c@savedshortauthor=\count470
-\c@shorteditor=\count471
-\c@savedshorteditor=\count472
-\c@labelname=\count473
-\c@savedlabelname=\count474
-\c@institution=\count475
-\c@savedinstitution=\count476
-\c@lista=\count477
-\c@savedlista=\count478
-\c@listb=\count479
-\c@savedlistb=\count480
-\c@listc=\count481
-\c@savedlistc=\count482
-\c@listd=\count483
-\c@savedlistd=\count484
-\c@liste=\count485
-\c@savedliste=\count486
-\c@listf=\count487
-\c@savedlistf=\count488
-\c@location=\count489
-\c@savedlocation=\count490
-\c@organization=\count491
-\c@savedorganization=\count492
-\c@origlocation=\count493
-\c@savedoriglocation=\count494
-\c@origpublisher=\count495
-\c@savedorigpublisher=\count496
-\c@publisher=\count497
-\c@savedpublisher=\count498
-\c@language=\count499
-\c@savedlanguage=\count500
-\c@origlanguage=\count501
-\c@savedoriglanguage=\count502
-\c@pageref=\count503
-\c@savedpageref=\count504
+\c@afterword=\count438
+\c@savedafterword=\count439
+\c@annotator=\count440
+\c@savedannotator=\count441
+\c@author=\count442
+\c@savedauthor=\count443
+\c@bookauthor=\count444
+\c@savedbookauthor=\count445
+\c@commentator=\count446
+\c@savedcommentator=\count447
+\c@editor=\count448
+\c@savededitor=\count449
+\c@editora=\count450
+\c@savededitora=\count451
+\c@editorb=\count452
+\c@savededitorb=\count453
+\c@editorc=\count454
+\c@savededitorc=\count455
+\c@foreword=\count456
+\c@savedforeword=\count457
+\c@holder=\count458
+\c@savedholder=\count459
+\c@introduction=\count460
+\c@savedintroduction=\count461
+\c@namea=\count462
+\c@savednamea=\count463
+\c@nameb=\count464
+\c@savednameb=\count465
+\c@namec=\count466
+\c@savednamec=\count467
+\c@translator=\count468
+\c@savedtranslator=\count469
+\c@shortauthor=\count470
+\c@savedshortauthor=\count471
+\c@shorteditor=\count472
+\c@savedshorteditor=\count473
+\c@labelname=\count474
+\c@savedlabelname=\count475
+\c@institution=\count476
+\c@savedinstitution=\count477
+\c@lista=\count478
+\c@savedlista=\count479
+\c@listb=\count480
+\c@savedlistb=\count481
+\c@listc=\count482
+\c@savedlistc=\count483
+\c@listd=\count484
+\c@savedlistd=\count485
+\c@liste=\count486
+\c@savedliste=\count487
+\c@listf=\count488
+\c@savedlistf=\count489
+\c@location=\count490
+\c@savedlocation=\count491
+\c@organization=\count492
+\c@savedorganization=\count493
+\c@origlocation=\count494
+\c@savedoriglocation=\count495
+\c@origpublisher=\count496
+\c@savedorigpublisher=\count497
+\c@publisher=\count498
+\c@savedpublisher=\count499
+\c@language=\count500
+\c@savedlanguage=\count501
+\c@origlanguage=\count502
+\c@savedoriglanguage=\count503
+\c@pageref=\count504
+\c@savedpageref=\count505
 \shorthandwidth=\skip261
 \shortjournalwidth=\skip262
 \shortserieswidth=\skip263
@@ -1479,19 +1480,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count505
-\c@textcitetotal=\count506
-\c@textcitemaxnames=\count507
-\c@biburlbigbreakpenalty=\count508
-\c@biburlbreakpenalty=\count509
-\c@biburlnumpenalty=\count510
-\c@biburlucpenalty=\count511
-\c@biburllcpenalty=\count512
+\c@textcitecount=\count506
+\c@textcitetotal=\count507
+\c@textcitemaxnames=\count508
+\c@biburlbigbreakpenalty=\count509
+\c@biburlbreakpenalty=\count510
+\c@biburlnumpenalty=\count511
+\c@biburlucpenalty=\count512
+\c@biburllcpenalty=\count513
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count513
+\c@smartand=\count514
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
@@ -1503,8 +1504,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count514
-\c@bbx:relatedtotal=\count515
+\c@bbx:relatedcount=\count515
+\c@bbx:relatedtotal=\count516
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -1529,7 +1530,7 @@ Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2024-01-22 L3 programming layer (loader) 
+(biblatex)             2024-03-14 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -1586,8 +1587,8 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen257
 \enit@toks=\toks64
 \enit@inbox=\box60
-\enit@count@id=\count516
-\enitdp@description=\count517
+\enit@count@id=\count517
+\enitdp@description=\count518
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -1595,9 +1596,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/opt/texlive/texdir/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count518
-\Gm@cntv=\count519
-\c@Gm@tempcnt=\count520
+\Gm@cnth=\count519
+\Gm@cntv=\count520
+\c@Gm@tempcnt=\count521
 \Gm@bindingoffset=\dimen258
 \Gm@wd@mp=\dimen259
 \Gm@odd@mp=\dimen260
@@ -1624,8 +1625,8 @@ Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen266
-\Hy@linkcounter=\count521
-\Hy@pagecounter=\count522
+\Hy@linkcounter=\count522
+\Hy@pagecounter=\count523
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
@@ -1633,7 +1634,7 @@ File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 (/opt/texlive/texdir/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count523
+\Hy@SavedSpaceFactor=\count524
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
@@ -1646,7 +1647,7 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count524
+\c@Hy@tempcnt=\count525
 LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen267
 
@@ -1657,7 +1658,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count525
+\Fld@menulength=\count526
 \Field@Width=\dimen268
 \Fld@charsize=\dimen269
 Package hyperref Info: Hyper figures OFF on input line 6063.
@@ -1672,9 +1673,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count526
-\c@Item=\count527
-\c@Hfootnote=\count528
+\Hy@abspage=\count527
+\c@Item=\count528
+\c@Hfootnote=\count529
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
@@ -1690,8 +1691,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count529
-\c@bookmark@seq@number=\count530
+\Fld@listcount=\count530
+\c@bookmark@seq@number=\count531
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -1706,22 +1707,25 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/memoir/memhfixc.sty
 Package: memhfixc 2023/09/10 v1.22 hyperref package fixes for memoir class
-\c@memhycontfloat=\count531
-\c@Hpagenote=\count532
+\c@memhycontfloat=\count532
+\c@Hpagenote=\count533
 )
 Package hyperref Info: Option `final' set `true' on input line 77.
 \@my@claim@mark=\marks4
 
 >>> Made patch specific for amsthm.
-\c@proposition=\count533
+\c@proposition=\count534
 \dtldb@quotes=\toks66
 \dtlkeys@quotes=\toks67
-\dtlrows@quotes=\count534
-\dtlcols@quotes=\count535
+\dtlrows@quotes=\count535
+\dtlcols@quotes=\count536
 A bölcsesség:
-47:Many great ideas go unexecuted, and many great executioners are without idea
-s. One without the other is worthless.-- Tim Blixseth
+23:Failure is the condiment that gives success its flavor.-- Truman Capote
  
+\la@idxfile=\write6
+
+\openout6 = la.idx
+Writing index file la.idx 
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
@@ -1846,16 +1850,16 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             Ignoring protrusion settings for this character.
 (/opt/texlive/texdir/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count536
+\scratchcounter=\count537
 \scratchdimen=\dimen270
 \scratchbox=\box61
-\nofMPsegments=\count537
-\nofMParguments=\count538
+\nofMPsegments=\count538
+\nofMParguments=\count539
 \everyMPshowfont=\toks68
-\MPscratchCnt=\count539
+\MPscratchCnt=\count540
 \MPscratchDim=\dimen271
-\MPnumerator=\count540
-\makeMPintoPDFobject=\count541
+\MPnumerator=\count541
+\makeMPintoPDFobject=\count542
 \everyMPtoPDFconversion=\toks69
 ) (/opt/texlive/texdir/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1920,16 +1924,16 @@ Package biblatex Info: Reference segment=0 on input line 251.
 
 Package hyperref Info: Link coloring OFF on input line 251.
 (./la.out) (./la.out)
-\@outlinefile=\write6
+\@outlinefile=\write7
 
-\openout6 = la.out
+\openout7 = la.out
 LaTeX Info: Redefining \rmfamily on input line 251.
 LaTeX Info: Redefining \sffamily on input line 251.
 LaTeX Info: Redefining \ttfamily on input line 251.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 \l@magyar = a dialect from \language\l@hungarian 
-<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=385,
+<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=389,
  436.63126pt x 542.9886pt>
 File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
@@ -2545,20 +2549,20 @@ guage hun
 [5]
 luaotfload | aux : font no 121 (nil) defines no feature for script latn with lan
 guage hun (./la.toc
-LaTeX Info: Redefining \rmfamily on input line 2.
-LaTeX Info: Redefining \sffamily on input line 2.
-LaTeX Info: Redefining \ttfamily on input line 2.
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 \l@magyar = a dialect from \language\l@hungarian 
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 8.57407pt on input line 3.
+(Font)              scaled to size 8.57407pt on input line 2.
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 8.46573pt on input line 3.
+(Font)              scaled to size 8.46573pt on input line 2.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/sc' will be
-(Font)              scaled to size 8.46573pt on input line 3.
+(Font)              scaled to size 8.46573pt on input line 2.
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 Package microtype Info: Character `ﬆ' is missing
@@ -3490,6 +3494,12 @@ luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 144 (nil) defines no feature for script latn with lan
@@ -9613,8 +9623,52 @@ guage hun
 luaotfload | aux : font no 120 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 120 (nil) defines no feature for script latn with lan
+guage hun (./la.ind
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun
-No file la.ind.
+[227
+
+]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
+guage hun [228
+
+]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 121 (nil) defines no feature for script latn with lan
+guage hun
+Overfull \hbox (6.06749pt too wide) in paragraph at lines 81--83
+[]\TU/TeXGyrePagella(0)/m/n/10 Gauss--Jordan-elimináció, []29[], []44[], []46[]--[]48[], []50[]--[]54[] 
+ []
+
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
+guage hun [229
+
+]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
+guage hun [230]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
+guage hun [231])
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -9622,41 +9676,33 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
-guage hun [227
+\tf@toc=\write8
 
-]
-\tf@toc=\write7
-
-\openout7 = la.toc
- (./la.aux)
+\openout8 = la.toc
+(./la.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: 34F9ECF28555868DA8177EA3BFFF1F2A;18249.
+(rerunfilecheck)             Checksum: CC7DFC0C4A81833265BE8C31FE0E6B68;18362.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 37942 strings out of 476553
+ 37926 strings out of 476435
  125002,2373549 words of node,token memory allocated
- 5237 words of node memory still in use:
+ 5244 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 57 glue, 5 kern, 1 penalty, 29
- glyph, 848 attribute, 198 glue_spec, 848 attribute_list, 2 write, 1 pdf_action 
+ glyph, 849 attribute, 198 glue_spec, 849 attribute_list, 3 write, 1 pdf_action 
 nodes
-   avail lists: 1:13,2:1355,3:444,4:123,5:969,6:139,7:9555,8:136,9:2255,10:26,11
+   avail lists: 1:11,2:1353,3:445,4:123,5:969,6:285,7:9555,8:136,9:2255,10:26,11
 :1196
- 58180 multiletter control sequences out of 65536+600000
- 217 fonts using 66878663 bytes
- 91i,17n,121p,1146b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 58270 multiletter control sequences out of 65536+600000
+ 217 fonts using 66879119 bytes
+ 91i,17n,122p,1146b,2240s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
 tf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyrepa
@@ -9672,10 +9718,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (227 pages, 9306668 bytes).
+Output written on la.pdf (231 pages, 9322464 bytes).
 
-PDF statistics: 2666 PDF objects out of 2984 (max. 8388607)
- 2373 compressed objects within 24 object streams
- 1126 named destinations out of 1200 (max. 131072)
- 761 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2957 PDF objects out of 2984 (max. 8388607)
+ 2657 compressed objects within 27 object streams
+ 1131 named destinations out of 1200 (max. 131072)
+ 769 words of extra memory for PDF output out of 10000 (max. 100000000)
 
