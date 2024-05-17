@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.3.15)  28 MAR 2024 13:46
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.3.15)  17 MAY 2024 15:56
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -658,13 +658,13 @@ e=dflt;+tlig;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/TeXGyrePagella(1)/m/n on input line 
-21.
+22.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/TeXGyrePagella(1)/m/it on input lin
-e 21.
+e 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/TeXGyrePagella(1)/b/n on input line
- 21.
+ 22.
 
 Package fontspec Info: Could not resolve font "TeXGyrePagellaMath/B" (it
 (fontspec)             probably doesn't exist).
@@ -711,15 +711,15 @@ eXGyrePagellaMath:mode=base;script=math;language=dflt;+tlig;mathfontdimen=xetex
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 26.
+(Font)              `operators' in the math version `normal' on input line 27.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/TeXGyrePagellaMath(1)/m/n on input l
-ine 26.
+ine 27.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 26.
+(Font)              `operators' in the math version `bold' on input line 27.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/TeXGyrePagellaMath(1)/b/n on input 
-line 26.
+line 27.
 
 Package fontspec Info: Could not resolve font "TeXGyrePagellaMath/B" (it
 (fontspec)             probably doesn't exist).
@@ -748,15 +748,15 @@ anguage=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 26.
+(Font)              `symbols' in the math version `normal' on input line 27.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/TeXGyrePagellaMath(2)/m/n on input 
-line 26.
+line 27.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 26.
+(Font)              `symbols' in the math version `bold' on input line 27.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/TeXGyrePagellaMath(2)/b/n on input 
-line 26.
+line 27.
 
 Package fontspec Info: Could not resolve font "TeXGyrePagellaMath/B" (it
 (fontspec)             probably doesn't exist).
@@ -786,22 +786,22 @@ anguage=dflt;+tlig;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-6.
+7.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/TeXGyrePagellaMath(3)/m/n on input 
-line 26.
+line 27.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 26.
+(Font)              `largesymbols' in the math version `bold' on input line 27.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/TeXGyrePagellaMath(3)/b/n on input 
-line 26.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
 
  (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -929,10 +929,10 @@ ase;script=latn;language=dflt;+tlig;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/TeXGyreAdventor(1)/m/n on input lin
-e 26.
+e 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/TeXGyreAdventor(1)/b/n on input li
-ne 26.
+ne 27.
 
 Package fontspec Info: Font family 'TeXGyreCursor(0)' created for font 'TeX
 (fontspec)             Gyre Cursor' with options
@@ -1022,10 +1022,10 @@ dflt;+tlig;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/TeXGyreCursor(1)/m/n on input line 
-32.
+33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/TeXGyreCursor(1)/b/n on input line 
-32.
+33.
 luaotfload | aux : font no 108 (nil) does not define feature smcp for script lat
 n with language dflt
 luaotfload | aux : font no 109 (nil) does not define feature smcp for script lat
@@ -1283,11 +1283,11 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            hyphenation	
 (polyglossia)            loader	loadhyph-hu.tex
 (polyglossia)            synonyms	
 (polyglossia)            patterns	hyph-hu.pat.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
 (polyglossia)            righthyphenmin	2 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
@@ -1710,7 +1710,7 @@ Package: memhfixc 2023/09/10 v1.22 hyperref package fixes for memoir class
 \c@memhycontfloat=\count532
 \c@Hpagenote=\count533
 )
-Package hyperref Info: Option `final' set `true' on input line 77.
+Package hyperref Info: Option `final' set `true' on input line 78.
 \@my@claim@mark=\marks4
 
 >>> Made patch specific for amsthm.
@@ -1720,7 +1720,8 @@ Package hyperref Info: Option `final' set `true' on input line 77.
 \dtlrows@quotes=\count535
 \dtlcols@quotes=\count536
 A bölcsesség:
-23:Failure is the condiment that gives success its flavor.-- Truman Capote
+7:To succeed in life, you need two things: ignorance and confidence.-- Mark Twa
+in
  
 \la@idxfile=\write6
 
@@ -1733,39 +1734,39 @@ Package csquotes Info: Redefining alias 'default' -> 'magyar'.
 (./la.aux)
 \openout1 = la.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Info: Redefining \microtypecontext on input line 251.
-Package microtype Info: Applying patch `item' on input line 251.
-Package microtype Info: Applying patch `toc' on input line 251.
-Package microtype Info: Applying patch `eqnum' on input line 251.
-Package microtype Info: Applying patch `footnote' on input line 251.
-Package microtype Info: Applying patch `verbatim' on input line 251.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 252.
+LaTeX Font Info:    ... okay on input line 252.
+LaTeX Info: Redefining \microtypecontext on input line 252.
+Package microtype Info: Applying patch `item' on input line 252.
+Package microtype Info: Applying patch `toc' on input line 252.
+Package microtype Info: Applying patch `eqnum' on input line 252.
+Package microtype Info: Applying patch `footnote' on input line 252.
+Package microtype Info: Applying patch `verbatim' on input line 252.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 251.
+LaTeX Info: Redefining \showhyphens on input line 252.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -1885,8 +1886,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'la.bbl' found.
  (./la.bbl)
-Package biblatex Info: Reference section=0 on input line 251.
-Package biblatex Info: Reference segment=0 on input line 251.
+Package biblatex Info: Reference section=0 on input line 252.
+Package biblatex Info: Reference segment=0 on input line 252.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1922,14 +1923,14 @@ Package biblatex Info: Reference segment=0 on input line 251.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 251.
+Package hyperref Info: Link coloring OFF on input line 252.
 (./la.out) (./la.out)
 \@outlinefile=\write7
 
 \openout7 = la.out
-LaTeX Info: Redefining \rmfamily on input line 251.
-LaTeX Info: Redefining \sffamily on input line 251.
-LaTeX Info: Redefining \ttfamily on input line 251.
+LaTeX Info: Redefining \rmfamily on input line 252.
+LaTeX Info: Redefining \sffamily on input line 252.
+LaTeX Info: Redefining \ttfamily on input line 252.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 \l@magyar = a dialect from \language\l@hungarian 
@@ -1939,7 +1940,7 @@ File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
 <use Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG>
 Package luatex.def Info: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_frei
-en_Künsten.JPG  used on input line 256.
+en_Künsten.JPG  used on input line 257.
 (luatex.def)             Requested size: 418.25368pt x 520.13634pt.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -2271,7 +2272,7 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 10.28888pt on input line 266.
+(Font)              scaled to size 10.28888pt on input line 267.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `TeXGyreAdventor' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2279,7 +2280,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 luaotfload | aux : font no 117 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 10.15887pt on input line 266.
+(Font)              scaled to size 10.15887pt on input line 267.
 luaotfload | aux : font no 119 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 120 (nil) defines no feature for script latn with lan
@@ -2311,11 +2312,11 @@ guage hun [4
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 17.78261pt on input line 287.
+(Font)              scaled to size 17.78261pt on input line 288.
 luaotfload | aux : font no 121 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 17.55792pt on input line 287.
+(Font)              scaled to size 17.55792pt on input line 288.
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3594,7 +3595,7 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 14.81598pt on input line 329.
+(Font)              scaled to size 14.81598pt on input line 330.
 luaotfload | aux : font no 163 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 162 (nil) defines no feature for script latn with lan
@@ -5380,11 +5381,11 @@ guage hun [43]
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2947.
+(Font)              scaled to size 9.3886pt on input line 2948.
 luaotfload | aux : font no 177 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2947.
+(Font)              scaled to size 9.26996pt on input line 2948.
 luaotfload | aux : font no 167 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -7854,7 +7855,7 @@ uage hun
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 10271.
+(amsmath)                 on input line 10272.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -8205,6 +8206,10 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [158]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 177 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
@@ -9685,14 +9690,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: CC7DFC0C4A81833265BE8C31FE0E6B68;18362.
+(rerunfilecheck)             Checksum: 5B0625DB6948F55E1432482F78C5F830;18362.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 37926 strings out of 476435
+ 37927 strings out of 476435
  125002,2373549 words of node,token memory allocated
  5244 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 57 glue, 5 kern, 1 penalty, 29
@@ -9718,10 +9723,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (231 pages, 9322464 bytes).
+Output written on la.pdf (231 pages, 9321950 bytes).
 
-PDF statistics: 2957 PDF objects out of 2984 (max. 8388607)
- 2657 compressed objects within 27 object streams
- 1131 named destinations out of 1200 (max. 131072)
+PDF statistics: 2958 PDF objects out of 2984 (max. 8388607)
+ 2658 compressed objects within 27 object streams
+ 1132 named destinations out of 1200 (max. 131072)
  769 words of extra memory for PDF output out of 10000 (max. 100000000)
 
