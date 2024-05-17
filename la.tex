@@ -1,3 +1,4 @@
+% !TeX root = zsiga.tex
 % arara: latexmk: { 
 % arara: --> engine: lualatex,
 % arara: --> options: [ '' ]
@@ -10450,7 +10451,7 @@ Ezt úgy fejezzük ki, hogy az $\mathbb{F}$ test nem \emph{2 karakaterisztikáj�
 	leképezést \emph{anti-szimmetrikus (alternáló) multi-lineáris operátornak} nevezzük.
 
 	Ha $V$ egy nem 2 karakterisztikájú test feletti $n$-dimenziós vektortér,
-	akkor egy $V\times \dots \times V\to V$ $n$-lineáris anti-szimmetrikus függvényt
+    akkor egy $V\times \dots \times V\to \mathbb{F}$ $n$-lineáris anti-szimmetrikus függvényt
 	a $V$ vektortér feletti \emph{mértéknek}\index{mérték} nevezzünk.
 \end{definition}
 \begin{proposition}
@@ -11032,7 +11033,7 @@ A fejezet legfontosabb gondolatához érkeztünk.
 	\index{determináns}
 	Legyen $A\in L\left( V \right)$ a $V$ véges dimenziós vektortér egy lineáris transzformációja.
 	Ehhez létezik egyetlen olyan $\delta\left( A \right)\in\mathbb{F}$ szám,
-	amelyre minden $f$ nem triviális $V$ feletti mérték esetén az
+	amelyre minden $V$ feletti $f$ mérték esetén az
 	\[
 		f\left( Av_1,\ldots,Av_n \right)
 		=
@@ -11113,12 +11114,12 @@ A fejezet legfontosabb gondolatához érkeztünk.
 	Másrészt a $\delta \left( A\right) $ és $\delta \left( B\right) $ értelmezé%
 	se szerint
 	\[
-		f\left( ABv_{1},\ldots ,ABv_{n}\right) =\delta \left( A\right) f\left(
-		Bv_{1},\ldots ,Bv_{n}\right) =\delta \left( A\right) \delta \left( B\right)
+		f\left( ABv_{1},\ldots ,ABv_{n}\right) =\delta \left( B\right) f\left(
+		Av_{1},\ldots ,Av_{n}\right) =\delta \left( B\right) \delta \left( A\right)
 		f\left( v_{1},\ldots ,v_{n}\right)
 	\]
 	E két utolsó sort összevetve kapjuk, hogy $\delta \left( A\circ B\right)
-		=\delta \left( A\right) \delta \left( B\right) .$
+		=\delta \left( B\right) \delta \left( A\right) .$
 \end{proof}
 
 \begin{proposition}
@@ -11413,7 +11414,7 @@ A mátrix transzponáltjának determinánsa azonos a mátrix determinánsával.
 akkor a sorok szerinti kifejtést kapjuk.
 
 A determináns kifejtésével az mátrix inverzére kapunk explicit formulát:
-\begin{proposition}
+\begin{proposition}[Cramer-szabály]
 	Legyen $[A]$ egy reguláris mátrix.
 	Ekkor az inverz mátrix a kofaktormátrix transzponáltjának a determináns reciprokával vett szorzata.
 
@@ -11461,7 +11462,7 @@ A determináns kifejtésével az mátrix inverzére kapunk explicit formulát:
 	\sum_{i=1}^nb_i\left( -1 \right)^{i+k}A_{i,k}.
 	\)
 	Na most az $Ax=b$ ekvivalens az $x=A^{-1}b$-vel,
-	így a Cramer-szabály szerint
+	így az előző Cramer-szabály szerint
 	\[
 		x_k=[A^{-1}]_k\cdot b
 		=
@@ -11568,7 +11569,8 @@ Ebből azonnal látjuk, hogy a minimálpolinom osztója a karakterisztikus polin
 Meggondoltuk tehát a Cayley\,--\,Hamilton-tételt abban a speciális esetben,
 mikor a test a kompex számtest.
 
-A Cayley\,--\,Hamilton-tétel nem függ az algebra alaptételétől, amint azt rögtön megmutatjuk.
+\subsection{A Cayley\,--\,Hamilton-tétel}
+A Cayley\,--\,Hamilton-tétel nem függ sem az algebra alaptételétől, sem a Jordan-normálalaktól, amint azt rögtön megmutatjuk.
 \begin{lemma}
 	Legyen $\mathbb{F}$ egy test, amelyben $1+1\neq 0$.
 	Tetszőlegesen választott $\alpha_0,\ldots,\alpha_{n-1}\in\mathbb{F}$ számok mellett
@@ -11836,7 +11838,7 @@ Persze $H\perp H^\perp$ csak tautologia.
 
 \begin{definition}
 	Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
-	Az $\left\{ x_1,\cdots,x_k \right\}$ vektorrendszert
+	Az $\left\{ x_1,\ldots,x_k \right\}$ vektorrendszert
 	\begin{enumerate}
 		\item \emph{ortogonálisnak} nevezünk, ha minden $i\neq j$ esetén
 		      $x_i\perp x_j$.
@@ -11858,10 +11860,10 @@ $\ip{\frac{1}{\sqrt{\ip{v}{v}}}v}{\frac{1}{\sqrt{\ip{v}{v}}}v}
 	\ip{v}{v}=1.
 $)
 
-Egynél több elemből álló ortonormált rendszert most nem tudunk mutatni,
-de később ennek oka egészen világos lesz.
+Egynél több elemből álló ortonormált rendszert most nem tudunk mutatni.
+Az oka ennek egészen világos lesz később.
 Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.
-Ebből annyi, hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, az már látható is:
+Ebből annyi, hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, már most látható:
 \begin{proposition}
 	Egy zérus elemeket nem tartalmazó ortogonális rendszer lineárisan független rendszer is.
 \end{proposition}
@@ -12057,7 +12059,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		\leq
 		\|x\|^2+\|y\|^2+2|\ip{x}{y}|
 		\leq
-		\|x\|^2+\|y\|^2+\|x\|\|y\|
+		\|x\|^2+\|y\|^2+2\cdot\|x\|\cdot\|y\|
 		=\left( \|x\|+\|y\| \right)^2.
 	\end{multline*}
 	Mindkét oldal gyökét véve, kapjuk a háromszög-egyenlőtlenséget.
@@ -13689,7 +13691,7 @@ ezért a Bessel-egyenlőség ortogonális projekciókra is igaz:\index{Bessel-eg
 	Jelölés: $Q\perp P$.
 \end{definition}
 Világos tehát, hogy $QP=0$, $\im P\perp \im Q$ és $PQ=0$ ekvivalens megfogalmazásai $Q\perp P$-nak,
-amennyiben $P,Q\in L\left( V \right)$ ortogonális projelciók.
+amennyiben $P,Q\in L\left( V \right)$ ortogonális projekciók.
 Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, ha $M_1\perp M_2$.
 \begin{proposition}
 	Legyenek $P_1,\ldots,P_r$ ortogonális projekciók.
