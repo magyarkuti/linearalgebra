@@ -1,4 +1,4 @@
-% !TeX root = zsiga.tex
+% !TeX root = la.tex
 % arara: latexmk: { 
 % arara: --> engine: lualatex,
 % arara: --> options: [ '' ]
@@ -14357,11 +14357,103 @@ hogy egy valós szimmetrikus mátrix ortonormált bázisban diagonalizálható.
 
 %\subsection{Ortogonális transzformáció}
 
+\section{Kvadratikus alakok}
+A fejezet további részében újra $\mathbb{K}$, azaz $\mathbb{R}$ vagy $\mathbb{C}$, 
+feletti véges dimenziós $\left( V,\ip{\cdot}{\cdot} \right)$ skaláris szorzatokról lesz szó.
+Felteszem, hogy az olvasó a kvadratikus alakok mátrix manipulációjával tisztában van.
+Lásd \aaz{apx:Kvadr}.~függeléket.
+\begin{definition}
+    Legyen $A\in L\left( V \right)$ egy önadjungált transzformáció.
+    A
+    \[
+        Q_A\left( v \right)
+        =
+        \ip{v}{Av}
+    \]
+    függvényt az $A$ transzformáció által meghatározott kvadratikus alaknak nevezzük.
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendix             %
-%%%%%%%%%%%%%%%%%%%%%%%%
+    Világos, hogy
+    $Q_A\left( v \right)=\ip{v}{Av}=\ip{Av}{v}=\overline{\ip{v}{Av}}$
+    szerint a kvadratikus alak egy valós értékű $Q_A:V\to\mathbb{R}$ függvény
+    -- még $\mathbb{K}=\mathbb{C}$ mellett is.
+\end{definition}
 
+Az is világos, hogy tetszőleges $\mu\in\mathbb{K}$ skalár és $x\in V$ vektor mellett
+\[
+    Q_A(\mu x)=\ip{\mu x}{A\mu x}=\mu\overline{\mu}\ip{v}{Av}=|\mu|^2Q_A(v).
+\]
+Ebből azonnal látszik, hogy ha $Q_A$ kvadratikus alak értékkészletét szeretnénk leírni,
+akkor ehhez elegendő a tér 1 normájú vektorain vett értékeket ismerni,
+hiszen minden $x\neq 0$ vektor mellett $x=\|x\|\cdot\frac{x}{\|x\|}$,
+ergo $Q_A\left( x \right)=\|x\|^2Q_A\left( \frac{x}{\|x\|} \right)$.
+
+\begin{proposition}
+    Legyen $A\in L\left( V \right)$ önadjungált transzformáció,
+    jelölje
+    $\lambda_{\min}=\min\sigma\left( A \right)$ a legkisebb és
+    $\lambda_{\max}=\max\sigma\left( A \right)$ a legnagyobb sajátértéket.
+    Ekkor minden $x\in V$ mellett
+    \[
+        \lambda_{\min}\cdot\|x\|^2
+        \leq
+        Q_A\left( x \right)
+        \leq
+        \lambda_{\max}\cdot\|x\|^2,
+    \]
+    továbbá tetszőleges $\lambda$ sajátérték és hozzá tartozó $v$ sajátvektor esetén
+    $Q_A\left( v \right)=\lambda\|v\|^2$.
+\end{proposition}
+\begin{proof}
+    Legyen $A$ spektrálfelbontása $A=\sum_{j=1}^k\lambda_jP_j$, 
+    azaz $\lambda_1,\ldots,\lambda_k$ a spektrum különböző elemei, 
+    és $P_1,\ldots,P_k$ nem zérus, egymásra páronként merőleges ortogonális projekciók, 
+    amelyek összege az identitás transzformáció.
+    Így
+    \[
+        Q_A\left( x \right)=
+        \ip{x}{Ax}=
+        \ip{x}{\sum_{j=1}^k\lambda_jP_jx}
+        =
+        \sum_{j=1}^k\lambda_j\ip{x}{P_jx}
+        =
+        \sum_{j=1}^k\lambda_j\|P_jx\|^2
+    \]
+    Ez utóbbi szummában, ha minden sajátértéket kicserélünk a legnagyobbikra, 
+    akkor kapjuk, hogy
+    \[
+        Q_A\left( x \right)
+        \leq
+        \sum_{j=1}^k\lambda_{\max}\|P_jx\|^2
+        =
+        \lambda_{\max}\left( \sum_{j=1}^k\|P_jx\|^2 \right)
+        =
+        \lambda_{\max}\|\sum_{j=1}^kP_jx\|^2
+        =
+        \lambda_{\max}\|x\|^2.
+    \]
+    Az alsó becslés teljesen analóg módon
+    \[
+        Q_A\left( x \right)
+        \geq
+        \sum_{j=1}^k\lambda_{\min}\|P_jx\|^2
+        =
+        \lambda_{\min}\left( \sum_{j=1}^k\|P_jx\|^2 \right)
+        =
+        \lambda_{\min}\|\sum_{j=1}^kP_jx\|^2
+        =
+        \lambda_{\min}\|x\|^2.
+    \]
+    Persze, ha $Av=\lambda v$, akkor 
+    $Q_A\left( v \right)
+    =
+    \ip{v}{Av}
+    =
+    (\ip{v}{\lambda v}
+    =
+    \lambda\ip{v}{v}
+    =\lambda\|v\|^2.
+    $
+\end{proof}
 \section{Operátornorma}
 A spektrális felbontási tétel egy fontos következménye,
 hogy egy normális transzformációt egyértelműen meghatározza a spektruma, és a sajátaltereire való
@@ -14653,7 +14745,10 @@ Legvégül a \CStar-azonosság és következményei egy sorban
 	r\left( AA^\ast \right)=\|A A^\ast\|=\|A^\ast\|^2.
 \]
 
-%%% Appendix %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix             %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
 \appendix
 \renewcommand{\chaptername}{függelék}
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
@@ -16151,7 +16246,7 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 \end{proof}
 %% a vége következik
 
-\chapter{Kvadratikus alakok definitségének egy naiv tárgyalása}
+\chapter{Kvadratikus alakok definitségének egy naiv tárgyalása}\label{apx:Kvadr}
 A kvadratikus alaknak mondunk egy speciális többváltozós függvényt.
 \begin{definition}
     Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
@@ -16175,7 +16270,7 @@ Gyakorlásképpen írjuk fel milyen három változós kvadratikus alakok lehets�
     \[
         Q(x)=\ip{x}{Ax}
     \]
-    tetszőleges $x\in\mathbb{R}^n.$
+    tetszőleges $x\in\mathbb{R}^n$ mellett.
 \end{proposition}
 Ebből az alakból már világos, hogy az $A+B$ összeghez tartozó kvadratikus alak azonos az $A$-hoz és a $B$-hez
 tartozó kvadratikus alakok összegével, 
