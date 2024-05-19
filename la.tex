@@ -14503,7 +14503,10 @@ is meghatározzák:
     No de, ha $\|x\|=1$ mellett $Q_A(x)=0$, akkor $\lambda_{\min}\leq Q_A\left( x \right)=0$,
     ergo az $A$ legkisebb sajátértéke zérus.
 
-    Megfordítva, ha minden sajátérték nem negatív, de az egyik zérus, akkor $0=\lambda_{\min}\leq Q_A\left( x \right)$, de a zérus sajátérték miatt $A$ szinguláris, ami éppen azt jelenti, hogy létezik $x\neq 0$ vektor,
+    Megfordítva, ha minden sajátérték nem negatív, de az egyik zérus, 
+    akkor tetszőleges $x\in V$ vektor mellett 
+    $0=\lambda_{\min}\|x\|^2\leq Q_A\left( x \right)$, 
+    de a zérus sajátérték miatt $A$ szinguláris, ami éppen azt jelenti, hogy létezik $x\neq 0$ vektor,
     amelyre $Ax=0$, ergo $Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{0}=0$.
 
     A fentieket a $(-A)$ önadjungált transzformációra alkalmazva a negatív definitség és szemidefinitség klasszifikációját kapjuk. 
@@ -14561,7 +14564,12 @@ $r\left( A \right)=\lambda_{\max}.$
 	így $\sigma\left( A^\ast A \right)\neq \emptyset$,
 	$A^\ast A$ valamennyi sajátértéke nem negatív valós szám,
 	ezért
-	$r\left( A^\ast A \right)=\max\sigma\left( A^\ast A \right)$.
+	$r\left( A^\ast A \right)=\max\sigma\left( A^\ast A \right)$, 
+    és az $A^\ast A$ transzformáció meghatározta kvadratikus alakra 
+    \[
+        Q_{A^\ast A}\left( x \right)=\|Ax\|^2.
+        \qedhere
+    \]
 \end{proposition}
 \begin{proof}
 	Világos, hogy $(A^\ast A)^\ast=A^\ast (A^\ast)^\ast=A^\ast A$,
@@ -14571,85 +14579,16 @@ $r\left( A \right)=\lambda_{\max}.$
 	No de, ha $\lambda\in\sigma\left( A^\ast A \right)$ és $x\in V$ egy nem zérus vektor,
 	amelyre $A^\ast Ax=\lambda x$, akkor
 	\[
-		\lambda\ip{x}{x}
-		=
-		\ip{\lambda x}{x}
-		=
-		\ip{A^\ast Ax}{x}
-		=
+		\|Ax\|^2
+        =
 		\ip{Ax}{Ax}
-		=\|Ax\|^2.
-		\
+        =
+		\ip{A^\ast Ax}{x}
+        =Q_{A^\ast A}\left( x \right)
+        =
+		\lambda\|x\|^2.
 	\]
-	Ebből persze $\lambda\geq 0$ azonnal következik.
-\end{proof}
-\begin{proposition}
-	Legyen mint az előző állitásban $A\in L\left( V,W \right)$.
-	Definálja $Q\left( v \right)=\ip{A^\ast Av}{v}$ a $Q:V\to\left[ 0,\infty \right)$ nem negatív, valós függvényt.
-	Legyen $\lambda_{\max}=\max\sigma\left( A^\ast A \right)$,
-	továbbá legyen
-	$v_{\max}\in V$ az $A^\ast A$ transzformációnak a $\lambda_{\max}$ sajátértékéhez tartozó olyan sajátvektora,
-	amelyre $\|v_{\max}\|=1$.
-	Ekkor
-	\[
-		\max\left\{ Q\left( v \right):v\in V,\|v\|\leq 1 \right\}
-		=
-		\lambda_{\max}
-		=
-		Q\left( v_{\max} \right).
-		\qedhere
-	\]
-\end{proposition}
-\begin{proof}
-	Tudjuk, hogy $A^\ast A$ önadjungált, ezért mind $\mathbb{R}$, mind $\mathbb{C}$ felett diagonalizálható.
-	Létezik tehát $u_1,\ldots,u_n$ ortonormált bázis $V$-ben,
-	amelynek minden vektora sajátvektora $A^\ast A$-nak.
-	Ha $v=\sum_{j=1}^n\alpha_ju_j$ olyan vektor,
-	amelyre $\|v\|^2=\sum_{j=1}^n|\alpha_j|^2=1$,
-	akkor
-	\begin{multline*}
-		Q\left( v \right)
-		=
-		\ip{A^\ast A\left( \sum_{j=1}^n\alpha_ju_j \right)}{\left( \sum_{k=1}^n\alpha_ku_k \right)}
-		=
-		\sum_{j=1}^n\sum_{k=1}^n\alpha_j\bar{\alpha}_k\ip{A^\ast Au_j}{u_k}
-		\\
-		=
-		\sum_{j=1}^n\sum_{k=1}^n\alpha_j\bar{\alpha}_k\lambda_j\ip{u_j}{u_k}
-		=
-		\sum_{j=1}^n\alpha_j\bar{\alpha}_j\lambda_j
-		=
-		\sum_{j=1}^n|\alpha_j|^2\lambda_j
-		\leq
-		\lambda_{\max}\sum_{j=1}^n|\alpha_j|^2
-		=
-		\lambda_{\max}.
-	\end{multline*}
-	Itt az $u_i$ sajátvektorok tartoznak a $\lambda_i$ sajátértékekhez.
-	Így
-	\begin{math}
-		\sup\left\{ Q\left( v \right):v\in V,\|v\|\leq 1 \right\}
-		\leq
-		\lambda_{\max}.
-	\end{math}
-
-	No de,
-	\begin{math}
-		Q\left( v_{\max} \right)
-		=
-		\ip{A^\ast Av_{\max}}{v_{\max}}
-		=
-		\lambda_{\max}\ip{v_{\max}}{v_{\max}}
-		=\lambda_{\max},
-	\end{math}
-	amiből már az is látszik, hogy
-	\begin{math}
-		\lambda_{\max}
-		=
-		Q\left( v_{\max} \right)
-		\leq
-		\sup\left\{ Q\left( v \right):v\in V,\|v\|\leq 1 \right\}.
-	\end{math}
+    Ebből persze $\lambda\geq 0$, és $Q_{A^\ast A}\left( x \right)=\|Ax\|^2$ azonnal következik.
 \end{proof}
 Összefoglalásként kapjuk az operátornorma és a spektrálsugár közti kapcsolatot:
 \begin{proposition}
@@ -14662,6 +14601,7 @@ $r\left( A \right)=\lambda_{\max}.$
 \end{proposition}
 \begin{proof}
 	Az $x \mapsto x^2$ függvény a számegyenes nem negatív része felett szigorúan monoton növő,
+    folytonos függvény, 
 	ezért
 	\[
 		\|A\|^2
@@ -14672,47 +14612,46 @@ $r\left( A \right)=\lambda_{\max}.$
 		=
 		\sup\left\{ \|Av\|^2:\|v\|\leq 1 \right\}
 		=
-		\sup\left\{ Q(v):\|v\|\leq 1 \right\}
-		=
-		\max\sigma\left( A^\ast A \right).
-		\qedhere
+        \sup\left\{ Q_{A^\ast A}(v):\|v\|\leq 1 \right\}.
 	\]
+    No de láttuk, hogy minden $v\in V, \|v\|\leq 1$ mellett $Q_{A^\ast A}\left( v \right)\leq \lambda_{\max}$
+    és egy a $\lambda_{\max}$-hoz tartozó egységnyi normájú $x$ sajátvektorra 
+    $Q_{A^\ast A}\left( x \right)=\lambda_{\max}$.
+    Ez éppen azt jelenti, hogy $\|A\|^2=\lambda_{\max}=\max\sigma(A^\ast A)$.
 \end{proof}
 Ha ezt egy önadjungált transzformációra írjuk fel,
 akkor még egyszerűbb állítást kapunk.
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ egy önadjungált lineáris transzformáció a
 	$V$ véges dimenziós, $\mathbb{K}$ feletti ska\-lá\-ris\-szor\-za\-tos-té\-ren.
-	Ekkor
-	\[
+	Ekkor az operátornorma egybeesik a spektrálsugárral, azaz
+	\(
 		\|A\|
 		=
-		r(A)
-		=
-		\max\left\{ |\min\sigma(A)|,|\max\sigma(A)| \right\}.
+		r(A).
 		\qedhere
-	\]
+	\)
 \end{proposition}
 \begin{proof}
 	Mivel $A$ önadjungált,
 	ezért $A$-nak van spektrálfelbontása, és ha ez $A=\sum_{j=1}^r\lambda_jP_j$,
 	akkor az $A^2$ spektrálfelbontása $A^2=\sum_{j=1}^r\lambda_j^2P_j$,
 	ahol a $\lambda_1,\ldots,\lambda_r$ valós számok az $A$ spektrumának elemei.
-	Ez azt jelenti, hogy $A^2$ minden sajátértéke négyzete $A$ valamelyik sajátértékének.
 	Így
-	\[
+    \begin{multline*}
 		r\left( A^2 \right)
 		=
 		\max\left\{ \lambda_j^2:j=1,\ldots,r \right\}
 		=
-		\left(
-		\max\left\{ |\lambda_{\min}|,|\lambda_{\max}| \right\}
-		\right)^2
+		\max\left\{ |\lambda_j|^2:j=1,\ldots,r \right\}
+		=
+        \\
+        \left( \max\left\{ |\lambda_j|:j=1,\ldots,r \right\} \right)^2
 		=
 		r\left( A \right)^2.
-	\]
+    \end{multline*}
 	No de, újra használva az $A^\ast=A$ feltevést
-	\[
+	\(
 		\|A\|^2
 		=
 		r\left( A^\ast A \right)
@@ -14720,8 +14659,7 @@ akkor még egyszerűbb állítást kapunk.
 		r\left( A^2 \right)
 		=
 		r\left( A \right)^2.
-		\qedhere
-	\]
+	\)
 \end{proof}
 \begin{proposition}
 	Tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
