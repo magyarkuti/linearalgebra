@@ -7130,15 +7130,22 @@ Polinomok segítségével sok-sok új invariáns alteret kapunk.
 	\]
 	amiből már látszik, hogy $Av\in\im p\left( A \right)$.
 \end{proof}
-Speciálisan ez igaz az $t-\lambda$ polinomra is,
-amikor $\lambda$
-egy sajátértéke $A$-nak. Tehát a $\lambda$ sajátértékhez tartozó
+Az előző állítás alkalmazható a $t-\lambda$ polinomra is,
+amikor $\lambda$ egy sajátértéke $A$-nak. 
+Tehát a $\lambda$ sajátértékhez tartozó
 $\ker \left( A-\lambda I \right)$ sajátaltér egy legalább egydimenziós invariáns altere
 $A$-nak.\index{sajátaltér}
 \begin{definition}
 	Azt mondjuk, hogy az $A$ lineáris transzformáció a $p$ polinom gyöke,
-	ha $p\left( A \right)=0$.
+	ha $p\left( A \right)$ a konstans zérus transzformációja a vektortérnek,
+    azaz $p\left( A \right)=0$.
 \end{definition}
+Persze $p\left( A \right)=0$ éppen $\ker p\left( A \right)=V$-t jelenti, de általában, 
+ha $v\in\ker p\left( A \right)$, akkor 
+$\lin(v;A)\subseteq\ker p\left( A \right)$, hiszen $\ker p\left( A \right)$ egy invariáns altér.
+Később azt is látjuk majd, hogy irreducibilis $p$ polinom mellett a $\ker p\left( A \right)$ 
+altér előáll mint néhány egyetlen elem generálta legszűkebb $A$-invariáns altér direktösszege.
+
 Mielőtt tovább lépünk érdemes visszagondolnunk arra,
 hogy egy test feletti polinomgyűrű egy főideálgyűrű.\index{főideál-gyűrű}\index{főideál}
 Láttuk ugyanis
@@ -7205,13 +7212,13 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	Tudjuk, hogy az $\mathbb{F}\left[ t \right]$ polinomgyűrű egy főideál-gyűrű,\index{főideál}\index{főideál-gyűrű}
 	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$-t.
 	Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
-	Ezt a polinomot nevezzük az $A$ transzformáció, 
+	Ezt a polinomot nevezzük az $A$ transzformáció $v$ ponthoz tartozó
     \emph{kis minimálpolinomjának}\index{kis minimálpolinom}.\label{def:kisminimal}
-    a $v$ pontban.
 \end{definition}
 
 \begin{proposition}
-	Az  $n$  polinom pontosan akkor az $A$ transzformáció $v$ vektorhoz tartozó kis minimálpolinomja, ha
+    Az  $n\left( t \right)\in\mathbb{F}[t]$  
+    polinom pontosan akkor az $A$ transzformáció $v$ vektorhoz tartozó kis minimálpolinomja, ha
 	\begin{enumerate}
 		\item $n$ normált polinom,
 		\item $n\left( A \right)v=0$,
@@ -7237,7 +7244,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 \begin{proof}
     Legyen $n$ a szóban forgó kis minimálpolinom.
     Tudjuk, hogy $n|p$, ergo létezik $h$ polinom, amelyre $p=nh$.
-    No de, $p$ iredducibilis és $\deg n\geq 1$, ezért $h$ csak konstans lehet.
+    No de, $p$ iredducibilis és $\deg n\geq 1 (v\neq 0 !)$, ezért $h$ csak konstans lehet.
     Mivel $p$ is $n$ is normált, ezért e konstans csak 1 lehet.
     Ezt kellett belátni. 
 \end{proof}
@@ -8145,7 +8152,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Tegyük fel, hogy $m$ előáll mint a páronként relatív prím
 	normált polinomok
 	\[
-		m=p_1p_2\cdots p_n
+		m=p_1p_2\ldots p_n
 	\]
 	szorzata.
 	Jelölje minden $i=1,\ldots,n$ mellett $V_i=\ker p_i\left( A \right)$
@@ -8153,7 +8160,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Világos, hogy $A_i\in L\left( V_i \right)$.
 	Ekkor
 	\begin{enumerate}
-		\item $V=V_1\oplus\dots\oplus V_n$;
+		\item $V=V_1\oplus\ldots\oplus V_n$;
 		\item $p_i$ az $A_i$ transzformáció minimálpolinomja minden szóba jövő
 		      $i=1,\ldots,n$ mellett.\qedhere
 	\end{enumerate}
@@ -8162,10 +8169,9 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	A polinomok $n$ száma szerinti teljes indukcióval igazolunk.
 	Az $n=1$ eset triviális, de $n=2$ éppen az előző állítás.
 
-	Most tegyük fel, hogy az állítás $n$-nél kevesebb polinom szorzatára igaz,
-	és lássuk be $n$-re.
-	Feltehető tehát, hogy $n\geq 3$.
-	Legyen $p=p_1\cdots p_{n-1}$.
+	Most tegyük fel, hogy $n\geq 3$, és az állítás $n$-nél kevesebb polinom szorzatára igaz.
+	Lássuk be $n$-re.
+	Legyen $p=p_1\ldots p_{n-1}$.
 	Világos, hogy $p$ és $p_n$ relatív prímek, hiszen ha $d$ irreducibilis osztója
 	$p$-nek és $p_n$-nek,
 	akkor $d$ prím tulajdonsága szerint $d|p_i$ valamely $i<n$-re,
@@ -8192,13 +8198,13 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	Világos tehát, hogy
 	\begin{enumerate}
 		\item
-		      $\ker p\left( A \right)=V_1\oplus\dots\oplus V_{n-1}$ és
+		      $\ker p\left( A \right)=V_1\oplus\ldots\oplus V_{n-1}$ és
 		\item $p_i$ az $A_i$ minimálpolinomja minden $i=1,\ldots,n-1$ mellett.
 	\end{enumerate}
 	Teljesül tehát a $V_1,\ldots,V_{n-1},V_n$ alterekre,
 	hogy mind diszjunkt -- az itt adott sorrendben -- az előzőek összegétől,
 	és a Minkowski-összegük az egész $V$ vektortér.\index{Minkowski-összeg}
-    \Aaz{pr:direktosszegsorrend}. állítás szerint tehát $V=V_1\oplus\dots\oplus V_n$.
+    \Aaz{pr:direktosszegsorrend}. állítás szerint tehát $V=V_1\oplus\ldots\oplus V_n$.
 \end{proof}
 \section{Minimálpolinom és diagonalizálhatóság}
 Alkalom nyílik,
@@ -8274,7 +8280,7 @@ ezért \ref{pr:redukcio-primszorzat}.~állítás így is fogalmazható.
 	\[
 		m
 		=
-		p_1^{m_1}p_2^{m_2}\cdots p_r^{m_r},
+		p_1^{m_1}p_2^{m_2}\ldots p_r^{m_r},
 	\]
 	alakban,
 	ahol $p_1,\ldots,p_r$ egymástól páronként különböző normált, irreducibilis polinomok.
@@ -8282,7 +8288,7 @@ ezért \ref{pr:redukcio-primszorzat}.~állítás így is fogalmazható.
 	jelölje $A_i=A_{|V_i}$ minden $i=1,\ldots,r$ mellett.
 	Ekkor
 	\begin{enumerate}
-		\item $V=V_1\oplus\dots\oplus V_r$ és,
+		\item $V=V_1\oplus\ldots\oplus V_r$ és,
 		\item $A_i$ minimálpolinomja $p_i^{m_i}$ minden $i=1,\ldots,r$ mellett.\qedhere
 	\end{enumerate}
 \end{proposition}
@@ -8302,13 +8308,13 @@ teljesül valamely $\alpha\in\mathbb{C}$ komplex szám és $n\in\mathbb{N}$ egé
 Ilyen $A$ transzformációra, ha $B$ jelöli a $B=A-\alpha I$ lineáris transzformációt,
 akkor a $B$ olyan,
 hogy valamely egész kitevős hatványa a konstans zérus transzformáció.
-Ez vezet majd a \emph{nilpotens}\index{nilpotens transzformáció} fogalmához.
+Ez vezet majd a \emph{nilpotens}\index{nilpotens transzformáció} transzformáció fogalmához.
 Ha felírjuk valamely bázisban egy ilyen $B$ nilpotens transzformáció mátrixát,
 akkor $A$ mátrixa is könnyen adódik $B$ mátrixából.
 Ehhez csak az $\alpha [I]$ mátrixot kell $\left[ B \right]$-hez adni,
 ami praktikusan nem jelent többet,
 mint hogy a $\left[ B \right]$ diagonális elemeket kell az $\alpha$ komplex számmal megemelni.
-A fenti gondolaton alapul a \emph{Jordan-normálak}\index{Jordan-normálalak} fogalma.
+A fenti gondolaton alapul a \emph{Jordan-normálalak}\index{Jordan-normálalak} fogalma.
 
 \chapter{Redukálás irreducibilis minimálpolinom esetén}
 \scwords A legegyszerűbb eset, mikor a minimálpolinom elsőfokú irreducibilis polinomok szorzata.
@@ -8495,7 +8501,7 @@ a $V_1$ altérre és az $A_1$ transzformációra.
     vagy $k$ dimenziós, vagy $k$ dimenziós alterek direktösszege.
 \end{proposition}
 \begin{proof}
-    Az egyszerűbb jelölések kedvéért legyen $B=\ker p\left( A \right)$.
+    Az egyszerűbb jelölések kedvéért legyen $B=p\left( A \right)$.
     Persze $B^m=0$, így $\im B^{m-1}\subseteq\ker B $.
     Persze $B^{m-1}$ is $A$-nak polinomja, 
     ergo $B^{m-1}$ képtere is $A$-ra nézve invariáns altere $\ker B=\ker p\left( A \right)$-nak.
@@ -8517,7 +8523,7 @@ Ez éppen \aaz{pr:redukcio-primszorzat}. állítás esete.
 \end{proposition}
 \begin{proof}
     \Aaz{pr:redukcio-primfelbontas}. állításban láttuk,
-	hogy $V=\ker p_1\left( A \right)\oplus\dots\oplus\ker p_s\left( A \right)$ alakú.
+	hogy $V=\ker p_1\left( A \right)\oplus\ldots\oplus\ker p_s\left( A \right)$ alakú.
 	Minden egyes $p_j$ a minimálpolinom legalább elsőfokú osztója, így $\ker p_j\left( A \right)\neq\left\{ 0 \right\}$.
 	Az előző állítás szerint minden $j$ mellett $\ker p_j\left( A \right)$ egy $\deg p_j$
 	dimenziós invariáns altér, vagy néhány ilyen direkt összege.
@@ -9258,7 +9264,8 @@ Ez azt jelenti, hogy minden nilpotens transzformációnak csak egyetlen normála
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	Ha $l=m$, akkor mindkét állítás triviálisan teljesül. Legyen tehát $0\leq l<m$.
+	Csak a 2. pontot kell igazolnunk.
+    Ha $l=m$, akkor mindkét állítás triviálisan teljesül. Legyen tehát $0\leq l<m$.
 	Az $A^l$ transzformáció az $\left\{ A^{m-l}v,\ldots,A^{m-1}v \right\}$
 	lineárisan független vektorrendszert nullára viszi,
 	így $l\leq\nu\left( A^l|\lin(v;A)\right)$.
@@ -9362,7 +9369,7 @@ Ez azt jelenti, hogy minden nilpotens transzformációnak csak egyetlen normála
 	Ugyanígy a másik direkt összeg felbontásból kapjuk, hogy $\nu\left( A \right)=s$.
 
 	A negyedik állítás.
-	Tegyük fel -- indirekt --, hogy $m_k=n_k$ nem teljesül minden $k=1,\ldots,r$ számra.
+	Tegyük fel -- indirekt --, hogy $m_k=n_k$ nem teljesül valamely $k=2,\ldots,r$ számra.
 	Legyen $1<t\leq r$ az a legkisebb szám, amelyre $m_t\neq n_t$.
 	Ezek szerint $k=1,\ldots,t-1$ mellett $m_k=n_k$, de $m_t\neq n_t$.
 	Feltehető, hogy $m_t>n_t$.
@@ -9976,7 +9983,11 @@ Később teljesen nyilvánvaló lesz, hogy egy Jordan-normálalakú mátrix
 	\left( t-\lambda_1 \right)^{k_1}\left( t-\lambda_2 \right)^{k_2}\dots\left( t-\lambda_s \right)^{k_s}
 \]
 alakú,
-ahol a $\lambda_j$ sajátérték pontosan $k_j$-szer szerepel a Jordan-normálalak diagonálisában.
+ahol a $\lambda_j$ sajátérték pontosan $k_j$-szer szerepel a Jordan-normálalak diagonálisában,
+azaz
+\[
+    k_j=\dim\left( \ker \left( A-\lambda_j I \right)^{m_j} \right).
+\]
 Mivel minden $\lambda_j$-re a legnagyobb Jordan-blokk éppen $m_j\times m_j$ méretű,
 ezért $m_j\leq k_j$ minden $j$-mellett.
 Ebből persze következik,
@@ -10155,7 +10166,7 @@ Kisvártatva látjuk majd, hogy ez miért van így.
     Definiálja tetszőleges $x_1,\ldots,x_n\in\mathbb{R}$ elem mellett
     \[
        V\left( x_1,\ldots,x_n \right)=
-       \prod_{1\leq i<j\leq n}x_j-x_i.
+       \prod_{1\leq k<l\leq n}x_l-x_k.
     \]
     A fenti $n$ változós $V$ polinomot nevezzük \emph{Vandermonde-polinomnak}\index{Vandermonde-polinom}.
 \end{definition}
@@ -10171,10 +10182,13 @@ A determináns felépítésének sarokköve a következő gondolat.
 \begin{proof}
     Legyen az $i,j$ indexekre $i<j$.
     A Vandermonde-polinom argumentum listájában cseréljük fel az $i$-edik és a $j$-edik változót.
-    Azt kell megmutatnunk, hogy $V\left( \cdots,x_j,\cdots,x_i,\cdots \right)=-V\left( \cdots,x_i,\cdots,x_j,\cdots \right)$, ahol a ki nem írt változók a helyükön maradnak.
-    A definíció szerint a $V\left( \cdots,x_j,\cdots,x_i,\cdots \right)$ felírásához tekintenünk kell az összes 
+    Azt kell megmutatnunk, hogy 
+    $V\left( \ldots,x_j,\ldots,x_i,\ldots \right)
+    =
+    -V\left( \ldots,x_i,\ldots,x_j,\ldots \right)$, ahol a ki nem írt változók a helyükön maradnak.
+    A definíció szerint a $V\left( \ldots,x_j,\ldots,x_i,\ldots \right)$ felírásához tekintenünk kell az összes 
     $\left( k,l \right)$ párt, ahol $1\leq k<l\leq n$, és az 
-    \[\cdots,x_j,\cdots,x_i,\cdots
+    \[\ldots,x_j,\ldots,x_i,\ldots
     \]
     argumentumlista
     $l$-edik helyén szereplő változóból ki kell vonnunk a $k$-adik helyen szereplő változót, 
@@ -10183,7 +10197,7 @@ A determináns felépítésének sarokköve a következő gondolat.
     \begin{enumerate}
         \item A $k$ és $l$ indexek egyike sem egyezik $i$-vel vagy $j$-vel.
             Magyarul $i\neq k$, $i\neq l$, $j\neq k$, $j\neq l$. 
-            Ekkor a felcserélt argumunentumú Vandermonde-polinom megfelelő tagjai:
+            Ekkor a felcserélt argumentumú Vandermonde-polinom megfelelő tagjai:
             \[
                 \prod_{\substack{k<l\\i\neq k,i\neq l\\ j\neq k,j\neq l}}x_l-x_k,
             \]
@@ -10199,7 +10213,7 @@ A determináns felépítésének sarokköve a következő gondolat.
             \]
             tag szerepel a felcserélt listájú Vandermonde-polinom definíciójában.
     \end{enumerate}
-    A 2. esetet bontsük szét négy részre. 
+    A 2. esetet bontsuk szét négy részre. 
     Az első két esetben a $k$ index rögzül és az $l$ fut,
     majd az $l$ rögzül és a $k$ fut.
     Arra kell figyelnünk, hogy a felcserélt argumentum lista $i$-edik helyén $x_j$ van és a $j$-edik helyen $x_i$.
@@ -10583,7 +10597,7 @@ a fenti eljárás mindkét esetben ugyanazt a számot eredményezi.
 
 \begin{proposition}[,,Példa'' mértékre]
 	Rögzítsünk az $n$-dimenziós $V$ vektortérben egy $\left\{ e_{1},\ldots e_{n}\right\} $ bázist.
-	Ekkor
+    Legyen
 	\[
 		d_{\left\{ e_1,\ldots,e_n \right\}}\left( v_1,\ldots,v_n \right)=
 		\sum_{\pi \in S_{n}}\sgn\pi\prod_{i=1}^{n}e_{i}^{\ast }v_{\pi \left( i\right)}
