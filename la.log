@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.3.15)  19 MAY 2024 06:14
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.3.15)  27 MAY 2024 12:27
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1283,12 +1283,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            loader	loadhyph-hu.tex
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            righthyphenmin	2
-(polyglossia)            synonyms	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            loader	loadhyph-hu.tex
 (polyglossia)            hyphenation	
-(polyglossia)            patterns	hyph-hu.pat.txt on input line 15
+(polyglossia)            patterns	hyph-hu.pat.txt
+(polyglossia)            synonyms	 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1720,7 +1720,8 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count535
 \dtlcols@quotes=\count536
 A bölcsesség:
-104:If you're going through hell, keep going.-- Winston Churchill
+70:Cause change and lead. Accept change and survive. Resist change and die.-- R
+ay Norda, Chairman, Novell
  
 \la@idxfile=\write6
 
@@ -6640,10 +6641,10 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [104]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
@@ -7862,7 +7863,7 @@ uage hun
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 10272.
+(amsmath)                 on input line 10286.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9132,7 +9133,7 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 14632.
+ut line 14646.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9737,14 +9738,14 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 Here is how much of LuaTeX's memory you used:
  37939 strings out of 476435
  125002,2373549 words of node,token memory allocated
- 5252 words of node memory still in use:
+ 5256 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 57 glue, 5 kern, 1 penalty, 29
- glyph, 851 attribute, 198 glue_spec, 851 attribute_list, 3 write, 1 pdf_action 
+ glyph, 852 attribute, 198 glue_spec, 852 attribute_list, 3 write, 1 pdf_action 
 nodes
-   avail lists: 1:11,2:1349,3:445,4:123,5:970,6:285,7:9555,8:136,9:2255,10:26,11
+   avail lists: 1:11,2:1347,3:445,4:123,5:970,6:285,7:9555,8:136,9:2255,10:26,11
 :1196
  58272 multiletter control sequences out of 65536+600000
- 217 fonts using 66878967 bytes
+ 217 fonts using 66878663 bytes
  91i,17n,122p,1146b,2240s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -9761,7 +9762,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (233 pages, 9328980 bytes).
+Output written on la.pdf (233 pages, 9329704 bytes).
 
 PDF statistics: 2980 PDF objects out of 2984 (max. 8388607)
  2678 compressed objects within 27 object streams
