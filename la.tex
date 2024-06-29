@@ -3778,7 +3778,7 @@ amiből már következik, hogy
 		      ami ellentmondás, hiszen $A_1$ mátrixnak kevesebb oszlopa van mint sora.
 		\item[$3.\Rightarrow 1.$] Éppen ezt igazoltuk a szakasz elején.
 	\end{description}
-	Ha a feltevések egyike -- így mindegyike --fennáll, akkor
+	Ha a feltevések egyike -- így mindegyike -- fennáll, akkor
 	\(
 		A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.%\qedhere
 	\)
@@ -4389,7 +4389,7 @@ Két indoklást is adunk.
 	amelyre az 1. és 2. feltételek egyszerre állnak fenn.
 \end{proof}
 Az állításnál picit többet igazoltunk. 
-A célunk az volt, hogy lássuk egy független rendszer elemeszáma nem haladja meg egy generátorrendszer elemszámát, de ezen felül még azt is megmutattuk,
+A célunk az volt, hogy lássuk egy független rendszer elemszáma nem haladja meg egy generátorrendszer elemszámát, de ezen felül még azt is megmutattuk,
 hogy a független rendszer elemei egyenként be-becserélhetőek a generátorrendszer 
 egy-egy alkalmas elemének elhagyásával a generátorrendszer elemi közé olyan módon, 
 hogy a csere után kapott rendszer is generátorrendszer maradjon.
@@ -10781,6 +10781,20 @@ Ez azt jelenti, hogy a definícióban csak az identitás permutációhoz tartoz�
 Az identitáshoz tartozó tag pedig a diagonális elemek szorzata.
 Speciálisan, az identitás mátrix determinánsa 1.
 
+\paragraph{Az oszlopok (sorok) lineáris függetlensége} eldönthető a determináns segítségével.
+Láttuk ugyanis, hogy a mátrix determinánsa nem változik, ha egyik oszlopához a másik skalárszorosát adjuk.
+Ha tehát az egyik oszlop felírható a többi lineáris kombinációjaként,
+akkor ehhez az oszlophoz véges sokszor egy másik oszlop skalárszorosát adva olyan mátrixot kapunk,
+amelyben ez az oszlop csupa zérus, és a determinánsa azonos a kiinduló mátrix determinánsával.
+Látjuk tehát, hogy ha az oszlopok lineárisan összefüggők, akkor a mátrix determinánsa zérus.
+Viszont ha az oszlopok lineárisan függetlenek,
+akkor Gauss\,--\,Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
+E szorzat nem lehet zérus, hiszen egyik pivot elem sem lehet zérus.
+Meggondoltuk tehát:
+\emph{
+	Egy mátrix determinánsa pontosan akkor zérus ha az oszlopok (sorok) lineárisan összefüggők.
+}
+
 \paragraph{Egy mátrix determinánsa Gauss\,--\,Jordan-eliminációval.}
 Képzeljük el, hogy adott egy reguláris mátrix, tehát olyan, amelynek oszlopai lineárisan függetlenek.
 Az eliminációs algoritmusnak arra az alakjára gondoljunk először, amikor a bázisba bevont oszlopvektornak
@@ -10811,20 +10825,6 @@ Ezek szerint az algoritmus a következő:
 	\footnote{
 		A determináns kiszámolásának ez a preferált és professzionális módja.
 		Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
-}
-
-\paragraph{Az oszlopok (sorok) lineáris függetlensége} eldönthető a determináns segítségével.
-Láttuk ugyanis, hogy a mátrix determinánsa nem változik, ha egyik oszlopához a másik skalárszorosát adjuk.
-Ha tehát az egyik oszlop felírható a többi lineáris kombinációjaként,
-akkor ehhez az oszlophoz véges sokszor egy másik oszlop skalárszorosát adva olyan mátrixot kapunk,
-amelyben ez az oszlop csupa zérus, és a determinánsa azonos a kiinduló mátrix determinánsával.
-Látjuk tehát, hogy ha az oszlopok lineárisan összefüggők, akkor a mátrix determinánsa zérus.
-Viszont ha az oszlopok lineárisan függetlenek,
-akkor Gauss\,--\,Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
-E szorzat nem lehet zérus, hiszen egyik pivot elem sem lehet zérus.
-Meggondoltuk tehát:
-\emph{
-	Egy mátrix determinánsa pontosan akkor zérus ha az oszlopok (sorok) lineárisan összefüggők.
 }
 
 \paragraph{Particionált mátrix determinánsa.}\label{par:particionalt}
@@ -16563,7 +16563,7 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
 \end{array}
 \]
 Ezután csak értelmeznünk kell a fenti eliminációt.
-A második táblázat az elő diád leválasztása után maradt kvadratikus alak mátrixa.
+A második táblázat az első diád leválasztása után maradt kvadratikus alak mátrixa.
 A leválasztott diád az első táblázat segédsorából olvasható le, 
 és a diád szorzója az első táblázatban választott pivot elem.
 Tehát
