@@ -14607,11 +14607,12 @@ Emlékezzünk arra, hogy egy bal felső négyzetes részmátrix determinánsát 
     Ekkor a kvadratikus alak $A$ mátrixa teljesen reguláris\index{teljesen reguláris}, 
     így az Észak\,--\,Nyugat-elimináció\index{Észak\,--\,Nyugat-elimináció} $d_1,\dots,d_n$ pivot elemeire rendre
     \[
-        d_1=\Delta_1
-        \qquad \text{ és minden} k\geq 2 \text{ esetén}
-        d_k=\frac{\Delta_k}{\Delta_{k-1}}.
+        d_1=\Delta_1,
+        d_k=\frac{\Delta_k}{\Delta_{k-1}}
+        \text{ minden } k\geq 2 \text{mellett.}
     \]
-    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata.
+    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, ergo a kvadratikus alak pozitív definit.
+    (Lásd \label{ap:quad-summary}) összefoglalást.
 \end{proof}
 \section{Operátornorma}
 A spektrális felbontási tétel egy fontos következménye,
@@ -16999,7 +17000,7 @@ tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus e
 Ahogyan azt az előzőekben már megértettük ezt az elemet kell a balfelső pozícióba csempészni, 
 és az algoritmusunk már működik is.
 
-\section{Definitség osztályozása a teljes négyzetek segítségével}
+\section{Definitség osztályozása a teljes négyzetek segítségével}\label{ap:quad-summary}
 Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
 a kvadratikus alak definitsége az alábbiak szerint osztályozható.
 Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
