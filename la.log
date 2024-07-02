@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  2 JUL 2024 06:47
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  2 JUL 2024 18:40
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1369,11 +1369,11 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            loader	loadhyph-hu.tex
-(polyglossia)            righthyphenmin	2
-(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            hyphenation	
+(polyglossia)            patterns	hyph-hu.pat.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            righthyphenmin	2
 (polyglossia)            synonyms	 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
@@ -1803,8 +1803,8 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-31:Some succeed because they are destined. Some succeed because they are determ
-ined.-- Unknown
+6:Always be yourself, express yourself, have faith in yourself, do not go out a
+nd look for a successful personality and duplicate it.-- Bruce Lee
  
 \la@idxfile=\write6
 
@@ -1814,7 +1814,11 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'magyar'.
-(./la.aux)
+(./la.aux
+
+LaTeX Warning: Label `ap:quad-summary' multiply defined.
+
+)
 \openout1 = la.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 252.
@@ -1932,6 +1936,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
+
 (/opt/texlive/texdir/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count543
@@ -9451,7 +9456,7 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 14732.
+ut line 14733.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -10074,6 +10079,10 @@ FiXme Summary: Number of notes: 0,
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `la.out' has not changed.
 (rerunfilecheck)             Checksum: FC28B1B4EED1E449F131B1737B3A121F;18512.
 Package logreq Info: Writing requests to 'la.run.xml'.
@@ -10082,7 +10091,7 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 37926 strings out of 475915
+ 37927 strings out of 475915
  125009,2373549 words of node,token memory allocated
  5253 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 56 glue, 5 kern, 1 penalty, 29
@@ -10090,8 +10099,8 @@ Here is how much of LuaTeX's memory you used:
 nodes
    avail lists: 1:8,2:1457,3:445,4:123,5:969,6:285,7:9514,8:136,9:2255,10:26,11:
 1196
- 58778 multiletter control sequences out of 65536+600000
- 217 fonts using 66878967 bytes
+ 58779 multiletter control sequences out of 65536+600000
+ 217 fonts using 66879271 bytes
  91i,17n,124p,1194b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -10108,7 +10117,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9338035 bytes).
+Output written on la.pdf (235 pages, 9337625 bytes).
 
 PDF statistics: 3002 PDF objects out of 3580 (max. 8388607)
  2698 compressed objects within 27 object streams
