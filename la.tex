@@ -3099,7 +3099,7 @@ nem más mint $A$ oszlopainak az $x_1,\ldots,x_n$ számokkal vett lineáris komb
 ami éppen az $A$ együttható mátrixszú inhomogén lineáris egyenletrendszer megoldását jelenti.
 
 Érdemes itt konkrét példákkal szemléltetni a homogén lineáris egyenletrendszer általános megoldásának felírását:
-\begin{enumerate}
+\begin{enumerate}\label{ex:t-reg}
 	\item
     Oldjuk meg a
     \begin{eqnarray*}
@@ -3930,6 +3930,66 @@ Az előző feladat tehát így alakul:
 	\end{array}
 \end{multline*}
 
+\subsection{Teljesen reguláris mátrixok}
+\begin{definition}\label{def:t-reg}
+    Egy $A\in\mathbb{F}^{m\times m}$ mátrixot \emph{teljesen regulárisnak}\index{teljesen reguláris} mondunk,
+    ha minden $1\leq k\leq m$ mellett a bal felső $k\times k$ méretű mátrix reguláris.
+\end{definition}
+Speciálisan a bal-felső elem nem lehet zérus ($k=1$), és a teljes $A$ mátrix is reguláris ($k=m$).
+Láttuk korábban, hogy a regularitás szükséges és elegendő feltétele, hogy a Gauss\,--\,Jordan-algoritmus utolsó táblázatában ne legyen csupa zérus sor.
+Most karakterizáljuk a teljesen regularitás fogalmát is a Gauss\,-\,Jordan-elimináció pivot elemeinek előírásával.
+Arról van szó, hogy az első lépésben kötelező a bal felső elemet választani.
+A második lépésben kötelező a második oszlop második elemét pivot elemnek választani, stb.
+Ez persze pontosan akkor lehetséges, ha a pivot elemnek előírt számok zérustól különböznek.
+A Gauss\,--\,Jordan-elimináció ezt a módosulatát nevezzük a továbbiakban 
+\emph{Észak\,--\,Nyugat-eliminációnak.}\index{Észak\,--\,Nyugat-elimináció}
+Egy Észak\,--\,Nyugat-eliminációban nincs szabadságunk a pivot elem megválasztására,
+egyszerűen a diagonálisból kell választani a pivot-elemeket, sorjában, fentről lefelé.
+\begin{proposition}\label{pr:NW-eliminacio}
+    Legyen $A$ egy $\left( m\times m \right)$ méretű mátrix.
+    Ez pontosan akkor teljesen reguláris, ha olyan módon tudunk $m$ lépéses Gauss\,--\,Jordan-eliminációt végezni,
+    hogy a $k$-adik lépésben a $k$-adik diagonális elemet választjuk pivot elemnek.
+\end{proposition}
+\begin{proof}
+    Tegyük fel először, hogy az $A$ mátrix teljesen reguláris.
+    Persze a bal-felső elem nem zérus, így az választható is pivot elemnek.
+    
+    Hajtsuk végre az eliminációt, és tekintsük az így nyert második táblázat diagonálisának második elemét.
+    Ha ez zérus lenne, akkor a kiindulásul vett bal felső $2\times 2$ méretű részmátrix szinguláris lett volna,
+    hiszen erre a részmátrixra nézve az eliminációs algoritmus két zérusból álló sorral végződne.
+    Persze ez ellentmond a teljesen regularitás feltételének, ezért a második táblázat második eleme nem zérus
+    lévén, választható pivot elemnek.
+
+    Hajtsuk végre az eliminációt, és tekintsük az így nyert harmadik táblázat diagonálisának harmadik elemét.
+    Ha ez zérus lenne, akkor a kiindulásul vett bal felső $3\times 3$ méretű részmátrix szinguláris lett volna,
+    hiszen erre a részmátrixra nézve az eliminációs algoritmus három zérusból álló sorral végződne.
+    Persze ez ellentmond a teljesen regularitás feltételének, ezért a harmadik táblázat harmadik eleme nem zérus
+    lévén, választható pivot elemnek.
+
+    És így tovább.
+
+    Megfordítva, ha sorban tudjuk választani a diagonális elemeket pivot elemnek,
+    akkor minden szóba jövő $k$ mellett a bal felső $k\times k$ mátrix reguláris,
+    hiszen a $k$ adik lépés után a diagonális első $k$ eleme $1$-es, azaz nincs a részmátrixnak
+    $k$ db zérust tartalmazó sora.
+    Ez éppen azt jelenti, hogy $A$ teljesen reguláris.
+\end{proof}
+Példaként tekintsük \aazt{\pageref{ex:t-reg}}.~oldalon szereplő
+\(
+\begin{pmatrix}
+      1 & 4 & 7 \\
+      2         & 5 & 8 \\
+      3         & 6 & 8
+\end{pmatrix}
+\)
+mátrixot. Világos, hogy éppen azt mutattuk meg, hogy ez teljesen reguláris.
+
+Talán a legegszerűbb példa reguláris, ám nem teljesen reguláris mátrixra:
+\(
+\begin{pmatrix}
+    0&1\\1&0
+\end{pmatrix}.
+\)
 \section{Lineárisan független rendszerek}
 \begin{definition}[lineárisan összefüggő vektorrendszer]\index{lineárisan összefüggő rendszer}
 	Egy véges $\left\{ y_1,\ldots,y_n \right\}$ vektorrendszert \emph{lineárisan összefüggőnek}
@@ -10826,7 +10886,17 @@ Ezek szerint az algoritmus a következő:
 		A determináns kiszámolásának ez a preferált és professzionális módja.
 		Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
 }
-
+\paragraph{Pivot elem kifejezése főminorokkal}
+Tegyük fel, hogy $A$ egy teljesen reguláris négyzetes mátrix.
+Tudjuk, hogy az Észak\,--\,Nyugat-elimináció végrehajtható a mátrixon. (Lásd: \ref{pr:NW-eliminacio}. állítás.)
+Legyenek $d_1,\ldots,d_n$ az elimináció pivot elemei, 
+és $\Delta_k$ a bal felső $k\times k$ méretű részmátrix determinánsa.
+Ez utóbbit számot szókás $k$-adik \emph{főminornak}\index{főminor} nevezni.
+Az imént láttuk, hogy $d_1\ldots d_k=\Delta_k.$
+Így persze $d_1=\Delta_1$ és $k\geq 2$ mellett 
+\[
+    d_k=\frac{d_1\ldots d_k}{d_1\ldots d_{k-1}}=\frac{\Delta_k}{\Delta_{k-1}}.
+\]
 \paragraph{Particionált mátrix determinánsa.}\label{par:particionalt}
 Tegyük fel, hogy $A$ egy $(n+m)\times(n+m)$ méretű mátrix,
 amely
@@ -14527,6 +14597,22 @@ is meghatározzák:
 
     A maradék eset az indefinitség, ami már csak azt jelentheti, hogy vannak ellenkező előjelű sajátértékek.
 \end{proof}
+Emlékezzünk arra, hogy egy bal felső négyzetes részmátrix determinánsát neveztük korábban főminornak.\index{főminor}
+\begin{proposition}
+    A kvadratikus alak pozitív definitségének\index{pozitív definit} szükséges és elegendő feltétele,
+    hogy a mátrixának valamennyi főminora\index{főminor} pozitív legyen.
+\end{proposition}
+\begin{proof}
+    Tegyük fel, hogy a főminorok $\Delta_1,\ldots\Delta_n$ sorozata csak pozitív számokat tartalmaz.
+    Ekkor a kvadratikus alak $A$ mátrixa teljesen reguláris\index{teljesen reguláris}, 
+    így az Észak\,--\,Nyugat-elimináció\index{Észak\,--\,Nyugat-elimináció} $d_1,\dots,d_n$ pivot elemeire rendre
+    \[
+        d_1=\Delta_1
+        \qquad \text{ és minden} k\geq 2 \text{ esetén}
+        d_k=\frac{\Delta_k}{\Delta_{k-1}}.
+    \]
+    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata.
+\end{proof}
 \section{Operátornorma}
 A spektrális felbontási tétel egy fontos következménye,
 hogy egy normális transzformációt egyértelműen meghatározza a spektruma, és a sajátaltereire való
@@ -16495,10 +16581,7 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
 
 Voltaképpen készen is lennénk, mert
 ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
-mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának balfelső eleme nem zérus.%
-\footnote{
-Evvel a problémával most ne foglalkozzunk később ki fog derülni, 
-hogy könnyen megszabadulhatunk e kellemetlennek tűnő feltéteteltől.}
+mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának balfelső eleme nem zérus, azaz ha teljesen reguláris\index{teljesen reguláris} szimmetrikus mátrixszal állunk szemben.
 
 A maradék kvadratikus alak mátrixa, az $R=A-a_{1,1}d\cdot d^T$, a fentinél sokkal
 hatékonyabban számolható.
@@ -16725,8 +16808,10 @@ csak triviális megoldása van!
 
 \subsubsection{Zérus elem a bal felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
-A soron következő diád leválasztásához mindig a balfelső elemet kell választanunk.
-Persze kérdés mi történik, ha a balfelső elem zérus?
+A soron következő diád leválasztásához mindig a balfelső elemet kell választanunk,
+ami éppen az Észak\,--\,Nyugat-elimáció\index{Észak\,--\,Nyugat-elimináció} esete.
+Persze kérdés mi történik, ha a balfelső elem zérus? 
+Általánosabban: hogyan tudjuk kezelni az esetet, mikor nem teljesen reguláris a mátrix?
 Ennek illusztrációjaként nézzük az alábbi kvadratikus alakot.
 \[
     Q\left( x_1,x_2,x_3 \right)=
