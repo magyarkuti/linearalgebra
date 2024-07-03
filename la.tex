@@ -14603,16 +14603,21 @@ Emlékezzünk arra, hogy egy bal felső négyzetes részmátrix determinánsát 
     hogy a mátrixának valamennyi főminora\index{főminor} pozitív legyen.
 \end{proposition}
 \begin{proof}
-    Tegyük fel, hogy a főminorok $\Delta_1,\ldots\Delta_n$ sorozata csak pozitív számokat tartalmaz.
+    Tegyük fel, hogy a főminorok $\Delta_1,\ldots,\Delta_n$ sorozata csak pozitív számokat tartalmaz.
     Ekkor a kvadratikus alak $A$ mátrixa teljesen reguláris\index{teljesen reguláris}, 
     így az Észak\,--\,Nyugat-elimináció\index{Észak\,--\,Nyugat-elimináció} $d_1,\dots,d_n$ pivot elemeire rendre
     \[
         d_1=\Delta_1,
         d_k=\frac{\Delta_k}{\Delta_{k-1}}
-        \text{ minden } k\geq 2 \text{mellett.}
+        \text{ minden } k\geq 2 \text{ mellett.}
     \]
-    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, ergo a kvadratikus alak pozitív definit.
-    (Lásd \label{ap:quad-summary}) összefoglalást.
+    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, ergo a kvadratikus alak pozitív definit,
+    hiszen ha $D$ jelöli a $d_1,\ldots,d_n$ pivot elemeket a diagonálisában tartalmazó diagonális mátrixot,
+    akkor $A=B^\star DB$ egy reguláris mátrixszal, 
+    $Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\star DBx}=\ip{Bx}{DBx}$, ahol $B$ egy reguláris mátrix.
+    Ennek értékészlete $B$ szürjektivitása miatt azonos a $Q_D\left( x \right)=\ip{x}{Dx}$ értékészletével,
+    node $D$ nyilvánvalóan pozitív definit.
+    (Lásd \label{apx:Kvadr}.~függeléket.)
 \end{proof}
 \section{Operátornorma}
 A spektrális felbontási tétel egy fontos következménye,
