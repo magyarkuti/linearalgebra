@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  2 JUL 2024 18:40
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  3 JUL 2024 13:50
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1369,12 +1369,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            loader	loadhyph-hu.tex
-(polyglossia)            hyphenation	
+(polyglossia)            righthyphenmin	2
 (polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            righthyphenmin	2
-(polyglossia)            synonyms	 on input line 15
+(polyglossia)            synonyms	
+(polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            hyphenation	 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1803,8 +1803,8 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-6:Always be yourself, express yourself, have faith in yourself, do not go out a
-nd look for a successful personality and duplicate it.-- Bruce Lee
+102:People seem not to see that their opinion of the world is also a confession
+ of character.-- Ralph Waldo Emerson
  
 \la@idxfile=\write6
 
@@ -1816,7 +1816,7 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'magyar'.
 (./la.aux
 
-LaTeX Warning: Label `ap:quad-summary' multiply defined.
+LaTeX Warning: Label `apx:Kvadr' multiply defined.
 
 )
 \openout1 = la.aux
@@ -9408,10 +9408,6 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 117 (nil) defines no feature for script latn with lan
-guage hun
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9419,6 +9415,10 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [199]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 117 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -9441,22 +9441,22 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
 
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [200]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 14733.
+ut line 14738.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -10100,7 +10100,7 @@ nodes
    avail lists: 1:8,2:1457,3:445,4:123,5:969,6:285,7:9514,8:136,9:2255,10:26,11:
 1196
  58779 multiletter control sequences out of 65536+600000
- 217 fonts using 66879271 bytes
+ 217 fonts using 66879119 bytes
  91i,17n,124p,1194b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -10117,7 +10117,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9337625 bytes).
+Output written on la.pdf (235 pages, 9337928 bytes).
 
 PDF statistics: 3002 PDF objects out of 3580 (max. 8388607)
  2698 compressed objects within 27 object streams
