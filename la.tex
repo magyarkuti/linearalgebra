@@ -14611,13 +14611,22 @@ Emlékezzünk arra, hogy egy bal felső négyzetes részmátrix determinánsát 
         d_k=\frac{\Delta_k}{\Delta_{k-1}}
         \text{ minden } k\geq 2 \text{ mellett.}
     \]
-    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, ergo a kvadratikus alak pozitív definit,
-    hiszen ha $D$ jelöli a $d_1,\ldots,d_n$ pivot elemeket a diagonálisában tartalmazó diagonális mátrixot,
-    akkor $A=B^\star DB$ egy reguláris mátrixszal, 
-    $Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\star DBx}=\ip{Bx}{DBx}$, ahol $B$ egy reguláris mátrix.
-    Ennek értékészlete $B$ szürjektivitása miatt azonos a $Q_D\left( x \right)=\ip{x}{Dx}$ értékészletével,
-    node $D$ nyilvánvalóan pozitív definit.
-    (Lásd \label{apx:Kvadr}.~függeléket.)
+    Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, 
+    amiből már látszik is, hogy a kvadratikus alak pozitív definit.
+    Ugyanis, ha $D$ jelöli a $d_1,\ldots,d_n$ pivot elemeket a diagonálisában tartalmazó diagonális mátrixot,
+    akkor diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,
+    emiatt
+    \[
+        Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\star DBx}=\ip{Bx}{DBx}.
+    \]
+    Ennek értékészlete $B$ szürjektivitása miatt azonos a $Q_D\left( x \right)=\ip{x}{Dx}$ értékészletével.
+    Persze $D$ nyilvánvalóan pozitív definit, így $A$ is az.
+    (Lásd \aazt{\ref{apx:Kvadr}}.~függeléket.)
+
+    Megfordítva, ha $A$ pozitív definit, akkor $A$ valamennyi sajátértéke pozitív.
+    Persze a determináns a sajátértékek szorzata, emiatt a determináns, így az utolsó főminor is pozitív.
+    Vegyük észre, hogy egy pozitív definit mátrix minden bal felső részmátrixa is pozitív definit marad.
+    Így az előbbi gondolat ismétlésével kapjuk, hogy valamennyi főminor pozitív.
 \end{proof}
 \section{Operátornorma}
 A spektrális felbontási tétel egy fontos következménye,
