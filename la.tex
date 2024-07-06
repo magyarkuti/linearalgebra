@@ -10886,7 +10886,7 @@ Ezek szerint az algoritmus a következő:
 		A determináns kiszámolásának ez a preferált és professzionális módja.
 		Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
 }
-\paragraph{Pivot elem kifejezése főminorokkal}
+\paragraph{Pivot elem kifejezése főminorokkal.}\label{par:pivot-fominor}
 Tegyük fel, hogy $A$ egy teljesen reguláris négyzetes mátrix.
 Tudjuk, hogy az Észak\,--\,Nyugat-elimináció végrehajtható a mátrixon. (Lásd: \ref{pr:NW-eliminacio}. állítás.)
 Legyenek $d_1,\ldots,d_n$ az elimináció pivot elemei, 
@@ -14597,38 +14597,47 @@ is meghatározzák:
 
     A maradék eset az indefinitség, ami már csak azt jelentheti, hogy vannak ellenkező előjelű sajátértékek.
 \end{proof}
-Emlékezzünk arra, hogy egy bal felső négyzetes részmátrix determinánsát neveztük korábban főminornak.\index{főminor}
+Most a definitségnek a determinánssal való kapcsolatára térünk rá.
+Mivel szimmetrikus mátrix diagonalizálható, és a sajátértékek vannak a diagonálisban, ezért egy szimmetrikus mátrix determinánsa a sajátértékeinek -- geometriai multiplicitásával számolt -- szorzata.
+Emlékezzünk arra is, hogy egy bal felső négyzetes részmátrix determinánsát neveztük korábban főminornak.\index{főminor}
 \begin{proposition}
     A kvadratikus alak pozitív definitségének\index{pozitív definit} szükséges és elegendő feltétele,
     hogy a mátrixának valamennyi főminora\index{főminor} pozitív legyen.
 \end{proposition}
 \begin{proof}
-    Tegyük fel, hogy a főminorok $\Delta_1,\ldots,\Delta_n$ sorozata csak pozitív számokat tartalmaz.
+    Tegyük fel, hogy a főminorok $\Delta_1,\ldots,\Delta_n$ sorozata pozitív számokat tartalmaz.
     Ekkor a kvadratikus alak $A$ mátrixa teljesen reguláris\index{teljesen reguláris}, 
-    így az Észak\,--\,Nyugat-elimináció\index{Észak\,--\,Nyugat-elimináció} $d_1,\dots,d_n$ pivot elemeire rendre
+    így az Észak\,--\,Nyugat-elimináció\index{Észak\,--\,Nyugat-elimináció} 
+    (\ref{par:pivot-fominor}.~\aazt{\pageref{par:pivot-fominor}}.~oldalon)
+    $d_1,\dots,d_n$ pivot elemeire rendre
     \[
         d_1=\Delta_1,
+        \quad
         d_k=\frac{\Delta_k}{\Delta_{k-1}}
         \text{ minden } k\geq 2 \text{ mellett.}
     \]
     Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, 
-    amiből már látszik is, hogy a kvadratikus alak pozitív definit.
-    Ugyanis, ha $D$ jelöli a $d_1,\ldots,d_n$ pivot elemeket a diagonálisában tartalmazó diagonális mátrixot,
-    akkor diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,
+    amiből már látszik is, hogy a kvadratikus alak pozitív definit:
+    Ugyanis, ha $D$ jelöli azt a diagonális mátrixot, amelyben 
+    a $d_1,\ldots,d_n$ pivot elemek rendre a diagonális elemei,
+    akkor \aazt{\ref{apx:Kvadr}}.~függelékben megértett 
+    diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,
     emiatt
     \[
         Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\star DBx}=\ip{Bx}{DBx}.
     \]
     Ennek értékészlete $B$ szürjektivitása miatt azonos a $Q_D\left( x \right)=\ip{x}{Dx}$ értékészletével.
     Persze $D$ nyilvánvalóan pozitív definit, így $A$ is az.
-    (Lásd \aazt{\ref{apx:Kvadr}}.~függeléket.)
 
     Megfordítva, ha $A$ pozitív definit, akkor $A$ valamennyi sajátértéke pozitív.
-    Persze a determináns a sajátértékek szorzata, emiatt a determináns, így az utolsó főminor is pozitív.
+    Persze a determináns a sajátértékek szorzata, emiatt a determináns,
+    azaz az utolsó $\Delta_n$ főminor is pozitív.
     Vegyük észre, hogy egy pozitív definit mátrix minden bal felső részmátrixa is pozitív definit marad.
-    Így az előbbi gondolat ismétlésével kapjuk, hogy valamennyi főminor pozitív.
+    Így az előbbi gondolat ismétlésével kapjuk, hogy az eredeti $A$ mátrix valamennyi főminora pozitív.
 \end{proof}
-\section{Operátornorma}
+Egy kvadratikus alak $-1$ szeresére felírva az előző állítást kapjuk a negatív definitség karakterizációját, amely szerint 
+\emph{a negatív definitség szükséges és elegendő feltétele, hogy a főminorok sorozata negatív számmal kezdve alternáljon}.
+\section{Az operátornormáról}
 A spektrális felbontási tétel egy fontos következménye,
 hogy egy normális transzformációt egyértelműen meghatározza a spektruma, és a sajátaltereire való
 ortogonális projekciók.
@@ -16356,7 +16365,13 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 %% a vége következik
 
 \chapter{Kvadratikus alakok definitségének egy naiv tárgyalása}\label{apx:Kvadr}
-A kvadratikus alaknak mondunk egy speciális többváltozós függvényt.
+A címbeli naiv szó alatt azt értem, 
+hogy az itt követekező tárgyalás megérthető a szimmetrikus mátrixok diagonalizálhatóságától, azaz a spektrál elmélettől függetlenül.
+A lenti gondolatok megértéséhez pusztán a homogén lineáris egyenletrendszerek megoldhatóságával, 
+a Gaus\,--\,Jordan-eliminációval,\index{Gauss\,--\,Jordan-elimináció}
+és a mátrix műveletekkel -- skalárral való szorzás, összeadás, mátrix szorzás diadikus formája -- kell tisztában lennünk.
+
+A kvadratikus alaknak mondunk egy speciális többváltozós függvényt:
 \begin{definition}
     Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
     Amint az szokásos jelölje $a_{k,j}$ a mátrix $i,j$ pozicíojának elemét.
@@ -16613,7 +16628,7 @@ hogy e mátrix jobb alsó $n-1\times n-1$ méretű részének mik az elemei.
 A fenti formulát kell ehhez alkalmazni, mikor $k>1$ és $j>1$.
 Ismerjük fel, hogy (\dag)  éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
 amikor a balfelső elem a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
-Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval is számolható.
+Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció} is számolható.
 Bebizonyítottuk hát a következő állítást.
 \begin{proposition}
    Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
@@ -17032,7 +17047,7 @@ Ha
         akkor $Q$ \emph{negatív definit};
 \end{itemize}
 Ha $Q$ felbontása $n$-nél kevesebb teljes négyzetből áll,
-akkor nagyon hasonló karakterizációt kapunk, de a mátrix szingulátis, ezért csak szemidefinitség jöhet szóba.
+akkor nagyon hasonló karakterizációt kapunk, de a mátrix szinguláris, ezért csak szemidefinitség jöhet szóba.
 Tehát ha
 \begin{itemize}
 \item az összes pivot elem pozitív,

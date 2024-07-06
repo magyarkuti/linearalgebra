@@ -4,9 +4,9 @@
 #   WARNING: The method shown here is suitable only for ver. 4.51 and
 #            later of latexmk, not for earlier versions.
 #
-
-#$pdf_mode = 4;
-#$postscript_mode = $dvi_mode = 0;
+$pdf_mode = 4;
+$show_time =1;
+# $postscript_mode = $dvi_mode = 0;
 @default_files=('la.tex');
 $clean_ext = "bbl";
 # for the use of nomencl package
