@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  3 JUL 2024 20:10
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  6 JUL 2024 16:10
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1369,12 +1369,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            hyphenation	
 (polyglossia)            patterns	hyph-hu.pat.txt
-(polyglossia)            loader	loadhyph-hu.tex
 (polyglossia)            righthyphenmin	2
-(polyglossia)            synonyms	 on input line 15
+(polyglossia)            synonyms	
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            lefthyphenmin	2 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
 Package polyglossia Info: Option: Hungarian, swapstrings=all.
@@ -1803,8 +1803,8 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-102:People seem not to see that their opinion of the world is also a confession
- of character.-- Ralph Waldo Emerson
+55:Setting an example is not the main means of influencing others; it is the on
+ly means.-- Albert Einstein
  
 \la@idxfile=\write6
 
@@ -9430,15 +9430,15 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
 
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [200]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
@@ -9451,7 +9451,7 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 14747.
+ut line 14756.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9459,15 +9459,15 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
 
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [201]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9863,16 +9863,6 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 147 (nil) defines no feature for script latn with lan
-guage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
-luaotfload | aux : font no 147 (nil) defines no feature for script latn with lan
-guage hun
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9882,6 +9872,16 @@ luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [223
 
 ]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 147 (nil) defines no feature for script latn with lan
+guage hun
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 147 (nil) defines no feature for script latn with lan
+guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 147 (nil) defines no feature for script latn with lan
@@ -9916,8 +9916,6 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
-luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
-uage hun
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -9925,6 +9923,8 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [224]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -10027,8 +10027,8 @@ luaotfload | aux : font no 121 (nil) defines no feature for script latn with lan
 guage hun
 
 
-Overfull \hbox (6.06749pt too wide) in paragraph at lines 82--84
-[]\TU/TeXGyrePagella(0)/m/n/10 Gauss--Jordan-elimináció, []29[], []44[], []46[]--[]48[], []50[]--[]54[] 
+Overfull \hbox (7.26749pt too wide) in paragraph at lines 82--85
+[]\TU/TeXGyrePagella(0)/m/n/10 Gauss--Jordan-elimináció, []29[], []44[], []46[]--[]48[], []50[]--[]54[],
  []
 
 
@@ -10075,23 +10075,23 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: FC28B1B4EED1E449F131B1737B3A121F;18512.
+(rerunfilecheck)             Checksum: DE6C029849C4E961469A3CED0B63F6B9;18551.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 37927 strings out of 475915
+ 37928 strings out of 475915
  125009,2373549 words of node,token memory allocated
  5257 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 56 glue, 5 kern, 1 penalty, 29
  glyph, 854 attribute, 198 glue_spec, 854 attribute_list, 3 write, 1 pdf_action 
 nodes
-   avail lists: 1:8,2:1455,3:445,4:123,5:969,6:285,7:9514,8:136,9:2255,10:26,11:
+   avail lists: 1:8,2:1455,3:445,4:123,5:969,6:279,7:9516,8:136,9:2255,10:26,11:
 1196
- 58779 multiletter control sequences out of 65536+600000
- 217 fonts using 66879271 bytes
+ 58780 multiletter control sequences out of 65536+600000
+ 217 fonts using 66878967 bytes
  91i,17n,124p,1194b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -10108,10 +10108,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9338508 bytes).
+Output written on la.pdf (235 pages, 9340243 bytes).
 
-PDF statistics: 3003 PDF objects out of 3580 (max. 8388607)
- 2699 compressed objects within 27 object streams
+PDF statistics: 3009 PDF objects out of 3580 (max. 8388607)
+ 2704 compressed objects within 28 object streams
  1148 named destinations out of 1200 (max. 131072)
  777 words of extra memory for PDF output out of 10000 (max. 100000000)
 
