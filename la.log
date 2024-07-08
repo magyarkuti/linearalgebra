@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  6 JUL 2024 16:10
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  8 JUL 2024 11:21
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1369,11 +1369,11 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            patterns	hyph-hu.pat.txt
-(polyglossia)            righthyphenmin	2
 (polyglossia)            synonyms	
 (polyglossia)            hyphenation	
+(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            righthyphenmin	2
 (polyglossia)            lefthyphenmin	2 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
@@ -1803,8 +1803,7 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-55:Setting an example is not the main means of influencing others; it is the on
-ly means.-- Albert Einstein
+32:Experience is what you get when you don't get what you want.-- Dan Stanford
  
 \la@idxfile=\write6
 
@@ -10088,10 +10087,10 @@ Here is how much of LuaTeX's memory you used:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 56 glue, 5 kern, 1 penalty, 29
  glyph, 854 attribute, 198 glue_spec, 854 attribute_list, 3 write, 1 pdf_action 
 nodes
-   avail lists: 1:8,2:1455,3:445,4:123,5:969,6:279,7:9516,8:136,9:2255,10:26,11:
+   avail lists: 1:8,2:1455,3:445,4:123,5:969,6:279,7:9514,8:136,9:2255,10:26,11:
 1196
  58780 multiletter control sequences out of 65536+600000
- 217 fonts using 66878967 bytes
+ 217 fonts using 66878815 bytes
  91i,17n,124p,1194b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -10108,7 +10107,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9340243 bytes).
+Output written on la.pdf (235 pages, 9340671 bytes).
 
 PDF statistics: 3009 PDF objects out of 3580 (max. 8388607)
  2704 compressed objects within 28 object streams
