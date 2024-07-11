@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  8 JUL 2024 11:21
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  11 JUL 2024 11:54
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1369,9 +1369,9 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            synonyms	
-(polyglossia)            hyphenation	
 (polyglossia)            patterns	hyph-hu.pat.txt
+(polyglossia)            hyphenation	
+(polyglossia)            synonyms	
 (polyglossia)            loader	loadhyph-hu.tex
 (polyglossia)            righthyphenmin	2
 (polyglossia)            lefthyphenmin	2 on input line 15
@@ -1803,7 +1803,8 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-32:Experience is what you get when you don't get what you want.-- Dan Stanford
+31:Some succeed because they are destined. Some succeed because they are determ
+ined.-- Unknown
  
 \la@idxfile=\write6
 
@@ -2022,7 +2023,7 @@ File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
 <use Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG>
 Package luatex.def Info: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_frei
-en_Künsten.JPG  used on input line 257.
+en_Künsten.JPG  used on input line 258.
 (luatex.def)             Requested size: 418.25368pt x 520.13634pt.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -2357,7 +2358,7 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 10.28888pt on input line 267.
+(Font)              scaled to size 10.28888pt on input line 268.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `TeXGyreAdventor' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2365,7 +2366,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 luaotfload | aux : font no 117 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 10.15887pt on input line 267.
+(Font)              scaled to size 10.15887pt on input line 268.
 luaotfload | aux : font no 119 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 120 (nil) defines no feature for script latn with lan
@@ -2399,11 +2400,11 @@ guage hun [4
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 17.78261pt on input line 288.
+(Font)              scaled to size 17.78261pt on input line 289.
 luaotfload | aux : font no 121 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 17.55792pt on input line 288.
+(Font)              scaled to size 17.55792pt on input line 289.
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3694,7 +3695,7 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 14.81598pt on input line 330.
+(Font)              scaled to size 14.81598pt on input line 331.
 luaotfload | aux : font no 163 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 162 (nil) defines no feature for script latn with lan
@@ -5514,11 +5515,11 @@ guage hun [43]
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2948.
+(Font)              scaled to size 9.3886pt on input line 2949.
 luaotfload | aux : font no 177 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2948.
+(Font)              scaled to size 9.26996pt on input line 2949.
 luaotfload | aux : font no 167 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -5706,7 +5707,4107 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [54]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(591.5302+0.0)x418.25368, glue set 8.41548, direction TLT
+.\vbox(0.0+0.0)x0.0, direction TLT
+..\hbox(0.0+0.0)x0.0, glue set - 425.25366fil, direction TLT
+...\glue 418.25368
+...\glue 7.0
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\topskip) 2.74
+.\hbox(7.26+2.83)x418.25368, glue set 0.51416, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\TU/TeXGyrePagella(0)/m/n/10 E
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\discretionary (penalty 50)
+...< \kern-0.65 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.3 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 j
+..\TU/TeXGyrePagella(0)/m/n/10 ü
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 j
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..etc.
+.\penalty 1050
+.\glue(\baselineskip) 3.09007
+.\hbox(7.28+2.83)x418.25368, glue set 284.86371fil, direction TLT
+..\TU/TeXGyrePagella(0)/m/n/10 f
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 ,
+..\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\kern-0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 ü
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\lineskip) 1.0
+.\hbox(28.90012+23.90012)x83.95547, shifted 167.14911, direction TLT
+..\TU/TeXGyrePagellaMath(1)/m/n/10 𝐴
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\TU/TeXGyrePagellaMath(1)/m/n/10 =
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\hbox(28.90012+23.90012)x63.58005, direction TLT
+...\vbox(47.80023+0.0)x6.79, glue set 0.93365, shifted 21.40012, direction TLT
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎛
+....\glue -1.98 plus 1.68
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -1.98 plus 1.68
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎝
+...\glue -5.0
+...\vbox(28.90012+23.90012)x60.00006, direction TLT
+....\hbox(9.24+3.96005)x60.00006, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+....\glue(\lineskip) 0.0
+....\hbox(9.24+3.96005)x60.00006, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+....\glue(\lineskip) 0.0
+....\hbox(9.24+3.96005)x60.00006, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+....\glue(\lineskip) 0.0
+....\hbox(9.24+3.96005)x60.00006, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x15.00002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+...\glue -5.0
+...\vbox(47.80023+0.0)x6.79, glue set 0.93365, shifted 21.40012, direction TLT
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎞
+....\glue -1.98 plus 1.68
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -1.98 plus 1.68
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎠
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\lineskip) 1.0
+.\hbox(7.28+2.83)x418.25368, glue set 0.00398, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 x
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.35 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.4 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 !
+..\glue(\spaceskip) 3.33333 plus 3.75 minus 0.27777
+..\TU/TeXGyrePagella(0)/m/n/10 A
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.35 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.4 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\kern-0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 ü
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\discretionary (penalty 50)
+...< \kern-0.65 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\TU/TeXGyrePagella(0)/m/n/10 ő
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 f
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 ,
+..\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..etc.
+.\penalty 1050
+.\glue(\baselineskip) 3.11008
+.\hbox(7.26+2.83)x418.25368, glue set 60.43037fil, direction TLT
+..\kern-0.42 (left margin)
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.4 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 j
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 c
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 ó
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 u
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 b
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 .
+..\glue(\spaceskip) 3.33333 plus 3.75 minus 0.27777
+..\TU/TeXGyrePagella(0)/m/n/10 E
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 ö
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.25 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.4 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..etc.
+.\penalty 10000
+.\glue(\abovedisplayskip) 10.0 plus 2.0 minus 5.0
+.\penalty 10000
+.\glue(\lineskip) 4.0
+.\hbox(36.25014+31.25014)x418.25368, direction TLT
+..\glue(\tabskip) 0.0
+..\hbox(36.25014+31.25014)x418.25368, direction TLT
+...\hbox(36.25014+31.25014)x418.25368, glue set 104.32033fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(9.24+3.96005)x0.0, direction TLT
+.....\vbox(9.24+3.96005)x0.0, direction TLT
+......\kern0.0
+......\hbox(9.24+3.96005)x0.0, direction TLT
+.......\rule(9.24+3.96005)x0.0
+....\mathon
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue 0.0 plus -1.0fil
+....\glue 10.0
+....\vbox(36.25014+31.25014)x127.2001, direction TLT
+.....\hbox(10.34+3.96005)x127.2001, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x21.8, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(10.34+3.43)x11.79999, direction TLT
+........\hbox(10.34+3.43)x11.79999, direction TLT
+.........\hbox(13.76999+0.0)x11.79999, shifted 3.43, direction TLT
+..........\vbox(13.76999+0.0)x11.79999, direction TLT []
+........\kern-11.79999
+........\hbox(10.34+3.43)x11.79999, direction TLT
+.........\vbox(13.76999+0.0)x11.79999, shifted 3.43, direction TLT
+..........\rule(0.4+0.0)x*
+..........\kern-0.2
+..........\hbox(13.37+0.0)x11.79999, direction TLT []
+..........\kern-0.2
+..........\rule(0.4+0.0)x*
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x127.2001, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x21.8, glue set 3.4fil, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x127.2001, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x21.8, glue set 3.4fil, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x127.2001, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x21.8, glue set 3.4fil, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\rule(0.4+0.0)x127.2001
+.....\hbox(9.24+3.96005)x127.2001, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x21.8, glue set 3.61fil, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 𝛿
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\vbox(36.25014+31.25014)x150.00012, direction TLT
+.....\hbox(9.24+3.96005)x150.00012, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.2, glue set 3.4fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x150.00012, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.2, glue set 3.4fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x150.00012, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.2, glue set 3.4fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(10.34+3.96005)x150.00012, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.2, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(10.34+3.43)x11.79999, direction TLT
+........\hbox(10.34+3.43)x11.79999, direction TLT
+.........\hbox(13.76999+0.0)x11.79999, shifted 3.43, direction TLT
+..........\vbox(13.76999+0.0)x11.79999, direction TLT []
+........\kern-11.79999
+........\hbox(10.34+3.43)x11.79999, direction TLT
+.........\vbox(13.76999+0.0)x11.79999, shifted 3.43, direction TLT
+..........\rule(0.4+0.0)x*
+..........\kern-0.2
+..........\hbox(13.37+0.0)x11.79999, direction TLT []
+..........\kern-0.2
+..........\rule(0.4+0.0)x*
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\rule(0.4+0.0)x150.00012
+.....\hbox(9.24+3.96005)x150.00012, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.2, glue set 3.61fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 𝛿
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\mathoff
+....\glue 0.0 plus 1.0fil
+..\glue(\tabskip) 0.0
+.\penalty 10000
+.\glue 0.0
+.\glue(\lineskip) 4.0
+.\hbox(36.6418+31.6418)x418.25368, direction TLT
+..\glue(\tabskip) 0.0
+..\hbox(36.6418+31.6418)x418.25368, direction TLT
+...\hbox(36.6418+31.6418)x418.25368, glue set 28.97916fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(9.24+3.96005)x0.0, direction TLT
+.....\vbox(9.24+3.96005)x0.0, direction TLT
+......\kern0.0
+......\hbox(9.24+3.96005)x0.0, direction TLT
+.......\rule(9.24+3.96005)x0.0
+....\mathon
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\vbox(36.25014+31.25014)x165.20013, direction TLT
+.....\hbox(9.24+3.96005)x165.20013, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 7.2fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(10.34+3.96005)x165.20013, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 5
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x29.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(10.34+3.43)x19.4, direction TLT
+........\hbox(10.34+3.43)x19.4, direction TLT
+.........\hbox(13.76999+0.0)x19.4, shifted 3.43, direction TLT
+..........\vbox(13.76999+0.0)x19.4, direction TLT []
+........\kern-19.4
+........\hbox(10.34+3.43)x19.4, direction TLT
+.........\vbox(13.76999+0.0)x19.4, shifted 3.43, direction TLT
+..........\rule(0.4+0.0)x*
+..........\kern-0.2
+..........\hbox(13.37+0.0)x19.4, direction TLT []
+..........\kern-0.2
+..........\rule(0.4+0.0)x*
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x165.20013, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 3.4fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x165.20013, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 7.2fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\rule(0.4+0.0)x165.20013
+.....\hbox(9.24+3.96005)x165.20013, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 5
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 7.41fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 𝛿
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\vbox(36.6418+31.6418)x168.36212, direction TLT
+.....\hbox(9.24+3.96005)x168.36212, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 7.2fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 6
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 0.7905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x168.36212, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 3.4fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 5
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(10.34+3.96005)x168.36212, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x29.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(10.34+3.43)x19.4, direction TLT
+........\hbox(10.34+3.43)x19.4, direction TLT
+.........\hbox(13.76999+0.0)x19.4, shifted 3.43, direction TLT
+..........\vbox(13.76999+0.0)x19.4, direction TLT []
+........\kern-19.4
+........\hbox(10.34+3.43)x19.4, direction TLT
+.........\vbox(13.76999+0.0)x19.4, shifted 3.43, direction TLT
+..........\rule(0.4+0.0)x*
+..........\kern-0.2
+..........\hbox(13.37+0.0)x19.4, direction TLT []
+..........\kern-0.2
+..........\rule(0.4+0.0)x*
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(10.34+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x168.36212, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x29.40001, glue set 7.2fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 0.7905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\rule(0.4+0.0)x168.36212
+.....\hbox(9.82559+4.15779)x168.36212, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x29.40001, glue set 7.41fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 𝛿
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x22.60002, glue set 3.0095fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\mathoff
+....\glue 0.0 plus 1.0fil
+..\glue(\tabskip) 0.0
+.\penalty 10000
+.\glue 0.0
+.\glue(\lineskip) 4.0
+.\hbox(30.05661+25.05661)x418.25368, direction TLT
+..\glue(\tabskip) 0.0
+..\hbox(30.05661+25.05661)x418.25368, direction TLT
+...\hbox(30.05661+25.05661)x418.25368, glue set 79.91202fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(9.24+3.96005)x0.0, direction TLT
+.....\vbox(9.24+3.96005)x0.0, direction TLT
+......\kern0.0
+......\hbox(9.24+3.96005)x0.0, direction TLT
+.......\rule(9.24+3.96005)x0.0
+....\mathon
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\vbox(30.05661+25.05661)x155.54312, direction TLT
+.....\hbox(9.82559+4.1208)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x24.18102, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.7886+4.1208)x6.581, direction TLT
+........\hbox(9.7886+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.7886+4.1208)x4.181, direction TLT
+..........\hbox(5.0986+0.148)x4.181, direction TLT []
+..........\kern1.742 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.82559+4.15779)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.7886+4.15779)x6.581, direction TLT
+........\hbox(9.7886+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.7886+4.15779)x4.181, direction TLT
+..........\hbox(5.0986+0.148)x4.181, direction TLT []
+..........\kern1.742 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.82559+4.15779)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\vbox(30.05661+25.05661)x155.54312, direction TLT
+.....\hbox(9.82559+4.1208)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x24.18102, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.7886+4.1208)x6.581, direction TLT
+........\hbox(9.7886+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.7886+4.1208)x4.181, direction TLT
+..........\hbox(5.0986+0.148)x4.181, direction TLT []
+..........\kern1.742 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.1208)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.82559+4.15779)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.82559+4.15779)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x22.60002, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, glue set 3.8fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\hbox(9.82559+4.15779)x6.581, direction TLT
+........\hbox(9.82559+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.15779)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.7886+4.15779)x6.581, direction TLT
+........\hbox(9.7886+4.15779)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.7886+4.15779)x4.181, direction TLT
+..........\hbox(5.0986+0.148)x4.181, direction TLT []
+..........\kern1.742 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.82559+4.15779)x24.18102, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\hbox(9.82559+4.1208)x6.581, direction TLT
+........\hbox(9.82559+4.1208)x6.581, direction TLT
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.........\vbox(9.82559+4.1208)x4.181, direction TLT
+..........\hbox(5.13559+0.0222)x4.181, direction TLT []
+..........\kern1.8678 (font)
+..........\rule(0.6+0.0)x*
+..........\kern1.2 (font)
+..........\hbox(5.0986+0.0222)x4.181, direction TLT []
+.........\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+.....\glue(\lineskip) 0.0
+.....\hbox(9.24+3.96005)x155.54312, direction TLT
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\rule(9.24+3.96005)x0.0
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.00002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x15.40001, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+.......\rule(*+*)x0.4
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x22.60002, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 3
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+......\hbox(9.24+3.96005)x24.18102, glue set 4.5905fil, direction TLT
+.......\glue 5.0
+.......\glue 0.0 plus 1.0fil
+.......\glue 0.00002
+.......\mathon
+.......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.......\mathoff
+.......\glue 0.0 plus 1.0fil
+.......\glue 5.0
+......\glue(\tabskip) 0.0
+....\TU/TeXGyrePagellaMath(1)/m/n/10 .
+....\glue 10.0
+....\glue 0.0 plus -1.0fil
+....\mathoff
+....\glue 0.0 plus 1.0fil
+..\glue(\tabskip) 0.0
+.\penalty 10000
+.\glue 0.0
+.\penalty 0
+.\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\lineskip) 1.0
+.\hbox(7.26+2.83)x418.25368, glue set 240.54372fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/TeXGyrePagella(0)/m/n/10 K
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 u
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 ,
+..\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\mathon
+..\TU/TeXGyrePagellaMath(1)/m/n/10 𝐴
+..\mathoff
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 x
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.35 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.4 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\lineskip) 1.0
+.\hbox(28.90012+23.90012)x138.6271, shifted 139.8133, direction TLT
+..\TU/TeXGyrePagellaMath(1)/m/n/10 𝐴
+..\hbox(5.13559+0.0222)x10.20499, shifted -3.54, direction TLT
+...\TU/TeXGyrePagellaMath(1)/m/n/7.4 −
+...\TU/TeXGyrePagellaMath(1)/m/n/7.4 1
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\TU/TeXGyrePagellaMath(1)/m/n/10 =
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\hbox(14.14+6.69)x7.4, direction TLT
+...\hbox(14.14+6.69)x7.4, direction TLT
+....\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+....\vbox(14.14+6.69)x5.0, direction TLT
+.....\hbox(6.94+0.03)x5.0, direction TLT
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+.....\kern4.37 (font)
+.....\rule(0.6+0.0)x*
+.....\kern1.92 (font)
+.....\hbox(6.94+0.03)x5.0, direction TLT
+......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+....\hbox(0.0+0.0)x1.2, shifted -2.5, direction TLT
+..\glue(\thinmuskip) 1.66663
+..\hbox(28.90012+23.90012)x98.98007, direction TLT
+...\vbox(47.80023+0.0)x6.79, glue set 0.93365, shifted 21.40012, direction TLT
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎛
+....\glue -1.98 plus 1.68
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎜
+....\glue -1.98 plus 1.68
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎝
+...\glue -5.0
+...\vbox(28.90012+23.90012)x95.40009, direction TLT
+....\hbox(9.24+3.96005)x95.40009, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x27.60002, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 6
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+....\glue(\lineskip) 0.0
+....\hbox(9.24+3.96005)x95.40009, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x27.60002, glue set 6.3fil, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+....\glue(\lineskip) 0.0
+....\hbox(9.24+3.96005)x95.40009, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x27.60002, glue set 3.8fil, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 5
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+....\glue(\lineskip) 0.0
+....\hbox(9.24+3.96005)x95.40009, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x27.60002, direction TLT
+......\rule(9.24+3.96005)x0.0
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 −
+......\TU/TeXGyrePagellaMath(1)/m/n/10 1
+......\TU/TeXGyrePagellaMath(1)/m/n/10 2
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 0
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+.....\hbox(9.24+3.96005)x22.60002, glue set 3.8fil, direction TLT
+......\glue 5.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\mathon
+......\TU/TeXGyrePagellaMath(1)/m/n/10 4
+......\mathoff
+......\glue 0.0 plus 1.0fil
+......\glue 5.0
+.....\glue(\tabskip) 0.0
+...\glue -5.0
+...\vbox(47.80023+0.0)x6.79, glue set 0.93365, shifted 21.40012, direction TLT
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎞
+....\glue -1.98 plus 1.68
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -3.96 plus 3.66
+....\hbox(3.96+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎟
+....\glue -1.98 plus 1.68
+....\hbox(12.08+0.0)x6.79, direction TLT
+.....\TU/TeXGyrePagellaMath(1)/m/n/10 ⎠
+.\penalty 0
+.\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\lineskip) 1.0
+.\hbox(6.77+0.12)x418.25368, glue set 388.43369fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 x
+..\TU/TeXGyrePagella(0)/m/n/10 .
+..\penalty 10000
+..\kern-1.75 (right margin)
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\glue(\parskip) 0.0 plus 1.0
+.\glue(\parskip) 0.0
+.\glue(\baselineskip) 5.80008
+.\hbox(7.28+2.83)x418.25368, glue set - 0.60915, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\TU/TeXGyrePagella(0)/m/n/10 I
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 c
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 u
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 f
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 ó
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\kern-0.6 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 .
+..\glue(\spaceskip) 3.33333 plus 3.75 minus 0.27777
+..\TU/TeXGyrePagella(0)/m/n/10 A
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.4 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\TU/TeXGyrePagella(0)/m/n/10 ü
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 ,
+..\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 c
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..etc.
+.\penalty 1000
+.\glue(\baselineskip) 3.09007
+.\hbox(7.28+2.83)x418.25368, glue set 0.14314, direction TLT
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\kern-0.25 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\kern-0.35 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 f
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 u
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 ,
+..\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 u
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 v
+..\kern-0.3 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\TU/TeXGyrePagella(0)/m/n/10 u
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\kern-0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 b
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 b
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 c
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..etc.
+.\glue(\baselineskip) 3.11008
+.\hbox(7.26+2.83)x418.25368, glue set 0.18513, direction TLT
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 í
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 á
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\TU/TeXGyrePagella(0)/m/n/10 .
+..\glue(\spaceskip) 3.33333 plus 3.75 minus 0.27777
+..\TU/TeXGyrePagella(0)/m/n/10 E
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\discretionary (penalty 50)
+...< \kern-0.65 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\kern-0.2 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern-0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 d
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 í
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\discretionary (penalty 50)
+...< \kern-0.3 (font)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+...= \kern0.15 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 i
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 a
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 r
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 s
+..\TU/TeXGyrePagella(0)/m/n/10 z
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 p
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 c
+..\TU/TeXGyrePagella(0)/m/n/10 í
+..\TU/TeXGyrePagella(0)/m/n/10 m
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 k
+..\kern-0.1 (font)
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 j
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 ,
+..\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+..\TU/TeXGyrePagella(0)/m/n/10 n
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 h
+..\TU/TeXGyrePagella(0)/m/n/10 o
+..\TU/TeXGyrePagella(0)/m/n/10 g
+..\TU/TeXGyrePagella(0)/m/n/10 y
+..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
+..\TU/TeXGyrePagella(0)/m/n/10 e
+..\TU/TeXGyrePagella(0)/m/n/10 l
+..\discretionary (penalty 50)
+...< \TU/TeXGyrePagella(0)/m/n/10 -
+..\TU/TeXGyrePagella(0)/m/n/10 t
+..\TU/TeXGyrePagella(0)/m/n/10 é
+..etc.
+.\glue -2.83
 
 
 
@@ -8112,7 +12213,7 @@ uage hun
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 10346.
+(amsmath)                 on input line 10347.
 
 
 
@@ -9450,7 +13551,7 @@ luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
 
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 14756.
+ut line 14757.
 
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
@@ -10028,7 +14129,85 @@ guage hun
 
 Overfull \hbox (7.26749pt too wide) in paragraph at lines 82--85
 []\TU/TeXGyrePagella(0)/m/n/10 Gauss--Jordan-elimináció, []29[], []44[], []46[]--[]48[], []50[]--[]54[],
- []
+
+\hbox(7.26+1.99)x191.62683, glue set - 1.0, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\TU/TeXGyrePagella(0)/m/n/10 G
+.\TU/TeXGyrePagella(0)/m/n/10 a
+.\TU/TeXGyrePagella(0)/m/n/10 u
+.\TU/TeXGyrePagella(0)/m/n/10 s
+.\TU/TeXGyrePagella(0)/m/n/10 s
+.\kern1.66702
+.\TU/TeXGyrePagella(0)/m/n/10 –
+.\kern1.66702
+.\TU/TeXGyrePagella(0)/m/n/10 J
+.\TU/TeXGyrePagella(0)/m/n/10 o
+.\TU/TeXGyrePagella(0)/m/n/10 r
+.\kern-0.15 (font)
+.\TU/TeXGyrePagella(0)/m/n/10 d
+.\TU/TeXGyrePagella(0)/m/n/10 a
+.\TU/TeXGyrePagella(0)/m/n/10 n
+.\discretionary (penalty 50)
+..< \TU/TeXGyrePagella(0)/m/n/10 -
+..= \TU/TeXGyrePagella(0)/m/n/10 -
+.\TU/TeXGyrePagella(0)/m/n/10 e
+.\TU/TeXGyrePagella(0)/m/n/10 l
+.\TU/TeXGyrePagella(0)/m/n/10 i
+.\TU/TeXGyrePagella(0)/m/n/10 m
+.\TU/TeXGyrePagella(0)/m/n/10 i
+.\TU/TeXGyrePagella(0)/m/n/10 n
+.\TU/TeXGyrePagella(0)/m/n/10 á
+.\TU/TeXGyrePagella(0)/m/n/10 c
+.\TU/TeXGyrePagella(0)/m/n/10 i
+.\TU/TeXGyrePagella(0)/m/n/10 ó
+.\TU/TeXGyrePagella(0)/m/n/10 ,
+.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.2
+9}
+.\TU/TeXGyrePagella(0)/m/n/10 2
+.\TU/TeXGyrePagella(0)/m/n/10 9
+.\pdfendlink
+.\TU/TeXGyrePagella(0)/m/n/10 ,
+.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.4
+4}
+.\TU/TeXGyrePagella(0)/m/n/10 4
+.\TU/TeXGyrePagella(0)/m/n/10 4
+.\pdfendlink
+.\TU/TeXGyrePagella(0)/m/n/10 ,
+.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.4
+6}
+.\TU/TeXGyrePagella(0)/m/n/10 4
+.\TU/TeXGyrePagella(0)/m/n/10 6
+.\pdfendlink
+.\TU/TeXGyrePagella(0)/m/n/10 –
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.4
+8}
+.\TU/TeXGyrePagella(0)/m/n/10 4
+.\TU/TeXGyrePagella(0)/m/n/10 8
+.\pdfendlink
+.\TU/TeXGyrePagella(0)/m/n/10 ,
+.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.5
+0}
+.\TU/TeXGyrePagella(0)/m/n/10 5
+.\TU/TeXGyrePagella(0)/m/n/10 0
+.\pdfendlink
+.\TU/TeXGyrePagella(0)/m/n/10 –
+.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.5
+4}
+.\TU/TeXGyrePagella(0)/m/n/10 5
+.\TU/TeXGyrePagella(0)/m/n/10 4
+.\pdfendlink
+.\TU/TeXGyrePagella(0)/m/n/10 ,
+.\kern-1.25 (right margin)
+.\glue(\rightskip) 0.0
 
 
 
@@ -10090,7 +14269,7 @@ nodes
    avail lists: 1:8,2:1455,3:445,4:123,5:969,6:279,7:9514,8:136,9:2255,10:26,11:
 1196
  58780 multiletter control sequences out of 65536+600000
- 217 fonts using 66878815 bytes
+ 217 fonts using 66878663 bytes
  91i,17n,124p,1194b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -10107,7 +14286,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9340671 bytes).
+Output written on la.pdf (235 pages, 9340476 bytes).
 
 PDF statistics: 3009 PDF objects out of 3580 (max. 8388607)
  2704 compressed objects within 28 object streams
