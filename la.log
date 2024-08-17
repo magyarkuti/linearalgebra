@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.1)  11 JUL 2024 11:54
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.8.1)  17 AUG 2024 15:37
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1346,40 +1346,33 @@ Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 \nev@az=\count395
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2024/03/07 v2.1 Modern multilingual typesetting with XeLaT
+Package: polyglossia 2024/07/15 v2.2 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
-
-(/opt/texlive/texdir/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
-Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
-
-(/opt/texlive/texdir/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
-Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count396
-)
-\CatcodeTableOther=\catcodetable14
-\CatcodeTableExpl=\catcodetable15
-)
 Lua module: polyglossia 2013/05/11 1.3 Polyglossia
+\l_xpg_alias_keyvals_int=\count396
+
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
 File: gloss-latex.ldf polyglossia: module for default language
 )
-Package polyglossia Info: Default language is latex.
-Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
+
+Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz
+
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
 File: gloss-hungarian.ldf polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
-(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            hyphenation	
-(polyglossia)            synonyms	
+(polyglossia)            lefthyphenmin	2
 (polyglossia)            loader	loadhyph-hu.tex
+(polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            righthyphenmin	2
-(polyglossia)            lefthyphenmin	2 on input line 15
+(polyglossia)            synonyms	 on input line 15
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
 2 on input line 15
-Package polyglossia Info: Option: Hungarian, swapstrings=all.
 )
-Package polyglossia Info: Default language is hungarian.
+
+Package polyglossia Info: Default language is hungarian
+
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
@@ -1696,7 +1689,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@dimlist=\toks65
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-05-23 v7.01i Hypertext links for LaTeX
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
@@ -1716,7 +1709,7 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \Hy@pagecounter=\count529
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-05-23 v7.01i Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
 )
 (/opt/texlive/texdir/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
@@ -1724,7 +1717,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 \Hy@SavedSpaceFactor=\count530
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-05-23 v7.01i Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `unicode' set `true' on input line 4040.
 Package hyperref Info: Hyper figures OFF on input line 4157.
@@ -1767,7 +1760,7 @@ package with kernel methods
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/hluatex.def
-File: hluatex.def 2024-05-23 v7.01i Hyperref driver for luaTeX
+File: hluatex.def 2024-07-10 v7.01j Hyperref driver for luaTeX
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
@@ -1803,8 +1796,8 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-31:Some succeed because they are destined. Some succeed because they are determ
-ined.-- Unknown
+72:An idea can turn to dust or magic, depending on the talent that rubs against
+ it.-- Bill Bernbach
  
 \la@idxfile=\write6
 
@@ -2011,9 +2004,6 @@ Package hyperref Info: Link coloring OFF on input line 252.
 \@outlinefile=\write7
 
 \openout7 = la.out
-LaTeX Info: Redefining \rmfamily on input line 252.
-LaTeX Info: Redefining \sffamily on input line 252.
-LaTeX Info: Redefining \ttfamily on input line 252.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 \l@magyar = a dialect from \language\l@hungarian 
@@ -2639,9 +2629,6 @@ luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [5]
 luaotfload | aux : font no 121 (nil) defines no feature for script latn with lan
 guage hun (./la.toc
-LaTeX Info: Redefining \rmfamily on input line 1.
-LaTeX Info: Redefining \sffamily on input line 1.
-LaTeX Info: Redefining \ttfamily on input line 1.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 \l@magyar = a dialect from \language\l@hungarian 
@@ -5707,6 +5694,25 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [54]
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
+(Font)              scaled to size 6.85925pt on input line 3805.
+luaotfload | aux : font no 179 (nil) defines no feature for script latn with lan
+guage hun
+LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
+(Font)              scaled to size 6.77258pt on input line 3805.
+luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
+uage hun
+luaotfload | aux : font no 179 (nil) defines no feature for script latn with lan
+guage hun
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 3805.
+
+
+FiXme Warning: 'Serious underfull! Help me!' on input line 3805.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active
 \vbox(591.5302+0.0)x418.25368, glue set 8.41548, direction TLT
 .\vbox(0.0+0.0)x0.0, direction TLT
@@ -6159,6 +6165,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ..\TU/TeXGyrePagella(0)/m/n/10 é
 ..\TU/TeXGyrePagella(0)/m/n/10 t
 ..\TU/TeXGyrePagella(0)/m/n/10 !
+..\write1{\@writefile{lox}{\protect \contentsline {fixme}{\protect \color  {fxw
+\ETC.}
 ..\glue(\spaceskip) 3.33333 plus 3.75 minus 0.27777
 ..\TU/TeXGyrePagella(0)/m/n/10 A
 ..\TU/TeXGyrePagella(0)/m/n/10 z
@@ -6252,8 +6260,97 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 ..\TU/TeXGyrePagella(0)/m/n/10 g
 ..\TU/TeXGyrePagella(0)/m/n/10 y
 ..\glue(\spaceskip) 2.5 plus 1.25 minus 0.83333
-..\TU/TeXGyrePagella(0)/m/n/10 n
 ..etc.
+.\kern-2.83
+.\hbox(0.0+0.0)x418.25368, glue set - 124.0fil, direction TLT
+..\glue 418.25368
+..\glue 7.0
+..\vbox(0.0+0.0)x117.0, direction TLT
+...\glue 0.0
+...\vbox(0.0+18.615)x117.0, direction TLT
+....\vbox(0.0+18.615)x117.0, direction TLT
+.....\pdfcolorstack 0 push {1 0.549 0 rg 1 0.549 0 RG}
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\hbox(8.00494+3.0)x117.0, glue set 12.7301fil, direction TLT
+......\localpar
+.......\localinterlinepenalty=0
+.......\localbrokenpenalty=0
+.......\localleftbox=null
+.......\localrightbox=null
+......\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfcolorstack 0 push {0 g 0 G}
+......\pdfcolorstack 0 push {1 0.19 0.19 rg 1 0.19 0.19 RG}
+......\pdfcolorstack 0 push {1 0.19 0.19 rg 1 0.19 0.19 RG}
+......\hbox(8.00494+3.0)x0.0, glue set - 15.75252fil, direction TLT
+.......\rule(8.00494+3.0)x15.75252
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfcolorstack 0 pop
+......\hbox(8.00494+3.0)x15.75252, direction TLT
+.......\kern3.0
+.......\pdfcolorstack 0 push {0 g 0 G}
+.......\TU/TeXGyreAdventor(0)/b/n/8 F
+.......\TU/TeXGyreAdventor(0)/b/n/8 I
+.......\TU/TeXGyreAdventor(0)/b/n/8 X
+.......\kern0.0 (italic)
+.......\pdfcolorstack 0 pop
+.......\kern3.0
+......\pdfcolorstack 0 pop
+......\pdfcolorstack 0 pop
+......\TU/TeXGyrePagella(0)/m/n/8 :
+......\glue(\spaceskip) 2.66667 plus 2.0 minus 0.33333
+......\TU/TeXGyrePagella(0)/m/n/8 S
+......\TU/TeXGyrePagella(0)/m/n/8 e
+......\discretionary (penalty 50)
+.......< \TU/TeXGyrePagella(0)/m/n/8 -
+......\TU/TeXGyrePagella(0)/m/n/8 r
+......\TU/TeXGyrePagella(0)/m/n/8 i
+......\discretionary (penalty 50)
+.......< \TU/TeXGyrePagella(0)/m/n/8 -
+......\TU/TeXGyrePagella(0)/m/n/8 o
+......\discretionary (penalty 50)
+.......< \TU/TeXGyrePagella(0)/m/n/8 -
+......\TU/TeXGyrePagella(0)/m/n/8 u
+......\TU/TeXGyrePagella(0)/m/n/8 s
+......\glue(\spaceskip) 2.0 plus 1.0 minus 0.66667
+......\TU/TeXGyrePagella(0)/m/n/8 u
+......\TU/TeXGyrePagella(0)/m/n/8 n
+......\discretionary (penalty 50)
+.......< \TU/TeXGyrePagella(0)/m/n/8 -
+......\TU/TeXGyrePagella(0)/m/n/8 d
+......\TU/TeXGyrePagella(0)/m/n/8 e
+......\TU/TeXGyrePagella(0)/m/n/8 r
+......\discretionary (penalty 50)
+.......< \kern-0.24 (font)
+.......< \TU/TeXGyrePagella(0)/m/n/8 -
+......\TU/TeXGyrePagella(0)/m/n/8 f
+......\TU/TeXGyrePagella(0)/m/n/8 u
+......\TU/TeXGyrePagella(0)/m/n/8 l
+......\TU/TeXGyrePagella(0)/m/n/8 l
+......\TU/TeXGyrePagella(0)/m/n/8 !
+......\glue(\spaceskip) 2.66667 plus 3.0 minus 0.22221
+......\TU/TeXGyrePagella(0)/m/n/8 H
+......\TU/TeXGyrePagella(0)/m/n/8 e
+......\TU/TeXGyrePagella(0)/m/n/8 l
+......\TU/TeXGyrePagella(0)/m/n/8 p
+......\kern-0.24 (right margin)
+......\glue(\rightskip) 0.0 plus 1.0fil
+.....\penalty 2000
+.....\glue(\baselineskip) 1.89806
+.....\hbox(5.552+0.16)x117.0, glue set 52.052fil, direction TLT
+......\TU/TeXGyrePagella(0)/m/n/8 m
+......\TU/TeXGyrePagella(0)/m/n/8 e
+......\TU/TeXGyrePagella(0)/m/n/8 !
+......\penalty 10000
+......\kern-0.224 (right margin)
+......\glue(\parfillskip) 0.0 plus 1.0fil
+......\glue(\rightskip) 0.0 plus 1.0fil
+....\pdfcolorstack 0 pop
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\hbox(0.0+2.83)x0.0, direction TLT
+..\rule(0.0+2.83)x0.0
+.\penalty 0
+.\penalty 10000
 .\penalty 1050
 .\glue(\baselineskip) 3.11008
 .\hbox(7.26+2.83)x418.25368, glue set 60.43037fil, direction TLT
@@ -6386,7 +6483,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\hbox(36.25014+31.25014)x418.25368, direction TLT
 ..\glue(\tabskip) 0.0
 ..\hbox(36.25014+31.25014)x418.25368, direction TLT
-...\hbox(36.25014+31.25014)x418.25368, glue set 104.32033fil, direction TLT
+...\hbox(36.25014+31.25014)x418.25368, glue set 95.32033fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\hbox(9.24+3.96005)x0.0, direction TLT
 .....\vbox(9.24+3.96005)x0.0, direction TLT
@@ -6834,7 +6931,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⟹
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
 ....\vbox(36.25014+31.25014)x150.00012, direction TLT
 .....\hbox(9.24+3.96005)x150.00012, direction TLT
@@ -7279,7 +7376,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⟹
 ....\mathoff
 ....\glue 0.0 plus 1.0fil
 ..\glue(\tabskip) 0.0
@@ -7289,7 +7386,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\hbox(36.6418+31.6418)x418.25368, direction TLT
 ..\glue(\tabskip) 0.0
 ..\hbox(36.6418+31.6418)x418.25368, direction TLT
-...\hbox(36.6418+31.6418)x418.25368, glue set 28.97916fil, direction TLT
+...\hbox(36.6418+31.6418)x418.25368, glue set 24.47916fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\hbox(9.24+3.96005)x0.0, direction TLT
 .....\vbox(9.24+3.96005)x0.0, direction TLT
@@ -7743,7 +7840,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⟹
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
 ....\vbox(36.6418+31.6418)x168.36212, direction TLT
 .....\hbox(9.24+3.96005)x168.36212, direction TLT
@@ -8218,7 +8315,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⟹
 ....\mathoff
 ....\glue 0.0 plus 1.0fil
 ..\glue(\tabskip) 0.0
@@ -8228,7 +8325,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .\hbox(30.05661+25.05661)x418.25368, direction TLT
 ..\glue(\tabskip) 0.0
 ..\hbox(30.05661+25.05661)x418.25368, direction TLT
-...\hbox(30.05661+25.05661)x418.25368, glue set 79.91202fil, direction TLT
+...\hbox(30.05661+25.05661)x418.25368, glue set 75.41202fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\hbox(9.24+3.96005)x0.0, direction TLT
 .....\vbox(9.24+3.96005)x0.0, direction TLT
@@ -8657,7 +8754,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\TU/TeXGyrePagellaMath(1)/m/n/10 ⇒
+....\TU/TeXGyrePagellaMath(1)/m/n/10 ⟹
 ....\glue(\thickmuskip) 2.77771 plus 2.77771
 ....\vbox(30.05661+25.05661)x155.54312, direction TLT
 .....\hbox(9.82559+4.1208)x155.54312, direction TLT
@@ -12211,12 +12308,6 @@ guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 10347.
-
-
-
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -13549,10 +13640,6 @@ luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 164 (nil) defines no feature for script latn with lan
 guage hun
-
-Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 14757.
-
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -14239,10 +14326,10 @@ luaotfload | aux : font no 115 (nil) defines no feature for script latn with lan
 guage hun [235])
 
 FiXme Summary: Number of notes: 0,
-(FiXme)        Number of warnings: 0,
+(FiXme)        Number of warnings: 1,
 (FiXme)        Number of errors: 0,
 (FiXme)        Number of fatal errors: 0,
-(FiXme)        Total: 0.
+(FiXme)        Total: 1.
 
 \tf@toc=\write8
 
@@ -14260,17 +14347,17 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 37928 strings out of 475915
- 125009,2373549 words of node,token memory allocated
- 5257 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 56 glue, 5 kern, 1 penalty, 29
- glyph, 854 attribute, 198 glue_spec, 854 attribute_list, 3 write, 1 pdf_action 
-nodes
-   avail lists: 1:8,2:1455,3:445,4:123,5:969,6:279,7:9514,8:136,9:2255,10:26,11:
-1196
- 58780 multiletter control sequences out of 65536+600000
- 217 fonts using 66878663 bytes
- 91i,17n,124p,1194b,2242s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 37369 strings out of 475915
+ 125105,2373549 words of node,token memory allocated
+ 5873 words of node memory still in use:
+   13 hlist, 4 vlist, 3 rule, 8 disc, 2 local_par, 68 glue, 9 kern, 3 penalty, 2
+ margin_kern, 64 glyph, 874 attribute, 198 glue_spec, 874 attribute_list, 3 writ
+e, 1 pdf_action, 10 pdf_colorstack nodes
+   avail lists: 1:1,2:1477,3:445,4:123,5:961,6:279,7:9518,8:136,9:2279,10:26,11:
+1200
+ 58231 multiletter control sequences out of 65536+600000
+ 219 fonts using 67375303 bytes
+ 91i,17n,124p,1194b,2182s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
 tf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyrepa
@@ -14286,7 +14373,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9340476 bytes).
+Output written on la.pdf (235 pages, 9340781 bytes).
 
 PDF statistics: 3009 PDF objects out of 3580 (max. 8388607)
  2704 compressed objects within 28 object streams
