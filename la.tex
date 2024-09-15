@@ -1091,11 +1091,12 @@ emiatt egy akármilyen test feletti $n$-ed fokú polinom gyökeinek száma $n$-n
 	de $h\left( t_0 \right)\neq 0$.
 	Néha azt is mondjuk, hogy $t_0$ egy $k$-szoros gyöke $p$-nek.
 \end{definition}
-Teljesen világos, hogy a gyöktényező kiemelhetősége miatt minden gyök legalább egyszeres multiplicitású.
-A következő állítás szerint
-a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több mint a polinom foka.
+Világos, hogy a gyöktényező kiemelhetősége miatt,
+egy nem konstans polinom minden gyökének van véges multiplicitása, ami persze legalább $1$.
+
+A következő állítás szerint a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több mint a polinom foka.
 \begin{proposition}
-	Legyen(ek) a $p\in\mathbb{F}\left[ t \right]$ nem zérus polinom különböző gyökei $t_1,\ldots,t_k$,
+	Legyen(ek) a $p\in\mathbb{F}\left[ t \right]$ nem konstans polinom különböző gyökei $t_1,\ldots,t_k$,
 	és ezen gyökök multiplicitásai rendre $m_1,\ldots,m_k$.
 	Ekkor $m_1+\ldots+m_k\leq\deg p$.
 \end{proposition}
@@ -1110,8 +1111,10 @@ a gyökök száma még a multiplicitásukkal együtt számolva sem lehet több m
 	A fokszámok összehasonlításából kapjuk, hogy
 	$m_1+\ldots+m_k\leq m_1+\ldots+m_k+\deg h=\deg p$.
 \end{proof}
-A fenti gondolat szerint, ha egy legfeljebb $n$-ed fokú polinomnak $n+1$ különböző gyöke van,
-akkor csak úgy lehetséges, ha a polinom minden együtthatója nulla.
+A fenti gondolat szerint egy nem konstans polinomnak nem lehet több gyöke mint a fokszáma.
+Máshogy kifejezve, ha egy polinomnak több gyöke van mint a fokszáma, akkor ez a polinom egy konstans polinom.
+Mive van gyöke, ezért csak a konstans zérus lehetséges.
+
 Ezt úgy is szoktuk fogalmazni,
 hogy egy legfeljebb $n$-ed fokú polinomot $n+1$ helyettesítési értéke már egyértelműen meghatározza:
 \begin{proposition}\label{pr:polinomfv}
