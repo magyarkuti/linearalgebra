@@ -1061,12 +1061,14 @@ Azt gondoljuk meg,
 hogy a gyöktényező a polinomból mindig kiemelhető,
 emiatt egy akármilyen test feletti $n$-ed fokú polinom gyökeinek száma $n$-nél nagyobb nem lehet.
 \begin{proposition}
-	Legyen $p\in\mathbb{F}\left[ t \right]$ egy nem zérus polinom,
-	és $t_0$ egy gyöke, azaz $p\left( t_0 \right)=0$.
-	Ekkor létezik $h\in\mathbb{F}\left[ t \right]$ nem zérus polinom,
+	Legyen $p\in\mathbb{F}\left[ t \right]$ egy legalább első fokú polinom,
+	és $t_0$ annak egy gyöke, azaz $p\left( t_0 \right)=0$.
+	Ekkor létezik $h\in\mathbb{F}\left[ t \right]$ polinom,
 	amelyre
 	\[
-		p\left( t \right)=\left( t-t_0 \right)h\left( t \right).\qedhere
+        \deg h = \deg p -1,
+        \quad\text{ és }\quad
+        p\left( t \right)=\left( t-t_0 \right)h\left( t \right).\qedhere
 	\]
 \end{proposition}
 \begin{proof}
