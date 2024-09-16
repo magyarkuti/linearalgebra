@@ -1,10 +1,10 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.8.1)  17 AUG 2024 15:37
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.9.1)  16 SEP 2024 04:02
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
 (./la.tex
 LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-05-27>
+L3 programming layer <2024-08-16>
 Lua module: luaotfload 2024-02-14 3.28 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
@@ -46,7 +46,7 @@ Document Class: memoir 2024/01/26 v3.8.2 configurable book, report, article doc
 ument class
 (/opt/texlive/texdir/texmf-dist/tex/latex/xpatch/xpatch.sty
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-05-27 L3 programming layer (loader) 
+Package: expl3 2024-08-16 L3 programming layer (loader) 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2024-05-08 L3 backend support: PDF output (LuaTeX)
@@ -57,7 +57,7 @@ Inserting `l3color' in `luaotfload.parse_color'.
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-05-08 L3 Experimental document command parser
+Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
@@ -500,7 +500,7 @@ Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaL
 aTeX
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-05-08 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
@@ -1609,7 +1609,7 @@ Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2024-05-27 L3 programming layer (loader) 
+(biblatex)             2024-08-16 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -1796,8 +1796,9 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-72:An idea can turn to dust or magic, depending on the talent that rubs against
- it.-- Bill Bernbach
+66:Vision doesn't usually come as a lightening bolt. Rather it comes as a slow 
+crystallization of life challenges that we one day recognize as a beautiful dia
+mond with great value to ourselves and others.-- Dr Michael Norwood
  
 \la@idxfile=\write6
 
@@ -5502,11 +5503,11 @@ guage hun [43]
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2949.
+(Font)              scaled to size 9.3886pt on input line 2954.
 luaotfload | aux : font no 177 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2949.
+(Font)              scaled to size 9.26996pt on input line 2954.
 luaotfload | aux : font no 167 (nil) defines no feature for script latn with lan
 guage hun
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
@@ -5697,20 +5698,20 @@ guage hun [54]
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 6.85925pt on input line 3805.
+(Font)              scaled to size 6.85925pt on input line 3810.
 luaotfload | aux : font no 179 (nil) defines no feature for script latn with lan
 guage hun
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 6.77258pt on input line 3805.
+(Font)              scaled to size 6.77258pt on input line 3810.
 luaotfload | aux : font no 39 (nil) defines no feature for script latn with lang
 uage hun
 luaotfload | aux : font no 179 (nil) defines no feature for script latn with lan
 guage hun
 Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
-line 3805.
+line 3810.
 
 
-FiXme Warning: 'Serious underfull! Help me!' on input line 3805.
+FiXme Warning: 'Serious underfull! Help me!' on input line 3810.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active
@@ -14347,7 +14348,7 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 37369 strings out of 475915
+ 37369 strings out of 475910
  125105,2373549 words of node,token memory allocated
  5873 words of node memory still in use:
    13 hlist, 4 vlist, 3 rule, 8 disc, 2 local_par, 68 glue, 9 kern, 3 penalty, 2
@@ -14355,7 +14356,7 @@ Here is how much of LuaTeX's memory you used:
 e, 1 pdf_action, 10 pdf_colorstack nodes
    avail lists: 1:1,2:1477,3:445,4:123,5:961,6:279,7:9518,8:136,9:2279,10:26,11:
 1200
- 58231 multiletter control sequences out of 65536+600000
+ 58236 multiletter control sequences out of 65536+600000
  219 fonts using 67375303 bytes
  91i,17n,124p,1194b,2182s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
@@ -14373,7 +14374,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9340781 bytes).
+Output written on la.pdf (235 pages, 9339728 bytes).
 
 PDF statistics: 3009 PDF objects out of 3580 (max. 8388607)
  2704 compressed objects within 28 object streams
