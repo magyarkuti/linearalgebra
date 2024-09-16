@@ -20,7 +20,7 @@ jobs:
           args:  --file-line-error --interaction=nonstopmode
           # pre_compile: "tlmgr update --self && tlmgr update polyglossia"
       - name: Upload to workflows
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
            name: la.pdf
            path: la.pdf
