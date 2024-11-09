@@ -3645,34 +3645,109 @@ következménye a négyzetes mátrixok kétoldalisági tulajdonsága.
     \]
     Meggondoltuk tehát, hogy $BA-I=0$, ergo $BA=I$ is fennáll.
 \end{proof}
+Ahogyan azt a mátrixok bevezetésekor \aazt{\pageref{pg:kommutal}}. oldalon megígértük,
+most megmutattuk azt, hogy a négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
+egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}\index{kommutál}
+
 \subsection{Inverz mátrix}
-Gondoljunk arra, hogy milyen módszerrel automatizálhatnánk a Gauss\,--\,Jordan-algoritmust.\index{Gauss\,--\,Jordan-elimináció}
-Mivel sorműveletekről van szó, természetes gondolat, hogy az $A\in\mathbb{F}^{m\times n}$
-mátrix transzformálásához $m\times m$ méretű mátrixokat használjunk,
-amelyekkel balról szorozzuk $A$-t.
-Valóban, ha $m\times m$ méretű identitás mátrix
-\begin{enumerate}
-	\item
-	      $i$-edik sorát szorozzuk egy $\delta$ számmal,
-	      akkor egy olyan mátrixot kapunk,
-	      amellyel való balszorzása $A$-nak éppen az $A$ mátrix
-	      $i$-edik sorát szorozza $\delta$-val.
-	\item
-	      $k$-adik sorából kivonjuk az $i$-edik sor $\delta$-szorosát,
-	      akkor egy olyan mátrixot kapunk,
-	      amellyel való balszorzása $A$-nak éppen az $A$ mátrix
-	      $k$-adik sorából vonja ki az $i$-edik sor $\delta$-szorosát.
-	\item
-	      $k$-adik és $j$-edik sorát felcseréljük,
-	      akkor egy olyan mátrixot kapunk,
-	      amellyel való balszorzása $A$-nak éppen az $A$ mátrix
-	      $k$-adik és $j$-edik sorát cseréli fel.
-\end{enumerate}
+Először is összefoglaljuk, az eliminációs algoritmus következményét négyzetes mátrixok mellett.
+Négyzetes mátrix mellett az a tény, hogy az elimináció utolsó táblázatában nincs zérus sor, 
+azonos avval a ténnyel,
+hogy minden oszlopban van választott pivot elem.
+Ez az egyszerű észrevétel teremti meg annak lehetőségét, hogy az $x\mapsto A\cdot x$ hozzárendelés, mint $\mathbb{F}^m\to\mathbb{F}^m$ függvény egyszerre legyen injektív vagy szürjektív.
+\begin{proposition}
+	Legyen $A\in\mathbb{F}^{m\times m}$ mátrix. Az alábbi feltevések ekvivalensek:
+	\begin{enumerate}
+		\item
+		      Létezik $B\in\mathbb{F}^{m\times m}$ mátrix, amelyre
+		      \begin{math}
+			      AB=I.
+		      \end{math}
+        \item
+            Minden $b\in\mathbb{F}^m$ vektor mellett az $Ax=b$ inhomogén rendszer megoldható.
+		\item
+		      Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció}  
+              az $A$ minden oszlopa a generátorrendszerbe cserélhető.
+        \item 
+            Az $Ax=0$ homogén rendszernek csak a zérus vektor a megoldása.
+		\item
+		      Létezik $B\in\mathbb{F}^{m\times m}$ mátrix, amelyre
+		      \begin{math}
+			      BA=I.
+		      \end{math}
+	\end{enumerate}
+	Ha a fenti feltevések egyike (ergo mindegyike) fennáll,
+	akkor az $(1)$ és $(5)$-ben szereplő $B$ mátrixból csak egy van.
+\end{proposition}
+\begin{proof}
+    Az $(1)$ és $(5)$ feltevések ekviavalenciáját már láttuk.
+    A $(2),(3)$ és $(4)$ feltételek mindegyike azt jelenti, 
+    hogy az eliminációs algoritmus utolsó táblázatában nincs zérus sor, 
+    hiszen négyzetes mátrixok esetén ez azonos avval, 
+    hogy minden oszlopban van választott pivot elem.
+    Az $(5)$ feltételből könnyen következik $(4)$, hiszen az $Ax=0$ mellett már
+    \[
+        x=Ix=\left( BA \right)x=B(Ax)=B\cdot 0=0.
+    \]
+    A $(2)$ feltevés esetében, 
+    ha $B$ mátrix $k$-adik oszlopát úgy defináljuk 
+    mint annak az inhomogén rendszernek az (egyik) megoldása, 
+    ahol a jobboldali vektor az identitás mátrix $k$-adik oszlopa, 
+    akkor erre a $B$ mátrixra $AB=I$ fennáll.
+
+Beláttuk tehát a feltevések ekvivalenciáját. 
+Most arra emlékezzünk, hogy ha egy egységelemes félcsoportban van bal- és jobboldali inverz,
+akkor abból csak egy lehet.
+\end{proof}
+\begin{definition}[reguláris mátrix]
+	Egy $A\in\mathbb{F}^{m\times m}$ négyzetes mátrixot
+	\emph{invertálhatónak}\index{invertálható mátrix} vagy
+	\emph{regulárisnak} vagy \emph{nem szingulárisnak} nevezünk,
+	ha létezik $B\in\mathbb{F}^{m\times m}$ négyzetes mátrix,
+	amelyre
+	\[
+		AB=BA=I
+	\]
+	Mivel egy egységelemes gyűrűben ha van inverz, akkor csak egyetlen egy van,
+	ezért adott $A$ invertálható mátrixhoz csak egy $B$ mátrix van, amely kielégíti a fenti definíciót.
+	Ezt a $B$ mátrixot nevezzük az $A$ inverzének és $A^{-1}=B$ módon jelöljük.
+\end{definition}
+
+Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
+akkor már $A$ invertálható is, és $A^{-1}=B$. 
+\begin{proposition}
+    Reguláris mátrixok szorzata is reguláris.
+    Ha $A,B\in\mathbb{F}^{m\times m}$ reguláris mátrixok, akkor
+    \(
+    \left( AB \right)^{-1}=B^{-1}A^{-1}.
+    \)
+    Tetszőleges $n$ nem negatív egész szám mellett 
+    \(
+    \left( A^{-1} \right)^{n}
+    =
+    \left( A^{n} \right)^{-1}.
+    \)
+\end{proposition}
+\begin{proof}
+    Elég ha azt vesszük észre, hogy
+    \(
+        \left( AB \right)\left( B^{-1}A^{-1} \right)
+        =
+        A\left( BB^{-1} \right)A^{-1}
+        =
+        AIA^{-1}
+        =
+        I.
+    \)
+    Ez igazolja a szorzat regularitását, és egyben a szorzat inverzére felírt formulát.
+    Az $A=B$ speciális esetben kapjuk a hatvány inverzét kifejező képletet.
+\end{proof}
 
 Tekintsünk most, egy $m\times m$ méretű négyzetes mátrixot.
-Tegyük fel, hogy a mátrix minden oszlopát a generátorrendszerbe cserélhetjük
-a szokásos Gauss\,--\,Jordan-eliminációs algoritmus\index{Gauss\,--\,Jordan-elimináció}  során.
-Láttuk korábban, hogy ez azt jelenti, hogy az $Ax=b$ inhomogén lineáris egyenletrendszer
+Tegyük fel, hogy a mátrix mátrixnak van inverze,
+azaz minden oszlopát a generátorrendszerbe cserélhetjük a szokásos Gauss\,--\,Jordan-eliminációs algoritmus\index{Gauss\,--\,Jordan-elimináció} során.
+Az utolsó táblázatban nincs csupa zérus sor, tehát az 
+$$Ax=b$$ inhomogén lineáris egyenletrendszer
 minden $b$ vektor mellett egyértelműen megoldható.
 
 Legyen $\left\{ e_1,\ldots,e_m \right\}$ az $\mathbb{F}^m$ szokásos generátorrendszere,
@@ -3703,100 +3778,15 @@ Ha például az első sor $j$-edik elemén van 1-es,
 akkor az azt jelenti, hogy az első sorba elimináltuk az $j$-edik ismeretlent,
 tehát a megoldás $j$-edik koordinátáját tartalmazza az $m+k$-adik oszlop első eleme.
 
-Ha tehát úgy cseréljük fel a táblázat sorait,
+Ha tehát úgy cseréljük meg a táblázat sorait,
 hogy a baloldali $m\times m$ méretű mátrix váljon az identitás mátrixszá,
 akkor az $Ax=e_k$ egyenlet egyetlen partikuláris megoldása jelentkezik az egész táblázat
 $m+k$ adik oszlopában.
 Mivel a keresett $B$ mátrixnak éppen ez a $k$-adik oszlopa,
 ezért maga a $B$ mátrix áll a táblázat jobboldali $m\times m$ méretű részén.
+Találtunk tehát $B$ mátrixot, amelyre $BA=I$ fennáll.
 
-Most meggondoljuk, hogy $BA=I$ is fennáll.
-Az iménti algoritmussal az $[A|I]$ mátrixot transzformáltuk a $[I|B]$ mátrixszá.
-A transzformáció során a Gauss\,--\,Jordan-eliminációt használtuk,\index{Gauss\,--\,Jordan-elimináció}  amely a szakasz elején említett 1) és 2) típusú mátrixokkal mint balszorzásokkal hajtható végre.
-Az algoritmus végén még sorokat is felcseréltünk, ami egy 3) típusú balszorzást jelent.
-Ha az 1) vagy 2) vagy 3) típusú mátrixot \emph{elemi mátrixnak}\index{elemi mátrix}
-nevezünk,
-akkor úgy fogalmazhatunk,
-hogy van véges sok $P_1,\ldots,P_r\in\mathbb{F}^{m\times m}$ elemi mátrix, amelyre
-\(
-(P_r\cdots P_1)\left[ A|I \right]=\left[ I|B \right].
-\)
-Ekkor persze $(P_r\cdots P_1)A=I$ és $P_r\cdots P_1=B$,
-amiből már következik, hogy
-\[
-	BA=I.
-\]
-
-\begin{definition}[nem szinguláris mátrix]
-	Egy $A\in\mathbb{F}^{m\times m}$ négyzetes mátrixot
-	\emph{invertálhatónak}\index{invertálható mátrix} vagy
-	\emph{regulárisnak} vagy \emph{nem szingulárisnak} nevezünk,
-	ha létezik $B\in\mathbb{F}^{m\times m}$ négyzetes mátrix,
-	amelyre
-	\[
-		AB=BA=I
-	\]
-	Mivel egy egységelemes gyűrűben ha van inverz, akkor csak egyetlen egy van,
-	ezért adott $A$ invertálható mátrixhoz csak egy $B$ mátrix van, amely kielégíti a fenti definíciót.
-	Ezt a $B$ mátrixot nevezzük az $A$ inverzének és $A^{-1}=B$ módon jelöljük.
-\end{definition}
-
-\begin{proposition}
-	Legyen $A\in\mathbb{F}^{m\times m}$ mátrix. Az alábbi feltevések ekvivalensek:
-	\begin{enumerate}
-		\item
-		      $A$ invertálható.
-		\item
-		      Létezik $B\in\mathbb{F}^{m\times m}$ mátrix, amelyre
-		      \begin{math}
-			      AB=I.
-		      \end{math}
-		\item
-		      Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció}  az $A$ minden oszlopa a generátorrendszerbe cserélhető.
-	\end{enumerate}
-	Ha a fenti feltevések egyike (ergo mindegyike) fennáll,
-	akkor az 2)-ben szereplő $B$ mátrixból csak egy van,
-	mégpedig az $A^{-1}$ inverz mátrix.
-\end{proposition}
-\begin{proof}
-	Körben igazolunk:
-	\begin{description}
-		\item[$1.\Rightarrow 2.$] Nyilvánvaló.
-		\item[$2.\Rightarrow 3.$]
-		      Tegyük fel -- indirekt --, hogy már $r$ transzformáció után a Gauss\,--\,Jordan-algoritmus megáll, ahol $r<m$.
-		      Ez azt jelenti, hogy az $A$ oszlop-vektorterének van $r$ elemű generátorrendszere.
-		      E generátorrendszer vektorait mint oszlopokat egy $A_1$ mátrixba téve egy $m\times r$ mátrixot kapunk.
-		      Mivel az oszlopok lineáris burkában az $A$ valamennyi oszlopa szerepel,
-		      van olyan $r\times m$ méretű $A_2$ mátrix, amelyre
-		      \(
-		      A_1A_2=A.
-		      \)
-		      Azt kaptuk tehát, hogy
-		      \[
-			      A_1\left( A_2B \right)=\left( A_1A_2 \right)B=AB=I.
-		      \]
-		      Ebből az következik,
-		      hogy tetszőleges $b\in\mathbb{F}^{m}$ vektor mellett az
-		      \begin{math}
-			      x=A_2Bb\in\mathbb{F}^{r}
-		      \end{math}
-		      vektor megoldása az $A_1x=b$ inhomogén lineáris egyenletrendszernek,
-		      ami ellentmondás, hiszen $A_1$ mátrixnak kevesebb oszlopa van mint sora.
-		\item[$3.\Rightarrow 1.$] Éppen ezt igazoltuk a szakasz elején.
-	\end{description}
-	Ha a feltevések egyike -- így mindegyike -- fennáll, akkor
-	\(
-		A^{-1}=A^{-1}I=A^{-1}\left( AB \right)=\left( A^{-1}A \right)B=IB=B.%\qedhere
-	\)
-\end{proof}
-Ha tehát $A$ és $B$ négyzetes mátrixok, amelyekre $AB=I$,
-akkor 2) szerint $A$ invertálható, és $A^{-1}=B$, ezért
-$BA=A^{-1}A=I$ is fennáll.
-Ahogyan azt a mátrixok bevezetésekor \aazt{\pageref{pg:kommutal}}. oldalon megígértük,
-most megmutattuk azt, hogy a négyzetes mátrixok gyűrűjében ha két mátrix szorzata a gyűrű
-egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}\index{kommutál}
-
-Egy konkrét példa megoldásával ismételjük át a szakasz elején megértett algoritmust.
+Egy konkrét példa megoldásával szemléltetjük az itt megértett algoritmust.
 A feladat, hogy keressük meg az
 \[
 A=
@@ -3807,7 +3797,7 @@ A=
 	1 & 0 & 2 & 1
 \end{pmatrix}
 \]
-mátrix inverzét!\fxwarning{Serious underfull! Help me!}
+mátrix inverzét!
 Az inverz létezésének szükséges és elegendő feltétele, hogy négy lépést tudjunk végrehajtani az eliminációs algoritmusban.
 Egy lehetséges megoldás a következő:
 \begin{multline*}
@@ -3859,7 +3849,7 @@ Egy lehetséges megoldás a következő:
 	\end{array}.
 \end{multline*}
 Kaptuk hát, hogy az $A$ mátrix inverze az
-\begin{displaymath}
+\begin{math}
 	A^{-1}=\frac{1}{4}
 	\begin{pmatrix}
 		-12 & -2 & 6  & 4  \\
@@ -3867,7 +3857,7 @@ Kaptuk hát, hogy az $A$ mátrix inverze az
 		12  & 1  & -5 & -2 \\
 		-12 & 0  & 4  & 4
 	\end{pmatrix}
-\end{displaymath}
+\end{math}
 mátrix.
 
 Innen már csak egy lépés az általunk preferált módszer.
