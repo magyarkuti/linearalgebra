@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.11.1)  9 NOV 2024 16:58
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.11.1)  22 NOV 2024 13:09
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1796,8 +1796,7 @@ Package hyperref Info: Option `final' set `true' on input line 78.
 \dtlrows@quotes=\count541
 \dtlcols@quotes=\count542
 A bölcsesség:
-41:Age is an issue of mind over matter. If you don't mind, it doesn't matter.--
- Mark Twain
+74:Life is trying things to see if they work-- Ray Bradbury
  
 \la@idxfile=\write6
 
@@ -10129,7 +10128,7 @@ nodes
    avail lists: 1:9,2:1427,3:445,4:123,5:968,6:285,7:10957,8:136,9:2826,10:26,11
 :1200
  58234 multiletter control sequences out of 65536+600000
- 217 fonts using 66878967 bytes
+ 217 fonts using 66878815 bytes
  91i,17n,124p,1194b,2184s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -10146,7 +10145,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (233 pages, 9338246 bytes).
+Output written on la.pdf (233 pages, 9337200 bytes).
 
 PDF statistics: 2998 PDF objects out of 3580 (max. 8388607)
  2696 compressed objects within 27 object streams
