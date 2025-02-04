@@ -16453,14 +16453,14 @@ hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan m
 hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbett tartalmazzon:
 \begin{proposition}
     Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
-    Tegyük fel, hogy a balfelső elemre $a_{1,1}\neq 0$.
-    Jelölje $d=\frac{1}{a_{1,1}}a_1$, ahol $a_1$ a mátrix első oszlopa $A$.
+    Tegyük fel, hogy a diagonális $t$-edik elemére $a_{t,t}\neq 0$.
+    Jelölje $d=\frac{1}{a_{t,t}}a_t$, ahol $a_t$ az $A$ mátrix $t$-edik oszlopa.
     Ekkor
     \[
-        R=A-a_{1,1}d\cdot d^T
+        R=A-a_{t,t}d\cdot d^T
    \]
    egy olyan szimmetrikus mátrix, 
-   ahol az első oszlop és első sor kizárólag zérus elemeket tartalmaz.
+   ahol a $t$-edik oszlop és a $t$-edik sor kizárólag zérus elemeket tartalmaz.
 \end{proposition}
 \begin{proof}
     Az persze nyilvánvaló, hogy szimmetrikus mátrixok egy lináris kombinációja is szimmetrikus marad.
