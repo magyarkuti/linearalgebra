@@ -16463,19 +16463,15 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
    ahol a $t$-edik oszlop és a $t$-edik sor kizárólag zérus elemeket tartalmaz.
 \end{proposition}
 \begin{proof}
-    Az persze nyilvánvaló, hogy szimmetrikus mátrixok egy lináris kombinációja is szimmetrikus marad.
-    Jelölje $\delta_k=\frac{a_{k,1}}{a_{1,1}}=\frac{a_{1,k}}{a_{1,1}}$ a $d$ vektor $k$-adik koordinátáját.
-    Ekkor 
-    \[
-        r_{k,j}=
-        a_{k,j}-a_{1,1}\delta_k\delta_j=
-        a_{k,j}-a_{1,1}\frac{a_{k,1}}{a_{1,1}}\delta_j=
-        a_{k,j}-a_{k,1}\delta_j.
-        \tag{\dag}
-    \]
-    Ha $j=1$, akkor itt $r_{k,1}=a_{k,1}-a_{k,1}\delta_1=0$.
-    Látjuk, hogy az $R$ mátrix első oszlopa csupa zérust tartalmaz. 
-    No de, az $R$ egy szimmetrikus mátrix, ergo az első sorban is csak zérus elemek vannak.
+    Az persze nyilvánvaló, hogy szimmetrikus mátrixok egy lináris kombinációja is szimmetrikus marad, 
+    ergo $R$ szimmetrikus.
+
+    Jelölje $\delta_k=\frac{a_{k,t}}{a_{t,t}}=\frac{a_{t,k}}{a_{t,t}}$ a $d$ vektor $k$-adik koordinátáját.
+    Most figyeljünk $R$ soraira, első lépésként a $t$-edik sorra.
+    Ez $a_t^T-a_{t,t}\delta_t d^T$. No de ez nyilvánvalóan a zérus sor, 
+    hiszen $\delta_t=1$ és $a_{t,t}d=a_t$.
+    Mivel $R$ egy szimmetrikus mátrix, 
+    ezért a $t$-edik oszlop is csak is csak zérus elemeket tartalmaz.
     \end{proof}
     Illusztrációként nézzük a következő kvadratikus alakot:
     \[
@@ -16491,8 +16487,9 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
         -2&1&\frac{3}{2}
     \end{pmatrix}
     \)
-    szimmetrikus mátrix reprezentálja, 
-    legyen tehát 
+    szimmetrikus mátrix reprezentálja.
+    Válasszuk le belőle a balfelső elemhez tartozó diádot.
+    Legyen tehát $t=1$ mellett
     \(d=
     \begin{bmatrix}
         1\\ \frac{1}{2}\\ -1
@@ -16604,39 +16601,42 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
         \end{bmatrix}.
     \]
 
-Voltaképpen készen is lennénk, mert
-ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
-mikor az algoritmus kezdő és minden további lépésében a maradék kvadratikus alak mátrixának balfelső eleme nem zérus, azaz ha teljesen reguláris\index{teljesen reguláris} szimmetrikus mátrixszal állunk szemben.
+Voltaképpen készen is lennénk, 
+mert ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
+amikor az algoritmus kezdő mátrixa, és minden további lépésében a maradék kvadratikus alak mátrixa,
+diagonálisának nem minden elem zérus.
+Ha például a mátrix teljesen reguláris az azt jelenti, 
+hogy minden lépésben a maradék mátrixának a bal felső eleme nem zérus.
 
-A maradék kvadratikus alak mátrixa, az $R=A-a_{1,1}d\cdot d^T$, a fentinél sokkal
+A maradék kvadratikus alak mátrixa, az $R=A-a_{t,t}d\cdot d^T$, a fentinél sokkal
 hatékonyabban számolható.
-Nézzük rá az állítás igazolásában kiemelt $(\dag)$ azonosságra de úgy,
-hogy gondoljunk közben a Gauss\,--\,Jordan-eliminációra:
-    \[
-        r_{k,j}=
-        a_{k,j}-a_{k,1}\delta_j.
-        \tag{\dag}
-    \]
-Tudjuk, hogy az $R$ maradék első oszlopa és első sora zérus.
-Ezért a kérdés csak az, 
-hogy e mátrix jobb alsó $n-1\times n-1$ méretű részének mik az elemei.
-A fenti formulát kell ehhez alkalmazni, mikor $k>1$ és $j>1$.
-Ismerjük fel, hogy (\dag)  éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
-amikor a balfelső elem a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
-Ez azt jelenti, hogy az $A-a_{1,1}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció} is számolható.
+Láttuk már, hogy $t$-edik sorban minden elem zérus.
+Most írjuk fel $k\neq t$ mellett az $R$ mátrix $k$-adik sorát.
+Figyeljük meg, hogy a $d^T$ sor a Gauss--Jordan-elimáció segédsora,
+amikor az $a_{t,t}$ pivotelemet választjuk.
+Tekintsünk a $d\cdot d^T$ diád $k$-adik sorára, mint $\delta_kd^T$. 
+Ekkor világos, hogy az $R$ mátrix $k$-adik sora az $A$ mátrix $k$-adik sorának és az $a_{t,k}d^T$ sor különbsége,
+hiszen
+\[
+    a_{t,t}\delta_kd^T
+    =
+    a_{t,t}\frac{a_{k,t}}{a_{t,t}}d^T.
+\]
+
+Ismerjük fel, hogy ez éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
+amikor a diagonális $t$-edik eleme a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
+Ez azt jelenti, hogy az $A-a_{t,t}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció} is számolható.
 Bebizonyítottuk hát a következő állítást.
 \begin{proposition}
    Legyen $A\in\mathbb{R}^{n\times n}$ egy olyan szimmetrikus mátrix,
-   amelyre $a_{1,1}\neq 0$.
+   amelyre $a_{t,t}\neq 0$.
    Legyen $R$ az első diád leválasztása után maradó kvadratikus alak mátrixa,
    azaz 
-   $$R=A-a_{1,1}d\cdot d^T,$$
-   ahol $d$ az $A$ mátrix első oszlopának az $a_{1,1}$ reciprokával vett szorzata.
-   Tudjuk, hogy $R$ első oszlopa és sora csak zérus elemeket tartalmaz, viszont e
-   mátrix a jobb alsó $\left(n-1\times n-1  \right)$ méretű része megkapható
-   az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
-   olyan módon hogy a balfelső $a_{1,1}$ elemet választjuk pivot elemnek, 
-   és az elimináció első sorát eldobjuk.
+   $$R=A-a_{t,t}d\cdot d^T,$$
+   ahol $d$ az $A$ mátrix $t$-edik oszlopának az $a_{t,t}$ reciprokával vett szorzata.
+   Tudjuk, hogy $R$ $t$-edik oszlopa és sora csak zérus elemeket tartalmaz.
+   E mátrix többi része az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
+   kapható az $a_{t,t}$ pivot elem választásával.
 \end{proposition}
 Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.
 \[
@@ -16647,7 +16647,7 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
      & 1         & 0   & 1   \\
      & -2        & 1   & 3/2 \\
     \hline
-    & \delta    & \frac{1}{2}   & -1
+    & 1    & \frac{1}{2}   & -1
 \end{array}
 \implies
 \begin{array}{c|ccc}
@@ -16657,7 +16657,7 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
      & & \boxed{-1/2}   & 2     \\
      & &            2   & -1/2  \\
      \hline
-     & & \delta         & -4
+     & & 1         & -4
 \end{array}
 \implies
 \begin{array}{c|ccc}
@@ -16667,7 +16667,7 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
      & &   &     \\
      & &   & \boxed{15/2}    \\
     \hline
-    \phantom{\delta}
+     & &          & 1
 \end{array}
 \]
 Ezután csak értelmeznünk kell a fenti eliminációt.
@@ -16789,7 +16789,7 @@ Az elimináció lépései:
      & 1         & 3   & 3   \\
      & 1         & 3   & 6   \\
     \hline
-    & \delta     & 1   & 1
+    & 1     & 1   & 1
 \end{array}
 \implies
 \begin{array}{c|ccc}
@@ -16799,7 +16799,7 @@ Az elimináció lépései:
      & & \boxed{2}      & 2   \\
      & & 2              & 5   \\
      \hline
-     & & \delta         & 1
+     & & 1         & 1
 \end{array}
 \implies
 \begin{array}{c|ccc}
@@ -16809,7 +16809,7 @@ Az elimináció lépései:
      &     &     &          \\
      &     &     & \boxed{3}\\
     \hline
-    \phantom{\delta}
+     & &          & 1
 \end{array}
 \]
 Ez azt jelenti, hogy 
