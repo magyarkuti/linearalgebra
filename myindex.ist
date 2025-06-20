@@ -1,0 +1,14 @@
+% -*- coding: utf-8 -*-
+
+icu_locale "hu"
+delim_0 "\\leaders\\hbox{$\\cdot$}\\hfill "
+delim_1 "\\leaders\\hbox{$\\cdot$}\\hfill "
+delim_2 "\\leaders\\hbox{$\\cdot$}\\hfill "
+
+lethead_flag -1
+lethead_prefix "\n\\centerline{\\bfseries --- "
+lethead_suffix  " ---}\\par\\nobreak"
+headings_flag 1
+heading_prefix "\\hfill {\\Large -- \\textbf{"
+heading_suffix "} --} \\hfill \\nopagebreak \n"
+symbol_flag -1
