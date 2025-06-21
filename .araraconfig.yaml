@@ -1,0 +1,7 @@
+!config:
+  paths:
+    - '@{user.home}/rules'
+  language: hu
+  verbose: true
+  logging: true
+

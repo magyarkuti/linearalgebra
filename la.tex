@@ -3,11 +3,7 @@
 % arara: --> engine: lualatex,
 % arara: --> options: [ '-pvc-' ]
 % arara: --> }
-% arara: texindy: {
-% arara: --> markup: xelatex,
-% arara: --> language: hungarian,
-% arara: --> codepage: utf8
-% arara: --> }
+% arara: upmendex: { IgnoreLeadingAndTrailingBlanks: yes, style: myindex.ist }
 % arara: latexmk: { 
 % arara: --> engine: lualatex,
 % arara: --> options: [ '-pvc-' ]
