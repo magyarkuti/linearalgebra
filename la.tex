@@ -240,9 +240,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Az index bekapcsolása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeindex\xindyindex
+\makeindex
 %\xindyindex
-%
+%It turns out that xindy cannot handle a memoir hyperindex (which can be obtained with the aid of the hyperref package), although MakeIndex can do so.2 If you are going to use xindy to process the raw index data put \xindyindex in the preamble, which will prevent hyperindexing 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Az forward-backward search bekapcsolása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17062,4 +17062,3 @@ Tehát ha
 \printbibliography
 \printindex
 \end{document}
-
