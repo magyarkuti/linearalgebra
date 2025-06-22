@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.1)  22 JUN 2025 13:29
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.1)  22 JUN 2025 21:11
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -2444,46 +2444,46 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
-.....\TU/TeXGyreCursor(0)/m/n/10 b
-.....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 b
+.....\TU/TeXGyreCursor(0)/m/n/10 1
 .....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 e
-.....\TU/TeXGyreCursor(0)/m/n/10 a
-.....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 3
 .....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 0
+.....\TU/TeXGyreCursor(0)/m/n/10 e
+.....\TU/TeXGyreCursor(0)/m/n/10 9
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 4
 .....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 b
-.....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 c
+.....\TU/TeXGyreCursor(0)/m/n/10 3
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 6
+.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 7
+.....\TU/TeXGyreCursor(0)/m/n/10 1
 .....\TU/TeXGyreCursor(0)/m/n/10 7
 .....\TU/TeXGyreCursor(0)/m/n/10 6
+.....\TU/TeXGyreCursor(0)/m/n/10 d
 .....\TU/TeXGyreCursor(0)/m/n/10 c
-.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 4
 .....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 7
-.....\TU/TeXGyreCursor(0)/m/n/10 3
 .....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 1
+.....\TU/TeXGyreCursor(0)/m/n/10 8
 .....\TU/TeXGyreCursor(0)/m/n/10 3
 .....\TU/TeXGyreCursor(0)/m/n/10 f
-.....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 4
-.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 b
 .....\TU/TeXGyreCursor(0)/m/n/10 7
-.....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 e
+.....\TU/TeXGyreCursor(0)/m/n/10 0
+.....\TU/TeXGyreCursor(0)/m/n/10 1
+.....\TU/TeXGyreCursor(0)/m/n/10 7
+.....\TU/TeXGyreCursor(0)/m/n/10 9
 .....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 e
-.....\TU/TeXGyreCursor(0)/m/n/10 c
-.....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 6
+.....\TU/TeXGyreCursor(0)/m/n/10 f
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 7
 .....\glue 6.0
 ....\glue(\tabskip) 0.0
 ...\glue(\lineskip) 0.0
@@ -2531,13 +2531,13 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\TU/TeXGyreCursor(0)/m/n/10 2
 .....\TU/TeXGyreCursor(0)/m/n/10 2
 .....\glue(\spaceskip) 6.0
-.....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 :
 .....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 5
+.....\TU/TeXGyreCursor(0)/m/n/10 3
 .....\TU/TeXGyreCursor(0)/m/n/10 :
 .....\TU/TeXGyreCursor(0)/m/n/10 0
+.....\TU/TeXGyreCursor(0)/m/n/10 8
+.....\TU/TeXGyreCursor(0)/m/n/10 :
+.....\TU/TeXGyreCursor(0)/m/n/10 1
 .....\TU/TeXGyreCursor(0)/m/n/10 2
 .....\glue(\spaceskip) 6.0
 .....\TU/TeXGyreCursor(0)/m/n/10 +
@@ -2580,13 +2580,13 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
-.....\TU/TeXGyreCursor(0)/m/n/10 b
-.....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 b
+.....\TU/TeXGyreCursor(0)/m/n/10 1
 .....\TU/TeXGyreCursor(0)/m/n/10 5
+.....\TU/TeXGyreCursor(0)/m/n/10 3
+.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 0
 .....\TU/TeXGyreCursor(0)/m/n/10 e
-.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 9
 .....\glue 6.0
 ....\glue(\tabskip) 0.0
 ...\glue(\lineskip) 0.0
@@ -2678,13 +2678,13 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
-.....\TU/TeXGyreCursor(0)/m/n/10 b
-.....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 b
+.....\TU/TeXGyreCursor(0)/m/n/10 1
 .....\TU/TeXGyreCursor(0)/m/n/10 5
+.....\TU/TeXGyreCursor(0)/m/n/10 3
+.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 0
 .....\TU/TeXGyreCursor(0)/m/n/10 e
-.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 9
 .....\glue 6.0
 ....\glue(\tabskip) 0.0
 ...\rule(0.4+0.0)x450.40002
@@ -5158,89 +5158,82 @@ Package microtype Info: Loading generic protrusion settings for font family
 [230
 
 ]
+Package microtype Info: Character `ﬆ' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `ﬅ' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‥' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `‼' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁰' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁴' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁵' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁶' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁷' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁸' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁹' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₀' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₁' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₂' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₃' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₄' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₅' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₆' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₇' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₈' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₉' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₊' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `₋' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁺' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `⁻' is missing
+(microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
 
-
-Overfull \hbox (7.26749pt too wide) in paragraph at lines 81--84
-[]\TU/TeXGyrePagella(0)/m/n/10 Gauss--Jordan-elimináció, []29[], []44[], []46[]--[]48[], []50[]--[]54[],
-
-\hbox(7.26+1.99)x191.62683, glue set - 1.0, direction TLT
-.\localpar
-..\localinterlinepenalty=0
-..\localbrokenpenalty=0
-..\localleftbox=null
-..\localrightbox=null
-.\hbox(0.0+0.0)x0.0, direction TLT
-.\TU/TeXGyrePagella(0)/m/n/10 G
-.\TU/TeXGyrePagella(0)/m/n/10 a
-.\TU/TeXGyrePagella(0)/m/n/10 u
-.\TU/TeXGyrePagella(0)/m/n/10 s
-.\TU/TeXGyrePagella(0)/m/n/10 s
-.\kern1.66702
-.\TU/TeXGyrePagella(0)/m/n/10 –
-.\kern1.66702
-.\TU/TeXGyrePagella(0)/m/n/10 J
-.\TU/TeXGyrePagella(0)/m/n/10 o
-.\TU/TeXGyrePagella(0)/m/n/10 r
-.\kern-0.15 (font)
-.\TU/TeXGyrePagella(0)/m/n/10 d
-.\TU/TeXGyrePagella(0)/m/n/10 a
-.\TU/TeXGyrePagella(0)/m/n/10 n
-.\discretionary (penalty 50)
-..< \TU/TeXGyrePagella(0)/m/n/10 -
-..= \TU/TeXGyrePagella(0)/m/n/10 -
-.\TU/TeXGyrePagella(0)/m/n/10 e
-.\TU/TeXGyrePagella(0)/m/n/10 l
-.\TU/TeXGyrePagella(0)/m/n/10 i
-.\TU/TeXGyrePagella(0)/m/n/10 m
-.\TU/TeXGyrePagella(0)/m/n/10 i
-.\TU/TeXGyrePagella(0)/m/n/10 n
-.\TU/TeXGyrePagella(0)/m/n/10 á
-.\TU/TeXGyrePagella(0)/m/n/10 c
-.\TU/TeXGyrePagella(0)/m/n/10 i
-.\TU/TeXGyrePagella(0)/m/n/10 ó
-.\TU/TeXGyrePagella(0)/m/n/10 ,
-.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.2
-9}
-.\TU/TeXGyrePagella(0)/m/n/10 2
-.\TU/TeXGyrePagella(0)/m/n/10 9
-.\pdfendlink
-.\TU/TeXGyrePagella(0)/m/n/10 ,
-.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.4
-4}
-.\TU/TeXGyrePagella(0)/m/n/10 4
-.\TU/TeXGyrePagella(0)/m/n/10 4
-.\pdfendlink
-.\TU/TeXGyrePagella(0)/m/n/10 ,
-.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.4
-6}
-.\TU/TeXGyrePagella(0)/m/n/10 4
-.\TU/TeXGyrePagella(0)/m/n/10 6
-.\pdfendlink
-.\TU/TeXGyrePagella(0)/m/n/10 –
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.4
-8}
-.\TU/TeXGyrePagella(0)/m/n/10 4
-.\TU/TeXGyrePagella(0)/m/n/10 8
-.\pdfendlink
-.\TU/TeXGyrePagella(0)/m/n/10 ,
-.\glue(\spaceskip) 2.5 plus 1.5625 minus 0.66666
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.5
-0}
-.\TU/TeXGyrePagella(0)/m/n/10 5
-.\TU/TeXGyrePagella(0)/m/n/10 0
-.\pdfendlink
-.\TU/TeXGyrePagella(0)/m/n/10 –
-.\pdfstartlink(*+*)x* attr{/Border[0 0 1]/H/I/C[1 0 0]} action goto name{page.5
-4}
-.\TU/TeXGyrePagella(0)/m/n/10 5
-.\TU/TeXGyrePagella(0)/m/n/10 4
-.\pdfendlink
-.\TU/TeXGyrePagella(0)/m/n/10 ,
-.\kern-1.25 (right margin)
-.\glue(\rightskip) 0.0
 
 
 
@@ -5278,16 +5271,16 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40945 strings out of 471907
+ 40947 strings out of 471907
  156335,1977958 words of node,token memory allocated
  5289 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 56 glue, 5 kern, 1 penalty, 29
  glyph, 862 attribute, 198 glue_spec, 862 attribute_list, 3 write, 1 pdf_action 
 nodes
-   avail lists: 1:12,2:1428,3:445,4:129,5:976,6:282,7:10957,8:136,9:2826,10:26,1
+   avail lists: 1:12,2:1428,3:445,4:129,5:976,6:268,7:10957,8:136,9:2826,10:26,1
 1:1200
- 65837 multiletter control sequences out of 65536+600000
- 217 fonts using 66878967 bytes
+ 65839 multiletter control sequences out of 65536+600000
+ 218 fonts using 67127135 bytes
  86i,17n,115p,1194b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -5304,7 +5297,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (233 pages, 9337794 bytes).
+Output written on la.pdf (233 pages, 9342515 bytes).
 
 PDF statistics: 3000 PDF objects out of 3580 (max. 8388607)
  2698 compressed objects within 27 object streams
