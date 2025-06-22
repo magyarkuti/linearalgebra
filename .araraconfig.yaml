@@ -1,7 +1,8 @@
 !config:
   paths:
     - '@{user.home}/rules'
-  language: hu
+    - '@{application.workingDirectory}/rules'
+  language: en
   verbose: true
   logging: true
 

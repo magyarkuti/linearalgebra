@@ -3,7 +3,9 @@
 % arara: --> engine: lualatex,
 % arara: --> options: [ '-pvc-' ]
 % arara: --> }
-% arara: upmendex: { IgnoreLeadingAndTrailingBlanks: yes, style: myindex.ist }
+% arara: upmendex: { 
+% arara: --> IgnoreLeadingAndTrailingBlanks: yes, 
+% arara: --> style: myindex.ist }
 % arara: latexmk: { 
 % arara: --> engine: lualatex,
 % arara: --> options: [ '-pvc-' ]
@@ -202,14 +204,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% A bölcsesség generálása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
-     \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
-     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
-%     \dtlgetrow{quotes}{112}% Retrieve the row 113
-     \dtlgetentryfromcurrentrow{\Number}{1}\dtlgetentryfromcurrentrow{\Quote}{2}\dtlgetentryfromcurrentrow{\Author}{3}%
-     \typeout{A bölcsesség:}
-     \typeout{\Number:\Quote -- \Author}
-     \typeout{ }
+%\DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
+%     \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
+%     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
+%%     \dtlgetrow{quotes}{112}% Retrieve the row 113
+%     \dtlgetentryfromcurrentrow{\Number}{1}\dtlgetentryfromcurrentrow{\Quote}{2}\dtlgetentryfromcurrentrow{\Author}{3}%
+%     \typeout{A bölcsesség:}
+%     \typeout{\Number:\Quote -- \Author}
+%     \typeout{ }
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lustaságok
