@@ -8,4 +8,6 @@ $pdf_mode = 4;
 $show_time =1;
 @default_files=('la.tex');
 $clean_ext = "bbl";
-$makeindex = "upmendex -s myindex.ist %O -o %D %S"
+$makeindex = "upmendex -s myindex.ist %O -o %D %S";
+$silence_logfile_warnings = 0;
+$dependents_list = 0
