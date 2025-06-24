@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.1)  22 JUN 2025 21:11
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.6.1)  24 JUN 2025 09:43
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -2444,46 +2444,46 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
-.....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 e
-.....\TU/TeXGyreCursor(0)/m/n/10 9
-.....\TU/TeXGyreCursor(0)/m/n/10 4
-.....\TU/TeXGyreCursor(0)/m/n/10 2
 .....\TU/TeXGyreCursor(0)/m/n/10 d
-.....\TU/TeXGyreCursor(0)/m/n/10 4
-.....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 4
-.....\TU/TeXGyreCursor(0)/m/n/10 4
-.....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 6
-.....\TU/TeXGyreCursor(0)/m/n/10 a
-.....\TU/TeXGyreCursor(0)/m/n/10 7
-.....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 7
-.....\TU/TeXGyreCursor(0)/m/n/10 6
 .....\TU/TeXGyreCursor(0)/m/n/10 d
 .....\TU/TeXGyreCursor(0)/m/n/10 c
-.....\TU/TeXGyreCursor(0)/m/n/10 4
 .....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 0
+.....\TU/TeXGyreCursor(0)/m/n/10 9
+.....\TU/TeXGyreCursor(0)/m/n/10 c
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 f
+.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 b
+.....\TU/TeXGyreCursor(0)/m/n/10 8
+.....\TU/TeXGyreCursor(0)/m/n/10 6
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 5
+.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 f
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 7
 .....\TU/TeXGyreCursor(0)/m/n/10 8
 .....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 f
-.....\TU/TeXGyreCursor(0)/m/n/10 b
-.....\TU/TeXGyreCursor(0)/m/n/10 7
-.....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 7
-.....\TU/TeXGyreCursor(0)/m/n/10 9
-.....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 f
+.....\TU/TeXGyreCursor(0)/m/n/10 3
+.....\TU/TeXGyreCursor(0)/m/n/10 6
+.....\TU/TeXGyreCursor(0)/m/n/10 3
+.....\TU/TeXGyreCursor(0)/m/n/10 e
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 e
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 a
 .....\TU/TeXGyreCursor(0)/m/n/10 4
-.....\TU/TeXGyreCursor(0)/m/n/10 7
+.....\TU/TeXGyreCursor(0)/m/n/10 e
+.....\TU/TeXGyreCursor(0)/m/n/10 9
+.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 1
+.....\TU/TeXGyreCursor(0)/m/n/10 6
+.....\TU/TeXGyreCursor(0)/m/n/10 a
+.....\TU/TeXGyreCursor(0)/m/n/10 5
 .....\glue 6.0
 ....\glue(\tabskip) 0.0
 ...\glue(\lineskip) 0.0
@@ -2529,16 +2529,16 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 ......< \TU/TeXGyreCursor(0)/m/n/10 -
 ......= \TU/TeXGyreCursor(0)/m/n/10 -
 .....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 4
 .....\glue(\spaceskip) 6.0
-.....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 :
-.....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 8
-.....\TU/TeXGyreCursor(0)/m/n/10 :
 .....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 2
+.....\TU/TeXGyreCursor(0)/m/n/10 1
+.....\TU/TeXGyreCursor(0)/m/n/10 :
+.....\TU/TeXGyreCursor(0)/m/n/10 4
+.....\TU/TeXGyreCursor(0)/m/n/10 0
+.....\TU/TeXGyreCursor(0)/m/n/10 :
+.....\TU/TeXGyreCursor(0)/m/n/10 3
+.....\TU/TeXGyreCursor(0)/m/n/10 8
 .....\glue(\spaceskip) 6.0
 .....\TU/TeXGyreCursor(0)/m/n/10 +
 .....\TU/TeXGyreCursor(0)/m/n/10 0
@@ -2580,13 +2580,13 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 c
 .....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 e
 .....\TU/TeXGyreCursor(0)/m/n/10 9
+.....\TU/TeXGyreCursor(0)/m/n/10 c
+.....\TU/TeXGyreCursor(0)/m/n/10 4
 .....\glue 6.0
 ....\glue(\tabskip) 0.0
 ...\glue(\lineskip) 0.0
@@ -2678,13 +2678,13 @@ Overfull \hbox (32.14635pt too wide) in paragraph at lines 270--285
 .....\glue 6.0
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.00002
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 d
+.....\TU/TeXGyreCursor(0)/m/n/10 c
 .....\TU/TeXGyreCursor(0)/m/n/10 1
-.....\TU/TeXGyreCursor(0)/m/n/10 5
-.....\TU/TeXGyreCursor(0)/m/n/10 3
-.....\TU/TeXGyreCursor(0)/m/n/10 2
-.....\TU/TeXGyreCursor(0)/m/n/10 0
-.....\TU/TeXGyreCursor(0)/m/n/10 e
 .....\TU/TeXGyreCursor(0)/m/n/10 9
+.....\TU/TeXGyreCursor(0)/m/n/10 c
+.....\TU/TeXGyreCursor(0)/m/n/10 4
 .....\glue 6.0
 ....\glue(\tabskip) 0.0
 ...\rule(0.4+0.0)x450.40002
@@ -5280,7 +5280,7 @@ nodes
    avail lists: 1:12,2:1428,3:445,4:129,5:976,6:268,7:10957,8:136,9:2826,10:26,1
 1:1200
  65839 multiletter control sequences out of 65536+600000
- 218 fonts using 67127135 bytes
+ 218 fonts using 67126983 bytes
  86i,17n,115p,1194b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -5297,7 +5297,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (233 pages, 9342515 bytes).
+Output written on la.pdf (233 pages, 9342168 bytes).
 
 PDF statistics: 3000 PDF objects out of 3580 (max. 8388607)
  2698 compressed objects within 27 object streams
