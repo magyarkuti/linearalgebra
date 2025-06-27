@@ -4447,8 +4447,8 @@ A célunk az volt, hogy lássuk egy független rendszer elemszáma nem haladja m
 hogy a független rendszer elemei egyenként be-becserélhetőek a generátorrendszer 
 egy-egy alkalmas elemének elhagyásával a generátorrendszer elemi közé olyan módon, 
 hogy a csere után kapott rendszer is generátorrendszer maradjon.
-Ezt szokás kicserélési tételnek is nevezni.\index{Kicserélési tétel}
-\begin{proposition}[Kicserélési tétel]\label{pr:kicserelesi}
+Ezt szokás kicserélési tételnek is nevezni.\index{kicserélési tétel}
+\begin{proposition}[kicserélési tétel]\label{pr:kicserelesi}
 	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
 	és az
 	$\left\{ x_1,\ldots,x_m \right\}$ egy generátorrendszer.
@@ -5782,8 +5782,8 @@ Az első esetben arra kell hivatkoznunk, hogy egy generátorrendszer szürjektí
 generált marad.
 
 Tehát az első speciális eset, ha $V$ végesen generált:
-Ez az úgynevezett Rangdefektustétel:
-\begin{proposition}[Rangdefektustétel]\index{Rangdefektustétel}
+Ez az úgynevezett rangdefektustétel:
+\begin{proposition}[rangdefektustétel]\index{rangdefektustétel}
 	Legyen $V$ egy véges dimenziós vektortér,
 	és $W$ egy tetszőleges vektortér,
 	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
@@ -6137,7 +6137,7 @@ hogy az egy $x\in\mathbb{F}^m$ oszlopvektorhoz a mátrix szorzás definíciójá
 az $A\cdot x\in\mathbb{F}^n$ oszlopvektort rendeli.
 Ebben a fejezetben a mátrixok ezen interpretációját erősítjük tovább.
 
-\section{Rangdefektustétel következménye}
+\section{A rangdefektustétel következménye}
 Láttuk, hogy tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
 \[
 	\nu\left( A \right)+\rho\left( A \right)=\dim(V),
@@ -11923,7 +11923,7 @@ Persze $H\perp H^\perp$ csak tautologia.
 		\item \emph{ortonormáltnak} nevezünk, ha minden $i,j$ mellett $\ip{x_i}{x_j}=\delta_{i,j}$.\qedhere
 	\end{enumerate}
 \end{definition}
-A felépítés jelen szintjén nem olyan egyszerű egy tetszőleges skaláris szorzatos térben ortonormált rendszert
+A felépítés jelen szintjén nem olyan egyszerű egy tetszőleges skalárisszorzatos-térben ortonormált rendszert
 adni. Persze az ${}$ üres vektorrendszer ortogonális, de ortonormált is.
 Az látható, hogy egy ortogonális rendszert tetszőlegesen sok zérus vektorral kiegészítve ortogonális rendszert kapunk.
 Persze a zérus vektor egy ortonormált rendszerhez nem tartozhat elemként,
@@ -11940,7 +11940,7 @@ $)
 
 Egynél több elemből álló ortonormált rendszert most nem tudunk mutatni.
 Az oka ennek egészen világos lesz később.
-Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.
+Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos-térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.
 Ebből annyi, hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, már most látható:
 \begin{proposition}
 	Egy zérus elemeket nem tartalmazó ortogonális rendszer lineárisan független rendszer is.
@@ -12095,7 +12095,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	\]
 	ami kishíján a bizonyítandó állítás.
 \end{proof}
-\begin{definition}[skalárisszorzat indukálta norma]
+\begin{definition}[skaláris szorzat indukálta norma]
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
 	jelölje minden $x\in V$ mellett $\|x\|=\sqrt{\ip{x}{x}}$.
 \end{definition}
@@ -12144,7 +12144,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \end{proof}
 
 \section{Pont és altér távolsága}
-Ebben a szakaszban azt mutatjuk meg, hogy ha a $V$ skalárisszorzatos térnek $M$ egy olyan
+Ebben a szakaszban azt mutatjuk meg, hogy ha a $V$ skalárisszorzatos-térnek $M$ egy olyan
 altere, amelyben van véges ortonormált bázis, akkor a tér tetszőleges $V$ pontjának,
 van $M$-hez legközelebbi pontja.
 Mi több, ilyen legközelebbi pontból csak egyetlen egy van.
@@ -12291,7 +12291,7 @@ emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált báz
 	A $p_M\left( u \right)\in M$ vektort nevezzük az $u$-nak $M$ altérre eső \emph{merőleges vetületének}.
 	A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}.
 \end{definition}
-Mivel a skalárisszorzás rögzített második változó mellett,
+Mivel a skaláris szorzás rögzített második változó mellett,
 az első változó lineáris függvénye,
 ezért egy rögzített $x\in V$ vektor mellett az $u\mapsto\ip{u}{x}x$ függvény egy $V\to V$ lineáris operáció.
 Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetítés a $V$ vektortér egy lineáris transzformációja.
@@ -12299,7 +12299,7 @@ Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetít�
 A merőleges vetítés operáció bevezetésének feltétele volt, hogy ha az $M$ altérre vonatkozó
 merőleges vetítést akarjuk használni, akkor léteznie kell egy ortonormált bázisnak az $M$ altérben.
 Az eddigi tételeinkben ez a tétel feltevése volt.
-Most megmutatjuk, hogy egy skalárisszorzatos térnek minden véges dimenziós altere rendelkezik ezzel a
+Most megmutatjuk, hogy egy skalárisszorzatos-térnek minden véges dimenziós altere rendelkezik ezzel a
 tulajdonsággal, így egy véges dimenziós altérre eső merőleges vetítés mindig definiált.
 
 Először is érdemes újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel}.~gondolatot,
@@ -12504,7 +12504,7 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 	\end{enumerate}
 \end{proposition}
 \begin{proof}
-	Mivel $M$ a $V$ skalárisszorzatos tér egy véges dimenziós altere,
+	Mivel $M$ a $V$ skalárisszorzatos-tér egy véges dimenziós altere,
 	ezért az $M$ altérnek van
     ortonormált bázisa, amint azt \aaz{pr:onb}. állításban Gram\,--\,Schmidt-ortogonalizációnál láttuk.
 	Legyen ez $\left\{ x_1,\ldots,x_k \right\}$.
@@ -12703,16 +12703,16 @@ feltétellel.
 	\end{description}
 \end{proof}
 A fejezet elején láttunk konkrét példát véges dimenziós skalárisszorzatos-térre:
-egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skalárisszorzatban,
+egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skaláris szorzatban,
 a kiinduló bázis ortonormált bázissá is válik.
-Most azt látjuk, hogy a fenti példán kívül nem is lehet más skalárisszorzatot definiálni.
-Minden skalárisszorzat ugyanis, valamely bázishoz tartozó belső szorzat.
+Most azt látjuk, hogy a fenti példán kívül nem is lehet más skaláris szorzatot definiálni.
+Minden skaláris szorzat ugyanis, valamely bázishoz tartozó belső szorzat.
 Pontosan ezt állítja a fenti 4-es tulajdonság.
 
 Ezt a tényt a fontossága miatt külön is kiemeljük:
 \begin{corollary}
-	Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más,
-	mint erre a skalárisszorzatra nézve,
+	Minden véges dimenziós skalárisszorzatos-térben a skaláris szorzat nem más,
+	mint erre a skaláris szorzatra nézve,
 	de tetszőleges ortonormált bázishoz felírt belső szorzat.
 \end{corollary}
 
@@ -12848,7 +12848,7 @@ akkor
 		\ip{v}{A^\ast w}
 	\]
 	fennáll minden $v\in V$ és $w\in W$ mellett.
-	Mivel a skalárisszorzás rögzített első változó mellett a második változóban additív,
+	Mivel a skaláris szorzás rögzített első változó mellett a második változóban additív,
 	ezért
 	$\ip{v}{\left( A^\ast-B \right)w}=0$ fennáll minden $v\in V$ és $w\in W$ mellett.
 	Speciálisan ez igaz $v=\left( A^\ast-B \right)w$-re is, ergo minden $w\in W$-re
@@ -12880,11 +12880,11 @@ ortonormált bázis, akkor
 	\sum_{j=1}^n\ip{w}{Av_j}_Wv_j.
 \]
 Ebből már adódik, hogy $A^\ast:W\to V$ lineáris operátor.
-Ugyanis a skalárisszorzat rögzített második változó mellett az első változóban lineáris,
+Ugyanis a skaláris szorzat rögzített második változó mellett az első változóban lineáris,
 emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó lineáris függvénye. A fenti kiemelt sor szerint $A^\ast$ ilyen függvények összegeként maga is lineáris.
 
 Alternatív indoklást kapunk az adjungált operáció linearitására az (\dag) adjungált azonosság háromszori felírásával.
-Itt kihasználjuk a tényt, hogy a skalárisszorzás rögzített első változó mellett a második változó konjugáltan lineáris függvénye.
+Itt kihasználjuk a tényt, hogy a skaláris szorzás rögzített első változó mellett a második változó konjugáltan lineáris függvénye.
 \begin{multline*}
 	\ip{u}{A^\ast\left( \alpha_1w_1+\alpha_2w_2 \right)}
 	=
@@ -12936,13 +12936,13 @@ azonosság is teljesül.
 			[A^\ast]
 		}_{j,i}
 	\end{math},
-    \aaz{pr:onb}. állítás, a (\dag) adjungált azonosság, és a skalárisszorzás tulajdonságai szerint.
+    \aaz{pr:onb}. állítás, a (\dag) adjungált azonosság, és a skaláris szorzás tulajdonságai szerint.
 \end{proof}
 
 Most összefoglaljuk az adjungálás operáció legfontosabb tulajdonságait,
 amelyeket későbbi számolásaink során külön hivatkozás nélkül használunk.
 \begin{proposition}
-	Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
+	Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos-terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
 	Ekkor
 	\begin{enumerate}
 		\item[1.] $\left( A+B \right)^\ast=A^\ast+B^\ast,$
@@ -13023,10 +13023,10 @@ amelyeket későbbi számolásaink során külön hivatkozás nélkül használu
 		      \qedhere
 	\end{description}
 \end{proof}
-Felépítésünk sarokköve a skalárisszorzatos terek rangtétele.
+Felépítésünk sarokköve a skalárisszorzatos-terek rangtétele.
 Legfontosabb következménye, hogy zérus vektoron kívül nincs olyan vektor,
 amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
-\begin{proposition}[skalárisszorzatos Rangtétel]\label{pr:skrang}
+\begin{proposition}[skalárisszorzatos rangtétel]\label{pr:skrang}
 	Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
 	Ekkor
 	$(\im A)^\perp=\ker A^\ast$ és
@@ -13079,7 +13079,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 		\ker A\oplus\im A^\ast.
 	\end{math}
 
-	A direkt összegek dimenziójára vonatkozó állítás és a Rangdefektustételnek\index{Rangdefektustétel} az adjungált operációra vonatkozó alakja szerint
+	A direkt összegek dimenziójára vonatkozó állítás és a rangdefektustételnek\index{rangdefektustétel} az adjungált operációra vonatkozó alakja szerint
 	\begin{math}
 		\rho\left( A \right)=\dim(W)-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
 	\end{math}
@@ -13168,7 +13168,7 @@ hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref
 		      Így
 		      $\left\{ Bu_1,\ldots,Bu_n \right\}$ egy maximális lineárisan független rendszerként maga is bázis.
 		\item[$3.\Rightarrow 4.$]
-            Láttuk, hogy véges dimenziós skalárisszorzatos térnek van ortonormált bázisa.
+            Láttuk, hogy véges dimenziós skalárisszorzatos-térnek van ortonormált bázisa.
 		\item[$4.\Rightarrow 1.$]
 		      Vegyünk $V$-ben egy $\left\{ u_1,\ldots,u_n \right\}$ ortonormált bázist.
 		      Feltevésünk szerint a $\left\{ Bu_1,\ldots,Bu_n \right\}$ egy ortonormált rendszer.
@@ -13229,7 +13229,7 @@ Nyilvánvaló példák normális transzformációkra:
 \begin{enumerate}
 	\item Ha $N$ önadjungált;
 	\item Ha $N$ reguláris és $N^{-1}=N^\ast$;\footnote{Az ilyen transzformációt nevezzük
-		      \emph{unitér}\index{unitér}
+		      \emph{unitér}\index{unitér transzformáció}
 		      transzformációnak.}
 	\item Ha létezik olyan $q$ polinom, amelyre $N^\ast=q\left( N \right)$;
 	\item
@@ -13553,7 +13553,7 @@ A valós számtest feletti esetet is összefoglaljuk:
 }
 
 \chapter{Ortogonális projekciók}
-A fejezetben visszatérünk a skalárisszorzatos terek geometriai tulajdonságainak vizsgálatához.
+A fejezetben visszatérünk a skalárisszorzatos-terek geometriai tulajdonságainak vizsgálatához.
 Emlékezzünk arra, hogy bevezettük a merőleges vetítés transzformációt.
 Egy $M\subseteq V$ altér esetén $P_M\in L\left( V \right)$ az a transzformáció, amely egy $v\in V$ vektorhoz hozzárendeli a $v$-hez legközelebb eső $M$-beli vektort.
 Megmutattuk, hogy ilyen vektor van és csak egy van az $M$ altérben.
@@ -14658,7 +14658,7 @@ akkor egy normált teret kapunk.
 A $W=V$ speciális esetben $A,B\in L\left( V \right)$-re $\|AB\|\leq \|A\|\|B\|$ egyenlőtlenség is fennáll.
 
 Például ha \aaz{pr:Riesz}.~Riesz-reprezentációs tétel\index{Riesz-reprezentáció} lineáris funkcionáljának operátornormájára gondolunk,
-akkor \aaz{pr:Schwartz-egyenlőtlenség}.~Schwartz-egyenlőtlenséget\index{pr:Schwartz-egyenlőtlenség} alkalmazva
+akkor \aaz{pr:Schwartz-egyenlőtlenség}.~Schwartz-egyenlőtlenséget\index{Schwartz-egyenlőtlenség} alkalmazva
 \[
     |\varphi\left( x \right)|
     =
