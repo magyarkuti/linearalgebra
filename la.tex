@@ -660,7 +660,7 @@ együtthatók.%
 	hogy mint formális polinomok is azonosak,
 	azaz a két polinom együtthatói is rendre azonosak-e?
 	A~pozitív választ később látjuk nem véges számtest -- például a valós vagy a komplex test -- feletti polinomok esetén.
-    Lásd \aaz{pr:polinomfv}.~állítás utáni megjegyzést \aazt{\pageref{pr:polinomfv}}. oldalon.%
+    Lásd \aaz{pr:polinomfv}.~állítás utáni megjegyzést \aazt{\pageref{pr:polinomfv}}.~oldalon.%
 }
 A jelölések megértése is fontos.
 $p\left( t \right)\in\mathbb{F}\left[ t \right]$ semmi mást nem jelent,
@@ -2779,7 +2779,7 @@ Hasonlóan, ha $H=\left\{ v_1,\ldots,v_r \right\}$ halmaz $r$ elemből áll akko
 \end{definition}
 
 A generátorrendszer cseréről szóló \ref{le:gencsere}.~lemmának kiemelten fontos szerepe van felépítésünkben.
-Egyrészt használjuk majd a Steinitz-lemma\index{Steinitz-lemma} (\ref{le:Steinitz}) igazolásában,
+Egyrészt használjuk majd a Steinitz-lemma\index{Steinitz-lemma} (\ref{le:Steinitz}.) igazolásában,
 másrészt ennek segítségével tisztázzuk majd azt a kérdést,
 hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendszert változtatjuk.
 
@@ -4318,7 +4318,7 @@ bázisfaktorizáció, ahol a jobboldali első mátrix oszlopai a baloldali $A$ m
 és a jobboldali második mátrix sorai az $A$ mátrix sorvektorterének lineárisan független generátorrendszerét alkotja.
 
 A fenti bázisfaktorizáció tetszőleges mátrix mellett is végrehajtható, 
-így a Gauss\,--\,Jordan-eliminációnak és a két cserélési lemmának -- \ref{le:fgtlncsere} és \ref{le:gencsere} -- az alábbi szép következményét kapjuk:
+így a Gauss\,--\,Jordan-eliminációnak és a két cserélési lemmának -- \ref{le:fgtlncsere}. és \ref{le:gencsere}. -- az alábbi szép következményét kapjuk:
 \begin{proposition}
     Tetszőleges $m\times n$ méretű nem zérus mátrix sorvektorterének és oszlopvektorterének is van azonos elemszámú lineárisan független, generátorrendszere. Ha $r$ e két vektorrendszer közös elemszáma, akkor $1\leq r\leq\min\left\{ m,n \right\}$.
 \end{proposition}
@@ -12071,7 +12071,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		\qedhere
 	\]
 \end{proof}
-\begin{proposition}[Schwartz-egyenlőtlenség]
+\begin{proposition}[Schwartz-egyenlőtlenség]\index{Schwartz-egyenlőtlenség}\label{pr:Schwartz-egyenlőtlenség}
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
 	$u,v\in V$.
 	Ekkor
@@ -12087,13 +12087,13 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		\frac{1}{\ip{v}{v}}
 		\left|\ip{u}{v}\right|^2
 		=
-		\left|\frac{1}{\sqrt{\ip{v}{v}}}
-		\ip{u}{v}\right|^2
+		|\frac{1}{\sqrt{\ip{v}{v}}}
+		\ip{u}{v}|^2
 		=
-		\left|\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}\right|^2
+		|\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}|^2
 		\leq \ip{u}{u},
 	\]
-	ami a bizonyítandó állítás.
+	ami kishíján a bizonyítandó állítás.
 \end{proof}
 \begin{definition}[skalárisszorzat indukálta norma]
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
@@ -12106,8 +12106,8 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 
 
 \begin{proposition}
-	Egy $V$ skalárisszorzatos-térben teljesül a \emph{Schwartz-egyenlőtlenség}, azaz
-	\(|\ip{x}{y}|\leq\|x\|\cdot\|y\|,\)
+	Egy $V$ skalárisszorzatos-térben teljesül a \emph{Schwartz-egyenlőtlenség}\index{Schwartz-egyenlőtlenség}, azaz
+    \[|\ip{x}{y}|\leq\|x\|\cdot\|y\|,\]
 	valamint a skalárisszorzatos-tér kielégíti a \emph{normált tér} axiómákat, azaz
 	\begin{enumerate}
 		\item $\|x\|=0$ akkor és csak akkor, ha $x=0$,
@@ -12302,7 +12302,7 @@ Az eddigi tételeinkben ez a tétel feltevése volt.
 Most megmutatjuk, hogy egy skalárisszorzatos térnek minden véges dimenziós altere rendelkezik ezzel a
 tulajdonsággal, így egy véges dimenziós altérre eső merőleges vetítés mindig definiált.
 
-Először is érdemes újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel} gondolatot,
+Először is érdemes újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel}.~gondolatot,
 a bevezetett merőleges vetítés és hosszúság fogalom felhasználásával.
 Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az állítás feltevése.
 \begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel2}
@@ -12336,7 +12336,7 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 		=
 		\|u\|^2
 	$
-	a \ref{pr:Bessel}.~állítás szerint.
+	\aaz{pr:Bessel}.~állítás szerint.
 	Hasonlóan
 	$
 		u-p_M\left( u \right)\in \left\{ x_1,\ldots,x_k \right\}^\perp
@@ -12814,7 +12814,7 @@ akkor
 	\]
 	függvényt.
 	Világos, hogy $\varphi_w:V\to\mathbb{K}$ lineáris funkcionál $V$-n,
-	így a Riesz-reprezentációs tétel szerint létezik egyetlen $w^\ast\in V$,
+	így a Riesz-reprezentációs\index{Riesz-reprezentáció} tétel szerint létezik egyetlen $w^\ast\in V$,
 	amelyre
 	$\varphi_w\left( v \right)=\ip{v}{w^\ast}_V$ minden $v\in V$ mellett teljesül.
 
@@ -12866,7 +12866,7 @@ $A^\ast:W\to V$ függvény, amelyre minden $v\in V$ és minden $w\in W$ mellett 
 \]
 Az adjungált unicitása, és összes fontos tulajdonsága az adjungált azonosságon alapul.
 \paragraph{Az adjungált függvény linearitása.}
-\Aaz{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk,
+\Aaz{pr:Riesz}. Riesz-reprezentációs\index{Riesz-reprezentáció} tétel során meggondoltuk,
 hogy ha tetszőlegesen adott egy
 $\left\{ v_1,\ldots,v_n \right\}\subseteq V$
 ortonormált bázis, akkor
@@ -14650,12 +14650,52 @@ akkor
 \[
 	\max\left\{ \|Ax\|:\|x\|\leq 1 \right\}
 	=
-	\min\left\{ K\geq 0:\|Ax\|\leq K\|x\|\quad\forall x\in V \right\}
+    \min\left\{ K\geq 0:\|Ax\|\leq K\|x\|\quad\forall x\in V \right\}\tag{\diamond}
 \]
 számok azonosak és végesek. A közös érték az $\|A\|$ \emph{operátornorma}.\index{operátornorma}
 Ha az $L\left( V,W \right)$ lineáris operációk vektorterét ellátjuk az operátornormával,
 akkor egy normált teret kapunk.
 A $W=V$ speciális esetben $A,B\in L\left( V \right)$-re $\|AB\|\leq \|A\|\|B\|$ egyenlőtlenség is fennáll.
+
+Például ha \aaz{pr:Riesz}.~Riesz-reprezentációs tétel\index{Riesz-reprezentáció} lineáris funkcionáljának operátornormájára gondolunk,
+akkor \aaz{pr:Schwartz-egyenlőtlenség}.~Schwartz-egyenlőtlenséget\index{pr:Schwartz-egyenlőtlenség} alkalmazva
+\[
+    |\varphi\left( x \right)|
+    =
+    |\ip{x}{z_\varphi}|
+    \leq \|z_\varphi\|\cdot\|x\|
+\] 
+minden $x\in V$ mellett, eszerint az iménti ($\diamond$) jobboldala miatt
+\(
+    \|\varphi
+    \|\leq
+    \|z_\varphi\|
+\).
+Másoldalról, ha $\varphi\neq 0$, akkor $\|\frac{z_\varphi}{\|z_\varphi\|}\|=1$,
+és
+\[
+\varphi\left( \frac{z_\varphi}{\|z_\varphi\|} \right)
+=
+\ip{\frac{z_\varphi}{\|z_\varphi\|}}{z_\varphi}
+=
+\frac{1}{\|z_\varphi\|}\cdot\|z_\varphi\|^2
+=
+\|z_\varphi\|,
+\]
+amiből a fent kiemelt ($\diamond$) azonosság baloldala miatt 
+\(
+    \|z_\varphi\|
+    \leq
+    \|\varphi\|
+\).
+Összegezve tehát, 
+egy $\varphi:V\to\mathbb{K}$ lineáris funkcionál és az őt reprezentáló 
+$z_\varphi\in V$ vektorra
+\[
+    \|z_\varphi\|
+    =
+    \|\varphi\|.
+\]
 
 A továbbiakban $V$ egy véges dimenziós $\mathbb{K}$ feletti skalárisszorzatos-tér.
 \begin{definition}
