@@ -1830,7 +1830,7 @@ de ez e nélkül is nagyon egyszerűen látszik.%
 		c & d
 	\end{pmatrix}
 	\)
-	jobboldali inverze lenne akkor a jobb alsó sarokra figyelve $0\cdot b +0\cdot d=1$ lenne, de egy testben $1\neq 0$.
+	jobboldali inverze lenne akkor a jobb-alsó sarokra figyelve $0\cdot b +0\cdot d=1$ lenne, de egy testben $1\neq 0$.
 }
 Gyakorlatként próbáljunk magasabb $n$ számok mellett is a kommutativitás és a nullosztómentesség hiányára
 példát találni.
@@ -2934,11 +2934,11 @@ hogy végül is a keretben lévő $m\times 4$-es mátrixszal sorműveleteket haj
 	      A keretben csak nem zéró szám lehet.
 	\item
 	      Első lépésként a keretezett számmal osztottuk a $k$-adik sort. Ez az új táblázat $k$-adik sora.
-	      Pusztán segítségképpen ugyanezt a sort mint egy számolási segédsort az első táblázat alá másoltuk.
+          Pusztán segítségképpen ugyanezt a sort mint egy számolási segédsort\index{segédsor} az első táblázat alá másoltuk.
 	\item
 	      Az új táblázat első sora az eredeti első sornak és a segédsor $\eta_1$-szeresének különbsége.
 	      A második sor az eredeti második sornak és a segédsor $\eta_2$-szeresének különbsége.
-	      Hasonlóan, $m\neq k$-ra az $m$-edik sor az eredeti $m$-edik sornak és a segédsor $\eta_m$-szeresének különbsége.
+	      Hasonlóan, $m\neq k$-ra az $m$-edik sor az eredeti $m$-edik sornak és a segédsor\index{segédsor} $\eta_m$-szeresének különbsége.
 \end{itemize}
 
 Látjuk tehát, hogy összesen két fajta sorművelettel alakítottuk a kiindulási mátrixot:
@@ -3084,7 +3084,7 @@ hogy az algoritmus egy fajta megállásakor a kötött változók számának és
 Ebben a pillanatban még nem látszik,
 de később ki fog derülni,
 hogy a kötött -- így a szabad változók száma is -- független az algoritmus konkrét lefutása során választott pivot elemektől.\index{pivot elem}
-Akárhogyan is választjuk az algoritmus egyes lépéseinél a pivot-elemeket,
+Akárhogyan is választjuk az algoritmus egyes lépéseinél a pivot elemeket,
 amikor megáll az algoritmus, akkor a nem csupa zérus sorok száma azonos.
 \footnote{A továbbiakban nagyon figyeljünk arra, hogy ezt a tényt mikor értjük meg!}
 
@@ -3382,7 +3382,7 @@ amiből a lineáris burkot képezve
 fennáll. 
 Az utolsó tartalmazás most azért igaz, 
 mert $C$ mátrix az $A$ utolsó eliminációs táblázatának nem zérus soraiból áll, 
-de az elimináció minden egyes lépésében a sorok egy lináris kombinációját képezzük, 
+de az elimináció minden egyes lépésében a sorok egy lineáris kombinációját képezzük, 
 ergo a táblázat minden egyes sora az eredeti sorok alkotta vektortérben -- ami itt $V$ -- marad.
 
 Vegyük észre, hogy a fenti eljárással azt gondoltuk meg, 
@@ -3420,7 +3420,7 @@ akkor e mátrix előáll mint $r$ darab diád összege.
 Azt is meggondoltuk, hogy milyen módon találhatunk azonos elemszámú generátorrendszert a sor- és az oszlopvektortérben:
 A Gauss\,--\,Jordan-elimináció utolsó táblázata ezt is elárulja.
 Ha egy $A$ nem zérus mátrixból indulunk ki, akkor a $B$ oszlopaiba kell rendezni az $A$ azon eredeti oszlopait,
-amelyekben választottunk pivot elemeket, majd a $C$ mátrix az utolsó táblázat nem zérus soraiból áll.
+amelyekben választottunk pivot elemeket\index{pivot elem}, majd a $C$ mátrix az utolsó táblázat nem zérus soraiból áll.
 Ha a választott pivot elemek számát $r$ jelöli, 
 akkor $B$ oszlopai ($r$ darab) generálják az $A$ oszlopvektorterét;
 $C$ sorai ($r$ darab) generálják az $A$ sorvektorterét;
@@ -3477,7 +3477,7 @@ Máshogyan fogalmazva: mikor van egyáltalán megoldása egy inhomogén rendszer
 Konkrétan adott $A$ és $b$ mellett Gauss\,--\,Jordan-algoritmussal\index{Gauss\,--\,Jordan-elimináció}  el tudjuk dönteni, hogy
 $b$ vektor eleme-e az $A$ mátrix oszlopvektorterének.
 Egészítsük ki az $A$ mátrixot az utolsó oszlopában a $b$ vektorral.
-Most hajtsuk végre a Gauss\,--\,Jordan-eliminációt, de úgy hogy pivot-elemet,\index{pivot elem}
+Most hajtsuk végre a Gauss\,--\,Jordan-eliminációt, de úgy hogy pivot elemet,\index{pivot elem}
 csak az első $n$ oszlopból válasszunk, ugyanúgy mintha csak a homogén rendszert oldanánk meg.
 Persze minden egyes eliminációs lépésben számoljuk ki az utolsó oszlopvektor elemeit is.
 Az algoritmus úgy ér véget,
@@ -3585,7 +3585,7 @@ Ez azért van, mert az utolsó táblázathoz tartozó homogén lineáris egyenle
 \(
 \begin{pmatrix}0\\1\\0\\0\end{pmatrix}
 \)
-oszlopot helyettesítve az első táblázat $b$ oszlopába, az elimináció során a $b$ oszlop nem változik, hiszen a 2. sorban nem választottunk pivot elemet, ergo a segédsorban $b$ alatt minden lépésben zérus állna.
+oszlopot helyettesítve az első táblázat $b$ oszlopába, az elimináció során a $b$ oszlop nem változik, hiszen a 2. sorban nem választottunk pivot elemet\index{pivot elem}, ergo a segédsorban\index{segédsor} $b$ alatt minden lépésben zérus állna.
 
 Ezt végig gondolhatjuk tetszőleges méretű mátrixra is, így kapjuk a következő állítást.
 \begin{proposition}
@@ -3653,7 +3653,7 @@ egységeleme, akkor ezek a mátrixok kommutálnak.\index{kommutáló mátrixok}\
 Először is összefoglaljuk, az eliminációs algoritmus következményét négyzetes mátrixok mellett.
 Négyzetes mátrix mellett az a tény, hogy az elimináció utolsó táblázatában nincs zérus sor, 
 azonos avval a ténnyel,
-hogy minden oszlopban van választott pivot elem.
+hogy minden oszlopban van választott pivot elem.\index{pivot elem}
 Ez az egyszerű észrevétel teremti meg annak lehetőségét, hogy az $x\mapsto A\cdot x$ hozzárendelés, mint $\mathbb{F}^m\to\mathbb{F}^m$ függvény egyszerre legyen injektív vagy szürjektív.
 \begin{proposition}
 	Legyen $A\in\mathbb{F}^{m\times m}$ mátrix. Az alábbi feltevések ekvivalensek:
@@ -3684,7 +3684,7 @@ Ez az egyszerű észrevétel teremti meg annak lehetőségét, hogy az $x\mapsto
     A $(2),(3)$ és $(4)$ feltételek mindegyike azt jelenti, 
     hogy az eliminációs algoritmus utolsó táblázatában nincs zérus sor, 
     hiszen négyzetes mátrixok esetén ez azonos avval, 
-    hogy minden oszlopban van választott pivot elem.
+    hogy minden oszlopban van választott pivot elem.\index{pivot elem}
     Az $(5)$ feltételből könnyen következik $(4)$, hiszen az $Ax=0$ mellett már
     \[
         x=Ix=\left( BA \right)x=B(Ax)=B\cdot 0=0.
@@ -3929,18 +3929,18 @@ Az előző feladat tehát így alakul:
 \subsection{Teljesen reguláris mátrixok}
 \begin{definition}\label{def:t-reg}
     Egy $A\in\mathbb{F}^{m\times m}$ mátrixot \emph{teljesen regulárisnak}\index{teljesen reguláris} mondunk,
-    ha minden $1\leq k\leq m$ mellett a bal felső $k\times k$ méretű mátrix reguláris.
+    ha minden $1\leq k\leq m$ mellett a bal-felső $k\times k$ méretű mátrix reguláris.
 \end{definition}
 Speciálisan a bal-felső elem nem lehet zérus ($k=1$), és a teljes $A$ mátrix is reguláris ($k=m$).
 Láttuk korábban, hogy a regularitás szükséges és elegendő feltétele, hogy a Gauss\,--\,Jordan-algoritmus utolsó táblázatában ne legyen csupa zérus sor.
-Most karakterizáljuk a teljesen regularitás fogalmát is a Gauss\,-\,Jordan-elimináció pivot elemeinek előírásával.
-Arról van szó, hogy az első lépésben kötelező a bal felső elemet választani.
+Most karakterizáljuk a teljesen regularitás fogalmát is a Gauss\,-\,Jordan-elimináció pivot elemeinek\index{pivot elem} előírásával.
+Arról van szó, hogy az első lépésben kötelező a bal-felső elemet választani.
 A második lépésben kötelező a második oszlop második elemét pivot elemnek választani, stb.
 Ez persze pontosan akkor lehetséges, ha a pivot elemnek előírt számok zérustól különböznek.
 A Gauss\,--\,Jordan-elimináció ezt a módosulatát nevezzük a továbbiakban 
 \emph{Észak\,--\,Nyugat-eliminációnak.}\index{Észak\,--\,Nyugat-elimináció}
 Egy Észak\,--\,Nyugat-eliminációban nincs szabadságunk a pivot elem megválasztására,
-egyszerűen a diagonálisból kell választani a pivot-elemeket, sorjában, fentről lefelé.
+egyszerűen a diagonálisból kell választani a pivot elemeket\index{pivot elem}, sorjában, fentről lefelé.
 \begin{proposition}\label{pr:NW-eliminacio}
     Legyen $A$ egy $\left( m\times m \right)$ méretű mátrix.
     Ez pontosan akkor teljesen reguláris, ha olyan módon tudunk $m$ lépéses Gauss\,--\,Jordan-eliminációt végezni,
@@ -3948,24 +3948,24 @@ egyszerűen a diagonálisból kell választani a pivot-elemeket, sorjában, fent
 \end{proposition}
 \begin{proof}
     Tegyük fel először, hogy az $A$ mátrix teljesen reguláris.
-    Persze a bal-felső elem nem zérus, így az választható is pivot elemnek.
+    Persze a bal-felső elem nem zérus, így az választható is pivot\index{pivot elem} elemnek.
     
     Hajtsuk végre az eliminációt, és tekintsük az így nyert második táblázat diagonálisának második elemét.
-    Ha ez zérus lenne, akkor a kiindulásul vett bal felső $2\times 2$ méretű részmátrix szinguláris lett volna,
+    Ha ez zérus lenne, akkor a kiindulásul vett bal-felső $2\times 2$ méretű részmátrix szinguláris lett volna,
     hiszen erre a részmátrixra nézve az eliminációs algoritmus két zérusból álló sorral végződne.
     Persze ez ellentmond a teljesen regularitás feltételének, ezért a második táblázat második eleme nem zérus
-    lévén, választható pivot elemnek.
+    lévén, választható pivot elemnek\index{pivot elem}.
 
     Hajtsuk végre az eliminációt, és tekintsük az így nyert harmadik táblázat diagonálisának harmadik elemét.
-    Ha ez zérus lenne, akkor a kiindulásul vett bal felső $3\times 3$ méretű részmátrix szinguláris lett volna,
+    Ha ez zérus lenne, akkor a kiindulásul vett bal-felső $3\times 3$ méretű részmátrix szinguláris lett volna,
     hiszen erre a részmátrixra nézve az eliminációs algoritmus három zérusból álló sorral végződne.
     Persze ez ellentmond a teljesen regularitás feltételének, ezért a harmadik táblázat harmadik eleme nem zérus
-    lévén, választható pivot elemnek.
+    lévén, választható pivot elemnek\index{pivot elem}.
 
     És így tovább.
 
-    Megfordítva, ha sorban tudjuk választani a diagonális elemeket pivot elemnek,
-    akkor minden szóba jövő $k$ mellett a bal felső $k\times k$ mátrix reguláris,
+    Megfordítva, ha sorban tudjuk választani a diagonális elemeket pivot elemnek\index{pivot elem},
+    akkor minden szóba jövő $k$ mellett a bal-felső $k\times k$ mátrix reguláris,
     hiszen a $k$ adik lépés után a diagonális első $k$ eleme $1$-es, azaz nincs a részmátrixnak
     $k$ db zérust tartalmazó sora.
     Ez éppen azt jelenti, hogy $A$ teljesen reguláris.
@@ -4324,10 +4324,10 @@ A fenti bázisfaktorizáció tetszőleges mátrix mellett is végrehajtható,
 \begin{proposition}
     Tetszőleges $m\times n$ méretű nem zérus mátrix sorvektorterének és oszlopvektorterének is van azonos elemszámú lineárisan független, generátorrendszere. Ha $r$ e két vektorrendszer közös elemszáma, akkor $1\leq r\leq\min\left\{ m,n \right\}$.
 \end{proposition}
-Ha az itt elemzett mátrixra gondolunk, akkor felvethető, hogy mi történik, ha az eliminációs algoritmus során a fentitől eltérő pivot elemeket választunk?
+Ha az itt elemzett mátrixra gondolunk, akkor felvethető, hogy mi történik, ha az eliminációs algoritmus során a fentitől eltérő pivot elemeket választunk?\index{pivot elem}
 Világos, hogy a pivot elemek más-más választása az eredeti mátrix más-más bázisfaktorizációjához vezet. 
 A bázisfaktorizáció tehát messze nem egyértelmű.
-A probléma, hogy ha adott néhány vektor, akkor mi a kapcsolat a belőlük kiválasztható maximális linárisan független rendszerek közt. 
+A probléma, hogy ha adott néhány vektor, akkor mi a kapcsolat a belőlük kiválasztható maximális lineárisan független rendszerek közt. 
 Igaz-e, hogy a vektorokból kiválasztható maximális lineárisan független rendszerek -- tehát a vektorok lineáris burkában mint altérben maximális lineárisan független rendszereknek -- az elemszáma mindig azonos? Vagy előfordulhat például, hogy egy vektortérnek van egy két elemű és egy három elemű maximális lineárisan független rendszere?
 Ami evvel azonos: előfordulhat-e, hogy egy vektortérben van egy 2 elemű és egy 3 elemű lineárisan független, generátorrendszer? 
 \chapter{A Steinitz-lemma}\index{Steinitz-lemma}
@@ -4750,7 +4750,7 @@ A feszítőrang fogalma nélkül, de a dimenzió fogalma ismeretében gondoljuk 
 Érdemes felfigyelni rá, hogy milyen döbbenetesen szimpla gondolat, de persze a mélyén a dimenzió fogalma, azaz a Steinitz-lemma rejlik.}
 \end{proof}% 
 Persze ebből az alakból is látszik, hogy az oszlopok közül bárhogyan is választok ki egy maximális lineárisan független rendszert e vektorrendszerek elemszáma azonos lesz.
-Más szavakkal: A Gauss\,--\,Jordan-elimináció során, akárhogyan is választok pivot elemeket,
+Más szavakkal: A Gauss\,--\,Jordan-elimináció során, akárhogyan is választok pivot elemeket\index{pivot elem},
 az utolsó táblázatban a nem csupa zérus sorok száma mindig azonos, mégpedig egyenlő a sorvektortér dimenziójának számával, azaz a mátrix rangjával.
 \chapter{Koordinátázás}
 \scwords A koordináta-tér fogalmát vezetjük be.
@@ -8025,7 +8025,7 @@ azonnali következmény a diagonalizálhatóság egy elegendő feltétele:
 	Ekkor $A$ diagonalizálható.
 \end{proposition}
 Az identitás mátrix példája mutatja, hogy a feltétel elegendő, de nem szükséges.
-Mivel $n$-dimenziós térben legfeljebb $n$ elemű linárisan független rendszer van,
+Mivel $n$-dimenziós térben legfeljebb $n$ elemű lineárisan független rendszer van,
 ezért kapjuk, hogy a spektrumnak több eleme nem lehet, mint a tér dimenziója:
 \begin{proposition}
 	Legyen $A\in L\left( V \right)$ lineáris transzformáció.
@@ -10845,7 +10845,7 @@ amelyben ez az oszlop csupa zérus, és a determinánsa azonos a kiinduló mátr
 Látjuk tehát, hogy ha az oszlopok lineárisan összefüggők, akkor a mátrix determinánsa zérus.
 Viszont ha az oszlopok lineárisan függetlenek,
 akkor Gauss\,--\,Jordan-eliminációval minden oszlop a bázisba vihető, és a determináns előjeltől eltekintve a pivot elemek szorzata.
-E szorzat nem lehet zérus, hiszen egyik pivot elem sem lehet zérus.
+E szorzat nem lehet zérus, hiszen egyik pivot elem \index{pivot elem}sem lehet zérus.
 Meggondoltuk tehát:
 \emph{
 	Egy mátrix determinánsa pontosan akkor zérus ha az oszlopok (sorok) lineárisan összefüggők.
@@ -10858,8 +10858,8 @@ is kiírjuk az új bázisban a koordinátáit.
 Ilyen módon végig $n\times n$ méretű táblázatokkal dolgozunk.
 Tegyük fel, hogy egy táblázat $A_1$ az ebből következő táblázat $A_2$.
 $A_2$-t úgy kaptuk $A_1$-ből, hogy a pivot elemmel osztottuk a pivot elem sorát,
-majd minden más sorhoz hozzáadtuk a pivot elem sorának skalárszorosát.
-Ha $r_1$ jelöli az $A_1$-ben választott pivot-elemet, akkor
+majd minden más sorhoz hozzáadtuk a pivot elem\index{pivot elem} sorának skalárszorosát.
+Ha $r_1$ jelöli az $A_1$-ben választott pivot elemet\index{pivot elem}, akkor
 \[
 	|A_2|=\frac{1}{r_1}|A_1|.
 \]
@@ -10872,7 +10872,7 @@ Tehát az előbbi összefüggést lépésenként alkalmazva
 Ezek szerint az algoritmus a következő:
 \emph{
 	$A$ determinánsának kiszámításához az összes oszlopot Gauss\,--\,Jordan-eliminációval bevisszük a bázisba.
-	A determináns a pivot elemek szorzata szorozva +1, vagy -1-el.
+	A determináns a pivot elemek\index{pivot elem} szorzata szorozva +1, vagy -1-el.
 	Az utolsó táblázatban, az új bázis elemeit az eredeti oszlopvektorok alkotják.
 	Számoljuk meg, hogy hány sorcserét kell kapnunk ahhoz, hogy az eredeti oszlopvektorok természetes sorrendjébe cseréljük az elimináció
 	végén kapott új bázis elemeket.
@@ -10882,12 +10882,12 @@ Ezek szerint az algoritmus a következő:
 		A determináns kiszámolásának ez a preferált és professzionális módja.
 		Vessük össze a definíció művelet igényével mondjuk 3,4,5 dimenzió mellett.}
 }
-\paragraph{Pivot elem kifejezése főminorokkal.}\label{par:pivot-fominor}
+\paragraph{Pivot elem kifejezése főminorokkal.}\label{par:pivot-fominor}\index{pivot elem}
 Tegyük fel, hogy $A$ egy teljesen reguláris négyzetes mátrix.
 Tudjuk, hogy az Észak\,--\,Nyugat-elimináció végrehajtható a mátrixon. (Lásd: \ref{pr:NW-eliminacio}. állítás.)
 Legyenek $d_1,\ldots,d_n$ az elimináció pivot elemei, 
-és $\Delta_k$ a bal felső $k\times k$ méretű részmátrix determinánsa.
-Ez utóbbit számot szókás $k$-adik \emph{főminornak}\index{főminor} nevezni.
+és $\Delta_k$ a bal-felső $k\times k$ méretű részmátrix determinánsa.
+Ez utóbbit számot szokás $k$-adik \emph{főminornak}\index{főminor} nevezni.
 Az imént láttuk, hogy $d_1\ldots d_k=\Delta_k.$
 Így persze $d_1=\Delta_1$ és $k\geq 2$ mellett 
 \[
@@ -10963,11 +10963,11 @@ Ekkor
 	Az állítás tehát teljesül, ha $|A|=0$.
 	Feltesszük, hogy $A$ oszlopai lineárisan függetlenek.
 	Végezzünk Gauss\,--\,Jordan-eliminációt az $A$ mátrixon de úgy,
-	hogy az első $n$ lépésben $A_{1,1}$ részéből, utána $A_{2,2}$ részéből választjuk a pivot elemeket.
+	hogy az első $n$ lépésben $A_{1,1}$ részéből, utána $A_{2,2}$ részéből választjuk a pivot elemeket\index{pivot elem}.
 	Ez megtehető, hiszen $A_{1,1}$ oszlopai is lineárisan függetlenek.
 	Legyenek a pivot elemek $r_1,\ldots,r_n,r_{n+1},\ldots,r_m$,
 	és az utolsó oszlop bevonása után maradt $n+m\times n+m$ méretű permutáció mátrix $P$.
-	Mivel csak a balfelső $n\times n$-es és a jobbalsó $m\times m$ részből választottunk pivot elemeket,
+	Mivel csak a bal-felső $n\times n$-es és a jobb-alsó $m\times m$ részből választottunk pivot elemeket,
 	ezért a $P$ mátrix
 	\begin{math}
 		P=
@@ -11317,7 +11317,7 @@ Meggondoltuk tehát, hogy ha a bal alsó partíció zérus, akkor
     \right|.\tag{\dag}
 \]
 Az egész eddigi gondolatot analóg módon ismételhetjük arra az esetre, 
-mikor a jobb felső partíció zérus (és persze ekkor a bal alsó $A_{2,1}$ partíció akármilyen lehet).
+mikor a jobb-felső partíció zérus (és persze ekkor a bal alsó $A_{2,1}$ partíció akármilyen lehet).
 Kapjuk tehát, hogy
 \[
     \left|
@@ -11408,8 +11408,8 @@ amelyeket a fejezet bevezetőjében említettem.
 \begin{proof}
 	Világos, hogy a szóban forgó mátrix $k-1$ oszlopcsere, 
     majd $i-1$ sorcsere után olyan alakra hozható,
-	ahol a balfelső elem $1$, alatta az első oszlop minden eleme zérus,
-	és a jobb alsó $n-1\times n-1$ méretű részmátrix az eredeti mátrix $\left( i,k \right)$-csonkoltja:
+	ahol a bal-felső elem $1$, alatta az első oszlop minden eleme zérus,
+	és a jobb-alsó $n-1\times n-1$ méretű részmátrix az eredeti mátrix $\left( i,k \right)$-csonkoltja:
 	\[
 		\begin{pmatrix}
 			1 & \begin{bmatrix}
@@ -13477,7 +13477,7 @@ A fenti gondolat azonnali következménye a normális transzformációk diagonal
 \subsection{Szimmetrikus transzformációk diagonalizálhatósága valós skalárisszorzatos-tereken}
 A valós test feletti eset fontosságát hangsúlyozandó,
 az önadjungált transzformációkra külön elnevezést vezetünk be.
-\begin{definition}[szimetrikus transzformáció]
+\begin{definition}[szimmetrikus transzformáció]
 	Egy $\mathbb{R}$ feletti skalárisszorzatos-tér egy $A\in L\left( V \right)$ lineáris transzformációját
 	\emph{szimmetrikusnak} mondjuk, ha az önadjungált, azaz  $A^\ast=A$.
 \end{definition}
@@ -14595,7 +14595,7 @@ is meghatározzák:
 \end{proof}
 Most a definitségnek a determinánssal való kapcsolatára térünk rá.
 Mivel szimmetrikus mátrix diagonalizálható, és a sajátértékek vannak a diagonálisban, ezért egy szimmetrikus mátrix determinánsa a sajátértékeinek -- geometriai multiplicitásával számolt -- szorzata.
-Emlékezzünk arra is, hogy egy bal felső négyzetes részmátrix determinánsát neveztük korábban főminornak.\index{főminor}
+Emlékezzünk arra is, hogy egy bal-felső négyzetes részmátrix determinánsát neveztük korábban főminornak.\index{főminor}
 \begin{proposition}
     A kvadratikus alak pozitív definitségének\index{pozitív definit} szükséges és elegendő feltétele,
     hogy a mátrixának valamennyi főminora\index{főminor} pozitív legyen.
@@ -14615,7 +14615,7 @@ Emlékezzünk arra is, hogy egy bal felső négyzetes részmátrix determináns�
     Kaptuk tehát, hogy a pivot elemek sorozata is pozitív számok sorozata, 
     amiből már látszik is, hogy a kvadratikus alak pozitív definit:
     Ugyanis, ha $D$ jelöli azt a diagonális mátrixot, amelyben 
-    a $d_1,\ldots,d_n$ pivot elemek rendre a diagonális elemei,
+    a $d_1,\ldots,d_n$ pivot elemek\index{pivot elem} rendre a diagonális elemei,
     akkor \aazt{\ref{apx:Kvadr}}.~függelékben megértett 
     diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,
     emiatt
@@ -14628,7 +14628,7 @@ Emlékezzünk arra is, hogy egy bal felső négyzetes részmátrix determináns�
     Megfordítva, ha $A$ pozitív definit, akkor $A$ valamennyi sajátértéke pozitív.
     Persze a determináns a sajátértékek szorzata, emiatt a determináns,
     azaz az utolsó $\Delta_n$ főminor is pozitív.
-    Vegyük észre, hogy egy pozitív definit mátrix minden bal felső részmátrixa is pozitív definit marad.
+    Vegyük észre, hogy egy pozitív definit mátrix minden bal-felső részmátrixa is pozitív definit marad.
     Így az előbbi gondolat ismétlésével kapjuk, hogy az eredeti $A$ mátrix valamennyi főminora pozitív.
 \end{proof}
 Egy kvadratikus alak $-1$ szeresére felírva az előző állítást kapjuk a negatív definitség karakterizációját, amely szerint 
@@ -14784,7 +14784,7 @@ akkor még egyszerűbb állítást kapunk.
 	Tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
 	\begin{enumerate}
 		\item Teljesül az úgynevezett
-		      \emph{\CStar-azonosság}\index{Ccsillag@\CStar-azonosság}:
+		      \emph{\CStar-azonosság}\index{Ccsillag@\CStar-azonosság}
 		      \[
 			      \|A\|^2=\|A^\ast A\|.
 		      \]
@@ -14807,7 +14807,7 @@ akkor még egyszerűbb állítást kapunk.
 	\[
 		\|A^\ast A\|=r\left(A^\ast A  \right)=\|A\|^2,
 	\]
-	ami éppen a \CStar-azonosság.
+	ami éppen a \CStar-azonosság\index{Ccsillag@\CStar-azonosság}.
 
 	Felhasználva, hogy transzformációk szorzatának normája legfeljebb a normák szorzata,
 	a \CStar-azonosság szerint
@@ -14851,7 +14851,7 @@ Ha az $A$ operátor normáját kell meghatároznunk,
 akkor nagyon nem mindegy,
 hogy egy $8\times 8$ méretű-, vagy egy $2\times 2$ méretű önadjungált mátrix legnagyobb sajátértékét kell megtalálnunk.
 
-Legvégül a \CStar-azonosság és következményei egy sorban
+Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következményei egy sorban
 \[
 	\|A\|^2=\|A^\ast A\|=r\left( A^\ast A \right)
 	=
@@ -16429,7 +16429,7 @@ ha az 1 rangú szimmetrikus mátrix.
 A szimmetrikus diádok azért érdekesek számunkra, 
 mert éppen az ezekhez tartozó kvadratikus alakok a teljes négyzetek.
 \begin{proposition}
-   Egy kvadratikus alak pontosan akkor teljes négyzet, ha az őt reprezentáló szimetrikus mátrix egy diád.
+   Egy kvadratikus alak pontosan akkor teljes négyzet, ha az őt reprezentáló szimmetrikus mátrix egy diád.
    Pontosabban:
    Ha $A=a\cdot a^T$, ahol $a=\left( a_1,a_2,\ldots,a_n \right)$, akkor
       \(
@@ -16443,10 +16443,10 @@ Be fogjuk bizonyítani, hogy
 \begin{proposition}
     Minden nem zérus szimmetrikus mátrix előáll mint szimmetrikus diádok lineáris kombinációja.
     Sőt, ha egy szimmetrikus mátrix rangja $r$, 
-    akkor az előáll mint $r$ db.~szimmetrikus diád lineáris kombinációja, 
+    akkor az előáll mint $r$ darab szimmetrikus diád lineáris kombinációja, 
     ahol a diádokat alkotó vektorok rendszere lineárisan független rendszert alkot.
 \end{proposition}
-A bizonyítás úgy folyik, hogy konkrét algoritmust adunk a felbontásra.
+A bizonyításként konkrét algoritmust adunk a felbontásra.
 
 Az algoritmus első mozzanata annak észrevétele, 
 hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan módon,
@@ -16463,16 +16463,20 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
    ahol a $t$-edik oszlop és a $t$-edik sor kizárólag zérus elemeket tartalmaz.
 \end{proposition}
 \begin{proof}
-    Az persze nyilvánvaló, hogy szimmetrikus mátrixok egy lináris kombinációja is szimmetrikus marad, 
+    Nyilvánvaló, hogy szimmetrikus mátrixok egy lineáris kombinációja is szimmetrikus marad, 
     ergo $R$ szimmetrikus.
 
     Jelölje $\delta_k=\frac{a_{k,t}}{a_{t,t}}=\frac{a_{t,k}}{a_{t,t}}$ a $d$ vektor $k$-adik koordinátáját.
-    Most figyeljünk $R$ soraira, első lépésként a $t$-edik sorra.
-    Ez $a_t^T-a_{t,t}\delta_t d^T$. No de ez nyilvánvalóan a zérus sor, 
+    Most figyeljünk az $R$ mátrix $t$-edik sorára, ami
+    $a_t^T-a_{t,t}\delta_t d^T$. No de ez nyilvánvalóan a zérus sor, 
     hiszen $\delta_t=1$ és $a_{t,t}d=a_t$.
     Mivel $R$ egy szimmetrikus mátrix, 
     ezért a $t$-edik oszlop is csak is csak zérus elemeket tartalmaz.
     \end{proof}
+    Mielőtt tovább lépünk érdemes felfigyelni a $d^T$ sorvektor következő interpretációjára:
+    Ha Gauss--Jordan-eliminációt végzünk az $a_{t,t}$ pivot elemmel\index{pivot elem}, akkor éppen $d^T$
+    az eliminációs táblázat segédsora!\index{segédsor}!
+
     Illusztrációként nézzük a következő kvadratikus alakot:
     \[
         Q\left( z_1,z_2,z_3 \right)
@@ -16488,7 +16492,7 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
     \end{pmatrix}
     \)
     szimmetrikus mátrix reprezentálja.
-    Válasszuk le belőle a balfelső elemhez tartozó diádot.
+    Válasszuk le belőle a bal-felső elemhez tartozó diádot.
     Legyen tehát $t=1$ mellett
     \(d=
     \begin{bmatrix}
@@ -16570,7 +16574,7 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
         -\frac{1}{2}\left( z_2-4z_3 \right)^2
         +\frac{15}{2}z_3^2.
     \]
-    Az $A$ mátrix diádfelbontását is leolvashatjuk a fenti számolásból:
+    Az $A$ mátrix egy diádfelbontását is leolvashatjuk a fenti számolásból:
     \[
         A
         =
@@ -16600,20 +16604,23 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
             0&0&1
         \end{bmatrix}.
     \]
+    Világos, hogy más pivot elemeket választva más diádfelbontást kapnánk, tehát az egyértelműség szóba sem jöhet.
 
 Voltaképpen készen is lennénk, 
-mert ez a módszer minden olyan esetben megadja a szimetrikus diádokra való felbontást,
+mert ez a módszer minden olyan esetben megadja a szimmetrikus diádokra való felbontást,
 amikor az algoritmus kezdő mátrixa, és minden további lépésében a maradék kvadratikus alak mátrixa,
-diagonálisának nem minden elem zérus.
+diagonálisában nem minden elem zérus.
 Ha például a mátrix teljesen reguláris az azt jelenti, 
-hogy minden lépésben a maradék mátrixának a bal felső eleme nem zérus.
+hogy minden lépésben a maradék mátrixának a bal-felső eleme nem zérus.
 
-A maradék kvadratikus alak mátrixa, az $R=A-a_{t,t}d\cdot d^T$, a fentinél sokkal
-hatékonyabban számolható.
+A diád felbontást garantáló algoritmus második lépésének megértése, 
+annak észrevételében áll, hogy a maradék kvadratikus alak mátrixa, 
+azaz az $R=A-a_{t,t}d\cdot d^T$, 
+a fentinél sokkal hatékonyabban is kiszámolható.
 Láttuk már, hogy $t$-edik sorban minden elem zérus.
 Most írjuk fel $k\neq t$ mellett az $R$ mátrix $k$-adik sorát.
-Figyeljük meg, hogy a $d^T$ sor a Gauss--Jordan-elimáció segédsora,
-amikor az $a_{t,t}$ pivotelemet választjuk.
+Figyeljük meg, hogy a $d^T$ sor a Gauss--Jordan-elimináció segédsora\index{segédsor},
+amikor az $a_{t,t}$ pivot elemet\index{pivot elem} választjuk.
 Tekintsünk a $d\cdot d^T$ diád $k$-adik sorára, mint $\delta_kd^T$. 
 Ekkor világos, hogy az $R$ mátrix $k$-adik sora az $A$ mátrix $k$-adik sorának és az $a_{t,k}d^T$ sor különbsége,
 hiszen
@@ -16624,7 +16631,7 @@ hiszen
 \]
 
 Ismerjük fel, hogy ez éppen az eliminációs algoritmus számolási szabálya abban az esetben, 
-amikor a diagonális $t$-edik eleme a pivot elem és a pivot elemet nem tartalmazó sorok elemeit számoljuk.
+amikor a diagonális $t$-edik eleme a pivot elem és a pivot elemet\index{pivot elem} nem tartalmazó sorok elemeit számoljuk.
 Ez azt jelenti, hogy az $A-a_{t,t}d\cdot d^T$ művelet diád szorzás és mátrix kivonás helyett Gauss\,--\,Jordan-eliminációval\index{Gauss\,--\,Jordan-elimináció} is számolható.
 Bebizonyítottuk hát a következő állítást.
 \begin{proposition}
@@ -16636,9 +16643,10 @@ Bebizonyítottuk hát a következő állítást.
    ahol $d$ az $A$ mátrix $t$-edik oszlopának az $a_{t,t}$ reciprokával vett szorzata.
    Tudjuk, hogy $R$ $t$-edik oszlopa és sora csak zérus elemeket tartalmaz.
    E mátrix többi része az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
-   kapható az $a_{t,t}$ pivot elem választásával.
+   kapható az $a_{t,t}$ pivot elem\index{pivot elem} választásával.
 \end{proposition}
-Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.
+Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.%
+\footnote{A jobb átláthatóság kedvéért nem írtam ki a zérus együtthatókat.}
 \[
 \begin{array}{c|ccc}
      & z_1       & z_2 & z_3 \\
@@ -16670,10 +16678,14 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
      & &          & 1
 \end{array}
 \]
-Ezután csak értelmeznünk kell a fenti eliminációt.
+Értelmezzük a fenti számolást. 
+Fontos látni, hogy ez nem a Gauss--Jordan-elimináció!
 A második táblázat az első diád leválasztása után maradt kvadratikus alak mátrixa.
-A leválasztott diád az első táblázat segédsorából olvasható le, 
-és a diád szorzója az első táblázatban választott pivot elem.
+A leválasztott diád az első táblázat segédsorából\index{segédsor} olvasható le, 
+és a diád szorzója az első táblázatban választott pivot elem\index{pivot elem}.
+Ugyanígy a harmadik táblázat a második diád leválasztása után maradt kvadratikus alak mátrixa.
+A most leválasztott diád a második táblázat segédsorából olvasható le,
+és a diád szorzója a második táblázatban választott pivot elem.
 Tehát
 \[
     \begin{pmatrix}
@@ -16698,8 +16710,8 @@ Tehát
     \end{pmatrix}.
 \]
 A harmadik táblázat az előző maradékból leválasztott kvadratikus alak mátrixa.
-A leválasztott diád a második táblázat segédsorából olvasható le, 
-és a szorzó a második táblázat pivot eleme.
+A leválasztott diád a második táblázat segédsorából\index{segédsor} olvasható le, 
+és a szorzó a második táblázat pivot eleme\index{pivot elem}.
 Tehát
 \[
     \begin{pmatrix}
@@ -16729,7 +16741,7 @@ Világos, hogy az utolsó maradék $15/2$ szerese a
     0\\0\\1
 \end{pmatrix}
 \)
-vektor által meghatározott diádnak, tehát a diád felbontás a fenti eliminációs táblázatból azonnal leolvasható:
+vektor által meghatározott diádnak, tehát a diád felbontás a fenti táblázatokból azonnal leolvasható:
 \[
     A
     =
@@ -16761,7 +16773,7 @@ vektor által meghatározott diádnak, tehát a diád felbontás a fenti elimin�
 \]
 A diád felbontás a kvadratikus alakra nézve azt jelenti, 
 hogy előállítottuk azt olyan teljes négyzetek lineáris kombinációjaként,
-ahol a teljes négyzeteknek megfelelő diádokat generáló vektorok rendszere linárisan független rendszert ad.
+ahol a teljes négyzeteknek megfelelő diádokat generáló vektorok rendszere lineárisan független rendszert ad.
 Konkrétan itt
 \[
     2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3
@@ -16779,8 +16791,8 @@ x_1^2+3x_2^2+6x_3^2+
 2x_1x_2+2x_1x_3+
 6x_2x_3
 \)
-kvadratikus alakot teljesnégyzetek lineáris kombinációjaként.
-Az elimináció lépései:
+kvadratikus alakot teljes négyzetek lineáris kombinációjaként.
+Az táblázatok:
 \[
 \begin{array}{c|ccc}
      & x_1       & x_2 & x_3 \\
@@ -16820,7 +16832,7 @@ Q\left( x_1,x_2,x_3 \right)
 +2\left( x_2+x_3 \right)^2
 +3x_3^2.
 \)
-Az is világos, hogy a három pivot elem pozitivitása szerint a kvadratikus alak pozitív definit,
+Az is világos, hogy a három pivot elem\index{pivot elem} pozitivitása szerint a kvadratikus alak pozitív definit,
 hiszen az
 \begin{eqnarray*}
     x_1+x_2+x_3&=& 0\\
@@ -16828,14 +16840,14 @@ hiszen az
     x_3&=& 0
 \end{eqnarray*}
 homogén lineáris egyenletrendszernek, 
-az együttható mátrix oszlopainak lináris függetlensége miatt,
+az együttható mátrix oszlopainak lineáris függetlensége miatt,
 csak triviális megoldása van!
 
-\subsubsection{Zérus elem a bal felső sarokban}
+\subsubsection{Zérus elem a bal-felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
-A soron következő diád leválasztásához mindig a balfelső elemet kell választanunk,
-ami éppen az Észak\,--\,Nyugat-elimáció\index{Észak\,--\,Nyugat-elimináció} esete.
-Persze kérdés mi történik, ha a balfelső elem zérus? 
+A soron következő diád leválasztásához mindig a bal-felső elemet kell választanunk,
+ami éppen az Észak\,--\,Nyugat-elimináció\index{Észak\,--\,Nyugat-elimináció} esete.
+Persze kérdés mi történik, ha a bal-felső elem zérus? 
 Általánosabban: hogyan tudjuk kezelni az esetet, mikor nem teljesen reguláris a mátrix?
 Ennek illusztrációjaként nézzük az alábbi kvadratikus alakot.
 \[
@@ -16844,7 +16856,7 @@ Ennek illusztrációjaként nézzük az alábbi kvadratikus alakot.
     2x_1x_2+2x_1x_3+
     6x_2x_3
 \]
-Persze el sem tudjuk kezdeni az algoritmust, hiszen a balfelső elem zérus.
+Persze el sem tudjuk kezdeni az algoritmust, hiszen a bal-felső elem zérus.
 Azt vegyük észre, hogy át tudjuk címkézni a változókat úgy, 
 hogy a kapott kvadratikus alakban az első változónak legyen négyzete.
 Ehhez csak az $x_1$ és az $x_2$ változókat kell felcserélnünk.
@@ -16979,7 +16991,7 @@ Ugyanez mégegyszer:
     \phantom{\delta}
 \end{array}
 \]
-A változók indexére ügyelve kell leolvasnunk a teljesnégyzeteket, és a legegszerűbb, ha a teljesnégyzetekből olvassuk le a diád felbontást.
+A változók indexére ügyelve kell leolvasnunk a teljes négyzeteket, és a legegszerűbb, ha a teljes négyzetekből olvassuk le a diád felbontást.
 
 Már csak azt kell meggondolnunk, hogyan kaptuk az első táblázatból a másodikat?
 Azt kell látnunk, hogy az $i$-edik és a $j$-edik változó felcserélése avval jár, 
@@ -16990,8 +17002,8 @@ A többi elem viszont nem változik.
 Az első rész az $i$ és $j$ indexű sorok felcserélését jelenti, míg a második rész az $i$ és $j$ indexű oszlopok kicseréléséből áll.
 A többi sort és oszlopot nem éri változás.
 
-Látjuk tehát, hogy ha a balfelső elem zérus, de a diagonálisnak van nem zérus eleme, 
-akkor a most tanult felcseréléssel a nem zérus elem a balfelső pozícióba hozható, így az algoritmusunk továbbra is működik.
+Látjuk tehát, hogy ha a bal-felső elem zérus, de a diagonálisnak van nem zérus eleme, 
+akkor a most tanult felcseréléssel a nem zérus elem a bal-felső pozícióba hozható, így az algoritmusunk továbbra is működik.
 
 \subsubsection{A diagonálisban minden elem zérus}
 Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
@@ -17021,14 +17033,14 @@ Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l-z_k^2)$-re kell cseréln�
 A többi változó indexe nem változik.
 Így pontsan egy négyzetet kapunk, 
 tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
-Ahogyan azt az előzőekben már megértettük ezt az elemet kell a balfelső pozícióba csempészni, 
+Ahogyan azt az előzőekben már megértettük ezt az elemet kell a bal-felső pozícióba csempészni, 
 és az algoritmusunk már működik is.
 
 \section{Definitség osztályozása a teljes négyzetek segítségével}\label{ap:quad-summary}
 Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
 a kvadratikus alak definitsége az alábbiak szerint osztályozható.
 Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
-Ha a diád felbontás
+Ha a diád felbontás\index{pivot elem}
 \begin{itemize}
     \item tartalmaz pozitív és negatív pivot elemet, 
         akkor $Q$ \emph{indefinit}.
