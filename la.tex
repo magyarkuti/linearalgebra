@@ -3415,7 +3415,7 @@ Egy mátrix fenti felbontását nevezzük \emph{bázisfaktorizációnak}\index{b
 
 Visszagondolva a mátrixszorzás-művelet diádinterpretációjára (lásd \aaz{pr:matrixmul}. állítást) úgy tudjuk összefoglalni 
 a mátrixok bázisfaktorizációját, hogy ha egy mátrix sor- vagy oszlopterének van egy $r$ elemű generátorrendszere,
-akkor e mátrix előáll mint $r$ darab diád összege.
+akkor e mátrix előáll mint $r$ darab diád összege.\index{diad@diád}
 
 Azt is meggondoltuk, hogy milyen módon találhatunk azonos elemszámú generátorrendszert a sor- és az oszlopvektortérben:
 A Gauss\,--\,Jordan-elimináció utolsó táblázata ezt is elárulja.
@@ -3424,7 +3424,7 @@ amelyekben választottunk pivot elemeket\index{pivot elem}, majd a $C$ mátrix a
 Ha a választott pivot elemek számát $r$ jelöli, 
 akkor $B$ oszlopai ($r$ darab) generálják az $A$ oszlopvektorterét;
 $C$ sorai ($r$ darab) generálják az $A$ sorvektorterét;
-az $A=BC$, emiatt $A$ előáll mint $r$ darab diád összege.
+az $A=BC$, emiatt $A$ előáll mint $r$ darab diád összege.\index{diad@diád}
 
 \subsection{Inhomogén lineáris egyenletrendszer}
 Láttuk, hogy egy $m$ egyenletet és $n$ ismeretlent tartalmazó lineáris egyenletrendszer ekvivalens az
@@ -14617,7 +14617,7 @@ Emlékezzünk arra is, hogy egy bal-felső négyzetes részmátrix determináns�
     Ugyanis, ha $D$ jelöli azt a diagonális mátrixot, amelyben 
     a $d_1,\ldots,d_n$ pivot elemek\index{pivot elem} rendre a diagonális elemei,
     akkor \aazt{\ref{apx:Kvadr}}.~függelékben megértett 
-    diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,
+    diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,\index{diad@diád}
     emiatt
     \[
         Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\star DBx}=\ip{Bx}{DBx}.
@@ -16372,11 +16372,14 @@ A kvadratikus alaknak mondunk egy speciális többváltozós függvényt:
     Amint az szokásos jelölje $a_{i,j}$ a mátrix $i,j$ pozicíojának elemét.
     Definiálja a $Q_A:\mathbb{R}^n\to\mathbb{R}$ függvényt
     \[
-    Q\left( x_{1},x_2,\cdots,x_n \right)=
+    Q_A\left( x_{1},x_2,\cdots,x_n \right)=
     \sum_{k=1}^n\sum_{j=1}^na_{k,j}x_kx_j.
     \]
     Ekkor $Q_A$ az $A$ szimmetrikus mátrixhoz tartozó kvadratikus alak.
 \end{definition}
+Persze $Q_A$ helyett gyakorta csak $Q$-t írunk, mikor világos, 
+hogy melyik mátrixhoz tartozó kvadratikus alakról van szó.
+
 Például $n=1$ és az $A$ mátrix egyetlem eleme az $a\in\mathbb{R}$ szám, akkor $Q(x_1)=ax_1^2$.
 Ha $n=2$ mellett $A\in\mathbb{R}^{2\times 2}$, akkor
 $$
@@ -16418,7 +16421,10 @@ A nemzérus kvadratikus alakokat az értékkészletük alapján osztályozzuk.
             $Q\left( x \right)>0$  és $Q\left( y \right)<0$.\qedhere
     \end{description}
 \end{definition}
-\subsection{A szimmetrikus diádok szerepe}
+Célunk, hogy tetszőleges kvadratikus alakról el tudjuk dönteni, 
+hogy az a fenti öt egymást kizáró kategória melyikébe tartozik!
+Ezt nevezzük a kvadratikus alakok osztályozásának vagy klasszifikációjának.
+\subsection{A szimmetrikus diádok szerepe}\index{diad@diád}
 Emlékezzünk, hogy $n\times n$ méretű szimmetrikus diádnak nevezünk egy $\mathbb{R}^n$ beli vektornak
 oszlopalakú és soralakú mátrixszorzatát. 
 Kicsit formálisabban az $A=a\cdot a^T$ tetszőleges $a\in\mathbb{R}^{n\times 1}$ mellett.
@@ -16431,25 +16437,39 @@ mert éppen az ezekhez tartozó kvadratikus alakok a teljes négyzetek.
 \begin{proposition}
    Egy kvadratikus alak pontosan akkor teljes négyzet, ha az őt reprezentáló szimmetrikus mátrix egy diád.
    Pontosabban:
-   Ha $A=a\cdot a^T$, ahol $a=\left( a_1,a_2,\ldots,a_n \right)$, akkor
+   Az $A=a\cdot a^T$ azonosság akkor és csak akkor áll fenn, ha
       \(
          Q_A\left( x_1,x_2,\ldots,x_n \right)=
          \left( a_1x_1+a_2x_2+\ldots+a_nx_n \right)^2.
       \)
+   Itt $a=\left( a_1,a_2,\ldots,a_n \right)$.
 \end{proposition}
 
-\section{Szimmetrikus mátrix diád felbontása}
+\section{Szimmetrikus mátrixnak szimmetrikus diádok összegére való felbontása}
+Korábban már láttuk, hogy egy $r$-rangú mátrix felírható, 
+mint $r$ darab diád összege.\index{diad@diád}
+\fxnote{Ide hivatkozás kell}
+Ha visszagondolunk az ott tanult algoritmusra rögtön látjuk, 
+hogy attól mert a kiinduló mátrixunk szimmetrikus a diádfelbontás tagjai nem lesznek szimmetrikusak.
+\fxnote{Ide is hivatkozás kell}
 Be fogjuk bizonyítani, hogy 
 \begin{proposition}
     Minden nem zérus szimmetrikus mátrix előáll mint szimmetrikus diádok lineáris kombinációja.
     Sőt, ha egy szimmetrikus mátrix rangja $r$, 
     akkor az előáll mint $r$ darab szimmetrikus diád lineáris kombinációja, 
-    ahol a diádokat alkotó vektorok rendszere lineárisan független rendszert alkot.
+    ahol a szimmetrikus diádokat alkotó vektorok rendszere lineárisan független rendszert alkot.
 \end{proposition}
 A bizonyításként konkrét algoritmust adunk a felbontásra.
+Közben módszert fogunk találni a szimmetrikus mátrixhoz tartozó kvadratikus alak klasszifikációjára is.
+
+Az egy ultra trivialitás, hogy ha a mátrix diagonálisának minden eleme zérus, 
+és $a_{i,j}\neq 0$, akkor az $i$-edik és $j$-edik változótól eltekintve minden változót zérusra állítva
+a $Q_A(\dots,x_i,\dots,x_j,\dots)=a_{i,j}x_ix_j$ függvényt kapjuk,
+aminek nyilván vannak pozitív és negatív értékei is,
+ergo az $A$ mátrix indefinit.
 
 Az algoritmus első mozzanata annak észrevétele, 
-hogy egy szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan módon,
+hogy egy nem csupa zérus diagonálissak rendelkező szimmetrikus mátrixból mindig leválasztható egy szimmetrikus diád olyan módon,
 hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbett tartalmazzon:
 \begin{proposition}
     Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
@@ -16471,7 +16491,7 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
     $a_t^T-a_{t,t}\delta_t d^T$. No de ez nyilvánvalóan a zérus sor, 
     hiszen $\delta_t=1$ és $a_{t,t}d=a_t$.
     Mivel $R$ egy szimmetrikus mátrix, 
-    ezért a $t$-edik oszlop is csak is csak zérus elemeket tartalmaz.
+    ezért a $t$-edik oszlop is csak csak zérus elemeket tartalmaz.
     \end{proof}
     Mielőtt tovább lépünk érdemes felfigyelni a $d^T$ sorvektor következő interpretációjára:
     Ha Gauss--Jordan-eliminációt végzünk az $a_{t,t}$ pivot elemmel\index{pivot elem}, akkor éppen $d^T$
@@ -16492,7 +16512,7 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
     \end{pmatrix}
     \)
     szimmetrikus mátrix reprezentálja.
-    Válasszuk le belőle a bal-felső elemhez tartozó diádot.
+    Válasszuk le belőle a bal-felső elemhez tartozó diádot.\index{diad@diád}
     Legyen tehát $t=1$ mellett
     \(d=
     \begin{bmatrix}
@@ -16604,7 +16624,8 @@ hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy vált
             0&0&1
         \end{bmatrix}.
     \]
-    Világos, hogy más pivot elemeket választva más diádfelbontást kapnánk, tehát az egyértelműség szóba sem jöhet.
+    Világos, hogy a diagonális más elemeiből indulva más-más diádfelbontást kapnánk, 
+    tehát az egyértelműség szóba sem jöhet.
 
 Voltaképpen készen is lennénk, 
 mert ez a módszer minden olyan esetben megadja a szimmetrikus diádokra való felbontást,
@@ -16613,13 +16634,13 @@ diagonálisában nem minden elem zérus.
 Ha például a mátrix teljesen reguláris az azt jelenti, 
 hogy minden lépésben a maradék mátrixának a bal-felső eleme nem zérus.
 
-A diád felbontást garantáló algoritmus második lépésének megértése, 
+A diádfelbontást garantáló algoritmus második lépésének megértése, 
 annak észrevételében áll, hogy a maradék kvadratikus alak mátrixa, 
 azaz az $R=A-a_{t,t}d\cdot d^T$, 
 a fentinél sokkal hatékonyabban is kiszámolható.
 Láttuk már, hogy $t$-edik sorban minden elem zérus.
 Most írjuk fel $k\neq t$ mellett az $R$ mátrix $k$-adik sorát.
-Figyeljük meg, hogy a $d^T$ sor a Gauss--Jordan-elimináció segédsora\index{segédsor},
+Fontos, hogy a $d^T$ sor a Gauss--Jordan-elimináció segédsora\index{segédsor},
 amikor az $a_{t,t}$ pivot elemet\index{pivot elem} választjuk.
 Tekintsünk a $d\cdot d^T$ diád $k$-adik sorára, mint $\delta_kd^T$. 
 Ekkor világos, hogy az $R$ mátrix $k$-adik sora az $A$ mátrix $k$-adik sorának és az $a_{t,k}d^T$ sor különbsége,
@@ -16640,13 +16661,15 @@ Bebizonyítottuk hát a következő állítást.
    Legyen $R$ az első diád leválasztása után maradó kvadratikus alak mátrixa,
    azaz 
    $$R=A-a_{t,t}d\cdot d^T,$$
-   ahol $d$ az $A$ mátrix $t$-edik oszlopának az $a_{t,t}$ reciprokával vett szorzata.
-   Tudjuk, hogy $R$ $t$-edik oszlopa és sora csak zérus elemeket tartalmaz.
-   E mátrix többi része az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval, 
+   ahol $d$ az $A$ mátrix $t$-edik oszlopának az $a_{t,t}$ reciprokával vett szorzata.%
+   \footnote{Azaz, $d^T$ az elimináció segédsora.}\index{segédsor}
+   Tudjuk, hogy az $R$ mátrix $t$-edik oszlopa és sora csak zérus elemeket tartalmaz.
+   E mátrix többi része az $A$ mátrixon végzett Gauss\,--\,Jordan-eliminációval 
    kapható az $a_{t,t}$ pivot elem\index{pivot elem} választásával.
 \end{proposition}
-Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. Nézzük újra.%
-\footnote{A jobb átláthatóság kedvéért nem írtam ki a zérus együtthatókat.}
+Ennek az egyszerű észrevételnek a fényében az előző példa számolása radikálisan egyszerűsíthető. 
+Nézzük tehát újra:%
+\footnote{A jobb átláthatóság kedvéért nem írtam ki a leválasztott változókhoz tartozó zérus együtthatókat.}
 \[
 \begin{array}{c|ccc}
      & z_1       & z_2 & z_3 \\
@@ -16665,7 +16688,7 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
      & & \boxed{-1/2}   & 2     \\
      & &            2   & -1/2  \\
      \hline
-     & & 1         & -4
+     &0 & 1         & -4
 \end{array}
 \implies
 \begin{array}{c|ccc}
@@ -16675,11 +16698,14 @@ Ennek fényében az előző példa számolása radikálisan egyszerűsíthető. 
      & &   &     \\
      & &   & \boxed{15/2}    \\
     \hline
-     & &          & 1
+     &0 & 0         & 1
 \end{array}
 \]
 Értelmezzük a fenti számolást. 
-Fontos látni, hogy ez nem a Gauss--Jordan-elimináció!
+Fontos látni, hogy ez nem teljesen Gauss--Jordan-elimináció, 
+hiszen a választott pivot elem sora zérussá válik. 
+Ettől eltekintve viszont teljesen azonos a már jól ismert eliminációs algoritmussal.
+
 A második táblázat az első diád leválasztása után maradt kvadratikus alak mátrixa.
 A leválasztott diád az első táblázat segédsorából\index{segédsor} olvasható le, 
 és a diád szorzója az első táblázatban választott pivot elem\index{pivot elem}.
@@ -16741,7 +16767,7 @@ Világos, hogy az utolsó maradék $15/2$ szerese a
     0\\0\\1
 \end{pmatrix}
 \)
-vektor által meghatározott diádnak, tehát a diád felbontás a fenti táblázatokból azonnal leolvasható:
+vektor által meghatározott diádnak, tehát a diádfelbontás a fenti táblázatokból azonnal leolvasható:
 \[
     A
     =
@@ -16771,7 +16797,7 @@ vektor által meghatározott diádnak, tehát a diád felbontás a fenti táblá
         0&0&1
     \end{bmatrix}
 \]
-A diád felbontás a kvadratikus alakra nézve azt jelenti, 
+A diádfelbontás a kvadratikus alakra nézve azt jelenti, 
 hogy előállítottuk azt olyan teljes négyzetek lineáris kombinációjaként,
 ahol a teljes négyzeteknek megfelelő diádokat generáló vektorok rendszere lineárisan független rendszert ad.
 Konkrétan itt
@@ -16782,6 +16808,7 @@ Konkrétan itt
     -\frac{1}{2}\left( z_2-4z_3 \right)^2
     +\frac{15}{2}z_3^2.
 \]
+\fxfatal{Itt folytatni, avval hogy rangnyi darab diád összege, és indefinit}
 
 \paragraph{Gyakorlat.}
 Írjuk fel a 
@@ -16811,7 +16838,7 @@ A táblázatok:
      & & \boxed{2}      & 2   \\
      & & 2              & 5   \\
      \hline
-     & & 1         & 1
+     &0 & 1         & 1
 \end{array}
 \implies
 \begin{array}{c|ccc}
@@ -16821,7 +16848,7 @@ A táblázatok:
      &     &     &          \\
      &     &     & \boxed{3}\\
     \hline
-     & &          & 1
+     & 0&0          & 1
 \end{array}
 \]
 Ez azt jelenti, hogy 
@@ -16832,16 +16859,21 @@ Q\left( x_1,x_2,x_3 \right)
 +2\left( x_2+x_3 \right)^2
 +3x_3^2.
 \)
-Az is világos, hogy a három pivot elem\index{pivot elem} pozitivitása szerint a kvadratikus alak pozitív definit,
-hiszen az
+Az is világos, hogy a három pivot elem\index{pivot elem} pozitivitása szerint a kvadratikus alak pozitív definit:
+Egyrészt $Q\left( x_1,x_2,x_3 \right)\geq 0$ a négyzetek és a nem negatív pivot elemek miatt,
+másrészt ha $Q\left( x_1,x_2,x_3 \right)=0$ teljesül az csak úgy lehet, 
+ha a változók egyben megoldásai az
 \begin{eqnarray*}
     x_1+x_2+x_3&=& 0\\
     x_2+x_3&=& 0\\
     x_3&=& 0
 \end{eqnarray*}
-homogén lineáris egyenletrendszernek, 
-az együttható mátrix oszlopainak lineáris függetlensége miatt,
-csak triviális megoldása van!
+homogén lineáris egyenletrendszernek.
+A fenti lineáris rendszer együttható mátrixa éppen a segédsorokból áll.
+Márpedig a segédsorok mindig lineárisan független rendszert alkotnak, 
+így az iménti homogén lineáris egyenletrendszernek csak a triviális megoldása a megoldása.
+Így minden nem zérus $\left( x_1,x_2,x_3 \right)\in \mathbb{R}^3$ mellett $Q\left( x_1,x_2,x_3 \right)>0$.
+Valóban igazoltuk tehát $Q$ pozitív definitségét.
 
 \subsubsection{Zérus elem a bal-felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
@@ -16991,7 +17023,7 @@ Ugyanez mégegyszer:
     \phantom{\delta}
 \end{array}
 \]
-A változók indexére ügyelve kell leolvasnunk a teljes négyzeteket, és a legegszerűbb, ha a teljes négyzetekből olvassuk le a diád felbontást.
+A változók indexére ügyelve kell leolvasnunk a teljes négyzeteket, és a legegszerűbb, ha a teljes négyzetekből olvassuk le a diádfelbontást.
 
 Már csak azt kell meggondolnunk, hogyan kaptuk az első táblázatból a másodikat?
 Azt kell látnunk, hogy az $i$-edik és a $j$-edik változó felcserélése avval jár, 
@@ -17040,7 +17072,7 @@ Ahogyan azt az előzőekben már megértettük ezt az elemet kell a bal-felső p
 Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
 a kvadratikus alak definitsége az alábbiak szerint osztályozható.
 Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
-Ha a diád felbontás\index{pivot elem}
+Ha a diádfelbontás\index{pivot elem}
 \begin{itemize}
     \item tartalmaz pozitív és negatív pivot elemet, 
         akkor $Q$ \emph{indefinit}.
