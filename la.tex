@@ -16363,10 +16363,30 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 A címbeli naiv szó alatt azt értem, 
 hogy az itt követekező tárgyalás megérthető a szimmetrikus mátrixok diagonalizálhatóságától, azaz a spektrál elmélettől függetlenül.
 A lenti gondolatok megértéséhez pusztán a homogén lineáris egyenletrendszerek megoldhatóságával, 
-a Gaus\,--\,Jordan-eliminációval,\index{Gauss\,--\,Jordan-elimináció}
-és a mátrix műveletekkel -- skalárral való szorzás, összeadás, mátrix szorzás diadikus formája -- kell tisztában lennünk.
+a Gauss\,--\,Jordan-eliminációval,\index{Gauss\,--\,Jordan-elimináció}
+a mátrix műveletekkel -- 
+skalárral való szorzással, összeadással, mátrix szorzás diadikus formájával, és a rangtétellel -- 
+kell tisztában lennünk.
 
-A kvadratikus alaknak mondunk egy speciális többváltozós függvényt:
+\section{Az eliminációs algoritmus segédsorairól}
+A Gauss\,--\,Jordan-eliminációval kapcsolatos egyetlen apróság, amire eddig nem volt szükségünk a következő.
+\begin{proposition}
+    Tegyük fel, hogy egy $r$ rangú mátrixon Gauss\,--\,Jordan-eliminációt hajtunk végre abban a formában,
+    mikor az algoritmus során nem változik az oszlopok száma.
+    Ekkor az eliminációs algoritmus $r$ darab segédsora a mátrix sorvektorterének egy lineárisan független rendszerét adja.
+\end{proposition}
+\begin{proof}
+    Emlékezzünk arra, hogy mikor egy pivot elemet választunk,
+    akkor a pivot elem helyén lévő szám $1$-re változik, 
+    de alatta és fölötte minden szám $0$ lesz.
+    Ez az oszlop a további eliminációs lépések során már nem változik.
+    Mivel minden lépésben más-más oszlopból választjuk a pivot elemeket ezért minden segédsornak van egy olyan 
+    koordinátája, ahol $1$-es szerepel, de minden más segédsornak ezen a koordinátáján $0$ van.
+    Ebből következik, hogy egyik vektor sem fejezhető ki a többi lineáris kombinációjaként, 
+    ergo a segédsorok tetszőleges részrendszere egy lineárisan független rendszerét alkotja a mátrix sorvektorterének.
+\end{proof}
+\section{Definíciók, jelölések}
+Kvadratikus alaknak mondunk egy speciális többváltozós, valós értékű függvényt:
 \begin{definition}
     Legyen $A\in\mathbb{R}^{n\times n}$ egy szimmetrikus mátrix.
     Amint az szokásos jelölje $a_{i,j}$ a mátrix $i,j$ pozicíojának elemét.
@@ -16469,8 +16489,8 @@ aminek nyilván vannak pozitív és negatív értékei is,
 ergo az $A$ mátrix indefinit.
 
 Az algoritmus első mozzanata annak észrevétele, 
-hogy egy nem csupa zérus diagonálissak rendelkező szimmetrikus mátrixból mindig leválasztható egy szimmetrikus diád olyan módon,
-hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbett tartalmazzon:
+hogy egy nem csupa zérus diagonálissal rendelkező szimmetrikus mátrixból leválasztható egy szimmetrikus diád olyan módon,
+hogy a maradék szimmetrikus mátrixhoz tartozó kvadratikus alak már egy változóval kevesebbet tartalmaz:
 \begin{proposition}
     Tekintsünk egy $A\in\mathbb{R}^{n\times n}$ szimmetrikus mátrixot.
     Tegyük fel, hogy a diagonális $t$-edik elemére $a_{t,t}\neq 0$.
