@@ -206,14 +206,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% A bölcsesség generálása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
-     \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
-     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
-%     \dtlgetrow{quotes}{112}% Retrieve the row 113
-     \dtlgetentryfromcurrentrow{\Number}{1}\dtlgetentryfromcurrentrow{\Quote}{2}\dtlgetentryfromcurrentrow{\Author}{3}%
-     \typeout{A bölcsesség:}
-     \typeout{\Number:\Quote -- \Author}
-     \typeout{ }
+%\DTLloadrawdb[keys={Number,Quote,Author}]{quotes}{quotes.txt}% Load quotes
+%     \edef\RandomQuote{\number\numexpr1+\uniformdeviate\DTLrowcount{quotes}}% Identify random quote
+%     \dtlgetrow{quotes}{\RandomQuote}% Retrieve random quote
+%%     \dtlgetrow{quotes}{112}% Retrieve the row 113
+%     \dtlgetentryfromcurrentrow{\Number}{1}\dtlgetentryfromcurrentrow{\Quote}{2}\dtlgetentryfromcurrentrow{\Author}{3}%
+%     \typeout{A bölcsesség:}
+%     \typeout{\Number:\Quote -- \Author}
+%     \typeout{ }
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lustaságok
@@ -16362,6 +16362,7 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
 \chapter{Kvadratikus alakok definitségének egy naiv tárgyalása}\label{apx:Kvadr}
 A címbeli naiv szó alatt azt értem, 
 hogy az itt követekező tárgyalás megérthető a szimmetrikus mátrixok diagonalizálhatóságától, azaz a spektrál elmélettől függetlenül.
+
 A lenti gondolatok megértéséhez pusztán a homogén lineáris egyenletrendszerek megoldhatóságával, 
 a Gauss\,--\,Jordan-eliminációval,\index{Gauss\,--\,Jordan-elimináció}
 a mátrix műveletekkel -- 
@@ -16382,7 +16383,7 @@ A Gauss\,--\,Jordan-eliminációval kapcsolatos egyetlen apróság, amire eddig 
     Ez az oszlop a további eliminációs lépések során már nem változik.
     Mivel minden lépésben más-más oszlopból választjuk a pivot elemeket ezért minden segédsornak van egy olyan 
     koordinátája, ahol $1$-es szerepel, de minden más segédsornak ezen a koordinátáján $0$ van.
-    Ebből következik, hogy egyik vektor sem fejezhető ki a többi lineáris kombinációjaként, 
+    Ebből következik, hogy egyik segédsor sem fejezhető ki a többi lineáris kombinációjaként, 
     ergo a segédsorok tetszőleges részrendszere egy lineárisan független rendszerét alkotja a mátrix sorvektorterének.
 \end{proof}
 \section{Definíciók, jelölések}
@@ -16725,6 +16726,11 @@ Nézzük tehát újra:%
 Fontos látni, hogy ez nem teljesen Gauss--Jordan-elimináció, 
 hiszen a választott pivot elem sora zérussá válik. 
 Ettől eltekintve viszont teljesen azonos a már jól ismert eliminációs algoritmussal.
+Az eredeti $A$ mátrix rangja $3$, 
+hiszen ha a rangot akartuk volna meghatározni, akkor ugyan evvel a számolással arra jutnánk,
+hogy $3$ darab pivot elemet választva mátrix rangja is $3$.
+Mivel az egyes diádokat generáló vektorok az eliminációs algoritmus segédsorai,
+ezért azok lineárisan független rendszert alkotnak.
 
 A második táblázat az első diád leválasztása után maradt kvadratikus alak mátrixa.
 A leválasztott diád az első táblázat segédsorából\index{segédsor} olvasható le, 
@@ -16817,9 +16823,15 @@ vektor által meghatározott diádnak, tehát a diádfelbontás a fenti tábláz
         0&0&1
     \end{bmatrix}
 \]
+Elmondható tehát, hogy kvadratikus alak mátrixát előállítottuk rangnyi darab 
+olyan szimmetrikus diád lineáris kombinációjaként, ahol a diádokat generáló
+vektorok lineárisan függetlenek.%
+\fxnote{Csak abból, hogy rangnyi darab diád, már abból is következik, hogy függetlenek!}
+
 A diádfelbontás a kvadratikus alakra nézve azt jelenti, 
 hogy előállítottuk azt olyan teljes négyzetek lineáris kombinációjaként,
 ahol a teljes négyzeteknek megfelelő diádokat generáló vektorok rendszere lineárisan független rendszert ad.
+
 Konkrétan itt
 \[
     2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3
@@ -16828,8 +16840,33 @@ Konkrétan itt
     -\frac{1}{2}\left( z_2-4z_3 \right)^2
     +\frac{15}{2}z_3^2.
 \]
-\fxfatal{Itt folytatni, avval hogy rangnyi darab diád összege, és indefinit}
-
+Most tekintsük a 
+\begin{align*}
+    \begin{array}{r}
+    z_1+\frac{1}{2}z_2-z_3= 1\\
+    z_2-4z_3= 0\\
+    z_3= 1
+    \end{array}
+\qquad\text{ és az }\qquad
+\begin{array}{r}
+    z_1+\frac{1}{2}z_2-z_3= 0\\
+    z_2-4z_3= 1\\
+    z_3= 0
+    \end{array}
+\end{align*}
+inhomogén lineáris egyenletrendszereket.
+Az egyenletrendszerek baloldalának együtthatómátrixai azonosak.
+A sorok lineárisan független rendszert alkotnak.
+Még akkor is ha 3-nál több változó lenne, de akármilyen jobboldal mellett is van megoldása a rendszereknek.\fxwarning{Hivatkozás!!}
+Speciálisan olyan $z_1,z_2,z_3$ számok is léteznek, melyek az első inhomogént rendszert elégítik ki, ergo
+\[
+    Q\left( z_1,z_2,z_3 \right)=2+\frac{15}{2}>0
+\]
+és olyan $z_1,z_2,z_3$ számok is léteznek, melyek a másik inhomogént rendszert elégítik ki, ergo
+\[
+    Q\left( z_1,z_2,z_3 \right)=-\frac{1}{2}<0.
+\]
+Annak okán tehát, hogy vannak ellenkező előjelű pivot elemek ez egy indefinit kvadratikus alak.
 \paragraph{Gyakorlat.}
 Írjuk fel a 
 \(
@@ -16879,21 +16916,26 @@ Q\left( x_1,x_2,x_3 \right)
 +2\left( x_2+x_3 \right)^2
 +3x_3^2.
 \)
-Az is világos, hogy a három pivot elem\index{pivot elem} pozitivitása szerint a kvadratikus alak pozitív definit:
 Egyrészt $Q\left( x_1,x_2,x_3 \right)\geq 0$ a négyzetek és a nem negatív pivot elemek miatt,
-másrészt ha $Q\left( x_1,x_2,x_3 \right)=0$ teljesül az csak úgy lehet, 
+másrészt, 
+ha $Q\left( x_1,x_2,x_3 \right)=0$ teljesül az csak úgy lehet, 
 ha a változók egyben megoldásai az
-\begin{eqnarray*}
-    x_1+x_2+x_3&=& 0\\
-    x_2+x_3&=& 0\\
-    x_3&=& 0
-\end{eqnarray*}
+\[
+\begin{array}{r}
+    x_1+x_2+x_3= 0\\
+    x_2+x_3= 0\\
+    x_3= 0
+\end{array}
+\]
 homogén lineáris egyenletrendszernek.
 A fenti lineáris rendszer együttható mátrixa éppen a segédsorokból áll.
-Márpedig a segédsorok mindig lineárisan független rendszert alkotnak, 
-így az iménti homogén lineáris egyenletrendszernek csak a triviális megoldása a megoldása.
-Így minden nem zérus $\left( x_1,x_2,x_3 \right)\in \mathbb{R}^3$ mellett $Q\left( x_1,x_2,x_3 \right)>0$.
-Valóban igazoltuk tehát $Q$ pozitív definitségét.
+Márpedig a segédsorok mindig lineárisan független rendszert alkotnak és a rang is $3$, ergo az együttható mátrix reguláris.
+A homogén lineáris egyenletrendszernek csak egy megoldása lehet: a triviális megoldása.
+Így minden nem zérus $\left( x_1,x_2,x_3 \right)\in \mathbb{R}^3$ mellett 
+\[
+    Q\left( x_1,x_2,x_3 \right)>0.
+\]
+Annak okán tehát, hogy a változók száma azonos a mátrix rangjával, és valamennyi pivot elem\index{pivot elem} pozitív a $Q$ pozitív definit kvadratikus alak.
 
 \subsubsection{Zérus elem a bal-felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
