@@ -16937,6 +16937,80 @@ A homogén lineáris egyenletrendszernek csak egy megoldása lehet: a triviális
 \]
 Annak okán tehát, hogy a változók száma azonos a mátrix rangjával, és valamennyi pivot elem\index{pivot elem} pozitív a $Q$ pozitív definit kvadratikus alak.
 
+\paragraph{Gyakorlat.}
+Írjuk fel a 
+\(
+Q\left( x_1,x_2,x_3,x_4 \right)=
+2x_1^2+2x_2^2+x_3^2+x_4^2+
+2x_1x_3+2x_1x_4+
+2x_2x_3+
+2x_3x_4
+\)
+kvadratikus alakot teljes négyzetek lineáris kombinációjaként, majd klasszifikáljuk azt.
+A táblázatok:
+\[
+\begin{array}{c|cccc}
+     & x_1       & x_2 & x_3 & x_4\\
+     \hline
+     & 2 & 0   &        1  & 1  \\
+     & 0 & 2   &        1  & 1  \\
+     & 1 & 1   & \boxed{1} & 1  \\
+     & 1 & 1   &        1  & 1  \\
+    \hline
+    & 1  & 1   &        1  & 1
+\end{array}
+\implies
+\begin{array}{c|cccc}
+     & x_1& x_2  & x_3  & x_4\\
+     \hline
+     & 1 &       -1  & 0 & 0 \\
+     & -1& \boxed{1} & 0 & 0 \\
+     & 0 &        0  & 0 & 0 \\
+     & 0 &        0  & 0 & 0 \\
+     \hline
+     &-1 &        1  & 0 & 0
+\end{array}
+\implies
+\begin{array}{c|cccc}
+     & x_1 & x_2 & x_3 &x_4\\
+     \hline
+     & 0 & 0 & 0 & 0 \\
+     & 0 & 0 & 0 & 0 \\
+     & 0 & 0 & 0 & 0 \\
+     & 0 & 0 & 0 & 0 \\
+    \hline
+     & & & & 
+\end{array}
+\]
+Ez azt jelenti, hogy 
+\(
+Q\left( x_1,x_2,x_3,x_4 \right)
+=
+\left( x_1+x_2+x_3+x_4 \right)^2
++\left( x_2-x_1 \right)^2.
+\)
+A négyzetek és a nem negatív pivot elemek miatt egyrészt $Q\left( x_1,x_2,x_3,x_4 \right)\geq 0$,
+de másrészt 
+a $Q\left( x_1,x_2,x_3,x_4 \right)=0$ akkor és csak akkor lehetséges, 
+ha a változók megoldásai az
+\[
+\begin{array}{r}
+    x_1+x_2+x_3+x_4= 0\\
+    -x_1+x_2= 0
+\end{array}
+\]
+homogén lineáris egyenletrendszernek.
+A fenti lineáris rendszer együttható mátrixa éppen a segédsorokból áll, tehát $2$ a rendszer rangja.
+Több ismeretlen van, mint vátozó, ergo a homogén rendszernek van nem triviális megoldása.
+\fxwarning{Hivatkozás!}
+Létezik tehát $\left( x_1,x_2,x_3,x_4 \right)\neq 0$ vektor, melyre
+\[
+    Q\left( x_1,x_2,x_3,x_4 \right)=0.
+\]
+Annak okán tehát, 
+hogy a változók száma nagyobb a kvadratikus alak mátrixának rangjánál, 
+és valamennyi pivot elem\index{pivot elem} pozitív a $Q$ pozitív szemi definit kvadratikus alak.
+
 \subsubsection{Zérus elem a bal-felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
 A soron következő diád leválasztásához mindig a bal-felső elemet kell választanunk,
