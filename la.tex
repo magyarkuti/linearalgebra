@@ -17010,6 +17010,78 @@ Létezik tehát $\left( x_1,x_2,x_3,x_4 \right)\neq 0$ vektor, melyre
 Annak okán tehát, 
 hogy a változók száma nagyobb a kvadratikus alak mátrixának rangjánál, 
 és valamennyi pivot elem\index{pivot elem} pozitív a $Q$ pozitív szemi definit kvadratikus alak.
+\paragraph{Gyakorlat.}
+Klasszifikáljuk az alábbi kvadratikus alakot:
+\[
+    Q\left( x_1,x_2,x_3,x_4 \right)
+    =
+    x_1^2+2x_2^2+2x_3^2+2x_4^2+
+    2x_1x_2+2x_1x_3+2x_1x_4+
+    4x_2x_3+4x_2x_4+
+    6x_3x_4.
+\]
+A számolások:
+\[
+\begin{array}{c|cccc}
+     & x_1       & x_2 & x_3 & x_4\\
+     \hline
+     & \boxed{1} & 1   & 1 &1  \\
+     & 1         & 2   & 2 &2   \\
+     & 1         & 2   & 2 &3  \\
+     & 1         & 2   & 3 &2  \\
+    \hline
+    & 1     & 1   & 1 & 1
+\end{array}
+\implies
+\begin{array}{c|cccc}
+     & x_1& x_2  & x_3 &x_4 \\
+     \hline
+     & &                &  &   \\
+     & & \boxed{1}      & 1 &1   \\
+     & & 1              & 1 &2   \\
+     & & 1              & 2 &1   \\
+     \hline
+     &0 & 1         & 1 & 1
+\end{array}
+\implies
+\begin{array}{c|cccc}
+     & x_1 & x_2 & x_3 & x_4      \\
+     \hline
+     &     &     &     &      \\
+     &     &     &     &      \\
+     &     &     &  0  & 1 \\
+     &     &     &  1  & 0 \\
+    \hline
+     &     &     &     &
+\end{array}
+\]
+Újabb diádot nem tudunk leválasztani, mivel az $x_3,x_4$ változókat tartalmazó maradék diád
+diagonálisában minden elem zérus.
+Az kapjuk, hogy $Q=Q_1+Q_R$ alakú, ahol 
+$Q_1\left( x_1,x_2,x_3,x_4 \right)
+=
+\left( x_1+x_2+x_3+x_4 \right)^2+
+\left( x_2+x_3+x_4 \right)^2
+$
+és $Q_R\left( x_1,x_2,x_3,x_4 \right)=2x_3x_4$.
+Az teljesen világos, hogy $Q_R$ indefinit.
+Azt vegyük észre, hogy az $x_2$ és az $x_3$ változók tetszőleges értékeihez megválasztható az 
+$x_1$ és az $x_2$
+változók olyan értéke, 
+amelyre $Q_1\left( x_1,x_2,x_3,x_4 \right)=0$.
+Ez azért van, mert az elsőnek leválasztott diád utáni maradék nem tartalmazza az elsőnek választott pivot elemnek
+megfelelő $x_1$ változót, 
+és hasonlóan, 
+a második diád leválasztása utáni maradék -- itt $Q_R$ -- nem tartalmazza az $x_2$ változót sem.
+Tahát tetszőleges $x_3$ és $x_4$ keressünk az $x_2$ változónak olyan értékét, hogy $x_2+x_3+x_4=0$ teljesüljön,
+majd 
+Iyen módon $Q_R$ indefinitsége öröklődik $Q$-ra, 
+tehát az eredeti kvadratikus alak is indefinit.
+
+Azt még nem mutattuk meg, hogy egy négyzetmentes kvadratikus alak is diádösszegre bontható,
+de annyit már látunk, hogy a diádfelbontási algoritmusból arra már éppen elegendő, hogy
+tetszőleges nem zérus kvadratikus alak definitségét a Gauss\,--\,Jordan-elimináció itt tanult módosításával
+meghatározzuk.
 
 \subsubsection{Zérus elem a bal-felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
