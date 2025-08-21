@@ -17156,39 +17156,363 @@ Tehát ha
 A fő célunk annak megmutatása volt, hogy a 
 Gauss\,--\,Jordan-elimináció apró módosításával egy szimmetrikus mátrix definitsége 
 könnyen meghatározható.
-A függeléket záró bekezdben azt mutatjuk meg, 
+Ebben a függeléket záró bekezdésben azt mutatjuk meg, 
 hogy egy négyzetmentes kvadratikus alak mátrixa is előáll rangnyi darab diád lineáris kombinációjaként.
 
 Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
-
-Először is azt vegyük észre, hogy ha a feladat a kvadratikus alak definitségének meghatározása, 
-akkor készen is vagyunk mert indefinit kvadratikus alakkal állunk szemben.
-Ha ugyanis a $k,l$ pozíció tartalmaz nem zérus elemet, 
-akkor a kvadratikus alak összes többi változóját állítsuk zérusra és a $k$-adik és az $l$-edik változót vizsgáljuk.
-Így a kvadratikus alakunk az $2a_{k,l}x_kx_l$ kifejezésre egyszerűsödik, 
-amely persze indefinit, hiszen az értékkészlete negatív és pozitív elemet egyaránt tartalmaz.
-
-A teljesség kedvéért megmutatjuk, 
-hogy az algoritmusunk ebben az esetben is használható.
 Ha az $a_{k,l}\neq 0$, akkor vezessük be a 
-\[
-    z_l=x_l-x_k\qquad z_j=x_j, \text{ ha }j\neq l
-\]
-változókat.
+\begin{equation}
+    \label{eq:substitution}
+    x_j=\left\{
+        \begin{matrix}
+            z_j&&\text{, ha }j\neq l\\
+            z_k-z_l&&\text{, egyébként.}
+        \end{matrix}
+        \right.
+\end{equation}
+helyettesítést.
 Ekkor $k\neq l$-et is figyelembe véve
 \(
-z_kz_l=x_k\left( x_l-x_k \right)=x_kx_l-x_k^2=-z_k^2+x_kx_l,
-q
+x_kx_l=z_k\left( z_k-z_l \right)=z_k^2-z_kz_l
 \)
-majd $j\neq k$, $j\neq l$ mellett
+A többi $j\neq l$ index mellett $k\neq l$ miatt
 \(
-z_jz_l=x_j\left( x_l-x_k \right)=x_jx_l-x_jx_k=x_jx_l-z_jz_k.
+x_kx_j=z_kz_j.
 \)
-Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l+z_k^2)$-re kell cserélnünk,
-és minden további $x_jx_l$ alakú kifejezést a $(z_jz_l+z_jz_k)$ kifejezéssel kell kicserélnünk.
-A többi változó indexe nem változik.
-Így pontosan egy négyzetet kapunk, 
-tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
+Ebből már látszik is, 
+hogy a $z_1,\dots,z_n$ változókhoz tartozó kvadratikus alak mátrixában a $k$-adik sor diagonálisa
+$2a_{k,l}\neq 0$, amire a fent tanult eliminációs módszer már alkalmazható.
+\paragraph{Gyakorlat.} 
+A legegyszerűbb a kétváltozós eset. Legyen 
+\(
+Q\left( x_1,x_2 \right)=2x_1x_2.
+\)
+Persze kis leleménnyel azonnal feltudjuk írni teljes négyzetek lineáris kombinációjaként,
+hiszen 
+\(
+2x_1x_2
+=\frac{1}{2}\left( x_1+x_2 \right)^2
+-
+\frac{1}{2}\left( x_1-x_2 \right)^2,
+\)
+de ezt most inkább felejtsük el, hiszen ha sok változó van már nem leszünk ilyen leleményesek.
+
+A fenti ötlet szerint legyen 
+$
+A=
+\begin{pmatrix}
+    0&1\\1&0
+\end{pmatrix}
+$
+tehát $a_{1,2}\neq 0$ így a megfelelő helyettesítés
+\[
+    x_1=z_1\qquad x_2=z_1-z_2.
+\]
+Azt kapjuk tehát, hogy 
+\(
+2x_1x_2=2z_1\left( z_1-z_2 \right)=2z_1^2-2z_1z_2.
+\)
+Erre alkalmazva az eliminációt:
+\[
+\begin{array}{c|cc}
+     & z_1       & z_2\\
+     \hline
+     & \boxed{2} & -1 \\
+     & -1         & 0 \\
+    \hline
+    & 1     & -1/2  
+\end{array}
+\implies
+\begin{array}{c|cc}
+     &  & z_2   \\
+     \hline
+     & &               \\
+     & & \boxed{-1/2}   \\
+     \hline
+     &0 & 1 
+\end{array}.
+\]
+Magyarul 
+\(
+2z_1^2-2z_1z_2=2\left( z_1-\frac{1}{2}z_2 \right)^2-\frac{1}{2}z_2^2.
+\)
+A vissza helyettesítő formulák:
+\[
+    z_1=x_1\qquad z_2=x_1-x_2.
+\]
+Így
+\(
+Q\left( x_1,x_2 \right)=
+2\left( x_1-\frac{1}{2}\left( x_1-x_2 \right) \right)^2-\frac{1}{2}\left( x_1-x_2 \right)^2
+=
+\frac{1}{2}\left( x_1+x_2 \right)^2-\frac{1}{2}\left( x_1-x_2 \right)^2,
+\)
+a várakozásainknak megfelelve.
+A diád felbontás tehát
+\[
+    \begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}
+    =\frac{1}{2}
+    \begin{pmatrix}
+        1\\1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&1
+    \end{pmatrix}
+    -
+    \frac{1}{2}
+    \begin{pmatrix}
+        1\\-1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&-1
+    \end{pmatrix}.
+\]
+
+\subsubsection{Kicsit jobban utánagondolva,}
+az történik, hogy valamely $B$ reguláris mátrix mellett alkalmaztuk az 
+\[
+    x=Bz
+\]
+helyettesítést. 
+Mivel $x\mapsto Bx$ függvény egy szürjekció, ezért a $Q$ függvény és $Q\circ B$ függvény értékkészletei azonosak.
+Az adjungált azonosság%
+\footnote{Innen már értenünk kell az adjungált fogalmát, ergo nem annyira naiv a tárgyalás.:(}
+szerint
+\[
+    Q_A\left( x \right)
+    =
+    \ip{x}{Ax}
+    =
+    \ip{Bz}{ABz}
+    =
+    \ip{z}{B^\star ABz}
+    =Q_{B^\star AB}\left( z \right).
+\]
+Mivel a kvadratikus alak klasszifikációja az értékkészlet meghatározását jelenti,
+ezért az $A$ és $B^\star AB$ szimmetrikus mátrixok klasszifikációja azonos, és persze a rangjuk is azonos.
+
+Most tegyük fel újra, hogy $A$ szimmetrikus mátrix egy nem zérus, de négyzetmentes kvadratikus alak mátrixa.
+Ha találunk olyan $B$ reguláris transzformációt, amelyre a $B^\star AB$ diagonálisában van nem zérus elem,
+akkor a fejezetben tanult eliminációs algoritmus miatt feltehetjük, hogy annak van diád felbontása.
+Létezik tehát $d_1,\dots,d_r\in\mathbb{R}^n$ oszlop vektor, hogy 
+\(
+    B^\star AB=\sum_{j=1}^r\alpha_jd_j\cdot d_j^\star
+\)
+Itt $r$ az $A$ és a $B^\star AB$ mátrixok közös rangja.%
+\footnote{A továbbiakban $d^\star$ jelöli a $d$ oszlopvektor transzponáltját.}
+Innen persze $A$ is kifejezhető:
+\(
+    A=\sum_{j=1}^r\alpha_j{B^\star}^{-1}d_j\cdot d_j^\star B^{-1}
+    =
+    \sum_{j=1}^r\alpha_j{B^\star}^{-1}d_j\cdot \left( {B^\star}^{-1}d_j \right)^\star.
+\)
+
+
+Külön hab a tortán, 
+hogy a \pageref{eq:substitution}. lapon ajánlott (\ref{eq:substitution}) formulában leírt helyettesítés olyan, 
+hogy $B^{-1}=B$, ezért ${B^\star}^{-1}=B^\star$.
+Valóban, ha $a_{k,l}\neq 0$ valamely $k\neq l$ mellett,
+akkor $B$ mátrixát úgy kapjuk az identitás mátrixból, hogy az $l$-edik diagonális elemet $-1$-re változtatjuk,
+majd az $l$-edik sor $k$-adik helyére $1$-et írunk.
+Így valóban (\ref{eq:substitution})-t kapjuk:
+\[
+    \begin{pmatrix}
+        x_1\\x_2\\\vdots\\ x_l\\\vdots\\x_n
+    \end{pmatrix}
+    =
+    x=Bz
+    =B
+    \begin{pmatrix}
+        z_1\\z_2\\\vdots\\ z_l\\\vdots\\z_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        z_1\\z_2\\\vdots\\ z_k-z_l\\\vdots\\z_n
+    \end{pmatrix}
+\]
+A $z_k-\left( z_k-z_l \right)=z_l$ mutatja, hogy minden $z\in\mathbb{R}^n$ mellett $B(Bz)=z$, 
+ergo $B^{-1}=B$.
+Összefoglalva azt kaptuk tehát, hogy ha a $B^\star AB$ mátrix diádfelbontása
+\[
+    B^\star AB
+    =
+    \sum_{j=1}^r\alpha_jd_j\cdot d_j^\star,
+\]
+akkor az $A$ diádfelbontása
+\[
+    A=
+    \sum_{j=1}^r\alpha_jB^{\star}d_j\cdot\left( B^\star d_j \right)^\star
+\]
+Evvel igazoltuk, hogy minden szimmetrikus mátrix előáll mint rangnyi darab szimmetrikus diád lineáris kombinációja.
+\paragraph{Gyakorlat.}
+Írjuk fel az 
+\(
+A=
+\begin{pmatrix}
+    0&1&0&0\\
+    1&0&1&1\\
+    0&1&0&1\\
+    0&1&1&0
+\end{pmatrix}
+\)
+szimmetrikus mátrix diádfelbontását!
+Induljunk ki abból, hogy $a_{1,2}\neq 0$. Tudjuk, hogy az $x=Bz$ helyettesítés célhoz vezet, ahol
+\(
+B=
+\begin{pmatrix}
+    1&0&0&0\\
+    1&-1&0&0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{pmatrix}.
+\)
+Kis számolgatás után azt kapjuk, hogy 
+\(
+B^\star AB=
+\begin{pmatrix}
+    2&-1&1&1\\
+    -1&0&-1&-1\\
+    1&-1&0&1\\
+    1&-1&1&0
+\end{pmatrix}.
+\)
+Az algoritmusunk tehát
+\[
+\begin{array}{c|cccc}
+     & z_1       & z_2 & z_3 & z_4\\
+     \hline
+     & \boxed{2} & -1   & 1 &1  \\
+     & -1         & 0   & -1 &-1   \\
+     & 1         & -1   & 0 &1  \\
+     & 1         & -1   & 1 &0  \\
+    \hline
+    & 1     & -1/2   & 1/2 & 1/2
+\end{array}
+\implies
+\begin{array}{c|cccc}
+     & z_1& z_2  & z_3 &z_4 \\
+     \hline
+     & &                &  &   \\
+     & & \boxed{-1/2}      & -1/2 &-1/2   \\
+     & & -1/2              & -1/2 &1/2   \\
+     & & -1/2              & 1/2 &-1/2   \\
+     \hline
+     &0 & 1         & 1 & 1
+\end{array}
+\implies
+\begin{array}{c|cccc}
+     & z_1 & z_2 & z_3 & z_4      \\
+     \hline
+     &     &     &     &      \\
+     &     &     &     &      \\
+     &     &     &  0  & 1 \\
+     &     &     &  1  & 0 \\
+    \hline
+     &     &     &     &
+\end{array}
+\]
+Látjuk tehát, hogy $A$ és $B^\star AB$ rangja $4$, és ez utóbbi diádfelbontása
+\[
+    B^\star AB=
+    2d_1\cdot d_1^\star
+    -\frac{1}{2}d_2\cdot d_2^\star+
+    \frac{1}{2}d_3\cdot d_3^\star
+    -\frac{1}{2}d_4\cdot d_4^\star,
+\]
+ahol 
+$
+d_1=
+\begin{pmatrix}
+    1\\ -1/2\\ 1/2\\ 1/2
+\end{pmatrix}
+,
+d_2=
+\begin{pmatrix}
+    0\\ 1\\1\\1
+\end{pmatrix}
+,
+d_3=
+\begin{pmatrix}
+    0\\ 0\\1\\1
+\end{pmatrix}
+,
+d_4=
+\begin{pmatrix}
+    0\\ 0\\-1\\1
+\end{pmatrix}.
+$
+További könnyed számolgatás után kapjuk, hogy
+\(
+B^\star d_1=
+\frac{1}{2}
+\begin{pmatrix}
+    1\\1\\1\\1
+\end{pmatrix}
+,
+B^\star d_2=
+\begin{pmatrix}
+    1\\-1\\1\\1
+\end{pmatrix}
+,
+B^\star d_3=
+\begin{pmatrix}
+    0\\0\\1\\1
+\end{pmatrix}
+,
+B^\star d_4=
+\begin{pmatrix}
+    0\\0\\-1\\1
+\end{pmatrix}.
+\)
+
+Az $A$ felbontása ezek szerint:
+\begin{multline*}
+    A
+    =
+    \frac{1}{2}
+    \begin{pmatrix}
+        1\\1\\1\\1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&1&1&1
+    \end{pmatrix}
+    -
+    \frac{1}{2}
+    \begin{pmatrix}
+        1\\-1\\1\\1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&-1&1&1
+    \end{pmatrix}
+    +
+    \\
+    \frac{1}{2}
+    \begin{pmatrix}
+        0\\0\\1\\1
+    \end{pmatrix}
+    \begin{pmatrix}
+        0&0&1&1
+    \end{pmatrix}
+    -
+    \frac{1}{2}
+    \begin{pmatrix}
+        0\\0\\-1\\1
+    \end{pmatrix}
+    \begin{pmatrix}
+        0&0&-1&1
+    \end{pmatrix},
+\end{multline*}
+ami avval ekvivalens, hogy
+\begin{multline*}
+2x_1x_2+2x_2x_3+2x_2x_4+2x_3x_4
+=\\
+\frac{1}{2}\left( x_1+x_2+x_3+x_4 \right)^2
+-\frac{1}{2}\left( x_1-x_2+x_3+x_4 \right)^2
++\frac{1}{2}\left( x_3+x_4 \right)^2
+-\frac{1}{2}\left( x_4-x_3 \right)^2.
+\end{multline*}
 
 \backmatter
 \pagestyle{empty}
