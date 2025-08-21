@@ -17072,16 +17072,130 @@ amelyre $Q_1\left( x_1,x_2,x_3,x_4 \right)=0$.
 Ez azért van, mert az elsőnek leválasztott diád utáni maradék nem tartalmazza az elsőnek választott pivot elemnek
 megfelelő $x_1$ változót, 
 és hasonlóan, 
-a második diád leválasztása utáni maradék -- itt $Q_R$ -- nem tartalmazza az $x_2$ változót sem.
-Tahát tetszőleges $x_3$ és $x_4$ keressünk az $x_2$ változónak olyan értékét, hogy $x_2+x_3+x_4=0$ teljesüljön,
-majd 
-Iyen módon $Q_R$ indefinitsége öröklődik $Q$-ra, 
+a második diád leválasztása utáni maradék -- itt $Q_R$ -- már az $x_2$ változót sem tartalmazza.
+Tehát először tetszőleges $x_3$ és $x_4$ értékhez keressünk az $x_2$ változónak olyan értékét, 
+hogy $x_2+x_3+x_4=0$ teljesüljön,
+majd $x_2,x_3,x_4$ értéket az $x_1+x_2+x_3+x_4=0$ egyenletbe helyettesítve kapjuk az $x_1$ megfelelő értékét.
+Ilyen módon $Q_R$ indefinitsége öröklődik $Q$-ra, 
 tehát az eredeti kvadratikus alak is indefinit.
 
 Azt még nem mutattuk meg, hogy egy négyzetmentes kvadratikus alak is diádösszegre bontható,
-de annyit már látunk, hogy a diádfelbontási algoritmusból arra már éppen elegendő, hogy
+de a diádfelbontási algoritmus arra már éppen elegendő, hogy
 tetszőleges nem zérus kvadratikus alak definitségét a Gauss\,--\,Jordan-elimináció itt tanult módosításával
 meghatározzuk.
+
+\begin{proposition}[Definitség osztályozása a teljes négyzetek segítségével]\label{ap:quad-summary}
+Ha a kvadratikus alakot reprezentáló mátrix diádfelbontási algoritmusa azért ér véget,
+mert egy nem zérus maradék kvadratikus alak mátrixának diagonálisában minden elem zérus,
+akkor a kvadratikus alak indefinit.
+
+Legyen tehát a továbbiakban $Q$ egy $n$ változós nemzérus kvadratikus alak, amelynek van diádfelbontása.\\
+Ha a diádfelbontás\index{pivot elem}
+\begin{itemize}
+    \item tartalmaz pozitív és negatív pivot elemet, 
+        akkor $Q$ \emph{indefinit}.
+\end{itemize}
+Most tegyük fel, hogy $Q$ felbontása pontosan $n$ teljes négyzetet tartalmaz.
+Ha
+\begin{itemize}
+    \item az összes pivot elem pozitív,
+        akkor $Q$ \emph{pozitív definit};
+    \item az összes pivot elem negatív,
+        akkor $Q$ \emph{negatív definit};
+\end{itemize}
+Ha $Q$ felbontása $n$-nél kevesebb teljes négyzetből áll,
+akkor nagyon hasonló karakterizációt kapunk, de a mátrix szinguláris, ezért csak szemidefinitség jöhet szóba.
+Tehát ha
+\begin{itemize}
+\item az összes pivot elem pozitív,
+    akkor $Q$ \emph{pozitív szemidefinit};
+\item az összes pivot elem negatív,
+    akkor $Q$ \emph{negatív szemidefinit};\qedhere
+\end{itemize}
+\end{proposition}
+\begin{proof}
+    Kezdjük azzal az esettel, 
+    mikor az eliminációs algoritmus utolsó táblázatában minden elem a diagonálisban zérus,
+    de van nem zérus elem.
+    Ekkor $Q=Q_1+Q_R$ alakú, ahol $Q_R$ indefinit.
+    Az egyszerű jelölések kedvéért tegyük fel, hogy $x_1,\dots,x_k$ a leválasztott változók
+    és $Q_R$ már csak a többi változótól függ. 
+    Ezek szerint a $Q_1$ kvadratikus alak legfeljebb $k$ darab teljes négyzet lineáris kombinációja.
+    Tekintsük azt a homogén lineáris egyenletrendszert melynek együttható mátrixát úgy kapjuk, 
+    hogy egymás alá írjuk az eliminációs algoritmus segédsorait, 
+    az eliminációs táblázatoknak megfelelő sorrendben.
+    Világos, hogy az utolsó sor tartalmazza az $x_k$ változót.
+    Minden feljebb lévő sorra igaz, hogy legalább egy változóval többet tartalmaz,
+    mint az alatta lévő sor.
+    Ilyan módon az $x_{k+1}, \dots,x_{n}$ tetszőleges értékéhez található az $x_1,\dots,x_k$ olyan értéke
+    hogy a változók a lineáris egyenletrendszer megoldását adják, ergo $Q_1\left( x_1,\dots,x_n \right)=0$.
+    Ezzel igazoltuk, hogy nem csak $Q_R$, de $Q$ is indefinit.
+
+    Innen feltehető, hogy $Q$ teljes négyzetek lineáris kombinációja, mégpedig $r$ darab teljes négyzetnek,
+    ahol $r$ az eredeti kvadratikus alak mátrixának rangja.
+    Most nézzük azt az esetet, mikor van pozitív és negatív pivot elem.
+    Jelölje $Dx=b_+$ és $Dx=b_-$ azt az inhomogén rendszert, 
+    ahol a $D$ sorai az eliminációs algoritmus segédsoraiból állnak és a $b_+$ vektor $1$ vagy $0$
+    számokat tartalmaz attól függően, hogy a megfelelő segédsorhoz tartozó pivot elem pozitív vagy negatív.
+    Hasonlóan, a $b_-$ elemei $1$ vagy zérus, 
+    attól függően, hogy a szóbanforgó sorhoz tartozó pivot elem negatív, vagy sem.
+    Persze $x=\left( x_1,\dots,x_n \right)$ a kvadratikus alak változói.
+    Mivel $r\leq n$ és $D$ rangja is $r$, ezért az $x\mapsto Dx$ függvény szürjektív, emiatt a $Dx=b_+$ és 
+    $Dx=b_-$ rendszernek is van megoldása, ami azt jelenti, hogy $Q$ valóban indefinit.
+
+    Most nézzük azt az esetet, mikor az összes pivot elem pozitív (negatív).
+    Világos, hogy $Q\left( x_1,\dots,x_n \right)\geq 0$ ($\leq 0$).
+    Ha $r=n$ akkor a fenti jelöléseket megtartva $D$ reguláris mátrix, 
+    ergo $Q\left( x \right)=0$ akkor és csak akkor, ha $Dx=0$, akkor és csak akkor, ha $x=0$.
+
+    Ha $r<n$, akkor $Dx=0$ homogén rendszerben, több változó van mint ismeretlen, 
+    ergo van nem triviális megoldás, ami azt jelenti, hogy csak szemidefinit lehet a kvadratikus alak.
+    Ezt kellett belátni. 
+\end{proof}
+\subsubsection{A diagonálisban minden elem zérus}
+A fő célunk annak megmutatása volt, hogy a 
+Gauss\,--\,Jordan-elimináció apró módosításával egy szimmetrikus mátrix definitsége 
+könnyen meghatározható.
+A függeléket záró bekezdben azt mutatjuk meg, 
+hogy egy négyzetmentes kvadratikus alak mátrixa is előáll rangnyi darab diád lineáris kombinációjaként.
+
+Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
+
+Először is azt vegyük észre, hogy ha a feladat a kvadratikus alak definitségének meghatározása, 
+akkor készen is vagyunk mert indefinit kvadratikus alakkal állunk szemben.
+Ha ugyanis a $k,l$ pozíció tartalmaz nem zérus elemet, 
+akkor a kvadratikus alak összes többi változóját állítsuk zérusra és a $k$-adik és az $l$-edik változót vizsgáljuk.
+Így a kvadratikus alakunk az $2a_{k,l}x_kx_l$ kifejezésre egyszerűsödik, 
+amely persze indefinit, hiszen az értékkészlete negatív és pozitív elemet egyaránt tartalmaz.
+
+A teljesség kedvéért megmutatjuk, 
+hogy az algoritmusunk ebben az esetben is használható.
+Ha az $a_{k,l}\neq 0$, akkor vezessük be a 
+\[
+    z_l=x_l-x_k\qquad z_j=x_j, \text{ ha }j\neq l
+\]
+változókat.
+Ekkor $k\neq l$-et is figyelembe véve
+\(
+z_kz_l=x_k\left( x_l-x_k \right)=x_kx_l-x_k^2=-z_k^2+x_kx_l,
+q
+\)
+majd $j\neq k$, $j\neq l$ mellett
+\(
+z_jz_l=x_j\left( x_l-x_k \right)=x_jx_l-x_jx_k=x_jx_l-z_jz_k.
+\)
+Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l+z_k^2)$-re kell cserélnünk,
+és minden további $x_jx_l$ alakú kifejezést a $(z_jz_l+z_jz_k)$ kifejezéssel kell kicserélnünk.
+A többi változó indexe nem változik.
+Így pontosan egy négyzetet kapunk, 
+tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
+
+\backmatter
+\pagestyle{empty}
+%\bibliography{\jobname}
+\printbibliography
+\printindex
+\end{document}
 
 \subsubsection{Zérus elem a bal-felső sarokban}
 Hangsúlyoznunk kell, hogy az algoritmusban a pivot elem megválasztása nem opcionális. 
@@ -17231,7 +17345,7 @@ Ugyanez mégegyszer:
     \phantom{\delta}
 \end{array}
 \]
-A változók indexére ügyelve kell leolvasnunk a teljes négyzeteket, és a legegszerűbb, ha a teljes négyzetekből olvassuk le a diádfelbontást.
+A változók indexére ügyelve kell leolvasnunk a teljes négyzeteket, és a legegyszerűbb, ha a teljes négyzetekből olvassuk le a diádfelbontást.
 
 Már csak azt kell meggondolnunk, hogyan kaptuk az első táblázatból a másodikat?
 Azt kell látnunk, hogy az $i$-edik és a $j$-edik változó felcserélése avval jár, 
@@ -17244,69 +17358,4 @@ A többi sort és oszlopot nem éri változás.
 
 Látjuk tehát, hogy ha a bal-felső elem zérus, de a diagonálisnak van nem zérus eleme, 
 akkor a most tanult felcseréléssel a nem zérus elem a bal-felső pozícióba hozható, így az algoritmusunk továbbra is működik.
-
-\subsubsection{A diagonálisban minden elem zérus}
-Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
-
-Először is azt vegyük észre, hogy ha a feladat a kvadratikus alak definitségének meghatározása, 
-akkor készen is vagyunk mert indefinit kvadratikus alakkal állunk szemben.
-Ha ugyanis a $k,l$ pozíció tartalmaz nem zérus elemet, 
-akkor a kvadratikus alak összes többi változóját állítsuk zérusra és a $k$-adik és az $l$-edik változót vizsgáljuk.
-Így a kvadratikus alakunk az $2a_{k,l}x_kx_l$ kifejezésre egyszerűsödik, 
-amely persze indefinit, hiszen az értékkészlete negatív és pozitív elemet egyaránt tartalmaz.
-
-A teljesség kedvéért megmutatjuk, 
-hogy az algoritmusunk ebben az esetben is használható.
-Ha az $a_{k,l}\neq 0$, akkor vezessük be a 
-\[
-    z_l=x_l+x_k\qquad z_j=x_j, \text{ ha }j\neq l
-\]
-változókat.
-Ekkor $k\neq l$-et is figyelembe véve
-\begin{multline*}
-z_kz_l=x_k\left( x_l+x_k \right)=x_kx_l+x_k^2=z_k^2+x_kx_l,
-\text{ majd $j\neq k$, $j\neq l$ mellett: }\\
-z_jz_l=x_j\left( x_l+x_k \right)=x_jx_l+x_jx_k=x_jx_l+z_jz_k.
-\end{multline*}
-Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l-z_k^2)$-re kell cserélnünk,
-és minden további $x_jx_l$ alakú kifejezést a $(z_jz_l-z_jz_k)$ kifejezéssel kell kicserélnünk.
-A többi változó indexe nem változik.
-Így pontosan egy négyzetet kapunk, 
-tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
-Ahogyan azt az előzőekben már megértettük ezt az elemet kell a bal-felső pozícióba csempészni, 
-és az algoritmusunk már működik is.
-
-\section{Definitség osztályozása a teljes négyzetek segítségével}\label{ap:quad-summary}
-Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
-a kvadratikus alak definitsége az alábbiak szerint osztályozható.
-Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
-Ha a diádfelbontás\index{pivot elem}
-\begin{itemize}
-    \item tartalmaz pozitív és negatív pivot elemet, 
-        akkor $Q$ \emph{indefinit}.
-\end{itemize}
-Most tegyük fel, hogy $Q$ felbontása pontosan $n$ teljes négyzetet tartalmaz.
-Ha
-\begin{itemize}
-    \item az összes pivot elem pozitív,
-        akkor $Q$ \emph{pozitív definit};
-    \item az összes pivot elem negatív,
-        akkor $Q$ \emph{negatív definit};
-\end{itemize}
-Ha $Q$ felbontása $n$-nél kevesebb teljes négyzetből áll,
-akkor nagyon hasonló karakterizációt kapunk, de a mátrix szinguláris, ezért csak szemidefinitség jöhet szóba.
-Tehát ha
-\begin{itemize}
-\item az összes pivot elem pozitív,
-    akkor $Q$ \emph{pozitív szemidefinit};
-\item az összes pivot elem negatív,
-    akkor $Q$ \emph{negatív szemidefinit};
-\end{itemize}
-
-\backmatter
-\pagestyle{empty}
-%\bibliography{\jobname}
-\printbibliography
-\printindex
-\end{document}
 
