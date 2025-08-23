@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.1)  23 AUG 2025 15:25
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.1)  23 AUG 2025 16:15
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -2190,7 +2190,7 @@ Package hyperref Info: Link coloring OFF on input line 252.
 
 \openout6 = la.out
 \l@magyar = a dialect from \language\l@hungarian 
-<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=393,
+<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=397,
  436.63126pt x 542.9886pt>
 File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
@@ -4982,26 +4982,53 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 [224]
+LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
+(Font)              scaled to size 6.85925pt on input line 16527.
+LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
+(Font)              scaled to size 6.77258pt on input line 16527.
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 16527.
+FiXme Note: 'Ide hivatkozás kell' on input line 16527.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16530.
+
 
 [225]
 
 [226]
 
 [227]
+FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
+ hogy függetlenek!' on input line 16884.
+
+
+FiXme Warning: 'Hivatkozás!!' on input line 16915.
+
+
 
 [228]
 
+FiXme Warning: 'Hivatkozás!' on input line 17060.
+
+
+
 [229]
 
-[230
+[230]
 
-] (./la.ind
+[231]
 
-[231
+[232]
+
+[233]
+
+[234] (./la.ind
+
+[235
+
 
 ]
 
-[232
+[236
 
 ]
 Package microtype Info: Character `ﬆ' is missing
@@ -5083,23 +5110,23 @@ Package microtype Info: Character `⁻' is missing
 
 
 
-[233
+[237
 
 ]
 
 
 
-[234]
+[238]
 
 
 
-[235])
+[239])
 
-FiXme Summary: Number of notes: 0,
-(FiXme)        Number of warnings: 0,
+FiXme Summary: Number of notes: 3,
+(FiXme)        Number of warnings: 2,
 (FiXme)        Number of errors: 0,
 (FiXme)        Number of fatal errors: 0,
-(FiXme)        Total: 0.
+(FiXme)        Total: 5.
 
 \tf@toc=\write7
 
@@ -5110,23 +5137,23 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: 5B38F93C627BA8EA39228C5DFB5488C3;18564.
+(rerunfilecheck)             Checksum: 48913D858BF542F5FD116A39CC44C6F9;18828.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 40908 strings out of 470205
+ 40865 strings out of 470205
  156333,1977958 words of node,token memory allocated
- 5313 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 3 disc, 1 local_par, 56 glue, 5 kern, 1 penalty, 29
- glyph, 868 attribute, 198 glue_spec, 868 attribute_list, 3 write, 1 pdf_action 
-nodes
-   avail lists: 1:15,2:1418,3:443,4:129,5:977,6:268,7:10957,8:136,9:2826,10:26,1
-1:1200
- 67509 multiletter control sequences out of 65536+600000
- 218 fonts using 67127135 bytes
+ 6505 words of node memory still in use:
+   20 hlist, 8 vlist, 5 rule, 9 disc, 4 local_par, 82 glue, 21 kern, 4 penalty, 
+3 margin_kern, 73 glyph, 920 attribute, 198 glue_spec, 920 attribute_list, 3 wri
+te, 1 pdf_action, 30 pdf_colorstack nodes
+   avail lists: 1:9,2:1374,3:440,4:103,5:959,6:268,7:10887,8:136,9:2805,10:26,11
+:1194
+ 67452 multiletter control sequences out of 65536+600000
+ 188 fonts using 56734647 bytes
  86i,17n,115p,1194b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -5143,10 +5170,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (235 pages, 9346416 bytes).
+Output written on la.pdf (239 pages, 9373784 bytes).
 
-PDF statistics: 3016 PDF objects out of 3580 (max. 8388607)
- 2711 compressed objects within 28 object streams
- 1150 named destinations out of 1200 (max. 131072)
- 777 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 3073 PDF objects out of 3580 (max. 8388607)
+ 2764 compressed objects within 28 object streams
+ 1164 named destinations out of 1200 (max. 131072)
+ 785 words of extra memory for PDF output out of 10000 (max. 100000000)
 
