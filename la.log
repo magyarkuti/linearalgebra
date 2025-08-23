@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.1)  23 AUG 2025 16:15
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.1)  23 AUG 2025 16:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -5153,7 +5153,7 @@ te, 1 pdf_action, 30 pdf_colorstack nodes
    avail lists: 1:9,2:1374,3:440,4:103,5:959,6:268,7:10887,8:136,9:2805,10:26,11
 :1194
  67452 multiletter control sequences out of 65536+600000
- 188 fonts using 56734647 bytes
+ 188 fonts using 56734751 bytes
  86i,17n,115p,1194b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -5170,7 +5170,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (239 pages, 9373784 bytes).
+Output written on la.pdf (239 pages, 9373152 bytes).
 
 PDF statistics: 3073 PDF objects out of 3580 (max. 8388607)
  2764 compressed objects within 28 object streams
