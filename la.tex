@@ -224,6 +224,8 @@
 \DeclareMathOperator{\gen}{gen}
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
 %\DeclareMathOperator{\srank}{crank}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\codim}{codim}
@@ -422,7 +424,11 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
 \begin{proposition}[egyszerűsítési szabály]\index{egyszerűsítési szabály}
 	Csoportban igaz az egyszerűsítési szabály, azaz ha
 	\[
-        a\ast c=b\ast c\text{ akkor } a=b.\qedhere
+        a\ast c=b\ast c\text{ akkor } a=b.
+	\]
+    Hasonlóan, ha
+	\[
+        c\ast a=c\ast b\text{ akkor } a=b.\qedhere
 	\]
 \end{proposition}
 \begin{proof}
@@ -438,7 +444,7 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
 	\end{math}
 \end{proof}
 \begin{definition}[Abel-csoport]\index{Abel-csoport}
-	Egy $\left( G,\ast \right)$ csoportot \emph{Abel-csoportnak} nevezünk,
+    Egy $\left( G,\ast \right)$ csoportot \emph{Abel-csoportnak}, vagy \emph{kommutatív csoportnak} nevezünk,
 	ha a művelete \emph{kommutatív}\index{kommutatív} is,
 	azaz minden $s,t\in G$ mellett $s\ast t=t\ast s$.
 \end{definition}
@@ -2964,7 +2970,7 @@ minden $i=1,\ldots,m$ és minden $j=1,\ldots,n$ mellett.
 Adottak még az egyenletek jobboldalát képező $b_i\in\mathbb{F}$ számok.
 A feladat megoldása annyit tesz, hogy keressük az $x_1,\ldots,x_n$ ismeretlenek
 összes olyan értékét az $\mathbb{F}$ testből,
-amelyre fenti egyenletek mind teljesülnek.
+amelyre a fenti egyenletek mind teljesülnek.
 Ha a jobboldali számokra $b_i=0$ minden $i=1,\ldots,n$ mellett,
 akkor
 \emph{homogén lineáris egyenletrendszerről}%
@@ -3006,10 +3012,10 @@ Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
 Ha ezt minden $k=1,\ldots,m$ mellett kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot elem\footnote{Értsd: sarok elem.}\index{pivot elem} választásával.
-Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
+Az eliminációs lépés hatására a $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
 
-Ugyan ez egy táblázatban megfogalmazva.
+Ugyanez egy táblázatban megfogalmazva.
 Itt a baloldali mátrix az együttható mátrix, amelynek
 a $j$-edik oszlopa van külön kiemelve.
 $L_1,\ldots,L_m$ jelöli az együttható-mátrix sorait
@@ -3332,6 +3338,7 @@ hiszen a baloldali mátrix minden oszlopa az $a_1,a_2$ oszlopok lineáris kombin
 \begin{definition}
 	Legyen $A\in\mathbb{F}^{m\times n}$ mátrix.
     Az $A$ mátrix oszlop- (sor-) vektorterének nevezzük az $\mathbb{F}^m$ ($\mathbb{F}^n$) vektortérnek azt az alterét, amelyet a $A$ mátrix oszlopai (sorai) generálnak.
+    Az oszlopvektorteret sokszor jelöljük $\col(A)$ és hasonlóan a sorvektorteret $\row(A)$ módon.
     \index{oszlopvektortér}\index{sorvektortér}
 \end{definition}
 Az előző példa szerint az ottani $4\times 5$ méretű mátrix oszlopvektorterének az $\left\{ a_1,a_2 \right\}$ két elemű rendszer
@@ -3365,7 +3372,7 @@ Itt konkrétan
     a_4&=& 3c_1+(-1)c_2,
 \end{eqnarray*}
 ahol $c_1,c_2$ jelöli a $C$ mátrix sorait.
-Tehát, ha most $V$ jelöli az $A$ mátrix sorvektortetét, azaz
+Tehát, ha most $V$ jelöli az $A$ mátrix sorvektorterét, azaz
 \(V=\lin\left\{ a_1,a_2,a_3,a_4 \right\}\),
 akkor 
 \[
@@ -7168,7 +7175,7 @@ Polinomok segítségével sok-sok új invariáns alteret kapunk.
 	$\ker p\left( A \right)$ és $\im p\left( A \right)$ is invariáns alterek.
 \end{proposition}
 \begin{proof}
-	Legyen előszőr $v\in\ker p\left( A \right)$.
+	Legyen először $v\in\ker p\left( A \right)$.
 	Ekkor, mivel $A$ és $p\left( A \right)$ kommutálnak
 	\[
 		p\left( A \right)Av=Ap\left( A \right)v=A0=0,
@@ -7267,7 +7274,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$-t.
 	Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
 	Ezt a polinomot nevezzük az $A$ transzformáció $v$ ponthoz tartozó
-    \emph{kis minimálpolinomjának}\index{kis minimálpolinom}.\label{def:kisminimal}
+    \emph{kis minimálpolinomjának}\index{kis minimálpolinom}\label{def:kisminimal}.
 \end{definition}
 
 \begin{proposition}
@@ -8159,7 +8166,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 
 	Ha $x\in\ker p\left( A \right)\cap\ker q\left( A \right)$,
 	akkor
-	$p\left( A \right)x=0=q\left( A \right)x$, tehát $x=0$, ami azt jelenti, hogy
+	$p\left( A \right)x=0=q\left( A \right)x$, tehát $(\dag)$ alapján $x=0$, ami azt jelenti, hogy
 	$\ker p\left( A \right)$ és
 	$\ker q\left( A \right)$ diszjunkt alterek.
 	\\
@@ -8167,10 +8174,15 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	$f\left( A \right)p\left( A \right)x\in\ker q\left( A \right)$,
 	és hasonlóan
 	$g\left( A \right)q\left( A \right)x\in\ker p\left( A \right)$.
-	Ez azt jelenti, hogy $\ker q\left( A \right)+\ker p\left( A \right)=V$ azonosság is fennáll.
+	Ez a $(\dag) alapján azt jelenti, 
+    hogy a $\ker q\left( A \right)+\ker p\left( A \right)=V$ azonosság is fennáll.
 	Megmutattuk tehát, hogy $V$ előáll mint a $\ker p\left( A \right)$ és a
 	$\ker q\left( A \right)$ alterek direkt összege.
+    Valóban, ha $x\in V$ tetszőleges, akkor $(\dag)$ alapján $v=f\left( A \right)p\left( A \right)x$ 
+    és $w=g\left( A \right)q\left( A \right)x$ választással $x=v+w$ teljesül,
+    ahol $v\in\ker q\left( A \right)$ és $w\in\ker p\left( A \right)$.
 
+    Megmutatjuk most, hogy $p$ azonos az $A_1$ transzformáció minimálpolinomjával.
 	Világos, hogy minden $u\in\ker p\left( A \right)$ mellett
 	$p\left( A_1 \right)u
 		=
