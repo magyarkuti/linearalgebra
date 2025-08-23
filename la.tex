@@ -3,11 +3,9 @@
 % arara: --> engine: lualatex,
 % arara: --> options: [ '-pvc-' ]
 % arara: --> }
-% arara: texindy: {
-% arara: --> markup: xelatex,
-% arara: --> language: hungarian,
-% arara: --> codepage: utf8
-% arara: --> }
+% arara: upmendex: { 
+% arara: --> IgnoreLeadingAndTrailingBlanks: yes, 
+% arara: --> style: myindex.ist }
 % arara: latexmk: { 
 % arara: --> engine: lualatex,
 % arara: --> options: [ '-pvc-' ]
@@ -226,6 +224,8 @@
 \DeclareMathOperator{\gen}{gen}
 \DeclareMathOperator{\rrank}{rrank}
 \DeclareMathOperator{\srank}{srank}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
 %\DeclareMathOperator{\srank}{crank}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\codim}{codim}
@@ -240,9 +240,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Az index bekapcsolása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeindex\xindyindex
+\makeindex
 %\xindyindex
-%
+%It turns out that xindy cannot handle a memoir hyperindex (which can be obtained with the aid of the hyperref package), although MakeIndex can do so.2 If you are going to use xindy to process the raw index data put \xindyindex in the preamble, which will prevent hyperindexing 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Az forward-backward search bekapcsolása
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -424,7 +424,11 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
 \begin{proposition}[egyszerűsítési szabály]\index{egyszerűsítési szabály}
 	Csoportban igaz az egyszerűsítési szabály, azaz ha
 	\[
-        a\ast c=b\ast c\text{ akkor } a=b.\qedhere
+        a\ast c=b\ast c\text{ akkor } a=b.
+	\]
+    Hasonlóan, ha
+	\[
+        c\ast a=c\ast b\text{ akkor } a=b.\qedhere
 	\]
 \end{proposition}
 \begin{proof}
@@ -440,7 +444,7 @@ Ez utóbbi csoportot mondjuk \emph{permutáció csoportnak}\index{permutációk}
 	\end{math}
 \end{proof}
 \begin{definition}[Abel-csoport]\index{Abel-csoport}
-	Egy $\left( G,\ast \right)$ csoportot \emph{Abel-csoportnak} nevezünk,
+    Egy $\left( G,\ast \right)$ csoportot \emph{Abel-csoportnak}, vagy \emph{kommutatív csoportnak} nevezünk,
 	ha a művelete \emph{kommutatív}\index{kommutatív} is,
 	azaz minden $s,t\in G$ mellett $s\ast t=t\ast s$.
 \end{definition}
@@ -662,7 +666,7 @@ együtthatók.%
 	hogy mint formális polinomok is azonosak,
 	azaz a két polinom együtthatói is rendre azonosak-e?
 	A~pozitív választ később látjuk nem véges számtest -- például a valós vagy a komplex test -- feletti polinomok esetén.
-    Lásd \aaz{pr:polinomfv}.~állítás utáni megjegyzést \aazt{\pageref{pr:polinomfv}}. oldalon.%
+    Lásd \aaz{pr:polinomfv}.~állítás utáni megjegyzést \aazt{\pageref{pr:polinomfv}}.~oldalon.%
 }
 A jelölések megértése is fontos.
 $p\left( t \right)\in\mathbb{F}\left[ t \right]$ semmi mást nem jelent,
@@ -2781,7 +2785,7 @@ Hasonlóan, ha $H=\left\{ v_1,\ldots,v_r \right\}$ halmaz $r$ elemből áll akko
 \end{definition}
 
 A generátorrendszer cseréről szóló \ref{le:gencsere}.~lemmának kiemelten fontos szerepe van felépítésünkben.
-Egyrészt használjuk majd a Steinitz-lemma\index{Steinitz-lemma} (\ref{le:Steinitz}) igazolásában,
+Egyrészt használjuk majd a Steinitz-lemma\index{Steinitz-lemma} (\ref{le:Steinitz}.) igazolásában,
 másrészt ennek segítségével tisztázzuk majd azt a kérdést,
 hogy hogyan alakulnak egy vektor ,,koordinátái'', ha a vonatkoztatási rendszert változtatjuk.
 
@@ -2966,7 +2970,7 @@ minden $i=1,\ldots,m$ és minden $j=1,\ldots,n$ mellett.
 Adottak még az egyenletek jobboldalát képező $b_i\in\mathbb{F}$ számok.
 A feladat megoldása annyit tesz, hogy keressük az $x_1,\ldots,x_n$ ismeretlenek
 összes olyan értékét az $\mathbb{F}$ testből,
-amelyre fenti egyenletek mind teljesülnek.
+amelyre a fenti egyenletek mind teljesülnek.
 Ha a jobboldali számokra $b_i=0$ minden $i=1,\ldots,n$ mellett,
 akkor
 \emph{homogén lineáris egyenletrendszerről}%
@@ -3008,10 +3012,10 @@ Ha a $k$-adik ($k\neq i$) sorból kivonjuk az imént normált sor
 $a_{k,j}$-szeresét, akkor az eredmény sor $j$-edik helyén zérust kapunk.
 Ha ezt minden $k=1,\ldots,m$ mellett kiszámoljuk, akkor éppen egy Gauss\,--\,Jordan-%
 eliminációt hajtunk végre az $a_{i,j}$ pivot elem\footnote{Értsd: sarok elem.}\index{pivot elem} választásával.
-Az eliminációs lépés hatására az $j$-edik változó az $i$-edik kivételével
+Az eliminációs lépés hatására a $j$-edik változó az $i$-edik kivételével
 minden más sorból eltűnt, és az $i$-edik sorban pontosan $1$ együtthatóval szerepel.
 
-Ugyan ez egy táblázatban megfogalmazva.
+Ugyanez egy táblázatban megfogalmazva.
 Itt a baloldali mátrix az együttható mátrix, amelynek
 a $j$-edik oszlopa van külön kiemelve.
 $L_1,\ldots,L_m$ jelöli az együttható-mátrix sorait
@@ -3334,6 +3338,7 @@ hiszen a baloldali mátrix minden oszlopa az $a_1,a_2$ oszlopok lineáris kombin
 \begin{definition}
 	Legyen $A\in\mathbb{F}^{m\times n}$ mátrix.
     Az $A$ mátrix oszlop- (sor-) vektorterének nevezzük az $\mathbb{F}^m$ ($\mathbb{F}^n$) vektortérnek azt az alterét, amelyet a $A$ mátrix oszlopai (sorai) generálnak.
+    Az oszlopvektorteret sokszor jelöljük $\col(A)$ és hasonlóan a sorvektorteret $\row(A)$ módon.
     \index{oszlopvektortér}\index{sorvektortér}
 \end{definition}
 Az előző példa szerint az ottani $4\times 5$ méretű mátrix oszlopvektorterének az $\left\{ a_1,a_2 \right\}$ két elemű rendszer
@@ -3367,7 +3372,7 @@ Itt konkrétan
     a_4&=& 3c_1+(-1)c_2,
 \end{eqnarray*}
 ahol $c_1,c_2$ jelöli a $C$ mátrix sorait.
-Tehát, ha most $V$ jelöli az $A$ mátrix sorvektortetét, azaz
+Tehát, ha most $V$ jelöli az $A$ mátrix sorvektorterét, azaz
 \(V=\lin\left\{ a_1,a_2,a_3,a_4 \right\}\),
 akkor 
 \[
@@ -4320,7 +4325,7 @@ bázisfaktorizáció, ahol a jobboldali első mátrix oszlopai a baloldali $A$ m
 és a jobboldali második mátrix sorai az $A$ mátrix sorvektorterének lineárisan független generátorrendszerét alkotja.
 
 A fenti bázisfaktorizáció tetszőleges mátrix mellett is végrehajtható, 
-így a Gauss\,--\,Jordan-eliminációnak és a két cserélési lemmának -- \ref{le:fgtlncsere} és \ref{le:gencsere} -- az alábbi szép következményét kapjuk:
+így a Gauss\,--\,Jordan-eliminációnak és a két cserélési lemmának -- \ref{le:fgtlncsere}. és \ref{le:gencsere}. -- az alábbi szép következményét kapjuk:
 \begin{proposition}
     Tetszőleges $m\times n$ méretű nem zérus mátrix sorvektorterének és oszlopvektorterének is van azonos elemszámú lineárisan független, generátorrendszere. Ha $r$ e két vektorrendszer közös elemszáma, akkor $1\leq r\leq\min\left\{ m,n \right\}$.
 \end{proposition}
@@ -4449,8 +4454,8 @@ A célunk az volt, hogy lássuk egy független rendszer elemszáma nem haladja m
 hogy a független rendszer elemei egyenként be-becserélhetőek a generátorrendszer 
 egy-egy alkalmas elemének elhagyásával a generátorrendszer elemi közé olyan módon, 
 hogy a csere után kapott rendszer is generátorrendszer maradjon.
-Ezt szokás kicserélési tételnek is nevezni.\index{Kicserélési tétel}
-\begin{proposition}[Kicserélési tétel]\label{pr:kicserelesi}
+Ezt szokás kicserélési tételnek is nevezni.\index{kicserélési tétel}
+\begin{proposition}[kicserélési tétel]\label{pr:kicserelesi}
 	Tegyük fel, hogy az $\left\{ y_1,\ldots,y_n \right\}$ egy lineárisan független rendszer,
 	és az
 	$\left\{ x_1,\ldots,x_m \right\}$ egy generátorrendszer.
@@ -5784,8 +5789,8 @@ Az első esetben arra kell hivatkoznunk, hogy egy generátorrendszer szürjektí
 generált marad.
 
 Tehát az első speciális eset, ha $V$ végesen generált:
-Ez az úgynevezett Rangdefektustétel:
-\begin{proposition}[Rangdefektustétel]\index{Rangdefektustétel}
+Ez az úgynevezett rangdefektustétel:
+\begin{proposition}[rangdefektustétel]\index{rangdefektustétel}
 	Legyen $V$ egy véges dimenziós vektortér,
 	és $W$ egy tetszőleges vektortér,
 	továbbá $A\in L\left( V,W \right)$ egy lineáris operáció.
@@ -6139,7 +6144,7 @@ hogy az egy $x\in\mathbb{F}^m$ oszlopvektorhoz a mátrix szorzás definíciójá
 az $A\cdot x\in\mathbb{F}^n$ oszlopvektort rendeli.
 Ebben a fejezetben a mátrixok ezen interpretációját erősítjük tovább.
 
-\section{Rangdefektustétel következménye}
+\section{A rangdefektustétel következménye}
 Láttuk, hogy tetszőleges $A\in L\left( V,W \right)$ lineáris operáció mellett
 \[
 	\nu\left( A \right)+\rho\left( A \right)=\dim(V),
@@ -7170,7 +7175,7 @@ Polinomok segítségével sok-sok új invariáns alteret kapunk.
 	$\ker p\left( A \right)$ és $\im p\left( A \right)$ is invariáns alterek.
 \end{proposition}
 \begin{proof}
-	Legyen előszőr $v\in\ker p\left( A \right)$.
+	Legyen először $v\in\ker p\left( A \right)$.
 	Ekkor, mivel $A$ és $p\left( A \right)$ kommutálnak
 	\[
 		p\left( A \right)Av=Ap\left( A \right)v=A0=0,
@@ -7269,7 +7274,7 @@ $p\left( A \right)v=(cI)v=cv\neq 0$.
 	van tehát egyetlen normált polinomja $J_{A,v}$-nek, amely generálja $J_{A,v}$-t.
 	Ez a $J_{A,v}$ legkisebb fokú, normált polinomja.
 	Ezt a polinomot nevezzük az $A$ transzformáció $v$ ponthoz tartozó
-    \emph{kis minimálpolinomjának}\index{kis minimálpolinom}.\label{def:kisminimal}
+    \emph{kis minimálpolinomjának}\index{kis minimálpolinom}\label{def:kisminimal}.
 \end{definition}
 
 \begin{proposition}
@@ -8161,7 +8166,7 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 
 	Ha $x\in\ker p\left( A \right)\cap\ker q\left( A \right)$,
 	akkor
-	$p\left( A \right)x=0=q\left( A \right)x$, tehát $x=0$, ami azt jelenti, hogy
+	$p\left( A \right)x=0=q\left( A \right)x$, tehát $(\dag)$ alapján $x=0$, ami azt jelenti, hogy
 	$\ker p\left( A \right)$ és
 	$\ker q\left( A \right)$ diszjunkt alterek.
 	\\
@@ -8169,10 +8174,15 @@ amelyet a feladatok megoldása során sokszor használjuk majd.
 	$f\left( A \right)p\left( A \right)x\in\ker q\left( A \right)$,
 	és hasonlóan
 	$g\left( A \right)q\left( A \right)x\in\ker p\left( A \right)$.
-	Ez azt jelenti, hogy $\ker q\left( A \right)+\ker p\left( A \right)=V$ azonosság is fennáll.
+	Ez a $(\dag)$ alapján azt jelenti, 
+    hogy a $\ker q\left( A \right)+\ker p\left( A \right)=V$ azonosság is fennáll.
 	Megmutattuk tehát, hogy $V$ előáll mint a $\ker p\left( A \right)$ és a
 	$\ker q\left( A \right)$ alterek direkt összege.
+    Valóban, ha $x\in V$ tetszőleges, akkor $(\dag)$ alapján $v=f\left( A \right)p\left( A \right)x$ 
+    és $w=g\left( A \right)q\left( A \right)x$ választással $x=v+w$ teljesül,
+    ahol $v\in\ker q\left( A \right)$ és $w\in\ker p\left( A \right)$.
 
+    Megmutatjuk most, hogy $p$ azonos az $A_1$ transzformáció minimálpolinomjával.
 	Világos, hogy minden $u\in\ker p\left( A \right)$ mellett
 	$p\left( A_1 \right)u
 		=
@@ -8948,7 +8958,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\begin{math}
 		p^{m-1}\left( t \right)
 	\end{math}
-	a minimálpolinomnál alacsonyab fokú de nem zérus polinom,
+	a minimálpolinomnál alacsonyabb fokú de nem zérus polinom,
 	ezért létezik $v\in V$, melyre $B=p\left( A \right)$ jelöléssel
 	\(
 	B^{m-1}v\neq 0.
@@ -11569,7 +11579,7 @@ A determináns kifejtésével az mátrix inverzére kapunk explicit formulát:
 	\]
 	Ezt a $k$ függvényt nevezzük az
 	$A$ transzformáció \emph{karakterisztikus}\index{karakterisztikus polinom}
-	polinomjának.
+    polinomjának.\index{nyom}
 \end{definition}
 \begin{proof}
 	Rögzítsük a tér egy $\left\{ e_1,\ldots,e_n \right\}$ bázisát,
@@ -11925,7 +11935,7 @@ Persze $H\perp H^\perp$ csak tautologia.
 		\item \emph{ortonormáltnak} nevezünk, ha minden $i,j$ mellett $\ip{x_i}{x_j}=\delta_{i,j}$.\qedhere
 	\end{enumerate}
 \end{definition}
-A felépítés jelen szintjén nem olyan egyszerű egy tetszőleges skaláris szorzatos térben ortonormált rendszert
+A felépítés jelen szintjén nem olyan egyszerű egy tetszőleges skalárisszorzatos-térben ortonormált rendszert
 adni. Persze az ${}$ üres vektorrendszer ortogonális, de ortonormált is.
 Az látható, hogy egy ortogonális rendszert tetszőlegesen sok zérus vektorral kiegészítve ortogonális rendszert kapunk.
 Persze a zérus vektor egy ortonormált rendszerhez nem tartozhat elemként,
@@ -11942,7 +11952,7 @@ $)
 
 Egynél több elemből álló ortonormált rendszert most nem tudunk mutatni.
 Az oka ennek egészen világos lesz később.
-Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.
+Látjuk majd, hogy egy $n$-dimenziós skalárisszorzatos-térben mindig van $n$ elemű ortonormált rendszert, de annál több elemű soha nincs.
 Ebből annyi, hogy $n$-nél több nemzérus vektor nem alkothat ortogonális rendszert, már most látható:
 \begin{proposition}
 	Egy zérus elemeket nem tartalmazó ortogonális rendszer lineárisan független rendszer is.
@@ -12073,7 +12083,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		\qedhere
 	\]
 \end{proof}
-\begin{proposition}[Schwartz-egyenlőtlenség]
+\begin{proposition}[Schwartz-egyenlőtlenség]\index{Schwartz-egyenlőtlenség}\label{pr:Schwartz-egyenlőtlenség}
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
 	$u,v\in V$.
 	Ekkor
@@ -12089,15 +12099,15 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 		\frac{1}{\ip{v}{v}}
 		\left|\ip{u}{v}\right|^2
 		=
-		\left|\frac{1}{\sqrt{\ip{v}{v}}}
-		\ip{u}{v}\right|^2
+		|\frac{1}{\sqrt{\ip{v}{v}}}
+		\ip{u}{v}|^2
 		=
-		\left|\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}\right|^2
+		|\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}|^2
 		\leq \ip{u}{u},
 	\]
-	ami a bizonyítandó állítás.
+	ami kishíján a bizonyítandó állítás.
 \end{proof}
-\begin{definition}[skalárisszorzat indukálta norma]
+\begin{definition}[skaláris szorzat indukálta norma]
 	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
 	jelölje minden $x\in V$ mellett $\|x\|=\sqrt{\ip{x}{x}}$.
 \end{definition}
@@ -12108,8 +12118,8 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 
 
 \begin{proposition}
-	Egy $V$ skalárisszorzatos-térben teljesül a \emph{Schwartz-egyenlőtlenség}, azaz
-	\(|\ip{x}{y}|\leq\|x\|\cdot\|y\|,\)
+	Egy $V$ skalárisszorzatos-térben teljesül a \emph{Schwartz-egyenlőtlenség}\index{Schwartz-egyenlőtlenség}, azaz
+    \[|\ip{x}{y}|\leq\|x\|\cdot\|y\|,\]
 	valamint a skalárisszorzatos-tér kielégíti a \emph{normált tér} axiómákat, azaz
 	\begin{enumerate}
 		\item $\|x\|=0$ akkor és csak akkor, ha $x=0$,
@@ -12146,7 +12156,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 \end{proof}
 
 \section{Pont és altér távolsága}
-Ebben a szakaszban azt mutatjuk meg, hogy ha a $V$ skalárisszorzatos térnek $M$ egy olyan
+Ebben a szakaszban azt mutatjuk meg, hogy ha a $V$ skalárisszorzatos-térnek $M$ egy olyan
 altere, amelyben van véges ortonormált bázis, akkor a tér tetszőleges $V$ pontjának,
 van $M$-hez legközelebbi pontja.
 Mi több, ilyen legközelebbi pontból csak egyetlen egy van.
@@ -12293,7 +12303,7 @@ emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált báz
 	A $p_M\left( u \right)\in M$ vektort nevezzük az $u$-nak $M$ altérre eső \emph{merőleges vetületének}.
 	A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}.
 \end{definition}
-Mivel a skalárisszorzás rögzített második változó mellett,
+Mivel a skaláris szorzás rögzített második változó mellett,
 az első változó lineáris függvénye,
 ezért egy rögzített $x\in V$ vektor mellett az $u\mapsto\ip{u}{x}x$ függvény egy $V\to V$ lineáris operáció.
 Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetítés a $V$ vektortér egy lineáris transzformációja.
@@ -12301,10 +12311,10 @@ Mivel $p_M$ ilyenek véges összege, azért a fent definiált merőleges vetít�
 A merőleges vetítés operáció bevezetésének feltétele volt, hogy ha az $M$ altérre vonatkozó
 merőleges vetítést akarjuk használni, akkor léteznie kell egy ortonormált bázisnak az $M$ altérben.
 Az eddigi tételeinkben ez a tétel feltevése volt.
-Most megmutatjuk, hogy egy skalárisszorzatos térnek minden véges dimenziós altere rendelkezik ezzel a
+Most megmutatjuk, hogy egy skalárisszorzatos-térnek minden véges dimenziós altere rendelkezik ezzel a
 tulajdonsággal, így egy véges dimenziós altérre eső merőleges vetítés mindig definiált.
 
-Először is érdemes újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel} gondolatot,
+Először is érdemes újra fogalmazni a Bessel-egyenlőtlenségről szóló \ref{pr:Bessel}.~gondolatot,
 a bevezetett merőleges vetítés és hosszúság fogalom felhasználásával.
 Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az állítás feltevése.
 \begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel2}
@@ -12338,7 +12348,7 @@ Figyeljünk arra, hogy az $M$-beli ortonormált bázis léte, még mindig az ál
 		=
 		\|u\|^2
 	$
-	a \ref{pr:Bessel}.~állítás szerint.
+	\aaz{pr:Bessel}.~állítás szerint.
 	Hasonlóan
 	$
 		u-p_M\left( u \right)\in \left\{ x_1,\ldots,x_k \right\}^\perp
@@ -12455,7 +12465,7 @@ akkor tetszőleges $x\in V$ vektornak ebben a bázisban felírt koordináta-vekt
 	[x]_{\left\{x_1,\ldots,x_n\right\}}
 	=
 	\begin{pmatrix}
-		\ip{x}{e_1} \\ \vdots \\\ip{x}{e_n}
+		\ip{x}{x_1} \\ \vdots \\\ip{x}{x_n}
 	\end{pmatrix}
 \]
 Ugyanez, kicsit eltérő szintaxissal, hogy az ortonormált bázishoz tartozó
@@ -12506,7 +12516,7 @@ hanem helyette az altér véges dimenziós volta szerepel.%
 	\end{enumerate}
 \end{proposition}
 \begin{proof}
-	Mivel $M$ a $V$ skalárisszorzatos tér egy véges dimenziós altere,
+	Mivel $M$ a $V$ skalárisszorzatos-tér egy véges dimenziós altere,
 	ezért az $M$ altérnek van
     ortonormált bázisa, amint azt \aaz{pr:onb}. állításban Gram\,--\,Schmidt-ortogonalizációnál láttuk.
 	Legyen ez $\left\{ x_1,\ldots,x_k \right\}$.
@@ -12705,16 +12715,16 @@ feltétellel.
 	\end{description}
 \end{proof}
 A fejezet elején láttunk konkrét példát véges dimenziós skalárisszorzatos-térre:
-egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skalárisszorzatban,
+egy rögzített bázisban felírt belsőszorzatot. Persze ebben a skaláris szorzatban,
 a kiinduló bázis ortonormált bázissá is válik.
-Most azt látjuk, hogy a fenti példán kívül nem is lehet más skalárisszorzatot definiálni.
-Minden skalárisszorzat ugyanis, valamely bázishoz tartozó belső szorzat.
+Most azt látjuk, hogy a fenti példán kívül nem is lehet más skaláris szorzatot definiálni.
+Minden skaláris szorzat ugyanis, valamely bázishoz tartozó belső szorzat.
 Pontosan ezt állítja a fenti 4-es tulajdonság.
 
 Ezt a tényt a fontossága miatt külön is kiemeljük:
 \begin{corollary}
-	Minden véges dimenziós skalárisszorzatos-térben a skalárisszorzat nem más,
-	mint erre a skalárisszorzatra nézve,
+	Minden véges dimenziós skalárisszorzatos-térben a skaláris szorzat nem más,
+	mint erre a skaláris szorzatra nézve,
 	de tetszőleges ortonormált bázishoz felírt belső szorzat.
 \end{corollary}
 
@@ -12816,7 +12826,7 @@ akkor
 	\]
 	függvényt.
 	Világos, hogy $\varphi_w:V\to\mathbb{K}$ lineáris funkcionál $V$-n,
-	így a Riesz-reprezentációs tétel szerint létezik egyetlen $w^\ast\in V$,
+	így a Riesz-reprezentációs\index{Riesz-reprezentáció} tétel szerint létezik egyetlen $w^\ast\in V$,
 	amelyre
 	$\varphi_w\left( v \right)=\ip{v}{w^\ast}_V$ minden $v\in V$ mellett teljesül.
 
@@ -12850,7 +12860,7 @@ akkor
 		\ip{v}{A^\ast w}
 	\]
 	fennáll minden $v\in V$ és $w\in W$ mellett.
-	Mivel a skalárisszorzás rögzített első változó mellett a második változóban additív,
+	Mivel a skaláris szorzás rögzített első változó mellett a második változóban additív,
 	ezért
 	$\ip{v}{\left( A^\ast-B \right)w}=0$ fennáll minden $v\in V$ és $w\in W$ mellett.
 	Speciálisan ez igaz $v=\left( A^\ast-B \right)w$-re is, ergo minden $w\in W$-re
@@ -12868,7 +12878,7 @@ $A^\ast:W\to V$ függvény, amelyre minden $v\in V$ és minden $w\in W$ mellett 
 \]
 Az adjungált unicitása, és összes fontos tulajdonsága az adjungált azonosságon alapul.
 \paragraph{Az adjungált függvény linearitása.}
-\Aaz{pr:Riesz}. Riesz-reprezentációs tétel során meggondoltuk,
+\Aaz{pr:Riesz}. Riesz-reprezentációs\index{Riesz-reprezentáció} tétel során meggondoltuk,
 hogy ha tetszőlegesen adott egy
 $\left\{ v_1,\ldots,v_n \right\}\subseteq V$
 ortonormált bázis, akkor
@@ -12882,11 +12892,11 @@ ortonormált bázis, akkor
 	\sum_{j=1}^n\ip{w}{Av_j}_Wv_j.
 \]
 Ebből már adódik, hogy $A^\ast:W\to V$ lineáris operátor.
-Ugyanis a skalárisszorzat rögzített második változó mellett az első változóban lineáris,
+Ugyanis a skaláris szorzat rögzített második változó mellett az első változóban lineáris,
 emiatt egy rögzített $j$ esetén az $w\mapsto \ip{w}{Av_j}v_j$ a $w$ változó lineáris függvénye. A fenti kiemelt sor szerint $A^\ast$ ilyen függvények összegeként maga is lineáris.
 
 Alternatív indoklást kapunk az adjungált operáció linearitására az (\dag) adjungált azonosság háromszori felírásával.
-Itt kihasználjuk a tényt, hogy a skalárisszorzás rögzített első változó mellett a második változó konjugáltan lineáris függvénye.
+Itt kihasználjuk a tényt, hogy a skaláris szorzás rögzített első változó mellett a második változó konjugáltan lineáris függvénye.
 \begin{multline*}
 	\ip{u}{A^\ast\left( \alpha_1w_1+\alpha_2w_2 \right)}
 	=
@@ -12938,13 +12948,13 @@ azonosság is teljesül.
 			[A^\ast]
 		}_{j,i}
 	\end{math},
-    \aaz{pr:onb}. állítás, a (\dag) adjungált azonosság, és a skalárisszorzás tulajdonságai szerint.
+    \aaz{pr:onb}. állítás, a (\dag) adjungált azonosság, és a skaláris szorzás tulajdonságai szerint.
 \end{proof}
 
 Most összefoglaljuk az adjungálás operáció legfontosabb tulajdonságait,
 amelyeket későbbi számolásaink során külön hivatkozás nélkül használunk.
 \begin{proposition}
-	Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
+	Legyenek $V$ és $W$ véges dimenziós skalárisszorzatos-terek, $A,B\in L\left( V,W \right)$ lineáris operátorok.
 	Ekkor
 	\begin{enumerate}
 		\item[1.] $\left( A+B \right)^\ast=A^\ast+B^\ast,$
@@ -13025,10 +13035,10 @@ amelyeket későbbi számolásaink során külön hivatkozás nélkül használu
 		      \qedhere
 	\end{description}
 \end{proof}
-Felépítésünk sarokköve a skalárisszorzatos terek rangtétele.
+Felépítésünk sarokköve a skalárisszorzatos-terek rangtétele.
 Legfontosabb következménye, hogy zérus vektoron kívül nincs olyan vektor,
 amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
-\begin{proposition}[skalárisszorzatos Rangtétel]\label{pr:skrang}
+\begin{proposition}[skalárisszorzatos rangtétel]\label{pr:skrang}
 	Legyenek $V,W$ skalárisszorzatos-terek, $A\in L\left( V,W \right)$ lineáris operáció.
 	Ekkor
 	$(\im A)^\perp=\ker A^\ast$ és
@@ -13081,7 +13091,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 		\ker A\oplus\im A^\ast.
 	\end{math}
 
-	A direkt összegek dimenziójára vonatkozó állítás és a Rangdefektustételnek\index{Rangdefektustétel} az adjungált operációra vonatkozó alakja szerint
+	A direkt összegek dimenziójára vonatkozó állítás és a rangdefektustételnek\index{rangdefektustétel} az adjungált operációra vonatkozó alakja szerint
 	\begin{math}
 		\rho\left( A \right)=\dim(W)-\nu\left( A^\ast \right)=\rho\left( A^\ast \right).
 	\end{math}
@@ -13137,7 +13147,9 @@ hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref
 	\begin{enumerate}
 		\item $B$ unitér;
 		\item Minden $u,v\in V$ mellett $\ip{Bu}{Bv}=\ip{u}{v}$.
-		\item $B$ egy ortonormált bázist ortonormált bázisra képez.
+		\item $B$ a tér minden ortonormált bázisát ortonormált bázisra képzi.
+		\item A térnek van olyan ortonormált bázisa, 
+            amelyet a $B$ transzformáció egy ortonormált rendszerre viszi. 
 		      \qedhere
 	\end{enumerate}
 \end{proposition}
@@ -13167,7 +13179,9 @@ hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref
 		      A tér $n$ dimenziós, hiszen $\left\{ u_1,\ldots,u_n \right\}$ egy bázis.
 		      Így
 		      $\left\{ Bu_1,\ldots,Bu_n \right\}$ egy maximális lineárisan független rendszerként maga is bázis.
-		\item[$3.\Rightarrow 1.$]
+		\item[$3.\Rightarrow 4.$]
+            Láttuk, hogy véges dimenziós skalárisszorzatos-térnek van ortonormált bázisa.
+		\item[$4.\Rightarrow 1.$]
 		      Vegyünk $V$-ben egy $\left\{ u_1,\ldots,u_n \right\}$ ortonormált bázist.
 		      Feltevésünk szerint a $\left\{ Bu_1,\ldots,Bu_n \right\}$ egy ortonormált rendszer.
 		      Így minden $j,k$ mellett
@@ -13187,6 +13201,7 @@ hanem transzformációk egy sokkal szélesebb osztályára\footnote{Lásd a \ref
 		      No de, a lineáris transzformációk bázison egyértelműen meghatározottak,
 		      ezért $B^\ast B=I$.
 		      Ez azt jelenti, hogy $B$ reguláris és $B^{-1}=B^\ast$.
+              \qedhere
 	\end{description}
 \end{proof}
 Egy ortonormált bázisban felírva a $B$ transzformáció mátrixát,
@@ -13226,7 +13241,7 @@ Nyilvánvaló példák normális transzformációkra:
 \begin{enumerate}
 	\item Ha $N$ önadjungált;
 	\item Ha $N$ reguláris és $N^{-1}=N^\ast$;\footnote{Az ilyen transzformációt nevezzük
-		      \emph{unitér}\index{unitér}
+		      \emph{unitér}\index{unitér transzformáció}
 		      transzformációnak.}
 	\item Ha létezik olyan $q$ polinom, amelyre $N^\ast=q\left( N \right)$;
 	\item
@@ -13550,7 +13565,7 @@ A valós számtest feletti esetet is összefoglaljuk:
 }
 
 \chapter{Ortogonális projekciók}
-A fejezetben visszatérünk a skalárisszorzatos terek geometriai tulajdonságainak vizsgálatához.
+A fejezetben visszatérünk a skalárisszorzatos-terek geometriai tulajdonságainak vizsgálatához.
 Emlékezzünk arra, hogy bevezettük a merőleges vetítés transzformációt.
 Egy $M\subseteq V$ altér esetén $P_M\in L\left( V \right)$ az a transzformáció, amely egy $v\in V$ vektorhoz hozzárendeli a $v$-hez legközelebb eső $M$-beli vektort.
 Megmutattuk, hogy ilyen vektor van és csak egy van az $M$ altérben.
@@ -14647,12 +14662,52 @@ akkor
 \[
 	\max\left\{ \|Ax\|:\|x\|\leq 1 \right\}
 	=
-	\min\left\{ K\geq 0:\|Ax\|\leq K\|x\|\quad\forall x\in V \right\}
+    \min\left\{ K\geq 0:\|Ax\|\leq K\|x\|\quad\forall x\in V \right\}\tag{\diamond}
 \]
 számok azonosak és végesek. A közös érték az $\|A\|$ \emph{operátornorma}.\index{operátornorma}
 Ha az $L\left( V,W \right)$ lineáris operációk vektorterét ellátjuk az operátornormával,
 akkor egy normált teret kapunk.
 A $W=V$ speciális esetben $A,B\in L\left( V \right)$-re $\|AB\|\leq \|A\|\|B\|$ egyenlőtlenség is fennáll.
+
+Például ha \aaz{pr:Riesz}.~Riesz-reprezentációs tétel\index{Riesz-reprezentáció} lineáris funkcionáljának operátornormájára gondolunk,
+akkor \aaz{pr:Schwartz-egyenlőtlenség}.~Schwartz-egyenlőtlenséget\index{Schwartz-egyenlőtlenség} alkalmazva
+\[
+    |\varphi\left( x \right)|
+    =
+    |\ip{x}{z_\varphi}|
+    \leq \|z_\varphi\|\cdot\|x\|
+\] 
+minden $x\in V$ mellett, eszerint az iménti ($\diamond$) jobboldala miatt
+\(
+    \|\varphi
+    \|\leq
+    \|z_\varphi\|
+\).
+Másoldalról, ha $\varphi\neq 0$, akkor $\|\frac{z_\varphi}{\|z_\varphi\|}\|=1$,
+és
+\[
+\varphi\left( \frac{z_\varphi}{\|z_\varphi\|} \right)
+=
+\ip{\frac{z_\varphi}{\|z_\varphi\|}}{z_\varphi}
+=
+\frac{1}{\|z_\varphi\|}\cdot\|z_\varphi\|^2
+=
+\|z_\varphi\|,
+\]
+amiből a fent kiemelt ($\diamond$) azonosság baloldala miatt 
+\(
+    \|z_\varphi\|
+    \leq
+    \|\varphi\|
+\).
+Összegezve tehát, 
+egy $\varphi:V\to\mathbb{K}$ lineáris funkcionál és az őt reprezentáló 
+$z_\varphi\in V$ vektorra
+\[
+    \|z_\varphi\|
+    =
+    \|\varphi\|.
+\]
 
 A továbbiakban $V$ egy véges dimenziós $\mathbb{K}$ feletti skalárisszorzatos-tér.
 \begin{definition}
@@ -17680,6 +17735,70 @@ A többi elem viszont nem változik.
 Az első rész az $i$ és $j$ indexű sorok felcserélését jelenti, míg a második rész az $i$ és $j$ indexű oszlopok kicseréléséből áll.
 A többi sort és oszlopot nem éri változás.
 
-Látjuk tehát, hogy ha a bal-felső elem zérus, de a diagonálisnak van nem zérus eleme, 
-akkor a most tanult felcseréléssel a nem zérus elem a bal-felső pozícióba hozható, így az algoritmusunk továbbra is működik.
+Látjuk tehát, hogy ha a balfelső elem zérus, de a diagonálisnak van nem zérus eleme, 
+akkor a most tanult felcseréléssel a nem zérus elem a balfelső pozícióba hozható, így az algoritmusunk továbbra is működik.
 
+\subsubsection{A diagonálisban minden elem zérus}
+Most nézzük azt az esetet, amikor a diagonális minden eleme zérus, de van nem zéró elem.
+
+Először is azt vegyük észre, hogy ha a feladat a kvadratikus alak definitségének meghatározása, 
+akkor készen is vagyunk mert indefinit kvadratikus alakkal állunk szemben.
+Ha ugyanis a $k,l$ pozíció tartalmaz nem zérus elemet, 
+akkor a kvadratikus alak összes többi változóját állítsuk zérusra és a $k$-adik és az $l$-edik változót vizsgáljuk.
+Így a kvadratikus alakunk az $2a_{k,l}x_kx_l$ kifejezésre egyszerűsödik, 
+amely persze indefinit, hiszen az értékkészlete negatív és pozitív elemet egyaránt tartalmaz.
+
+A teljesség kedvéért megmutatjuk, 
+hogy az algoritmusunk ebben az esetben is használható.
+Ha az $a_{k,l}\neq 0$, akkor vezessük be a 
+\[
+    z_l=x_l+x_k\qquad z_j=x_j, \text{ ha }j\neq l
+\]
+változókat.
+Ekkor $k\neq l$-et is figyelembe véve
+\begin{multline*}
+z_kz_l=x_k\left( x_l+x_k \right)=x_kx_l+x_k^2=z_k^2+x_kx_l,
+\text{ majd $j\neq k$, $j\neq l$ mellett: }\\
+z_jz_l=x_j\left( x_l+x_k \right)=x_jx_l+x_jx_k=x_jx_l+z_jz_k.
+\end{multline*}
+Ez azt jelenti, hogy a $x_kx_l$ kifejezést a $(z_kz_l-z_k^2)$-re kell cserélnünk,
+és minden további $x_jx_l$ alakú kifejezést a $(z_jz_l-z_jz_k)$ kifejezéssel kell kicserélnünk.
+A többi változó indexe nem változik.
+Így pontsan egy négyzetet kapunk, 
+tehát a mátrix diagonálisában a $k$-adik sorban jelenik meg egy nem zérus elem.
+Ahogyan azt az előzőekben már megértettük ezt az elemet kell a balfelső pozícióba csempészni, 
+és az algoritmusunk már működik is.
+
+\section{Definitség osztályozása a teljes négyzetek segítségével}\label{ap:quad-summary}
+Miután elkészült a kvadratikus alakot reprezentáló mátrix diádfelbontása,
+a kvadratikus alak definitsége az alábbiak szerint osztályozható.
+Legyen tehát $Q$ egy $n$ változós nemzérus kvadratikus alak.\\
+Ha a diád felbontás
+\begin{itemize}
+    \item tartalmaz pozitív és negatív pivot elemet, 
+        akkor $Q$ \emph{indefinit}.
+\end{itemize}
+Most tegyük fel, hogy $Q$ felbontása pontosan $n$ teljes négyzetet tartalmaz.
+Ha
+\begin{itemize}
+    \item az összes pivot elem pozitív,
+        akkor $Q$ \emph{pozitív definit};
+    \item az összes pivot elem negatív,
+        akkor $Q$ \emph{negatív definit};
+\end{itemize}
+Ha $Q$ felbontása $n$-nél kevesebb teljes négyzetből áll,
+akkor nagyon hasonló karakterizációt kapunk, de a mátrix szinguláris, ezért csak szemidefinitség jöhet szóba.
+Tehát ha
+\begin{itemize}
+\item az összes pivot elem pozitív,
+    akkor $Q$ \emph{pozitív szemidefinit};
+\item az összes pivot elem negatív,
+    akkor $Q$ \emph{negatív szemidefinit};
+\end{itemize}
+
+\backmatter
+\pagestyle{empty}
+%\bibliography{\jobname}
+\printbibliography
+\printindex
+\end{document}
