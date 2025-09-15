@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.1)  23 AUG 2025 16:23
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.7.1)  15 SEP 2025 16:42
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -1972,7 +1972,7 @@ Package: memhfixc 2025/03/06 v1.23 hyperref package fixes for memoir class
 \c@memhycontfloat=\count578
 \c@mem@Hpagenote=\count579
 )
-Package hyperref Info: Option `final' set `true' on input line 76.
+Package hyperref Info: Option `final' set `true' on input line 77.
 \@my@claim@mark=\marks4
 
 >>> Made patch specific for amsthm.
@@ -1988,33 +1988,33 @@ Package csquotes Info: Redefining alias 'default' -> 'magyar'.
 (./la.aux)
 \openout1 = la.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 252.
-LaTeX Font Info:    ... okay on input line 252.
-LaTeX Info: Redefining \microtypecontext on input line 252.
-Package microtype Info: Applying patch `item' on input line 252.
-Package microtype Info: Applying patch `toc' on input line 252.
-Package microtype Info: Applying patch `eqnum' on input line 252.
-Package microtype Info: Applying patch `footnote' on input line 252.
-Package microtype Info: Applying patch `verbatim' on input line 252.
-LaTeX Info: Redefining \microtypesetup on input line 252.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 253.
+LaTeX Font Info:    ... okay on input line 253.
+LaTeX Info: Redefining \microtypecontext on input line 253.
+Package microtype Info: Applying patch `item' on input line 253.
+Package microtype Info: Applying patch `toc' on input line 253.
+Package microtype Info: Applying patch `eqnum' on input line 253.
+Package microtype Info: Applying patch `footnote' on input line 253.
+Package microtype Info: Applying patch `verbatim' on input line 253.
+LaTeX Info: Redefining \microtypesetup on input line 253.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2026,7 +2026,7 @@ Package microtype Info: Using default expansion set `alltext-nott'.
 LaTeX Warning: Command \showhyphens   has changed.
                Check if current package is valid.
 
-LaTeX Info: Redefining \showhyphens on input line 252.
+LaTeX Info: Redefining \showhyphens on input line 253.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -2147,8 +2147,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'la.bbl' found.
  (./la.bbl)
-Package biblatex Info: Reference section=0 on input line 252.
-Package biblatex Info: Reference segment=0 on input line 252.
+Package biblatex Info: Reference section=0 on input line 253.
+Package biblatex Info: Reference segment=0 on input line 253.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -2184,7 +2184,7 @@ Package biblatex Info: Reference segment=0 on input line 252.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 252.
+Package hyperref Info: Link coloring OFF on input line 253.
 (./la.out) (./la.out)
 \@outlinefile=\write6
 
@@ -2196,7 +2196,7 @@ File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
 <use Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG>
 Package luatex.def Info: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_frei
-en_Künsten.JPG  used on input line 258.
+en_Künsten.JPG  used on input line 259.
 (luatex.def)             Requested size: 418.25368pt x 520.13634pt.
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/20.74'.
@@ -2517,13 +2517,13 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 10.28888pt on input line 268.
+(Font)              scaled to size 10.28888pt on input line 269.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `TeXGyreAdventor' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 10.15887pt on input line 268.
+(Font)              scaled to size 10.15887pt on input line 269.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `TeXGyrePagellaMath' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2541,9 +2541,9 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 17.78261pt on input line 289.
+(Font)              scaled to size 17.78261pt on input line 290.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 17.55792pt on input line 289.
+(Font)              scaled to size 17.55792pt on input line 290.
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3086,7 +3086,7 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 14.81598pt on input line 331.
+(Font)              scaled to size 14.81598pt on input line 332.
 
 
 [9
@@ -4111,9 +4111,9 @@ Package microtype Info: Character `⁻' is missing
 
 [43]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2958.
+(Font)              scaled to size 9.3886pt on input line 2959.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2958.
+(Font)              scaled to size 9.26996pt on input line 2959.
 
 
 [44]
@@ -4982,14 +4982,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 [224]
-LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 6.85925pt on input line 16527.
-LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 6.77258pt on input line 16527.
-Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
-line 16527.
-FiXme Note: 'Ide hivatkozás kell' on input line 16527.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16530.
+FiXme Note: 'Ide hivatkozás kell' on input line 16528.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16531.
 
 
 [225]
@@ -4998,16 +4992,16 @@ FiXme Note: 'Ide is hivatkozás kell' on input line 16530.
 
 [227]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 16884.
+ hogy függetlenek!' on input line 16885.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 16915.
+FiXme Warning: 'Hivatkozás!!' on input line 16916.
 
 
 
 [228]
 
-FiXme Warning: 'Hivatkozás!' on input line 17060.
+FiXme Warning: 'Hivatkozás!' on input line 17061.
 
 
 
@@ -5144,16 +5138,16 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40865 strings out of 470205
+ 40860 strings out of 470205
  156333,1977958 words of node,token memory allocated
- 6505 words of node memory still in use:
-   20 hlist, 8 vlist, 5 rule, 9 disc, 4 local_par, 82 glue, 21 kern, 4 penalty, 
-3 margin_kern, 73 glyph, 920 attribute, 198 glue_spec, 920 attribute_list, 3 wri
-te, 1 pdf_action, 30 pdf_colorstack nodes
-   avail lists: 1:9,2:1374,3:440,4:103,5:959,6:268,7:10887,8:136,9:2805,10:26,11
-:1194
- 67452 multiletter control sequences out of 65536+600000
- 188 fonts using 56734751 bytes
+ 5172 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 56 glue, 4 kern, 1 penalty, 2 margin_k
+ern, 4 glyph, 884 attribute, 198 glue_spec, 884 attribute_list, 3 write, 1 pdf_a
+ction nodes
+   avail lists: 1:9,2:1413,3:443,4:127,5:976,6:268,7:10982,8:136,9:2826,10:26,11
+:1203
+ 67447 multiletter control sequences out of 65536+600000
+ 186 fonts using 56238311 bytes
  86i,17n,115p,1194b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -5170,7 +5164,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (239 pages, 9373152 bytes).
+Output written on la.pdf (239 pages, 9372649 bytes).
 
 PDF statistics: 3073 PDF objects out of 3580 (max. 8388607)
  2764 compressed objects within 28 object streams
