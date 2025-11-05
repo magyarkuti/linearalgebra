@@ -6340,7 +6340,7 @@ Először azt gondoljuk meg, hogy lineáris transzformáció egy bázison tetsz�
 	generátorrendszere az $L\left( V,W \right)$ vektortérnek.
 	Legyen $A\in L\left( V,W \right)$ egy rögzített lineáris operáció.
 	Definiáljuk az $\alpha_{i,j}$ számokat,
-	mint az $Ae_{j}\in W$ vektor $\left\{ y_1,\ldots,y_n \right\}$ bázisban felírt koordináta-vektorának
+	mint az $Ae_{j}\in W$ vektor $\left\{ f_1,\ldots,f_n \right\}$ bázisban felírt koordináta-vektorának
 	$i$-edik elemét.
 	Magyarul
 	\[
@@ -6384,10 +6384,10 @@ amelyekre az
 egyenlőség teljesül:
 $\alpha_{i,j}$ a $j$-edik bázis elem $A$ képének $i$-edik koordinátája.
 Ugyanez a koordináta-vektor fogalmával:
-Az $Ae_j\in W$ vektornak az $\left\{ y_1,\ldots,y_n \right\}$ bázisban felírt koordináta-vektorának az elemei
+Az $Ae_j\in W$ vektornak az $\left\{ f_1,\ldots,f_n \right\}$ bázisban felírt koordináta-vektorának az elemei
 adják az $\alpha_{1,j},\alpha_{2,j},\ldots,\alpha_{n,j}$ számokat, formálisabban:
 \[
-	\left[ Ae_j \right]_{\left\{ y_1,\ldots,y_n \right\}}
+	\left[ Ae_j \right]_{\left\{ f_1,\ldots,f_n \right\}}
 	=
 	\begin{pmatrix}
 		\alpha_{1,j} \\ \alpha_{2,j}\\ \vdots \\ \alpha_{n,j}
@@ -16168,9 +16168,9 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
     \begin{enumerate}
         \item $w_1,\dots,w_s$ egyike sem zérus;
         \item $V=M_0\oplus\lin\left( w_1;A \right)\oplus\ldots\oplus\lin\left( w_s;A \right)$;
-        \item $g_{k}|g_{k-1}$ minden $k=2,\ldots,s$ mellett.
+        \item $q_{k}|q_{k-1}$ minden $k=2,\ldots,s$ mellett.
     \end{enumerate}
-    Ekkor $r=s$, $p_k=g_k$ minden $k=1,\ldots,r$ mellett és minden $k$ indexre
+    Ekkor $r=s$, $p_k=q_k$ minden $k=1,\ldots,r$ mellett és minden $k$ indexre
     $\lin\left( v_k;A \right)$ és $\lin\left( w_k;A \right)$ izomorf alterek.
 \end{proposition}
 \begin{proof}
