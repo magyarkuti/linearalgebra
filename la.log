@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.2)  5 NOV 2025 06:13
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.2)  7 NOV 2025 13:54
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -4105,9 +4105,9 @@ Package microtype Info: Character `⁻' is missing
 
 [43]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2964.
+(Font)              scaled to size 9.3886pt on input line 2979.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2964.
+(Font)              scaled to size 9.26996pt on input line 2979.
 
 
 [44]
@@ -4976,8 +4976,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 [224]
-FiXme Note: 'Ide hivatkozás kell' on input line 16533.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16536.
+FiXme Note: 'Ide hivatkozás kell' on input line 16548.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16551.
 
 
 [225]
@@ -4986,16 +4986,16 @@ FiXme Note: 'Ide is hivatkozás kell' on input line 16536.
 
 [227]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 16890.
+ hogy függetlenek!' on input line 16905.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 16921.
+FiXme Warning: 'Hivatkozás!!' on input line 16936.
 
 
 
 [228]
 
-FiXme Warning: 'Hivatkozás!' on input line 17066.
+FiXme Warning: 'Hivatkozás!' on input line 17081.
 
 
 
@@ -5134,14 +5134,14 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 Here is how much of LuaTeX's memory you used:
  40905 strings out of 476291
  156333,1977958 words of node,token memory allocated
- 5172 words of node memory still in use:
+ 5176 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 56 glue, 4 kern, 1 penalty, 2 margin_k
-ern, 4 glyph, 884 attribute, 198 glue_spec, 884 attribute_list, 3 write, 1 pdf_a
+ern, 4 glyph, 885 attribute, 198 glue_spec, 885 attribute_list, 3 write, 1 pdf_a
 ction nodes
-   avail lists: 1:8,2:1413,3:443,4:127,5:975,6:268,7:10982,8:136,9:2826,10:26,11
-:1203
+   avail lists: 1:10,2:1413,3:443,4:127,5:974,6:268,7:10982,8:136,9:2826,10:26,1
+1:1203
  61412 multiletter control sequences out of 65536+600000
- 186 fonts using 56238207 bytes
+ 186 fonts using 56238103 bytes
  86i,17n,115p,1194b,2171s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -5158,7 +5158,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (239 pages, 9373446 bytes).
+Output written on la.pdf (239 pages, 9373885 bytes).
 
 PDF statistics: 3073 PDF objects out of 3580 (max. 8388607)
  2764 compressed objects within 28 object streams
