@@ -2522,19 +2522,34 @@ Most nézzük, hogy mit jelent az algebra alaptétele a valós test feletti poli
 
 	Ha a gyök speciálisan valós szám, akkor a multiplicitásra vonatkozó állítás semmit mondó.
 	Ha most $z$ egy nem valós komplex gyök,
-	akkor $p(t)=\left( t-z \right)\left( t-\bar{z} \right)h\left( t \right)$.
+	akkor $p(t)=h\left( t \right)\left( t-z \right)\left( t-\bar{z} \right)$, valamely
+    $h(t)\in\mathbb{C}\left[ t \right]$ mellett.
     Vegyük észre, hogy a 
-    $\left( t-z \right)\left( t-\bar{z} \right)$
-    polinom is valós együtthatós, ezért a maradékos osztás tételének egyértelműsége szerint
-    a $h$ polinom együtthatói is valós számok.
-    Így
+    \[
+        q\left( t \right)
+        =
+        \left( t-z \right)\left( t-\bar{z} \right)
+        =
+        t^2-\left( 2\Re z \right)t+|z|^2
+    \]
+    polinom is valós együtthatós.
+    A maradékos osztás tételét a valós számtest felett alkalmazva látjuk, hogy léteznek 
+    $h_1(t),r_1(t)\in\mathbb{R}\left[ t \right]$ valós együtthatós polinomok, 
+    amelyekre $p=h_1q+r_1$ és $\deg r_1<2$. 
+    Persze $p$ és $q$ polinomok komplex együtthatósnak is tekinthetők,
+    tehát a komplex test feletti maradékos osztás tételének egyértelműsége szerint
+    $h_1=h$.
+    Azt kaptuk tehát, hogy a $h$ polinom együtthatói is valós számok.
+    Emiatt
 	$h\left( z \right)=0$ pontosan akkor, ha $h\left( \bar{z} \right)=0$.
-	Ha tehát $z$ egy $k$-szoros gyök, akkor a fentit $k$-szor ismételve
-	azt kapjuk, hogy
+	
+    Ha tehát $z$ egy $k$-szoros gyök, akkor a fentit $k$-szor ismételve
+	kapjuk, hogy
 	\[
 		p\left( t \right)=\left( t-z \right)^{k}\left( t-\bar{z} \right)^{k}\cdot h\left( t \right)
 	\]
-	alakú, ahol a $h$ polinomnak már $z$, de  $\bar{z}$ sem gyöke.
+	alakú, ahol a $h$ valós együtthatós polinomnak már $z$, de  $\bar{z}$ sem gyöke.
+    Ez pont azt jelenti, hogy a $\bar{z}$ komplex szám is $k$-szoros multiplicitású gyöke a $p$ polinomnak.
 \end{proof}
 Minden valós együtthatós polinom előáll mint első vagy másodfokú polinomok szorzata:
 \begin{proposition}\label{pr:RealPolFact}
