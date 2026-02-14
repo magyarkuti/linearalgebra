@@ -1,10 +1,10 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.10.2)  22 NOV 2025 08:21
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.1)  14 FEB 2026 12:08
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
 (./la.tex
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-09-02>
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-29>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
@@ -42,23 +42,23 @@ Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
 Inserting `tracingstacklevels' in `input_level_string'. (/opt/texlive/texdir/te
 xmf-dist/tex/latex/memoir/memoir.cls
-Document Class: memoir 2025/03/10 v3.8.3b configurable book, report, article do
+Document Class: memoir 2025/11/04 v3.8.4b configurable book, report, article do
 cument class
 (/opt/texlive/texdir/texmf-dist/tex/latex/xpatch/xpatch.sty
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-09-02 L3 programming layer (loader) 
+Package: expl3 2025-12-29 L3 programming layer (loader) 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
-File: l3backend-luatex.def 2025-06-09 L3 backend support: PDF output (LuaTeX)
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count273
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
+Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count274
 ))
 \onelineskip=\skip49
@@ -166,7 +166,7 @@ luatex-cache/generic/names/luaotfload-names.luc.gz)
 \afterPoemTitleskip=\skip116
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/tools/array.sty
-Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen152
 \ar@mcellbox=\box53
 \extrarowheight=\dimen153
@@ -176,7 +176,7 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \ar@cellbox=\box54
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/tools/dcolumn.sty
-Package: dcolumn 2023/07/08 v1.06 decimal alignment package (DPC)
+Package: dcolumn 2025/10/21 v1.06 decimal alignment package (DPC)
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/tools/delarray.sty
 Package: delarray 2014/10/28 v1.01 array delimiter package (DPC)
@@ -245,8 +245,6 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \afterepigraphskip=\skip131
 \epigraphwidth=\skip132
 \epigraphrule=\skip133
-LaTeX Info: Redefining \em on input line 7017.
-LaTeX Info: Redefining \emph on input line 7025.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
@@ -310,8 +308,8 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 \indexrule=\skip161
 \indexmarkstyle=\toks22
 \@indexbox=\insert252
-LaTeX Info: Redefining \raggedbottom on input line 8108.
-LaTeX Info: Redefining \flushbottom on input line 8112.
+LaTeX Info: Redefining \raggedbottom on input line 8095.
+LaTeX Info: Redefining \flushbottom on input line 8099.
 \glossarycolsep=\dimen185
 \glossaryrule=\dimen186
 \sideparvshift=\skip162
@@ -341,10 +339,9 @@ LaTeX Info: Redefining \flushbottom on input line 8112.
 \sidefootmarksep=\skip179
 \sidefootparindent=\skip180
 \c@pagenote=\count310
-
-patch 2 for \immediateaddtocontents failed
 \c@pagenoteshadow=\count311
 \mem@pn@lastkern=\skip181
+
 (/opt/texlive/texdir/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks23
@@ -381,11 +378,6 @@ Package: shortvrb 2024/12/25 v3.0q Standard LaTeX documentation package V3 (FMi
 \c@sheetsequence=\count326
 \c@lastsheet=\count327
 \c@lastpage=\count328
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/textcase/textcase.sty
-Package: textcase 2025/02/16 v1.05 Text only upper/lower case changing (DPC)
-Package textcase Info: Defining Legacy names on input line 20.
-)
 \c@figure=\count329
 \c@lofdepth=\count330
 \cftbeforefigureskip=\skip185
@@ -446,7 +438,7 @@ eX
 \l__fontspec_tmpc_dim=\dimen194
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 (/opt/texlive/texdir/texmf-dist/tex/latex/microtype/microtype.sty
@@ -500,7 +492,7 @@ Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaL
 aTeX
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
@@ -764,7 +756,7 @@ LaTeX Encoding Info:    Redeclaring text symbol \textdiv (encoding TS1) on inpu
 t line 194.
 ))
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/06/16 v2.17y AMS math features
+Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip192
 
 For additional information on amsmath, use the `?' option.
@@ -828,8 +820,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \multlinegap=\skip193
 \multlinetaggap=\skip194
 \mathdisplay@stack=\toks32
-LaTeX Info: Redefining \[ on input line 2949.
-LaTeX Info: Redefining \] on input line 2950.
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
 )
 (/opt/texlive/texdir/texmf-dist/tex/lualatex/lualatex-math/lualatex-math.sty
 Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting wit
@@ -1389,12 +1381,13 @@ Package: fixme 2019/01/03 v4.5 Collaborative annotations for LaTeX2e
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/opt/texlive/texdir/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks40
 \XKV@tempa@toks=\toks41
+\XKV@tempb@toks=\toks42
 )
 \XKV@depth=\count367
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -1427,7 +1420,7 @@ File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 \Gin@req@width=\dimen262
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool.sty
-Package: datatool 2025/04/25 v3.4.1 (NLCT)
+Package: datatool 2025/12/04 v3.4.3 (NLCT)
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
@@ -1437,29 +1430,29 @@ Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/tracklang/tracklang.tex))
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-base.sty
-Package: datatool-base 2025/04/25 v3.4.1 (NLCT)
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-lua.def
-File: datatool-lua.def 2025/04/25 v3.4.1 (NLCT)
-)
-\@dtl@toks=\toks42
-\@dtl@tmpcount=\count373
-\dtl@tmplength=\skip198
-\l__datatool_measure_box=\box61
-\dtl@sortresult=\count374
-
-(/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
-File: datatool-utf8.ldf 2025/04/25 v3.4.1 (NLCT)
-)
-\@dtl@datatype=\count375
-\l__datatool_tmpa_int=\count376
-\l__datatool_tmpb_int=\count377
-\l__datatool_tmpc_int=\count378
-\l__datatool_tmpd_int=\count379
-\l__datatool_count_int=\count380
-\l__datatool_tmp_datatype_int=\count381
+Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
+\l__datatool_tmpa_int=\count373
+\l__datatool_tmpb_int=\count374
+\l__datatool_tmpc_int=\count375
+\l__datatool_tmpd_int=\count376
+\l__datatool_count_int=\count377
+\l__datatool_tmp_datatype_int=\count378
 \l__datatool_tmpa_dim=\dimen263
 \l__datatool_tmpb_dim=\dimen264
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-lua.def
+File: datatool-lua.def 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@toks=\toks43
+\@dtl@tmpcount=\count379
+\dtl@tmplength=\skip198
+\l__datatool_measure_box=\box61
+\dtl@sortresult=\count380
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
+File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@datatype=\count381
 \c_datatool_unknown_int=\count382
 \l__datatool_year_int=\count383
 \l__datatool_month_int=\count384
@@ -1489,12 +1482,12 @@ File: datatool-utf8.ldf 2025/04/25 v3.4.1 (NLCT)
 \l__datatool_action_datum_round_int=\count407
 \dtlcolumnnum=\count408
 \dtlrownum=\count409
-\@dtl@before=\toks43
-\@dtl@after=\toks44
-\@dtl@colhead=\toks45
-\dtlcurrentrow=\toks46
-\dtlbeforerow=\toks47
-\dtlafterrow=\toks48
+\@dtl@before=\toks44
+\@dtl@after=\toks45
+\@dtl@colhead=\toks46
+\dtlcurrentrow=\toks47
+\dtlbeforerow=\toks48
+\dtlafterrow=\toks49
 \l__datatool_map_data_max_cols_int=\count410
 \l__datatool_map_data_edit_column_int=\count411
 \dtlforeachlevel=\count412
@@ -1508,19 +1501,19 @@ File: datatool-utf8.ldf 2025/04/25 v3.4.1 (NLCT)
 \g__filtered_row_i_int=\count420
 \g__filtered_row_ii_int=\count421
 \g__filtered_row_iii_int=\count422
-\@dtl@curi=\toks49
-\@dtl@previ=\toks50
-\@dtl@nexti=\toks51
-\@dtl@curii=\toks52
-\@dtl@previi=\toks53
-\@dtl@nextii=\toks54
-\@dtl@curiii=\toks55
-\@dtl@previii=\toks56
-\@dtl@nextiii=\toks57
+\@dtl@curi=\toks50
+\@dtl@previ=\toks51
+\@dtl@nexti=\toks52
+\@dtl@curii=\toks53
+\@dtl@previi=\toks54
+\@dtl@nextii=\toks55
+\@dtl@curiii=\toks56
+\@dtl@previii=\toks57
+\@dtl@nextiii=\toks58
 \l_datatool_display_per_row_int=\count423
 \l_datatool_display_tab_rows_int=\count424
-\@dtl@toksA=\toks58
-\@dtl@toksB=\toks59
+\@dtl@toksA=\toks59
+\@dtl@toksB=\toks60
 \@dtl@elements=\count425
 \__datatool_sort_data_sortcol_int=\count426
 \__datatool_sort_data_grpcol_int=\count427
@@ -1543,7 +1536,7 @@ Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 \nev@az=\count435
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2025/09/22 v2.8 Modern multilingual typesetting with XeLaT
+Package: polyglossia 2025/12/01 v2.9 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
 Lua module: polyglossia 2013/05/11 v1.3 Polyglossia
 \l_xpg_alias_keyvals_int=\count436
@@ -1580,7 +1573,7 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks60
+\pdftexcmds@toks=\toks61
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
@@ -1806,7 +1799,7 @@ Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2025-09-02 L3 programming layer (loader) 
+(biblatex)             2025-12-29 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -1849,7 +1842,7 @@ Package: fxtargetlayoutcolor
 Package: gitinfo2 2015/11/22 v2.0.7 git revision information
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen265
 \ESO@tempdimb=\dimen266
 )
@@ -1861,7 +1854,7 @@ Package: gitexinfo 2015/11/22 v2.0.7 Auxiliary package for gitinfo2
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip276
 \enit@outerparindent=\dimen267
-\enit@toks=\toks61
+\enit@toks=\toks62
 \enit@inbox=\box62
 \enit@count@id=\count563
 \enitdp@description=\count564
@@ -1883,7 +1876,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen273
 \Gm@layouthoffset=\dimen274
 \Gm@layoutvoffset=\dimen275
-\Gm@dimlist=\toks62
+\Gm@dimlist=\toks63
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
@@ -1968,7 +1961,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip277
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/memoir/memhfixc.sty
-Package: memhfixc 2025/03/06 v1.23 hyperref package fixes for memoir class
+Package: memhfixc 2025/09/16 v1.24 hyperref package fixes for memoir class
 \c@memhycontfloat=\count578
 \c@mem@Hpagenote=\count579
 )
@@ -2111,12 +2104,12 @@ Package microtype Info: Character `⁻' is missing
 \scratchbox=\box63
 \nofMPsegments=\count582
 \nofMParguments=\count583
-\everyMPshowfont=\toks63
+\everyMPshowfont=\toks64
 \MPscratchCnt=\count584
 \MPscratchDim=\dimen281
 \MPnumerator=\count585
 \makeMPintoPDFobject=\count586
-\everyMPtoPDFconversion=\toks64
+\everyMPtoPDFconversion=\toks65
 ) (/opt/texlive/texdir/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -2348,8 +2341,6 @@ Package microtype Info: Character `ﬅ' is missing
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/sc/20.74'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2429,12 +2420,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `TeXGyreCursor' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-<./Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG>]
-
-[2]
+<./Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG>] [2]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2527,11 +2516,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-
-[3]
-
-[4
+) [3] [4
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
@@ -2619,8 +2604,6 @@ Package microtype Info: Character `ﬅ' is missing
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/9'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2762,6 +2745,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/it/9'.
 (microtype)             Ignoring protrusion settings for this character.
+
 [5] (./la.toc
 \l@magyar = a dialect from \language\l@hungarian 
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
@@ -2995,15 +2979,9 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/b/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
+ [6
 
-
-[6
-
-]
-
-[7])
-
-[8]
+] [7]) [8]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3081,14 +3059,11 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
 (Font)              scaled to size 14.81598pt on input line 332.
+ [9
 
 
-[9
-
-
-]
-
-[10]
+] [10]
+fejezet 1.
 Package microtype Info: Character `‥' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/it/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3155,8 +3130,6 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/it/10'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
 [11
 
 ]
@@ -3292,9 +3265,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/it/5.5'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[12]
+ [12]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/7.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3445,11 +3416,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/6'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[13]
-
-[14]
+ [13] [14]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3750,9 +3717,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/5.5'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[15]
+ [15]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3978,43 +3943,8 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/m/n/5'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[16]
-
-[17]
-
-[18]
-
-[19]
-
-[20]
-
-[21]
-
-[22]
-
-[23]
-
-[24]
-
-[25]
-
-[26]
-
-[27]
-
-[28]
-
-[29]
-
-[30]
-
-[31]
-
-[32]
-
-[33]
+ [16] [17] [18] [19] [20] [21] [22] [23] [24] [25]
+[26] [27] [28] [29] [30] [31] [32] [33]
 Package microtype Info: Character `‥' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/it/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -4081,238 +4011,67 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/it/8'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[34]
-
-[35]
-
-[36]
-
-[37]
-
-[38
+ [34] [35] [36] [37] [38
 
 ]
-
-[39]
-
-[40]
-
-[41]
-
-[42]
-
-[43]
+fejezet 2.
+[39] [40] [41] [42] [43]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
 (Font)              scaled to size 9.3886pt on input line 2979.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
 (Font)              scaled to size 9.26996pt on input line 2979.
-
-
-[44]
-
-[45]
-
-[46]
-
-[47]
-
-[48]
-
-[49]
-
-[50]
-
-[51]
-
-[52]
-
-[53]
-
-[54]
-
-[55]
-
-[56]
-
-[57]
-
-[58]
-
-[59]
-
-[60]
-
-[61]
-
-[62]
-
+ [44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
+[54] [55] [56] [57] [58] [59] [60] [61] [62]
+fejezet 3.
 [63
 
-]
-
-[64]
-
-[65]
-
-[66]
-
-[67]
-
-[68]
-
-[69]
-
-[70
+] [64] [65] [66] [67] [68] [69] [70
 
 ]
-
-[71]
-
-[72]
-
-[73]
-
-[74
+fejezet 4.
+[71] [72] [73] [74
 
 ]
-
-[75]
-
-[76]
-
-[77]
-
-[78]
-
-[79]
-
-[80]
-
+fejezet 5.
+[75] [76] [77] [78] [79] [80]
+fejezet 6.
 [81
 
-]
+] [82] [83] [84] [85] [86
 
-[82]
-
-[83]
-
-[84]
-
-[85]
-
-[86
-
-]
-
-[87]
-
-[88]
-
+] [87] [88]
+fejezet 7.
 [89
 
-]
-
-[90]
-
-[91]
-
-[92]
-
-[93]
-
-[94]
-
-[95]
-
-[96]
-
+] [90] [91] [92] [93] [94] [95] [96]
+fejezet 8.
 [97
 
-]
-
-[98]
-
-[99]
-
-[100
+] [98] [99] [100
 
 ]
-
-[101]
-
-[102]
-
-[103]
-
-[104
+fejezet 9.
+[101] [102] [103] [104
 
 ]
-
-[105]
-
-[106]
-
-[107]
-
-[108]
-
-[109]
-
-[110]
-
-[111]
-
-[112]
-
-[113]
-
-[114]
-
-[115]
-
-[116]
-
+fejezet 10.
+[105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116]
+fejezet 11.
 [117
 
-]
-
-[118]
-
-[119]
-
-[120]
-
+] [118] [119] [120]
+fejezet 12.
 [121
 
-]
-
-[122]
-
-[123]
-
-[124]
-
-[125]
-
-[126
+] [122] [123] [124] [125] [126
 
 ]
-
-[127]
-
-[128]
-
+fejezet 13.
+[127] [128]
+fejezet 14.
 [129
 
-]
-
-[130]
-
-[131]
-
-[132]
+] [130] [131] [132]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -4538,13 +4297,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/5.5'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[133]
-
-[134]
-
-[135]
+ [133] [134] [135]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -4770,253 +4523,71 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/5'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[136]
-
-[137]
-
-[138
+ [136] [137] [138
 
 ]
-
-[139]
-
-[140]
-
-[141]
-
-[142]
+fejezet 15.
+[139] [140] [141] [142]
+fejezet 16.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `DejavuSans' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
 [143
 
-]
-
-[144]
-
-[145]
-
-[146]
-
-[147]
-
-[148]
-
-[149]
-
-[150]
-
-[151]
-
-[152]
-
-[153]
-
-[154]
-
-[155]
-
-[156]
-
-[157]
-
-[158]
-
-[159]
-
-[160]
-
-[161]
-
-[162]
-
+] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154]
+[155] [156] [157] [158] [159] [160] [161] [162]
+fejezet 17.
 [163
 
-]
-
-[164]
-
-[165]
-
-[166]
-
-[167]
-
-[168]
-
-[169]
-
-[170]
-
-[171]
-
-[172]
-
-[173]
-
-[174
+] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174
 
 ]
-
-[175]
-
-[176]
-
-[177]
-
-[178]
-
-[179]
-
-[180]
-
+fejezet 18.
+[175] [176] [177] [178] [179] [180]
+fejezet 19.
 [181
 
-]
-
-[182]
-
-[183]
-
-[184]
-
-[185]
-
-[186
+] [182] [183] [184] [185] [186
 
 ]
-
-[187]
-
-[188]
-
-[189]
-
-[190]
-
-[191]
-
-[192
+fejezet 20.
+[187] [188] [189] [190] [191] [192
 
 ]
+fejezet 21.
+[193] [194] [195] [196] [197] [198] [199] [200] [201] [202] [203
 
-[193]
-
-[194]
-
-[195]
-
-[196]
-
-[197]
-
-[198]
-
-[199]
-
-[200]
-
-[201]
-
-[202]
-
-[203
-
-]
-
-[204]
-
+] [204]
+Függelék A.
 [205
 
-]
-
-[206]
-
-[207]
-
-[208]
-
-[209]
-
-[210]
-
-[211]
-
-[212]
-
+] [206] [207] [208] [209] [210] [211] [212]
+Függelék B.
 [213
 
-]
-
-[214]
-
-[215]
-
-[216]
-
-[217]
-
-[218]
-
-[219]
-
-[220]
-
-[221]
-
-[222]
-
+] [214] [215] [216] [217] [218] [219] [220] [221] [222]
+Függelék C.
 [223
 
-]
-
-[224]
+] [224]
 FiXme Note: 'Ide hivatkozás kell' on input line 16548.
 FiXme Note: 'Ide is hivatkozás kell' on input line 16551.
-
-
-[225]
-
-[226]
-
-[227]
+ [225] [226] [227]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
  hogy függetlenek!' on input line 16905.
 
 
 FiXme Warning: 'Hivatkozás!!' on input line 16936.
 
-
-
 [228]
 
 FiXme Warning: 'Hivatkozás!' on input line 17081.
 
+[229] [230] [231] [232] [233] [234] (./la.ind [235
 
 
-[229]
-
-[230]
-
-[231]
-
-[232]
-
-[233]
-
-[234] (./la.ind
-
-[235
-
-
-]
-
-[236
+] [236
 
 ]
 Package microtype Info: Character `ﬆ' is missing
@@ -5094,21 +4665,9 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
+ [237
 
-
-
-
-[237
-
-]
-
-
-
-[238]
-
-
-
-[239])
+] [238] [239])
 
 FiXme Summary: Number of notes: 3,
 (FiXme)        Number of warnings: 2,
@@ -5121,28 +4680,28 @@ FiXme Summary: Number of notes: 3,
 \openout7 = la.toc
 (./la.aux)
  ***********
-LaTeX2e <2025-06-01> patch level 1
+LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: 48913D858BF542F5FD116A39CC44C6F9;18828.
+(rerunfilecheck)             Checksum: DA4841D3CC8237205EDFF9A1E25C2C1D;18828.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 40905 strings out of 476291
+ 40898 strings out of 476081
  156333,1977958 words of node,token memory allocated
  5176 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 56 glue, 4 kern, 1 penalty, 2 margin_k
 ern, 4 glyph, 885 attribute, 198 glue_spec, 885 attribute_list, 3 write, 1 pdf_a
 ction nodes
-   avail lists: 1:10,2:1413,3:443,4:127,5:974,6:268,7:10982,8:136,9:2826,10:26,1
+   avail lists: 1:14,2:1413,3:443,4:127,5:977,6:268,7:10982,8:136,9:2826,10:26,1
 1:1203
- 61412 multiletter control sequences out of 65536+600000
- 186 fonts using 56238207 bytes
- 86i,17n,115p,1194b,2171s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61620 multiletter control sequences out of 65536+600000
+ 186 fonts using 56237999 bytes
+ 86i,17n,115p,1194b,2216s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
 tf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyrepa
@@ -5158,7 +4717,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (239 pages, 9374349 bytes).
+Output written on la.pdf (239 pages, 9373754 bytes).
 
 PDF statistics: 3073 PDF objects out of 3580 (max. 8388607)
  2764 compressed objects within 28 object streams
