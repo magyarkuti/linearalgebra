@@ -10265,7 +10265,8 @@ A determináns felépítésének sarokköve a következő gondolat.
 
 \begin{proposition}
     A Vandermonde-polinom két változójának felcserélésével előjelet vált!
-\end{proposition}
+\end{proposition
+Két módszerrel is bizonyítunk.
 \begin{proof}
     Legyen az $i,j$ indexekre $i<j$.
     A Vandermonde-polinom argumentum listájában cseréljük fel az $i$-edik és a $j$-edik változót.
@@ -10351,6 +10352,27 @@ A determináns felépítésének sarokköve a következő gondolat.
     Azt kell ugyanis észrevennünk, hogy a produktumokat tartalmazó hosszú sorban a második, az ötödik, és az utolsó szorzat tartalmaz olyan tagokat, ahol a kisebb indexű változóból vonjuk ki a nagyobb indexűt.
     Ezekből $(-1)$-et kiemelve kapjuk, hogy minden szorzó tényező már nagyobb index minusz kisebb index alakú,
     ami a $V\left( x_1,x_2,\cdots,x_n \right)$ definíciója.
+\end{proof}
+\begin{proof}
+Rögzítsük a $V\left( x_1\ldots,x_i,\ldots,x_j,\ldots,x_n \right)$ Vandermonde-polinomot. Legyen $i<j$ és $k \leq n-2$ az $x_i$ és $x_j$ között lévő változók száma. $k$ szerinti teljes indukció:
+\begin{enumerate}
+	\item $k = 0$:
+\[
+	\prod_{1 \leq p<l\leq n}x_l-x_p =V\left( x_1\ldots,x_j ,x_i,\ldots, x_n\right)=(x_j-x_i) \frac {V\left(x_1  \ldots,x_j,x_i,\ldots, x_n \right)}{x_i - x_j} = -V\left(x_1 \ldots,x_i, x_j,\ldots, x_n \right).
+\]
+	\item Tegyük fel, hogy az állítás igaz $k-1$-ig. Lássuk be $k$-ra. Indirekt tegyük fel, hogy $k$ változó felcserélésével nem vált előjelet a Vandermonde-polinom. Ez azt jelenti, hogy 
+\[
+V\left(x_1 \ldots,x_i,\ldots,x_j,\ldots, x_n \right) \neq -V\left(x_1 \ldots,x_j, x_{i+1}, \ldots,x_i, \dots,x_n \right).
+\]	
+No de,  $x_{i+1}$ és $x_i$ között $k-1$ változó van, ezért alkalmazhatjuk az indukciós feltevést.
+\[
+-V\left(x_1 \ldots,x_j, x_{i+1}, \ldots,x_i, \dots, x_n \right) = V\left(x_1 \ldots,x_j, x_i, \ldots,x_{i+1}, \dots, x_n \right)=
+\]
+\[
+-V\left(x_1 \ldots,x_i, x_j, \ldots,x_{i+1}, \dots, x_n \right)=V\left(x_1 \ldots,x_i,\ldots,x_j,\ldots, x_n \right).
+\]
+Kétszer használva az indukciós feltevést, ellentmondásra jutottunk. Tehát az állítás igaz $k$-ra is, ezt akartuk belátni.
+\end{enumerate}
 \end{proof}
 \begin{proposition}
     Rögzítsünk egy $\sigma\in S_n$ permutációt. 
