@@ -8580,19 +8580,6 @@ a $V_1$ altérre és az $A_1$ transzformációra.
 		      \]
 	\end{enumerate}
 \end{proposition}
-\begin{proposition}
-    Legyen $A\in L\left( V \right)$ lineáris transzformáció, és $p(t)\in\mathbb{F}[t]$ egy $k$-ad fokú 
-    irredecubilis polinom,
-    amelyre $p\left( A \right)^m=0$.
-    Ekkor az $\im p\left( A \right)^{m-1}$ altér nulla dimenziós, 
-    vagy $k$ dimenziós, vagy $k$ dimenziós alterek direktösszege.
-\end{proposition}
-\begin{proof}
-    Az egyszerűbb jelölések kedvéért legyen $B=p\left( A \right)$.
-    Persze $B^m=0$, így $\im B^{m-1}\subseteq\ker B $.
-    Persze $B^{m-1}$ is $A$-nak polinomja, 
-    ergo $B^{m-1}$ képtere is $A$-ra nézve invariáns altere $\ker B=\ker p\left( A \right)$-nak.
-\end{proof}
 Összefoglalhatjuk azt az esetet,
 mikor a minimálpolinom különböző irreducibilis polinomok szorzata.
 Ez éppen \aaz{pr:redukcio-primszorzat}. állítás esete.
@@ -8986,24 +8973,32 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\)
 	Persze e vektor a $\ker B=\ker p\left( A \right)$
 	egy eleme,
-	és $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós,
-	ezért
-	\[
-		\lin(B^{m-1}v;A)=
-		\lin\left\{
-		B^{m-1}v,
-		AB^{m-1}v,
-		A^2B^{m-1}v,
-		\ldots,
-		A^{k-1}B^{m-1}v
-		\right\}
-	\]
-	pontosan $k$ dimenziós.
-	Persze $\left\{ B^{m-1}v,B^{m-1}Av,B^{m-1}A^2v,\ldots,B^{m-1}A^{k-1}v \right\}\subseteq \im B^{m-1}$,
-	ergo
-	\[
-		\rho\left( B^{m-1}\right)\geq k.
-	\]
+	és $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós.
+    Vegyük most észre, hogy 
+    \( B^{m-1}\)
+    képtere egy nem triviális invariáns altere 
+    \(\ker p\left( A \right)\)-nak,
+    ergo 
+    \( \rho\left( B^{m-1} \right)
+    \geq
+    k.\)
+%	ezért
+%	\[
+%		\lin(B^{m-1}v;A)=
+%		\lin\left\{
+%		B^{m-1}v,
+%		AB^{m-1}v,
+%		A^2B^{m-1}v,
+%		\ldots,
+%		A^{k-1}B^{m-1}v
+%		\right\}
+%	\]
+%	pontosan $k$ dimenziós.
+%	Persze $\left\{ B^{m-1}v,B^{m-1}Av,B^{m-1}A^2v,\ldots,B^{m-1}A^{k-1}v \right\}\subseteq \im B^{m-1}$,
+%	ergo
+%	\[
+%		\rho\left( B^{m-1}\right)\geq k.
+%	\]
 	Alkalmazva $B$-re az imént igazolt \ref{th:nildim} tételt kapjuk a kívánt
 	\(
 	\dim(V)\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
@@ -9011,7 +9006,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	becslést.
 \end{proof}
 \begin{proposition}
-	Tetszőleges lineáris transzformáció minimálpolinomjának foka legfeljebb a tér dimenziója.
+	Egy lineáris transzformáció minimálpolinomjának fokszáma legfeljebb a tér dimenziója.
 	\label{th:minpol}
 \end{proposition}
 \begin{proof}
