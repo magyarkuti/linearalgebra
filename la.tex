@@ -7391,6 +7391,54 @@ amely mindig használható.
     Azt kaptuk tehát, hogy az $n\left( A \right)$ transzformáció a $\lin\left( v;A \right)$ egy bázisát zérusra viszi,
     ezért maga $n\left( A \right)$ a $\lin\left( v;A \right)$ altér zérus transzformációja.
 \end{proof}
+\begin{proposition}\label{pr:osszegkismp}
+    Legyen \(A\in L\left( V \right)\) egy lineáris transzformáció.
+    Tegyük fel, hogy \(V\) előáll mint  \(A\)-ra nézve invariáns altereinek direktösszege:
+    \[
+        V=
+        V_1\oplus\ldots\oplus V_s.
+    \]
+    Ha minden \(i\)-re az \(x_i\in V_i\) vektorhoz tartozó kis minimálpolinom \(p_i\),
+    akkor az \(x=\sum_{i=1}^sx_i\) vektorhoz tartozó kis minimálpolinom a 
+    \(p_1,\ldots,p_s\) polinomok legkisebb közös többszöröse.
+\end{proposition}
+\begin{proof}
+    Azt kell látnunk, hogy az alábbi polinomrendszerek azonosak:
+    \[
+        \left\{ h\in\mathbb{F}[t]:p_i|h, i=1,\dots,s \right\}
+        =
+        \left\{ h\in\mathbb{F}[t]:h\left( A \right)x=0 \right\}
+    \]
+    
+    Ha \(h\) a baloldali halmazhoz tartozó polinom, akkor \(h=f_ip_i\) valamely \(f_i\)
+    polinom mellett.
+    Ekkor persze \(h\left( A \right)x
+    =
+    f_i\left( A \right)p_i\left( A \right)x
+    =
+    f_i\left( A \right)0
+    =
+    0
+    \).
+    Azt mutattuk meg, hogy \(h\) a jobboldali halmazhoz is tartozik.
+
+    Most azt tegyük fel, hogy \(h\) egy a jobboldali halmazhoz tartozó polinom.
+    Az \(x\) vektor definíciója szerint
+    \(
+    0
+    =
+    h\left(A\right)x
+    =
+    \sum_{i=1}^sh\left( A \right)x_i
+    \).
+    Node \(h\left( A \right)x_i\in V_i\), hiszen az alterek az \(A\) transzformációra nézve invariánsak.
+    Mivel a direktösszeg értelmes, ezért minden \(i\) index mellett \(h\left( A \right)x_i=0\),
+    ezért \(p_i|h\). 
+    Megmutattuk tehát, hogy a fenti két polinomrendszer azonos.
+    
+    Már csak arra kell emlékeznünk, hogy a legkisebb közös többszörös a baloldali ideál egyetlen normált legkisebb fokú tagja,
+    míg az \(x\) vektorhoz tartozó kis minimálpolinom a jobboldali ideál egyetlen normált legkisebb fokú tagja.
+\end{proof}
 \subsubsection{Illusztráció}\label{se:kisminimalillusztracio}
 Legyen $\left\{ u_1,u_2,u_3 \right\}$ bázisa a $\mathbb{C}$ komplex számtest feletti $V$ vektortérnek.
 Az $A\in L\left( V \right)$ lineáris transzformációra
@@ -8876,6 +8924,93 @@ amelynek a transzformáció gyöke, ahol $n$ a tér dimenziója.
 Ebben a fejezetben látni fogjuk, hogy a fenti gondolat nagyon lényegesen erősíthető.
 Azt mutatjuk meg,
 hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
+
+Két egymástól független igazolást is adunk.
+Az első mutatja jobban a probléma igazi okát,
+nevezetesen, hogy a minimálpolinom is csak egy kis minimálpolinom.\footnote{Ennek észrevételéért külön köszönettel tartozom a jelenleg harmadéves hallgatónak, Tóth Dániel Istvánnak!}
+Már pedig az csak a Steinitz-lemma, hogy a kis minimálpolinom fokszáma,
+amely egybeesik egy lineárisan független vektorrendszer elemszámával,
+legfeljebb a tér dimenziója.
+
+A második igazolásban az alapgondolat, hogy a minimál polinom egy irreducibilis 
+\begin{math}
+    p
+\end{math}
+osztója esetén a 
+\begin{math}
+    \ker p\left( A \right)
+\end{math}
+legalább 
+\begin{math}
+    \deg p
+\end{math} dimenziós.
+Ennek segítségével becslést tudunk adni a tér dimenziójára.
+
+\begin{proposition}
+    Egy végesen generált vektortér tetszőleges lineáris operátorának a minimálpolinomja egybeesik az egyik
+    vektorhoz tartozó kis minimálpolinommal.
+\end{proposition}
+\begin{proof}
+    Nézzük először azt az esetet, 
+    amikor a minimálpolinom csak egy irreducibilis polinom hatványa.
+    Jelölje $A\in L\left( V \right)$ a transzformációt, 
+    és \(p^m\) annak minimálpolinomját.
+    Az \(m=1\) esetben láttuk, 
+    hogy tetszőleges nem zérus vektor kis minimálpolinomja is \(p\).
+
+    Az \(m>1\) feltétel mellett újra vezessük be a \(B=p\left( A \right)\) jelölést.
+    Világos, hogy \(B^m=0\), de \(B^{m-1}\neq 0\), 
+    hiszen \(p^{m-1}\) a \(p^m\)-nél alacsonyabb fokszámú polinom.
+    Létezik tehát \(v\in V\), amelyre \(B^{m-1}v\neq 0\).
+    Persze ez az összes \(m\)-nél kisebb számra is igaz,
+    ergo \(p(A)^{k}v\neq 0\) minden \(k=0,\dots,m-1\) mellett.
+    Jelölje egy pillanatra \(q\) a \(v\) vektor kis minimálpolinomját.
+    Világos, hogy \(q|p^m\), hiszen \(p^m\) a minimálpolinom.
+    No de \(p\) irreducibilis, ezért \aaz{pr:polfactunicitas}.~polinom faktorizációs tétel egyértelműsége szerint,
+    \(p^m\)-nek csak \(p^k\) alakú osztója lehet valamely \(k=0,1,\dots,m\) mellett.
+    Éppen az imént láttuk, hogy ez csak \(k=m\) esetben lehetséges,
+    tehát a \(v\) vektorhoz tartozó \(q\) kis minimálpolinomra \(q=p^m\).
+    
+
+	Legyen most az \(A\) minimálpolinomja 
+	$
+		m\left( t \right)
+		=
+		p_1^{m_1}\left( t \right)\cdot
+		p_2^{m_2}\left( t \right)\cdots
+		p_r^{m_r}\left( t \right)
+	$
+    páronként különböző, 
+    irreducibilis polinomok hatványainak szorzata.
+    Tudjuk, -- \ref{pr:irred_redukcio}. --
+    hogy ekkor a vektortér előll invariáns alterek direktösszegeként:
+	\[
+		V
+		=
+		\ker p_1^{m_1}\left( A \right)
+		\oplus
+		\ker p_2^{m_2}\left( A \right)
+		\oplus\dots\oplus
+		\ker p_r^{m_r}\left( A \right).
+	\]
+	Az $A|_{\ker p_i^{m_i}\left( A \right)}$ minimálpolinomja $p_i^{m_i}\left( t \right)$, 
+    így minden egyes $i$ index mellett van egy \(x_i\in\ker p_i^{m_i}\left( A \right)\) vektor,
+    amelynek kis minimálpolinomja éppen \(p_i^{m_i}\).
+    Jelölje \(x=\sum_{i=1}^rx_i\).
+    Tudjuk, -- \ref{pr:osszegkismp}. --
+    hogy az \(x\) vektorhoz tartozó kis minimálpolinom a \(p_1^{m_1},\cdots,p_r^{m_r}\)
+    kis minimálpolinomok legkisebb közös többszöröse.
+    No de, ezen polinomok páronként különböző, normált, irreducibilis polinomoknak hatványai, 
+    ezért ezek legkisebb közös többszöröse éppen a szorzatuk, azaz \(m\).
+    Azt mutattuk meg tehát,
+    hogy az \(x\) vektorhoz tartozó kis minimálpolinom, 
+    és az \(A\) lineáris transzformáció minimálpolinomja azonosak.
+\end{proof}
+
+Hogy több oldalról is értsük a jelenséget, 
+most rátérünk a becslésen alapuló gondolatra.
+Az első lemmát még másra is használjuk, sőt az itt kimondott alaknál kicsit általánosabb környezetben is,
+mikor konkrét Jordan-alak felírására kerül sor.
 \begin{lemma}
 	Legyen $B\in L\left( V \right)$ lineáris transzformáció,
 	tegyük fel, hogy a $v_1,\ldots,v_r$ vektorok mindegyikére $B^mv_j=0$,
@@ -8979,7 +9114,8 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\)
 	Persze e vektor a $\ker B=\ker p\left( A \right)$
 	egy eleme,
-	és $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós.
+    és tudjuk, -- \ref{pr:csaba}. --
+    hogy $\ker p\left( A \right)$-ban minden nem zérus elem generálta invariáns altér éppen $k$-dimenziós.
     Vegyük most észre, hogy 
     \( B^{m-1}\)
     képtere egy nem triviális invariáns altere 
@@ -9005,7 +9141,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 %	\[
 %		\rho\left( B^{m-1}\right)\geq k.
 %	\]
-	Alkalmazva $B$-re az imént igazolt \ref{th:nildim} tételt kapjuk a kívánt
+	Alkalmazva $B$-re az imént igazolt \ref{th:nildim}.~észrevételt már kapjuk is a kívánt
 	\(
 	\dim(V)\geq m\rho\left( B^{m-1} \right)\geq m\cdot k
 	\)
@@ -9052,69 +9188,13 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\]
 	%    \end{IEEEeqnarray}
 \end{proof}
-Később ki fog derülni,
+Egy harmadik okot és látunk majd a determináns fogalmának megértése után.
+Ki fog derülni,
 hogy a transzformáció karakterisztikus polinomjának, amely pontosan $\dim(V)$-ed fokú,
 is mindig gyöke a transzformáció.
 Ez az úgynevezett Cayley\,--\,Hamilton-tétel.\index{Cayley\,--\,Hamilton}
-\begin{proposition}
-    Egy végesen generált vektortér tetszőleges lineáris operátorának a minimálpolinomja egybeesik az egyik
-    vektorhoz tartozó kis minimálpolinommal.
-\end{proposition}
-\begin{proof}
-    Nézzük először azt az esetet, 
-    amikor a minimálpolinom csak egy irreducibilis polinom hatványa.
-    Jelölje $A\in L\left( V \right)$ a transzformációt, 
-    és \(p^m\) annak minimálpolinomját.
-    Az \(m=1\) esetben láttuk, 
-    hogy tetszőleges nem zérus vektor kis minimálpolinomja is \(p\).
-
-    Az \(m>1\) feltétel mellett újra vezessük be a \(B=p\left( A \right)\) jelölést.
-    Világos, hogy \(B^m=0\), de \(B^{m-1}\neq 0\), 
-    hiszen \(p^{m-1}\) a \(p^m\)-nél alacsonyabb fokszámú polinom.
-    Létezik tehát \(v\in V\), amelyre \(B^{m-1}v\neq 0\).
-    Persze ez az összes \(m\)-nél kisebb számra is igaz,
-    ergo \(p(A)^{k}v\neq 0\) minden \(k=0,\dots,m-1\) mellett.
-    Jelölje egy pillanatra \(q\) a \(v\) vektor kis minimálpolinomját.
-    Világos, hogy \(q|p^m\), hiszen \(p^m\) a minimálpolinom.
-    No de \(p\) irreducibilis, ezért \aaz{pr:polfactunicitas}.~polinom faktorizációs tétel egyértelműsége szerint,
-    \(p^m\)-nek csak \(p^k\) alakú osztója lehet valamely \(k=0,1,\dots,m\) mellett.
-    Éppen az imént láttuk, hogy ez csak \(k=m\) esetben lehetséges,
-    tehát a \(v\) vektorhoz tartozó \(q\) kis minimálpolinomra \(q=p^m\).
-    
-
-	Legyen most az \(A\) minimálpolinomja 
-	$
-		m\left( t \right)
-		=
-		p_1^{m_1}\left( t \right)\cdot
-		p_2^{m_2}\left( t \right)\cdots
-		p_r^{m_r}\left( t \right)
-	$
-    páronként különböző, 
-    irreducibilis polinomok hatványainak szorzata.
-	Tudjuk, hogy ekkor
-	\[
-		V
-		=
-		\ker p_1^{m_1}\left( A \right)
-		\oplus
-		\ker p_2^{m_2}\left( A \right)
-		\oplus\dots\oplus
-		\ker p_r^{m_r}\left( A \right).
-	\]
-	Az $A|_{\ker p_i^{m_i}\left( A \right)}$ minimálpolinomja $p_i^{m_i}\left( t \right)$, 
-    így minden egyes $i$ index mellett van egy \(x_i\in\ker p_i^{m_i}\left( A \right)\) vektor,
-    amelynek kis minimálpolinomja éppen \(p_i^{m_i}\).
-    Jelölje \(x=\sum_{i=1}^rx_i\).
-    Tudjuk, 
-    hogy az \(x\) vektorhoz tartozó kis minimálpolinom a \(p_1^{m_1},\cdots,p_r^{m_r}\)
-    kis minimálpolinomok legkisebb közös többszöröse.
-    No de, ezen polinomok páronként különböző, normált, irreducibilis polinomoknak hatványai, 
-    ezért ezek legkisebb közös többszöröse éppen a szorzatuk, azaz \(m\).
-    Azt mutattuk meg tehát,
-    hogy az \(x\) vektorhoz tartozó kis minimálpolinom, 
-    és az \(A\) lineáris transzformáció minimálpolinomja azonosak.
-\end{proof}
+Ilyen módon a minimálpolinom osztója egy pontosan dimenzió fokú polinomnak, 
+ergo e polinom fokszáma legfeljebb a tér dimenziója.
 \chapter{Nilpotens transzformációk}
 \section{Hatvány függvény alakú minimálpolinom}
 \begin{definition}[nilpotens transzformáció]
