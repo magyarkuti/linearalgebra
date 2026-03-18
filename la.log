@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.1)  16 MAR 2026 14:46
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.1)  18 MAR 2026 11:40
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -4017,9 +4017,9 @@ Package microtype Info: Character `⁻' is missing
 fejezet 2.
 [39] [40] [41] [42] [43]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2979.
+(Font)              scaled to size 9.3886pt on input line 2984.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2979.
+(Font)              scaled to size 9.26996pt on input line 2984.
  [44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
 [54] [55] [56] [57] [58] [59] [60] [61] [62]
 fejezet 3.
@@ -4067,11 +4067,11 @@ fejezet 12.
 
 ]
 fejezet 13.
-[127] [128]
-fejezet 14.
-[129
+[127] [128] [129] [130
 
-] [130] [131] [132]
+]
+fejezet 14.
+[131] [132] [133] [134]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -4297,7 +4297,7 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/5.5'.
 (microtype)             Ignoring protrusion settings for this character.
- [133] [134] [135]
+ [135] [136] [137]
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -4523,71 +4523,71 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(1)/b/n/5'.
 (microtype)             Ignoring protrusion settings for this character.
- [136] [137] [138
+ [138] [139] [140
 
 ]
 fejezet 15.
-[139] [140] [141] [142]
+[141] [142] [143] [144]
 fejezet 16.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `DejavuSans' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[143
+[145
 
-] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154]
-[155] [156] [157] [158] [159] [160] [161] [162]
+] [146] [147] [148] [149] [150] [151] [152] [153] [154] [155] [156]
+[157] [158] [159] [160] [161] [162] [163] [164]
 fejezet 17.
-[163
+[165
 
-] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174
+] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176
 
 ]
 fejezet 18.
-[175] [176] [177] [178] [179] [180]
+[177] [178] [179] [180] [181] [182]
 fejezet 19.
-[181
+[183
 
-] [182] [183] [184] [185] [186
+] [184] [185] [186] [187] [188
 
 ]
 fejezet 20.
-[187] [188] [189] [190] [191] [192
+[189] [190] [191] [192] [193] [194
 
 ]
 fejezet 21.
-[193] [194] [195] [196] [197] [198] [199] [200] [201] [202] [203
+[195] [196] [197] [198] [199] [200] [201] [202] [203] [204] [205
 
-] [204]
+] [206]
 Függelék A.
-[205
+[207
 
-] [206] [207] [208] [209] [210] [211] [212]
+] [208] [209] [210] [211] [212] [213] [214]
 Függelék B.
-[213
+[215
 
-] [214] [215] [216] [217] [218] [219] [220] [221] [222]
+] [216] [217] [218] [219] [220] [221] [222] [223] [224]
 Függelék C.
-[223
+[225
 
-] [224]
-FiXme Note: 'Ide hivatkozás kell' on input line 16543.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16546.
- [225] [226] [227]
+] [226]
+FiXme Note: 'Ide hivatkozás kell' on input line 16607.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16610.
+ [227] [228] [229]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 16900.
+ hogy függetlenek!' on input line 16964.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 16931.
+FiXme Warning: 'Hivatkozás!!' on input line 16995.
 
-[228]
+[230]
 
-FiXme Warning: 'Hivatkozás!' on input line 17076.
+FiXme Warning: 'Hivatkozás!' on input line 17140.
 
-[229] [230] [231] [232] [233] [234] (./la.ind [235
+[231] [232] [233] [234] [235] [236] (./la.ind [237
 
 
-] [236
+] [238
 
 ]
 Package microtype Info: Character `ﬆ' is missing
@@ -4665,9 +4665,9 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [237
+ [239
 
-] [238] [239])
+] [240] [241])
 
 FiXme Summary: Number of notes: 3,
 (FiXme)        Number of warnings: 2,
@@ -4691,16 +4691,16 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40897 strings out of 476081
+ 40901 strings out of 476081
  156333,1977958 words of node,token memory allocated
- 5168 words of node memory still in use:
+ 5172 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 56 glue, 4 kern, 1 penalty, 2 margin_k
-ern, 4 glyph, 883 attribute, 198 glue_spec, 883 attribute_list, 3 write, 1 pdf_a
+ern, 4 glyph, 884 attribute, 198 glue_spec, 884 attribute_list, 3 write, 1 pdf_a
 ction nodes
    avail lists: 1:15,2:1413,3:443,4:127,5:977,6:268,7:10982,8:136,9:2826,10:26,1
 1:1203
- 61620 multiletter control sequences out of 65536+600000
- 186 fonts using 56238207 bytes
+ 61621 multiletter control sequences out of 65536+600000
+ 186 fonts using 56238103 bytes
  86i,17n,115p,1194b,2216s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4717,10 +4717,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (239 pages, 9372579 bytes).
+Output written on la.pdf (241 pages, 9377806 bytes).
 
-PDF statistics: 3071 PDF objects out of 3580 (max. 8388607)
- 2762 compressed objects within 28 object streams
- 1163 named destinations out of 1200 (max. 131072)
+PDF statistics: 3084 PDF objects out of 3580 (max. 8388607)
+ 2773 compressed objects within 28 object streams
+ 1166 named destinations out of 1200 (max. 131072)
  785 words of extra memory for PDF output out of 10000 (max. 100000000)
 
