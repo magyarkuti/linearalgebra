@@ -1414,11 +1414,16 @@ akkor csak $d=p$ lehetséges, ergo $p|f$.
     Ekkor \aaz{pr:rprim}. állítás  szerint $p|f_n$.
 \end{proof}
 Az is igaz, hogy ha egy polinom reducibilis, akkor az nem prím, de ezt a gyakorlatokra hagyjuk.
-Összeségében látjuk tehát,
+Összességében látjuk tehát,
 hogy a polinomok irreducibilitása és prím tulajdonsága azonos fogalmak.
 
-Az irreducibilis polinomok prím tulajdonsága segítségével a polinomok faktorizáció egyértelműségét is igazolhatjuk.
-\begin{proposition}
+Az irreducibilis polinomok prím tulajdonsága segítségével \aaz{pr:polfact}.~polinom faktorizáció egyértelműségét is igazolhatjuk.
+Az egyértelműség azért fontos,
+mert nélküle nem látnánk, hogy ha egy polinomot felírjuk irreducibilis polinomok szorzataként, 
+akkor e polinom minden osztója előáll, mint az irreducibilisek közül néhánynak a szorzata.
+Legegyszerűbb példaként: a \(t^n\) polinomnak normált osztója csak \(t^k\) lehet valamely 
+\(0\leq k\leq n\) mellett.
+\begin{proposition}[polinom faktorizáció egyértelműsége]\label{pr:polfactunicitas}
 	Legyen $p \in\mathbb{F}\left[ t \right]$ egy legalább elsőfokú normált polinom.
 	Ekkor ezek sorrendjétől eltekintve egyértelműen léteznek legalább elsőfokú, normált, irreduciblis $q_1,\ldots,q_s\in\mathbb{F}\left[ t \right]$ polinomok,
 	hogy $p=q_1\cdots q_s$.
@@ -1431,7 +1436,7 @@ legalább elsőfokú, normált, irreducibilis polinomok szorzataként,
 akkor $s=r$ és a $p_1,\ldots,p_s$ polinomok alkalmas átindexelése után $p_j=q_j$,
 minden $j=1,\ldots,s$ mellett.
 \begin{proof}
-    \Aaz{pr:polfact}. állítás
+    \Aaz{pr:polfact}.~állítás
 	szerint $p$ előáll, mint normált, irreducibilis polinomok szorzata.
 	Itt legalább egy polinom legalább elsőfokú, hiszen $p$ legalább elsőfokú.
 	Ha van a szorzat tagjai közt nulladfokú, akkor az csak 1 lehet a normáltság szerint,
@@ -9010,7 +9015,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 	\label{th:minpol}
 \end{proposition}
 \begin{proof}
-	Legyen
+	Legyen a minimálpolinom
 	$
 		m\left( t \right)
 		=
@@ -9018,7 +9023,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 		p_2^{m_2}\left( t \right)\cdots
 		p_r^{m_r}\left( t \right)
 	$
-	a minimálpolinom relativ prím, irreducibilis polinomok hatványaiként való faktorizációja.
+	páronként különböző, irreducibilis polinomok hatványaiként való faktorizációja.
 	Tudjuk, hogy ekkor
 	\[
 		V
@@ -9050,6 +9055,65 @@ Később ki fog derülni,
 hogy a transzformáció karakterisztikus polinomjának, amely pontosan $\dim(V)$-ed fokú,
 is mindig gyöke a transzformáció.
 Ez az úgynevezett Cayley\,--\,Hamilton-tétel.\index{Cayley\,--\,Hamilton}
+\begin{proposition}
+    Egy végesen generált vektortér tetszőleges lineáris operátorának a minimálpolinomja egybeesik az egyik
+    vektorhoz tartozó kis minimálpolinommal.
+\end{proposition}
+\begin{proof}
+    Nézzük először azt az esetet, 
+    amikor a minimálpolinom csak egy irreducibilis polinom hatványa.
+    Jelölje $A\in L\left( V \right)$ a transzformációt, 
+    és \(p^m\) annak minimálpolinomját.
+    Az \(m=1\) esetben láttuk, 
+    hogy tetszőleges nem zérus vektor kis minimálpolinomja is \(p\).
+
+    Az \(m>1\) feltétel mellett újra vezessük be a \(B=p\left( A \right)\) jelölést.
+    Világos, hogy \(B^m=0\), de \(B^{m-1}\neq 0\), 
+    hiszen \(p^{m-1}\) a \(p^m\)-nél alacsonyabb fokszámú polinom.
+    Létezik tehát \(v\in V\), amelyre \(B^{m-1}v\neq 0\).
+    Persze ez az összes \(m\)-nél kisebb számra is igaz,
+    ergo \(p(A)^{k}v\neq 0\) minden \(k=0,\dots,m-1\) mellett.
+    Jelölje egy pillanatra \(q\) a \(v\) vektor kis minimálpolinomját.
+    Világos, hogy \(q|p^m\), hiszen \(p^m\) a minimálpolinom.
+    No de \(p\) irreducibilis, ezért \aaz{pr:polfactunicitas}.~polinom faktorizációs tétel egyértelműsége szerint,
+    \(p^m\)-nek csak \(p^k\) alakú osztója lehet valamely \(k=0,1,\dots,m\) mellett.
+    Éppen az imént láttuk, hogy ez csak \(k=m\) esetben lehetséges,
+    tehát a \(v\) vektorhoz tartozó \(q\) kis minimálpolinomra \(q=p^m\).
+    
+
+	Legyen most az \(A\) minimálpolinomja 
+	$
+		m\left( t \right)
+		=
+		p_1^{m_1}\left( t \right)\cdot
+		p_2^{m_2}\left( t \right)\cdots
+		p_r^{m_r}\left( t \right)
+	$
+    páronként különböző, 
+    irreducibilis polinomok hatványainak szorzata.
+	Tudjuk, hogy ekkor
+	\[
+		V
+		=
+		\ker p_1^{m_1}\left( A \right)
+		\oplus
+		\ker p_2^{m_2}\left( A \right)
+		\oplus\dots\oplus
+		\ker p_r^{m_r}\left( A \right).
+	\]
+	Az $A|_{\ker p_i^{m_i}\left( A \right)}$ minimálpolinomja $p_i^{m_i}\left( t \right)$, 
+    így minden egyes $i$ index mellett van egy \(x_i\in\ker p_i^{m_i}\left( A \right)\) vektor,
+    amelynek kis minimálpolinomja éppen \(p_i^{m_i}\).
+    Jelölje \(x=\sum_{i=1}^rx_i\).
+    Tudjuk, 
+    hogy az \(x\) vektorhoz tartozó kis minimálpolinom a \(p_1^{m_1},\cdots,p_r^{m_r}\)
+    kis minimálpolinomok legkisebb közös többszöröse.
+    No de, ezen polinomok páronként különböző, normált, irreducibilis polinomoknak hatványai, 
+    ezért ezek legkisebb közös többszöröse éppen a szorzatuk, azaz \(m\).
+    Azt mutattuk meg tehát,
+    hogy az \(x\) vektorhoz tartozó kis minimálpolinom, 
+    és az \(A\) lineáris transzformáció minimálpolinomja azonosak.
+\end{proof}
 \chapter{Nilpotens transzformációk}
 \section{Hatvány függvény alakú minimálpolinom}
 \begin{definition}[nilpotens transzformáció]
