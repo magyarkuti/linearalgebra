@@ -8927,7 +8927,7 @@ hogy a minimálpolinom fokszáma nem lehet a tér dimenziójánál magasabb.
 
 Két egymástól független igazolást is adunk.
 Az első mutatja jobban a probléma igazi okát,
-nevezetesen, hogy a minimálpolinom is csak egy kis minimálpolinom.\footnote{Ennek észrevételéért külön köszönettel tartozom a jelenleg harmadéves hallgatónak, Tóth Dániel Istvánnak!}
+nevezetesen, hogy a minimálpolinom is csak egy kis minimálpolinom.\footnote{Ennek észrevételéért külön köszönettel tartozom a jelenleg harmadéves hallgatónak, Tóth Dániel Istvánnak}
 Már pedig az csak a Steinitz-lemma, hogy a kis minimálpolinom fokszáma,
 amely egybeesik egy lineárisan független vektorrendszer elemszámával,
 legfeljebb a tér dimenziója.
@@ -10406,91 +10406,56 @@ A determináns felépítésének sarokköve a következő gondolat.
 \begin{proposition}
     A Vandermonde-polinom két változójának felcserélésével előjelet vált!
 \end{proposition}
-\begin{proof}
-    Legyen az $i,j$ indexekre $i<j$.
-    A Vandermonde-polinom argumentum listájában cseréljük fel az $i$-edik és a $j$-edik változót.
-    Azt kell megmutatnunk, hogy 
-    $V\left( \ldots,x_j,\ldots,x_i,\ldots \right)
-    =
-    -V\left( \ldots,x_i,\ldots,x_j,\ldots \right)$, ahol a ki nem írt változók a helyükön maradnak.
-    A definíció szerint a $V\left( \ldots,x_j,\ldots,x_i,\ldots \right)$ felírásához tekintenünk kell az összes 
-    $\left( k,l \right)$ párt, ahol $1\leq k<l\leq n$, és az 
-    \[\ldots,x_j,\ldots,x_i,\ldots
+\begin{proof}\footnote{Külön köszönet Tóth Dániel Istvánnak}
+    Rögzített $i<j$ indexek mellett cseréljük fel az $i$- és a $j$-edik változókat.
+    A bizonyítás gondolata, 
+    hogy ha a felcserélendő változók az argumentumlistában közvetlenül egymás mellett vannak,
+    akkor definícióban szereplő szorzatban a csere által csak egyetlen előjelváltás történik. 
+    Ha viszont nem egymást követő változókat cserélünk fel,
+    akkor az elérhető páratlan sok egymást követő változó felcserélésével is.
+    Ilyen módon páratlan sok előjelváltás a csere ára.
+    
+    Nézzük tehát először azt a speciális esetet, 
+    mikor az $x_i$ és az $x_j$ az argumentlumlista egymást követő elemei -- ergo
+    $j=i+1$.
+    Ekkor a 
+    $V\left( \ldots,x_i,x_j,\ldots \right)$ szorzat minden az $\left( x_j-x_i \right)$ szorzótól
+    különböző ${n \choose 2} -1$ darab tényezője azonos a
+    $V\left( \ldots,x_j,x_i,\ldots \right)$ szorzat ${n \choose 2} -1$ darab tényezőjével.
+    Az egyetlen különböző tag, csere előtt az $(x_j-x_i)$, 
+    majd csere után az $(x_i-x_j)$.
+    Ilyen módon
+    \[
+        \frac{V\left( \ldots,x_i,x_j,\ldots \right)}{x_j-x_i}
+        =
+        \frac{V\left( \ldots,x_j,x_i,\ldots \right)}{x_i-x_j},
     \]
-    argumentumlista
-    $l$-edik helyén szereplő változóból ki kell vonnunk a $k$-adik helyen szereplő változót, 
-    majd az összes ilyen tagot össze kell szoroznunk.
-    A következő esetek lehetségesek:
-    \begin{enumerate}
-        \item A $k$ és $l$ indexek egyike sem egyezik $i$-vel vagy $j$-vel.
-            Magyarul $i\neq k$, $i\neq l$, $j\neq k$, $j\neq l$. 
-            Ekkor a felcserélt argumentumú Vandermonde-polinom megfelelő tagjai:
-            \[
-                \prod_{\substack{k<l\\i\neq k,i\neq l\\ j\neq k,j\neq l}}x_l-x_k,
-            \]
-            hiszen csak olyan indexeket vettünk most figyelembe, ahol nem történt csere.
-        \item A $k$ és $l$ indexek közül pontosan az egyik azonos az $i$ vagy a $j$ egyikével.
-        \item A $k=i$ és $l=j$.
-            Egyetlen ilyen tag van. 
-            Az $l$-edik, azaz a $j$-edik, helyen az $x_i$ változó van.
-            Hasonlóan a $k$-adik, azaz az $i$-edik, pozíción az $x_j$ változó szerepel. 
-            Ergo 
-            \[
-                \left( x_i-x_j \right)
-            \]
-            tag szerepel a felcserélt listájú Vandermonde-polinom definíciójában.
-    \end{enumerate}
-    A 2. esetet bontsuk szét négy részre. 
-    Az első két esetben a $k$ index rögzül és az $l$ fut,
-    majd az $l$ rögzül és a $k$ fut.
-    Arra kell figyelnünk, hogy a felcserélt argumentum lista $i$-edik helyén $x_j$ van és a $j$-edik helyen $x_i$.
-    \begin{itemize}
-        \item[2.a)]
-            $k=i, l\neq j$. Az ide tartozó tagok szorzata:
-            \[
-                \prod_{\substack{l\\i<l<j}}x_l-x_j\cdot\prod_{\substack{l\\j<l}}x_l-x_j;
-            \]
-        \item[2.b)]
-            $k=j$ (ekkor persze $k<l$ miatt $l\neq i$ automatikusan teljesül.)
-            Az idetartozó rész:
-            \[
-                \prod_{\substack{l\\j<l}}x_l-x_i;
-            \]
-        \item[2.c)]
-            $l=j, k\neq i$. Az ide tartozó tagok szorzata:
-            \[
-                \prod_{\substack{k\\i<k<j}}x_i-x_k\cdot\prod_{\substack{k\\k<i}}x_i-x_k;
-            \]
-        \item[2.d)]
-            $l=i$ (ekkor persze $k<l$ miatt $k\neq j$ automatikusan teljesül.)
-            Az idetartozó rész:
-            \[
-                \prod_{\substack{k\\k<i}}x_j-x_k.
-            \]
-    \end{itemize}
-    Ilyen módon minden $k<l$ párt beszámítottunk, és mindegyiket csak egyszer vettük figyelembe.
-    Így a felcserélt argumentumokkal rendelkező Vandermonde-polinomra kapjuk, hogy
+    hiszen az egyszerűsítés után a két oldalon azonos szorzó tényezők szerepelnek.
+    Ebből persze már
+    \(
+        -V\left( \ldots,x_j,x_i,\ldots \right)
+    \)
+    következik is.
+
+    Amikor az $i$-edik és a $j$-edik argumentum között $t$ darab argumentum van -- ergo $j=i+t+1$ --,
+    akkor az argumentum lista egymás melletti változóinak felcserélésével kapjuk, hogy
     \begin{multline*}
-        V\left( \ldots,x_j,\ldots,x_i,\ldots \right)=\\
-                \prod_{\substack{k<l\\i\neq k,i\neq l\\ j\neq k,j\neq l}}x_l-x_k
-                \cdot
-                \prod_{\substack{l\\i<l<j}}x_l-x_j\cdot\prod_{\substack{l\\j<l}}x_l-x_j
-                \cdot
-                \prod_{\substack{l\\j<l}}x_l-x_i
-                \cdot
-                \prod_{\substack{k\\i<k<j}}x_i-x_k\cdot\prod_{\substack{k\\k<i}}x_i-x_k
-                \cdot
-                \prod_{\substack{k\\k<i}}x_j-x_k
-                \cdot
-                \left( x_i-x_j \right)
-                =
-                \\
-                (-1)^{j-i-1}\left( -1 \right)^{j-i-1}\left( -1 \right)V(\ldots,x_i,\ldots,x_j,\ldots)
-                =-V(x_1,x_2,\ldots,x_n).
+        V\left( \ldots,x_i,\ldots,x_j,\ldots \right)
+        =
+        \left( -1 \right)^t
+        V\left( \ldots,x_i,x_j,\ldots \right)
+        =
+        \left( -1 \right)^{t+1}
+        V\left( \ldots,x_j,x_i,\ldots \right)
+        =
+        \\
+        \left( -1 \right)^{2t+1}
+        V\left( \ldots,x_j,\ldots,x_i,\ldots \right)
+        =
+        -
+        V\left( \ldots,x_j,\ldots,x_i,\ldots \right).
+        \qedhere
     \end{multline*}
-    Azt kell ugyanis észrevennünk, hogy a produktumokat tartalmazó hosszú sorban a második, az ötödik, és az utolsó szorzat tartalmaz olyan tagokat, ahol a kisebb indexű változóból vonjuk ki a nagyobb indexűt.
-    Ezekből $(-1)$-et kiemelve kapjuk, hogy minden szorzó tényező már nagyobb index minusz kisebb index alakú,
-    ami a $V\left( x_1,x_2,\cdots,x_n \right)$ definíciója.
 \end{proof}
 \begin{proposition}
     Rögzítsünk egy $\sigma\in S_n$ permutációt. 
