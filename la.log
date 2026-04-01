@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.1)  1 APR 2026 20:46
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.1)  1 APR 2026 20:50
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -4542,14 +4542,6 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 10423.
 
-
-Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 10458.
-
-
-Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 10458.
-
 [149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160]
 [161] [162] [163] [164] [165] [166]
 fejezet 17.
@@ -4586,18 +4578,18 @@ Függelék C.
 [227
 
 ] [228]
-FiXme Note: 'Ide hivatkozás kell' on input line 16653.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16656.
+FiXme Note: 'Ide hivatkozás kell' on input line 16655.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16658.
  [229] [230] [231]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 17010.
+ hogy függetlenek!' on input line 17012.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 17041.
+FiXme Warning: 'Hivatkozás!!' on input line 17043.
 
 [232]
 
-FiXme Warning: 'Hivatkozás!' on input line 17186.
+FiXme Warning: 'Hivatkozás!' on input line 17188.
 
 [233] [234] [235] [236] [237] [238] (./la.ind [239
 
@@ -4712,10 +4704,10 @@ Here is how much of LuaTeX's memory you used:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 58 glue, 4 kern, 1 penalty, 2 margin_k
 ern, 4 glyph, 879 attribute, 198 glue_spec, 879 attribute_list, 3 write, 1 pdf_a
 ction nodes
-   avail lists: 1:15,2:1413,3:443,4:129,5:1025,6:268,7:10982,8:136,9:2826,10:26,
+   avail lists: 1:15,2:1413,3:443,4:129,5:1033,6:268,7:10980,8:136,9:2826,10:26,
 11:1203
  61804 multiletter control sequences out of 65536+600000
- 186 fonts using 56238103 bytes
+ 186 fonts using 56238415 bytes
  86i,17n,115p,1194b,2216s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4732,7 +4724,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (243 pages, 9380212 bytes).
+Output written on la.pdf (243 pages, 9381236 bytes).
 
 PDF statistics: 3101 PDF objects out of 3580 (max. 8388607)
  2788 compressed objects within 28 object streams
