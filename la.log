@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.1)  1 APR 2026 20:50
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.4.1)  2 APR 2026 11:05
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -4578,18 +4578,18 @@ Függelék C.
 [227
 
 ] [228]
-FiXme Note: 'Ide hivatkozás kell' on input line 16655.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16658.
+FiXme Note: 'Ide hivatkozás kell' on input line 16656.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16659.
  [229] [230] [231]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 17012.
+ hogy függetlenek!' on input line 17013.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 17043.
+FiXme Warning: 'Hivatkozás!!' on input line 17044.
 
 [232]
 
-FiXme Warning: 'Hivatkozás!' on input line 17188.
+FiXme Warning: 'Hivatkozás!' on input line 17189.
 
 [233] [234] [235] [236] [237] [238] (./la.ind [239
 
@@ -4707,7 +4707,7 @@ ction nodes
    avail lists: 1:15,2:1413,3:443,4:129,5:1033,6:268,7:10980,8:136,9:2826,10:26,
 11:1203
  61804 multiletter control sequences out of 65536+600000
- 186 fonts using 56238415 bytes
+ 186 fonts using 56238311 bytes
  86i,17n,115p,1194b,2216s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4724,7 +4724,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (243 pages, 9381236 bytes).
+Output written on la.pdf (243 pages, 9381451 bytes).
 
 PDF statistics: 3101 PDF objects out of 3580 (max. 8388607)
  2788 compressed objects within 28 object streams
