@@ -16424,7 +16424,25 @@ Az eddigiektől független következő lemma invariáns altereknek egy polinom �
     is következik.
     Ezt kellett belátni. 
 \end{proof}
-Vegyük észre, hogy a fenti állítás ugyanazt az eredményt adja, mint a nilpotens felbontási tétel, ha az $A$ transzformáció nilpotens. Tehát ebben az esetben a transzformáció Jordan- és Forbenius-normálalakja megegyezik.
+Ha az $M_0$ altérnek a $\left\{ 0 \right\}$ alteret választjuk, akkor a ciklikus felbontás a következő alakot ölti.	
+\[
+V=
+        \lin\left( v_1;A \right)
+        \oplus\ldots\oplus
+        \lin\left( v_s;A \right)
+\]
+Ebben az esetben azt láttuk be, hogy léteznek olyan $n_1\geq n_2\geq \dots\geq n_r\geq 1$ pozitív egészek, hogy az
+\[
+		\left\{ A^{n_1-1}v_1,\ldots,Av_1,v_1 \right\}
+		\cup
+		\left\{ A^{n_2-1}v_2,\ldots,Av_2,v_2 \right\}
+		\cup
+		\ldots
+		\cup
+		\left\{ A^{n_r-1}v_r,\ldots,Av_r,v_r \right\}
+		\tag{\dag}
+\]
+vektorrendszer bázisa $V$-nek. A transzformáció ezen bázisban felírt mátrixát szokás \textit{Frobenius-normálalaknak} nevezni. Vegyük észre, hogy a fenti állítás ugyanazt az eredményt adja, mint a nilpotens felbontási tétel, ha az $A$ transzformáció nilpotens. Tehát ebben az esetben a transzformáció Jordan- és Forbenius-normálalakja megegyezik.
 \begin{proposition}[Cayley\,--\,Hamilton II.]\index{Cayley\,--\,Hamilton}
     Legyen $A\in L\left( V \right)$ az $\mathbb{F}$ test feletti $V$ véges dimenziós vektortér
     lineáris transzformációja.
