@@ -11079,7 +11079,7 @@ Ekkor
 		\sum_{\sigma\in S_n}\sgn\sigma\prod_{i=1}^na_{i,\sigma(i)}
 		\right)
 		\left(
-		\sum_{\tau\in S_m}\sgn\sigma\prod_{i=1}^ma_{n+i,\tau(n+i)}
+		\sum_{\tau\in S_m}\sgn\tau\prod_{i=1}^ma_{n+i,\tau(n+i)}
 		\right)
 		\\
 		=
@@ -13935,11 +13935,11 @@ Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, 
         \quad\text{és}\quad
         P^2
         =
-        \sum_{k=1}^r\sum_{j=1}^rP_iP_j
+        \sum_{i=1}^r\sum_{j=1}^rP_iP_j
         =
-        \sum_{k=1}^rP_i^2
+        \sum_{i=1}^rP_i^2
         =
-        \sum_{k=1}^rP_i
+        \sum_{i=1}^rP_i
         =
         P.
     \]
@@ -14044,17 +14044,17 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
     ezért $N-\lambda_jI$ szinguláris.
     Mivel ez minden $j=1,\ldots,r$ mellett fennáll, ezért minden $j$ mellett a $\lambda_j$ egy sajátértéke $N$-nek. 
 
-	Most azt gondoljuk meg, hogy nincs más sajátérték, azaz ha $\sigma\neq \lambda_j$ minden $j=1,\dots,r$ mellett,
-    akkor $\sigma$ nem sajátérték.
-    Megmutatjuk tehát, hogy $\ker\left( N-\sigma I \right)=\left\{ 0 \right\}$.
+	Most azt gondoljuk meg, hogy nincs más sajátérték, azaz ha $\mu\neq \lambda_j$ minden $j=1,\dots,r$ mellett,
+    akkor $\mu$ nem sajátérték.
+    Megmutatjuk tehát, hogy $\ker\left( N-\mu I \right)=\left\{ 0 \right\}$.
     Ehhez vegyük észre, hogy $\sum_{j=1}^rP_j=I$ szerint $\sum_{j=1}^r\im P_j=V$ komplexus azonosság teljesül,
-    és mivel $N$ normális, ezért $\ker\left( N-\lambda_jI \right)\perp\ker\left( N-\sigma I \right)$ is teljesül
+    és mivel $N$ normális, ezért $\ker\left( N-\lambda_jI \right)\perp\ker\left( N-\mu I \right)$ is teljesül
     minden $j=1,\dots,r$ mellett.
     Így
     \[
-        V=\sum_{j=1}^r\im P_j\subseteq\sum_{j=1}^r\ker\left( N-\lambda_jI \right)\subseteq\left( \ker\left( N-\sigma I \right) \right)^\perp.
+        V=\sum_{j=1}^r\im P_j\subseteq\sum_{j=1}^r\ker\left( N-\lambda_jI \right)\subseteq\left( \ker\left( N-\mu I \right) \right)^\perp.
     \]
-    Ha tehát $v\in\ker\left( N-\sigma I \right)$, akkor $v$ merőleges saját magára, ergo $v=0$.
+    Ha tehát $v\in\ker\left( N-\mu I \right)$, akkor $v$ merőleges saját magára, ergo $v=0$.
     Ezt kellett belátni. 
 %	$\sigma(N)\subseteq \left\{ \lambda_1,\ldots,\lambda_r \right\}$.
 %	Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
