@@ -7905,7 +7905,7 @@ Az egyik legfontosabb definícióhoz érkeztünk.
 \end{definition}
 Az $\left[ A \right]$ négyzetes mátrix tehát pontosan akkor diagonális alakú,
 ha minden $i\neq j$ mellett $\left[ A \right]_{i,j}=0.$
-Ez azt jelenti hogy a $j$-edik bázis elem képének a nem $j$-edik koordinátája zérus,
+Ez azt jelenti hogy a $j$-edik bázis elem képének minden nem $j$-edik koordinátája zérus,
 azaz az $e_j$ bázisvektorra $Ae_j=\lambda e_j$ áll fenn,
 valamely $\lambda\in\mathbb{F}$ számmal.
 Ez éppen azt jelenti,
@@ -9236,7 +9236,7 @@ Az első észrevétel adja a negatív választ.
 	Tegyük fel először, hogy $B$ lineáris transzformáció $m$-ed rendben
 	nilpotens.
 	Legyen $p\left( t \right)=t^m$.
-	Ekkor $p\in J_A$, így a minimálpolinom $p$ osztója.
+	Ekkor $p\in J_B$, így a minimálpolinom $p$ osztója.
     Másrészt \aaz{th:fgtlen}. állítás szerint van a térnek olyan vektora,
 	amelyhez tartalmazó kis minimálpolinom is $p$.
 	Így $p$ osztója a minimálpolinomnak, ergo azonos vele.
@@ -9252,7 +9252,7 @@ Az alábbi lemmának nincs köze a transzformációk redukálásához.
 Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérnek van direkt kiegészítője.
 \begin{lemma}
 	Legyenek $V_1$ és $V_2$ diszjunkt alterei a véges dimenziós $W$ vektortérnek.
-	Ekkor $V_1$-nek létezik $V_2$ alteret tartalmazó direkkiegészítője,
+	Ekkor $V_1$-nek létezik $V_2$ alteret tartalmazó direkt kiegészítője,
 	azaz
 	létezik $K\subset W$ altér, amelyre $V_2\subseteq K$ és $V_1\oplus K=W.$
 	\label{felb0}
@@ -11955,7 +11955,7 @@ ahol $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
 		\item $\ip{x}{y}=\overline{\ip{y}{x}}$ minden $x,y\in V$ mellett.
 		\item
 		      $\ip{\alpha x}{y}=
-			      \alpha\ip{x}{y}$ minden $x,y\in V$ és minden $\alpha\in V$ mellett.
+			      \alpha\ip{x}{y}$ minden $x,y\in V$ és minden $\alpha\in \mathbb{K}$ mellett.
 		\item
 		      $\ip{x_1+x_2}{y}=
 			      \ip{x_1}{y}+\ip{x_2}{y}$ minden $x_1,x_2,y\in V$ mellett.
@@ -12055,7 +12055,7 @@ Tehát $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
 Persze $H\perp H^\perp$ csak tautologia.
 
 \begin{definition}
-	Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
+	Legyen $V$ egy skalárisszorzatos-tér, $\left\{ x_1,\ldots,x_k \right\} \subseteq V$.
 	Az $\left\{ x_1,\ldots,x_k \right\}$ vektorrendszert
 	\begin{enumerate}
 		\item \emph{ortogonálisnak} nevezünk, ha minden $i\neq j$ esetén
@@ -12126,7 +12126,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	Ha $v\in H\cap H^\perp$, akkor $v\perp v$, ergo $v=0$, ami az 1. pontot igazolja.
 \\
 	Ha $H\subseteq H_1$ és egy $v$ vektor a $H_1$ minden pontjára merőleges, 
-    akkor persze ez $H$ minden pontjára is merőleges, azaz $H_1^\perp\subseteq H$.
+    akkor persze ez $H$ minden pontjára is merőleges, azaz $H_1^\perp\subseteq H^\perp$.
 \\
     A 3. pont nyilvánvaló.
 \\
@@ -12420,13 +12420,13 @@ emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált báz
 	ahol az $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer.
 
 	Láttuk, hogy a
-	$\sum_{i=j}^k\ip{u}{x_j}\in M$ vektor független
+	$\sum_{j=1}^k\ip{u}{x_j}x_j\in M$ vektor független
 	az $\left\{ x_1,\ldots,x_k \right\}$ ortonormált rendszer megválasztásától,
 	hiszen ez vektor az $u$ vektorhoz legközelebb eső vektora az $M$ altérnek.
 	Definiálja $p_M:V\to V$ az alábbi függvényt
 	\[
 		p_M\left( u \right)=
-		\sum_{i=1}^k\ip{u}{x_i}x_i.
+		\sum_{j=1}^k\ip{u}{x_j}x_j.
 	\]
 	A $p_M\left( u \right)\in M$ vektort nevezzük az $u$-nak $M$ altérre eső \emph{merőleges vetületének}.
 	A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}.
@@ -12580,9 +12580,9 @@ A Gram\,--\,Schmidt-ortogonalizációról szóló állítás azonnali következm
 	ezért az maximális lineárisan független rendszer $V$-ben, ergo bázis is.
 	Konstruáltunk tehát egy ortonormált bázist.
 
-	Jelölje most $P_V$ egy $\left\{ x_1,\ldots,x_n \right\}$
+	Jelölje most $p_V$ egy $\left\{ x_1,\ldots,x_n \right\}$
 	ortonormált bázis definiálta merőleges vetítést az egész $V$ vektortérre, mint egy altérre.
-	Világos, hogy $P_V$ az identitás függvény,
+	Világos, hogy $p_V$ az identitás függvény,
 	hiszen minden vektorra igaz, hogy saját maga a hozzá legközelebbi $V$-beli pont.
 	Így minden $v\in V$ mellett $v=p_V\left( v \right)=\sum_{j=1}^n\ip{v}{x_j}x_j.$
 \end{proof}
@@ -12960,7 +12960,7 @@ akkor
 
 	Jelölje most $A^\ast$ a $w\mapsto w^\ast$ függvényt, tehát
 	$A^\ast:W\to V$.
-	Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
+	Ekkor minden $v\in V$ és $w\in W$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
 	\[
 		\ip{Av}{w}_W
 		=
@@ -13560,7 +13560,7 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 	ezért
 	\[
         \left( \frac{1}{\lambda}-\bar{\lambda} \right)u
-        =N^{-1}u-N^\ast u=Nu-Nu=0.
+        =N^{-1}u-N^\ast u=N^\ast u - N^\ast u=0.
 	\]
     No de, az $u\neq 0$ feltétel miatt $\frac{1}{\lambda}-\bar{\lambda}=0$, tehát $\lambda\bar{\lambda}=|\lambda|^2=1$.
 \end{proof}
@@ -14226,7 +14226,7 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 	=
 	\sum_{j=1}^r\lambda_jP_j.
 	\)
-	Ekkor az $N$ egy \emph{unitér transzformáció} transzformáció,
+	Ekkor az $N$ egy \emph{unitér transzformáció},
 	amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\ldots,\lambda_r \right\}$.
 \end{proposition}
 \begin{proof}
