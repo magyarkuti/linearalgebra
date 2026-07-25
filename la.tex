@@ -15040,6 +15040,93 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
 	=
 	r\left( AA^\ast \right)=\|A A^\ast\|=\|A^\ast\|^2.
 \]
+\section{A szinguláris felbontás}
+\begin{proposition}
+    Legyenek $V,W$ véges dimenziós skalárisszorzatos terek $\mathbb{K}$ felett.
+    A $T\in L\left( V,W \right)$ egy lineáris operáció.
+    Ekkor léteznek 
+    \(
+        \left\{ x_1,\dots,x_m \right\}\subseteq V
+        \text{ és }
+        \left\{ y_1,\dots,y_n \right\}\subseteq W
+    \)
+    ortonormált bázisok, továbbá léteznek 
+    \(
+        \sigma_1,\dots,\sigma_l\geq 0
+    \)
+    nem negatív valós számok, amelyekre
+    \[
+        Tx_j
+        =
+            \begin{cases}
+                \sigma_jy_j&1\leq j\leq l\text{ mellett;}\\
+                0&l<j\leq m\text{ esetén.}
+            \end{cases}
+    \]
+    Itt $l$ jelöli a két tér dimenzióinak minimumát, azaz
+    \(
+    l=\min\left\{ m,n \right\}.
+    \)
+    \label{th:svd}
+\end{proposition}
+\begin{proof}
+    Tekintsük a $T^\ast T:V\to V$ lineáris transzformációt. 
+    Persze ez önadjungált, ezért ortonormált bázisban diagonalizálható,
+    és a sajátértékek valós számok. 
+    Létezik tehát
+    \(
+    \left\{ x_1,\dots,x_m \right\}\subseteq V
+    \)
+    ortonormált bázis $V$-ben, és ha a sajátértékeket 
+    \(
+    \lambda_1,\dots,\lambda_m\in\mathbb{R}
+    \)
+    jelöli, akkor 
+    \[
+        T^\ast Tx_j=\lambda_jx_j
+    \]
+    minden $j=1,\dots,m$ indexre.
+    A $V$ tér ortonormált bázisát már meg is adtuk.
+    Vegyük észre, hogy
+    \[
+        \ip{Tx_i}{Tx_j}
+        =
+        \ip{x_i}{T^\ast Tx_j}
+        =
+        \ip{x_i}{\lambda_jx_j}
+        =\lambda_j\delta_{i,j}.
+    \]
+    Ebből két dolog azonnal látszik.
+    Először is a
+    \(
+    \left\{ Tx_j:1\leq j\leq m \right\}
+    \)
+    egy ortogonális rendszer, 
+    másrészt 
+    \(
+    \|Tx_j\|^2=\lambda_j
+    \)
+    minden szóba jövő $1\leq j\leq m$ index mellett, 
+    ergo a sajátértékek nem negatívak.
+    Így a
+    \(
+    \left\{\frac{1}{\sqrt{\lambda_j}}Tx_j:1\leq \lambda_j\leq m,\lambda_j>0
+    \right\}\subseteq W
+    \)
+    egy ortonormált bázisa $T$ képterének, 
+    hiszen ez egy zérust nem tartalmazó ortogonális rendszer tehát lineárisan független, 
+    valamint egy generátorrendszer $T$ képének nem zérus elemeit tartalmazza tehát generátorrendszer is a képtérben.
+
+    Az $\left\{ x_1,\dots,x_m \right\}$ ortonormált rendszer esetleges átindexelése után feltehető, hogy az első $r$ elem $T$ képe nem zérus, ahol $r$ a $T$ képterének dimenziója.
+    Legyen tehát 
+    \(  \sigma_j=\sqrt{\lambda_j}
+    \) minden $1\leq j\leq m$ mellett,
+    és 
+    \( y_j=\frac{1}{\sigma_j}Tx_j
+    \) minden $1\leq j\leq r$.
+
+    Világos, hogy $\left\{ y_1,\dots,y_r \right\}\subseteq \im T$ a képtér ortonormált bázisa, amelynek minden $1\leq j\leq r$ elemére $Tx_j=\sigma_jy_j$.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
@@ -15050,8 +15137,6 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
 \renewcommand{\appendixpagename}{Függelékek}\renewcommand{\appendixtocname}{\appendixpagename}
 \appendixpage
 
-\section
-\section
 \chapter{A komplex számokról}
 Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján.
 \section{Lineáris algebrai megközelítés}
