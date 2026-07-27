@@ -15110,7 +15110,7 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
     ergo a sajátértékek nem negatívak.
     Így a
     \(
-    \left\{\frac{1}{\sqrt{\lambda_j}}Tx_j:1\leq \lambda_j\leq m,\lambda_j>0
+    \left\{\frac{1}{\sqrt{\lambda_j}}Tx_j:1\leq j\leq m,\lambda_j>0
     \right\}\subseteq W
     \)
     egy ortonormált bázisa $T$ képterének, 
@@ -15119,13 +15119,27 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
 
     Az $\left\{ x_1,\dots,x_m \right\}$ ortonormált rendszer esetleges átindexelése után feltehető, hogy az első $r$ elem $T$ képe nem zérus, ahol $r$ a $T$ képterének dimenziója.
     Legyen tehát 
-    \(  \sigma_j=\sqrt{\lambda_j}
-    \) minden $1\leq j\leq m$ mellett,
+    \(
+    \sigma_j=\sqrt{\lambda_j}
+    \) 
+    minden $1\leq j\leq m$ mellett,
     és 
-    \( y_j=\frac{1}{\sigma_j}Tx_j
-    \) minden $1\leq j\leq r$.
+    \( 
+    y_j=\frac{1}{\sigma_j}Tx_j
+    \) 
+    minden $1\leq j\leq r$.
 
-    Világos, hogy $\left\{ y_1,\dots,y_r \right\}\subseteq \im T$ a képtér ortonormált bázisa, amelynek minden $1\leq j\leq r$ elemére $Tx_j=\sigma_jy_j$.
+    Világos, hogy $\left\{ y_1,\dots,y_r \right\}\subseteq \im T$ a képtér ortonormált bázisa,
+    amelynek minden $1\leq j\leq r$ elemére $Tx_j=\sigma_jy_j$.
+
+    Most válasszunk egy ortonormált bázist \(\left( \im T \right)^\perp\)-ben. 
+    Jelölje ezt \(\left( y_{r+1},\dots,y_n \right)\).
+    Ilyen módon már \(\left\{ y_1,\dots,y_r,y_{r+1},\dots,y_n \right\}\subseteq W\) a $W$ tér egy ortonormált bázisa.
+
+    Ha \(r<j\leq m\), akkor a kívánt $Tx_j=\sigma_jy_j$ azért teljesül, 
+    mert $Tx_j=0$ és $\lambda_j$, emiatt $\sigma_j$ is a test zérus eleme.
+
+Ezt kellett belátni. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
