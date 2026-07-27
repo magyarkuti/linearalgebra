@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.7.1)  25 JUL 2026 14:50
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.7.1)  27 JUL 2026 15:04
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -4578,18 +4578,18 @@ Függelék C.
 [229
 
 ] [230]
-FiXme Note: 'Ide hivatkozás kell' on input line 16743.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16746.
+FiXme Note: 'Ide hivatkozás kell' on input line 16757.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16760.
  [231] [232] [233]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 17100.
+ hogy függetlenek!' on input line 17114.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 17131.
+FiXme Warning: 'Hivatkozás!!' on input line 17145.
 
 [234]
 
-FiXme Warning: 'Hivatkozás!' on input line 17276.
+FiXme Warning: 'Hivatkozás!' on input line 17290.
 
 [235] [236] [237] [238] [239] [240] (./la.ind [241
 
@@ -4707,7 +4707,7 @@ ction nodes
    avail lists: 1:15,2:1441,3:443,4:147,5:1042,6:268,7:10988,8:136,9:2826,10:26,
 11:1203
  62132 multiletter control sequences out of 65536+600000
- 186 fonts using 56238207 bytes
+ 186 fonts using 56238103 bytes
  86i,17n,115p,1194b,2212s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4724,7 +4724,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (245 pages, 9387300 bytes).
+Output written on la.pdf (245 pages, 9387396 bytes).
 
 PDF statistics: 3115 PDF objects out of 3580 (max. 8388607)
  2800 compressed objects within 28 object streams
