@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.7.1)  27 JUL 2026 15:04
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.7.1)  31 JUL 2026 12:35
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -4535,14 +4535,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 [147
 
-] [148]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 10423.
-
-[149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160]
-[161] [162] [163] [164] [165] [166]
+] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158]
+[159] [160] [161] [162] [163] [164] [165] [166]
 fejezet 17.
 [167
 
@@ -4700,14 +4694,14 @@ Package logreq Info: Writing requests to 'la.run.xml'.
 Here is how much of LuaTeX's memory you used:
  41051 strings out of 475704
  156333,2373549 words of node,token memory allocated
- 5178 words of node memory still in use:
+ 5242 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 58 glue, 4 kern, 1 penalty, 2 margin_k
-ern, 4 glyph, 882 attribute, 198 glue_spec, 882 attribute_list, 3 write, 1 pdf_a
+ern, 4 glyph, 898 attribute, 198 glue_spec, 898 attribute_list, 3 write, 1 pdf_a
 ction nodes
    avail lists: 1:15,2:1441,3:443,4:147,5:1042,6:268,7:10988,8:136,9:2826,10:26,
 11:1203
  62132 multiletter control sequences out of 65536+600000
- 186 fonts using 56238103 bytes
+ 186 fonts using 56238519 bytes
  86i,17n,115p,1194b,2212s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4724,7 +4718,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (245 pages, 9387396 bytes).
+Output written on la.pdf (245 pages, 9387563 bytes).
 
 PDF statistics: 3115 PDF objects out of 3580 (max. 8388607)
  2800 compressed objects within 28 object streams
