@@ -15141,8 +15141,7 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
 
 Ezt kellett belátni. 
 \end{proof}
-\section{Choleski-felbontás}
-\subsection{QR-felbontás}
+\section{QR-felbontás}
 Az állítás, hogy minden négyzetes mátrix egyértelműen felírható, mint egy unitér és egy felsőháromszög mátrix szorzata,
 ahol a felsőháromszög mátrix elemei pozitív valós számok.
 Ehhez először a Gram--Schmidt-ortogonalizálhatóságról, \ref{pr:GS}., kell kis megjegyzést tennünk.
@@ -15216,8 +15215,8 @@ Ehhez először a Gram--Schmidt-ortogonalizálhatóságról, \ref{pr:GS}., kell 
     az 1.~és 2.~feltevések szerint. Alkalmazható tehát a fenti kis gondolat, ergo $x_k=e_k$,
     ami az 1. és 2. együttes teljesülése melletti unicitást jelenti.
 \end{proof}
-A reguláris mátrixok QR felbontása semmi más, mint az iménti állítás mátrix nyelven való átfogalmazása.
-\begin{proposition}[QR felbontás]
+A reguláris mátrixok QR-felbontása semmi más, mint az iménti állítás mátrix nyelven való átfogalmazása.
+\begin{proposition}[QR-felbontás]
     Legyen $Y$ egy $\mathbb{K}$ feletti reguláris mátrix.
     Ekkor egyértelműen léteznek  $Q,R$ négyzetes mátrixok, amelyekre
     \begin{enumerate}
@@ -15281,8 +15280,55 @@ A reguláris mátrixok QR felbontása semmi más, mint az iménti állítás má
 \end{proof}
 Tárgyalásunk szempontjából kitérő, de nehéz nem megemlíteni, hogy ha reguláris mátrixra szeretnénk megoldani az $Ax=b$
 inhomogén lineáris egyenlet rendszert, akkor a fentiek szerint a Gauss--Jordan-elimináció Gram--Schmidt-ortogonalizációra
-cserélhető. Világos ugyanis, hogy a QR felbontást felírva az $QRx=b$, ergo $Rx=Q^\star b$ rendszert kapjuk.
+cserélhető. Világos ugyanis, hogy a QR-felbontást felírva az $QRx=b$, ergo $Rx=Q^\star b$ rendszert kapjuk.
 Ez utóbbiból az egyetlen megoldás könnyedén kifejezhető, mivel $R$ egy felsőháromszög alakú mátrix.
+\section{Cholesky-felbontás}
+\begin{proposition}[Cholesky-felbontás]
+    Legyen $B$ egy önadjungált pozitív definit mátrix. 
+    Ekkor létezik egyetlen $R$ felsőháromszög alakú mátrix, 
+    melynek diagonálisában pozitív valós számok szerepelnek, és
+    \[
+    B=R^\star R.\qedhere
+    \]
+\end{proposition}
+\begin{proof}
+    Mivel $B$ önadjungált, ezért van spektrál felbontása.
+    Mivel $B$ pozitív definit, ezért minden sajátértéke pozitív.
+    Legyenek tehát $\lambda_1,\dots,\lambda_s$ a különböző (valós, és pozitív) sajáértékek,
+    és $P_1,\dots,P_s$ a felbontásban szereplő projekciók. 
+    Ekkor $B=\sum_{j=1}^s\lambda_jP_j$. Jelölje 
+    \[
+        A=\sum_{j=1}^s\sqrt{\lambda_j}P_j.
+    \]
+    Ekkor $A$ is önadjungált, pozitív definit, és $A^2=B$.
+    Most írjuk fel a reguláris $A$ mátrix QR-felbontását.
+    Létezik tehát $Q$ unitér és $R$ felsőháromszög alakú mátrix, melynek diagonális elemei
+    rendre valós, pozitív számok és $A=QR$.
+    Ilyen módon
+    \[
+    B=AA=A^\star A=\left( QR \right)^\star QR=R^\star Q^\star QR=R^\star R.
+    \]
+    Az unicitáshoz tegyük fel, hogy $B=S^\star S$ alakban áll elő,
+    ahol $S$ felsőháromszög alakú a diagonáliában pozitív számokkal.
+    A kulcs észrevétel, hogy ekkor $AS^{-1}$ unitér.
+    Ugyanis
+    \[
+        \left( AS^{-1} \right)^\star AS^{-1}
+        =
+        (S^\star)^{-1}A^\star AS^{-1}
+        =
+        (S^\star)^{-1}A^2S^{-1}
+        =
+        (S^\star)^{-1}BS^{-1}
+        =
+        (S^\star)^{-1}S^\star
+        =
+        I.
+    \]
+    Emiatt $A$-nak triviális QR-felbontása $A=\left( AS^{-1} \right)S$,
+    így a QR-felbontás egyértelműsűge szerint $R=S$.
+    Ezt kellett belátni. 
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
