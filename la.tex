@@ -10585,7 +10585,7 @@ egy permutáció az inverzével azonos paritású:
 \end{proposition}
 \begin{proof}
     A $\pi^{\ast}$ egy darabbbal több transzpozíció szorzataként áll elő mint $\pi$.
-    Ezek szerint $\pi$ és $\pi^\star$ különböző paritásúak.
+    Ezek szerint $\pi$ és $\pi^\ast$ különböző paritásúak.
     A második állításhoz azt vegyük észre, hogy a szorzattétel miatt
     \[
         1=\sgn\left( \pi \right)\cdot\sgn\left( \pi^{-1} \right),
@@ -14760,10 +14760,10 @@ Emlékezzünk arra is, hogy egy bal-felső négyzetes részmátrix determináns�
     Ugyanis, ha $D$ jelöli azt a diagonális mátrixot, amelyben 
     a $d_1,\ldots,d_n$ pivot elemek\index{pivot elem} rendre a diagonális elemei,
     akkor \aazt{\ref{apx:Kvadr}}.~függelékben megértett 
-    diádfelbontás szerint $A=B^\star DB$ egy $B$ reguláris mátrixszal,\index{diad@diád}
+    diádfelbontás szerint $A=B^\ast DB$ egy $B$ reguláris mátrixszal,\index{diad@diád}
     emiatt
     \[
-        Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\star DBx}=\ip{Bx}{DBx}.
+        Q_A\left( x \right)=\ip{x}{Ax}=\ip{x}{B^\ast DBx}=\ip{Bx}{DBx}.
     \]
     Ennek értékészlete $B$ szürjektivitása miatt azonos a $Q_D\left( x \right)=\ip{x}{Dx}$ értékészletével.
     Persze $D$ nyilvánvalóan pozitív definit, így $A$ is az.
@@ -15280,7 +15280,7 @@ A reguláris mátrixok QR-felbontása semmi más, mint az iménti állítás má
 \end{proof}
 Tárgyalásunk szempontjából kitérő, de nehéz nem megemlíteni, hogy ha reguláris mátrixra szeretnénk megoldani az $Ax=b$
 inhomogén lineáris egyenlet rendszert, akkor a fentiek szerint a Gauss--Jordan-elimináció Gram--Schmidt-ortogonalizációra
-cserélhető. Világos ugyanis, hogy a QR-felbontást felírva az $QRx=b$, ergo $Rx=Q^\star b$ rendszert kapjuk.
+cserélhető. Világos ugyanis, hogy a QR-felbontást felírva az $QRx=b$, ergo $Rx=Q^\ast b$ rendszert kapjuk.
 Ez utóbbiból az egyetlen megoldás könnyedén kifejezhető, mivel $R$ egy felsőháromszög alakú mátrix.
 \section{Cholesky-felbontás}
 \begin{proposition}[Cholesky-felbontás]
@@ -15288,7 +15288,7 @@ Ez utóbbiból az egyetlen megoldás könnyedén kifejezhető, mivel $R$ egy fel
     Ekkor létezik egyetlen $R$ felsőháromszög alakú mátrix, 
     melynek diagonálisában pozitív valós számok szerepelnek, és
     \[
-    B=R^\star R.\qedhere
+    B=R^\ast R.\qedhere
     \]
 \end{proposition}
 \begin{proof}
@@ -15306,22 +15306,22 @@ Ez utóbbiból az egyetlen megoldás könnyedén kifejezhető, mivel $R$ egy fel
     rendre valós, pozitív számok és $A=QR$.
     Ilyen módon
     \[
-    B=AA=A^\star A=\left( QR \right)^\star QR=R^\star Q^\star QR=R^\star R.
+    B=AA=A^\ast A=\left( QR \right)^\ast QR=R^\ast Q^\ast QR=R^\ast R.
     \]
-    Az unicitáshoz tegyük fel, hogy $B=S^\star S$ alakban áll elő,
+    Az unicitáshoz tegyük fel, hogy $B=S^\ast S$ alakban áll elő,
     ahol $S$ felsőháromszög alakú a diagonáliában pozitív számokkal.
     A kulcs észrevétel, hogy ekkor $AS^{-1}$ unitér.
     Ugyanis
     \[
-        \left( AS^{-1} \right)^\star AS^{-1}
+        \left( AS^{-1} \right)^\ast AS^{-1}
         =
-        (S^\star)^{-1}A^\star AS^{-1}
+        (S^\ast)^{-1}A^\ast AS^{-1}
         =
-        (S^\star)^{-1}A^2S^{-1}
+        (S^\ast)^{-1}A^2S^{-1}
         =
-        (S^\star)^{-1}BS^{-1}
+        (S^\ast)^{-1}BS^{-1}
         =
-        (S^\star)^{-1}S^\star
+        (S^\ast)^{-1}S^\ast
         =
         I.
     \]
@@ -17759,32 +17759,32 @@ szerint
     =
     \ip{Bz}{ABz}
     =
-    \ip{z}{B^\star ABz}
-    =Q_{B^\star AB}\left( z \right).
+    \ip{z}{B^\ast ABz}
+    =Q_{B^\ast AB}\left( z \right).
 \]
 Mivel a kvadratikus alak klasszifikációja az értékkészlet meghatározását jelenti,
-ezért az $A$ és $B^\star AB$ szimmetrikus mátrixok klasszifikációja azonos, és persze a rangjuk is azonos.
+ezért az $A$ és $B^\ast AB$ szimmetrikus mátrixok klasszifikációja azonos, és persze a rangjuk is azonos.
 
 Most tegyük fel újra, hogy $A$ szimmetrikus mátrix egy nem zérus, de négyzetmentes kvadratikus alak mátrixa.
-Ha találunk olyan $B$ reguláris transzformációt, amelyre a $B^\star AB$ diagonálisában van nem zérus elem,
+Ha találunk olyan $B$ reguláris transzformációt, amelyre a $B^\ast AB$ diagonálisában van nem zérus elem,
 akkor a fejezetben tanult eliminációs algoritmus miatt feltehetjük, hogy annak van diád felbontása.
 Létezik tehát $d_1,\dots,d_r\in\mathbb{R}^n$ oszlop vektor, hogy 
 \(
-    B^\star AB=\sum_{j=1}^r\alpha_jd_j\cdot d_j^\star
+    B^\ast AB=\sum_{j=1}^r\alpha_jd_j\cdot d_j^\ast
 \)
-Itt $r$ az $A$ és a $B^\star AB$ mátrixok közös rangja.%
-\footnote{A továbbiakban $d^\star$ jelöli a $d$ oszlopvektor transzponáltját.}
+Itt $r$ az $A$ és a $B^\ast AB$ mátrixok közös rangja.%
+\footnote{A továbbiakban $d^\ast$ jelöli a $d$ oszlopvektor transzponáltját.}
 Innen persze $A$ is kifejezhető:
 \(
-    A=\sum_{j=1}^r\alpha_j{B^\star}^{-1}d_j\cdot d_j^\star B^{-1}
+    A=\sum_{j=1}^r\alpha_j{B^\ast}^{-1}d_j\cdot d_j^\ast B^{-1}
     =
-    \sum_{j=1}^r\alpha_j{B^\star}^{-1}d_j\cdot \left( {B^\star}^{-1}d_j \right)^\star.
+    \sum_{j=1}^r\alpha_j{B^\ast}^{-1}d_j\cdot \left( {B^\ast}^{-1}d_j \right)^\ast.
 \)
 
 
 Külön hab a tortán, 
 hogy a \pageref{eq:substitution}. lapon ajánlott (\ref{eq:substitution}) formulában leírt helyettesítés olyan, 
-hogy $B^{-1}=B$, ezért ${B^\star}^{-1}=B^\star$.
+hogy $B^{-1}=B$, ezért ${B^\ast}^{-1}=B^\ast$.
 Valóban, ha $a_{k,l}\neq 0$ valamely $k\neq l$ mellett,
 akkor $B$ mátrixát úgy kapjuk az identitás mátrixból, hogy az $l$-edik diagonális elemet $-1$-re változtatjuk,
 majd az $l$-edik sor $k$-adik helyére $1$-et írunk.
@@ -17806,16 +17806,16 @@ majd az $l$-edik sor $k$-adik helyére $1$-et írunk.
 \]
 A $z_k-\left( z_k-z_l \right)=z_l$ mutatja, hogy minden $z\in\mathbb{R}^n$ mellett $B(Bz)=z$, 
 ergo $B^{-1}=B$.
-Összefoglalva azt kaptuk tehát, hogy ha a $B^\star AB$ mátrix diádfelbontása
+Összefoglalva azt kaptuk tehát, hogy ha a $B^\ast AB$ mátrix diádfelbontása
 \[
-    B^\star AB
+    B^\ast AB
     =
-    \sum_{j=1}^r\alpha_jd_j\cdot d_j^\star,
+    \sum_{j=1}^r\alpha_jd_j\cdot d_j^\ast,
 \]
 akkor az $A$ diádfelbontása
 \[
     A=
-    \sum_{j=1}^r\alpha_jB^{\star}d_j\cdot\left( B^\star d_j \right)^\star
+    \sum_{j=1}^r\alpha_jB^{\ast}d_j\cdot\left( B^\ast d_j \right)^\ast
 \]
 Evvel igazoltuk, hogy minden szimmetrikus mátrix előáll mint rangnyi darab szimmetrikus diád lineáris kombinációja.
 \paragraph{Gyakorlat.}
@@ -17842,7 +17842,7 @@ B=
 \)
 Kis számolgatás után azt kapjuk, hogy 
 \(
-B^\star AB=
+B^\ast AB=
 \begin{pmatrix}
     2&-1&1&1\\
     -1&0&-1&-1\\
@@ -17885,13 +17885,13 @@ Az algoritmusunk tehát
      &     &     &     &
 \end{array}
 \]
-Látjuk tehát, hogy $A$ és $B^\star AB$ rangja $4$, és ez utóbbi diádfelbontása
+Látjuk tehát, hogy $A$ és $B^\ast AB$ rangja $4$, és ez utóbbi diádfelbontása
 \[
-    B^\star AB=
-    2d_1\cdot d_1^\star
-    -\frac{1}{2}d_2\cdot d_2^\star+
-    \frac{1}{2}d_3\cdot d_3^\star
-    -\frac{1}{2}d_4\cdot d_4^\star,
+    B^\ast AB=
+    2d_1\cdot d_1^\ast
+    -\frac{1}{2}d_2\cdot d_2^\ast+
+    \frac{1}{2}d_3\cdot d_3^\ast
+    -\frac{1}{2}d_4\cdot d_4^\ast,
 \]
 ahol 
 $
@@ -17917,23 +17917,23 @@ d_4=
 $
 További könnyed számolgatás után kapjuk, hogy
 \(
-B^\star d_1=
+B^\ast d_1=
 \frac{1}{2}
 \begin{pmatrix}
     1\\1\\1\\1
 \end{pmatrix}
 ,
-B^\star d_2=
+B^\ast d_2=
 \begin{pmatrix}
     1\\-1\\1\\1
 \end{pmatrix}
 ,
-B^\star d_3=
+B^\ast d_3=
 \begin{pmatrix}
     0\\0\\1\\1
 \end{pmatrix}
 ,
-B^\star d_4=
+B^\ast d_4=
 \begin{pmatrix}
     0\\0\\-1\\1
 \end{pmatrix}.
