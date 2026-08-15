@@ -15146,8 +15146,143 @@ Ezt kellett belátni.
 Az állítás, hogy minden négyzetes mátrix egyértelműen felírható, mint egy unitér és egy felsőháromszög mátrix szorzata,
 ahol a felsőháromszög mátrix elemei pozitív valós számok.
 Ehhez először a Gram--Schmidt-ortogonalizálhatóságról, \ref{pr:GS}., kell kis megjegyzést tennünk.
+\begin{proposition}
+    Legyen a $V$ skalárisszorzatos térben $\left\{ y_1,\dots,y_n \right\}$ egy lineárisan független rendszer,
+    és $\left\{ x_1,\dots,x_n \right\}$ Gram--Schmidt-ortogonalizációval létrehozott ortonormált rendszer.
+    Ekkor az $\left\{ x_1,\dots,x_n \right\}$ az egyetlen olyan ortonormált rendszer,
+    amelyre az alábbi tulajdonságok teljesülnek.
+    \begin{enumerate}
+        \item $\lin\left\{ x_1,\dots,x_k \right\}=\lin\left\{ y_1,\dots,y_k \right\}$ teljesül minden $1\leq k\leq n$ mellett,
+        \item $\ip{y_k}{x_k}>0$ minden $0\leq k\leq n$ esetén.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Azt már \aazt{\ref{pr:GS}}.-ben láttuk, hogy az ott konstruált $\left\{ x_1,\dots,x_n \right\}$ ortonormált rendszerre
+    $x_k\in\lin\left\{y_1,\dots,y_k  \right\}$ minden $1\leq k\leq n$ mellett.
+    Ebből persze
+    $\lin\left\{ x_1,\dots,x_k \right\}\subseteq\lin\left\{ y_1,\dots,y_k \right\}$ már következik is.
+    Hasonlóan az $y_k\in\lin\left\{ x_1,\dots,x_k \right\}$ is látszik, 
+    ha figyelembe vesszük az
+    \[
+        y_k
+        =
+        \|y_k-p_{M_{k-1}}(y_{k})\|\cdot x_k+p_{M_{k-1}}(y_k)
+        \tag{\dag}
+    \]
+    azonosságot. 
+    Itt jelölje $M_j=\lin\left\{ x_1,\dots,x_j \right\}$, és $M_0=\left\{ 0 \right\}$.
+    Meggondoltuk tehát, hogy a fenti 1.~tulajdonság valóban fennáll.
+    A 2.-höz elég azt észrevenni, hogy az $M_k$ vektortérben ortonormált bázis,
+    az $\left\{ x_1,\dots,x_k \right\}$ vektorrendszer, 
+    így ebben a bázisban felírva az $y_k$ vektor koordinátáit, a $j$-edik koordináta 
+    $\ip{y_k}{x_j}$.
+    Speciálisan a $k$-adik koordinátára (\dag) szerint
+    \[
+        \ip{y_k}{x_k}=
+        \|y_k-p_{M_{k-1}}(y_{k})\|.
+    \]
+    Azt kaptuk tehát, hogy a kívánt skalárisszorzat érték egy valós, mégpedig szigorúan pozitív szám.
 
+    Az egyértelműséghez először azt gondoljuk meg, hogy amennyiben $M$ egy egydimenziós tér,
+    és $x,y\in M$ olyan vektorok, hogy $\|x\|=\|y\|=1$ és létezik $u\in M$, amelyre
+    $\ip{x}{u}>0,\ip{y}{u}>0$, akkor $x=y$ szükségképpen fennáll.
+    Ugyanis, ha $x=\alpha u$, akkor
+    \[
+        \ip{x}{u}
+        =
+        \alpha\|u\|^2.
+    \]
+    Emiatt $\alpha$ egy valós pozitív szám.
+    Analóg módon, ha $y=\beta u$, akkor $\beta$ is valós pozitív szám.
+    Így
+    \[
+        1=\|x\|=\alpha\|u\|,
+        1=\|y\|=\beta\|u\|.
+    \]
+    ergo $\alpha=\beta$, ergo $x=y$.
 
+    Na most, rögzített $k$ mellett jelölje $M$ az $M_{k-1}$ altérnek az $M_k$-beli ortokomplementerét, azaz
+    $M$ olyan egydimenziós altere $M_k$-nak, amelynek minden eleme ortogonális $M_{k-1}$-re.
+    Ha $\left\{ e_1,\dots,e_n \right\}$ az 1. és 2. pontoknak megfelelő ortonormált rendszere $V$-nek,
+    akkor minden $k$ mellett $x_k,e_k,y_k-P_{k-1}(y_k)\in M$. 
+    Ha $u=y_k-P_{k-1}(y_k)$, akkor 
+    \(
+      \ip{x_k}{u}=\ip{x_k}{y_k}>0
+    \)
+    a fentiek szerint, és
+    \(
+      \ip{e_k}{u}=\ip{e_k}{y_k}>0
+    \)
+    az 1.~és 2.~feltevések szerint. Alkalmazható tehát a fenti kis gondolat, ergo $x_k=e_k$,
+    ami az 1. és 2. együttes teljesülése melletti unicitást jelenti.
+\end{proof}
+A reguláris mátrixok QR felbontása semmi más, mint az iménti állítás mátrix nyelven való átfogalmazása.
+\begin{proposition}[QR felbontás]
+    Legyen $Y$ egy $\mathbb{K}$ feletti reguláris mátrix.
+    Ekkor egyértelműen léteznek  $Q,R$ négyzetes mátrixok, amelyekre
+    \begin{enumerate}
+        \item $Q$ unitér,
+        \item $R$ felső háromszög alakú, a diagonálisában valós, pozitív elemekkel,
+        \item $Y=QR$.\qedhere
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Jelölje $y_j$ az $Y$ mátrix $j$-edik oszlopát.
+    Mivel $Y$ reguláris, ezért $\left\{ y_1,\dots,y_n \right\}$ bázisa $\mathbb{K}^n$-nek.
+    Végezzünk Gram--Schmidt-ortogonalizációt a fenti bázisra, jelölje $\left\{ x_1,\dots,x_n \right\}$
+    az eredményül kapott ortonormált bázist.
+    Definiáljuk a $Q$ mátrixot úgy, hogy az oszlopok legyenek rendre $x_1,\dots,x_n$.
+    Világos, hogy $Q$ unitér mátrix.
+    Legyen az $R$ definíciója a következő.
+    $[R]_{i,j}=\ip{y_j}{x_i}$.
+    Ilyen módon az $R$ mátrix $j$-edik oszlopa nem más, mint az 
+    $y_j\in\lin\left\{ x_1,\dots,x_j \right\}$ vektornak a koordinátavektora, amikor az $\left\{ x_1,\dots,x_j \right\}$
+    vektorrendszert nevezzük ki bázisnak. Ez azt jelenti, hogy $R$ felső háromszög alakú mátrix,
+    diagonálisában az $\ip{y_j}{x_j}>0$ elemekkel,
+    ahol minden $j=1,\dots,n$ mellett
+    \[
+        y_j
+        =
+        \sum_{i=1}^j\ip{y_j}{x_i}x_i,
+    \]
+    hiszen az $\left\{ x_1,\dots,x_j \right\}$ egy ortonormált bázisa az $\lin\left\{ x_1,\dots,x_j \right\}$ térnek.
+    Tekintsünk most a $QR$ mátrix szorzatra, mint oszlopok összességére.
+    A mátrix szorzás definíciója szerint a szorzat $j$-edik oszlopa a $Q$ mátrix oszlopainak lineáris kombinációja,
+    az $R$ mátrix $j$-edik oszlopában lévő számokkal -- mint együtthatókkal --,
+    ami éppen a fent kiemelt formula jobb oldalát eredményezi.
+    Ezt kellett belátni az állítás egzisztencia részéhez.
+
+    Most nézzük az unicitást!
+    Tegyük fel, hogy $Y=Q'R'$ alakú, ahol $Q'$ unitér és $R'$ felsőháromszög alakú, pozitív diagonálissal.
+    Ha $e_1,\dots,e_n$ jelöli $Q'$ oszlopait, akkor az unitér tulajdonság ekvivalens avval, hogy $\left\{ e_1,\dots,e_n \right\}$
+    egy ortonormált bázisa $V$-nek. A mátrix szorzás interpretációja szerint
+    \[
+        y_j
+        =
+        \sum_{i=1}^j\rho_{i,j}e_i,
+    \]
+    ahol $\rho_{j,j}>0$.
+    Ebből az következik, hogy $y_j\in\lin\left\{ e_1,\dots,e_j \right\}$, amiből
+    $\lin\left\{ y_1,\dots,y_j \right\}\subseteq\lin\left\{ e_1,\dots,e_j \right\}$ következik minden $j$ mellett.
+    Persze az iménti tartalmazás csak egyenlőséggel teljesülhet, hiszen mindkét oldal azonos dimenziós altér,
+    ergo
+    \[
+      \lin\left\{ y_1,\dots,y_j \right\}
+      =
+      \lin\left\{ e_1,\dots,e_j \right\}.
+    \]
+    Az is világos, hogy
+    \[
+        0<\rho_{j,j}=\ip{y_j}{e_j}.
+    \]
+    Teljesülnek tehát a Gram--Schmidt-ortogonalizáció unicitásáról szóló állítás feltételei,
+    ami azt jelenti minden $j$ mellett $e_j=x_j$, amiből $Q'=Q$ következik.
+    Ebből már $R'=Q^{-1}Y=Q^{-1}QR=R$ is könnyen adódik.
+\end{proof}
+Tárgyalásunk szempontjából kitérő, de nehéz nem megemlíteni, hogy ha reguláris mátrixra szeretnénk megoldani az $Ax=b$
+inhomogén lineáris egyenlet rendszert, akkor a fentiek szerint a Gauss--Jordan-elimináció Gram--Schmidt-ortogonalizációra
+cserélhető. Világos ugyanis, hogy a QR felbontást felírva az $QRx=b$, ergo $Rx=Q^\star b$ rendszert kapjuk.
+Ez utóbbiból az egyetlen megoldás könnyedén kifejezhető, mivel $R$ egy felsőháromszög alakú mátrix.
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix             %
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -15158,7 +15293,7 @@ Ehhez először a Gram--Schmidt-ortogonalizálhatóságról, \ref{pr:GS}., kell 
 \appendixpage
 
 \chapter{A komplex számokról}
-Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{MR1415833} és \parencite{10.2307/3647746} alapján.
+Az algebra alaptétele, és a komplex számtest egyértelműsége. Elsősorban \parencite{kMR1415833} és \parencite{10.2307/3647746} alapján.
 \section{Lineáris algebrai megközelítés}
 Ha $\left\{ e_1,\ldots,e_n \right\}$ bázisa egy $\mathbb{C}$ feletti $V$ vektortérnek
 és $m\left( t \right)\in\mathbb{C}\left[ t \right]$ egy pontosan $n$-ed fokú,
