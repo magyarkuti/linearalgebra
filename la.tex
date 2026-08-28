@@ -6801,7 +6801,7 @@ $\left[ B \right]^{-1}$ inverze.
 \end{proof}
 
 \section{Lineáris operátorok mátrixa új bázispárban}
-\begin{proposition}
+\begin{proposition}\label{pr:altbtrf}
 	Legyen $A\in L\left( V,W \right)$ lineáris operáció
 	és tegyük fel, hogy ismerjük az $A$ mátrixát az
 	$\left\{ e_1,\ldots,e_m \right\}\subseteq V$ és az
@@ -6867,7 +6867,7 @@ $\left[ B \right]^{-1}$ inverze.
 	\]
 \end{proposition}
 \begin{proof}
-	A lineáris operátorokra vonatkozó állítás speciális esete,
+    A lineáris operátorokra vonatkozó \index{pr:altbtrf}.~állítás speciális esete,
 	mikor $W=V$ és $D=B$.
 \end{proof}
 A fenti állítás minden $A\in L\left( V \right)$ lineáris transzformáció mellett igaz.
@@ -15067,7 +15067,7 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
     \(
     l=\min\left\{ m,n \right\}.
     \)
-    \label{th:svd}
+    \label{pr:svd}
 \end{proposition}
 \begin{proof}
     Tekintsük a $T^\ast T:V\to V$ lineáris transzformációt. 
@@ -15141,6 +15141,35 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
 
 Ezt kellett belátni. 
 \end{proof}
+Tekintsünk most egy $n\times m$ méretű $A$ mátrixot.
+Persze e mátrix tekinthető egy $\mathbb{K}^m\to\mathbb{K}^n$ lineáris operációnak,
+melynek a természetes bázisokban felírt mátrixa éppen $A$.
+Írjuk fel erre az $A$ operációra a fenti \ref{pr:svd}.~állítást.
+Jelölje 
+    \(
+    \left\{ x_1,\dots,x_m \right\}\subseteq \mathbb{K}^m
+        \text{ és }
+        \left\{ y_1,\dots,y_n \right\}\subseteq \mathbb{K}^n
+    \)
+a megfelelő ortonormált bázisokat, és 
+\(
+S
+\)
+a szinguláris értékek alkotta 
+$n\times m$
+méretű diagonális mátrixot.
+Jelölje, 
+a \ref{pr:altbtrf}.~állítás jelöléseinek megfelelően,
+$B$ a $\mathbb{K}^m$ értelmezési tartomány térben az új bázisra való áttérés mátrixát,
+azaz azt az $m\times m$ méretű mátrixot, 
+amelynek oszlopai rendre az $x_1,\dots,x_m$ vektorok.
+Ugyanígy járjunk el a $\mathbb{K}^n$ képtérben azaz legyen $D$ az $\left\{ y_1,\dots,y_n \right\}$ bázisra való áttérés mátrixa.
+A \ref{pr:svd} szinguláris felbontást és az általános bázistranszformációt leíró \ref{pr:altbtrf} állítás szerint éppen az
+\[
+    S=D^{-1}AB
+\]
+egyenlőség teljesül.
+Így kapjuk a szinguláris felbontás mátrixokra vonatkozó alakját:
 \section{QR-felbontás}
 Az állítás, hogy minden négyzetes mátrix egyértelműen felírható, mint egy unitér és egy felsőháromszög mátrix szorzata,
 ahol a felsőháromszög mátrix elemei pozitív valós számok.
