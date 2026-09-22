@@ -1,0 +1,124 @@
+\documentclass[article]{memoir}
+\usepackage{polyglossia}[2022/10/26]
+\setdefaultlanguage[forceheadingpunctuation]{hungarian}
+
+\usepackage{csquotes, amsmath, amsthm, fixme, graphicx, datatool, nevelok}
+\swapnumbers %% a babel megfordítja. A polyglossia nem. De a babel pontot is tesz a számcimke után
+\theoremstyle{plain}
+\newtheorem{proposition}{állítás}[chapter]
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\begin{document}
+Ide másoltam a könyvből a Bessel--Schwartz páros igazolását.
+A Schwartzot a Besselből kapjuk azt egyetlen vektorra alkalmazva.
+Ha ez így van, akkor persze ha felírjuk a Bessel igazolását egyetlen vektorra, akkor is a Schwartz-ot kell kapnunk.
+Talán ilyesmi lehet a Schwartz-egyenlőtlenség rövid igazolásának hátterében.
+
+\begin{proposition}[Bessel]\index{Bessel-egyenlőtlenség}\label{pr:Bessel}
+	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér.
+	Tegyük fel, hogy $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer.
+	Ekkor minden $u\in V$ vektorra:
+	\begin{enumerate}
+		\item
+		      fennáll a  \emph{Bessel-egyenlőtlenség:}
+		      $\sum_{i=1}^k|\ip{u}{x_i}|^2\leq\ip{u}{u}$;
+		\item
+		      Az
+		      \(
+		      \hat{u}=u-\sum_{i=1}^k\ip{u}{x_i}x_i
+		      \)
+		      vektorra $\hat{u}\perp x_j$
+		      ($j=1,\ldots,k$), azaz
+		      \(
+		      \hat{u}\in
+		      \left\{ x_1,\ldots,x_k \right\}^\perp
+		      %=
+		      %\left(\lin\left\{ x_1,\ldots,x_k \right\} \right)^\perp
+		      .
+		      \)
+		      \qedhere
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Jelölje a bizonyítás erejéig
+	\begin{math}
+		\alpha_j=\ip{u}{x_j}.
+	\end{math}
+	Ekkor az $\hat{u}=u-\sum_{j=1}^k\alpha_jx_j$ vektorra
+	\begin{multline*}
+		0
+		\leq
+		\ip{\hat{u}}{\hat{u}}
+		=
+		\ip{u}{u}+\ip{u}{-\sum_{j=1}^k\alpha_jx_j}+\ip{-\sum_{j=1}^k\alpha_jx_j}{u}+\ip{-\sum_{j=1}^k\alpha_jx_j}{-\sum_{i=1}^k\alpha_ix_i}
+		\\
+		=
+		\ip{u}{u}-\sum_{j=1}^k\overline{\alpha_j}\ip{u}{x_j}-\sum_{j=1}^k\alpha_j\ip{x_j}{u}+\sum_{j=1}^k\sum_{i=1}^k\alpha_j\overline{\alpha_i}\ip{x_j}{x_i}
+		\\
+		=
+		\ip{u}{u}-\sum_{j=1}^k\overline{\alpha_j}\alpha_j-\sum_{j=1}^k\alpha_j\overline{\alpha_j}+\sum_{j=1}^k\alpha_j\overline{\alpha_j}
+		=\ip{u}{u}-\sum_{j=1}^k|\alpha_j|^2.
+	\end{multline*}
+	Ez éppen a Bessel-egyenlőtlenség.
+	A merőlegességre vonatkozó második állítás már sokkal egyszerűbb:
+	\[
+		\ip{\hat{u}}{x_j}
+		=
+		\ip{u-\sum_{i=1}^k\alpha_ix_i}{x_j}
+		=
+		\ip{u}{x_j}-\sum_{i=1}^k\alpha_i\ip{x_i}{x_j}
+		=
+		\alpha_j-\alpha_j
+		=
+		0.
+		\qedhere
+	\]
+\end{proof}
+\begin{proposition}[Schwartz-egyenlőtlenség]\index{Schwartz-egyenlőtlenség}\label{pr:Schwartz-egyenlőtlenség}
+	Legyen $\left( V,\ip{\cdot}{\cdot} \right)$ skalárisszorzatos-tér,
+	$u,v\in V$.
+	Ekkor
+	\[
+		|\ip{u}{v}|^2\leq \ip{u}{u}\ip{v}{v}.\qedhere
+	\]
+\end{proposition}
+\begin{proof}
+	Ha $v=0$, akkor mindkét oldal zérus.
+	Ha $v\neq 0$, akkor a $\left\{ \frac{1}{\sqrt{\ip{v}{v}}}v \right\}$ rendszer egyetlen elemű ortonormált rendszer.
+	Alkalmazva a Bessel-egyen\-lőt\-len\-sé\-get\index{Bessel-egyenlőtlenség} $k=1$ mellett
+	\[
+		\frac{1}{\ip{v}{v}}
+		\left|\ip{u}{v}\right|^2
+		=
+		|\frac{1}{\sqrt{\ip{v}{v}}}
+		\ip{u}{v}|^2
+		=
+		|\ip{u}{\frac{1}{\sqrt{\ip{v}{v}}}v}|^2
+		\leq \ip{u}{u},
+	\]
+	ami kishíján a bizonyítandó állítás.
+\end{proof}
+
+Eddig volt a könyvbeli rész. 
+Nézzük, akkor az alternatív bizonyítást, ami egyszerűen a Bessel-beli számolás egyetlen vektor mellett.
+\begin{proof}
+Tegyük fel először, hogy $\ip{v}{v}=1$. 
+Jelölje $\alpha=\ip{u}{v}$ és $\hat{u}=u-\alpha v$.
+Ekkor
+	\begin{multline*}
+		0
+		\leq
+		\ip{\hat{u}}{\hat{u}}
+		=
+		\ip{u}{u}+\ip{u}{-\alpha v}+\ip{-\alpha v}{u}+\ip{-\alpha v}{-\alpha v}
+		\\
+		=
+		\ip{u}{u}-\overline{\alpha}\ip{u}{v}-\alpha\ip{v}{u}+\alpha\overline{\alpha}\ip{v}{v}
+		\\
+		=
+		\ip{u}{u}-\overline{\alpha}\alpha-\alpha\overline{\alpha}+\alpha\overline{\alpha}
+		=\ip{u}{u}-|\alpha|^2,
+	\end{multline*}
+    ami a bizonyítandó állítás a $\ip{v}{v}=1$ speciális esetben.
+    Nem zérus $v$ mellett általános esetet kapjuk, ha felírjuk a már igazolt állítás a $\frac{1}{\sqrt{\ip{v}{v}}}v$ vektorra.
+\end{proof}
+\end{document}
