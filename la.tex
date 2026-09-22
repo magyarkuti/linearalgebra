@@ -15086,7 +15086,7 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
         T^\ast Tx_j=\lambda_jx_j
     \]
     minden $j=1,\dots,m$ indexre.
-    A $V$ tér ortonormált bázisát már meg is adtuk.
+    A $V$ tér ortonormált bázisát evvel meg is adtuk.
     Vegyük észre, hogy
     \[
         \ip{Tx_i}{Tx_j}
@@ -15133,11 +15133,16 @@ Legvégül a \CStar-azonosság\index{Ccsillag@\CStar-azonosság} és következm�
     amelynek minden $1\leq j\leq r$ elemére $Tx_j=\sigma_jy_j$.
 
     Most válasszunk egy ortonormált bázist \(\left( \im T \right)^\perp\)-ben. 
-    Jelölje ezt \(\left( y_{r+1},\dots,y_n \right)\).
+    Jelölje ezt 
+    \(
+    \left\{ y_{r+1},\dots,y_n \right\}.
+    \)
     Ilyen módon már \(\left\{ y_1,\dots,y_r,y_{r+1},\dots,y_n \right\}\subseteq W\) a $W$ tér egy ortonormált bázisa.
 
-    Ha \(r<j\leq m\), akkor a kívánt $Tx_j=\sigma_jy_j$ azért teljesül, 
-    mert $Tx_j=0$ és $\lambda_j$, emiatt $\sigma_j$ is a test zérus eleme.
+    Ha \(r<j\leq m\), 
+    akkor $\lambda_j=0$, ezért $\sigma_j=0$, így persze 
+    a kívánt $Tx_j=\sigma_jy_j$ is teljesül, 
+    és a $Tx_j=0$ is fennáll.
 
 Ezt kellett belátni. 
 \end{proof}
