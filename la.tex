@@ -15176,7 +15176,8 @@ A \ref{pr:svd} szinguláris felbontást és az általános bázistranszformáci�
 egyenlőség teljesül.
 Így kapjuk a szinguláris felbontás mátrixokra vonatkozó alakját:
 \section{QR-felbontás}
-Az állítás, hogy minden négyzetes mátrix egyértelműen felírható, mint egy unitér és egy felsőháromszög mátrix szorzata,
+Az állítás, hogy minden reguláris mátrix egyértelműen felírható, 
+mint egy unitér és egy felsőháromszög mátrix szorzata,
 ahol a felsőháromszög mátrix elemei pozitív valós számok.
 Ehhez először a Gram--Schmidt-ortogonalizálhatóságról, \ref{pr:GS}., kell kis megjegyzést tennünk.
 \begin{proposition}
@@ -15328,7 +15329,7 @@ Ez utóbbiból az egyetlen megoldás könnyedén kifejezhető, mivel $R$ egy fel
 \begin{proof}
     Mivel $B$ önadjungált, ezért van spektrál felbontása.
     Mivel $B$ pozitív definit, ezért minden sajátértéke pozitív.
-    Legyenek tehát $\lambda_1,\dots,\lambda_s$ a különböző (valós, és pozitív) sajáértékek,
+    Legyenek tehát $\lambda_1,\dots,\lambda_s$ a különböző (valós, és pozitív) sajátértékek,
     és $P_1,\dots,P_s$ a felbontásban szereplő projekciók. 
     Ekkor $B=\sum_{j=1}^s\lambda_jP_j$. Jelölje 
     \[
@@ -15674,7 +15675,7 @@ A másik döntő lépés (\ref{Th:Cauchy2}. állítás) az Argand-féle becslés
 Ez a holomorf függvényekre vonatkozó nyílt leképezés tételnek az itt éppen elegendő speciális esete.
 
 \begin{lemma}
-	\label{Th:Grow}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ nem a konstans nulla,
+	\label{Th:Grow}Legyen $f:\mathbb{C}\rightarrow \mathbb{C}$ nem konstans,
 	komplex $n$-edfokú polinom.
 	Ekkor létezik olyan $r>0$ valós szám, hogy minden $z\in \mathbb{C}$ $,\left| z\right| >r$ esetén $\left| f\left( z\right) \right| >\frac{1}{2}\left| a_{n}\right| \left|
 		z^{n}\right| $.
@@ -15805,7 +15806,7 @@ Ez a holomorf függvényekre vonatkozó nyílt leképezés tételnek az itt épp
 	komplex számhoz létezik olyan $\hat{c}\in \mathbb{C}$ komplex szám,
 	melyre
 	\[
-		\left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| .
+		\left| f\left( \hat{c}\right) \right| <\left| f\left( c\right) \right| .\qedhere
 	\]
 \end{proposition}
 
