@@ -6867,7 +6867,7 @@ $\left[ B \right]^{-1}$ inverze.
 	\]
 \end{proposition}
 \begin{proof}
-    A lineáris operátorokra vonatkozó \index{pr:altbtrf}.~állítás speciális esete,
+    A lineáris operátorokra vonatkozó \ref{pr:altbtrf}.~állítás speciális esete,
 	mikor $W=V$ és $D=B$.
 \end{proof}
 A fenti állítás minden $A\in L\left( V \right)$ lineáris transzformáció mellett igaz.
@@ -15175,6 +15175,17 @@ A \ref{pr:svd} szinguláris felbontást és az általános bázistranszformáci�
 \]
 egyenlőség teljesül.
 Így kapjuk a szinguláris felbontás mátrixokra vonatkozó alakját:
+\begin{proposition}
+    Legyen $A$ egy valós vagy komplex $n\times m$ méretű mátrix.
+    Ekkor létezik $n\times n$ méretű $D$ unitér mátrix és 
+    létezik $m\times m$ méretű $B$ unitér mátrix és 
+    létezik $n\times m$ méretű $S$ diaganális mátrix a diagonálisában nem negatív elemekkel úgy
+    , hogy 
+    \[
+        A=DSB^\star
+    \]
+    teljesül.
+\end{proposition}
 \section{QR-felbontás}
 Az állítás, hogy minden reguláris mátrix egyértelműen felírható, 
 mint egy unitér és egy felsőháromszög mátrix szorzata,
