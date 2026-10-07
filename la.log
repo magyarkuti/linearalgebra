@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.1)  7 OCT 2026 11:14
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.1)  7 OCT 2026 13:22
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -3059,7 +3059,7 @@ Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 14.81598pt on input line 332.
+(Font)              scaled to size 14.81598pt on input line 339.
  [9
 
 
@@ -4018,9 +4018,9 @@ Package microtype Info: Character `⁻' is missing
 fejezet 2.
 [39] [40] [41] [42] [43]
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/m/n' will be
-(Font)              scaled to size 9.3886pt on input line 2984.
+(Font)              scaled to size 9.3886pt on input line 2991.
 LaTeX Font Info:    Font shape `TU/TeXGyreAdventor(0)/b/n' will be
-(Font)              scaled to size 9.26996pt on input line 2984.
+(Font)              scaled to size 9.26996pt on input line 2991.
  [44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
 [54] [55] [56] [57] [58] [59] [60] [61] [62]
 fejezet 3.
@@ -4574,18 +4574,18 @@ Függelék C.
 [231
 
 ] [232]
-FiXme Note: 'Ide hivatkozás kell' on input line 17008.
-FiXme Note: 'Ide is hivatkozás kell' on input line 17011.
+FiXme Note: 'Ide hivatkozás kell' on input line 17015.
+FiXme Note: 'Ide is hivatkozás kell' on input line 17018.
  [233] [234] [235]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 17365.
+ hogy függetlenek!' on input line 17372.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 17396.
+FiXme Warning: 'Hivatkozás!!' on input line 17403.
 
 [236]
 
-FiXme Warning: 'Hivatkozás!' on input line 17541.
+FiXme Warning: 'Hivatkozás!' on input line 17548.
 
 [237] [238] [239] [240] [241] [242] (./la.ind [243
 
@@ -4703,7 +4703,7 @@ ction nodes
    avail lists: 1:15,2:1441,3:443,4:147,5:1044,6:268,7:10988,8:136,9:2826,10:26,
 11:1203
  62284 multiletter control sequences out of 65536+600000
- 186 fonts using 56238415 bytes
+ 186 fonts using 56238103 bytes
  86i,17n,115p,1194b,2218s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4720,7 +4720,7 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (247 pages, 9405692 bytes).
+Output written on la.pdf (247 pages, 9406466 bytes).
 
 PDF statistics: 3156 PDF objects out of 3580 (max. 8388607)
  2838 compressed objects within 29 object streams
