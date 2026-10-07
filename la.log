@@ -1,10 +1,10 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.7.1)  31 JUL 2026 12:35
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.1)  7 OCT 2026 10:59
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
 (./la.tex
 LaTeX2e <2026-06-01>
-L3 programming layer <2026-06-18>
+L3 programming layer <2026-09-09>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
@@ -46,10 +46,10 @@ Document Class: memoir 2025/11/04 v3.8.4b configurable book, report, article do
 cument class
 (/opt/texlive/texdir/texmf-dist/tex/latex/xpatch/xpatch.sty
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2026-06-18 L3 programming layer (loader) 
+Package: expl3 2026-09-09 L3 programming layer (loader) 
 
-(/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
-File: l3backend-luatex.def 2026-02-18 L3 backend support: PDF output (LuaTeX)
+(/opt/texlive/texdir/texmf-dist/tex/latex/l3kernel/l3backend-luatex.def
+File: l3backend-luatex.def 2026-09-09 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count274
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
@@ -417,10 +417,10 @@ Package tocvsec2 [2008/07/23] emulated by memoir.
 Package verse [2008/07/23] emulated by memoir.
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+Package: fontspec 2026/08/11 v2.9h Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2026/08/11 v2.9h Font selection for XeLaTeX and LuaLaTeX
 (/opt/texlive/texdir/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
+Package: fontspec-luatex 2026/08/11 v2.9h Font selection for XeLaTeX and LuaLaT
 eX
 \l__fontspec_script_int=\count334
 \l__fontspec_language_int=\count335
@@ -1420,7 +1420,7 @@ File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 \Gin@req@width=\dimen264
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool.sty
-Package: datatool 2025/12/04 v3.4.3 (NLCT)
+Package: datatool 2026/08/23 v3.4.5 (NLCT)
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
@@ -1430,7 +1430,7 @@ Package: tracklang 2026/05/24 v1.6.8 (NLCT) Track Languages
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/tracklang/tracklang.tex))
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-base.sty
-Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
+Package: datatool-base 2026/08/23 v3.4.5 (NLCT)
 \l__datatool_tmpa_int=\count374
 \l__datatool_tmpb_int=\count375
 \l__datatool_tmpc_int=\count376
@@ -1441,7 +1441,7 @@ Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
 \l__datatool_tmpb_dim=\dimen266
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-lua.def
-File: datatool-lua.def 2025/12/04 v3.4.3 (NLCT)
+File: datatool-lua.def 2026/08/23 v3.4.5 (NLCT)
 )
 \@dtl@toks=\toks43
 \@dtl@tmpcount=\count380
@@ -1450,7 +1450,7 @@ File: datatool-lua.def 2025/12/04 v3.4.3 (NLCT)
 \dtl@sortresult=\count381
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
-File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
+File: datatool-utf8.ldf 2026/08/23 v3.4.5 (NLCT)
 )
 \@dtl@datatype=\count382
 \c_datatool_unknown_int=\count383
@@ -1536,36 +1536,37 @@ Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 \nev@az=\count436
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2026/04/18 v2.10 Modern multilingual typesetting with XeLa
+Package: polyglossia 2026/09/11 v2.13 Modern multilingual typesetting with XeLa
 TeX and LuaLaTeX
 Lua module: polyglossia 2013/05/11 v1.3 Polyglossia
 \l_xpg_alias_keyvals_int=\count437
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
-File: gloss-latex.ldf polyglossia: module for default language
+File: gloss-latex.ldf 2026/09/11 v2.13 polyglossia: module for default language
+
 )
 
 Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz
 
 )
 (/opt/texlive/texdir/texmf-dist/tex/latex/polyglossia/gloss-hungarian.ldf
-File: gloss-hungarian.ldf polyglossia: module for Hungarian
+File: gloss-hungarian.ldf 2026/09/11 v2.13 polyglossia: module for Hungarian
 Module polyglossia Info: Language data for hungarian
 (polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
 (polyglossia)            loader	loadhyph-hu.tex
 (polyglossia)            patterns	hyph-hu.pat.txt
 (polyglossia)            righthyphenmin	2
-(polyglossia)            synonyms	 on input line 14
+(polyglossia)            synonyms	 on input line 12
 Module polyglossia Info: Language hungarian was not yet loaded; created with id 
-2 on input line 14
+2 on input line 12
 )
 
 Package polyglossia Info: Default language is hungarian
 
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+Package: biblatex 2026/09/24 v3.22a programmable bibliographies (PK/MW)
 
 (/opt/texlive/texdir/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
@@ -1646,7 +1647,7 @@ Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+File: blx-dm.def 2026/09/24 v3.22a biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
@@ -1742,13 +1743,13 @@ Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+File: blx-compat.def 2026/09/24 v3.22a biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+File: biblatex.def 2026/09/24 v3.22a biblatex compatibility (PK/MW)
 \c@textcitecount=\count553
 \c@textcitetotal=\count554
 \c@textcitemaxnames=\count555
@@ -1767,12 +1768,12 @@ Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
-File: authoryear.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+File: authoryear.bbx 2026/09/24 v3.22a biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+File: standard.bbx 2026/09/24 v3.22a biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count562
 \c@bbx:relatedtotal=\count563
 ))
@@ -1780,7 +1781,7 @@ Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
-File: authoryear.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+File: authoryear.cbx 2026/09/24 v3.22a biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -1799,12 +1800,13 @@ Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2026-06-18 L3 programming layer (loader) 
+(biblatex)             2026-09-09 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
-Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+Package: blx-case-expl3 2026/09/24 v3.22a expl3 case changing code for biblatex
+
 ))
 (/opt/texlive/texdir/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -2123,7 +2125,7 @@ Package biblatex Info: Trying to load language 'magyar'...
 Package biblatex Info: ... file 'magyar.lbx' found.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/biblatex/lbx/magyar.lbx
-File: magyar.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+File: magyar.lbx 2026/09/24 v3.22a biblatex localization (PK/MW)
 )
 Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
@@ -2133,7 +2135,15 @@ Package biblatex Info: Data encoding 'utf8' specified.
 \openout4 = la.bcf
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'la.bbl' found.
- (./la.bbl)
+ (./la.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                kMR1415833
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 253.
 Package biblatex Info: Reference segment=0 on input line 253.
 
@@ -2177,7 +2187,7 @@ Package hyperref Info: Link coloring OFF on input line 253.
 
 \openout6 = la.out
 \l@magyar = a dialect from \language\l@hungarian 
-<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=401,
+<Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG, id=410,
  436.63126pt x 542.9886pt>
 File: Hortus_Deliciarum,_Die_Philosophie_mit_den_sieben_freien_Künsten.JPG Gra
 phic file (type jpg)
@@ -4556,39 +4566,43 @@ fejezet 20.
 
 ]
 fejezet 21.
-[197] [198] [199] [200] [201] [202] [203] [204] [205] [206] [207] [208
+[197] [198] [199] [200] [201] [202] [203] [204] [205] [206] [207] [208]
+[209] [210] [211
 
-]
-[209] [210]
+] [212]
 Függelék A.
-[211
 
-] [212] [213] [214] [215] [216] [217] [218]
+LaTeX Warning: Citation 'kMR1415833' on page 213 undefined on input line 15388.
+
+
+[213
+
+] [214] [215] [216] [217] [218] [219] [220]
 Függelék B.
-[219
+[221
 
-] [220] [221] [222] [223] [224] [225] [226] [227] [228]
+] [222] [223] [224] [225] [226] [227] [228] [229] [230]
 Függelék C.
-[229
+[231
 
-] [230]
-FiXme Note: 'Ide hivatkozás kell' on input line 16757.
-FiXme Note: 'Ide is hivatkozás kell' on input line 16760.
- [231] [232] [233]
+] [232]
+FiXme Note: 'Ide hivatkozás kell' on input line 16990.
+FiXme Note: 'Ide is hivatkozás kell' on input line 16993.
+ [233] [234] [235]
 FiXme Note: 'Csak abból, hogy rangnyi darab diád, már abból is következik,
- hogy függetlenek!' on input line 17114.
+ hogy függetlenek!' on input line 17347.
 
 
-FiXme Warning: 'Hivatkozás!!' on input line 17145.
+FiXme Warning: 'Hivatkozás!!' on input line 17378.
 
-[234]
+[236]
 
-FiXme Warning: 'Hivatkozás!' on input line 17290.
+FiXme Warning: 'Hivatkozás!' on input line 17523.
 
-[235] [236] [237] [238] [239] [240] (./la.ind [241
+[237] [238] [239] [240] [241] [242] (./la.ind [243
 
 
-] [242
+] [244
 
 ]
 Package microtype Info: Character `ﬆ' is missing
@@ -4666,9 +4680,9 @@ Package microtype Info: Character `⁺' is missing
 Package microtype Info: Character `⁻' is missing
 (microtype)             in font `TU/TeXGyrePagella(0)/b/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [243
+ [245
 
-] [244] [245])
+] [246] [247])
 
 FiXme Summary: Number of notes: 3,
 (FiXme)        Number of warnings: 2,
@@ -4685,24 +4699,24 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `la.out' has not changed.
-(rerunfilecheck)             Checksum: 16F64378564E5117B98DC4C464B8DE32;19018.
+(rerunfilecheck)             Checksum: 86F7E116F12FC1E3B7B53376E9938170;19290.
 Package logreq Info: Writing requests to 'la.run.xml'.
 
 \openout1 = la.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 41051 strings out of 475704
+ 41117 strings out of 475604
  156333,2373549 words of node,token memory allocated
- 5242 words of node memory still in use:
+ 5310 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 58 glue, 4 kern, 1 penalty, 2 margin_k
-ern, 4 glyph, 898 attribute, 198 glue_spec, 898 attribute_list, 3 write, 1 pdf_a
+ern, 4 glyph, 915 attribute, 198 glue_spec, 915 attribute_list, 3 write, 1 pdf_a
 ction nodes
-   avail lists: 1:15,2:1441,3:443,4:147,5:1042,6:268,7:10988,8:136,9:2826,10:26,
+   avail lists: 1:15,2:1441,3:443,4:147,5:1044,6:268,7:10987,8:136,9:2826,10:26,
 11:1203
- 62132 multiletter control sequences out of 65536+600000
- 186 fonts using 56238519 bytes
- 86i,17n,115p,1194b,2212s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 62284 multiletter control sequences out of 65536+600000
+ 186 fonts using 56238311 bytes
+ 86i,17n,115p,1194b,2218s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
 tf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre-math/texgyrepa
@@ -4718,10 +4732,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (245 pages, 9387563 bytes).
+Output written on la.pdf (247 pages, 9404530 bytes).
 
-PDF statistics: 3115 PDF objects out of 3580 (max. 8388607)
- 2800 compressed objects within 28 object streams
- 1172 named destinations out of 1200 (max. 1048576)
- 793 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 3153 PDF objects out of 3580 (max. 8388607)
+ 2835 compressed objects within 29 object streams
+ 1186 named destinations out of 1200 (max. 1048576)
+ 809 words of extra memory for PDF output out of 10000 (max. 100000000)
 
