@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.1)  7 OCT 2026 10:59
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.10.1)  7 OCT 2026 11:03
  restricted system commands enabled.
  file:line:error style messages enabled.
 **la.tex
@@ -2135,15 +2135,7 @@ Package biblatex Info: Data encoding 'utf8' specified.
 \openout4 = la.bcf
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'la.bbl' found.
- (./la.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                kMR1415833
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (./la.bbl)
 Package biblatex Info: Reference section=0 on input line 253.
 Package biblatex Info: Reference segment=0 on input line 253.
 
@@ -4571,10 +4563,6 @@ fejezet 21.
 
 ] [212]
 Függelék A.
-
-LaTeX Warning: Citation 'kMR1415833' on page 213 undefined on input line 15388.
-
-
 [213
 
 ] [214] [215] [216] [217] [218] [219] [220]
@@ -4712,10 +4700,10 @@ Here is how much of LuaTeX's memory you used:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 58 glue, 4 kern, 1 penalty, 2 margin_k
 ern, 4 glyph, 915 attribute, 198 glue_spec, 915 attribute_list, 3 write, 1 pdf_a
 ction nodes
-   avail lists: 1:15,2:1441,3:443,4:147,5:1044,6:268,7:10987,8:136,9:2826,10:26,
+   avail lists: 1:15,2:1441,3:443,4:147,5:1044,6:268,7:10988,8:136,9:2826,10:26,
 11:1203
  62284 multiletter control sequences out of 65536+600000
- 186 fonts using 56238311 bytes
+ 186 fonts using 56238207 bytes
  86i,17n,115p,1194b,2218s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/truetype/public/dejavu/DejaVuSans.ttf></op
 t/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrepagella-bold.o
@@ -4732,10 +4720,10 @@ otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyrecursor
 -bold.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gyre/texgyre
 pagella-regular.otf></opt/texlive/texdir/texmf-dist/fonts/opentype/public/tex-gy
 re/texgyrecursor-regular.otf>
-Output written on la.pdf (247 pages, 9404530 bytes).
+Output written on la.pdf (247 pages, 9404450 bytes).
 
-PDF statistics: 3153 PDF objects out of 3580 (max. 8388607)
- 2835 compressed objects within 29 object streams
+PDF statistics: 3155 PDF objects out of 3580 (max. 8388607)
+ 2837 compressed objects within 29 object streams
  1186 named destinations out of 1200 (max. 1048576)
  809 words of extra memory for PDF output out of 10000 (max. 100000000)
 
