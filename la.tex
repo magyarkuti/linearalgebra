@@ -7905,7 +7905,7 @@ Az egyik legfontosabb definícióhoz érkeztünk.
 \end{definition}
 Az $\left[ A \right]$ négyzetes mátrix tehát pontosan akkor diagonális alakú,
 ha minden $i\neq j$ mellett $\left[ A \right]_{i,j}=0.$
-Ez azt jelenti hogy a $j$-edik bázis elem képének a nem $j$-edik koordinátája zérus,
+Ez azt jelenti hogy a $j$-edik bázis elem képének minden nem $j$-edik koordinátája zérus,
 azaz az $e_j$ bázisvektorra $Ae_j=\lambda e_j$ áll fenn,
 valamely $\lambda\in\mathbb{F}$ számmal.
 Ez éppen azt jelenti,
@@ -9236,7 +9236,7 @@ Az első észrevétel adja a negatív választ.
 	Tegyük fel először, hogy $B$ lineáris transzformáció $m$-ed rendben
 	nilpotens.
 	Legyen $p\left( t \right)=t^m$.
-	Ekkor $p\in J_A$, így a minimálpolinom $p$ osztója.
+	Ekkor $p\in J_B$, így a minimálpolinom $p$ osztója.
     Másrészt \aaz{th:fgtlen}. állítás szerint van a térnek olyan vektora,
 	amelyhez tartalmazó kis minimálpolinom is $p$.
 	Így $p$ osztója a minimálpolinomnak, ergo azonos vele.
@@ -9252,7 +9252,7 @@ Az alábbi lemmának nincs köze a transzformációk redukálásához.
 Arra kell emlékeznünk, hogy egy véges dimenziós vektortérben minden altérnek van direkt kiegészítője.
 \begin{lemma}
 	Legyenek $V_1$ és $V_2$ diszjunkt alterei a véges dimenziós $W$ vektortérnek.
-	Ekkor $V_1$-nek létezik $V_2$ alteret tartalmazó direkkiegészítője,
+	Ekkor $V_1$-nek létezik $V_2$ alteret tartalmazó direkt kiegészítője,
 	azaz
 	létezik $K\subset W$ altér, amelyre $V_2\subseteq K$ és $V_1\oplus K=W.$
 	\label{felb0}
@@ -11079,7 +11079,7 @@ Ekkor
 		\sum_{\sigma\in S_n}\sgn\sigma\prod_{i=1}^na_{i,\sigma(i)}
 		\right)
 		\left(
-		\sum_{\tau\in S_m}\sgn\sigma\prod_{i=1}^ma_{n+i,\tau(n+i)}
+		\sum_{\tau\in S_m}\sgn\tau\prod_{i=1}^ma_{n+i,\tau(n+i)}
 		\right)
 		\\
 		=
@@ -11955,7 +11955,7 @@ ahol $\mathbb{K}=\mathbb{R}$ vagy $\mathbb{K}=\mathbb{C}$.
 		\item $\ip{x}{y}=\overline{\ip{y}{x}}$ minden $x,y\in V$ mellett.
 		\item
 		      $\ip{\alpha x}{y}=
-			      \alpha\ip{x}{y}$ minden $x,y\in V$ és minden $\alpha\in V$ mellett.
+			      \alpha\ip{x}{y}$ minden $x,y\in V$ és minden $\alpha\in \mathbb{K}$ mellett.
 		\item
 		      $\ip{x_1+x_2}{y}=
 			      \ip{x_1}{y}+\ip{x_2}{y}$ minden $x_1,x_2,y\in V$ mellett.
@@ -12055,7 +12055,7 @@ Tehát $\left\{ 0 \right\}^\perp = V$ és $V^{\perp}=\left\{ 0 \right\}$.
 Persze $H\perp H^\perp$ csak tautologia.
 
 \begin{definition}
-	Legyen $V$ egy skalárisszorzatos-tér, $H\subseteq V$.
+	Legyen $V$ egy skalárisszorzatos-tér, $\left\{ x_1,\ldots,x_k \right\} \subseteq V$.
 	Az $\left\{ x_1,\ldots,x_k \right\}$ vektorrendszert
 	\begin{enumerate}
 		\item \emph{ortogonálisnak} nevezünk, ha minden $i\neq j$ esetén
@@ -12126,7 +12126,7 @@ Ezeket a továbbiakban hivatkozás nélkül használjuk.
 	Ha $v\in H\cap H^\perp$, akkor $v\perp v$, ergo $v=0$, ami az 1. pontot igazolja.
 \\
 	Ha $H\subseteq H_1$ és egy $v$ vektor a $H_1$ minden pontjára merőleges, 
-    akkor persze ez $H$ minden pontjára is merőleges, azaz $H_1^\perp\subseteq H$.
+    akkor persze ez $H$ minden pontjára is merőleges, azaz $H_1^\perp\subseteq H^\perp$.
 \\
     A 3. pont nyilvánvaló.
 \\
@@ -12420,13 +12420,13 @@ emiatt a fenti kiemelt $M$-beli vektor nem függ az $M$ altér ortonormált báz
 	ahol az $\left\{ x_1,\ldots,x_k \right\}$ egy ortonormált rendszer.
 
 	Láttuk, hogy a
-	$\sum_{i=j}^k\ip{u}{x_j}\in M$ vektor független
+	$\sum_{j=1}^k\ip{u}{x_j}x_j\in M$ vektor független
 	az $\left\{ x_1,\ldots,x_k \right\}$ ortonormált rendszer megválasztásától,
 	hiszen ez vektor az $u$ vektorhoz legközelebb eső vektora az $M$ altérnek.
 	Definiálja $p_M:V\to V$ az alábbi függvényt
 	\[
 		p_M\left( u \right)=
-		\sum_{i=1}^k\ip{u}{x_i}x_i.
+		\sum_{j=1}^k\ip{u}{x_j}x_j.
 	\]
 	A $p_M\left( u \right)\in M$ vektort nevezzük az $u$-nak $M$ altérre eső \emph{merőleges vetületének}.
 	A $p_M$ függvény neve: \emph{merőleges vetítés az $M$ altérre}.
@@ -12580,9 +12580,9 @@ A Gram\,--\,Schmidt-ortogonalizációról szóló állítás azonnali következm
 	ezért az maximális lineárisan független rendszer $V$-ben, ergo bázis is.
 	Konstruáltunk tehát egy ortonormált bázist.
 
-	Jelölje most $P_V$ egy $\left\{ x_1,\ldots,x_n \right\}$
+	Jelölje most $p_V$ egy $\left\{ x_1,\ldots,x_n \right\}$
 	ortonormált bázis definiálta merőleges vetítést az egész $V$ vektortérre, mint egy altérre.
-	Világos, hogy $P_V$ az identitás függvény,
+	Világos, hogy $p_V$ az identitás függvény,
 	hiszen minden vektorra igaz, hogy saját maga a hozzá legközelebbi $V$-beli pont.
 	Így minden $v\in V$ mellett $v=p_V\left( v \right)=\sum_{j=1}^n\ip{v}{x_j}x_j.$
 \end{proof}
@@ -12960,7 +12960,7 @@ akkor
 
 	Jelölje most $A^\ast$ a $w\mapsto w^\ast$ függvényt, tehát
 	$A^\ast:W\to V$.
-	Ekkor minden $v\in V$ és $w\in V$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
+	Ekkor minden $v\in V$ és $w\in W$ mellett fennáll az ú.n. \emph{adjungált azonosság}:
 	\[
 		\ip{Av}{w}_W
 		=
@@ -13236,7 +13236,7 @@ amely egyszerre $A$ képteréhez is, de $A^\ast$ magteréhez is hozzátartozik.
 
 \begin{proposition}
 	A skalárisszorzatos-tér egy $A$ lineáris transzformációja pontosan akkor önadjungált,
-	ha minden $u,w\in V$ mellett
+	ha minden $u,v\in V$ mellett
 	\[
 		\ip{Au}{v}
 		=
@@ -13361,7 +13361,7 @@ Ultra fontos következmény az alábbi:
 
 \chapter{Normális transzformációk diagonalizálhatósága}
 \begin{definition}[normális lineáris transzformáció]
-	A $V$ skalárisszorzatos-tér egy $A\in L\left( V \right)$ lineáris transzformációját
+	A $V$ skalárisszorzatos-tér egy $N\in L\left( V \right)$ lineáris transzformációját
 	\emph{normálisnak}\index{normális transzformáció} nevezzük,
 	ha $$N^\ast N=NN^\ast$$ tehát, ha a transzformáció kommutál az adjungáltjával.
 \end{definition}
@@ -13454,7 +13454,7 @@ Az unitér transzformációk olyanok, amelyek $\mathbb{R}$ feletti esetben álta
 		\|N^\ast u\|^2.
 	\]
 	Ez azt jelenti, hogy $Nu=0$ akkor és csak akkor áll fenn,
-	ha $N^\ast u$ is fennáll.
+	ha $N^\ast u = 0$ is fennáll.
 \end{proof}
 Korábban láttuk,
 hogy tetszőleges lineáris transzformáció mellett $(\im A)^\perp=\ker A^\ast.$
@@ -13503,7 +13503,7 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
         \item Speciálisan, ha $N$ reguláris és $N^{-1}=N^\ast$, azaz $N$ unitér transzformáció, akkor
               minden 
 		      \begin{math}
-			      \lambda\in\sigma\left( N \right)\subseteq \mathbb{R},
+			      \lambda\in\sigma\left( N \right)\subseteq \mathbb{K},
 		      \end{math}
               esetén $|\lambda|=1$, 
 		      azaz unitér transzformációnak a sajátértékei $1$ abszolútértékűek.
@@ -13560,7 +13560,7 @@ tetszőleges $u$ vektorra $Nu=\lambda u$ akkor és csak akkor igaz, ha $N^\ast u
 	ezért
 	\[
         \left( \frac{1}{\lambda}-\bar{\lambda} \right)u
-        =N^{-1}u-N^\ast u=Nu-Nu=0.
+        =N^{-1}u-N^\ast u=N^\ast u - N^\ast u=0.
 	\]
     No de, az $u\neq 0$ feltétel miatt $\frac{1}{\lambda}-\bar{\lambda}=0$, tehát $\lambda\bar{\lambda}=|\lambda|^2=1$.
 \end{proof}
@@ -13935,11 +13935,11 @@ Az $M_1, M_2\subseteq V$ alterek esetén $P_{M_1}\perp P_{M_2}$ pontosan akkor, 
         \quad\text{és}\quad
         P^2
         =
-        \sum_{k=1}^r\sum_{j=1}^rP_iP_j
+        \sum_{i=1}^r\sum_{j=1}^rP_iP_j
         =
-        \sum_{k=1}^rP_i^2
+        \sum_{i=1}^rP_i^2
         =
-        \sum_{k=1}^rP_i
+        \sum_{i=1}^rP_i
         =
         P.
     \]
@@ -14044,17 +14044,17 @@ ezért az előző tételt használva azt kapjuk, hogy az összeadandó projekci�
     ezért $N-\lambda_jI$ szinguláris.
     Mivel ez minden $j=1,\ldots,r$ mellett fennáll, ezért minden $j$ mellett a $\lambda_j$ egy sajátértéke $N$-nek. 
 
-	Most azt gondoljuk meg, hogy nincs más sajátérték, azaz ha $\sigma\neq \lambda_j$ minden $j=1,\dots,r$ mellett,
-    akkor $\sigma$ nem sajátérték.
-    Megmutatjuk tehát, hogy $\ker\left( N-\sigma I \right)=\left\{ 0 \right\}$.
+	Most azt gondoljuk meg, hogy nincs más sajátérték, azaz ha $\mu\neq \lambda_j$ minden $j=1,\dots,r$ mellett,
+    akkor $\mu$ nem sajátérték.
+    Megmutatjuk tehát, hogy $\ker\left( N-\mu I \right)=\left\{ 0 \right\}$.
     Ehhez vegyük észre, hogy $\sum_{j=1}^rP_j=I$ szerint $\sum_{j=1}^r\im P_j=V$ komplexus azonosság teljesül,
-    és mivel $N$ normális, ezért $\ker\left( N-\lambda_jI \right)\perp\ker\left( N-\sigma I \right)$ is teljesül
+    és mivel $N$ normális, ezért $\ker\left( N-\lambda_jI \right)\perp\ker\left( N-\mu I \right)$ is teljesül
     minden $j=1,\dots,r$ mellett.
     Így
     \[
-        V=\sum_{j=1}^r\im P_j\subseteq\sum_{j=1}^r\ker\left( N-\lambda_jI \right)\subseteq\left( \ker\left( N-\sigma I \right) \right)^\perp.
+        V=\sum_{j=1}^r\im P_j\subseteq\sum_{j=1}^r\ker\left( N-\lambda_jI \right)\subseteq\left( \ker\left( N-\mu I \right) \right)^\perp.
     \]
-    Ha tehát $v\in\ker\left( N-\sigma I \right)$, akkor $v$ merőleges saját magára, ergo $v=0$.
+    Ha tehát $v\in\ker\left( N-\mu I \right)$, akkor $v$ merőleges saját magára, ergo $v=0$.
     Ezt kellett belátni. 
 %	$\sigma(N)\subseteq \left\{ \lambda_1,\ldots,\lambda_r \right\}$.
 %	Legyen $\mu\in\sigma(N)$, azaz $Ns=\mu s$ valamely $s\neq 0$ vektorra.
@@ -14226,7 +14226,7 @@ Most nézzük az olyan lineáris kombinációk esetét, amikor az együtthatók 
 	=
 	\sum_{j=1}^r\lambda_jP_j.
 	\)
-	Ekkor az $N$ egy \emph{unitér transzformáció} transzformáció,
+	Ekkor az $N$ egy \emph{unitér transzformáció},
 	amelynek spektrumára $\sigma\left( N \right)=\left\{ \lambda_1,\ldots,\lambda_r \right\}$.
 \end{proposition}
 \begin{proof}
