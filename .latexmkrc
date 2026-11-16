@@ -10,4 +10,11 @@ $show_time =1;
 $clean_ext = "bbl";
 $makeindex = "upmendex -s myindex.ist %O -o %D %S";
 $silence_logfile_warnings = 0;
-$dependents_list = 0
+$dependents_list = 0;
+# Enable experimental parallel processing (0 = off, 1 = on)
+$use_parallel = 1;
+
+# Limit the maximum number of simultaneous document-processing jobs
+# Set to 4 for a quad-core cap, or -1 for unlimited parallelism
+$parallel_jobs = 4;
+
